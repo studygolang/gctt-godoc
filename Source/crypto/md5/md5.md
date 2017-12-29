@@ -1,0 +1,82 @@
+version: 1.9.2
+## package md5
+
+  `import "crypto/md5"`
+
+## Overview
+
+Package md5 implements the MD5 hash algorithm as defined in RFC 1321.
+
+MD5 is cryptographically broken and should not be used for secure applications.
+
+## Index
+
+- [Constants](#pkg-constants)
+- [func New() hash.Hash](#New)
+- [func Sum(data []byte) [Size]byte](#Sum)
+
+### Examples
+
+- [New](#example_New)
+- [New (File)](#example_New_file)
+- [Sum](#example_Sum)
+
+### Package files
+ [md5.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/md5/md5.go) [md5block.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/md5/md5block.go) [md5block_decl.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/md5/md5block_decl.go)
+
+<h2 id="pkg-constants">Constants</h2>
+
+<pre>const <span id="BlockSize">BlockSize</span> = 64</pre>
+
+The blocksize of MD5 in bytes.
+
+<pre>const <span id="Size">Size</span> = 16</pre>
+
+The size of an MD5 checksum in bytes.
+
+<h2 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/md5/md5.go#L44">New</a>
+    <a href="#New">¶</a></h2>
+<pre>func New() <a href="/hash/">hash</a>.<a href="/hash/#Hash">Hash</a></pre>
+
+New returns a new hash.Hash computing the MD5 checksum.
+
+<a id="example_New"></a>
+Example:
+
+    h := md5.New()
+    io.WriteString(h, "The fog is getting thicker!")
+    io.WriteString(h, "And Leon's getting laaarger!")
+    fmt.Printf("%x", h.Sum(nil))
+    // Output: e2c569be17396eca2a2e3c11578123ed
+
+
+<a id="example_New_file"></a>
+Example:
+
+    f, err := os.Open("file.txt")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer f.Close()
+
+    h := md5.New()
+    if _, err := io.Copy(h, f); err != nil {
+        log.Fatal(err)
+    }
+
+    fmt.Printf("%x", h.Sum(nil))
+
+<h2 id="Sum">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/md5/md5.go#L118">Sum</a>
+    <a href="#Sum">¶</a></h2>
+<pre>func Sum(data []<a href="/builtin/#byte">byte</a>) [<a href="#Size">Size</a>]<a href="/builtin/#byte">byte</a></pre>
+
+Sum returns the MD5 checksum of the data.
+
+<a id="example_Sum"></a>
+Example:
+
+    data := []byte("These pretzels are making me thirsty.")
+    fmt.Printf("%x", md5.Sum(data))
+    // Output: b0804ec967f48520697662a204f5fe72
+
+
