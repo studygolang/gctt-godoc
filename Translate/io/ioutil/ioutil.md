@@ -3,11 +3,11 @@ version: 1.9.2
 
   `import "io/ioutil"`
 
-## Overview
+## 概述
 
-Package ioutil implements some I/O utility functions.
+ioutil 包实现了一些实用的 I/O 函数。
 
-## Index
+## 索引
 
 - [Variables](#pkg-variables)
 - [func NopCloser(r io.Reader) io.ReadCloser](#NopCloser)
@@ -18,7 +18,7 @@ Package ioutil implements some I/O utility functions.
 - [func TempFile(dir, prefix string) (f *os.File, err error)](#TempFile)
 - [func WriteFile(filename string, data []byte, perm os.FileMode) error](#WriteFile)
 
-### Examples
+### 例子
 
 - [ReadAll](#example_ReadAll)
 - [ReadDir](#example_ReadDir)
@@ -26,33 +26,29 @@ Package ioutil implements some I/O utility functions.
 - [TempDir](#example_TempDir)
 - [TempFile](#example_TempFile)
 
-### Package files
+### 文件
  [ioutil.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/ioutil.go) [tempfile.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/tempfile.go)
 
-<h2 id="pkg-variables">Variables</h2>
+<h2 id="pkg-variables">变量</h2>
 
 <pre>var <span id="Discard">Discard</span> <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a> = devNull(0)</pre>
 
-Discard is an io.Writer on which all Write calls succeed without doing anything.
+Discard 是一个不做任何操作且永远返回成功的 io.Writer 实现。
 
 <h2 id="NopCloser">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/ioutil.go#L105">NopCloser</a>
     <a href="#NopCloser">¶</a></h2>
 <pre>func NopCloser(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) <a href="/io/">io</a>.<a href="/io/#ReadCloser">ReadCloser</a></pre>
 
-NopCloser returns a ReadCloser with a no-op Close method wrapping the provided
-Reader r.
+NopCloser 函数把空 Close 方法和 r 封装成 ReadCloser 接口的实现返回。
 
 <h2 id="ReadAll">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/ioutil.go#L31">ReadAll</a>
     <a href="#ReadAll">¶</a></h2>
 <pre>func ReadAll(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
-ReadAll reads from r until an error or EOF and returns the data it read. A
-successful call returns err == nil, not err == EOF. Because ReadAll is defined
-to read from src until EOF, it does not treat an EOF from Read as an error to be
-reported.
+ReadAll 函数从 r 读取数据直到遇到错误或者 EOF 并返回读取到的数据。读取成功返回 err == nil 而不是 err == EOF。因为 ReadAll 读取直到 EOF 的数据，所以它不会把 EOF 当作错误返回给用户。
 
 <a id="example_ReadAll"></a>
-Example:
+例:
 
     r := strings.NewReader("Go is a general-purpose language designed with systems programming in mind.")
 
@@ -70,11 +66,10 @@ Example:
     <a href="#ReadDir">¶</a></h2>
 <pre>func ReadDir(dirname <a href="/builtin/#string">string</a>) ([]<a href="/os/">os</a>.<a href="/os/#FileInfo">FileInfo</a>, <a href="/builtin/#error">error</a>)</pre>
 
-ReadDir reads the directory named by dirname and returns a list of directory
-entries sorted by filename.
+ReadDir 函数从文件夹 dirname 中读取以文件名排序的文件信息列表。
 
 <a id="example_ReadDir"></a>
-Example:
+例:
 
     files, err := ioutil.ReadDir(".")
     if err != nil {
@@ -89,12 +84,10 @@ Example:
     <a href="#ReadFile">¶</a></h2>
 <pre>func ReadFile(filename <a href="/builtin/#string">string</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
-ReadFile reads the file named by filename and returns the contents. A successful
-call returns err == nil, not err == EOF. Because ReadFile reads the whole file,
-it does not treat an EOF from Read as an error to be reported.
+ReadFile 函数读取文件 filename 中的内容。读取成功返回 err == nil 而不是 err == EOF。因为 ReadFile 会读取整个文件的内容，所以不会将 EOF 当作一个错误返回。
 
 <a id="example_ReadFile"></a>
-Example:
+例:
 
     content, err := ioutil.ReadFile("testdata/hello")
     if err != nil {
@@ -110,15 +103,10 @@ Example:
     <a href="#TempDir">¶</a></h2>
 <pre>func TempDir(dir, prefix <a href="/builtin/#string">string</a>) (name <a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
-TempDir creates a new temporary directory in the directory dir with a name
-beginning with prefix and returns the path of the new directory. If dir is the
-empty string, TempDir uses the default directory for temporary files (see
-os.TempDir). Multiple programs calling TempDir simultaneously will not choose
-the same directory. It is the caller's responsibility to remove the directory
-when no longer needed.
+TempDir 在 dir 中创建一个名字以 prefix 作为前缀的临时文件夹并返回临时文件夹的路径。如果 dir 为空，TempDir 会使用临时文件的默认路径（详情请看 os.TempDir）。多个程序同时调用 TempDir 不会使用同一个文件夹。当用户不需要这个临时目录时需要手动删除。
 
 <a id="example_TempDir"></a>
-Example:
+例:
 
     content := []byte("temporary file's content")
     dir, err := ioutil.TempDir("", "example")
@@ -137,16 +125,10 @@ Example:
     <a href="#TempFile">¶</a></h2>
 <pre>func TempFile(dir, prefix <a href="/builtin/#string">string</a>) (f *<a href="/os/">os</a>.<a href="/os/#File">File</a>, err <a href="/builtin/#error">error</a>)</pre>
 
-TempFile creates a new temporary file in the directory dir with a name beginning
-with prefix, opens the file for reading and writing, and returns the resulting
-*os.File. If dir is the empty string, TempFile uses the default directory for
-temporary files (see os.TempDir). Multiple programs calling TempFile
-simultaneously will not choose the same file. The caller can use f.Name() to
-find the pathname of the file. It is the caller's responsibility to remove the
-file when no longer needed.
+TempFile 函数在 dir 中创建前缀为 prefix 的临时文件，并打开该文件进行读写，返回 *os.File。如果 dir 为空，将使用默认的文件夹（详情请看 os.TempDir）。多个程序调用 TempFile 函数不会使用同一个文件。用户可以使用 f.Name() 来获取文件路径。当用户不再需要该文件时需要手动删除。 
 
 <a id="example_TempFile"></a>
-Example:
+例:
 
     content := []byte("temporary file's content")
     tmpfile, err := ioutil.TempFile("", "example")
@@ -167,8 +149,6 @@ Example:
     <a href="#WriteFile">¶</a></h2>
 <pre>func WriteFile(filename <a href="/builtin/#string">string</a>, data []<a href="/builtin/#byte">byte</a>, perm <a href="/os/">os</a>.<a href="/os/#FileMode">FileMode</a>) <a href="/builtin/#error">error</a></pre>
 
-WriteFile writes data to a file named by filename. If the file does not exist,
-WriteFile creates it with permissions perm; otherwise WriteFile truncates it
-before writing.
+WriteFile 将数据写进文件 filename 中。该文件不存在时 WriteFile 会创建这个文件（需要有相应权限），如果文件已经存在 WriteFile 将会在写入之前覆盖它。
 
 
