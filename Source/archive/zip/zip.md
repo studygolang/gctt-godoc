@@ -53,9 +53,9 @@ fields will be 0xffffffff and the 64 bit fields must be used instead.
 
 ### Examples
 
-- [Reader](#example_Reader)
-- [Writer](#example_Writer)
-- [Writer.RegisterCompressor](#example_Writer_RegisterCompressor)
+- [Reader](#exampleReader)
+- [Writer](#exampleWriter)
+- [Writer.RegisterCompressor](#exampleWriter_RegisterCompressor)
 
 ### Package files
  [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go) [register.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/register.go) [struct.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go) [writer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go)
@@ -232,7 +232,7 @@ Close closes the Zip file, rendering it unusable for I/O.
 }</pre>
 
 
-<a id="example_Reader"></a>
+<a id="exampleReader"></a>
 Example:
 
     // Open a zip archive for reading.
@@ -284,7 +284,7 @@ default to looking up the decompressor at the package level.
 
 Writer implements a zip file writer.
 
-<a id="example_Writer"></a>
+<a id="exampleWriter"></a>
 Example:
 
     // Create a buffer to write our archive to.
@@ -367,7 +367,7 @@ RegisterCompressor registers or overrides a custom compressor for a specific
 method ID. If a compressor for a given method is not found, Writer will default
 to looking up the compressor at the package level.
 
-<a id="example_Writer_RegisterCompressor"></a>
+<a id="exampleWriter_RegisterCompressor"></a>
 Example:
 
     // Override the default Deflate compressor with a higher compression level.

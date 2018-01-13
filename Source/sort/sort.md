@@ -8,356 +8,356 @@ version: 1.9.2
 Package sort provides primitives for sorting slices and user-defined
 collections.
 
-<a id="example_"></a>
+<a id="example"></a>
 Example:
 
-package sort_test
+    package sort_test
 
-import (
-    "fmt"
-    "sort"
-)
+    import (
+        "fmt"
+        "sort"
+    )
 
-type Person struct {
-    Name string
-    Age  int
-}
-
-func (p Person) String() string {
-    return fmt.Sprintf("%s: %d", p.Name, p.Age)
-}
-
-// ByAge implements sort.Interface for []Person based on
-// the Age field.
-type ByAge []Person
-
-func (a ByAge) Len() int           { return len(a) }
-func (a ByAge) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
-func (a ByAge) Less(i, j int) bool { return a[i].Age < a[j].Age }
-
-func Example() {
-    people := []Person{
-        {"Bob", 31},
-        {"John", 42},
-        {"Michael", 17},
-        {"Jenny", 26},
+    type Person struct {
+        Name string
+        Age  int
     }
 
-    fmt.Println(people)
-    sort.Sort(ByAge(people))
-    fmt.Println(people)
-
-    // Output:
-    // [Bob: 31 John: 42 Michael: 17 Jenny: 26]
-    // [Michael: 17 Jenny: 26 Bob: 31 John: 42]
-}
-
-
-<a id="example__sortKeys"></a>
-Example:
-
-package sort_test
-
-import (
-    "fmt"
-    "sort"
-)
-
-// A couple of type definitions to make the units clear.
-type earthMass float64
-type au float64
-
-// A Planet defines the properties of a solar system object.
-type Planet struct {
-    name     string
-    mass     earthMass
-    distance au
-}
-
-// By is the type of a "less" function that defines the ordering of its Planet arguments.
-type By func(p1, p2 *Planet) bool
-
-// Sort is a method on the function type, By, that sorts the argument slice according to the function.
-func (by By) Sort(planets []Planet) {
-    ps := &planetSorter{
-        planets: planets,
-        by:      by, // The Sort method's receiver is the function (closure) that defines the sort order.
-    }
-    sort.Sort(ps)
-}
-
-// planetSorter joins a By function and a slice of Planets to be sorted.
-type planetSorter struct {
-    planets []Planet
-    by      func(p1, p2 *Planet) bool // Closure used in the Less method.
-}
-
-// Len is part of sort.Interface.
-func (s *planetSorter) Len() int {
-    return len(s.planets)
-}
-
-// Swap is part of sort.Interface.
-func (s *planetSorter) Swap(i, j int) {
-    s.planets[i], s.planets[j] = s.planets[j], s.planets[i]
-}
-
-// Less is part of sort.Interface. It is implemented by calling the "by" closure in the sorter.
-func (s *planetSorter) Less(i, j int) bool {
-    return s.by(&s.planets[i], &s.planets[j])
-}
-
-var planets = []Planet{
-    {"Mercury", 0.055, 0.4},
-    {"Venus", 0.815, 0.7},
-    {"Earth", 1.0, 1.0},
-    {"Mars", 0.107, 1.5},
-}
-
-// ExampleSortKeys demonstrates a technique for sorting a struct type using programmable sort criteria.
-func Example_sortKeys() {
-    // Closures that order the Planet structure.
-    name := func(p1, p2 *Planet) bool {
-        return p1.name < p2.name
-    }
-    mass := func(p1, p2 *Planet) bool {
-        return p1.mass < p2.mass
-    }
-    distance := func(p1, p2 *Planet) bool {
-        return p1.distance < p2.distance
-    }
-    decreasingDistance := func(p1, p2 *Planet) bool {
-        return !distance(p1, p2)
+    func (p Person) String() string {
+        return fmt.Sprintf("%s: %d", p.Name, p.Age)
     }
 
-    // Sort the planets by the various criteria.
-    By(name).Sort(planets)
-    fmt.Println("By name:", planets)
+    // ByAge implements sort.Interface for []Person based on
+    // the Age field.
+    type ByAge []Person
 
-    By(mass).Sort(planets)
-    fmt.Println("By mass:", planets)
+    func (a ByAge) Len() int           { return len(a) }
+    func (a ByAge) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+    func (a ByAge) Less(i, j int) bool { return a[i].Age < a[j].Age }
 
-    By(distance).Sort(planets)
-    fmt.Println("By distance:", planets)
-
-    By(decreasingDistance).Sort(planets)
-    fmt.Println("By decreasing distance:", planets)
-
-    // Output: By name: [{Earth 1 1} {Mars 0.107 1.5} {Mercury 0.055 0.4} {Venus 0.815 0.7}]
-    // By mass: [{Mercury 0.055 0.4} {Mars 0.107 1.5} {Venus 0.815 0.7} {Earth 1 1}]
-    // By distance: [{Mercury 0.055 0.4} {Venus 0.815 0.7} {Earth 1 1} {Mars 0.107 1.5}]
-    // By decreasing distance: [{Mars 0.107 1.5} {Earth 1 1} {Venus 0.815 0.7} {Mercury 0.055 0.4}]
-}
-
-
-<a id="example__sortMultiKeys"></a>
-Example:
-
-package sort_test
-
-import (
-    "fmt"
-    "sort"
-)
-
-// A Change is a record of source code changes, recording user, language, and delta size.
-type Change struct {
-    user     string
-    language string
-    lines    int
-}
-
-type lessFunc func(p1, p2 *Change) bool
-
-// multiSorter implements the Sort interface, sorting the changes within.
-type multiSorter struct {
-    changes []Change
-    less    []lessFunc
-}
-
-// Sort sorts the argument slice according to the less functions passed to OrderedBy.
-func (ms *multiSorter) Sort(changes []Change) {
-    ms.changes = changes
-    sort.Sort(ms)
-}
-
-// OrderedBy returns a Sorter that sorts using the less functions, in order.
-// Call its Sort method to sort the data.
-func OrderedBy(less ...lessFunc) *multiSorter {
-    return &multiSorter{
-        less: less,
-    }
-}
-
-// Len is part of sort.Interface.
-func (ms *multiSorter) Len() int {
-    return len(ms.changes)
-}
-
-// Swap is part of sort.Interface.
-func (ms *multiSorter) Swap(i, j int) {
-    ms.changes[i], ms.changes[j] = ms.changes[j], ms.changes[i]
-}
-
-// Less is part of sort.Interface. It is implemented by looping along the
-// less functions until it finds a comparison that is either Less or
-// !Less. Note that it can call the less functions twice per call. We
-// could change the functions to return -1, 0, 1 and reduce the
-// number of calls for greater efficiency: an exercise for the reader.
-func (ms *multiSorter) Less(i, j int) bool {
-    p, q := &ms.changes[i], &ms.changes[j]
-    // Try all but the last comparison.
-    var k int
-    for k = 0; k < len(ms.less)-1; k++ {
-        less := ms.less[k]
-        switch {
-        case less(p, q):
-            // p < q, so we have a decision.
-            return true
-        case less(q, p):
-            // p > q, so we have a decision.
-            return false
+    func Example() {
+        people := []Person{
+            {"Bob", 31},
+            {"John", 42},
+            {"Michael", 17},
+            {"Jenny", 26},
         }
-        // p == q; try the next comparison.
-    }
-    // All comparisons to here said "equal", so just return whatever
-    // the final comparison reports.
-    return ms.less[k](p, q)
-}
 
-var changes = []Change{
-    {"gri", "Go", 100},
-    {"ken", "C", 150},
-    {"glenda", "Go", 200},
-    {"rsc", "Go", 200},
-    {"r", "Go", 100},
-    {"ken", "Go", 200},
-    {"dmr", "C", 100},
-    {"r", "C", 150},
-    {"gri", "Smalltalk", 80},
-}
+        fmt.Println(people)
+        sort.Sort(ByAge(people))
+        fmt.Println(people)
 
-// ExampleMultiKeys demonstrates a technique for sorting a struct type using different
-// sets of multiple fields in the comparison. We chain together "Less" functions, each of
-// which compares a single field.
-func Example_sortMultiKeys() {
-    // Closures that order the Change structure.
-    user := func(c1, c2 *Change) bool {
-        return c1.user < c2.user
-    }
-    language := func(c1, c2 *Change) bool {
-        return c1.language < c2.language
-    }
-    increasingLines := func(c1, c2 *Change) bool {
-        return c1.lines < c2.lines
-    }
-    decreasingLines := func(c1, c2 *Change) bool {
-        return c1.lines > c2.lines // Note: > orders downwards.
+        // Output:
+        // [Bob: 31 John: 42 Michael: 17 Jenny: 26]
+        // [Michael: 17 Jenny: 26 Bob: 31 John: 42]
     }
 
-    // Simple use: Sort by user.
-    OrderedBy(user).Sort(changes)
-    fmt.Println("By user:", changes)
 
-    // More examples.
-    OrderedBy(user, increasingLines).Sort(changes)
-    fmt.Println("By user,<lines:", changes)
-
-    OrderedBy(user, decreasingLines).Sort(changes)
-    fmt.Println("By user,>lines:", changes)
-
-    OrderedBy(language, increasingLines).Sort(changes)
-    fmt.Println("By language,<lines:", changes)
-
-    OrderedBy(language, increasingLines, user).Sort(changes)
-    fmt.Println("By language,<lines,user:", changes)
-
-    // Output:
-    // By user: [{dmr C 100} {glenda Go 200} {gri Go 100} {gri Smalltalk 80} {ken C 150} {ken Go 200} {r Go 100} {r C 150} {rsc Go 200}]
-    // By user,<lines: [{dmr C 100} {glenda Go 200} {gri Smalltalk 80} {gri Go 100} {ken C 150} {ken Go 200} {r Go 100} {r C 150} {rsc Go 200}]
-    // By user,>lines: [{dmr C 100} {glenda Go 200} {gri Go 100} {gri Smalltalk 80} {ken Go 200} {ken C 150} {r C 150} {r Go 100} {rsc Go 200}]
-    // By language,<lines: [{dmr C 100} {ken C 150} {r C 150} {r Go 100} {gri Go 100} {ken Go 200} {glenda Go 200} {rsc Go 200} {gri Smalltalk 80}]
-    // By language,<lines,user: [{dmr C 100} {ken C 150} {r C 150} {gri Go 100} {r Go 100} {glenda Go 200} {ken Go 200} {rsc Go 200} {gri Smalltalk 80}]
-
-}
-
-
-<a id="example__sortWrapper"></a>
+<a id="example_sortKeys"></a>
 Example:
 
-package sort_test
+    package sort_test
 
-import (
-    "fmt"
-    "sort"
-)
+    import (
+        "fmt"
+        "sort"
+    )
 
-type Grams int
+    // A couple of type definitions to make the units clear.
+    type earthMass float64
+    type au float64
 
-func (g Grams) String() string { return fmt.Sprintf("%dg", int(g)) }
-
-type Organ struct {
-    Name   string
-    Weight Grams
-}
-
-type Organs []*Organ
-
-func (s Organs) Len() int      { return len(s) }
-func (s Organs) Swap(i, j int) { s[i], s[j] = s[j], s[i] }
-
-// ByName implements sort.Interface by providing Less and using the Len and
-// Swap methods of the embedded Organs value.
-type ByName struct{ Organs }
-
-func (s ByName) Less(i, j int) bool { return s.Organs[i].Name < s.Organs[j].Name }
-
-// ByWeight implements sort.Interface by providing Less and using the Len and
-// Swap methods of the embedded Organs value.
-type ByWeight struct{ Organs }
-
-func (s ByWeight) Less(i, j int) bool { return s.Organs[i].Weight < s.Organs[j].Weight }
-
-func Example_sortWrapper() {
-    s := []*Organ{
-        {"brain", 1340},
-        {"heart", 290},
-        {"liver", 1494},
-        {"pancreas", 131},
-        {"prostate", 62},
-        {"spleen", 162},
+    // A Planet defines the properties of a solar system object.
+    type Planet struct {
+        name     string
+        mass     earthMass
+        distance au
     }
 
-    sort.Sort(ByWeight{s})
-    fmt.Println("Organs by weight:")
-    printOrgans(s)
+    // By is the type of a "less" function that defines the ordering of its Planet arguments.
+    type By func(p1, p2 *Planet) bool
 
-    sort.Sort(ByName{s})
-    fmt.Println("Organs by name:")
-    printOrgans(s)
-
-    // Output:
-    // Organs by weight:
-    // prostate (62g)
-    // pancreas (131g)
-    // spleen   (162g)
-    // heart    (290g)
-    // brain    (1340g)
-    // liver    (1494g)
-    // Organs by name:
-    // brain    (1340g)
-    // heart    (290g)
-    // liver    (1494g)
-    // pancreas (131g)
-    // prostate (62g)
-    // spleen   (162g)
-}
-
-func printOrgans(s []*Organ) {
-    for _, o := range s {
-        fmt.Printf("%-8s (%v)\n", o.Name, o.Weight)
+    // Sort is a method on the function type, By, that sorts the argument slice according to the function.
+    func (by By) Sort(planets []Planet) {
+        ps := &planetSorter{
+            planets: planets,
+            by:      by, // The Sort method's receiver is the function (closure) that defines the sort order.
+        }
+        sort.Sort(ps)
     }
-}
+
+    // planetSorter joins a By function and a slice of Planets to be sorted.
+    type planetSorter struct {
+        planets []Planet
+        by      func(p1, p2 *Planet) bool // Closure used in the Less method.
+    }
+
+    // Len is part of sort.Interface.
+    func (s *planetSorter) Len() int {
+        return len(s.planets)
+    }
+
+    // Swap is part of sort.Interface.
+    func (s *planetSorter) Swap(i, j int) {
+        s.planets[i], s.planets[j] = s.planets[j], s.planets[i]
+    }
+
+    // Less is part of sort.Interface. It is implemented by calling the "by" closure in the sorter.
+    func (s *planetSorter) Less(i, j int) bool {
+        return s.by(&s.planets[i], &s.planets[j])
+    }
+
+    var planets = []Planet{
+        {"Mercury", 0.055, 0.4},
+        {"Venus", 0.815, 0.7},
+        {"Earth", 1.0, 1.0},
+        {"Mars", 0.107, 1.5},
+    }
+
+    // ExampleSortKeys demonstrates a technique for sorting a struct type using programmable sort criteria.
+    func Example_sortKeys() {
+        // Closures that order the Planet structure.
+        name := func(p1, p2 *Planet) bool {
+            return p1.name < p2.name
+        }
+        mass := func(p1, p2 *Planet) bool {
+            return p1.mass < p2.mass
+        }
+        distance := func(p1, p2 *Planet) bool {
+            return p1.distance < p2.distance
+        }
+        decreasingDistance := func(p1, p2 *Planet) bool {
+            return !distance(p1, p2)
+        }
+
+        // Sort the planets by the various criteria.
+        By(name).Sort(planets)
+        fmt.Println("By name:", planets)
+
+        By(mass).Sort(planets)
+        fmt.Println("By mass:", planets)
+
+        By(distance).Sort(planets)
+        fmt.Println("By distance:", planets)
+
+        By(decreasingDistance).Sort(planets)
+        fmt.Println("By decreasing distance:", planets)
+
+        // Output: By name: [{Earth 1 1} {Mars 0.107 1.5} {Mercury 0.055 0.4} {Venus 0.815 0.7}]
+        // By mass: [{Mercury 0.055 0.4} {Mars 0.107 1.5} {Venus 0.815 0.7} {Earth 1 1}]
+        // By distance: [{Mercury 0.055 0.4} {Venus 0.815 0.7} {Earth 1 1} {Mars 0.107 1.5}]
+        // By decreasing distance: [{Mars 0.107 1.5} {Earth 1 1} {Venus 0.815 0.7} {Mercury 0.055 0.4}]
+    }
+
+
+<a id="example_sortMultiKeys"></a>
+Example:
+
+    package sort_test
+
+    import (
+        "fmt"
+        "sort"
+    )
+
+    // A Change is a record of source code changes, recording user, language, and delta size.
+    type Change struct {
+        user     string
+        language string
+        lines    int
+    }
+
+    type lessFunc func(p1, p2 *Change) bool
+
+    // multiSorter implements the Sort interface, sorting the changes within.
+    type multiSorter struct {
+        changes []Change
+        less    []lessFunc
+    }
+
+    // Sort sorts the argument slice according to the less functions passed to OrderedBy.
+    func (ms *multiSorter) Sort(changes []Change) {
+        ms.changes = changes
+        sort.Sort(ms)
+    }
+
+    // OrderedBy returns a Sorter that sorts using the less functions, in order.
+    // Call its Sort method to sort the data.
+    func OrderedBy(less ...lessFunc) *multiSorter {
+        return &multiSorter{
+            less: less,
+        }
+    }
+
+    // Len is part of sort.Interface.
+    func (ms *multiSorter) Len() int {
+        return len(ms.changes)
+    }
+
+    // Swap is part of sort.Interface.
+    func (ms *multiSorter) Swap(i, j int) {
+        ms.changes[i], ms.changes[j] = ms.changes[j], ms.changes[i]
+    }
+
+    // Less is part of sort.Interface. It is implemented by looping along the
+    // less functions until it finds a comparison that is either Less or
+    // !Less. Note that it can call the less functions twice per call. We
+    // could change the functions to return -1, 0, 1 and reduce the
+    // number of calls for greater efficiency: an exercise for the reader.
+    func (ms *multiSorter) Less(i, j int) bool {
+        p, q := &ms.changes[i], &ms.changes[j]
+        // Try all but the last comparison.
+        var k int
+        for k = 0; k < len(ms.less)-1; k++ {
+            less := ms.less[k]
+            switch {
+            case less(p, q):
+                // p < q, so we have a decision.
+                return true
+            case less(q, p):
+                // p > q, so we have a decision.
+                return false
+            }
+            // p == q; try the next comparison.
+        }
+        // All comparisons to here said "equal", so just return whatever
+        // the final comparison reports.
+        return ms.less[k](p, q)
+    }
+
+    var changes = []Change{
+        {"gri", "Go", 100},
+        {"ken", "C", 150},
+        {"glenda", "Go", 200},
+        {"rsc", "Go", 200},
+        {"r", "Go", 100},
+        {"ken", "Go", 200},
+        {"dmr", "C", 100},
+        {"r", "C", 150},
+        {"gri", "Smalltalk", 80},
+    }
+
+    // ExampleMultiKeys demonstrates a technique for sorting a struct type using different
+    // sets of multiple fields in the comparison. We chain together "Less" functions, each of
+    // which compares a single field.
+    func Example_sortMultiKeys() {
+        // Closures that order the Change structure.
+        user := func(c1, c2 *Change) bool {
+            return c1.user < c2.user
+        }
+        language := func(c1, c2 *Change) bool {
+            return c1.language < c2.language
+        }
+        increasingLines := func(c1, c2 *Change) bool {
+            return c1.lines < c2.lines
+        }
+        decreasingLines := func(c1, c2 *Change) bool {
+            return c1.lines > c2.lines // Note: > orders downwards.
+        }
+
+        // Simple use: Sort by user.
+        OrderedBy(user).Sort(changes)
+        fmt.Println("By user:", changes)
+
+        // More examples.
+        OrderedBy(user, increasingLines).Sort(changes)
+        fmt.Println("By user,<lines:", changes)
+
+        OrderedBy(user, decreasingLines).Sort(changes)
+        fmt.Println("By user,>lines:", changes)
+
+        OrderedBy(language, increasingLines).Sort(changes)
+        fmt.Println("By language,<lines:", changes)
+
+        OrderedBy(language, increasingLines, user).Sort(changes)
+        fmt.Println("By language,<lines,user:", changes)
+
+        // Output:
+        // By user: [{dmr C 100} {glenda Go 200} {gri Go 100} {gri Smalltalk 80} {ken C 150} {ken Go 200} {r Go 100} {r C 150} {rsc Go 200}]
+        // By user,<lines: [{dmr C 100} {glenda Go 200} {gri Smalltalk 80} {gri Go 100} {ken C 150} {ken Go 200} {r Go 100} {r C 150} {rsc Go 200}]
+        // By user,>lines: [{dmr C 100} {glenda Go 200} {gri Go 100} {gri Smalltalk 80} {ken Go 200} {ken C 150} {r C 150} {r Go 100} {rsc Go 200}]
+        // By language,<lines: [{dmr C 100} {ken C 150} {r C 150} {r Go 100} {gri Go 100} {ken Go 200} {glenda Go 200} {rsc Go 200} {gri Smalltalk 80}]
+        // By language,<lines,user: [{dmr C 100} {ken C 150} {r C 150} {gri Go 100} {r Go 100} {glenda Go 200} {ken Go 200} {rsc Go 200} {gri Smalltalk 80}]
+
+    }
+
+
+<a id="example_sortWrapper"></a>
+Example:
+
+    package sort_test
+
+    import (
+        "fmt"
+        "sort"
+    )
+
+    type Grams int
+
+    func (g Grams) String() string { return fmt.Sprintf("%dg", int(g)) }
+
+    type Organ struct {
+        Name   string
+        Weight Grams
+    }
+
+    type Organs []*Organ
+
+    func (s Organs) Len() int      { return len(s) }
+    func (s Organs) Swap(i, j int) { s[i], s[j] = s[j], s[i] }
+
+    // ByName implements sort.Interface by providing Less and using the Len and
+    // Swap methods of the embedded Organs value.
+    type ByName struct{ Organs }
+
+    func (s ByName) Less(i, j int) bool { return s.Organs[i].Name < s.Organs[j].Name }
+
+    // ByWeight implements sort.Interface by providing Less and using the Len and
+    // Swap methods of the embedded Organs value.
+    type ByWeight struct{ Organs }
+
+    func (s ByWeight) Less(i, j int) bool { return s.Organs[i].Weight < s.Organs[j].Weight }
+
+    func Example_sortWrapper() {
+        s := []*Organ{
+            {"brain", 1340},
+            {"heart", 290},
+            {"liver", 1494},
+            {"pancreas", 131},
+            {"prostate", 62},
+            {"spleen", 162},
+        }
+
+        sort.Sort(ByWeight{s})
+        fmt.Println("Organs by weight:")
+        printOrgans(s)
+
+        sort.Sort(ByName{s})
+        fmt.Println("Organs by name:")
+        printOrgans(s)
+
+        // Output:
+        // Organs by weight:
+        // prostate (62g)
+        // pancreas (131g)
+        // spleen   (162g)
+        // heart    (290g)
+        // brain    (1340g)
+        // liver    (1494g)
+        // Organs by name:
+        // brain    (1340g)
+        // heart    (290g)
+        // liver    (1494g)
+        // pancreas (131g)
+        // prostate (62g)
+        // spleen   (162g)
+    }
+
+    func printOrgans(s []*Organ) {
+        for _, o := range s {
+            fmt.Printf("%-8s (%v)\n", o.Name, o.Weight)
+        }
+    }
 
 ## Index
 
@@ -400,17 +400,17 @@ func printOrgans(s []*Organ) {
 
 ### Examples
 
-- [Package](#example_)
-- [Ints](#example_Ints)
-- [Reverse](#example_Reverse)
-- [Search](#example_Search)
-- [Search (DescendingOrder)](#example_Search_descendingOrder)
-- [Slice](#example_Slice)
-- [SliceStable](#example_SliceStable)
-- [Strings](#example_Strings)
-- [Package (SortKeys)](#example__sortKeys)
-- [Package (SortMultiKeys)](#example__sortMultiKeys)
-- [Package (SortWrapper)](#example__sortWrapper)
+- [Package](#example)
+- [Ints](#exampleInts)
+- [Reverse](#exampleReverse)
+- [Search](#exampleSearch)
+- [Search (DescendingOrder)](#exampleSearch_descendingOrder)
+- [Slice](#exampleSlice)
+- [SliceStable](#exampleSliceStable)
+- [Strings](#exampleStrings)
+- [Package (SortKeys)](#example_sortKeys)
+- [Package (SortMultiKeys)](#example_sortMultiKeys)
+- [Package (SortWrapper)](#example_sortWrapper)
 
 ### Package files
  [search.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/search.go) [sort.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go) [zfuncversion.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/zfuncversion.go)
@@ -435,7 +435,7 @@ order (not-a-number values are treated as less than other values).
 
 Ints sorts a slice of ints in increasing order.
 
-<a id="example_Ints"></a>
+<a id="exampleInts"></a>
 Example:
 
     s := []int{5, 2, 6, 3, 1, 4} // unsorted
@@ -505,7 +505,7 @@ As a more whimsical example, this program guesses your number:
     	fmt.Printf("Your number is %d.\n", answer)
     }
 
-<a id="example_Search"></a>
+<a id="exampleSearch"></a>
 Example:
 
     a := []int{1, 3, 6, 10, 15, 21, 28, 36, 45, 55}
@@ -521,7 +521,7 @@ Example:
     // found 6 at index 2 in [1 3 6 10 15 21 28 36 45 55]
 
 
-<a id="example_Search_descendingOrder"></a>
+<a id="exampleSearch_descendingOrder"></a>
 Example:
 
     a := []int{55, 45, 36, 28, 21, 15, 10, 6, 3, 1}
@@ -570,7 +570,7 @@ The sort is not guaranteed to be stable. For a stable sort, use SliceStable.
 
 The function panics if the provided interface is not a slice.
 
-<a id="example_Slice"></a>
+<a id="exampleSlice"></a>
 Example:
 
     people := []struct {
@@ -607,7 +607,7 @@ keeping the original order of equal elements.
 
 The function panics if the provided interface is not a slice.
 
-<a id="example_SliceStable"></a>
+<a id="exampleSliceStable"></a>
 Example:
 
     people := []struct {
@@ -657,7 +657,7 @@ O(n*log(n)*log(n)) calls to data.Swap.
 
 Strings sorts a slice of strings in increasing order.
 
-<a id="example_Strings"></a>
+<a id="exampleStrings"></a>
 Example:
 
     s := []string{"Go", "Bravo", "Gopher", "Alpha", "Grin", "Delta"}
@@ -761,7 +761,7 @@ collection be enumerated by an integer index.
 
 Reverse returns the reverse order for data.
 
-<a id="example_Reverse"></a>
+<a id="exampleReverse"></a>
 Example:
 
     s := []int{5, 2, 6, 3, 1, 4} // unsorted

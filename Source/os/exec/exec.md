@@ -42,17 +42,17 @@ godoc.org.
 
 ### Examples
 
-- [Cmd.CombinedOutput](#example_Cmd_CombinedOutput)
-- [Cmd.Output](#example_Cmd_Output)
-- [Cmd.Run](#example_Cmd_Run)
-- [Cmd.Start](#example_Cmd_Start)
-- [Cmd.StderrPipe](#example_Cmd_StderrPipe)
-- [Cmd.StdinPipe](#example_Cmd_StdinPipe)
-- [Cmd.StdoutPipe](#example_Cmd_StdoutPipe)
-- [Command](#example_Command)
-- [CommandContext](#example_CommandContext)
-- [Command (Environment)](#example_Command_environment)
-- [LookPath](#example_LookPath)
+- [Cmd.CombinedOutput](#exampleCmd_CombinedOutput)
+- [Cmd.Output](#exampleCmd_Output)
+- [Cmd.Run](#exampleCmd_Run)
+- [Cmd.Start](#exampleCmd_Start)
+- [Cmd.StderrPipe](#exampleCmd_StderrPipe)
+- [Cmd.StdinPipe](#exampleCmd_StdinPipe)
+- [Cmd.StdoutPipe](#exampleCmd_StdoutPipe)
+- [Command](#exampleCommand)
+- [CommandContext](#exampleCommandContext)
+- [Command (Environment)](#exampleCommand_environment)
+- [LookPath](#exampleLookPath)
 
 ### Package files
  [exec.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go) [exec_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec_unix.go) [lp_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/lp_unix.go)
@@ -73,7 +73,7 @@ by the PATH environment variable. If file contains a slash, it is tried directly
 and the PATH is not consulted. The result may be an absolute path or a path
 relative to the current directory.
 
-<a id="example_LookPath"></a>
+<a id="exampleLookPath"></a>
 Example:
 
     path, err := exec.LookPath("fortune")
@@ -171,7 +171,7 @@ the elements of arg, so arg should not include the command name itself. For
 example, Command("echo", "hello"). Args[0] is always name, not the possibly
 resolved Path.
 
-<a id="example_Command"></a>
+<a id="exampleCommand"></a>
 Example:
 
     cmd := exec.Command("tr", "a-z", "A-Z")
@@ -185,7 +185,7 @@ Example:
     fmt.Printf("in all caps: %q\n", out.String())
 
 
-<a id="example_Command_environment"></a>
+<a id="exampleCommand_environment"></a>
 Example:
 
     cmd := exec.Command("prog")
@@ -206,7 +206,7 @@ CommandContext is like Command but includes a context.
 The provided context is used to kill the process (by calling os.Process.Kill) if
 the context becomes done before the command completes on its own.
 
-<a id="example_CommandContext"></a>
+<a id="exampleCommandContext"></a>
 Example:
 
     ctx, cancel := context.WithTimeout(context.Background(), 100*time.Millisecond)
@@ -224,7 +224,7 @@ Example:
 CombinedOutput runs the command and returns its combined standard output and
 standard error.
 
-<a id="example_Cmd_CombinedOutput"></a>
+<a id="exampleCmd_CombinedOutput"></a>
 Example:
 
     cmd := exec.Command("sh", "-c", "echo stdout; echo 1>&2 stderr")
@@ -242,7 +242,7 @@ Output runs the command and returns its standard output. Any returned error will
 usually be of type *ExitError. If c.Stderr was nil, Output populates
 ExitError.Stderr.
 
-<a id="example_Cmd_Output"></a>
+<a id="exampleCmd_Output"></a>
 Example:
 
     out, err := exec.Command("date").Output()
@@ -263,7 +263,7 @@ stdout, and stderr, and exits with a zero exit status.
 If the command starts but does not complete successfully, the error is of type
 *ExitError. Other error types may be returned for other situations.
 
-<a id="example_Cmd_Run"></a>
+<a id="exampleCmd_Run"></a>
 Example:
 
     cmd := exec.Command("sleep", "1")
@@ -280,7 +280,7 @@ Start starts the specified command but does not wait for it to complete.
 The Wait method will return the exit code and release associated resources once
 the command exits.
 
-<a id="example_Cmd_Start"></a>
+<a id="exampleCmd_Start"></a>
 Example:
 
     cmd := exec.Command("sleep", "5")
@@ -305,7 +305,7 @@ call Wait before all reads from the pipe have completed. For the same reason, it
 is incorrect to use Run when using StderrPipe. See the StdoutPipe example for
 idiomatic usage.
 
-<a id="example_Cmd_StderrPipe"></a>
+<a id="exampleCmd_StderrPipe"></a>
 Example:
 
     cmd := exec.Command("sh", "-c", "echo stdout; echo 1>&2 stderr")
@@ -335,7 +335,7 @@ the command exit. A caller need only call Close to force the pipe to close
 sooner. For example, if the command being run will not exit until standard input
 is closed, the caller must close the pipe.
 
-<a id="example_Cmd_StdinPipe"></a>
+<a id="exampleCmd_StdinPipe"></a>
 Example:
 
     cmd := exec.Command("cat")
@@ -369,7 +369,7 @@ call Wait before all reads from the pipe have completed. For the same reason, it
 is incorrect to call Run when using StdoutPipe. See the example for idiomatic
 usage.
 
-<a id="example_Cmd_StdoutPipe"></a>
+<a id="exampleCmd_StdoutPipe"></a>
 Example:
 
     cmd := exec.Command("echo", "-n", `{"Name": "Bob", "Age": 32}`)

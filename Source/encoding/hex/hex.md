@@ -23,12 +23,12 @@ Package hex implements hexadecimal encoding and decoding.
 
 ### Examples
 
-- [Decode](#example_Decode)
-- [DecodeString](#example_DecodeString)
-- [Dump](#example_Dump)
-- [Dumper](#example_Dumper)
-- [Encode](#example_Encode)
-- [EncodeToString](#example_EncodeToString)
+- [Decode](#exampleDecode)
+- [DecodeString](#exampleDecodeString)
+- [Dump](#exampleDump)
+- [Dumper](#exampleDumper)
+- [Encode](#exampleEncode)
+- [EncodeToString](#exampleEncodeToString)
 
 ### Package files
  [hex.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go)
@@ -49,7 +49,7 @@ of bytes written to dst.
 Decode expects that src contain only hexadecimal characters and that src should
 have an even length.
 
-<a id="example_Decode"></a>
+<a id="exampleDecode"></a>
 Example:
 
     src := []byte("48656c6c6f20476f7068657221")
@@ -71,7 +71,7 @@ Example:
 
 DecodeString returns the bytes represented by the hexadecimal string s.
 
-<a id="example_DecodeString"></a>
+<a id="exampleDecodeString"></a>
 Example:
 
     const s = "48656c6c6f20476f7068657221"
@@ -99,7 +99,7 @@ returns x / 2.
 Dump returns a string that contains a hex dump of the given data. The format of
 the hex dump matches the output of `hexdump -C` on the command line.
 
-<a id="example_Dump"></a>
+<a id="exampleDump"></a>
 Example:
 
     content := []byte("Go is an open source programming language.")
@@ -118,7 +118,7 @@ Example:
 Dumper returns a WriteCloser that writes a hex dump of all written data to w.
 The format of the dump matches the output of `hexdump -C` on the command line.
 
-<a id="example_Dumper"></a>
+<a id="exampleDumper"></a>
 Example:
 
     lines := []string{
@@ -152,7 +152,7 @@ Encode encodes src into EncodedLen(len(src)) bytes of dst. As a convenience, it
 returns the number of bytes written to dst, but this value is always
 EncodedLen(len(src)). Encode implements hexadecimal encoding.
 
-<a id="example_Encode"></a>
+<a id="exampleEncode"></a>
 Example:
 
     src := []byte("Hello Gopher!")
@@ -171,7 +171,7 @@ Example:
 
 EncodeToString returns the hexadecimal encoding of src.
 
-<a id="example_EncodeToString"></a>
+<a id="exampleEncodeToString"></a>
 Example:
 
     src := []byte("Hello")

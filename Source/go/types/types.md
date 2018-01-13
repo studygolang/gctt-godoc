@@ -295,9 +295,9 @@ For a tutorial, see https://golang.org/s/types-tutorial.
 
 ### Examples
 
-- [Info](#example_Info)
-- [MethodSet](#example_MethodSet)
-- [Scope](#example_Scope)
+- [Info](#exampleInfo)
+- [MethodSet](#exampleMethodSet)
+- [Scope](#exampleScope)
 
 ### Package files
  [api.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go) [assignments.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/assignments.go) [builtins.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/builtins.go) [call.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/call.go) [check.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/check.go) [conversions.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/conversions.go) [decl.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/decl.go) [errors.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/errors.go) [eval.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/eval.go) [expr.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/expr.go) [exprstring.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/exprstring.go) [initorder.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/initorder.go) [labels.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/labels.go) [lookup.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/lookup.go) [methodset.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/methodset.go) [object.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go) [objset.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/objset.go) [operand.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/operand.go) [ordering.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/ordering.go) [package.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/package.go) [predicates.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/predicates.go) [resolver.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/resolver.go) [return.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/return.go) [scope.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go) [selection.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/selection.go) [sizes.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/sizes.go) [stmt.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/stmt.go) [type.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go) [typestring.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/typestring.go) [typexpr.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/typexpr.go) [universe.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/universe.go)
@@ -1078,7 +1078,7 @@ Info holds result type information for a type-checked package. Only the
 information for which a map is provided is collected. If the package has type
 errors, the collected information may be incomplete.
 
-<a id="example_Info"></a>
+<a id="exampleInfo"></a>
 Example:
 
     // Parse a single source file.
@@ -1427,7 +1427,7 @@ A MethodSet is an ordered set of concrete or abstract (interface) methods; a
 method is a MethodVal selection, and they are ordered by ascending m.Obj().Id().
 The zero value for a MethodSet is a ready-to-use empty method set.
 
-<a id="example_MethodSet"></a>
+<a id="exampleMethodSet"></a>
 Example:
 
     // Parse a single source file.
@@ -1855,7 +1855,7 @@ A Scope maintains a set of objects and links to its containing (parent) and
 contained (children) scopes. Objects may be inserted and looked up by name. The
 zero value for Scope is a ready-to-use empty scope.
 
-<a id="example_Scope"></a>
+<a id="exampleScope"></a>
 Example:
 
     // Parse the source files for a package.

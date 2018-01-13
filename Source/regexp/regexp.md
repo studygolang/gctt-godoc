@@ -64,7 +64,7 @@ RuneReader may read arbitrarily far into the input before returning.
 
 (There are a few other methods that do not match this pattern.)
 
-<a id="example_"></a>
+<a id="example"></a>
 Example:
 
     // Compile the expression once, usually at init time.
@@ -131,19 +131,19 @@ Example:
 
 ### Examples
 
-- [Package](#example_)
-- [MatchString](#example_MatchString)
-- [Regexp.FindAllString](#example_Regexp_FindAllString)
-- [Regexp.FindAllStringSubmatch](#example_Regexp_FindAllStringSubmatch)
-- [Regexp.FindAllStringSubmatchIndex](#example_Regexp_FindAllStringSubmatchIndex)
-- [Regexp.FindString](#example_Regexp_FindString)
-- [Regexp.FindStringIndex](#example_Regexp_FindStringIndex)
-- [Regexp.FindStringSubmatch](#example_Regexp_FindStringSubmatch)
-- [Regexp.MatchString](#example_Regexp_MatchString)
-- [Regexp.ReplaceAllLiteralString](#example_Regexp_ReplaceAllLiteralString)
-- [Regexp.ReplaceAllString](#example_Regexp_ReplaceAllString)
-- [Regexp.Split](#example_Regexp_Split)
-- [Regexp.SubexpNames](#example_Regexp_SubexpNames)
+- [Package](#example)
+- [MatchString](#exampleMatchString)
+- [Regexp.FindAllString](#exampleRegexp_FindAllString)
+- [Regexp.FindAllStringSubmatch](#exampleRegexp_FindAllStringSubmatch)
+- [Regexp.FindAllStringSubmatchIndex](#exampleRegexp_FindAllStringSubmatchIndex)
+- [Regexp.FindString](#exampleRegexp_FindString)
+- [Regexp.FindStringIndex](#exampleRegexp_FindStringIndex)
+- [Regexp.FindStringSubmatch](#exampleRegexp_FindStringSubmatch)
+- [Regexp.MatchString](#exampleRegexp_MatchString)
+- [Regexp.ReplaceAllLiteralString](#exampleRegexp_ReplaceAllLiteralString)
+- [Regexp.ReplaceAllString](#exampleRegexp_ReplaceAllString)
+- [Regexp.Split](#exampleRegexp_Split)
+- [Regexp.SubexpNames](#exampleRegexp_SubexpNames)
 
 ### Package files
  [backtrack.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/backtrack.go) [exec.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/exec.go) [onepass.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/onepass.go) [regexp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go)
@@ -170,7 +170,7 @@ interface.
 MatchString checks whether a textual regular expression matches a string. More
 complicated queries need to use Compile and the full Regexp interface.
 
-<a id="example_MatchString"></a>
+<a id="exampleMatchString"></a>
 Example:
 
     matched, err := regexp.MatchString("foo.*", "seafood")
@@ -321,7 +321,7 @@ FindAllString is the 'All' version of FindString; it returns a slice of all
 successive matches of the expression, as defined by the 'All' description in the
 package comment. A return value of nil indicates no match.
 
-<a id="example_Regexp_FindAllString"></a>
+<a id="exampleRegexp_FindAllString"></a>
 Example:
 
     re := regexp.MustCompile("a.")
@@ -351,7 +351,7 @@ FindAllStringSubmatch is the 'All' version of FindStringSubmatch; it returns a
 slice of all successive matches of the expression, as defined by the 'All'
 description in the package comment. A return value of nil indicates no match.
 
-<a id="example_Regexp_FindAllStringSubmatch"></a>
+<a id="exampleRegexp_FindAllStringSubmatch"></a>
 Example:
 
     re := regexp.MustCompile("a(x*)b")
@@ -374,7 +374,7 @@ returns a slice of all successive matches of the expression, as defined by the
 'All' description in the package comment. A return value of nil indicates no
 match.
 
-<a id="example_Regexp_FindAllStringSubmatchIndex"></a>
+<a id="exampleRegexp_FindAllStringSubmatchIndex"></a>
 Example:
 
     re := regexp.MustCompile("a(x*)b")
@@ -445,7 +445,7 @@ but it will also be empty if the regular expression successfully matches an
 empty string. Use FindStringIndex or FindStringSubmatch if it is necessary to
 distinguish these cases.
 
-<a id="example_Regexp_FindString"></a>
+<a id="exampleRegexp_FindString"></a>
 Example:
 
     re := regexp.MustCompile("foo.?")
@@ -463,7 +463,7 @@ FindStringIndex returns a two-element slice of integers defining the location of
 the leftmost match in s of the regular expression. The match itself is at
 s[loc[0]:loc[1]]. A return value of nil indicates no match.
 
-<a id="example_Regexp_FindStringIndex"></a>
+<a id="exampleRegexp_FindStringIndex"></a>
 Example:
 
     re := regexp.MustCompile("ab?")
@@ -482,7 +482,7 @@ match of the regular expression in s and the matches, if any, of its
 subexpressions, as defined by the 'Submatch' description in the package comment.
 A return value of nil indicates no match.
 
-<a id="example_Regexp_FindStringSubmatch"></a>
+<a id="exampleRegexp_FindStringSubmatch"></a>
 Example:
 
     re := regexp.MustCompile("a(x*)b(y|z)c")
@@ -555,7 +555,7 @@ MatchReader reports whether the Regexp matches the text read by the RuneReader.
 
 MatchString reports whether the Regexp matches the string s.
 
-<a id="example_Regexp_MatchString"></a>
+<a id="exampleRegexp_MatchString"></a>
 Example:
 
     re := regexp.MustCompile("(gopher){2}")
@@ -606,7 +606,7 @@ ReplaceAllLiteralString returns a copy of src, replacing matches of the Regexp
 with the replacement string repl. The replacement repl is substituted directly,
 without using Expand.
 
-<a id="example_Regexp_ReplaceAllLiteralString"></a>
+<a id="exampleRegexp_ReplaceAllLiteralString"></a>
 Example:
 
     re := regexp.MustCompile("a(x*)b")
@@ -626,7 +626,7 @@ ReplaceAllString returns a copy of src, replacing matches of the Regexp with the
 replacement string repl. Inside repl, $ signs are interpreted as in Expand, so
 for instance $1 represents the text of the first submatch.
 
-<a id="example_Regexp_ReplaceAllString"></a>
+<a id="exampleRegexp_ReplaceAllString"></a>
 Example:
 
     re := regexp.MustCompile("a(x*)b")
@@ -671,7 +671,7 @@ The count determines the number of substrings to return:
     n == 0: the result is nil (zero substrings)
     n < 0: all substrings
 
-<a id="example_Regexp_Split"></a>
+<a id="exampleRegexp_Split"></a>
 Example:
 
     a := regexp.MustCompile("a")
@@ -710,7 +710,7 @@ match slice, the name for m[i] is SubexpNames()[i]. Since the Regexp as a whole
 cannot be named, names[0] is always the empty string. The slice should not be
 modified.
 
-<a id="example_Regexp_SubexpNames"></a>
+<a id="exampleRegexp_SubexpNames"></a>
 Example:
 
     re := regexp.MustCompile("(?P<first>[a-zA-Z]+) (?P<last>[a-zA-Z]+)")

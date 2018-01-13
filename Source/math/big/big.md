@@ -94,73 +94,73 @@ formats (see the respective SetString documentation).
 Finally, *Int, *Rat, and *Float satisfy the fmt package's Scanner interface for
 scanning and (except for *Rat) the Formatter interface for formatted printing.
 
-<a id="example__eConvergents"></a>
+<a id="example_eConvergents"></a>
 Example:
 
-package big_test
+    package big_test
 
-import (
-    "fmt"
-    "math/big"
-)
+    import (
+        "fmt"
+        "math/big"
+    )
 
-// Use the classic continued fraction for e
-//     e = [1; 0, 1, 1, 2, 1, 1, ... 2n, 1, 1, ...]
-// i.e., for the nth term, use
-//     1          if   n mod 3 != 1
-//  (n-1)/3 * 2   if   n mod 3 == 1
-func recur(n, lim int64) *big.Rat {
-    term := new(big.Rat)
-    if n%3 != 1 {
-        term.SetInt64(1)
-    } else {
-        term.SetInt64((n - 1) / 3 * 2)
+    // Use the classic continued fraction for e
+    //     e = [1; 0, 1, 1, 2, 1, 1, ... 2n, 1, 1, ...]
+    // i.e., for the nth term, use
+    //     1          if   n mod 3 != 1
+    //  (n-1)/3 * 2   if   n mod 3 == 1
+    func recur(n, lim int64) *big.Rat {
+        term := new(big.Rat)
+        if n%3 != 1 {
+            term.SetInt64(1)
+        } else {
+            term.SetInt64((n - 1) / 3 * 2)
+        }
+
+        if n > lim {
+            return term
+        }
+
+        // Directly initialize frac as the fractional
+        // inverse of the result of recur.
+        frac := new(big.Rat).Inv(recur(n+1, lim))
+
+        return term.Add(term, frac)
     }
 
-    if n > lim {
-        return term
+    // This example demonstrates how to use big.Rat to compute the
+    // first 15 terms in the sequence of rational convergents for
+    // the constant e (base of natural logarithm).
+    func Example_eConvergents() {
+        for i := 1; i <= 15; i++ {
+            r := recur(0, int64(i))
+
+            // Print r both as a fraction and as a floating-point number.
+            // Since big.Rat implements fmt.Formatter, we can use %-13s to
+            // get a left-aligned string representation of the fraction.
+            fmt.Printf("%-13s = %s\n", r, r.FloatString(8))
+        }
+
+        // Output:
+        // 2/1           = 2.00000000
+        // 3/1           = 3.00000000
+        // 8/3           = 2.66666667
+        // 11/4          = 2.75000000
+        // 19/7          = 2.71428571
+        // 87/32         = 2.71875000
+        // 106/39        = 2.71794872
+        // 193/71        = 2.71830986
+        // 1264/465      = 2.71827957
+        // 1457/536      = 2.71828358
+        // 2721/1001     = 2.71828172
+        // 23225/8544    = 2.71828184
+        // 25946/9545    = 2.71828182
+        // 49171/18089   = 2.71828183
+        // 517656/190435 = 2.71828183
     }
 
-    // Directly initialize frac as the fractional
-    // inverse of the result of recur.
-    frac := new(big.Rat).Inv(recur(n+1, lim))
 
-    return term.Add(term, frac)
-}
-
-// This example demonstrates how to use big.Rat to compute the
-// first 15 terms in the sequence of rational convergents for
-// the constant e (base of natural logarithm).
-func Example_eConvergents() {
-    for i := 1; i <= 15; i++ {
-        r := recur(0, int64(i))
-
-        // Print r both as a fraction and as a floating-point number.
-        // Since big.Rat implements fmt.Formatter, we can use %-13s to
-        // get a left-aligned string representation of the fraction.
-        fmt.Printf("%-13s = %s\n", r, r.FloatString(8))
-    }
-
-    // Output:
-    // 2/1           = 2.00000000
-    // 3/1           = 3.00000000
-    // 8/3           = 2.66666667
-    // 11/4          = 2.75000000
-    // 19/7          = 2.71428571
-    // 87/32         = 2.71875000
-    // 106/39        = 2.71794872
-    // 193/71        = 2.71830986
-    // 1264/465      = 2.71827957
-    // 1457/536      = 2.71828358
-    // 2721/1001     = 2.71828172
-    // 23225/8544    = 2.71828184
-    // 25946/9545    = 2.71828182
-    // 49171/18089   = 2.71828183
-    // 517656/190435 = 2.71828183
-}
-
-
-<a id="example__fibonacci"></a>
+<a id="example_fibonacci"></a>
 Example:
 
     // Initialize two big ints with the first two numbers in the sequence.
@@ -190,7 +190,7 @@ Example:
     // false
 
 
-<a id="example__sqrt2"></a>
+<a id="example_sqrt2"></a>
 Example:
 
     // We'll do computations with 200 bits of precision in the mantissa.
@@ -385,18 +385,18 @@ Example:
 
 ### Examples
 
-- [Float.Add](#example_Float_Add)
-- [Float.Cmp](#example_Float_Cmp)
-- [Float.Scan](#example_Float_Scan)
-- [Float (Shift)](#example_Float_shift)
-- [Int.Scan](#example_Int_Scan)
-- [Int.SetString](#example_Int_SetString)
-- [Rat.Scan](#example_Rat_Scan)
-- [Rat.SetString](#example_Rat_SetString)
-- [RoundingMode](#example_RoundingMode)
-- [Package (EConvergents)](#example__eConvergents)
-- [Package (Fibonacci)](#example__fibonacci)
-- [Package (Sqrt2)](#example__sqrt2)
+- [Float.Add](#exampleFloat_Add)
+- [Float.Cmp](#exampleFloat_Cmp)
+- [Float.Scan](#exampleFloat_Scan)
+- [Float (Shift)](#exampleFloat_shift)
+- [Int.Scan](#exampleInt_Scan)
+- [Int.SetString](#exampleInt_SetString)
+- [Rat.Scan](#exampleRat_Scan)
+- [Rat.SetString](#exampleRat_SetString)
+- [RoundingMode](#exampleRoundingMode)
+- [Package (EConvergents)](#example_eConvergents)
+- [Package (Fibonacci)](#example_fibonacci)
+- [Package (Sqrt2)](#example_sqrt2)
 
 ### Package files
  [accuracy_string.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/accuracy_string.go) [arith.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/arith.go) [arith_decl.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/arith_decl.go) [decimal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/decimal.go) [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/doc.go) [float.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go) [floatconv.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/floatconv.go) [floatmarsh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/floatmarsh.go) [ftoa.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ftoa.go) [int.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go) [intconv.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intconv.go) [intmarsh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intmarsh.go) [nat.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/nat.go) [natconv.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/natconv.go) [prime.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/prime.go) [rat.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go) [ratconv.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ratconv.go) [ratmarsh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ratmarsh.go) [roundingmode_string.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/roundingmode_string.go)
@@ -498,7 +498,7 @@ IEEE-754 because Float exponents have a much larger range.
 The zero (uninitialized) value for a Float is ready to use and represents the
 number +0.0 exactly, with precision 0 and rounding mode ToNearestEven.
 
-<a id="example_Float_shift"></a>
+<a id="exampleFloat_shift"></a>
 Example:
 
     // Implement Float "shift" by modifying the (binary) exponents directly.
@@ -561,7 +561,7 @@ undefined in that case.
 BUG(gri) When rounding ToNegativeInf, the sign of Float values rounded to 0 is
 incorrect.
 
-<a id="example_Float_Add"></a>
+<a id="exampleFloat_Add"></a>
 Example:
 
     // Operate on numbers of different precision.
@@ -595,7 +595,7 @@ Cmp compares x and y and returns:
      0 if x == y (incl. -0 == 0, -Inf == -Inf, and +Inf == +Inf)
     +1 if x >  y
 
-<a id="example_Float_Cmp"></a>
+<a id="exampleFloat_Cmp"></a>
 Example:
 
     inf := math.Inf(1)
@@ -868,7 +868,7 @@ number. It accepts formats whose verbs are supported by fmt.Scan for floating
 point values, which are: 'b' (binary), 'e', 'E', 'f', 'F', 'g' and 'G'. Scan
 doesn't handle ±Inf.
 
-<a id="example_Float_Scan"></a>
+<a id="exampleFloat_Scan"></a>
 Example:
 
     // The Scan function is rarely used directly;
@@ -1385,7 +1385,7 @@ Scan is a support routine for fmt.Scanner; it sets z to the value of the scanned
 number. It accepts the formats 'b' (binary), 'o' (octal), 'd' (decimal), 'x'
 (lowercase hexadecimal), and 'X' (uppercase hexadecimal).
 
-<a id="example_Int_Scan"></a>
+<a id="exampleInt_Scan"></a>
 Example:
 
     // The Scan function is rarely used directly;
@@ -1450,7 +1450,7 @@ the string prefix determines the actual conversion base. A prefix of ``0x'' or
 ``0X'' selects base 16; the ``0'' prefix selects base 8, and a ``0b'' or ``0B''
 prefix selects base 2. Otherwise the selected base is 10.
 
-<a id="example_Int_SetString"></a>
+<a id="exampleInt_SetString"></a>
 Example:
 
     i := new(big.Int)
@@ -1667,7 +1667,7 @@ in the form "a" if b == 1.
 Scan is a support routine for fmt.Scanner. It accepts the formats 'e', 'E', 'f',
 'F', 'g', 'G', and 'v'. All formats are equivalent.
 
-<a id="example_Rat_Scan"></a>
+<a id="exampleRat_Scan"></a>
 Example:
 
     // The Scan function is rarely used directly;
@@ -1728,7 +1728,7 @@ optionally followed by an exponent. The entire string (not just a prefix) must
 be valid for success. If the operation failed, the value of z is undefined but
 the returned value is nil.
 
-<a id="example_Rat_SetString"></a>
+<a id="exampleRat_SetString"></a>
 Example:
 
     r := new(big.Rat)
@@ -1783,7 +1783,7 @@ Float's Accuracy.
 
 These constants define supported rounding modes.
 
-<a id="example_RoundingMode"></a>
+<a id="exampleRoundingMode"></a>
 Example:
 
     operands := []float64{2.6, 2.5, 2.1, -2.1, -2.5, -2.6}

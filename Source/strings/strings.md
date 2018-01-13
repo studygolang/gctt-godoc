@@ -75,41 +75,41 @@ For information about UTF-8 strings in Go, see https://blog.golang.org/strings.
 
 ### Examples
 
-- [Compare](#example_Compare)
-- [Contains](#example_Contains)
-- [ContainsAny](#example_ContainsAny)
-- [ContainsRune](#example_ContainsRune)
-- [Count](#example_Count)
-- [EqualFold](#example_EqualFold)
-- [Fields](#example_Fields)
-- [FieldsFunc](#example_FieldsFunc)
-- [HasPrefix](#example_HasPrefix)
-- [HasSuffix](#example_HasSuffix)
-- [Index](#example_Index)
-- [IndexAny](#example_IndexAny)
-- [IndexByte](#example_IndexByte)
-- [IndexFunc](#example_IndexFunc)
-- [IndexRune](#example_IndexRune)
-- [Join](#example_Join)
-- [LastIndex](#example_LastIndex)
-- [LastIndexAny](#example_LastIndexAny)
-- [Map](#example_Map)
-- [NewReplacer](#example_NewReplacer)
-- [Repeat](#example_Repeat)
-- [Replace](#example_Replace)
-- [Split](#example_Split)
-- [SplitAfter](#example_SplitAfter)
-- [SplitAfterN](#example_SplitAfterN)
-- [SplitN](#example_SplitN)
-- [Title](#example_Title)
-- [ToLower](#example_ToLower)
-- [ToTitle](#example_ToTitle)
-- [ToUpper](#example_ToUpper)
-- [Trim](#example_Trim)
-- [TrimFunc](#example_TrimFunc)
-- [TrimPrefix](#example_TrimPrefix)
-- [TrimSpace](#example_TrimSpace)
-- [TrimSuffix](#example_TrimSuffix)
+- [Compare](#exampleCompare)
+- [Contains](#exampleContains)
+- [ContainsAny](#exampleContainsAny)
+- [ContainsRune](#exampleContainsRune)
+- [Count](#exampleCount)
+- [EqualFold](#exampleEqualFold)
+- [Fields](#exampleFields)
+- [FieldsFunc](#exampleFieldsFunc)
+- [HasPrefix](#exampleHasPrefix)
+- [HasSuffix](#exampleHasSuffix)
+- [Index](#exampleIndex)
+- [IndexAny](#exampleIndexAny)
+- [IndexByte](#exampleIndexByte)
+- [IndexFunc](#exampleIndexFunc)
+- [IndexRune](#exampleIndexRune)
+- [Join](#exampleJoin)
+- [LastIndex](#exampleLastIndex)
+- [LastIndexAny](#exampleLastIndexAny)
+- [Map](#exampleMap)
+- [NewReplacer](#exampleNewReplacer)
+- [Repeat](#exampleRepeat)
+- [Replace](#exampleReplace)
+- [Split](#exampleSplit)
+- [SplitAfter](#exampleSplitAfter)
+- [SplitAfterN](#exampleSplitAfterN)
+- [SplitN](#exampleSplitN)
+- [Title](#exampleTitle)
+- [ToLower](#exampleToLower)
+- [ToTitle](#exampleToTitle)
+- [ToUpper](#exampleToUpper)
+- [Trim](#exampleTrim)
+- [TrimFunc](#exampleTrimFunc)
+- [TrimPrefix](#exampleTrimPrefix)
+- [TrimSpace](#exampleTrimSpace)
+- [TrimSuffix](#exampleTrimSuffix)
 
 ### Package files
  [compare.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/compare.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go) [replace.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/replace.go) [search.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/search.go) [strings.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go) [strings_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_amd64.go) [strings_decl.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_decl.go)
@@ -125,7 +125,7 @@ Compare is included only for symmetry with package bytes. It is usually clearer
 and always faster to use the built-in string comparison operators ==, <, >, and
 so on.
 
-<a id="example_Compare"></a>
+<a id="exampleCompare"></a>
 Example:
 
     fmt.Println(strings.Compare("a", "b"))
@@ -142,7 +142,7 @@ Example:
 
 Contains reports whether substr is within s.
 
-<a id="example_Contains"></a>
+<a id="exampleContains"></a>
 Example:
 
     fmt.Println(strings.Contains("seafood", "foo"))
@@ -161,7 +161,7 @@ Example:
 
 ContainsAny reports whether any Unicode code points in chars are within s.
 
-<a id="example_ContainsAny"></a>
+<a id="exampleContainsAny"></a>
 Example:
 
     fmt.Println(strings.ContainsAny("team", "i"))
@@ -180,7 +180,7 @@ Example:
 
 ContainsRune reports whether the Unicode code point r is within s.
 
-<a id="example_ContainsRune"></a>
+<a id="exampleContainsRune"></a>
 Example:
 
     // Finds whether a string contains a particular Unicode code point.
@@ -198,7 +198,7 @@ Example:
 Count counts the number of non-overlapping instances of substr in s. If substr
 is an empty string, Count returns 1 + the number of Unicode code points in s.
 
-<a id="example_Count"></a>
+<a id="exampleCount"></a>
 Example:
 
     fmt.Println(strings.Count("cheese", "e"))
@@ -214,7 +214,7 @@ Example:
 EqualFold reports whether s and t, interpreted as UTF-8 strings, are equal under
 Unicode case-folding.
 
-<a id="example_EqualFold"></a>
+<a id="exampleEqualFold"></a>
 Example:
 
     fmt.Println(strings.EqualFold("Go", "go"))
@@ -228,7 +228,7 @@ Fields splits the string s around each instance of one or more consecutive white
 space characters, as defined by unicode.IsSpace, returning an array of
 substrings of s or an empty list if s contains only white space.
 
-<a id="example_Fields"></a>
+<a id="exampleFields"></a>
 Example:
 
     fmt.Printf("Fields are: %q", strings.Fields("  foo bar  baz   "))
@@ -244,7 +244,7 @@ or the string is empty, an empty slice is returned. FieldsFunc makes no
 guarantees about the order in which it calls f(c). If f does not return
 consistent results for a given c, FieldsFunc may crash.
 
-<a id="example_FieldsFunc"></a>
+<a id="exampleFieldsFunc"></a>
 Example:
 
     f := func(c rune) bool {
@@ -259,7 +259,7 @@ Example:
 
 HasPrefix tests whether the string s begins with prefix.
 
-<a id="example_HasPrefix"></a>
+<a id="exampleHasPrefix"></a>
 Example:
 
     fmt.Println(strings.HasPrefix("Gopher", "Go"))
@@ -276,7 +276,7 @@ Example:
 
 HasSuffix tests whether the string s ends with suffix.
 
-<a id="example_HasSuffix"></a>
+<a id="exampleHasSuffix"></a>
 Example:
 
     fmt.Println(strings.HasSuffix("Amigo", "go"))
@@ -296,7 +296,7 @@ Example:
 Index returns the index of the first instance of substr in s, or -1 if substr is
 not present in s.
 
-<a id="example_Index"></a>
+<a id="exampleIndex"></a>
 Example:
 
     fmt.Println(strings.Index("chicken", "ken"))
@@ -312,7 +312,7 @@ Example:
 IndexAny returns the index of the first instance of any Unicode code point from
 chars in s, or -1 if no Unicode code point from chars is present in s.
 
-<a id="example_IndexAny"></a>
+<a id="exampleIndexAny"></a>
 Example:
 
     fmt.Println(strings.IndexAny("chicken", "aeiouy"))
@@ -328,7 +328,7 @@ Example:
 IndexByte returns the index of the first instance of c in s, or -1 if c is not
 present in s.
 
-<a id="example_IndexByte"></a>
+<a id="exampleIndexByte"></a>
 Example:
 
     fmt.Println(strings.IndexByte("golang", 'g'))
@@ -346,7 +346,7 @@ Example:
 IndexFunc returns the index into s of the first Unicode code point satisfying
 f(c), or -1 if none do.
 
-<a id="example_IndexFunc"></a>
+<a id="exampleIndexFunc"></a>
 Example:
 
     f := func(c rune) bool {
@@ -366,7 +366,7 @@ IndexRune returns the index of the first instance of the Unicode code point r,
 or -1 if rune is not present in s. If r is utf8.RuneError, it returns the first
 instance of any invalid UTF-8 byte sequence.
 
-<a id="example_IndexRune"></a>
+<a id="exampleIndexRune"></a>
 Example:
 
     fmt.Println(strings.IndexRune("chicken", 'k'))
@@ -382,7 +382,7 @@ Example:
 Join concatenates the elements of a to create a single string. The separator
 string sep is placed between elements in the resulting string.
 
-<a id="example_Join"></a>
+<a id="exampleJoin"></a>
 Example:
 
     s := []string{"foo", "bar", "baz"}
@@ -396,7 +396,7 @@ Example:
 LastIndex returns the index of the last instance of substr in s, or -1 if substr
 is not present in s.
 
-<a id="example_LastIndex"></a>
+<a id="exampleLastIndex"></a>
 Example:
 
     fmt.Println(strings.Index("go gopher", "go"))
@@ -414,7 +414,7 @@ Example:
 LastIndexAny returns the index of the last instance of any Unicode code point
 from chars in s, or -1 if no Unicode code point from chars is present in s.
 
-<a id="example_LastIndexAny"></a>
+<a id="exampleLastIndexAny"></a>
 Example:
 
     fmt.Println(strings.LastIndexAny("go gopher", "go"))
@@ -447,7 +447,7 @@ Map returns a copy of the string s with all its characters modified according to
 the mapping function. If mapping returns a negative value, the character is
 dropped from the string with no replacement.
 
-<a id="example_Map"></a>
+<a id="exampleMap"></a>
 Example:
 
     rot13 := func(r rune) rune {
@@ -470,7 +470,7 @@ Repeat returns a new string consisting of count copies of the string s.
 
 It panics if count is negative or if the result of (len(s) * count) overflows.
 
-<a id="example_Repeat"></a>
+<a id="exampleRepeat"></a>
 Example:
 
     fmt.Println("ba" + strings.Repeat("na", 2))
@@ -485,7 +485,7 @@ instances of old replaced by new. If old is empty, it matches at the beginning
 of the string and after each UTF-8 sequence, yielding up to k+1 replacements for
 a k-rune string. If n < 0, there is no limit on the number of replacements.
 
-<a id="example_Replace"></a>
+<a id="exampleReplace"></a>
 Example:
 
     fmt.Println(strings.Replace("oink oink oink", "k", "ky", 2))
@@ -509,7 +509,7 @@ empty, Split returns an empty slice.
 
 It is equivalent to SplitN with a count of -1.
 
-<a id="example_Split"></a>
+<a id="exampleSplit"></a>
 Example:
 
     fmt.Printf("%q\n", strings.Split("a,b,c", ","))
@@ -537,7 +537,7 @@ are empty, SplitAfter returns an empty slice.
 
 It is equivalent to SplitAfterN with a count of -1.
 
-<a id="example_SplitAfter"></a>
+<a id="exampleSplitAfter"></a>
 Example:
 
     fmt.Printf("%q\n", strings.SplitAfter("a,b,c", ","))
@@ -559,7 +559,7 @@ The count determines the number of substrings to return:
 Edge cases for s and sep (for example, empty strings) are handled as described
 in the documentation for SplitAfter.
 
-<a id="example_SplitAfterN"></a>
+<a id="exampleSplitAfterN"></a>
 Example:
 
     fmt.Printf("%q\n", strings.SplitAfterN("a,b,c", ",", 2))
@@ -581,7 +581,7 @@ The count determines the number of substrings to return:
 Edge cases for s and sep (for example, empty strings) are handled as described
 in the documentation for Split.
 
-<a id="example_SplitN"></a>
+<a id="exampleSplitN"></a>
 Example:
 
     fmt.Printf("%q\n", strings.SplitN("a,b,c", ",", 2))
@@ -601,7 +601,7 @@ mapped to their title case.
 BUG(rsc): The rule Title uses for word boundaries does not handle Unicode
 punctuation properly.
 
-<a id="example_Title"></a>
+<a id="exampleTitle"></a>
 Example:
 
     fmt.Println(strings.Title("her royal highness"))
@@ -614,7 +614,7 @@ Example:
 ToLower returns a copy of the string s with all Unicode letters mapped to their
 lower case.
 
-<a id="example_ToLower"></a>
+<a id="exampleToLower"></a>
 Example:
 
     fmt.Println(strings.ToLower("Gopher"))
@@ -634,7 +634,7 @@ their lower case, giving priority to the special casing rules.
 ToTitle returns a copy of the string s with all Unicode letters mapped to their
 title case.
 
-<a id="example_ToTitle"></a>
+<a id="exampleToTitle"></a>
 Example:
 
     fmt.Println(strings.ToTitle("loud noises"))
@@ -657,7 +657,7 @@ their title case, giving priority to the special casing rules.
 ToUpper returns a copy of the string s with all Unicode letters mapped to their
 upper case.
 
-<a id="example_ToUpper"></a>
+<a id="exampleToUpper"></a>
 Example:
 
     fmt.Println(strings.ToUpper("Gopher"))
@@ -677,7 +677,7 @@ their upper case, giving priority to the special casing rules.
 Trim returns a slice of the string s with all leading and trailing Unicode code
 points contained in cutset removed.
 
-<a id="example_Trim"></a>
+<a id="exampleTrim"></a>
 Example:
 
     fmt.Printf("[%q]", strings.Trim(" !!! Achtung! Achtung! !!! ", "! "))
@@ -690,7 +690,7 @@ Example:
 TrimFunc returns a slice of the string s with all leading and trailing Unicode
 code points c satisfying f(c) removed.
 
-<a id="example_TrimFunc"></a>
+<a id="exampleTrimFunc"></a>
 Example:
 
     f := func(c rune) bool {
@@ -720,7 +720,7 @@ points c satisfying f(c) removed.
 TrimPrefix returns s without the provided leading prefix string. If s doesn't
 start with prefix, s is returned unchanged.
 
-<a id="example_TrimPrefix"></a>
+<a id="exampleTrimPrefix"></a>
 Example:
 
     var s = "Goodbye,, world!"
@@ -750,7 +750,7 @@ points c satisfying f(c) removed.
 TrimSpace returns a slice of the string s, with all leading and trailing white
 space removed, as defined by Unicode.
 
-<a id="example_TrimSpace"></a>
+<a id="exampleTrimSpace"></a>
 Example:
 
     fmt.Println(strings.TrimSpace(" \t\n a lone gopher \n\t\r\n"))
@@ -763,7 +763,7 @@ Example:
 TrimSuffix returns s without the provided trailing suffix string. If s doesn't
 end with suffix, s is returned unchanged.
 
-<a id="example_TrimSuffix"></a>
+<a id="exampleTrimSuffix"></a>
 Example:
 
     var s = "Hello, goodbye, etc!"
@@ -866,7 +866,7 @@ use by multiple goroutines.
 NewReplacer returns a new Replacer from a list of old, new string pairs.
 Replacements are performed in order, without overlapping matches.
 
-<a id="example_NewReplacer"></a>
+<a id="exampleNewReplacer"></a>
 Example:
 
     r := strings.NewReplacer("<", "&lt;", ">", "&gt;")

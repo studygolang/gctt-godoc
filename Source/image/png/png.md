@@ -26,8 +26,8 @@ The PNG specification is at http://www.w3.org/TR/PNG/.
 
 ### Examples
 
-- [Decode](#example_Decode)
-- [Encode](#example_Encode)
+- [Decode](#exampleDecode)
+- [Encode](#exampleEncode)
 
 ### Package files
  [paeth.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/paeth.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/reader.go) [writer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/writer.go)
@@ -39,7 +39,7 @@ The PNG specification is at http://www.w3.org/TR/PNG/.
 Decode reads a PNG image from r and returns it as an image.Image. The type of
 Image returned depends on the PNG contents.
 
-<a id="example_Decode"></a>
+<a id="exampleDecode"></a>
 Example:
 
     // This example uses png.Decode which can only decode PNG images.
@@ -77,7 +77,7 @@ decoding the entire image.
 Encode writes the Image m to w in PNG format. Any Image may be encoded, but
 images that are not image.NRGBA might be encoded lossily.
 
-<a id="example_Encode"></a>
+<a id="exampleEncode"></a>
 Example:
 
     const width, height = 256, 256

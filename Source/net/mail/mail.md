@@ -37,9 +37,9 @@ extended by RFC 6532. Notable divergences:
 
 ### Examples
 
-- [ParseAddress](#example_ParseAddress)
-- [ParseAddressList](#example_ParseAddressList)
-- [ReadMessage](#example_ReadMessage)
+- [ParseAddress](#exampleParseAddress)
+- [ParseAddressList](#exampleParseAddressList)
+- [ReadMessage](#exampleReadMessage)
 
 ### Package files
  [message.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/mail/message.go)
@@ -55,7 +55,7 @@ extended by RFC 6532. Notable divergences:
 
 ParseAddressList parses the given string as a list of addresses.
 
-<a id="example_ParseAddressList"></a>
+<a id="exampleParseAddressList"></a>
 Example:
 
     const list = "Alice <alice@example.com>, Bob <bob@example.com>, Eve <eve@example.com>"
@@ -96,7 +96,7 @@ Address represents a single mail address. An address such as "Barry Gibbs
 
 Parses a single RFC 5322 address, e.g. "Barry Gibbs <bg@example.com>"
 
-<a id="example_ParseAddress"></a>
+<a id="exampleParseAddress"></a>
 Example:
 
     e, err := mail.ParseAddress("Alice <alice@example.com>")
@@ -182,7 +182,7 @@ A Message represents a parsed mail message.
 ReadMessage reads a message from r. The headers are parsed, and the body of the
 message will be available for reading from msg.Body.
 
-<a id="example_ReadMessage"></a>
+<a id="exampleReadMessage"></a>
 Example:
 
     msg := `Date: Mon, 23 Jun 2015 11:40:36 -0400

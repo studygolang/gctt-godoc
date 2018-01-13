@@ -38,10 +38,10 @@ slashes regardless of the operating system, see the path package.
 
 ### Examples
 
-- [Join](#example_Join)
-- [Rel](#example_Rel)
-- [Split](#example_Split)
-- [SplitList](#example_SplitList)
+- [Join](#exampleJoin)
+- [Rel](#exampleRel)
+- [Split](#exampleSplit)
+- [SplitList](#exampleSplitList)
 
 ### Package files
  [match.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/match.go) [path.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go) [path_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path_unix.go) [symlink.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/symlink.go) [symlink_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/symlink_unix.go)
@@ -180,7 +180,7 @@ necessary. Join calls Clean on the result; in particular, all empty strings are
 ignored. On Windows, the result is a UNC path if and only if the first path
 element is a UNC path.
 
-<a id="example_Join"></a>
+<a id="exampleJoin"></a>
 Example:
 
     fmt.Println("On Unix:")
@@ -234,7 +234,7 @@ An error is returned if targpath can't be made relative to basepath or if
 knowing the current working directory would be necessary to compute it. Rel
 calls Clean on the result.
 
-<a id="example_Rel"></a>
+<a id="exampleRel"></a>
 Example:
 
     paths := []string{
@@ -265,7 +265,7 @@ a directory and file name component. If there is no Separator in path, Split
 returns an empty dir and file set to path. The returned values have the property
 that path = dir+file.
 
-<a id="example_Split"></a>
+<a id="exampleSplit"></a>
 Example:
 
     paths := []string{
@@ -302,7 +302,7 @@ SplitList splits a list of paths joined by the OS-specific ListSeparator,
 usually found in PATH or GOPATH environment variables. Unlike strings.Split,
 SplitList returns an empty slice when passed an empty string.
 
-<a id="example_SplitList"></a>
+<a id="exampleSplitList"></a>
 Example:
 
     fmt.Println("On Unix:", filepath.SplitList("/a/b/c:/usr/bin"))

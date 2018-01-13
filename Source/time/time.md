@@ -152,17 +152,17 @@ difference will be visible when printing t.String() and u.String().
 
 ### Examples
 
-- [After](#example_After)
-- [Date](#example_Date)
-- [Duration](#example_Duration)
-- [Month](#example_Month)
-- [Parse](#example_Parse)
-- [ParseInLocation](#example_ParseInLocation)
-- [Sleep](#example_Sleep)
-- [Tick](#example_Tick)
-- [Time.Format](#example_Time_Format)
-- [Time.Round](#example_Time_Round)
-- [Time.Truncate](#example_Time_Truncate)
+- [After](#exampleAfter)
+- [Date](#exampleDate)
+- [Duration](#exampleDuration)
+- [Month](#exampleMonth)
+- [Parse](#exampleParse)
+- [ParseInLocation](#exampleParseInLocation)
+- [Sleep](#exampleSleep)
+- [Tick](#exampleTick)
+- [Time.Format](#exampleTime_Format)
+- [Time.Round](#exampleTime_Round)
+- [Time.Truncate](#exampleTime_Truncate)
 
 ### Package files
  [format.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go) [sleep.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go) [sys_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sys_unix.go) [tick.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/tick.go) [time.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go) [zoneinfo.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo.go) [zoneinfo_read.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo_read.go) [zoneinfo_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo_unix.go)
@@ -259,7 +259,7 @@ recovered by the garbage collector until the timer fires. If efficiency is a
 concern, use NewTimer instead and call Timer.Stop if the timer is no longer
 needed.
 
-<a id="example_After"></a>
+<a id="exampleAfter"></a>
 Example:
 
     select {
@@ -276,7 +276,7 @@ Example:
 Sleep pauses the current goroutine for at least the duration d. A negative or
 zero duration causes Sleep to return immediately.
 
-<a id="example_Sleep"></a>
+<a id="exampleSleep"></a>
 Example:
 
     time.Sleep(100 * time.Millisecond)
@@ -291,7 +291,7 @@ the Ticker, be aware that without a way to shut it down the underlying Ticker
 cannot be recovered by the garbage collector; it "leaks". Unlike NewTicker, Tick
 will return nil if d <= 0.
 
-<a id="example_Tick"></a>
+<a id="exampleTick"></a>
 Example:
 
     c := time.Tick(1 * time.Minute)
@@ -329,7 +329,7 @@ To convert an integer number of units to a Duration, multiply:
     seconds := 10
     fmt.Print(time.Duration(seconds)*time.Second) // prints 10s
 
-<a id="example_Duration"></a>
+<a id="exampleDuration"></a>
 Example:
 
     t0 := time.Now()
@@ -479,7 +479,7 @@ A Month specifies a month of the year (January = 1, ...).
 )</pre>
 
 
-<a id="example_Month"></a>
+<a id="exampleMonth"></a>
 Example:
 
     _, month, day := time.Now().Date()
@@ -603,7 +603,7 @@ zones involved in the transition, but it does not guarantee which.
 
 Date panics if loc is nil.
 
-<a id="example_Date"></a>
+<a id="exampleDate"></a>
 Example:
 
     t := time.Date(2009, time.November, 10, 23, 0, 0, 0, time.UTC)
@@ -658,7 +658,7 @@ but the exact instant used in the representation will differ by the actual zone
 offset. To avoid such problems, prefer time layouts that use a numeric zone
 offset, or use ParseInLocation.
 
-<a id="example_Parse"></a>
+<a id="exampleParse"></a>
 Example:
 
     // See the example for time.Format for a thorough description of how
@@ -692,7 +692,7 @@ ParseInLocation interprets the time as in the given location. Second, when given
 a zone offset or abbreviation, Parse tries to match it against the Local
 location; ParseInLocation uses the given location.
 
-<a id="example_ParseInLocation"></a>
+<a id="exampleParseInLocation"></a>
 Example:
 
     loc, _ := time.LoadLocation("Europe/Berlin")
@@ -805,7 +805,7 @@ convenient representations of the reference time. For more information about the
 formats and the definition of the reference time, see the documentation for
 ANSIC and the other constants defined by this package.
 
-<a id="example_Time_Format"></a>
+<a id="exampleTime_Format"></a>
 Example:
 
     // Parse a time value from a string in the standard Unix format.
@@ -1027,7 +1027,7 @@ Round operates on the time as an absolute duration since the zero time; it does
 not operate on the presentation form of the time. Thus, Round(Hour) may return a
 time with a non-zero minute, depending on the time's Location.
 
-<a id="example_Time_Round"></a>
+<a id="exampleTime_Round"></a>
 Example:
 
     t := time.Date(0, 0, 0, 12, 15, 30, 918273645, time.UTC)
@@ -1098,7 +1098,7 @@ Truncate operates on the time as an absolute duration since the zero time; it
 does not operate on the presentation form of the time. Thus, Truncate(Hour) may
 return a time with a non-zero minute, depending on the time's Location.
 
-<a id="example_Time_Truncate"></a>
+<a id="exampleTime_Truncate"></a>
 Example:
 
     t, _ := time.Parse("2006 Jan 02 15:04:05", "2012 Dec 07 12:15:30.918273645")

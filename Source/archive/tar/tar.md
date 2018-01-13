@@ -14,7 +14,7 @@ References:
     http://www.gnu.org/software/tar/manual/html_node/Standard.html
     http://pubs.opengroup.org/onlinepubs/9699919799/utilities/pax.html
 
-<a id="example_"></a>
+<a id="example"></a>
 Example:
 
     // Create a buffer to write our archive to.
@@ -101,7 +101,7 @@ Example:
 
 ### Examples
 
-- [Package](#example_)
+- [Package](#example)
 
 ### Package files
  [common.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/common.go) [format.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/format.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/reader.go) [stat_atim.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/stat_atim.go) [stat_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/stat_unix.go) [strconv.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/strconv.go) [writer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/writer.go)

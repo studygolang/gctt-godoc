@@ -29,7 +29,7 @@ Example use:
 
 ### Examples
 
-- [Index.Lookup](#example_Index_Lookup)
+- [Index.Lookup](#exampleIndex_Lookup)
 
 ### Package files
  [qsufsort.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/index/suffixarray/qsufsort.go) [suffixarray.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/index/suffixarray/suffixarray.go)
@@ -75,7 +75,7 @@ occurs in the indexed data. If n < 0, all occurrences are returned. The result
 is nil if s is empty, s is not found, or n == 0. Lookup time is O(log(N)*len(s)
 + len(result)) where N is the size of the indexed data.
 
-<a id="example_Index_Lookup"></a>
+<a id="exampleIndex_Lookup"></a>
 Example:
 
     index := suffixarray.New([]byte("banana"))

@@ -19,7 +19,7 @@ packages provide more functionality. See:
 
     https://godoc.org/?q=smtp
 
-<a id="example_"></a>
+<a id="example"></a>
 Example:
 
     // Connect to the remote SMTP server.
@@ -81,9 +81,9 @@ Example:
 
 ### Examples
 
-- [Package](#example_)
-- [PlainAuth](#example_PlainAuth)
-- [SendMail](#example_SendMail)
+- [Package](#example)
+- [PlainAuth](#examplePlainAuth)
+- [SendMail](#exampleSendMail)
 
 ### Package files
  [auth.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/auth.go) [smtp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go)
@@ -110,7 +110,7 @@ provide no support for DKIM signing, MIME attachments (see the mime/multipart
 package), or other mail functionality. Higher-level packages exist outside of
 the standard library.
 
-<a id="example_SendMail"></a>
+<a id="exampleSendMail"></a>
 Example:
 
     // Set up authentication information.
@@ -172,7 +172,7 @@ PlainAuth will only send the credentials if the connection is using TLS or is
 connected to localhost. Otherwise authentication will fail with an error,
 without sending the credentials.
 
-<a id="example_PlainAuth"></a>
+<a id="examplePlainAuth"></a>
 Example:
 
     // hostname is used by PlainAuth to validate the TLS certificate.

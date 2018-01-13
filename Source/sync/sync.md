@@ -47,9 +47,9 @@ Values containing the types defined in this package should not be copied.
 
 ### Examples
 
-- [Once](#example_Once)
-- [Pool](#example_Pool)
-- [WaitGroup](#example_WaitGroup)
+- [Once](#exampleOnce)
+- [Pool](#examplePool)
+- [WaitGroup](#exampleWaitGroup)
 
 ### Package files
  [cond.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/cond.go) [map.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go) [mutex.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/mutex.go) [once.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/once.go) [pool.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/pool.go) [runtime.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/runtime.go) [rwmutex.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/rwmutex.go) [waitgroup.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/waitgroup.go)
@@ -220,7 +220,7 @@ it.
 
 Once is an object that will perform exactly one action.
 
-<a id="example_Once"></a>
+<a id="exampleOnce"></a>
 Example:
 
     var once sync.Once
@@ -305,50 +305,50 @@ list.
 
 A Pool must not be copied after first use.
 
-<a id="example_Pool"></a>
+<a id="examplePool"></a>
 Example:
 
-package sync_test
+    package sync_test
 
-import (
-    "bytes"
-    "io"
-    "os"
-    "sync"
-    "time"
-)
+    import (
+        "bytes"
+        "io"
+        "os"
+        "sync"
+        "time"
+    )
 
-var bufPool = sync.Pool{
-    New: func() interface{} {
-        // The Pool's New function should generally only return pointer
-        // types, since a pointer can be put into the return interface
-        // value without an allocation:
-        return new(bytes.Buffer)
-    },
-}
+    var bufPool = sync.Pool{
+        New: func() interface{} {
+            // The Pool's New function should generally only return pointer
+            // types, since a pointer can be put into the return interface
+            // value without an allocation:
+            return new(bytes.Buffer)
+        },
+    }
 
-// timeNow is a fake version of time.Now for tests.
-func timeNow() time.Time {
-    return time.Unix(1136214245, 0)
-}
+    // timeNow is a fake version of time.Now for tests.
+    func timeNow() time.Time {
+        return time.Unix(1136214245, 0)
+    }
 
-func Log(w io.Writer, key, val string) {
-    b := bufPool.Get().(*bytes.Buffer)
-    b.Reset()
-    // Replace this with time.Now() in a real logger.
-    b.WriteString(timeNow().UTC().Format(time.RFC3339))
-    b.WriteByte(' ')
-    b.WriteString(key)
-    b.WriteByte('=')
-    b.WriteString(val)
-    w.Write(b.Bytes())
-    bufPool.Put(b)
-}
+    func Log(w io.Writer, key, val string) {
+        b := bufPool.Get().(*bytes.Buffer)
+        b.Reset()
+        // Replace this with time.Now() in a real logger.
+        b.WriteString(timeNow().UTC().Format(time.RFC3339))
+        b.WriteByte(' ')
+        b.WriteString(key)
+        b.WriteByte('=')
+        b.WriteString(val)
+        w.Write(b.Bytes())
+        bufPool.Put(b)
+    }
 
-func ExamplePool() {
-    Log(os.Stdout, "path", "/search?q=flowers")
-    // Output: 2006-01-02T15:04:05Z path=/search?q=flowers
-}
+    func ExamplePool() {
+        Log(os.Stdout, "path", "/search?q=flowers")
+        // Output: 2006-01-02T15:04:05Z path=/search?q=flowers
+    }
 
 <h3 id="Pool.Get">func (*Pool) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/pool.go#L114">Get</a>
     <a href="#Pool.Get">¶</a></h3>
@@ -441,7 +441,7 @@ to block until all goroutines have finished.
 
 A WaitGroup must not be copied after first use.
 
-<a id="example_WaitGroup"></a>
+<a id="exampleWaitGroup"></a>
 Example:
 
     var wg sync.WaitGroup

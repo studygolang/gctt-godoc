@@ -220,13 +220,13 @@ built-in HTTP/2 support.
 
 ### Examples
 
-- [FileServer](#example_FileServer)
-- [FileServer (StripPrefix)](#example_FileServer_stripPrefix)
-- [Get](#example_Get)
-- [Hijacker](#example_Hijacker)
-- [ResponseWriter (Trailers)](#example_ResponseWriter_trailers)
-- [ServeMux.Handle](#example_ServeMux_Handle)
-- [StripPrefix](#example_StripPrefix)
+- [FileServer](#exampleFileServer)
+- [FileServer (StripPrefix)](#exampleFileServer_stripPrefix)
+- [Get](#exampleGet)
+- [Hijacker](#exampleHijacker)
+- [ResponseWriter (Trailers)](#exampleResponseWriter_trailers)
+- [ServeMux.Handle](#exampleServeMux_Handle)
+- [StripPrefix](#exampleStripPrefix)
 
 ### Package files
  [client.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go) [cookie.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cookie.go) [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/doc.go) [filetransport.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/filetransport.go) [fs.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/fs.go) [h2_bundle.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/h2_bundle.go) [header.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/header.go) [http.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/http.go) [jar.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/jar.go) [method.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/method.go) [request.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go) [response.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/response.go) [server.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go) [sniff.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/sniff.go) [status.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/status.go) [transfer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transfer.go) [transport.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go)
@@ -1167,14 +1167,14 @@ To use the operating system's file system implementation, use http.Dir:
 As a special case, the returned file server redirects any request ending in
 "/index.html" to the same path, without the final "index.html".
 
-<a id="example_FileServer"></a>
+<a id="exampleFileServer"></a>
 Example:
 
     // Simple static webserver:
     log.Fatal(http.ListenAndServe(":8080", http.FileServer(http.Dir("/usr/share/doc"))))
 
 
-<a id="example_FileServer_stripPrefix"></a>
+<a id="exampleFileServer_stripPrefix"></a>
 Example:
 
     // To serve a directory on disk (/tmp) under an alternate URL
@@ -1208,7 +1208,7 @@ prefix from the request URL's Path and invoking the handler h. StripPrefix
 handles a request for a path that doesn't begin with prefix by replying with an
 HTTP 404 not found error.
 
-<a id="example_StripPrefix"></a>
+<a id="exampleStripPrefix"></a>
 Example:
 
     // To serve a directory on disk (/tmp) under an alternate URL
@@ -1323,7 +1323,7 @@ The default ResponseWriter for HTTP/1.x connections supports Hijacker, but
 HTTP/2 connections intentionally do not. ResponseWriter wrappers may also not
 support Hijacker. Handlers should always test for this ability at runtime.
 
-<a id="example_Hijacker"></a>
+<a id="exampleHijacker"></a>
 Example:
 
     http.HandleFunc("/hijack", func(w http.ResponseWriter, r *http.Request) {
@@ -1940,7 +1940,7 @@ Get is a wrapper around DefaultClient.Get.
 
 To make a request with custom headers, use NewRequest and DefaultClient.Do.
 
-<a id="example_Get"></a>
+<a id="exampleGet"></a>
 Example:
 
     res, err := http.Get("http://www.google.com/robots.txt")
@@ -2114,7 +2114,7 @@ response.
 A ResponseWriter may not be used after the Handler.ServeHTTP method has
 returned.
 
-<a id="example_ResponseWriter_trailers"></a>
+<a id="exampleResponseWriter_trailers"></a>
 Example:
 
     mux := http.NewServeMux()
@@ -2253,7 +2253,7 @@ NewServeMux allocates and returns a new ServeMux.
 Handle registers the handler for the given pattern. If a handler already exists
 for pattern, Handle panics.
 
-<a id="example_ServeMux_Handle"></a>
+<a id="exampleServeMux_Handle"></a>
 Example:
 
     mux := http.NewServeMux()

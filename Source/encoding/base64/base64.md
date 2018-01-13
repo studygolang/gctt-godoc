@@ -7,7 +7,7 @@ version: 1.9.2
 
 Package base64 implements base64 encoding as specified by RFC 4648.
 
-<a id="example_"></a>
+<a id="example"></a>
 Example:
 
     msg := "Hello, 世界"
@@ -44,10 +44,10 @@ Example:
 
 ### Examples
 
-- [Package](#example_)
-- [Encoding.DecodeString](#example_Encoding_DecodeString)
-- [Encoding.EncodeToString](#example_Encoding_EncodeToString)
-- [NewEncoder](#example_NewEncoder)
+- [Package](#example)
+- [Encoding.DecodeString](#exampleEncoding_DecodeString)
+- [Encoding.EncodeToString](#exampleEncoding_EncodeToString)
+- [NewEncoder](#exampleNewEncoder)
 
 ### Package files
  [base64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go)
@@ -97,7 +97,7 @@ writer will be encoded using enc and then written to w. Base64 encodings operate
 in 4-byte blocks; when finished writing, the caller must Close the returned
 encoder to flush any partially written blocks.
 
-<a id="example_NewEncoder"></a>
+<a id="exampleNewEncoder"></a>
 Example:
 
     input := []byte("foo\x00bar")
@@ -157,7 +157,7 @@ ignored.
 
 DecodeString returns the bytes represented by the base64 string s.
 
-<a id="example_Encoding_DecodeString"></a>
+<a id="exampleEncoding_DecodeString"></a>
 Example:
 
     str := "c29tZSBkYXRhIHdpdGggACBhbmQg77u/"
@@ -194,7 +194,7 @@ NewEncoder() instead.
 
 EncodeToString returns the base64 encoding of src.
 
-<a id="example_Encoding_EncodeToString"></a>
+<a id="exampleEncoding_EncodeToString"></a>
 Example:
 
     data := []byte("any + old & data")

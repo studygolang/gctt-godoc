@@ -140,16 +140,16 @@ their byte counts from the length of the argument slice.
 
 ### Examples
 
-- [Chmod](#example_Chmod)
-- [Chtimes](#example_Chtimes)
-- [ExpandEnv](#example_ExpandEnv)
-- [FileMode](#example_FileMode)
-- [Getenv](#example_Getenv)
-- [IsNotExist](#example_IsNotExist)
-- [LookupEnv](#example_LookupEnv)
-- [OpenFile](#example_OpenFile)
-- [OpenFile (Append)](#example_OpenFile_append)
-- [Unsetenv](#example_Unsetenv)
+- [Chmod](#exampleChmod)
+- [Chtimes](#exampleChtimes)
+- [ExpandEnv](#exampleExpandEnv)
+- [FileMode](#exampleFileMode)
+- [Getenv](#exampleGetenv)
+- [IsNotExist](#exampleIsNotExist)
+- [LookupEnv](#exampleLookupEnv)
+- [OpenFile](#exampleOpenFile)
+- [OpenFile (Append)](#exampleOpenFile_append)
+- [Unsetenv](#exampleUnsetenv)
 
 ### Package files
  [dir.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/dir.go) [dir_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/dir_unix.go) [env.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/env.go) [error.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/error.go) [error_posix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/error_posix.go) [error_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/error_unix.go) [exec.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec.go) [exec_posix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec_posix.go) [exec_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec_unix.go) [executable.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/executable.go) [executable_procfs.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/executable_procfs.go) [file.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/file.go) [file_posix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/file_posix.go) [file_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/file_unix.go) [getwd.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/getwd.go) [path.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/path.go) [path_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/path_unix.go) [pipe_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/pipe_linux.go) [proc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/proc.go) [stat_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/stat_linux.go) [stat_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/stat_unix.go) [sticky_notbsd.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/sticky_notbsd.go) [str.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/str.go) [sys.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/sys.go) [sys_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/sys_linux.go) [sys_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/sys_unix.go) [types.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/types.go) [types_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/types_unix.go) [wait_waitid.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/wait_waitid.go)
@@ -248,7 +248,7 @@ for a read-only file and 0600 for a readable+writable file.
 On Plan 9, the mode's permission bits, ModeAppend, ModeExclusive, and
 ModeTemporary are used.
 
-<a id="example_Chmod"></a>
+<a id="exampleChmod"></a>
 Example:
 
     if err := os.Chmod("some-filename", 0644); err != nil {
@@ -275,7 +275,7 @@ the Unix utime() or utimes() functions.
 The underlying filesystem may truncate or round the values to a less precise
 time unit. If there is an error, it will be of type *PathError.
 
-<a id="example_Chtimes"></a>
+<a id="exampleChtimes"></a>
 Example:
 
     mtime := time.Date(2006, time.February, 1, 3, 4, 5, 0, time.UTC)
@@ -336,7 +336,7 @@ ExpandEnv replaces ${var} or $var in the string according to the values of the
 current environment variables. References to undefined variables are replaced by
 the empty string.
 
-<a id="example_ExpandEnv"></a>
+<a id="exampleExpandEnv"></a>
 Example:
 
     fmt.Println(os.ExpandEnv("$USER lives in ${HOME}."))
@@ -360,7 +360,7 @@ Getenv retrieves the value of the environment variable named by the key. It
 returns the value, which will be empty if the variable is not present. To
 distinguish between an empty value and an unset value, use LookupEnv.
 
-<a id="example_Getenv"></a>
+<a id="exampleGetenv"></a>
 Example:
 
     fmt.Printf("%s lives in %s.\n", os.Getenv("USER"), os.Getenv("HOME"))
@@ -450,7 +450,7 @@ IsNotExist returns a boolean indicating whether the error is known to report
 that a file or directory does not exist. It is satisfied by ErrNotExist as well
 as some syscall errors.
 
-<a id="example_IsNotExist"></a>
+<a id="exampleIsNotExist"></a>
 Example:
 
     filename := "a-nonexistent-file"
@@ -500,7 +500,7 @@ the variable is present in the environment the value (which may be empty) is
 returned and the boolean is true. Otherwise the returned value will be empty and
 the boolean will be false.
 
-<a id="example_LookupEnv"></a>
+<a id="exampleLookupEnv"></a>
 Example:
 
     show := func(key string) {
@@ -624,7 +624,7 @@ changes the size of the link's target. If there is an error, it will be of type
 
 Unsetenv unsets a single environment variable.
 
-<a id="example_Unsetenv"></a>
+<a id="exampleUnsetenv"></a>
 Example:
 
     os.Setenv("TMPDIR", "/my/tmp")
@@ -671,7 +671,7 @@ instead. It opens the named file with specified flag (O_RDONLY etc.) and perm,
 (0666 etc.) if applicable. If successful, methods on the returned File can be
 used for I/O. If there is an error, it will be of type *PathError.
 
-<a id="example_OpenFile"></a>
+<a id="exampleOpenFile"></a>
 Example:
 
     f, err := os.OpenFile("notes.txt", os.O_RDWR|os.O_CREATE, 0755)
@@ -683,7 +683,7 @@ Example:
     }
 
 
-<a id="example_OpenFile_append"></a>
+<a id="exampleOpenFile_append"></a>
 Example:
 
     // If the file doesn't exist, create it, or append to the file
@@ -916,7 +916,7 @@ values of these bits should be considered part of the public API and may be used
 in wire protocols or disk representations: they must not be changed, although
 new bits might be added.
 
-<a id="example_FileMode"></a>
+<a id="exampleFileMode"></a>
 Example:
 
     fi, err := os.Lstat("some-filename")

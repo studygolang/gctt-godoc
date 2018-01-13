@@ -76,8 +76,8 @@ are the atomic equivalents of "return *addr" and "*addr = val".
 
 ### Examples
 
-- [Value (Config)](#example_Value_config)
-- [Value (ReadMostly)](#example_Value_readMostly)
+- [Value (Config)](#exampleValue_config)
+- [Value (ReadMostly)](#exampleValue_readMostly)
 
 ### Package files
  [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go) [value.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/value.go)
@@ -278,7 +278,7 @@ Value must not be copied.
 
 A Value must not be copied after first use.
 
-<a id="example_Value_config"></a>
+<a id="exampleValue_config"></a>
 Example:
 
     var config Value // holds current server configuration
@@ -305,7 +305,7 @@ Example:
     }
 
 
-<a id="example_Value_readMostly"></a>
+<a id="exampleValue_readMostly"></a>
 Example:
 
     type Map map[string]string

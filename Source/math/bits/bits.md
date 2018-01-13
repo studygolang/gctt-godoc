@@ -48,14 +48,14 @@ predeclared unsigned integer types.
 
 ### Examples
 
-- [LeadingZeros16](#example_LeadingZeros16)
-- [LeadingZeros32](#example_LeadingZeros32)
-- [LeadingZeros64](#example_LeadingZeros64)
-- [OnesCount](#example_OnesCount)
-- [OnesCount16](#example_OnesCount16)
-- [OnesCount32](#example_OnesCount32)
-- [OnesCount64](#example_OnesCount64)
-- [OnesCount8](#example_OnesCount8)
+- [LeadingZeros16](#exampleLeadingZeros16)
+- [LeadingZeros32](#exampleLeadingZeros32)
+- [LeadingZeros64](#exampleLeadingZeros64)
+- [OnesCount](#exampleOnesCount)
+- [OnesCount16](#exampleOnesCount16)
+- [OnesCount32](#exampleOnesCount32)
+- [OnesCount64](#exampleOnesCount64)
+- [OnesCount8](#exampleOnesCount8)
 
 ### Package files
  [bits.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go) [bits_tables.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits_tables.go)
@@ -80,7 +80,7 @@ UintSize for x == 0.
 LeadingZeros16 returns the number of leading zero bits in x; the result is 16
 for x == 0.
 
-<a id="example_LeadingZeros16"></a>
+<a id="exampleLeadingZeros16"></a>
 Example:
 
     fmt.Println(bits.LeadingZeros16(0))
@@ -100,7 +100,7 @@ Example:
 LeadingZeros32 returns the number of leading zero bits in x; the result is 32
 for x == 0.
 
-<a id="example_LeadingZeros32"></a>
+<a id="exampleLeadingZeros32"></a>
 Example:
 
     fmt.Println(bits.LeadingZeros32(0))
@@ -116,7 +116,7 @@ Example:
 LeadingZeros64 returns the number of leading zero bits in x; the result is 64
 for x == 0.
 
-<a id="example_LeadingZeros64"></a>
+<a id="exampleLeadingZeros64"></a>
 Example:
 
     fmt.Println(bits.LeadingZeros64(0))
@@ -173,7 +173,7 @@ for x == 0.
 
 OnesCount returns the number of one bits ("population count") in x.
 
-<a id="example_OnesCount"></a>
+<a id="exampleOnesCount"></a>
 Example:
 
     fmt.Printf("%b\n", 14)
@@ -188,7 +188,7 @@ Example:
 
 OnesCount16 returns the number of one bits ("population count") in x.
 
-<a id="example_OnesCount16"></a>
+<a id="exampleOnesCount16"></a>
 Example:
 
     fmt.Printf("%b\n", 14)
@@ -203,7 +203,7 @@ Example:
 
 OnesCount32 returns the number of one bits ("population count") in x.
 
-<a id="example_OnesCount32"></a>
+<a id="exampleOnesCount32"></a>
 Example:
 
     fmt.Printf("%b\n", 14)
@@ -218,7 +218,7 @@ Example:
 
 OnesCount64 returns the number of one bits ("population count") in x.
 
-<a id="example_OnesCount64"></a>
+<a id="exampleOnesCount64"></a>
 Example:
 
     fmt.Printf("%b\n", 14)
@@ -233,7 +233,7 @@ Example:
 
 OnesCount8 returns the number of one bits ("population count") in x.
 
-<a id="example_OnesCount8"></a>
+<a id="exampleOnesCount8"></a>
 Example:
 
     fmt.Printf("%b\n", 14)

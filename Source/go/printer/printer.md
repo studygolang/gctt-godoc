@@ -17,7 +17,7 @@ Package printer implements printing of AST nodes.
 
 ### Examples
 
-- [Fprint](#example_Fprint)
+- [Fprint](#exampleFprint)
 
 ### Package files
  [nodes.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/printer/nodes.go) [printer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/printer/printer.go)
@@ -30,7 +30,7 @@ Fprint "pretty-prints" an AST node to output. It calls Config.Fprint with
 default settings. Note that gofmt uses tabs for indentation but spaces for
 alignment; use format.Node (package go/format) for output that matches gofmt.
 
-<a id="example_Fprint"></a>
+<a id="exampleFprint"></a>
 Example:
 
     // Parse source file and extract the AST without comments for

@@ -26,13 +26,13 @@ path/filepath package.
 
 ### Examples
 
-- [Base](#example_Base)
-- [Clean](#example_Clean)
-- [Dir](#example_Dir)
-- [Ext](#example_Ext)
-- [IsAbs](#example_IsAbs)
-- [Join](#example_Join)
-- [Split](#example_Split)
+- [Base](#exampleBase)
+- [Clean](#exampleClean)
+- [Dir](#exampleDir)
+- [Ext](#exampleExt)
+- [IsAbs](#exampleIsAbs)
+- [Join](#exampleJoin)
+- [Split](#exampleSplit)
 
 ### Package files
  [match.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/match.go) [path.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/path.go)
@@ -51,7 +51,7 @@ Base returns the last element of path. Trailing slashes are removed before
 extracting the last element. If the path is empty, Base returns ".". If the path
 consists entirely of slashes, Base returns "/".
 
-<a id="example_Base"></a>
+<a id="exampleBase"></a>
 Example:
 
     fmt.Println(path.Base("/a/b"))
@@ -84,7 +84,7 @@ If the result of this process is an empty string, Clean returns the string ".".
 See also Rob Pike, ``Lexical File Names in Plan 9 or Getting Dot-Dot Right,''
 https://9p.io/sys/doc/lexnames.html
 
-<a id="example_Clean"></a>
+<a id="exampleClean"></a>
 Example:
 
     paths := []string{
@@ -120,7 +120,7 @@ slashes are removed. If the path is empty, Dir returns ".". If the path consists
 entirely of slashes followed by non-slash bytes, Dir returns a single slash. In
 any other case, the returned path does not end in a slash.
 
-<a id="example_Dir"></a>
+<a id="exampleDir"></a>
 Example:
 
     fmt.Println(path.Dir("/a/b/c"))
@@ -141,7 +141,7 @@ Ext returns the file name extension used by path. The extension is the suffix
 beginning at the final dot in the final slash-separated element of path; it is
 empty if there is no dot.
 
-<a id="example_Ext"></a>
+<a id="exampleExt"></a>
 Example:
 
     fmt.Println(path.Ext("/a/b/c/bar.css"))
@@ -158,7 +158,7 @@ Example:
 
 IsAbs reports whether the path is absolute.
 
-<a id="example_IsAbs"></a>
+<a id="exampleIsAbs"></a>
 Example:
 
     fmt.Println(path.IsAbs("/dev/null"))
@@ -172,7 +172,7 @@ Join joins any number of path elements into a single path, adding a separating
 slash if necessary. The result is Cleaned; in particular, all empty strings are
 ignored.
 
-<a id="example_Join"></a>
+<a id="exampleJoin"></a>
 Example:
 
     fmt.Println(path.Join("a", "b", "c"))
@@ -223,7 +223,7 @@ directory and file name component. If there is no slash in path, Split returns
 an empty dir and file set to path. The returned values have the property that
 path = dir+file.
 
-<a id="example_Split"></a>
+<a id="exampleSplit"></a>
 Example:
 
     fmt.Println(path.Split("static/myfile.css"))

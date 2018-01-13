@@ -122,11 +122,11 @@ https://golang.org/doc/articles/laws_of_reflection.html
 
 ### Examples
 
-- [MakeFunc](#example_MakeFunc)
-- [StructOf](#example_StructOf)
-- [StructTag](#example_StructTag)
-- [StructTag.Lookup](#example_StructTag_Lookup)
-- [TypeOf](#example_TypeOf)
+- [MakeFunc](#exampleMakeFunc)
+- [StructOf](#exampleStructOf)
+- [StructTag](#exampleStructTag)
+- [StructTag.Lookup](#exampleStructTag_Lookup)
+- [TypeOf](#exampleTypeOf)
 
 ### Package files
  [deepequal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/reflect/deepequal.go) [makefunc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/reflect/makefunc.go) [swapper.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/reflect/swapper.go) [type.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/reflect/type.go) [value.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/reflect/value.go)
@@ -389,7 +389,7 @@ characters other than space (U+0020 ' '), quote (U+0022 '"'), and colon (U+003A
 ':'). Each value is quoted using U+0022 '"' characters and Go string literal
 syntax.
 
-<a id="example_StructTag"></a>
+<a id="exampleStructTag"></a>
 Example:
 
     type S struct {
@@ -423,7 +423,7 @@ returned value will be the empty string. The ok return value reports whether the
 value was explicitly set in the tag string. If the tag does not have the
 conventional format, the value returned by Lookup is unspecified.
 
-<a id="example_StructTag_Lookup"></a>
+<a id="exampleStructTag_Lookup"></a>
 Example:
 
     type S struct {
@@ -686,7 +686,7 @@ are ignored and computed as they would be by the compiler.
 StructOf currently does not generate wrapper methods for embedded fields. This
 limitation may be lifted in a future version.
 
-<a id="example_StructOf"></a>
+<a id="exampleStructOf"></a>
 Example:
 
     typ := reflect.StructOf([]reflect.StructField{
@@ -733,7 +733,7 @@ Example:
 TypeOf returns the reflection Type that represents the dynamic type of i. If i
 is a nil interface value, TypeOf returns nil.
 
-<a id="example_TypeOf"></a>
+<a id="exampleTypeOf"></a>
 Example:
 
     // As interface types are only used for static typing, a
@@ -823,7 +823,7 @@ terms of Values.
 The Examples section of the documentation includes an illustration of how to use
 MakeFunc to build a swap function for different types.
 
-<a id="example_MakeFunc"></a>
+<a id="exampleMakeFunc"></a>
 Example:
 
     // swap is the implementation passed to MakeFunc.

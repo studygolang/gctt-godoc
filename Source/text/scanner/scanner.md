@@ -16,7 +16,7 @@ literals as defined by the Go language specification. It may be customized to
 recognize only a subset of those literals and to recognize different identifier
 and white space characters.
 
-<a id="example_"></a>
+<a id="example"></a>
 Example:
 
     const src = `
@@ -59,7 +59,7 @@ Example:
 
 ### Examples
 
-- [Package](#example_)
+- [Package](#example)
 
 ### Package files
  [scanner.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/scanner/scanner.go)

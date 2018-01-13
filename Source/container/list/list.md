@@ -13,7 +13,7 @@ To iterate over a list (where l is a *List):
     	// do something with e.Value
     }
 
-<a id="example_"></a>
+<a id="example"></a>
 Example:
 
     // Create a new list and put some numbers in it.
@@ -59,7 +59,7 @@ Example:
 
 ### Examples
 
-- [Package](#example_)
+- [Package](#example)
 
 ### Package files
  [list.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/list/list.go)

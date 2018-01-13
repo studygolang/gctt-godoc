@@ -12,78 +12,78 @@ Marshal and Unmarshal functions.
 See "JSON and Go" for an introduction to this package:
 https://golang.org/doc/articles/json_and_go.html
 
-<a id="example__customMarshalJSON"></a>
+<a id="example_customMarshalJSON"></a>
 Example:
 
-package json_test
+    package json_test
 
-import (
-    "encoding/json"
-    "fmt"
-    "log"
-    "strings"
-)
+    import (
+        "encoding/json"
+        "fmt"
+        "log"
+        "strings"
+    )
 
-type Animal int
+    type Animal int
 
-const (
-    Unknown Animal = iota
-    Gopher
-    Zebra
-)
+    const (
+        Unknown Animal = iota
+        Gopher
+        Zebra
+    )
 
-func (a *Animal) UnmarshalJSON(b []byte) error {
-    var s string
-    if err := json.Unmarshal(b, &s); err != nil {
-        return err
-    }
-    switch strings.ToLower(s) {
-    default:
-        *a = Unknown
-    case "gopher":
-        *a = Gopher
-    case "zebra":
-        *a = Zebra
-    }
+    func (a *Animal) UnmarshalJSON(b []byte) error {
+        var s string
+        if err := json.Unmarshal(b, &s); err != nil {
+            return err
+        }
+        switch strings.ToLower(s) {
+        default:
+            *a = Unknown
+        case "gopher":
+            *a = Gopher
+        case "zebra":
+            *a = Zebra
+        }
 
-    return nil
-}
-
-func (a Animal) MarshalJSON() ([]byte, error) {
-    var s string
-    switch a {
-    default:
-        s = "unknown"
-    case Gopher:
-        s = "gopher"
-    case Zebra:
-        s = "zebra"
+        return nil
     }
 
-    return json.Marshal(s)
-}
+    func (a Animal) MarshalJSON() ([]byte, error) {
+        var s string
+        switch a {
+        default:
+            s = "unknown"
+        case Gopher:
+            s = "gopher"
+        case Zebra:
+            s = "zebra"
+        }
 
-func Example_customMarshalJSON() {
-    blob := `["gopher","armadillo","zebra","unknown","gopher","bee","gopher","zebra"]`
-    var zoo []Animal
-    if err := json.Unmarshal([]byte(blob), &zoo); err != nil {
-        log.Fatal(err)
+        return json.Marshal(s)
     }
 
-    census := make(map[Animal]int)
-    for _, animal := range zoo {
-        census[animal] += 1
+    func Example_customMarshalJSON() {
+        blob := `["gopher","armadillo","zebra","unknown","gopher","bee","gopher","zebra"]`
+        var zoo []Animal
+        if err := json.Unmarshal([]byte(blob), &zoo); err != nil {
+            log.Fatal(err)
+        }
+
+        census := make(map[Animal]int)
+        for _, animal := range zoo {
+            census[animal] += 1
+        }
+
+        fmt.Printf("Zoo Census:\n* Gophers: %d\n* Zebras:  %d\n* Unknown: %d\n",
+            census[Gopher], census[Zebra], census[Unknown])
+
+        // Output:
+        // Zoo Census:
+        // * Gophers: 3
+        // * Zebras:  2
+        // * Unknown: 3
     }
-
-    fmt.Printf("Zoo Census:\n* Gophers: %d\n* Zebras:  %d\n* Unknown: %d\n",
-        census[Gopher], census[Zebra], census[Unknown])
-
-    // Output:
-    // Zoo Census:
-    // * Gophers: 3
-    // * Zebras:  2
-    // * Unknown: 3
-}
 
 ## Index
 
@@ -137,15 +137,15 @@ func Example_customMarshalJSON() {
 
 ### Examples
 
-- [Decoder](#example_Decoder)
-- [Decoder.Decode (Stream)](#example_Decoder_Decode_stream)
-- [Decoder.Token](#example_Decoder_Token)
-- [Indent](#example_Indent)
-- [Marshal](#example_Marshal)
-- [RawMessage (Marshal)](#example_RawMessage_marshal)
-- [RawMessage (Unmarshal)](#example_RawMessage_unmarshal)
-- [Unmarshal](#example_Unmarshal)
-- [Package (CustomMarshalJSON)](#example__customMarshalJSON)
+- [Decoder](#exampleDecoder)
+- [Decoder.Decode (Stream)](#exampleDecoder_Decode_stream)
+- [Decoder.Token](#exampleDecoder_Token)
+- [Indent](#exampleIndent)
+- [Marshal](#exampleMarshal)
+- [RawMessage (Marshal)](#exampleRawMessage_marshal)
+- [RawMessage (Unmarshal)](#exampleRawMessage_unmarshal)
+- [Unmarshal](#exampleUnmarshal)
+- [Package (CustomMarshalJSON)](#example_customMarshalJSON)
 
 ### Package files
  [decode.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/decode.go) [encode.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/encode.go) [fold.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/fold.go) [indent.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/indent.go) [scanner.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/scanner.go) [stream.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go) [tables.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/tables.go) [tags.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/tags.go)
@@ -181,7 +181,7 @@ dropped, trailing space characters at the end of src are preserved and copied to
 dst. For example, if src has no trailing spaces, neither will dst; if src ends
 in a trailing newline, so will dst.
 
-<a id="example_Indent"></a>
+<a id="exampleIndent"></a>
 Example:
 
     type Road struct {
@@ -337,7 +337,7 @@ encode such a value causes Marshal to return an UnsupportedTypeError.
 JSON cannot represent cyclic data structures and Marshal does not handle them.
 Passing cyclic structures to Marshal will result in an infinite recursion.
 
-<a id="example_Marshal"></a>
+<a id="exampleMarshal"></a>
 Example:
 
     type ColorGroup struct {
@@ -435,7 +435,7 @@ When unmarshaling quoted strings, invalid UTF-8 or invalid UTF-16 surrogate
 pairs are not treated as an error. Instead, they are replaced by the Unicode
 replacement character U+FFFD.
 
-<a id="example_Unmarshal"></a>
+<a id="exampleUnmarshal"></a>
 Example:
 
     var jsonBlob = []byte(`[
@@ -469,7 +469,7 @@ Valid reports whether data is a valid JSON encoding.
 
 A Decoder reads and decodes JSON values from an input stream.
 
-<a id="example_Decoder"></a>
+<a id="exampleDecoder"></a>
 Example:
 
     const jsonStream = `
@@ -525,7 +525,7 @@ value pointed to by v.
 See the documentation for Unmarshal for details about the conversion of JSON
 into a Go value.
 
-<a id="example_Decoder_Decode_stream"></a>
+<a id="exampleDecoder_Decode_stream"></a>
 Example:
 
     const jsonStream = `
@@ -599,7 +599,7 @@ The input stream consists of basic JSON values—bool, string, number, and
 null—along with delimiters [ ] { } of type Delim to mark the start and end of
 arrays and objects. Commas and colons are elided.
 
-<a id="example_Decoder_Token"></a>
+<a id="exampleDecoder_Token"></a>
 Example:
 
     const jsonStream = `
@@ -782,7 +782,7 @@ String returns the literal text of the number.
 RawMessage is a raw encoded JSON value. It implements Marshaler and Unmarshaler
 and can be used to delay JSON decoding or precompute a JSON encoding.
 
-<a id="example_RawMessage_marshal"></a>
+<a id="exampleRawMessage_marshal"></a>
 Example:
 
     h := json.RawMessage(`{"precomputed": true}`)
@@ -807,7 +807,7 @@ Example:
     // }
 
 
-<a id="example_RawMessage_unmarshal"></a>
+<a id="exampleRawMessage_unmarshal"></a>
 Example:
 
     type Color struct {

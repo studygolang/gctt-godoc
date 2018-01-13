@@ -18,9 +18,9 @@ applications.
 
 ### Examples
 
-- [New](#example_New)
-- [New (File)](#example_New_file)
-- [Sum](#example_Sum)
+- [New](#exampleNew)
+- [New (File)](#exampleNew_file)
+- [Sum](#exampleSum)
 
 ### Package files
  [sha1.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/sha1/sha1.go) [sha1block.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/sha1/sha1block.go) [sha1block_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/sha1/sha1block_amd64.go)
@@ -41,7 +41,7 @@ The size of a SHA-1 checksum in bytes.
 
 New returns a new hash.Hash computing the SHA1 checksum.
 
-<a id="example_New"></a>
+<a id="exampleNew"></a>
 Example:
 
     h := sha1.New()
@@ -51,7 +51,7 @@ Example:
     // Output: 59 7f 6a 54 00 10 f9 4c 15 d7 18 06 a9 9a 2c 87 10 e7 47 bd
 
 
-<a id="example_New_file"></a>
+<a id="exampleNew_file"></a>
 Example:
 
     f, err := os.Open("file.txt")
@@ -73,7 +73,7 @@ Example:
 
 Sum returns the SHA-1 checksum of the data.
 
-<a id="example_Sum"></a>
+<a id="exampleSum"></a>
 Example:
 
     data := []byte("This page intentionally left blank.")

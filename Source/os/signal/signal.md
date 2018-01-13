@@ -215,7 +215,7 @@ string is posted as a note.
 
 ### Examples
 
-- [Notify](#example_Notify)
+- [Notify](#exampleNotify)
 
 ### Package files
  [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/signal/doc.go) [signal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/signal/signal.go) [signal_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/signal/signal_unix.go)
@@ -249,7 +249,7 @@ from the set is to call Stop.
 It is allowed to call Notify multiple times with different channels and the same
 signals: each channel receives copies of incoming signals independently.
 
-<a id="example_Notify"></a>
+<a id="exampleNotify"></a>
 Example:
 
     // Set up channel on which to send signal notifications.

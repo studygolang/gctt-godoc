@@ -17,7 +17,7 @@ generator.
 
 ### Examples
 
-- [Read](#example_Read)
+- [Read](#exampleRead)
 
 ### Package files
  [eagain.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rand/eagain.go) [rand.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rand/rand.go) [rand_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rand/rand_linux.go) [rand_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rand/rand_unix.go) [util.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rand/util.go)
@@ -54,7 +54,7 @@ bits < 2.
 Read is a helper function that calls Reader.Read using io.ReadFull. On return, n
 == len(b) if and only if err == nil.
 
-<a id="example_Read"></a>
+<a id="exampleRead"></a>
 Example:
 
     c := 10

@@ -14,8 +14,8 @@ Package html provides functions for escaping and unescaping HTML text.
 
 ### Examples
 
-- [EscapeString](#example_EscapeString)
-- [UnescapeString](#example_UnescapeString)
+- [EscapeString](#exampleEscapeString)
+- [UnescapeString](#exampleUnescapeString)
 
 ### Package files
  [entity.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/entity.go) [escape.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/escape.go)
@@ -28,7 +28,7 @@ EscapeString escapes special characters like "<" to become "&lt;". It escapes
 only five such characters: <, >, &, ' and ". UnescapeString(EscapeString(s)) ==
 s always holds, but the converse isn't always true.
 
-<a id="example_EscapeString"></a>
+<a id="exampleEscapeString"></a>
 Example:
 
     const s = `"Fran & Freddie's Diner" <tasty@example.com>`
@@ -44,7 +44,7 @@ larger range of entities than EscapeString escapes. For example, "&aacute;"
 unescapes to "á", as does "&#225;" and "&#xE1;". UnescapeString(EscapeString(s))
 == s always holds, but the converse isn't always true.
 
-<a id="example_UnescapeString"></a>
+<a id="exampleUnescapeString"></a>
 Example:
 
     const s = `&quot;Fran &amp; Freddie&#39;s Diner&quot; &lt;tasty@example.com&gt;`

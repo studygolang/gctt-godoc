@@ -18,7 +18,7 @@ Package cookiejar implements an in-memory RFC 6265-compliant http.CookieJar.
 
 ### Examples
 
-- [New](#example_New)
+- [New](#exampleNew)
 
 ### Package files
  [jar.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cookiejar/jar.go) [punycode.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cookiejar/punycode.go)
@@ -37,7 +37,7 @@ Jar implements the http.CookieJar interface from the net/http package.
 
 New returns a new cookie jar. A nil *Options is equivalent to a zero Options.
 
-<a id="example_New"></a>
+<a id="exampleNew"></a>
 Example:
 
     // Start a server to give us cookies.

@@ -31,7 +31,7 @@ source which can then be tokenized through repeated calls to the Scan method.
 
 ### Examples
 
-- [Scanner.Scan](#example_Scanner_Scan)
+- [Scanner.Scan](#exampleScanner_Scan)
 
 ### Package files
  [errors.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go) [scanner.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/scanner.go)
@@ -206,7 +206,7 @@ error handler, if there was one installed.
 Scan adds line information to the file added to the file set with Init. Token
 positions are relative to that file and thus relative to the file set.
 
-<a id="example_Scanner_Scan"></a>
+<a id="exampleScanner_Scan"></a>
 Example:
 
     // src is the input that we want to tokenize.

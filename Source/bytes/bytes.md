@@ -98,39 +98,39 @@ analogous to the facilities of the strings package.
 
 ### Examples
 
-- [Buffer](#example_Buffer)
-- [Buffer.Grow](#example_Buffer_Grow)
-- [Buffer (Reader)](#example_Buffer_reader)
-- [Compare](#example_Compare)
-- [Compare (Search)](#example_Compare_search)
-- [Contains](#example_Contains)
-- [Count](#example_Count)
-- [EqualFold](#example_EqualFold)
-- [Fields](#example_Fields)
-- [FieldsFunc](#example_FieldsFunc)
-- [HasPrefix](#example_HasPrefix)
-- [HasSuffix](#example_HasSuffix)
-- [Index](#example_Index)
-- [IndexAny](#example_IndexAny)
-- [IndexFunc](#example_IndexFunc)
-- [IndexRune](#example_IndexRune)
-- [Join](#example_Join)
-- [LastIndex](#example_LastIndex)
-- [Map](#example_Map)
-- [Repeat](#example_Repeat)
-- [Replace](#example_Replace)
-- [Split](#example_Split)
-- [SplitAfter](#example_SplitAfter)
-- [SplitAfterN](#example_SplitAfterN)
-- [SplitN](#example_SplitN)
-- [Title](#example_Title)
-- [ToLower](#example_ToLower)
-- [ToTitle](#example_ToTitle)
-- [ToUpper](#example_ToUpper)
-- [Trim](#example_Trim)
-- [TrimPrefix](#example_TrimPrefix)
-- [TrimSpace](#example_TrimSpace)
-- [TrimSuffix](#example_TrimSuffix)
+- [Buffer](#exampleBuffer)
+- [Buffer.Grow](#exampleBuffer_Grow)
+- [Buffer (Reader)](#exampleBuffer_reader)
+- [Compare](#exampleCompare)
+- [Compare (Search)](#exampleCompare_search)
+- [Contains](#exampleContains)
+- [Count](#exampleCount)
+- [EqualFold](#exampleEqualFold)
+- [Fields](#exampleFields)
+- [FieldsFunc](#exampleFieldsFunc)
+- [HasPrefix](#exampleHasPrefix)
+- [HasSuffix](#exampleHasSuffix)
+- [Index](#exampleIndex)
+- [IndexAny](#exampleIndexAny)
+- [IndexFunc](#exampleIndexFunc)
+- [IndexRune](#exampleIndexRune)
+- [Join](#exampleJoin)
+- [LastIndex](#exampleLastIndex)
+- [Map](#exampleMap)
+- [Repeat](#exampleRepeat)
+- [Replace](#exampleReplace)
+- [Split](#exampleSplit)
+- [SplitAfter](#exampleSplitAfter)
+- [SplitAfterN](#exampleSplitAfterN)
+- [SplitN](#exampleSplitN)
+- [Title](#exampleTitle)
+- [ToLower](#exampleToLower)
+- [ToTitle](#exampleToTitle)
+- [ToUpper](#exampleToUpper)
+- [Trim](#exampleTrim)
+- [TrimPrefix](#exampleTrimPrefix)
+- [TrimSpace](#exampleTrimSpace)
+- [TrimSuffix](#exampleTrimSuffix)
 
 ### Package files
  [buffer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bytes/buffer.go) [bytes.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bytes/bytes.go) [bytes_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bytes/bytes_amd64.go) [bytes_decl.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bytes/bytes_decl.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bytes/reader.go)
@@ -158,7 +158,7 @@ Compare returns an integer comparing two byte slices lexicographically. The
 result will be 0 if a==b, -1 if a < b, and +1 if a > b. A nil argument is
 equivalent to an empty slice.
 
-<a id="example_Compare"></a>
+<a id="exampleCompare"></a>
 Example:
 
     // Interpret Compare's result by comparing it to zero.
@@ -185,7 +185,7 @@ Example:
     }
 
 
-<a id="example_Compare_search"></a>
+<a id="exampleCompare_search"></a>
 Example:
 
     // Binary search to find a matching byte slice.
@@ -205,7 +205,7 @@ Example:
 
 Contains reports whether subslice is within b.
 
-<a id="example_Contains"></a>
+<a id="exampleContains"></a>
 Example:
 
     fmt.Println(bytes.Contains([]byte("seafood"), []byte("foo")))
@@ -238,7 +238,7 @@ ContainsRune reports whether the Unicode code point r is within b.
 Count counts the number of non-overlapping instances of sep in s. If sep is an
 empty slice, Count returns 1 + the number of Unicode code points in s.
 
-<a id="example_Count"></a>
+<a id="exampleCount"></a>
 Example:
 
     fmt.Println(bytes.Count([]byte("cheese"), []byte("e")))
@@ -261,7 +261,7 @@ contain the same bytes. A nil argument is equivalent to an empty slice.
 EqualFold reports whether s and t, interpreted as UTF-8 strings, are equal under
 Unicode case-folding.
 
-<a id="example_EqualFold"></a>
+<a id="exampleEqualFold"></a>
 Example:
 
     fmt.Println(bytes.EqualFold([]byte("Go"), []byte("go")))
@@ -275,7 +275,7 @@ Fields splits the slice s around each instance of one or more consecutive white
 space characters, returning a slice of subslices of s or an empty list if s
 contains only white space.
 
-<a id="example_Fields"></a>
+<a id="exampleFields"></a>
 Example:
 
     fmt.Printf("Fields are: %q", bytes.Fields([]byte("  foo bar  baz   ")))
@@ -292,7 +292,7 @@ an empty slice is returned. FieldsFunc makes no guarantees about the order in
 which it calls f(c). If f does not return consistent results for a given c,
 FieldsFunc may crash.
 
-<a id="example_FieldsFunc"></a>
+<a id="exampleFieldsFunc"></a>
 Example:
 
     f := func(c rune) bool {
@@ -307,7 +307,7 @@ Example:
 
 HasPrefix tests whether the byte slice s begins with prefix.
 
-<a id="example_HasPrefix"></a>
+<a id="exampleHasPrefix"></a>
 Example:
 
     fmt.Println(bytes.HasPrefix([]byte("Gopher"), []byte("Go")))
@@ -324,7 +324,7 @@ Example:
 
 HasSuffix tests whether the byte slice s ends with suffix.
 
-<a id="example_HasSuffix"></a>
+<a id="exampleHasSuffix"></a>
 Example:
 
     fmt.Println(bytes.HasSuffix([]byte("Amigo"), []byte("go")))
@@ -344,7 +344,7 @@ Example:
 Index returns the index of the first instance of sep in s, or -1 if sep is not
 present in s.
 
-<a id="example_Index"></a>
+<a id="exampleIndex"></a>
 Example:
 
     fmt.Println(bytes.Index([]byte("chicken"), []byte("ken")))
@@ -362,7 +362,7 @@ returns the byte index of the first occurrence in s of any of the Unicode code
 points in chars. It returns -1 if chars is empty or if there is no code point in
 common.
 
-<a id="example_IndexAny"></a>
+<a id="exampleIndexAny"></a>
 Example:
 
     fmt.Println(bytes.IndexAny([]byte("chicken"), "aeiouy"))
@@ -386,7 +386,7 @@ IndexFunc interprets s as a sequence of UTF-8-encoded Unicode code points. It
 returns the byte index in s of the first Unicode code point satisfying f(c), or
 -1 if none do.
 
-<a id="example_IndexFunc"></a>
+<a id="exampleIndexFunc"></a>
 Example:
 
     f := func(c rune) bool {
@@ -407,7 +407,7 @@ returns the byte index of the first occurrence in s of the given rune. It
 returns -1 if rune is not present in s. If r is utf8.RuneError, it returns the
 first instance of any invalid UTF-8 byte sequence.
 
-<a id="example_IndexRune"></a>
+<a id="exampleIndexRune"></a>
 Example:
 
     fmt.Println(bytes.IndexRune([]byte("chicken"), 'k'))
@@ -423,7 +423,7 @@ Example:
 Join concatenates the elements of s to create a new byte slice. The separator
 sep is placed between elements in the resulting slice.
 
-<a id="example_Join"></a>
+<a id="exampleJoin"></a>
 Example:
 
     s := [][]byte{[]byte("foo"), []byte("bar"), []byte("baz")}
@@ -437,7 +437,7 @@ Example:
 LastIndex returns the index of the last instance of sep in s, or -1 if sep is
 not present in s.
 
-<a id="example_LastIndex"></a>
+<a id="exampleLastIndex"></a>
 Example:
 
     fmt.Println(bytes.Index([]byte("go gopher"), []byte("go")))
@@ -481,7 +481,7 @@ according to the mapping function. If mapping returns a negative value, the
 character is dropped from the string with no replacement. The characters in s
 and the output are interpreted as UTF-8-encoded Unicode code points.
 
-<a id="example_Map"></a>
+<a id="exampleMap"></a>
 Example:
 
     rot13 := func(r rune) rune {
@@ -504,7 +504,7 @@ Repeat returns a new byte slice consisting of count copies of b.
 
 It panics if count is negative or if the result of (len(b) * count) overflows.
 
-<a id="example_Repeat"></a>
+<a id="exampleRepeat"></a>
 Example:
 
     fmt.Printf("ba%s", bytes.Repeat([]byte("na"), 2))
@@ -519,7 +519,7 @@ of old replaced by new. If old is empty, it matches at the beginning of the
 slice and after each UTF-8 sequence, yielding up to k+1 replacements for a
 k-rune slice. If n < 0, there is no limit on the number of replacements.
 
-<a id="example_Replace"></a>
+<a id="exampleReplace"></a>
 Example:
 
     fmt.Printf("%s\n", bytes.Replace([]byte("oink oink oink"), []byte("k"), []byte("ky"), 2))
@@ -542,7 +542,7 @@ Split slices s into all subslices separated by sep and returns a slice of the
 subslices between those separators. If sep is empty, Split splits after each
 UTF-8 sequence. It is equivalent to SplitN with a count of -1.
 
-<a id="example_Split"></a>
+<a id="exampleSplit"></a>
 Example:
 
     fmt.Printf("%q\n", bytes.Split([]byte("a,b,c"), []byte(",")))
@@ -563,7 +563,7 @@ SplitAfter slices s into all subslices after each instance of sep and returns a
 slice of those subslices. If sep is empty, SplitAfter splits after each UTF-8
 sequence. It is equivalent to SplitAfterN with a count of -1.
 
-<a id="example_SplitAfter"></a>
+<a id="exampleSplitAfter"></a>
 Example:
 
     fmt.Printf("%q\n", bytes.SplitAfter([]byte("a,b,c"), []byte(",")))
@@ -581,7 +581,7 @@ sequence. The count determines the number of subslices to return:
     n == 0: the result is nil (zero subslices)
     n < 0: all subslices
 
-<a id="example_SplitAfterN"></a>
+<a id="exampleSplitAfterN"></a>
 Example:
 
     fmt.Printf("%q\n", bytes.SplitAfterN([]byte("a,b,c"), []byte(","), 2))
@@ -599,7 +599,7 @@ UTF-8 sequence. The count determines the number of subslices to return:
     n == 0: the result is nil (zero subslices)
     n < 0: all subslices
 
-<a id="example_SplitN"></a>
+<a id="exampleSplitN"></a>
 Example:
 
     fmt.Printf("%q\n", bytes.SplitN([]byte("a,b,c"), []byte(","), 2))
@@ -619,7 +619,7 @@ their title case.
 BUG(rsc): The rule Title uses for word boundaries does not handle Unicode
 punctuation properly.
 
-<a id="example_Title"></a>
+<a id="exampleTitle"></a>
 Example:
 
     fmt.Printf("%s", bytes.Title([]byte("her royal highness")))
@@ -632,7 +632,7 @@ Example:
 ToLower returns a copy of the byte slice s with all Unicode letters mapped to
 their lower case.
 
-<a id="example_ToLower"></a>
+<a id="exampleToLower"></a>
 Example:
 
     fmt.Printf("%s", bytes.ToLower([]byte("Gopher")))
@@ -652,7 +652,7 @@ mapped to their lower case, giving priority to the special casing rules.
 ToTitle returns a copy of the byte slice s with all Unicode letters mapped to
 their title case.
 
-<a id="example_ToTitle"></a>
+<a id="exampleToTitle"></a>
 Example:
 
     fmt.Printf("%s\n", bytes.ToTitle([]byte("loud noises")))
@@ -675,7 +675,7 @@ mapped to their title case, giving priority to the special casing rules.
 ToUpper returns a copy of the byte slice s with all Unicode letters mapped to
 their upper case.
 
-<a id="example_ToUpper"></a>
+<a id="exampleToUpper"></a>
 Example:
 
     fmt.Printf("%s", bytes.ToUpper([]byte("Gopher")))
@@ -695,7 +695,7 @@ mapped to their upper case, giving priority to the special casing rules.
 Trim returns a subslice of s by slicing off all leading and trailing
 UTF-8-encoded Unicode code points contained in cutset.
 
-<a id="example_Trim"></a>
+<a id="exampleTrim"></a>
 Example:
 
     fmt.Printf("[%q]", bytes.Trim([]byte(" !!! Achtung! Achtung! !!! "), "! "))
@@ -729,7 +729,7 @@ Unicode code points c that satisfy f(c).
 TrimPrefix returns s without the provided leading prefix string. If s doesn't
 start with prefix, s is returned unchanged.
 
-<a id="example_TrimPrefix"></a>
+<a id="exampleTrimPrefix"></a>
 Example:
 
     var b = []byte("Goodbye,, world!")
@@ -759,7 +759,7 @@ Unicode code points c that satisfy f(c).
 TrimSpace returns a subslice of s by slicing off all leading and trailing white
 space, as defined by Unicode.
 
-<a id="example_TrimSpace"></a>
+<a id="exampleTrimSpace"></a>
 Example:
 
     fmt.Printf("%s", bytes.TrimSpace([]byte(" \t\n a lone gopher \n\t\r\n")))
@@ -772,7 +772,7 @@ Example:
 TrimSuffix returns s without the provided trailing suffix string. If s doesn't
 end with suffix, s is returned unchanged.
 
-<a id="example_TrimSuffix"></a>
+<a id="exampleTrimSuffix"></a>
 Example:
 
     var b = []byte("Hello, goodbye, etc!")
@@ -791,7 +791,7 @@ Example:
 A Buffer is a variable-sized buffer of bytes with Read and Write methods. The
 zero value for Buffer is an empty buffer ready to use.
 
-<a id="example_Buffer"></a>
+<a id="exampleBuffer"></a>
 Example:
 
     var b bytes.Buffer // A Buffer needs no initialization.
@@ -801,7 +801,7 @@ Example:
     // Output: Hello world!
 
 
-<a id="example_Buffer_reader"></a>
+<a id="exampleBuffer_reader"></a>
 Example:
 
     // A Buffer can turn a string or a []byte into an io.Reader.
@@ -860,7 +860,7 @@ bytes. After Grow(n), at least n bytes can be written to the buffer without
 another allocation. If n is negative, Grow will panic. If the buffer can't grow
 it will panic with ErrTooLarge.
 
-<a id="example_Buffer_Grow"></a>
+<a id="exampleBuffer_Grow"></a>
 Example:
 
     var b bytes.Buffer

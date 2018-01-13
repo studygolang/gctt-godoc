@@ -40,9 +40,9 @@ numbers.
 
 ### Examples
 
-- [Abs](#example_Abs)
-- [Exp](#example_Exp)
-- [Polar](#example_Polar)
+- [Abs](#exampleAbs)
+- [Exp](#exampleExp)
+- [Polar](#examplePolar)
 
 ### Package files
  [abs.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/abs.go) [asin.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/asin.go) [conj.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/conj.go) [exp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/exp.go) [isinf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/isinf.go) [isnan.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/isnan.go) [log.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/log.go) [phase.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/phase.go) [polar.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/polar.go) [pow.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/pow.go) [rect.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/rect.go) [sin.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/sin.go) [sqrt.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/sqrt.go) [tan.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/tan.go)
@@ -53,7 +53,7 @@ numbers.
 
 Abs returns the absolute value (also called the modulus) of x.
 
-<a id="example_Abs"></a>
+<a id="exampleAbs"></a>
 Example:
 
     fmt.Printf("%.1f", cmplx.Abs(3+4i))
@@ -125,7 +125,7 @@ Cot returns the cotangent of x.
 
 Exp returns e**x, the base-e exponential of x.
 
-<a id="example_Exp"></a>
+<a id="exampleExp"></a>
 Example:
 
     fmt.Printf("%.1f", cmplx.Exp(1i*math.Pi)+1)
@@ -182,7 +182,7 @@ in the range [-Pi, Pi].
 Polar returns the absolute value r and phase θ of x, such that x = r * e**θi.
 The phase is in the range [-Pi, Pi].
 
-<a id="example_Polar"></a>
+<a id="examplePolar"></a>
 Example:
 
     r, theta := cmplx.Polar(2i)

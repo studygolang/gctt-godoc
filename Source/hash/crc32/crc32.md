@@ -30,7 +30,7 @@ for information.
 
 ### Examples
 
-- [MakeTable](#example_MakeTable)
+- [MakeTable](#exampleMakeTable)
 
 ### Package files
  [crc32.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go) [crc32_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32_amd64.go) [crc32_generic.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32_generic.go)
@@ -112,7 +112,7 @@ Table is a 256-word table representing the polynomial for efficient processing.
 MakeTable returns a Table constructed from the specified polynomial. The
 contents of this Table must not be modified.
 
-<a id="example_MakeTable"></a>
+<a id="exampleMakeTable"></a>
 Example:
 
     // In this package, the CRC polynomial is represented in reversed notation,

@@ -63,19 +63,19 @@ io 包提供了基本的 I/O 原语接口。它主要用于将类似 os 包中�
 
 ### 例子
 
-- [Copy](#example_Copy)
-- [CopyBuffer](#example_CopyBuffer)
-- [CopyN](#example_CopyN)
-- [LimitReader](#example_LimitReader)
-- [MultiReader](#example_MultiReader)
-- [MultiWriter](#example_MultiWriter)
-- [ReadAtLeast](#example_ReadAtLeast)
-- [ReadFull](#example_ReadFull)
-- [SectionReader](#example_SectionReader)
-- [SectionReader.ReadAt](#example_SectionReader_ReadAt)
-- [SectionReader.Seek](#example_SectionReader_Seek)
-- [TeeReader](#example_TeeReader)
-- [WriteString](#example_WriteString)
+- [Copy](#exampleCopy)
+- [CopyBuffer](#exampleCopyBuffer)
+- [CopyN](#exampleCopyN)
+- [LimitReader](#exampleLimitReader)
+- [MultiReader](#exampleMultiReader)
+- [MultiWriter](#exampleMultiWriter)
+- [ReadAtLeast](#exampleReadAtLeast)
+- [ReadFull](#exampleReadFull)
+- [SectionReader](#exampleSectionReader)
+- [SectionReader.ReadAt](#exampleSectionReader_ReadAt)
+- [SectionReader.Seek](#exampleSectionReader_Seek)
+- [TeeReader](#exampleTeeReader)
+- [WriteString](#exampleWriteString)
 
 ### 文件
  [io.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go) [multi.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/multi.go) [pipe.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/pipe.go)
@@ -127,7 +127,7 @@ Copy 方法将从 src 读取，直到遇见 EOF 或者发生错误，然后将�
 如果 src 实现了 WriterTo 接口，拷贝操作将会调用 src.WriteTo(dst)。
 如果 dst 实现了 ReaderFrom 接口，那么拷贝操作将会调用 dst.ReadFrom(src)。
 
-<a id="example_Copy"></a>
+<a id="exampleCopy"></a>
 例:
 
     r := strings.NewReader("some io.Reader stream to be read\n")
@@ -145,7 +145,7 @@ Copy 方法将从 src 读取，直到遇见 EOF 或者发生错误，然后将�
 
 CopyBuffer 和 Copy 很相似，唯一的区别就是它使用用户提供的缓存进行拷贝，而不是使用临时的缓存。如果 buf 是 nil，那么将会为其分配一个缓存，如果缓存的长度为 0，那么 CopyBuffer 将会 panic。
 
-<a id="example_CopyBuffer"></a>
+<a id="exampleCopyBuffer"></a>
 例:
 
     r1 := strings.NewReader("first reader\n")
@@ -174,7 +174,7 @@ CopyN 从 src 拷贝 n 字节到 dst，它返回拷贝的字节数和遇到的�
 
 如果 dst 实现了 ReaderFrom 接口，那么拷贝将会使用 ReaderFrom 接口。
 
-<a id="example_CopyN"></a>
+<a id="exampleCopyN"></a>
 例:
 
     r := strings.NewReader("some io.Reader stream to be read")
@@ -192,7 +192,7 @@ CopyN 从 src 拷贝 n 字节到 dst，它返回拷贝的字节数和遇到的�
 
 ReadAtLeast 从 r 至少读取 min 个字节到 buf 中。它返回成功拷贝的字节数，并且在字节数没有达到最小值时，返回一个错误。只有当没有字节可以读取的时候才返回 EOF。如果读取了小于 min 个字节后产生 EOF 错误。那么 ReadAtLeast 将返回 ErrUnexpectedEOF。如果 min 大于 buf 的长度，ReaderAtLeast 将返回 ErrShortBuffer。只有当 err == nil 的时候才会返回 n >= min。
 
-<a id="example_ReadAtLeast"></a>
+<a id="exampleReadAtLeast"></a>
 例:
 
     r := strings.NewReader("some io.Reader stream to be read\n")
@@ -227,7 +227,7 @@ ReadAtLeast 从 r 至少读取 min 个字节到 buf 中。它返回成功拷贝�
 
 ReadFull 从 r 读取 len(buf) 个字节到 buf。它返回拷贝的字节数，而当读取少于指定字节时，返回一个错误。只有没有字节可以读取的时候才会返回 EOF。如果一个 EOF 不是在读取最后一个字节后产生的，那么应该返回 ErrUnexpectedEOF。只有当 err == nil 的时候才会返回 n == len(buf)。
 
-<a id="example_ReadFull"></a>
+<a id="exampleReadFull"></a>
 例:
 
     r := strings.NewReader("some io.Reader stream to be read\n")
@@ -254,7 +254,7 @@ ReadFull 从 r 读取 len(buf) 个字节到 buf。它返回拷贝的字节数，
 
 WriteString 会将字符串 s 写入 w。如果 w 实现了 WriteString 方法。它将会被直接调用，否则会调用一次 w.Write。
 
-<a id="example_WriteString"></a>
+<a id="exampleWriteString"></a>
 例:
 
     io.WriteString(os.Stdout, "Hello World")
@@ -449,7 +449,7 @@ Reader 的实现不能保存 p。
 LimitReader 返回一个从 r 中读取 n 个字符后返回 EOF 的 Reader。
 底层的实现是 *LimitedReader。
 
-<a id="example_LimitReader"></a>
+<a id="exampleLimitReader"></a>
 例:
 
     r := strings.NewReader("some io.Reader stream to be read\n")
@@ -468,7 +468,7 @@ LimitReader 返回一个从 r 中读取 n 个字符后返回 EOF 的 Reader。
 
 MultiReader 返回一个逻辑上连接多个 Reader 的 Reader。它们会依次被读取。只有在所有的输入端全部返回 EOF 的时候，Read 才会返回 EOF。如果在这当中任何一个 Reader 返回了一个非 nil，非 EOF 的错误，那么这个错误都将被返回。
 
-<a id="example_MultiReader"></a>
+<a id="exampleMultiReader"></a>
 例:
 
     r1 := strings.NewReader("first reader ")
@@ -490,7 +490,7 @@ MultiReader 返回一个逻辑上连接多个 Reader 的 Reader。它们会依�
 TeeReader 返回一个将所有从 r 中读取到的数据全部写入进 w 中的 Reader。
 所有对 r 的读取操作都会对应将数据写入 w 的操作。它的内部没有缓冲机制，使用读取操作时必须等待内部写入 w 的操作完成后才能返回，所有写操作时的错误都会被作为读取操作的错误返回。
 
-<a id="example_TeeReader"></a>
+<a id="exampleTeeReader"></a>
 例:
 
     r := strings.NewReader("some io.Reader stream to be read\n")
@@ -577,7 +577,7 @@ UnreadRune 会让下一次调用 ReadRune 和之前返回相同的值。如果�
 
 SectionReader 在 ReaderAt 获取到的数据片段上实现了 Read、Seek 和 ReadAt 接口。
 
-<a id="example_SectionReader"></a>
+<a id="exampleSectionReader"></a>
 例:
 
     r := strings.NewReader("some io.Reader stream to be read\n")
@@ -604,7 +604,7 @@ NewSectionReader 返回一个 SectionReader，它能读取 r 中以 off 作为�
     <a href="#SectionReader.ReadAt">¶</a></h3>
 <pre>func (s *<a href="#SectionReader">SectionReader</a>) ReadAt(p []<a href="/builtin/#byte">byte</a>, off <a href="/builtin/#int64">int64</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
-<a id="example_SectionReader_ReadAt"></a>
+<a id="exampleSectionReader_ReadAt"></a>
 例:
 
     r := strings.NewReader("some io.Reader stream to be read\n")
@@ -624,7 +624,7 @@ NewSectionReader 返回一个 SectionReader，它能读取 r 中以 off 作为�
     <a href="#SectionReader.Seek">¶</a></h3>
 <pre>func (s *<a href="#SectionReader">SectionReader</a>) Seek(offset <a href="/builtin/#int64">int64</a>, whence <a href="/builtin/#int">int</a>) (<a href="/builtin/#int64">int64</a>, <a href="/builtin/#error">error</a>)</pre>
 
-<a id="example_SectionReader_Seek"></a>
+<a id="exampleSectionReader_Seek"></a>
 例:
 
     r := strings.NewReader("some io.Reader stream to be read\n")
@@ -704,7 +704,7 @@ Write 方法将 p 中的所有元素写入底层数据流。并且返回成功�
 
 MultiWriter 会创建一个将写入的字符复制给每个 Writer 的 Wrtier。与 Unix 下的 tee(1) 命令相似。
 
-<a id="example_MultiWriter"></a>
+<a id="exampleMultiWriter"></a>
 例:
 
     r := strings.NewReader("some io.Reader stream to be read\n")

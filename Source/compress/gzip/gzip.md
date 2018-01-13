@@ -8,7 +8,7 @@ version: 1.9.2
 Package gzip implements reading and writing of gzip format compressed files, as
 specified in RFC 1952.
 
-<a id="example__writerReader"></a>
+<a id="example_writerReader"></a>
 Example:
 
     var buf bytes.Buffer
@@ -71,8 +71,8 @@ Example:
 
 ### Examples
 
-- [Reader.Multistream](#example_Reader_Multistream)
-- [Package (WriterReader)](#example__writerReader)
+- [Reader.Multistream](#exampleReader_Multistream)
+- [Package (WriterReader)](#example_writerReader)
 
 ### Package files
  [gunzip.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/gzip/gunzip.go) [gzip.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/gzip/gzip.go)
@@ -176,7 +176,7 @@ reader implements io.ByteReader, it will be left positioned just after the gzip
 stream. To start the next stream, call z.Reset(r) followed by
 z.Multistream(false). If there is no next stream, z.Reset(r) will return io.EOF.
 
-<a id="example_Reader_Multistream"></a>
+<a id="exampleReader_Multistream"></a>
 Example:
 
     var buf bytes.Buffer

@@ -24,9 +24,9 @@ Package mime implements parts of the MIME spec.
 
 ### Examples
 
-- [WordDecoder.Decode](#example_WordDecoder_Decode)
-- [WordDecoder.DecodeHeader](#example_WordDecoder_DecodeHeader)
-- [WordEncoder.Encode](#example_WordEncoder_Encode)
+- [WordDecoder.Decode](#exampleWordDecoder_Decode)
+- [WordDecoder.DecodeHeader](#exampleWordDecoder_DecodeHeader)
+- [WordEncoder.Encode](#exampleWordEncoder_Encode)
 
 ### Package files
  [encodedword.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/encodedword.go) [grammar.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/grammar.go) [mediatype.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/mediatype.go) [type.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/type.go) [type_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/type_unix.go)
@@ -126,7 +126,7 @@ A WordDecoder decodes MIME headers containing RFC 2047 encoded-words.
 
 Decode decodes an RFC 2047 encoded-word.
 
-<a id="example_WordDecoder_Decode"></a>
+<a id="exampleWordDecoder_Decode"></a>
 Example:
 
     dec := new(mime.WordDecoder)
@@ -167,7 +167,7 @@ Example:
 DecodeHeader decodes all encoded-words of the given string. It returns an error
 if and only if CharsetReader of d returns an error.
 
-<a id="example_WordDecoder_DecodeHeader"></a>
+<a id="exampleWordDecoder_DecodeHeader"></a>
 Example:
 
     dec := new(mime.WordDecoder)
@@ -222,7 +222,7 @@ Encode returns the encoded-word form of s. If s is ASCII without special
 characters, it is returned unchanged. The provided charset is the IANA charset
 name of s. It is case insensitive.
 
-<a id="example_WordEncoder_Encode"></a>
+<a id="exampleWordEncoder_Encode"></a>
 Example:
 
     fmt.Println(mime.QEncoding.Encode("utf-8", "¡Hola, señor!"))

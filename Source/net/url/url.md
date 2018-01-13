@@ -51,13 +51,13 @@ Package url parses URLs and implements query escaping.
 
 ### Examples
 
-- [ParseQuery](#example_ParseQuery)
-- [URL](#example_URL)
-- [URL.Hostname](#example_URL_Hostname)
-- [URL.RequestURI](#example_URL_RequestURI)
-- [URL.ResolveReference](#example_URL_ResolveReference)
-- [URL (Roundtrip)](#example_URL_roundtrip)
-- [Values](#example_Values)
+- [ParseQuery](#exampleParseQuery)
+- [URL](#exampleURL)
+- [URL.Hostname](#exampleURL_Hostname)
+- [URL.RequestURI](#exampleURL_RequestURI)
+- [URL.ResolveReference](#exampleURL_ResolveReference)
+- [URL (Roundtrip)](#exampleURL_roundtrip)
+- [Values](#exampleValues)
 
 ### Package files
  [url.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go)
@@ -170,7 +170,7 @@ but when it is, code must not use Path directly. The Parse function sets both
 Path and RawPath in the URL it returns, and URL's String method uses RawPath if
 it is a valid encoding of Path, by calling the EscapedPath method.
 
-<a id="example_URL"></a>
+<a id="exampleURL"></a>
 Example:
 
     u, err := url.Parse("http://bing.com/search?q=dotnet")
@@ -186,7 +186,7 @@ Example:
     // Output: https://google.com/search?q=golang
 
 
-<a id="example_URL_roundtrip"></a>
+<a id="exampleURL_roundtrip"></a>
 Example:
 
     // Parse + String preserve the original encoding.
@@ -238,7 +238,7 @@ Hostname returns u.Host, without any port number.
 If Host is an IPv6 literal with a port number, Hostname returns the IPv6 literal
 without the square brackets. IPv6 literals may include a zone identifier.
 
-<a id="example_URL_Hostname"></a>
+<a id="exampleURL_Hostname"></a>
 Example:
 
     u, err := url.Parse("https://example.org:8000/path")
@@ -296,7 +296,7 @@ malformed value pairs. To check errors use ParseQuery.
 RequestURI returns the encoded path?query or opaque?query string that would be
 used in an HTTP request for u.
 
-<a id="example_URL_RequestURI"></a>
+<a id="exampleURL_RequestURI"></a>
 Example:
 
     u, err := url.Parse("https://example.org/path?foo=bar")
@@ -316,7 +316,7 @@ absolute. ResolveReference always returns a new URL instance, even if the
 returned URL is identical to either the base or reference. If ref is an absolute
 URL, then ResolveReference ignores base and returns a copy of ref.
 
-<a id="example_URL_ResolveReference"></a>
+<a id="exampleURL_ResolveReference"></a>
 Example:
 
     u, err := url.Parse("../../..//search?q=dotnet")
@@ -415,7 +415,7 @@ Values maps a string key to a list of values. It is typically used for query
 parameters and form values. Unlike in the http.Header map, the keys in a Values
 map are case-sensitive.
 
-<a id="example_Values"></a>
+<a id="exampleValues"></a>
 Example:
 
     v := url.Values{}
@@ -445,7 +445,7 @@ Query is expected to be a list of key=value settings separated by ampersands or
 semicolons. A setting without an equals sign is interpreted as a key set to an
 empty value.
 
-<a id="example_ParseQuery"></a>
+<a id="exampleParseQuery"></a>
 Example:
 
     m, err := url.ParseQuery(`x=1&y=2&y=3;z`)

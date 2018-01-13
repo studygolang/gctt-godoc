@@ -8,7 +8,7 @@ version: 1.9.2
 Package httptrace provides mechanisms to trace the events within HTTP client
 requests.
 
-<a id="example_"></a>
+<a id="example"></a>
 Example:
 
     req, _ := http.NewRequest("GET", "http://example.com", nil)
@@ -38,7 +38,7 @@ Example:
 
 ### Examples
 
-- [Package](#example_)
+- [Package](#example)
 
 ### Package files
  [trace.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptrace/trace.go)

@@ -29,20 +29,20 @@ sequences.
 
 ### Examples
 
-- [DecodeLastRune](#example_DecodeLastRune)
-- [DecodeLastRuneInString](#example_DecodeLastRuneInString)
-- [DecodeRune](#example_DecodeRune)
-- [DecodeRuneInString](#example_DecodeRuneInString)
-- [EncodeRune](#example_EncodeRune)
-- [FullRune](#example_FullRune)
-- [FullRuneInString](#example_FullRuneInString)
-- [RuneCount](#example_RuneCount)
-- [RuneCountInString](#example_RuneCountInString)
-- [RuneLen](#example_RuneLen)
-- [RuneStart](#example_RuneStart)
-- [Valid](#example_Valid)
-- [ValidRune](#example_ValidRune)
-- [ValidString](#example_ValidString)
+- [DecodeLastRune](#exampleDecodeLastRune)
+- [DecodeLastRuneInString](#exampleDecodeLastRuneInString)
+- [DecodeRune](#exampleDecodeRune)
+- [DecodeRuneInString](#exampleDecodeRuneInString)
+- [EncodeRune](#exampleEncodeRune)
+- [FullRune](#exampleFullRune)
+- [FullRuneInString](#exampleFullRuneInString)
+- [RuneCount](#exampleRuneCount)
+- [RuneCountInString](#exampleRuneCountInString)
+- [RuneLen](#exampleRuneLen)
+- [RuneStart](#exampleRuneStart)
+- [Valid](#exampleValid)
+- [ValidRune](#exampleValidRune)
+- [ValidString](#exampleValidString)
 
 ### Package files
  [utf8.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go)
@@ -71,7 +71,7 @@ An encoding is invalid if it is incorrect UTF-8, encodes a rune that is out of
 range, or is not the shortest possible UTF-8 encoding for the value. No other
 validation is performed.
 
-<a id="example_DecodeLastRune"></a>
+<a id="exampleDecodeLastRune"></a>
 Example:
 
     b := []byte("Hello, 世界")
@@ -106,7 +106,7 @@ An encoding is invalid if it is incorrect UTF-8, encodes a rune that is out of
 range, or is not the shortest possible UTF-8 encoding for the value. No other
 validation is performed.
 
-<a id="example_DecodeLastRuneInString"></a>
+<a id="exampleDecodeLastRuneInString"></a>
 Example:
 
     str := "Hello, 世界"
@@ -141,7 +141,7 @@ An encoding is invalid if it is incorrect UTF-8, encodes a rune that is out of
 range, or is not the shortest possible UTF-8 encoding for the value. No other
 validation is performed.
 
-<a id="example_DecodeRune"></a>
+<a id="exampleDecodeRune"></a>
 Example:
 
     b := []byte("Hello, 世界")
@@ -175,7 +175,7 @@ An encoding is invalid if it is incorrect UTF-8, encodes a rune that is out of
 range, or is not the shortest possible UTF-8 encoding for the value. No other
 validation is performed.
 
-<a id="example_DecodeRuneInString"></a>
+<a id="exampleDecodeRuneInString"></a>
 Example:
 
     str := "Hello, 世界"
@@ -204,7 +204,7 @@ Example:
 EncodeRune writes into p (which must be large enough) the UTF-8 encoding of the
 rune. It returns the number of bytes written.
 
-<a id="example_EncodeRune"></a>
+<a id="exampleEncodeRune"></a>
 Example:
 
     r := '世'
@@ -226,7 +226,7 @@ FullRune reports whether the bytes in p begin with a full UTF-8 encoding of a
 rune. An invalid encoding is considered a full Rune since it will convert as a
 width-1 error rune.
 
-<a id="example_FullRune"></a>
+<a id="exampleFullRune"></a>
 Example:
 
     buf := []byte{228, 184, 150} // 世
@@ -242,7 +242,7 @@ Example:
 
 FullRuneInString is like FullRune but its input is a string.
 
-<a id="example_FullRuneInString"></a>
+<a id="exampleFullRuneInString"></a>
 Example:
 
     str := "世"
@@ -259,7 +259,7 @@ Example:
 RuneCount returns the number of runes in p. Erroneous and short encodings are
 treated as single runes of width 1 byte.
 
-<a id="example_RuneCount"></a>
+<a id="exampleRuneCount"></a>
 Example:
 
     buf := []byte("Hello, 世界")
@@ -275,7 +275,7 @@ Example:
 
 RuneCountInString is like RuneCount but its input is a string.
 
-<a id="example_RuneCountInString"></a>
+<a id="exampleRuneCountInString"></a>
 Example:
 
     str := "Hello, 世界"
@@ -292,7 +292,7 @@ Example:
 RuneLen returns the number of bytes required to encode the rune. It returns -1
 if the rune is not a valid value to encode in UTF-8.
 
-<a id="example_RuneLen"></a>
+<a id="exampleRuneLen"></a>
 Example:
 
     fmt.Println(utf8.RuneLen('a'))
@@ -309,7 +309,7 @@ RuneStart reports whether the byte could be the first byte of an encoded,
 possibly invalid rune. Second and subsequent bytes always have the top two bits
 set to 10.
 
-<a id="example_RuneStart"></a>
+<a id="exampleRuneStart"></a>
 Example:
 
     buf := []byte("a界")
@@ -327,7 +327,7 @@ Example:
 
 Valid reports whether p consists entirely of valid UTF-8-encoded runes.
 
-<a id="example_Valid"></a>
+<a id="exampleValid"></a>
 Example:
 
     valid := []byte("Hello, 世界")
@@ -346,7 +346,7 @@ Example:
 ValidRune reports whether r can be legally encoded as UTF-8. Code points that
 are out of range or a surrogate half are illegal.
 
-<a id="example_ValidRune"></a>
+<a id="exampleValidRune"></a>
 Example:
 
     valid := 'a'
@@ -364,7 +364,7 @@ Example:
 
 ValidString reports whether s consists entirely of valid UTF-8-encoded runes.
 
-<a id="example_ValidString"></a>
+<a id="exampleValidString"></a>
 Example:
 
     valid := "Hello, 世界"

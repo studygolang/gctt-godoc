@@ -60,11 +60,11 @@ interface but provides buffering and some help for textual I/O.
 
 ### Examples
 
-- [Scanner (Custom)](#example_Scanner_custom)
-- [Scanner (EmptyFinalToken)](#example_Scanner_emptyFinalToken)
-- [Scanner (Lines)](#example_Scanner_lines)
-- [Scanner (Words)](#example_Scanner_words)
-- [Writer](#example_Writer)
+- [Scanner (Custom)](#exampleScanner_custom)
+- [Scanner (EmptyFinalToken)](#exampleScanner_emptyFinalToken)
+- [Scanner (Lines)](#exampleScanner_lines)
+- [Scanner (Words)](#exampleScanner_words)
+- [Writer](#exampleWriter)
 
 ### Package files
  [bufio.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go) [scan.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go)
@@ -335,7 +335,7 @@ arbitrarily far past the last token. Programs that need more control over error
 handling or large tokens, or must run sequential scans on a reader, should use
 bufio.Reader instead.
 
-<a id="example_Scanner_custom"></a>
+<a id="exampleScanner_custom"></a>
 Example:
 
     // An artificial input source.
@@ -365,7 +365,7 @@ Example:
     // Invalid input: strconv.ParseInt: parsing "1234567901234567890": value out of range
 
 
-<a id="example_Scanner_emptyFinalToken"></a>
+<a id="exampleScanner_emptyFinalToken"></a>
 Example:
 
     // Comma-separated list; last entry is empty.
@@ -394,7 +394,7 @@ Example:
     // Output: "1" "2" "3" "4" ""
 
 
-<a id="example_Scanner_lines"></a>
+<a id="exampleScanner_lines"></a>
 Example:
 
     scanner := bufio.NewScanner(os.Stdin)
@@ -406,7 +406,7 @@ Example:
     }
 
 
-<a id="example_Scanner_words"></a>
+<a id="exampleScanner_words"></a>
 Example:
 
     // An artificial input source.
@@ -520,7 +520,7 @@ will return the error. After all data has been written, the client should call
 the Flush method to guarantee all data has been forwarded to the underlying
 io.Writer.
 
-<a id="example_Writer"></a>
+<a id="exampleWriter"></a>
 Example:
 
     w := bufio.NewWriter(os.Stdout)

@@ -69,11 +69,11 @@ results in
 
 ### Examples
 
-- [Reader](#example_Reader)
-- [Reader.ReadAll](#example_Reader_ReadAll)
-- [Reader (Options)](#example_Reader_options)
-- [Writer](#example_Writer)
-- [Writer.WriteAll](#example_Writer_WriteAll)
+- [Reader](#exampleReader)
+- [Reader.ReadAll](#exampleReader_ReadAll)
+- [Reader (Options)](#exampleReader_options)
+- [Writer](#exampleWriter)
+- [Writer.WriteAll](#exampleWriter_WriteAll)
 
 ### Package files
  [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go) [writer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/writer.go)
@@ -143,7 +143,7 @@ As returned by NewReader, a Reader expects input conforming to RFC 4180. The
 exported fields can be changed to customize the details before the first call to
 Read or ReadAll.
 
-<a id="example_Reader"></a>
+<a id="exampleReader"></a>
 Example:
 
     in := `first_name,last_name,username
@@ -171,7 +171,7 @@ Example:
     // [Robert Griesemer gri]
 
 
-<a id="example_Reader_options"></a>
+<a id="exampleReader_options"></a>
 Example:
 
     in := `first_name;last_name;username
@@ -219,7 +219,7 @@ fields. A successful call returns err == nil, not err == io.EOF. Because ReadAll
 is defined to read until EOF, it does not treat end of file as an error to be
 reported.
 
-<a id="example_Reader_ReadAll"></a>
+<a id="exampleReader_ReadAll"></a>
 Example:
 
     in := `first_name,last_name,username
@@ -256,7 +256,7 @@ Comma is the field delimiter.
 
 If UseCRLF is true, the Writer ends each record with \r\n instead of \n.
 
-<a id="example_Writer"></a>
+<a id="exampleWriter"></a>
 Example:
 
     records := [][]string{
@@ -318,7 +318,7 @@ record is a slice of strings with each string being one field.
 
 WriteAll writes multiple CSV records to w using Write and then calls Flush.
 
-<a id="example_Writer_WriteAll"></a>
+<a id="exampleWriter_WriteAll"></a>
 Example:
 
     records := [][]string{

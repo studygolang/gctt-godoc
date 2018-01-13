@@ -305,7 +305,7 @@ A simple implementation of TestMain is:
 
 ### Examples
 
-- [B.RunParallel](#example_B_RunParallel)
+- [B.RunParallel](#exampleB_RunParallel)
 
 ### Package files
  [allocs.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/testing/allocs.go) [benchmark.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/testing/benchmark.go) [cover.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/testing/cover.go) [example.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/testing/example.go) [match.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/testing/match.go) [testing.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/testing/testing.go)
@@ -539,7 +539,7 @@ goroutine-local state and then iterate until pb.Next returns false. It should
 not use the StartTimer, StopTimer, or ResetTimer functions, because they have
 global effect. It should also not call Run.
 
-<a id="example_B_RunParallel"></a>
+<a id="exampleB_RunParallel"></a>
 Example:
 
     // Parallel benchmark for text/template.Template.Execute on a single object.

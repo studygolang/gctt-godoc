@@ -111,9 +111,9 @@ For usage examples, see the wiki page at https://golang.org/s/sqlwiki.
 
 ### Examples
 
-- [DB.Query](#example_DB_Query)
-- [DB.QueryRow](#example_DB_QueryRow)
-- [DB.Query (MultipleResultSets)](#example_DB_Query_multipleResultSets)
+- [DB.Query](#exampleDB_Query)
+- [DB.QueryRow](#exampleDB_QueryRow)
+- [DB.Query (MultipleResultSets)](#exampleDB_Query_multipleResultSets)
 
 ### Package files
  [convert.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/convert.go) [ctxutil.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/ctxutil.go) [sql.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go)
@@ -424,7 +424,7 @@ execution of the statement.
 Query executes a query that returns rows, typically a SELECT. The args are for
 any placeholder parameters in the query.
 
-<a id="example_DB_Query"></a>
+<a id="exampleDB_Query"></a>
 Example:
 
     age := 27
@@ -445,7 +445,7 @@ Example:
     }
 
 
-<a id="example_DB_Query_multipleResultSets"></a>
+<a id="exampleDB_Query_multipleResultSets"></a>
 Example:
 
     age := 27
@@ -524,7 +524,7 @@ always returns a non-nil value. Errors are deferred until Row's Scan method is
 called. If the query selects no rows, the *Row's Scan will return ErrNoRows.
 Otherwise, the *Row's Scan scans the first selected row and discards the rest.
 
-<a id="example_DB_QueryRow"></a>
+<a id="exampleDB_QueryRow"></a>
 Example:
 
     id := 123

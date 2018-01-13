@@ -8,7 +8,7 @@ version: 1.9.2
 Package flate implements the DEFLATE compressed data format, described in RFC
 1951. The gzip and zlib packages implement access to DEFLATE-based file formats.
 
-<a id="example__dictionary"></a>
+<a id="example_dictionary"></a>
 Example:
 
     // The dictionary is a string of bytes. When compressing some input data,
@@ -93,7 +93,7 @@ Example:
     // </#####
 
 
-<a id="example__reset"></a>
+<a id="example_reset"></a>
 Example:
 
     proverbs := []string{
@@ -145,7 +145,7 @@ Example:
     // Documentation is for users.
 
 
-<a id="example__synchronization"></a>
+<a id="example_synchronization"></a>
 Example:
 
     var wg sync.WaitGroup
@@ -258,9 +258,9 @@ Example:
 
 ### Examples
 
-- [Package (Dictionary)](#example__dictionary)
-- [Package (Reset)](#example__reset)
-- [Package (Synchronization)](#example__synchronization)
+- [Package (Dictionary)](#example_dictionary)
+- [Package (Reset)](#example_reset)
+- [Package (Synchronization)](#example_synchronization)
 
 ### Package files
  [deflate.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/deflate.go) [deflatefast.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/deflatefast.go) [dict_decoder.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/dict_decoder.go) [huffman_bit_writer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/huffman_bit_writer.go) [huffman_code.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/huffman_code.go) [inflate.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/inflate.go) [token.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/token.go)

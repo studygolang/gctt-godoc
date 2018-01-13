@@ -60,10 +60,10 @@ Contexts.
 
 ### Examples
 
-- [WithCancel](#example_WithCancel)
-- [WithDeadline](#example_WithDeadline)
-- [WithTimeout](#example_WithTimeout)
-- [WithValue](#example_WithValue)
+- [WithCancel](#exampleWithCancel)
+- [WithDeadline](#exampleWithDeadline)
+- [WithTimeout](#exampleWithTimeout)
+- [WithValue](#exampleWithValue)
 
 ### Package files
  [context.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/context/context.go)
@@ -215,7 +215,7 @@ when the parent context's Done channel is closed, whichever happens first.
 Canceling this context releases resources associated with it, so code should
 call cancel as soon as the operations running in this Context complete.
 
-<a id="example_WithCancel"></a>
+<a id="exampleWithCancel"></a>
 Example:
 
     // gen generates integers in a separate goroutine and
@@ -269,7 +269,7 @@ whichever happens first.
 Canceling this context releases resources associated with it, so code should
 call cancel as soon as the operations running in this Context complete.
 
-<a id="example_WithDeadline"></a>
+<a id="exampleWithDeadline"></a>
 Example:
 
     d := time.Now().Add(50 * time.Millisecond)
@@ -305,7 +305,7 @@ call cancel as soon as the operations running in this Context complete:
     	return slowOperation(ctx)
     }
 
-<a id="example_WithTimeout"></a>
+<a id="exampleWithTimeout"></a>
 Example:
 
     // Pass a context with a timeout to tell a blocking function that it
@@ -340,7 +340,7 @@ assigning to an interface{}, context keys often have concrete type struct{}.
 Alternatively, exported context key variables' static type should be a pointer
 or interface.
 
-<a id="example_WithValue"></a>
+<a id="exampleWithValue"></a>
 Example:
 
     type favContextKey string

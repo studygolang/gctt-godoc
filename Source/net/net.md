@@ -316,14 +316,14 @@ and DnsQuery.
 
 ### Examples
 
-- [CIDRMask](#example_CIDRMask)
-- [IP.DefaultMask](#example_IP_DefaultMask)
-- [IP.Mask](#example_IP_Mask)
-- [IPv4](#example_IPv4)
-- [IPv4Mask](#example_IPv4Mask)
-- [Listener](#example_Listener)
-- [ParseCIDR](#example_ParseCIDR)
-- [ParseIP](#example_ParseIP)
+- [CIDRMask](#exampleCIDRMask)
+- [IP.DefaultMask](#exampleIP_DefaultMask)
+- [IP.Mask](#exampleIP_Mask)
+- [IPv4](#exampleIPv4)
+- [IPv4Mask](#exampleIPv4Mask)
+- [Listener](#exampleListener)
+- [ParseCIDR](#exampleParseCIDR)
+- [ParseIP](#exampleParseIP)
 
 ### Package files
  [addrselect.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/addrselect.go) [cgo_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/cgo_linux.go) [cgo_resnew.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/cgo_resnew.go) [cgo_socknew.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/cgo_socknew.go) [cgo_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/cgo_unix.go) [conf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/conf.go) [dial.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/dial.go) [dnsclient.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/dnsclient.go) [dnsclient_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/dnsclient_unix.go) [dnsconfig_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/dnsconfig_unix.go) [dnsmsg.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/dnsmsg.go) [error_posix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/error_posix.go) [fd_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/fd_unix.go) [file.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/file.go) [file_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/file_unix.go) [hook.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/hook.go) [hook_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/hook_unix.go) [hosts.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/hosts.go) [interface.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/interface.go) [interface_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/interface_linux.go) [ip.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/ip.go) [iprawsock.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/iprawsock.go) [iprawsock_posix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/iprawsock_posix.go) [ipsock.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/ipsock.go) [ipsock_posix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/ipsock_posix.go) [lookup.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go) [lookup_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup_unix.go) [mac.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/mac.go) [net.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go) [nss.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/nss.go) [parse.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/parse.go) [pipe.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/pipe.go) [port.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/port.go) [port_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/port_unix.go) [rawconn.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rawconn.go) [sendfile_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/sendfile_linux.go) [sock_cloexec.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/sock_cloexec.go) [sock_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/sock_linux.go) [sock_posix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/sock_posix.go) [sockopt_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/sockopt_linux.go) [sockopt_posix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/sockopt_posix.go) [sockoptip_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/sockoptip_linux.go) [sockoptip_posix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/sockoptip_posix.go) [tcpsock.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go) [tcpsock_posix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock_posix.go) [tcpsockopt_posix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsockopt_posix.go) [tcpsockopt_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsockopt_unix.go) [udpsock.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/udpsock.go) [udpsock_posix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/udpsock_posix.go) [unixsock.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go) [unixsock_posix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock_posix.go) [writev_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/writev_unix.go)
@@ -894,7 +894,7 @@ the byte slice: a 16-byte slice can still be an IPv4 address.
 
 IPv4 returns the IP address (in 16-byte form) of the IPv4 address a.b.c.d.
 
-<a id="example_IPv4"></a>
+<a id="exampleIPv4"></a>
 Example:
 
     fmt.Println(net.IPv4(8, 8, 8, 8))
@@ -913,7 +913,7 @@ It returns the IP address and the network implied by the IP and prefix length.
 For example, ParseCIDR("192.0.2.1/24") returns the IP address 192.0.2.1 and the
 network 192.0.2.0/24.
 
-<a id="example_ParseCIDR"></a>
+<a id="exampleParseCIDR"></a>
 Example:
 
     ipv4Addr, ipv4Net, err := net.ParseCIDR("192.0.2.1/24")
@@ -944,7 +944,7 @@ ParseIP parses s as an IP address, returning the result. The string s can be in
 dotted decimal ("192.0.2.1") or IPv6 ("2001:db8::68") form. If s is not a valid
 textual representation of an IP address, ParseIP returns nil.
 
-<a id="example_ParseIP"></a>
+<a id="exampleParseIP"></a>
 Example:
 
     fmt.Println(net.ParseIP("192.0.2.1"))
@@ -964,7 +964,7 @@ DefaultMask returns the default IP mask for the IP address ip. Only IPv4
 addresses have default masks; DefaultMask returns nil if ip is not a valid IPv4
 address.
 
-<a id="example_IP_DefaultMask"></a>
+<a id="exampleIP_DefaultMask"></a>
 Example:
 
     ip := net.ParseIP("192.0.2.1")
@@ -1043,7 +1043,7 @@ an empty slice.
 
 Mask returns the result of masking the IP address ip with mask.
 
-<a id="example_IP_Mask"></a>
+<a id="exampleIP_Mask"></a>
 Example:
 
     ipv4Addr := net.ParseIP("192.0.2.1")
@@ -1303,7 +1303,7 @@ CIDRMask returns an IPMask consisting of `ones' 1 bits followed by 0s up to a
 total length of `bits' bits. For a mask of this form, CIDRMask is the inverse of
 IPMask.Size.
 
-<a id="example_CIDRMask"></a>
+<a id="exampleCIDRMask"></a>
 Example:
 
     // This mask corresponds to a /31 subnet for IPv4.
@@ -1322,7 +1322,7 @@ Example:
 
 IPv4Mask returns the IP mask (in 4-byte form) of the IPv4 mask a.b.c.d.
 
-<a id="example_IPv4Mask"></a>
+<a id="exampleIPv4Mask"></a>
 Example:
 
     fmt.Println(net.IPv4Mask(255, 255, 255, 0))
@@ -1453,7 +1453,7 @@ A Listener is a generic network listener for stream-oriented protocols.
 
 Multiple goroutines may invoke methods on a Listener simultaneously.
 
-<a id="example_Listener"></a>
+<a id="exampleListener"></a>
 Example:
 
     // Listen on TCP port 2000 on all available unicast and

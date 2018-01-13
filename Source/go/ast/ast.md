@@ -223,9 +223,9 @@ Package ast declares the types used to represent syntax trees for Go packages.
 
 ### Examples
 
-- [CommentMap](#example_CommentMap)
-- [Inspect](#example_Inspect)
-- [Print](#example_Print)
+- [CommentMap](#exampleCommentMap)
+- [Inspect](#exampleInspect)
+- [Print](#examplePrint)
 
 ### Package files
  [ast.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/ast/ast.go) [commentmap.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/ast/commentmap.go) [filter.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/ast/filter.go) [import.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/ast/import.go) [print.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/ast/print.go) [resolve.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/ast/resolve.go) [scope.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/ast/scope.go) [walk.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/ast/walk.go)
@@ -299,7 +299,7 @@ Inspect traverses an AST in depth-first order: It starts by calling f(node);
 node must not be nil. If f returns true, Inspect invokes f recursively for each
 of the non-nil children of node, followed by a call of f(nil).
 
-<a id="example_Inspect"></a>
+<a id="exampleInspect"></a>
 Example:
 
     // src is the input for which we want to inspect the AST.
@@ -373,7 +373,7 @@ otherwise.
 Print prints x to standard output, skipping nil fields. Print(fset, x) is the
 same as Fprint(os.Stdout, fset, x, NotNilFilter).
 
-<a id="example_Print"></a>
+<a id="examplePrint"></a>
 Example:
 
     // src is the input for which we want to print the AST.
@@ -801,7 +801,7 @@ Unless the result is empty, it is newline-terminated.
 A CommentMap maps an AST node to a list of comment groups associated with it.
 See NewCommentMap for a description of the association.
 
-<a id="example_CommentMap"></a>
+<a id="exampleCommentMap"></a>
 Example:
 
     // src is the input for which we create the AST that we

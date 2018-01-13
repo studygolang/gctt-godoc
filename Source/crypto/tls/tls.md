@@ -53,8 +53,8 @@ Package tls partially implements TLS 1.2, as specified in RFC 5246.
 
 ### Examples
 
-- [Config (KeyLogWriter)](#example_Config_keyLogWriter)
-- [Dial](#example_Dial)
+- [Config (KeyLogWriter)](#exampleConfig_keyLogWriter)
+- [Dial](#exampleDial)
 
 ### Package files
  [alert.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/alert.go) [cipher_suites.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/cipher_suites.go) [common.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go) [conn.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go) [handshake_client.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/handshake_client.go) [handshake_messages.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/handshake_messages.go) [handshake_server.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/handshake_server.go) [key_agreement.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/key_agreement.go) [prf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/prf.go) [ticket.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/ticket.go) [tls.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/tls.go)
@@ -465,7 +465,7 @@ A Config structure is used to configure a TLS client or server. After one has
 been passed to a TLS function it must not be modified. A Config may be reused;
 the tls package will also not modify it.
 
-<a id="example_Config_keyLogWriter"></a>
+<a id="exampleConfig_keyLogWriter"></a>
 Example:
 
     // Debugging TLS applications by decrypting a network traffic capture.
@@ -558,7 +558,7 @@ TLS handshake, returning the resulting TLS connection. Dial interprets a nil
 configuration as equivalent to the zero configuration; see the documentation of
 Config for the defaults.
 
-<a id="example_Dial"></a>
+<a id="exampleDial"></a>
 Example:
 
     // Connecting with a custom root-certificate set.

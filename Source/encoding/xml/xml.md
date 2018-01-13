@@ -63,9 +63,9 @@ Package xml implements a simple XML 1.0 parser that understands XML name spaces.
 
 ### Examples
 
-- [Encoder](#example_Encoder)
-- [MarshalIndent](#example_MarshalIndent)
-- [Unmarshal](#example_Unmarshal)
+- [Encoder](#exampleEncoder)
+- [MarshalIndent](#exampleMarshalIndent)
+- [Unmarshal](#exampleUnmarshal)
 
 ### Package files
  [marshal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go) [read.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/read.go) [typeinfo.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/typeinfo.go) [xml.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go)
@@ -168,7 +168,7 @@ MarshalIndent works like Marshal, but each XML element begins on a new indented
 line that starts with prefix and is followed by one or more copies of indent
 according to the nesting depth.
 
-<a id="example_MarshalIndent"></a>
+<a id="exampleMarshalIndent"></a>
 Example:
 
     type Address struct {
@@ -312,7 +312,7 @@ A missing element or empty attribute value will be unmarshaled as a zero value.
 If the field is a slice, a zero value will be appended to the field. Otherwise,
 the field will be set to its zero value.
 
-<a id="example_Unmarshal"></a>
+<a id="exampleUnmarshal"></a>
 Example:
 
     type Email struct {
@@ -552,7 +552,7 @@ include the <! and > markers.
 
 An Encoder writes XML data to an output stream.
 
-<a id="example_Encoder"></a>
+<a id="exampleEncoder"></a>
 Example:
 
     type Address struct {

@@ -190,7 +190,7 @@ Least Surprise Property: "A developer (or code reviewer) familiar with HTML,
 CSS, and JavaScript, who knows that contextual autoescaping happens should be
 able to look at a {{.}} and correctly infer what sanitization happens."
 
-<a id="example_"></a>
+<a id="example"></a>
 Example:
 
     const tpl = `
@@ -261,7 +261,7 @@ Example:
     // </html>
 
 
-<a id="example__autoescaping"></a>
+<a id="example_autoescaping"></a>
 Example:
 
     check := func(err error) {
@@ -277,7 +277,7 @@ Example:
     // Hello, &lt;script&gt;alert(&#39;you have been pwned&#39;)&lt;/script&gt;!
 
 
-<a id="example__escape"></a>
+<a id="example_escape"></a>
 Example:
 
     const s = `"Fran & Freddie's Diner" <tasty@example.com>`
@@ -347,14 +347,14 @@ Example:
 
 ### Examples
 
-- [Package](#example_)
-- [Template (Block)](#example_Template_block)
-- [Template (Glob)](#example_Template_glob)
-- [Template (Helpers)](#example_Template_helpers)
-- [Template (Parsefiles)](#example_Template_parsefiles)
-- [Template (Share)](#example_Template_share)
-- [Package (Autoescaping)](#example__autoescaping)
-- [Package (Escape)](#example__escape)
+- [Package](#example)
+- [Template (Block)](#exampleTemplate_block)
+- [Template (Glob)](#exampleTemplate_glob)
+- [Template (Helpers)](#exampleTemplate_helpers)
+- [Template (Parsefiles)](#exampleTemplate_parsefiles)
+- [Template (Share)](#exampleTemplate_share)
+- [Package (Autoescaping)](#example_autoescaping)
+- [Package (Escape)](#example_escape)
 
 ### Package files
  [attr.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/attr.go) [content.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/content.go) [context.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/context.go) [css.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/css.go) [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/doc.go) [error.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/error.go) [escape.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go) [html.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/html.go) [js.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/js.go) [template.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go) [transition.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/transition.go) [url.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/url.go)
@@ -727,7 +727,7 @@ from a trusted source, as it will be included verbatim in the template output.
 Template is a specialized Template from "text/template" that produces a safe
 HTML document fragment.
 
-<a id="example_Template_block"></a>
+<a id="exampleTemplate_block"></a>
 Example:
 
     const (
@@ -762,7 +762,7 @@ Example:
     // Names: Gamora, Groot, Nebula, Rocket, Star-Lord
 
 
-<a id="example_Template_glob"></a>
+<a id="exampleTemplate_glob"></a>
 Example:
 
     // Here we create a temporary directory and populate it with our sample
@@ -795,7 +795,7 @@ Example:
     // T0 invokes T1: (T1 invokes T2: (This is T2))
 
 
-<a id="example_Template_helpers"></a>
+<a id="exampleTemplate_helpers"></a>
 Example:
 
     // Here we create a temporary directory and populate it with our sample
@@ -841,7 +841,7 @@ Example:
     // Driver 2 calls T2: (This is T2)
 
 
-<a id="example_Template_parsefiles"></a>
+<a id="exampleTemplate_parsefiles"></a>
 Example:
 
     // Here we create different temporary directories and populate them with our sample
@@ -880,7 +880,7 @@ Example:
     // T1 invokes T2: (This is T2)
 
 
-<a id="example_Template_share"></a>
+<a id="exampleTemplate_share"></a>
 Example:
 
     // Here we create a temporary directory and populate it with our sample

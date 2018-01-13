@@ -38,15 +38,15 @@ buffers.
 
 ### Examples
 
-- [ByteOrder (Get)](#example_ByteOrder_get)
-- [ByteOrder (Put)](#example_ByteOrder_put)
-- [PutUvarint](#example_PutUvarint)
-- [PutVarint](#example_PutVarint)
-- [Read](#example_Read)
-- [Uvarint](#example_Uvarint)
-- [Varint](#example_Varint)
-- [Write](#example_Write)
-- [Write (Multi)](#example_Write_multi)
+- [ByteOrder (Get)](#exampleByteOrder_get)
+- [ByteOrder (Put)](#exampleByteOrder_put)
+- [PutUvarint](#examplePutUvarint)
+- [PutVarint](#examplePutVarint)
+- [Read](#exampleRead)
+- [Uvarint](#exampleUvarint)
+- [Varint](#exampleVarint)
+- [Write](#exampleWrite)
+- [Write (Multi)](#exampleWrite_multi)
 
 ### Package files
  [binary.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/binary.go) [varint.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/varint.go)
@@ -78,7 +78,7 @@ LittleEndian is the little-endian implementation of ByteOrder.
 PutUvarint encodes a uint64 into buf and returns the number of bytes written. If
 the buffer is too small, PutUvarint will panic.
 
-<a id="example_PutUvarint"></a>
+<a id="examplePutUvarint"></a>
 Example:
 
     buf := make([]byte, binary.MaxVarintLen64)
@@ -102,7 +102,7 @@ Example:
 PutVarint encodes an int64 into buf and returns the number of bytes written. If
 the buffer is too small, PutVarint will panic.
 
-<a id="example_PutVarint"></a>
+<a id="examplePutVarint"></a>
 Example:
 
     buf := make([]byte, binary.MaxVarintLen64)
@@ -138,7 +138,7 @@ exported or Read may panic.
 The error is EOF only if no bytes were read. If an EOF happens after reading
 some but not all the bytes, Read returns ErrUnexpectedEOF.
 
-<a id="example_Read"></a>
+<a id="exampleRead"></a>
 Example:
 
     var pi float64
@@ -183,7 +183,7 @@ read (> 0). If an error occurred, the value is 0 and the number of bytes n is <=
     n  < 0: value larger than 64 bits (overflow)
             and -n is the number of bytes read
 
-<a id="example_Uvarint"></a>
+<a id="exampleUvarint"></a>
 Example:
 
     inputs := [][]byte{
@@ -221,7 +221,7 @@ read (> 0). If an error occurred, the value is 0 and the number of bytes n is <=
     n  < 0: value larger than 64 bits (overflow)
             and -n is the number of bytes read
 
-<a id="example_Varint"></a>
+<a id="exampleVarint"></a>
 Example:
 
     inputs := [][]byte{
@@ -263,7 +263,7 @@ encode as one byte: 1 for true, and 0 for false. Bytes written to w are encoded
 using the specified byte order and read from successive fields of the data. When
 writing structs, zero values are written for fields with blank (_) field names.
 
-<a id="example_Write"></a>
+<a id="exampleWrite"></a>
 Example:
 
     buf := new(bytes.Buffer)
@@ -276,7 +276,7 @@ Example:
     // Output: 18 2d 44 54 fb 21 09 40
 
 
-<a id="example_Write_multi"></a>
+<a id="exampleWrite_multi"></a>
 Example:
 
     buf := new(bytes.Buffer)
@@ -309,7 +309,7 @@ Example:
 A ByteOrder specifies how to convert byte sequences into 16-, 32-, or 64-bit
 unsigned integers.
 
-<a id="example_ByteOrder_get"></a>
+<a id="exampleByteOrder_get"></a>
 Example:
 
     b := []byte{0xe8, 0x03, 0xd0, 0x07}
@@ -320,7 +320,7 @@ Example:
     // 0x03e8 0x07d0
 
 
-<a id="example_ByteOrder_put"></a>
+<a id="exampleByteOrder_put"></a>
 Example:
 
     b := make([]byte, 4)

@@ -22,7 +22,7 @@ https://golang.org/doc/articles/image_draw.html
 
 ### Examples
 
-- [Drawer (FloydSteinberg)](#example_Drawer_floydSteinberg)
+- [Drawer (FloydSteinberg)](#exampleDrawer_floydSteinberg)
 
 ### Package files
  [draw.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/draw/draw.go)
@@ -56,7 +56,7 @@ Drawer contains the Draw method.
 FloydSteinberg is a Drawer that is the Src Op with Floyd-Steinberg error
 diffusion.
 
-<a id="example_Drawer_floydSteinberg"></a>
+<a id="exampleDrawer_floydSteinberg"></a>
 Example:
 
     const width = 130

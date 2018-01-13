@@ -21,7 +21,7 @@ DES is cryptographically broken and should not be used for secure applications.
 
 ### Examples
 
-- [NewTripleDESCipher](#example_NewTripleDESCipher)
+- [NewTripleDESCipher](#exampleNewTripleDESCipher)
 
 ### Package files
  [block.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/des/block.go) [cipher.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/des/cipher.go) [const.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/des/const.go)
@@ -44,7 +44,7 @@ NewCipher creates and returns a new cipher.Block.
 
 NewTripleDESCipher creates and returns a new cipher.Block.
 
-<a id="example_NewTripleDESCipher"></a>
+<a id="exampleNewTripleDESCipher"></a>
 Example:
 
     // NewTripleDESCipher can also be used when EDE2 is required by

@@ -17,9 +17,9 @@ MD5 is cryptographically broken and should not be used for secure applications.
 
 ### Examples
 
-- [New](#example_New)
-- [New (File)](#example_New_file)
-- [Sum](#example_Sum)
+- [New](#exampleNew)
+- [New (File)](#exampleNew_file)
+- [Sum](#exampleSum)
 
 ### Package files
  [md5.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/md5/md5.go) [md5block.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/md5/md5block.go) [md5block_decl.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/md5/md5block_decl.go)
@@ -40,7 +40,7 @@ The size of an MD5 checksum in bytes.
 
 New returns a new hash.Hash computing the MD5 checksum.
 
-<a id="example_New"></a>
+<a id="exampleNew"></a>
 Example:
 
     h := md5.New()
@@ -50,7 +50,7 @@ Example:
     // Output: e2c569be17396eca2a2e3c11578123ed
 
 
-<a id="example_New_file"></a>
+<a id="exampleNew_file"></a>
 Example:
 
     f, err := os.Open("file.txt")
@@ -72,7 +72,7 @@ Example:
 
 Sum returns the MD5 checksum of the data.
 
-<a id="example_Sum"></a>
+<a id="exampleSum"></a>
 Example:
 
     data := []byte("These pretzels are making me thirsty.")

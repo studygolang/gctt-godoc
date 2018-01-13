@@ -37,7 +37,7 @@ packages provide more functionality. See:
 
 ### Examples
 
-- [Dial](#example_Dial)
+- [Dial](#exampleDial)
 
 ### Package files
  [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/doc.go) [syslog.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go) [syslog_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog_unix.go)
@@ -121,7 +121,7 @@ os.Args[0] is used. If network is empty, Dial will connect to the local syslog
 server. Otherwise, see the documentation for net.Dial for valid values of
 network and raddr.
 
-<a id="example_Dial"></a>
+<a id="exampleDial"></a>
 Example:
 
     sysLog, err := syslog.Dial("tcp", "localhost:1234",

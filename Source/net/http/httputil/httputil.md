@@ -39,10 +39,10 @@ ones in the net/http package.
 
 ### Examples
 
-- [DumpRequest](#example_DumpRequest)
-- [DumpRequestOut](#example_DumpRequestOut)
-- [DumpResponse](#example_DumpResponse)
-- [ReverseProxy](#example_ReverseProxy)
+- [DumpRequest](#exampleDumpRequest)
+- [DumpRequestOut](#exampleDumpRequestOut)
+- [DumpResponse](#exampleDumpResponse)
+- [ReverseProxy](#exampleReverseProxy)
 
 ### Package files
  [dump.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/dump.go) [httputil.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/httputil.go) [persist.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go) [reverseproxy.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/reverseproxy.go)
@@ -85,7 +85,7 @@ bytes. If DumpRequest returns an error, the state of req is undefined.
 The documentation for http.Request.Write details which fields of req are
 included in the dump.
 
-<a id="example_DumpRequest"></a>
+<a id="exampleDumpRequest"></a>
 Example:
 
     ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -128,7 +128,7 @@ Example:
 DumpRequestOut is like DumpRequest but for outgoing client requests. It includes
 any headers that the standard http.Transport adds, such as User-Agent.
 
-<a id="example_DumpRequestOut"></a>
+<a id="exampleDumpRequestOut"></a>
 Example:
 
     const body = "Go is a general-purpose language designed with systems programming in mind."
@@ -153,7 +153,7 @@ Example:
 
 DumpResponse is like DumpRequest but dumps a response.
 
-<a id="example_DumpResponse"></a>
+<a id="exampleDumpResponse"></a>
 Example:
 
     const body = "Go is a general-purpose language designed with systems programming in mind."
@@ -333,7 +333,7 @@ connection, which is usually considered as graceful close.
 ReverseProxy is an HTTP Handler that takes an incoming request and sends it to
 another server, proxying the response back to the client.
 
-<a id="example_ReverseProxy"></a>
+<a id="exampleReverseProxy"></a>
 Example:
 
     backendServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

@@ -8,7 +8,7 @@ version: 1.9.2
 Package unicode provides data and functions to test some properties of Unicode
 code points.
 
-<a id="example__is"></a>
+<a id="example_is"></a>
 Example:
 
     // constant with mixed type runes
@@ -147,13 +147,13 @@ Example:
 
 ### Examples
 
-- [SimpleFold](#example_SimpleFold)
-- [SpecialCase](#example_SpecialCase)
-- [To](#example_To)
-- [ToLower](#example_ToLower)
-- [ToTitle](#example_ToTitle)
-- [ToUpper](#example_ToUpper)
-- [Package (Is)](#example__is)
+- [SimpleFold](#exampleSimpleFold)
+- [SpecialCase](#exampleSpecialCase)
+- [To](#exampleTo)
+- [ToLower](#exampleToLower)
+- [ToTitle](#exampleToTitle)
+- [ToUpper](#exampleToUpper)
+- [Package (Is)](#example_is)
 
 ### Package files
  [casetables.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/casetables.go) [digit.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/digit.go) [graphic.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/graphic.go) [letter.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go) [tables.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/tables.go)
@@ -821,7 +821,7 @@ For example:
 
     SimpleFold(-2) = -2
 
-<a id="example_SimpleFold"></a>
+<a id="exampleSimpleFold"></a>
 Example:
 
     fmt.Printf("%#U\n", unicode.SimpleFold('A'))      // 'a'
@@ -845,7 +845,7 @@ Example:
 
 To maps the rune to the specified case: UpperCase, LowerCase, or TitleCase.
 
-<a id="example_To"></a>
+<a id="exampleTo"></a>
 Example:
 
     const lcG = 'g'
@@ -872,7 +872,7 @@ Example:
 
 ToLower maps the rune to lower case.
 
-<a id="example_ToLower"></a>
+<a id="exampleToLower"></a>
 Example:
 
     const ucG = 'G'
@@ -887,7 +887,7 @@ Example:
 
 ToTitle maps the rune to title case.
 
-<a id="example_ToTitle"></a>
+<a id="exampleToTitle"></a>
 Example:
 
     const ucG = 'g'
@@ -902,7 +902,7 @@ Example:
 
 ToUpper maps the rune to upper case.
 
-<a id="example_ToUpper"></a>
+<a id="exampleToUpper"></a>
 Example:
 
     const ucG = 'g'
@@ -981,7 +981,7 @@ of SpecialCase customize (by overriding) the standard mappings.
 <pre>var <span id="TurkishCase">TurkishCase</span> <a href="#SpecialCase">SpecialCase</a> = _TurkishCase</pre>
 
 
-<a id="example_SpecialCase"></a>
+<a id="exampleSpecialCase"></a>
 Example:
 
     t := unicode.TurkishCase

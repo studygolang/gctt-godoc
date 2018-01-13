@@ -27,9 +27,9 @@ Package base32 implements base32 encoding as specified by RFC 4648.
 
 ### Examples
 
-- [Encoding.DecodeString](#example_Encoding_DecodeString)
-- [Encoding.EncodeToString](#example_Encoding_EncodeToString)
-- [NewEncoder](#example_NewEncoder)
+- [Encoding.DecodeString](#exampleEncoding_DecodeString)
+- [Encoding.EncodeToString](#exampleEncoding_EncodeToString)
+- [NewEncoder](#exampleNewEncoder)
 
 ### Package files
  [base32.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go)
@@ -68,7 +68,7 @@ writer will be encoded using enc and then written to w. Base32 encodings operate
 in 5-byte blocks; when finished writing, the caller must Close the returned
 encoder to flush any partially written blocks.
 
-<a id="example_NewEncoder"></a>
+<a id="exampleNewEncoder"></a>
 Example:
 
     input := []byte("foo\x00bar")
@@ -125,7 +125,7 @@ ignored.
 
 DecodeString returns the bytes represented by the base32 string s.
 
-<a id="example_Encoding_DecodeString"></a>
+<a id="exampleEncoding_DecodeString"></a>
 Example:
 
     str := "ONXW2ZJAMRQXIYJAO5UXI2BAAAQGC3TEEDX3XPY="
@@ -162,7 +162,7 @@ NewEncoder() instead.
 
 EncodeToString returns the base32 encoding of src.
 
-<a id="example_Encoding_EncodeToString"></a>
+<a id="exampleEncoding_EncodeToString"></a>
 Example:
 
     data := []byte("any + old & data")

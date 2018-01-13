@@ -13,7 +13,7 @@ http://nickgravgaard.com/elastictabstops/index.html.
 
 The text/tabwriter package is frozen and is not accepting new features.
 
-<a id="example__elastic"></a>
+<a id="example_elastic"></a>
 Example:
 
     // Observe how the b's and the d's, despite appearing in the
@@ -32,7 +32,7 @@ Example:
     // .aaaa|.dddd|eeee
 
 
-<a id="example__trailingTab"></a>
+<a id="example_trailingTab"></a>
 Example:
 
     // Observe that the third line has no trailing tab,
@@ -62,9 +62,9 @@ Example:
 
 ### Examples
 
-- [Writer.Init](#example_Writer_Init)
-- [Package (Elastic)](#example__elastic)
-- [Package (TrailingTab)](#example__trailingTab)
+- [Writer.Init](#exampleWriter_Init)
+- [Package (Elastic)](#example_elastic)
+- [Package (TrailingTab)](#example_trailingTab)
 
 ### Package files
  [tabwriter.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/tabwriter/tabwriter.go)
@@ -197,7 +197,7 @@ specifies the filter output. The remaining parameters control the formatting:
     		to the tab width in the viewer displaying the result)
     flags		formatting control
 
-<a id="example_Writer_Init"></a>
+<a id="exampleWriter_Init"></a>
 Example:
 
     w := new(tabwriter.Writer)

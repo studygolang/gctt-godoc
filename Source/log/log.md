@@ -53,8 +53,8 @@ message.
 
 ### Examples
 
-- [Logger](#example_Logger)
-- [Logger.Output](#example_Logger_Output)
+- [Logger](#exampleLogger)
+- [Logger.Output](#exampleLogger_Output)
 
 ### Package files
  [log.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/log.go)
@@ -192,7 +192,7 @@ an io.Writer. Each logging operation makes a single call to the Writer's Write
 method. A Logger can be used simultaneously from multiple goroutines; it
 guarantees to serialize access to the Writer.
 
-<a id="example_Logger"></a>
+<a id="exampleLogger"></a>
 Example:
 
     var (
@@ -248,7 +248,7 @@ appended if the last character of s is not already a newline. Calldepth is used
 to recover the PC and is provided for generality, although at the moment on all
 pre-defined paths it will be 2.
 
-<a id="example_Logger_Output"></a>
+<a id="exampleLogger_Output"></a>
 Example:
 
     var (

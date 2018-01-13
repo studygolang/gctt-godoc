@@ -27,7 +27,7 @@ permits exactly one. Consequently, the corresponding field in the AST
 
 ### Examples
 
-- [ParseFile](#example_ParseFile)
+- [ParseFile](#exampleParseFile)
 
 ### Package files
  [interface.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/parser/interface.go) [parser.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/parser/parser.go)
@@ -88,7 +88,7 @@ result is a partial AST (with ast.Bad* nodes representing the fragments of
 erroneous source code). Multiple errors are returned via a scanner.ErrorList
 which is sorted by file position.
 
-<a id="example_ParseFile"></a>
+<a id="exampleParseFile"></a>
 Example:
 
     fset := token.NewFileSet() // positions are relative to fset

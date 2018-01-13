@@ -18,7 +18,7 @@ certificates. See RFC 1421.
 
 ### Examples
 
-- [Decode](#example_Decode)
+- [Decode](#exampleDecode)
 
 ### Package files
  [pem.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/pem/pem.go)
@@ -60,7 +60,7 @@ Decode will find the next PEM formatted block (certificate, private key etc) in
 the input. It returns that block and the remainder of the input. If no PEM data
 is found, p is nil and the whole of the input is returned in rest.
 
-<a id="example_Decode"></a>
+<a id="exampleDecode"></a>
 Example:
 
     var pubPEMData = []byte(`

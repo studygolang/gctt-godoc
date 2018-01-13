@@ -14,7 +14,7 @@ Package format implements standard formatting of Go source.
 
 ### Examples
 
-- [Node](#example_Node)
+- [Node](#exampleNode)
 
 ### Package files
  [format.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/format/format.go) [internal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/format/internal.go)
@@ -34,7 +34,7 @@ wrapping an *ast.File).
 The function may return early (before the entire result is written) and return a
 formatting error, for instance due to an incorrect AST.
 
-<a id="example_Node"></a>
+<a id="exampleNode"></a>
 Example:
 
     const expr = "(6+2*3)/4"

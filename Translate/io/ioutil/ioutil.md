@@ -20,11 +20,11 @@ ioutil 包实现了一些实用的 I/O 函数。
 
 ### 例子
 
-- [ReadAll](#example_ReadAll)
-- [ReadDir](#example_ReadDir)
-- [ReadFile](#example_ReadFile)
-- [TempDir](#example_TempDir)
-- [TempFile](#example_TempFile)
+- [ReadAll](#exampleReadAll)
+- [ReadDir](#exampleReadDir)
+- [ReadFile](#exampleReadFile)
+- [TempDir](#exampleTempDir)
+- [TempFile](#exampleTempFile)
 
 ### 文件
  [ioutil.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/ioutil.go) [tempfile.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/tempfile.go)
@@ -47,7 +47,7 @@ NopCloser 函数把空 Close 方法和 r 封装成 ReadCloser 接口的实现返
 
 ReadAll 函数从 r 读取数据直到遇到错误或者 EOF 并返回读取到的数据。读取成功返回 err == nil 而不是 err == EOF。因为 ReadAll 读取直到 EOF 的数据，所以它不会把 EOF 当作错误返回给用户。
 
-<a id="example_ReadAll"></a>
+<a id="exampleReadAll"></a>
 例:
 
     r := strings.NewReader("Go is a general-purpose language designed with systems programming in mind.")
@@ -68,7 +68,7 @@ ReadAll 函数从 r 读取数据直到遇到错误或者 EOF 并返回读取到�
 
 ReadDir 函数从文件夹 dirname 中读取以文件名排序的文件信息列表。
 
-<a id="example_ReadDir"></a>
+<a id="exampleReadDir"></a>
 例:
 
     files, err := ioutil.ReadDir(".")
@@ -86,7 +86,7 @@ ReadDir 函数从文件夹 dirname 中读取以文件名排序的文件信息列
 
 ReadFile 函数读取文件 filename 中的内容。读取成功返回 err == nil 而不是 err == EOF。因为 ReadFile 会读取整个文件的内容，所以不会将 EOF 当作一个错误返回。
 
-<a id="example_ReadFile"></a>
+<a id="exampleReadFile"></a>
 例:
 
     content, err := ioutil.ReadFile("testdata/hello")
@@ -105,7 +105,7 @@ ReadFile 函数读取文件 filename 中的内容。读取成功返回 err == ni
 
 TempDir 在 dir 中创建一个名字以 prefix 作为前缀的临时文件夹并返回临时文件夹的路径。如果 dir 为空，TempDir 会使用临时文件的默认路径（详情请看 os.TempDir）。多个程序同时调用 TempDir 不会使用同一个文件夹。当用户不需要这个临时目录时需要手动删除。
 
-<a id="example_TempDir"></a>
+<a id="exampleTempDir"></a>
 例:
 
     content := []byte("temporary file's content")
@@ -127,7 +127,7 @@ TempDir 在 dir 中创建一个名字以 prefix 作为前缀的临时文件夹�
 
 TempFile 函数在 dir 中创建前缀为 prefix 的临时文件，并打开该文件进行读写，返回 *os.File。如果 dir 为空，将使用默认的文件夹（详情请看 os.TempDir）。多个程序调用 TempFile 函数不会使用同一个文件。用户可以使用 f.Name() 来获取文件路径。当用户不再需要该文件时需要手动删除。 
 
-<a id="example_TempFile"></a>
+<a id="exampleTempFile"></a>
 例:
 
     content := []byte("temporary file's content")

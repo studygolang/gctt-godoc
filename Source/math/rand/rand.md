@@ -17,7 +17,7 @@ NewSource are not.
 For random numbers suitable for security-sensitive work, see the crypto/rand
 package.
 
-<a id="example_"></a>
+<a id="example"></a>
 Example:
 
     rand.Seed(42) // Try changing this number!
@@ -47,7 +47,7 @@ Example:
     // Output: Magic 8-Ball says: As I see it yes
 
 
-<a id="example__rand"></a>
+<a id="example_rand"></a>
 Example:
 
     // Create and seed the generator.
@@ -143,9 +143,9 @@ Example:
 
 ### Examples
 
-- [Package](#example_)
-- [Perm](#example_Perm)
-- [Package (Rand)](#example__rand)
+- [Package](#example)
+- [Perm](#examplePerm)
+- [Package (Rand)](#example_rand)
 
 ### Package files
  [exp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/exp.go) [normal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/normal.go) [rand.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go) [rng.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rng.go) [zipf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/zipf.go)
@@ -235,7 +235,7 @@ distribution, callers can adjust the output using:
 Perm returns, as a slice of n ints, a pseudo-random permutation of the integers
 [0,n) from the default Source.
 
-<a id="example_Perm"></a>
+<a id="examplePerm"></a>
 Example:
 
     for _, value := range rand.Perm(3) {

@@ -32,9 +32,9 @@ Package httptest provides utilities for HTTP testing.
 
 ### Examples
 
-- [NewTLSServer](#example_NewTLSServer)
-- [ResponseRecorder](#example_ResponseRecorder)
-- [Server](#example_Server)
+- [NewTLSServer](#exampleNewTLSServer)
+- [ResponseRecorder](#exampleResponseRecorder)
+- [Server](#exampleServer)
 
 ### Package files
  [httptest.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/httptest.go) [recorder.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/recorder.go) [server.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/server.go)
@@ -101,7 +101,7 @@ NewRequest function in the net/http package.
 ResponseRecorder is an implementation of http.ResponseWriter that records its
 mutations for later inspection in tests.
 
-<a id="example_ResponseRecorder"></a>
+<a id="exampleResponseRecorder"></a>
 Example:
 
     handler := func(w http.ResponseWriter, r *http.Request) {
@@ -199,7 +199,7 @@ WriteString always succeeds and writes to rw.Body, if not nil.
 A Server is an HTTP server listening on a system-chosen port on the local
 loopback interface, for use in end-to-end HTTP tests.
 
-<a id="example_Server"></a>
+<a id="exampleServer"></a>
 Example:
 
     ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -234,7 +234,7 @@ finished, to shut it down.
 NewTLSServer starts and returns a new Server using TLS. The caller should call
 Close when finished, to shut it down.
 
-<a id="example_NewTLSServer"></a>
+<a id="exampleNewTLSServer"></a>
 Example:
 
     ts := httptest.NewTLSServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

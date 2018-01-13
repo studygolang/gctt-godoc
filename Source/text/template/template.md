@@ -480,12 +480,12 @@ or to invoke a particular template explicitly by name,
 
 ### Examples
 
-- [Template](#example_Template)
-- [Template (Block)](#example_Template_block)
-- [Template (Func)](#example_Template_func)
-- [Template (Glob)](#example_Template_glob)
-- [Template (Helpers)](#example_Template_helpers)
-- [Template (Share)](#example_Template_share)
+- [Template](#exampleTemplate)
+- [Template (Block)](#exampleTemplate_block)
+- [Template (Func)](#exampleTemplate_func)
+- [Template (Glob)](#exampleTemplate_glob)
+- [Template (Helpers)](#exampleTemplate_helpers)
+- [Template (Share)](#exampleTemplate_share)
 
 ### Package files
  [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/doc.go) [exec.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/exec.go) [funcs.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go) [helper.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/helper.go) [option.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/option.go) [template.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/template.go)
@@ -587,7 +587,7 @@ Template is the representation of a parsed template. The *parse.Tree field is
 exported only for use by html/template and should be treated as unexported by
 all other clients.
 
-<a id="example_Template"></a>
+<a id="exampleTemplate"></a>
 Example:
 
     // Define a template.
@@ -652,7 +652,7 @@ Example:
     // Josie
 
 
-<a id="example_Template_block"></a>
+<a id="exampleTemplate_block"></a>
 Example:
 
     const (
@@ -687,7 +687,7 @@ Example:
     // Names: Gamora, Groot, Nebula, Rocket, Star-Lord
 
 
-<a id="example_Template_func"></a>
+<a id="exampleTemplate_func"></a>
 Example:
 
     // First we create a FuncMap with which to register the function.
@@ -728,7 +728,7 @@ Example:
     // Output 2: "The Go Programming Language"
 
 
-<a id="example_Template_glob"></a>
+<a id="exampleTemplate_glob"></a>
 Example:
 
     // Here we create a temporary directory and populate it with our sample
@@ -761,7 +761,7 @@ Example:
     // T0 invokes T1: (T1 invokes T2: (This is T2))
 
 
-<a id="example_Template_helpers"></a>
+<a id="exampleTemplate_helpers"></a>
 Example:
 
     // Here we create a temporary directory and populate it with our sample
@@ -807,7 +807,7 @@ Example:
     // Driver 2 calls T2: (This is T2)
 
 
-<a id="example_Template_share"></a>
+<a id="exampleTemplate_share"></a>
 Example:
 
     // Here we create a temporary directory and populate it with our sample

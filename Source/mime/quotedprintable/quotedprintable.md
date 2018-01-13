@@ -20,8 +20,8 @@ Package quotedprintable implements quoted-printable encoding as specified by RFC
 
 ### Examples
 
-- [NewReader](#example_NewReader)
-- [NewWriter](#example_NewWriter)
+- [NewReader](#exampleNewReader)
+- [NewWriter](#exampleNewWriter)
 
 ### Package files
  [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/quotedprintable/reader.go) [writer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/quotedprintable/writer.go)
@@ -40,7 +40,7 @@ Reader is a quoted-printable decoder.
 
 NewReader returns a quoted-printable reader, decoding from r.
 
-<a id="example_NewReader"></a>
+<a id="exampleNewReader"></a>
 Example:
 
     for _, s := range []string{
@@ -79,7 +79,7 @@ A Writer is a quoted-printable writer that implements io.WriteCloser.
 
 NewWriter returns a new Writer that writes to w.
 
-<a id="example_NewWriter"></a>
+<a id="exampleNewWriter"></a>
 Example:
 
     w := quotedprintable.NewWriter(os.Stdout)

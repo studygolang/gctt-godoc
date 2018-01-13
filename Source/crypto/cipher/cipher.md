@@ -32,16 +32,16 @@ Publication 800-38A.
 
 ### Examples
 
-- [NewCBCDecrypter](#example_NewCBCDecrypter)
-- [NewCBCEncrypter](#example_NewCBCEncrypter)
-- [NewCFBDecrypter](#example_NewCFBDecrypter)
-- [NewCFBEncrypter](#example_NewCFBEncrypter)
-- [NewCTR](#example_NewCTR)
-- [NewGCM (Decrypt)](#example_NewGCM_decrypt)
-- [NewGCM (Encrypt)](#example_NewGCM_encrypt)
-- [NewOFB](#example_NewOFB)
-- [StreamReader](#example_StreamReader)
-- [StreamWriter](#example_StreamWriter)
+- [NewCBCDecrypter](#exampleNewCBCDecrypter)
+- [NewCBCEncrypter](#exampleNewCBCEncrypter)
+- [NewCFBDecrypter](#exampleNewCFBDecrypter)
+- [NewCFBEncrypter](#exampleNewCFBEncrypter)
+- [NewCTR](#exampleNewCTR)
+- [NewGCM (Decrypt)](#exampleNewGCM_decrypt)
+- [NewGCM (Encrypt)](#exampleNewGCM_encrypt)
+- [NewOFB](#exampleNewOFB)
+- [StreamReader](#exampleStreamReader)
+- [StreamWriter](#exampleStreamWriter)
 
 ### Package files
  [cbc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cbc.go) [cfb.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cfb.go) [cipher.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cipher.go) [ctr.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/ctr.go) [gcm.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/gcm.go) [io.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/io.go) [ofb.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/ofb.go) [xor.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/xor.go)
@@ -97,7 +97,7 @@ constant-time. An exception is when the underlying Block was created by
 aes.NewCipher on systems with hardware support for AES. See the crypto/aes
 package documentation for details.
 
-<a id="example_NewGCM_decrypt"></a>
+<a id="exampleNewGCM_decrypt"></a>
 Example:
 
     // The key argument should be the AES key, either 16 or 32 bytes
@@ -126,7 +126,7 @@ Example:
     // Output: exampleplaintext
 
 
-<a id="example_NewGCM_encrypt"></a>
+<a id="exampleNewGCM_encrypt"></a>
 Example:
 
     // The key argument should be the AES key, either 16 or 32 bytes
@@ -206,7 +206,7 @@ NewCBCDecrypter returns a BlockMode which decrypts in cipher block chaining
 mode, using the given Block. The length of iv must be the same as the Block's
 block size and must match the iv used to encrypt the data.
 
-<a id="example_NewCBCDecrypter"></a>
+<a id="exampleNewCBCDecrypter"></a>
 Example:
 
     key := []byte("example key 1234")
@@ -254,7 +254,7 @@ NewCBCEncrypter returns a BlockMode which encrypts in cipher block chaining
 mode, using the given Block. The length of iv must be the same as the Block's
 block size.
 
-<a id="example_NewCBCEncrypter"></a>
+<a id="exampleNewCBCEncrypter"></a>
 Example:
 
     key := []byte("example key 1234")
@@ -310,7 +310,7 @@ A Stream represents a stream cipher.
 NewCFBDecrypter returns a Stream which decrypts with cipher feedback mode, using
 the given Block. The iv must be the same length as the Block's block size.
 
-<a id="example_NewCFBDecrypter"></a>
+<a id="exampleNewCFBDecrypter"></a>
 Example:
 
     key := []byte("example key 1234")
@@ -343,7 +343,7 @@ Example:
 NewCFBEncrypter returns a Stream which encrypts with cipher feedback mode, using
 the given Block. The iv must be the same length as the Block's block size.
 
-<a id="example_NewCFBEncrypter"></a>
+<a id="exampleNewCFBEncrypter"></a>
 Example:
 
     key := []byte("example key 1234")
@@ -376,7 +376,7 @@ Example:
 NewCTR returns a Stream which encrypts/decrypts using the given Block in counter
 mode. The length of iv must be the same as the Block's block size.
 
-<a id="example_NewCTR"></a>
+<a id="exampleNewCTR"></a>
 Example:
 
     key := []byte("example key 1234")
@@ -420,7 +420,7 @@ NewOFB returns a Stream that encrypts or decrypts using the block cipher b in
 output feedback mode. The initialization vector iv's length must be equal to b's
 block size.
 
-<a id="example_NewOFB"></a>
+<a id="exampleNewOFB"></a>
 Example:
 
     key := []byte("example key 1234")
@@ -466,7 +466,7 @@ Example:
 StreamReader wraps a Stream into an io.Reader. It calls XORKeyStream to process
 each slice of data which passes through.
 
-<a id="example_StreamReader"></a>
+<a id="exampleStreamReader"></a>
 Example:
 
     key := []byte("example key 1234")
@@ -522,7 +522,7 @@ each slice of data which passes through. If any Write call returns short then
 the StreamWriter is out of sync and must be discarded. A StreamWriter has no
 internal buffering; Close does not need to be called to flush write data.
 
-<a id="example_StreamWriter"></a>
+<a id="exampleStreamWriter"></a>
 Example:
 
     key := []byte("example key 1234")
