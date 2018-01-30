@@ -5,10 +5,10 @@ version: 1.9.2
 
 ## 概述
 
-errors 包实现了处理错误的方法。
+errors 包实现了关于错误处理的函数。
 
 <a id="example"></a>
-示例:
+例:
 
     package errors_test
 
@@ -17,7 +17,7 @@ errors 包实现了处理错误的方法。
         "time"
     )
 
-    // MyError is an error implementation that includes a time and message.
+    // MyError 实现了 error interface，包含一个时间和信息字段。
     type MyError struct {
         When time.Time
         What string
@@ -58,10 +58,10 @@ errors 包实现了处理错误的方法。
     <a href="#New">¶</a></h2>
 <pre>func New(text <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
-New 方法返回一个以指定文本格式化的 error 对象。
+New 方法返回一个以给定文本格式化的 error 对象。
 
 <a id="exampleNew"></a>
-示例:
+例:
 
     err := errors.New("emit macho dwarf: elf header corrupted")
     if err != nil {
@@ -71,7 +71,7 @@ New 方法返回一个以指定文本格式化的 error 对象。
 
 
 <a id="exampleNew_errorf"></a>
-示例:
+例:
 
     const name, id = "bimmler", 17
     err := fmt.Errorf("user %q (id %d) not found", name, id)
