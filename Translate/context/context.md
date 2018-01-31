@@ -7,7 +7,7 @@ version: 1.9.2
 
 context 包定义了 Context 类型。它在 API 边界和进程之间传递截止时间，取消信号，和其他在请求声明周期中的值。
 
-请求到达服务器后需创建 Context 实例，并且也应该接受 Context 。在他们之间的函数调用链必须传递这个 Context，也可以派生新的 Context 替换它（使用 WithCancel，WithDeadline，WithTimeout 或 WithValue 派生 Context）。当 Context 注销时，所有由它派生出的 Context 也会被注销。
+请求到达服务器后需创建 Context 实例，并且响应也应该接受 Context 。在他们之间的函数调用链必须传递这个 Context，也可以派生新的 Context 替换它（使用 WithCancel，WithDeadline，WithTimeout 或 WithValue 派生 Context）。当 Context 注销时，所有由它派生出的 Context 也会被注销。
 
 WithCancel，WithDeadline，WithTimeout 函数接收一个 Context（作为父级 Context）并返回一个派生 Context（最为子级 Context）和 CancelFunc。调用 CancelFunc 会注销子级 Context 和由它派生的 Context ，删除父级 Context 对它的引用，并关闭所有关联的定时器。如果没有调用 CancelFunc 会导致它和由它派生的 Context 在注销父级 Context 或父级 Context 到达截止日期前一直存在。go vet 工具可以检查是否所有的流程控制语句都使用了 CancelFunc。
 
