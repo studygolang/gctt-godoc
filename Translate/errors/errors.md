@@ -3,12 +3,12 @@ version: 1.9.2
 
   `import "errors"`
 
-## Overview
+## 概述
 
-Package errors implements functions to manipulate errors.
+errors 包实现了关于错误处理的函数。
 
 <a id="example"></a>
-Example:
+例:
 
     package errors_test
 
@@ -17,7 +17,7 @@ Example:
         "time"
     )
 
-    // MyError is an error implementation that includes a time and message.
+    // MyError 实现了 error interface，包含一个时间和信息字段。
     type MyError struct {
         When time.Time
         What string
@@ -41,27 +41,27 @@ Example:
         // Output: 1989-03-15 22:30:00 +0000 UTC: the file system has gone away
     }
 
-## Index
+## 索引
 
 - [func New(text string) error](#New)
 
-### Examples
+### 例子
 
 - [Package](#example)
 - [New](#exampleNew)
 - [New (Errorf)](#exampleNew_errorf)
 
-### Package files
+### 文件
  [errors.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/errors/errors.go)
 
 <h2 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/errors/errors.go#L1">New</a>
     <a href="#New">¶</a></h2>
 <pre>func New(text <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
-New returns an error that formats as the given text.
+New 方法返回一个以给定文本格式化的 error 对象。
 
 <a id="exampleNew"></a>
-Example:
+例:
 
     err := errors.New("emit macho dwarf: elf header corrupted")
     if err != nil {
@@ -71,7 +71,7 @@ Example:
 
 
 <a id="exampleNew_errorf"></a>
-Example:
+例:
 
     const name, id = "bimmler", 17
     err := fmt.Errorf("user %q (id %d) not found", name, id)
