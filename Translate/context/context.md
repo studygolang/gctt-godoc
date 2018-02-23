@@ -3,32 +3,17 @@ version: 1.9.2
 
   `import "context"`
 
-## Overview
+## 概述
 
-Package context defines the Context type, which carries deadlines, cancelation
-signals, and other request-scoped values across API boundaries and between
-processes.
+context 包定义了 Context 类型，它在 API 边界和进程之间传递截止时间，取消信号，和其他请求生命周期的值。
 
-Incoming requests to a server should create a Context, and outgoing calls to
-servers should accept a Context. The chain of function calls between them must
-propagate the Context, optionally replacing it with a derived Context created
-using WithCancel, WithDeadline, WithTimeout, or WithValue. When a Context is
-canceled, all Contexts derived from it are also canceled.
+请求到达服务器后需创建 Context 实例，外部调用应该接受 Context。在它们之间的函数调用链必须传递这个 Context 实例，也可以调用 WithCancel, WithDeadline, WithTimeout, 或 WithValue 来衍生出新 Context 实例。当取消一个 Context 实例时，所有由它衍生的 Context 实例都会被取消。
 
-The WithCancel, WithDeadline, and WithTimeout functions take a Context (the
-parent) and return a derived Context (the child) and a CancelFunc. Calling the
-CancelFunc cancels the child and its children, removes the parent's reference to
-the child, and stops any associated timers. Failing to call the CancelFunc leaks
-the child and its children until the parent is canceled or the timer fires. The
-go vet tool checks that CancelFuncs are used on all control-flow paths.
+函数 WithCancel，WithDeadline，WithTimeout 接收一个 Context 实例（母体）并返回一个衍生 Context（衍生体）和一个 CancelFunc。调用 CancelFunc 会注销它（衍生 Context）和由它衍生的 Context 实例，删除母体与它的联系并停止所有关联的定时器。不调用 CancelFunc 会导致它和它的衍生体的生命周期和母体一样长。go vet 工具可以检查是否所有的流程控制语句都使用了 CancelFunc。
 
-Programs that use Contexts should follow these rules to keep interfaces
-consistent across packages and enable static analysis tools to check context
-propagation:
+为了能让使用 Context 的程序保持接口的一致性并且能够使用静态工具进行检查，我们需要遵循以下规则：
 
-Do not store Contexts inside a struct type; instead, pass a Context explicitly
-to each function that needs it. The Context should be the first parameter,
-typically named ctx:
+在函数中按需传递 Context 而不要将 Context 储存在结构体中。Context 应该作为函数的第一个参数，一般叫 ctx：
 
     func DoSomething(ctx context.Context, arg Arg) error {
     	// ... use ctx ...
@@ -94,7 +79,7 @@ nothing.
     <span class="comment">// should be canceled. Deadline returns ok==false when no deadline is</span>
     <span class="comment">// set. Successive calls to Deadline return the same results.</span>
     Deadline() (deadline <a href="/time/">time</a>.<a href="/time/#Time">Time</a>, ok <a href="/builtin/#bool">bool</a>)
-
+    
     <span class="comment">// Done returns a channel that&#39;s closed when work done on behalf of this</span>
     <span class="comment">// context should be canceled. Done may return nil if this context can</span>
     <span class="comment">// never be canceled. Successive calls to Done return the same value.</span>
@@ -125,14 +110,14 @@ nothing.
     <span class="comment">// See https://blog.golang.org/pipelines for more examples of how to use</span>
     <span class="comment">// a Done channel for cancelation.</span>
     Done() &lt;-chan struct{}
-
+    
     <span class="comment">// If Done is not yet closed, Err returns nil.</span>
     <span class="comment">// If Done is closed, Err returns a non-nil error explaining why:</span>
     <span class="comment">// Canceled if the context was canceled</span>
     <span class="comment">// or DeadlineExceeded if the context&#39;s deadline passed.</span>
     <span class="comment">// After Err returns a non-nil error, successive calls to Err return the same error.</span>
     Err() <a href="/builtin/#error">error</a>
-
+    
     <span class="comment">// Value returns the value associated with this context for key, or nil</span>
     <span class="comment">// if no value is associated with key. Successive calls to Value with</span>
     <span class="comment">// the same key returns the same result.</span>
@@ -238,10 +223,10 @@ Example:
         }()
         return dst
     }
-
+    
     ctx, cancel := context.WithCancel(context.Background())
     defer cancel() // cancel when we are finished consuming integers
-
+    
     for n := range gen(ctx) {
         fmt.Println(n)
         if n == 5 {
@@ -274,19 +259,19 @@ Example:
 
     d := time.Now().Add(50 * time.Millisecond)
     ctx, cancel := context.WithDeadline(context.Background(), d)
-
+    
     // Even though ctx will be expired, it is good practice to call its
     // cancelation function in any case. Failure to do so may keep the
     // context and its parent alive longer than necessary.
     defer cancel()
-
+    
     select {
     case <-time.After(1 * time.Second):
         fmt.Println("overslept")
     case <-ctx.Done():
         fmt.Println(ctx.Err())
     }
-
+    
     // Output:
     // context deadline exceeded
 
@@ -312,14 +297,14 @@ Example:
     // should abandon its work after the timeout elapses.
     ctx, cancel := context.WithTimeout(context.Background(), 50*time.Millisecond)
     defer cancel()
-
+    
     select {
     case <-time.After(1 * time.Second):
         fmt.Println("overslept")
     case <-ctx.Done():
         fmt.Println(ctx.Err()) // prints "context deadline exceeded"
     }
-
+    
     // Output:
     // context deadline exceeded
 
@@ -352,13 +337,13 @@ Example:
         }
         fmt.Println("key not found:", k)
     }
-
+    
     k := favContextKey("language")
     ctx := context.WithValue(context.Background(), k, "Go")
-
+    
     f(ctx, k)
     f(ctx, favContextKey("color"))
-
+    
     // Output:
     // found value: Go
     // key not found: color
