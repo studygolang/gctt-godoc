@@ -156,7 +156,7 @@ Contains 判断 s 是否包含子串 substr。
     <a href="#ContainsAny">¶</a></h2>
 <pre>func ContainsAny(s, chars <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
-ContainsAny 判断 s 是否包含 chars 中的任意 Unicode 代码点（原文：Unicode code point）。
+ContainsAny 判断 s 是否包含 chars 中的任意 <ruby>Unicode 代码点<rt>Unicode code point</rt></ruby>。
 
 <a id="exampleContainsAny"></a>
 例:
@@ -219,7 +219,7 @@ EqualFold 判断 s 和 t 在忽略大小写的情况下是否相等。
     <a href="#Fields">¶</a></h2>
 <pre>func Fields(s <a href="/builtin/#string">string</a>) []<a href="/builtin/#string">string</a></pre>
 
-Fields 使用空格（Go 中通过 unicode.IsSpace 判断是否为空格）来分割字符串并将结果以切片形式返回。当 s 只包含空格时返回值为空。
+Fields 根据空白字符（Go 中通过 unicode.IsSpace 判断是否为空白字符）分割字符串并将结果以切片形式返回。当 s 只包含空白字符时返回值为空。
 
 <a id="exampleFields"></a>
 例:
@@ -231,7 +231,7 @@ Fields 使用空格（Go 中通过 unicode.IsSpace 判断是否为空格）来�
     <a href="#FieldsFunc">¶</a></h2>
 <pre>func FieldsFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) []<a href="/builtin/#string">string</a></pre>
 
-FieldsFunc 根据满足函数 f(c) 的 Unicode 代码点 c 来分割字符串。当 s 中所有的字符都满足 f(c) 函数或 s 为空时返回空。FieldsFunc 不保证 f(c) 的调用顺序，如果指定的 c 调用 f 返回结果不一致函数会崩溃。
+FieldsFunc 根据满足函数 f(c) 的 Unicode 代码点 c 分割字符串。当 s 中所有的字符都满足 f(c) 函数或 s 为空时返回空。FieldsFunc 不保证 f(c) 的调用顺序，如果指定的 c 调用 f 返回结果不一致函数会崩溃。
 
 <a id="exampleFieldsFunc"></a>
 例:
@@ -282,7 +282,7 @@ HasSuffix 判断 s 是否以 suffix 为后缀。
     <a href="#Index">¶</a></h2>
 <pre>func Index(s, substr <a href="/builtin/#string">string</a>) <a href="/builtin/#int">int</a></pre>
 
-Index 返回 s 中第一次出现 substr 时的位置，如果没有返回 -1。
+Index 返回 s 中 substr 第一次出现的位置，如果没有返回 -1。
 
 <a id="exampleIndex"></a>
 例:
@@ -297,7 +297,7 @@ Index 返回 s 中第一次出现 substr 时的位置，如果没有返回 -1。
     <a href="#IndexAny">¶</a></h2>
 <pre>func IndexAny(s, chars <a href="/builtin/#string">string</a>) <a href="/builtin/#int">int</a></pre>
 
-IndexAny 返回 s 中第一次出现 chars 中任意 Unicode 代码点时的位置，如果没有返回 -1。
+IndexAny 返回 s 中 chars 中任意 Unicode 代码点第一次出现的位置，如果没有返回 -1。
 
 <a id="exampleIndexAny"></a>
 例:
@@ -312,7 +312,7 @@ IndexAny 返回 s 中第一次出现 chars 中任意 Unicode 代码点时的位�
     <a href="#IndexByte">¶</a></h2>
 <pre>func IndexByte(s <a href="/builtin/#string">string</a>, c <a href="/builtin/#byte">byte</a>) <a href="/builtin/#int">int</a></pre>
 
-IndexByte 返回 s 中第一次出现 c 字节时的位置，如果没有返回 -1。
+IndexByte 返回 s 中 c 字节第一次出现的位置，如果没有返回 -1。
 
 <a id="exampleIndexByte"></a>
 例:
@@ -329,7 +329,7 @@ IndexByte 返回 s 中第一次出现 c 字节时的位置，如果没有返回 
     <a href="#IndexFunc">¶</a></h2>
 <pre>func IndexFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#int">int</a></pre>
 
-IndexFunc 返回 s 中第一个满足 f(c) 函数的 Unicode 代码点的位置，如果没有返回 -1。
+IndexFunc 返回 s 中满足 f(c) 函数的 Unicode 代码点第一次出现的位置，如果没有返回 -1。
 
 <a id="exampleIndexFunc"></a>
 例:
@@ -347,7 +347,7 @@ IndexFunc 返回 s 中第一个满足 f(c) 函数的 Unicode 代码点的位置�
     <a href="#IndexRune">¶</a></h2>
 <pre>func IndexRune(s <a href="/builtin/#string">string</a>, r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#int">int</a></pre>
 
-IndexRune 返回 s 中第一次出现 r 时的位置。如果没有返回 -1。当 r 是 utf8.RuneError 时返回第一次出现无效 UTF-8 字节序列的位置。
+IndexRune 返回 s 中 r 第一次出现的位置。如果没有返回 -1。当 r 是 utf8.RuneError 时返回无效 UTF-8 字节序列第一次出现的位置。
 
 <a id="exampleIndexRune"></a>
 例:
@@ -442,7 +442,7 @@ Map 为 s 中的每个字符应用回调函数 mapping 并返回处理结果。�
     <a href="#Repeat">¶</a></h2>
 <pre>func Repeat(s <a href="/builtin/#string">string</a>, count <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
-Repeat 把 s 重复 count 次并返回结果。当 count 是负数或者 (len(s) * count) 溢出函数会 panic。
+Repeat 把 s 重复 count 次并返回结果。当 count 是负数或者 `len(s) * count` 溢出函数会 panic。
 
 <a id="exampleRepeat"></a>
 例:
@@ -473,9 +473,9 @@ Split 将 s 根据 sep 分割并以切片形式返回。
 
 如果 s 中不包含 sep 并且 sep 不为空 Split 会把 s 作为切片元素返回（长度为 1）。
 
-如果 sep 为空将分割每个 UTF-8 字符。如果 s 和 sep 都为空 Split 会返回空切片。
+如果 sep 为空，将分割每个 UTF-8 字符。如果 s 和 sep 都为空 Split 会返回空切片。
 
-Split 和 SplitN(-1) 是相等的。
+Split 和 SplitN(-1) 是等价的。
 
 <a id="exampleSplit"></a>
 例:
@@ -500,7 +500,7 @@ SplitAfter 从每个 sep 后面分割 s 并以切片形式返回。
 
 如果 sep 为空则分割每个 UTF-8 字符。如果 s 和 sep 都为空 SplitAfter 会返回空切片。
 
-SplitAfter 和 SplitAfterN(-1) 是相等的。
+SplitAfter 和 SplitAfterN(-1) 是等价的。
 
 <a id="exampleSplitAfter"></a>
 例:
@@ -520,7 +520,7 @@ SplitAfterN 从每个 sep 后面分割 s 并以切片形式返回。
     n == 0: 返回值为 nil
     n < 0: 不限制分割后的子串数量。
 
-边缘情况的处理和 SplitAfter 相同。
+对于 s 和 sep 的边缘情况处理与 SplitAfter 相同。
 
 <a id="exampleSplitAfterN"></a>
 例:
@@ -540,7 +540,7 @@ Split 将 s 根据 sep 分割并返回。
     n == 0: 返回值为 nil
     n < 0: 不限制分割后的子串数量
 
-边缘情况的处理和 Split 相同。
+对于 s 和 sep 的边缘情况处理与 Split 相同。
 
 <a id="exampleSplitN"></a>
 例:
@@ -722,7 +722,7 @@ TrimSuffix 去掉字符串 s 中的指定后缀 suffix。如果 s 不是以 suff
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 
-Reader 实现对字符串读取的 io.Reader、 io.ReaderAt、io.Seeker、io.WriterTo、io.ByteScanner 和 io.RuneScanner 接口。
+Reader 实现对字符串读取的 io.Reader、io.ReaderAt、io.Seeker、io.WriterTo、io.ByteScanner 和 io.RuneScanner 接口。
 
 <h3 id="NewReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L140">NewReader</a>
     <a href="#NewReader">¶</a></h3>
@@ -796,7 +796,7 @@ WriteTo 方法实现了 io.WriterTo 接口。
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 
-Replacer 根据给定的替换列表来替换字符串。它可以被多个 goroutine 同时使用。
+Replacer 根据给定的替换列表来替换字符串。它可以安全的被多个 goroutine 同时使用。
 
 <h3 id="NewReplacer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/replace.go#L13">NewReplacer</a>
     <a href="#NewReplacer">¶</a></h3>
