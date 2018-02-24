@@ -231,7 +231,7 @@ Fields 根据空白字符（Go 中通过 unicode.IsSpace 判断是否为空白�
     <a href="#FieldsFunc">¶</a></h2>
 <pre>func FieldsFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) []<a href="/builtin/#string">string</a></pre>
 
-FieldsFunc 根据满足函数 f(c) 的 Unicode 代码点 c 分割字符串。当 s 中所有的字符都满足 f(c) 函数或 s 为空时返回空。FieldsFunc 不保证 f(c) 的调用顺序，如果指定的 c 调用 f 返回结果不一致函数会崩溃。
+FieldsFunc 根据满足函数 `f(c)` 的 Unicode 代码点 c 分割字符串。当 s 中所有的字符都满足 `f(c)` 函数或 s 为空时返回空。FieldsFunc 不保证 `f(c)` 的调用顺序，如果指定的 c 调用 f 返回结果不一致函数会崩溃。
 
 <a id="exampleFieldsFunc"></a>
 例:
@@ -329,7 +329,7 @@ IndexByte 返回 s 中 c 字节第一次出现的位置，如果没有返回 -1�
     <a href="#IndexFunc">¶</a></h2>
 <pre>func IndexFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#int">int</a></pre>
 
-IndexFunc 返回 s 中满足 f(c) 函数的 Unicode 代码点第一次出现的位置，如果没有返回 -1。
+IndexFunc 返回 s 中满足 `f(c)` 函数的 Unicode 代码点第一次出现的位置，如果没有返回 -1。
 
 <a id="exampleIndexFunc"></a>
 例:
@@ -415,7 +415,7 @@ LastIndexByte 返回 s 中最后一次出现 c 字节时的位置，如果没有
     <a href="#LastIndexFunc">¶</a></h2>
 <pre>func LastIndexFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#int">int</a></pre>
 
-LastIndexFunc 返回 s 中最后一个满足 f(c) 函数的 Unicode 代码点的位置，如果没有返回 -1。
+LastIndexFunc 返回 s 中最后一个满足 `f(c)` 函数的 Unicode 代码点的位置，如果没有返回 -1。
 
 <h2 id="Map">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L496">Map</a>
     <a href="#Map">¶</a></h2>
@@ -639,7 +639,7 @@ Trim 去掉 s 头部和尾部所有 cutset 中的 Unicode 代码点。
     <a href="#TrimFunc">¶</a></h2>
 <pre>func TrimFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#string">string</a></pre>
 
-TrimFunc 去掉 s 头部和尾部所有满足 f(c) 的 Unicode 代码点。
+TrimFunc 去掉 s 头部和尾部所有满足 `f(c)` 的 Unicode 代码点。
 
 <a id="exampleTrimFunc"></a>
 例:
@@ -660,7 +660,7 @@ TrimLeft 去掉 s 头部所有 cutset 中的 Unicode 代码点。
     <a href="#TrimLeftFunc">¶</a></h2>
 <pre>func TrimLeftFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#string">string</a></pre>
 
-TrimLeftFunc 去掉 s 头部所有满足 f(c) 的 Unicode 代码点。
+TrimLeftFunc 去掉 s 头部所有满足 `f(c)` 的 Unicode 代码点。
 
 <h2 id="TrimPrefix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L806">TrimPrefix</a>
     <a href="#TrimPrefix">¶</a></h2>
@@ -687,7 +687,7 @@ TrimRignt 去掉 s 尾部所有 cutset 中的 Unicode 代码点。
     <a href="#TrimRightFunc">¶</a></h2>
 <pre>func TrimRightFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#string">string</a></pre>
 
-TrimRightFunc 去掉字符串 s 尾部满足 f(c) 函数的 Unicode 代码点。
+TrimRightFunc 去掉字符串 s 尾部满足 `f(c)` 函数的 Unicode 代码点。
 
 <h2 id="TrimSpace">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L800">TrimSpace</a>
     <a href="#TrimSpace">¶</a></h2>
