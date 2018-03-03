@@ -137,7 +137,7 @@ strings 包实现了一些操作 UTF-8 字符串的函数。
     <a href="#Compare">¶</a></h2>
 <pre>func Compare(a, b <a href="/builtin/#string">string</a>) <a href="/builtin/#int">int</a></pre>
 
-Compare 依据字典顺序比较 a 和 b。a == b 时返回 0，a < b 时返回 -1，a > b 时返回 +1。
+Compare 根据字典顺序比较字符串 a 和 b。a == b 时返回 0，a < b 时返回 -1，a > b 时返回 +1。
 
 Compare 主要为了和 bytes 包对应，通常使用内置的比较运算符（==，<，>）效率更高。
 
@@ -822,7 +822,7 @@ Example:
     }
     b.WriteString("ignition")
     fmt.Println(b.String())
-
+    
     // Output: 3...2...1...ignition
 
 <h3 id="Builder.Grow">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L60">Grow</a>
