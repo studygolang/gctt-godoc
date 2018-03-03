@@ -130,13 +130,8 @@ strings 包实现了一些操作 UTF-8 字符串的函数。
 - [TrimSpace](#exampleTrimSpace)
 - [TrimSuffix](#exampleTrimSuffix)
 
-<<<<<<< HEAD:Translate/strings/strings.md
 ### 文件
  [compare.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/compare.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go) [replace.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/replace.go) [search.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/search.go) [strings.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go) [strings_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_amd64.go) [strings_decl.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_decl.go)
-=======
-### Package files
- [builder.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go) [compare.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/compare.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go) [replace.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/replace.go) [search.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/search.go) [strings.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go) [strings_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_amd64.go) [strings_decl.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_decl.go)
->>>>>>> 35f10839ff9223c0f00bbb52e0b697ef9b0b1173:Source/strings/strings.md
 
 <h2 id="Compare">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/compare.go#L3">Compare</a>
     <a href="#Compare">¶</a></h2>
@@ -243,13 +238,7 @@ EqualFold 判断 s 和 t 在忽略大小写的情况下是否相等。
     <a href="#Fields">¶</a></h2>
 <pre>func Fields(s <a href="/builtin/#string">string</a>) []<a href="/builtin/#string">string</a></pre>
 
-<<<<<<< HEAD:Translate/strings/strings.md
 Fields 根据空白字符（Go 中通过 unicode.IsSpace 判断是否为空白字符）分割字符串并将结果以切片形式返回。当 s 只包含空白字符时返回值为空。
-=======
-Fields splits the string s around each instance of one or more consecutive white
-space characters, as defined by unicode.IsSpace, returning a slice of substrings
-of s or an empty slice if s contains only white space.
->>>>>>> 35f10839ff9223c0f00bbb52e0b697ef9b0b1173:Source/strings/strings.md
 
 <a id="exampleFields"></a>
 例:
@@ -997,11 +986,7 @@ WriteString 方法对 s 应用替换后将结果写入 w 中。
 
 <h2 id="pkg-note-BUG">Bugs</h2>
 
-<<<<<<< HEAD:Translate/strings/strings.md
 - [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L646)  Title 使用的判断字边界的规则会忽略 Unicode 标点符号。
-=======
-- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L649)  The rule Title uses for word boundaries does not handle Unicode punctuation
-  properly.
->>>>>>> 35f10839ff9223c0f00bbb52e0b697ef9b0b1173:Source/strings/strings.md
+
 
 
