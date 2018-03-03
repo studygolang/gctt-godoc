@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package base32
 
   `import "encoding/base32"`
@@ -53,13 +53,13 @@ typically used in DNS.
 
 StdEncoding is the standard base32 encoding, as defined in RFC 4648.
 
-<h2 id="NewDecoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L484">NewDecoder</a>
+<h2 id="NewDecoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L495">NewDecoder</a>
     <a href="#NewDecoder">¶</a></h2>
 <pre>func NewDecoder(enc *<a href="#Encoding">Encoding</a>, r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a></pre>
 
 NewDecoder constructs a new base32 stream decoder.
 
-<h2 id="NewEncoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L237">NewEncoder</a>
+<h2 id="NewEncoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L248">NewEncoder</a>
     <a href="#NewEncoder">¶</a></h2>
 <pre>func NewEncoder(enc *<a href="#Encoding">Encoding</a>, w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) <a href="/io/">io</a>.<a href="/io/#WriteCloser">WriteCloser</a></pre>
 
@@ -81,12 +81,12 @@ Example:
     // Output:
     // MZXW6ADCMFZA====
 
-<h2 id="CorruptInputError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L254">CorruptInputError</a>
+<h2 id="CorruptInputError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L265">CorruptInputError</a>
     <a href="#CorruptInputError">¶</a></h2>
 <pre>type CorruptInputError <a href="/builtin/#int64">int64</a></pre>
 
 
-<h3 id="CorruptInputError.Error">func (CorruptInputError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L256">Error</a>
+<h3 id="CorruptInputError.Error">func (CorruptInputError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L267">Error</a>
     <a href="#CorruptInputError.Error">¶</a></h3>
 <pre>func (e <a href="#CorruptInputError">CorruptInputError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
@@ -109,7 +109,7 @@ DNSSEC.
 NewEncoding returns a new Encoding defined by the given alphabet, which must be
 a 32-byte string.
 
-<h3 id="Encoding.Decode">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L360">Decode</a>
+<h3 id="Encoding.Decode">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L371">Decode</a>
     <a href="#Encoding.Decode">¶</a></h3>
 <pre>func (enc *<a href="#Encoding">Encoding</a>) Decode(dst, src []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -119,7 +119,7 @@ src contains invalid base32 data, it will return the number of bytes
 successfully written and CorruptInputError. New line characters (\r and \n) are
 ignored.
 
-<h3 id="Encoding.DecodeString">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L367">DecodeString</a>
+<h3 id="Encoding.DecodeString">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L378">DecodeString</a>
     <a href="#Encoding.DecodeString">¶</a></h3>
 <pre>func (enc *<a href="#Encoding">Encoding</a>) DecodeString(s <a href="/builtin/#string">string</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -138,7 +138,7 @@ Example:
     // Output:
     // "some data with \x00 and \ufeff"
 
-<h3 id="Encoding.DecodedLen">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L490">DecodedLen</a>
+<h3 id="Encoding.DecodedLen">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L501">DecodedLen</a>
     <a href="#Encoding.DecodedLen">¶</a></h3>
 <pre>func (enc *<a href="#Encoding">Encoding</a>) DecodedLen(n <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -156,7 +156,7 @@ The encoding pads the output to a multiple of 8 bytes, so Encode is not
 appropriate for use on individual blocks of a large data stream. Use
 NewEncoder() instead.
 
-<h3 id="Encoding.EncodeToString">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L157">EncodeToString</a>
+<h3 id="Encoding.EncodeToString">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L168">EncodeToString</a>
     <a href="#Encoding.EncodeToString">¶</a></h3>
 <pre>func (enc *<a href="#Encoding">Encoding</a>) EncodeToString(src []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -171,7 +171,7 @@ Example:
     // Output:
     // MFXHSIBLEBXWYZBAEYQGIYLUME======
 
-<h3 id="Encoding.EncodedLen">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L243">EncodedLen</a>
+<h3 id="Encoding.EncodedLen">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base32/base32.go#L254">EncodedLen</a>
     <a href="#Encoding.EncodedLen">¶</a></h3>
 <pre>func (enc *<a href="#Encoding">Encoding</a>) EncodedLen(n <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 

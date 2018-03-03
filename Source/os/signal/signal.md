@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package signal
 
   `import "os/signal"`
@@ -216,6 +216,7 @@ string is posted as a note.
 ### Examples
 
 - [Notify](#exampleNotify)
+- [Notify (AllSignals)](#exampleNotify_allSignals)
 
 ### Package files
  [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/signal/doc.go) [signal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/signal/signal.go) [signal_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/signal/signal_unix.go)
@@ -262,6 +263,23 @@ Example:
     s := <-c
     fmt.Println("Got signal:", s)
 
+
+<a id="exampleNotify_allSignals"></a>
+Example:
+
+    // Set up channel on which to send signal notifications.
+    // We must use a buffered channel or risk missing the signal
+    // if we're not ready to receive when the signal is sent.
+    c := make(chan os.Signal, 1)
+
+    // Passing no signals to Notify means that
+    // all signals will be sent to the channel.
+    signal.Notify(c)
+
+    // Block until any signal is received.
+    s := <-c
+    fmt.Println("Got signal:", s)
+
 <h2 id="Reset">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/signal/signal.go#L139">Reset</a>
     <a href="#Reset">¶</a></h2>
 <pre>func Reset(sig ...<a href="/os/">os</a>.<a href="/os/#Signal">Signal</a>)</pre>
@@ -277,4 +295,5 @@ Stop causes package signal to stop relaying incoming signals to c. It undoes the
 effect of all prior calls to Notify using c. When Stop returns, it is guaranteed
 that c will receive no more signals.
 
-
+## Subdirectories
+- [..](..)

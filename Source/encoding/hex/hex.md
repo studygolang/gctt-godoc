@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package hex
 
   `import "encoding/hex"`
@@ -18,6 +18,8 @@ Package hex implements hexadecimal encoding and decoding.
 - [func Encode(dst, src []byte) int](#Encode)
 - [func EncodeToString(src []byte) string](#EncodeToString)
 - [func EncodedLen(n int) int](#EncodedLen)
+- [func NewDecoder(r io.Reader) io.Reader](#NewDecoder)
+- [func NewEncoder(w io.Writer) io.Writer](#NewEncoder)
 - [type InvalidByteError](#InvalidByteError)
   - [func (e InvalidByteError) Error() string](#InvalidByteError.Error)
 
@@ -37,9 +39,11 @@ Package hex implements hexadecimal encoding and decoding.
 
 <pre>var <span id="ErrLength">ErrLength</span> = <a href="/errors/">errors</a>.<a href="/errors/#New">New</a>(&#34;encoding/hex: odd length hex string&#34;)</pre>
 
-ErrLength results from decoding an odd length slice.
+ErrLength reports an attempt to decode an odd-length input using Decode or
+DecodeString. The stream-based Decoder returns io.ErrUnexpectedEOF instead of
+ErrLength.
 
-<h2 id="Decode">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L43">Decode</a>
+<h2 id="Decode">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L47">Decode</a>
     <a href="#Decode">¶</a></h2>
 <pre>func Decode(dst, src []<a href="/builtin/#byte">byte</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -47,7 +51,8 @@ Decode decodes src into DecodedLen(len(src)) bytes, returning the actual number
 of bytes written to dst.
 
 Decode expects that src contain only hexadecimal characters and that src should
-have an even length.
+have an even length. If the input is malformed, Decode returns the number of
+bytes decoded before the error.
 
 <a id="exampleDecode"></a>
 Example:
@@ -65,11 +70,15 @@ Example:
     // Output:
     // Hello Gopher!
 
-<h2 id="DecodeString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L85">DecodeString</a>
+<h2 id="DecodeString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L98">DecodeString</a>
     <a href="#DecodeString">¶</a></h2>
 <pre>func DecodeString(s <a href="/builtin/#string">string</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 DecodeString returns the bytes represented by the hexadecimal string s.
+
+DecodeString expects that src contain only hexadecimal characters and that src
+should have an even length. If the input is malformed, DecodeString returns a
+string containing the bytes decoded before the error.
 
 <a id="exampleDecodeString"></a>
 Example:
@@ -85,14 +94,14 @@ Example:
     // Output:
     // Hello Gopher!
 
-<h2 id="DecodedLen">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L36">DecodedLen</a>
+<h2 id="DecodedLen">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L38">DecodedLen</a>
     <a href="#DecodedLen">¶</a></h2>
 <pre>func DecodedLen(x <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 DecodedLen returns the length of a decoding of x source bytes. Specifically, it
 returns x / 2.
 
-<h2 id="Dump">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L97">Dump</a>
+<h2 id="Dump">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L108">Dump</a>
     <a href="#Dump">¶</a></h2>
 <pre>func Dump(data []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -111,7 +120,7 @@ Example:
     // 00000010  75 72 63 65 20 70 72 6f  67 72 61 6d 6d 69 6e 67  |urce programming|
     // 00000020  20 6c 61 6e 67 75 61 67  65 2e                    | language.|
 
-<h2 id="Dumper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L108">Dumper</a>
+<h2 id="Dumper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L194">Dumper</a>
     <a href="#Dumper">¶</a></h2>
 <pre>func Dumper(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) <a href="/io/">io</a>.<a href="/io/#WriteCloser">WriteCloser</a></pre>
 
@@ -165,7 +174,7 @@ Example:
     // Output:
     // 48656c6c6f20476f7068657221
 
-<h2 id="EncodeToString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L78">EncodeToString</a>
+<h2 id="EncodeToString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L86">EncodeToString</a>
     <a href="#EncodeToString">¶</a></h2>
 <pre>func EncodeToString(src []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -189,14 +198,28 @@ Example:
 EncodedLen returns the length of an encoding of n source bytes. Specifically, it
 returns n * 2.
 
-<h2 id="InvalidByteError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L28">InvalidByteError</a>
+<h2 id="NewDecoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L155">NewDecoder</a>
+    <a href="#NewDecoder">¶</a></h2>
+<pre>func NewDecoder(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a></pre>
+
+NewDecoder returns an io.Reader that decodes hexadecimal characters from r.
+NewDecoder expects that r contain only an even number of hexadecimal characters.
+
+<h2 id="NewEncoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L126">NewEncoder</a>
+    <a href="#NewEncoder">¶</a></h2>
+<pre>func NewEncoder(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a></pre>
+
+NewEncoder returns an io.Writer that writes lowercase hexadecimal characters to
+w.
+
+<h2 id="InvalidByteError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L30">InvalidByteError</a>
     <a href="#InvalidByteError">¶</a></h2>
 <pre>type InvalidByteError <a href="/builtin/#byte">byte</a></pre>
 
 InvalidByteError values describe errors resulting from an invalid byte in a hex
 string.
 
-<h3 id="InvalidByteError.Error">func (InvalidByteError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L30">Error</a>
+<h3 id="InvalidByteError.Error">func (InvalidByteError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/hex/hex.go#L32">Error</a>
     <a href="#InvalidByteError.Error">¶</a></h3>
 <pre>func (e <a href="#InvalidByteError">InvalidByteError</a>) Error() <a href="/builtin/#string">string</a></pre>
 

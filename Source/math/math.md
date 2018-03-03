@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package math
 
   `import "math"`
@@ -28,6 +28,8 @@ This package does not guarantee bit-identical results across architectures.
 - [func Dim(x, y float64) float64](#Dim)
 - [func Erf(x float64) float64](#Erf)
 - [func Erfc(x float64) float64](#Erfc)
+- [func Erfcinv(x float64) float64](#Erfcinv)
+- [func Erfinv(x float64) float64](#Erfinv)
 - [func Exp(x float64) float64](#Exp)
 - [func Exp2(x float64) float64](#Exp2)
 - [func Expm1(x float64) float64](#Expm1)
@@ -63,6 +65,8 @@ This package does not guarantee bit-identical results across architectures.
 - [func Pow(x, y float64) float64](#Pow)
 - [func Pow10(n int) float64](#Pow10)
 - [func Remainder(x, y float64) float64](#Remainder)
+- [func Round(x float64) float64](#Round)
+- [func RoundToEven(x float64) float64](#RoundToEven)
 - [func Signbit(x float64) bool](#Signbit)
 - [func Sin(x float64) float64](#Sin)
 - [func Sincos(x float64) (sin, cos float64)](#Sincos)
@@ -77,26 +81,40 @@ This package does not guarantee bit-identical results across architectures.
 
 ### Examples
 
+- [Acos](#exampleAcos)
+- [Acosh](#exampleAcosh)
+- [Asin](#exampleAsin)
+- [Asinh](#exampleAsinh)
+- [Atan](#exampleAtan)
+- [Atan2](#exampleAtan2)
+- [Atanh](#exampleAtanh)
+- [Cos](#exampleCos)
+- [Cosh](#exampleCosh)
+- [Sin](#exampleSin)
+- [Sincos](#exampleSincos)
+- [Sinh](#exampleSinh)
 - [Sqrt](#exampleSqrt)
+- [Tan](#exampleTan)
+- [Tanh](#exampleTanh)
 
 ### Package files
- [abs.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/abs.go) [acosh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/acosh.go) [asin.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/asin.go) [asinh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/asinh.go) [atan.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atan.go) [atan2.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atan2.go) [atanh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atanh.go) [bits.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go) [cbrt.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cbrt.go) [const.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/const.go) [copysign.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/copysign.go) [dim.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/dim.go) [erf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/erf.go) [exp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/exp.go) [expm1.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/expm1.go) [floor.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/floor.go) [floor_asm.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/floor_asm.go) [frexp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/frexp.go) [gamma.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/gamma.go) [hypot.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/hypot.go) [j0.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/j0.go) [j1.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/j1.go) [jn.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/jn.go) [ldexp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/ldexp.go) [lgamma.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/lgamma.go) [log.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/log.go) [log10.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/log10.go) [log1p.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/log1p.go) [logb.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/logb.go) [mod.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/mod.go) [modf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/modf.go) [nextafter.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/nextafter.go) [pow.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/pow.go) [pow10.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/pow10.go) [remainder.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/remainder.go) [signbit.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/signbit.go) [sin.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sin.go) [sincos.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sincos.go) [sinh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sinh.go) [sqrt.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sqrt.go) [tan.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/tan.go) [tanh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/tanh.go) [unsafe.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/unsafe.go)
+ [abs.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/abs.go) [acosh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/acosh.go) [asin.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/asin.go) [asinh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/asinh.go) [atan.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atan.go) [atan2.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atan2.go) [atanh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atanh.go) [bits.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go) [cbrt.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cbrt.go) [const.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/const.go) [copysign.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/copysign.go) [dim.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/dim.go) [erf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/erf.go) [erfinv.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/erfinv.go) [exp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/exp.go) [exp_asm.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/exp_asm.go) [expm1.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/expm1.go) [floor.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/floor.go) [floor_asm.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/floor_asm.go) [frexp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/frexp.go) [gamma.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/gamma.go) [hypot.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/hypot.go) [j0.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/j0.go) [j1.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/j1.go) [jn.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/jn.go) [ldexp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/ldexp.go) [lgamma.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/lgamma.go) [log.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/log.go) [log10.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/log10.go) [log1p.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/log1p.go) [logb.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/logb.go) [mod.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/mod.go) [modf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/modf.go) [nextafter.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/nextafter.go) [pow.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/pow.go) [pow10.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/pow10.go) [remainder.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/remainder.go) [signbit.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/signbit.go) [sin.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sin.go) [sincos.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sincos.go) [sinh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sinh.go) [sqrt.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sqrt.go) [tan.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/tan.go) [tanh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/tanh.go) [unsafe.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/unsafe.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
 <pre>const (
-    <span id="E">E</span>   = 2.71828182845904523536028747135266249775724709369995957496696763 <span class="comment">// http://oeis.org/A001113</span>
-    <span id="Pi">Pi</span>  = 3.14159265358979323846264338327950288419716939937510582097494459 <span class="comment">// http://oeis.org/A000796</span>
-    <span id="Phi">Phi</span> = 1.61803398874989484820458683436563811772030917980576286213544862 <span class="comment">// http://oeis.org/A001622</span>
+    <span id="E">E</span>   = 2.71828182845904523536028747135266249775724709369995957496696763 <span class="comment">// https://oeis.org/A001113</span>
+    <span id="Pi">Pi</span>  = 3.14159265358979323846264338327950288419716939937510582097494459 <span class="comment">// https://oeis.org/A000796</span>
+    <span id="Phi">Phi</span> = 1.61803398874989484820458683436563811772030917980576286213544862 <span class="comment">// https://oeis.org/A001622</span>
 
-    <span id="Sqrt2">Sqrt2</span>   = 1.41421356237309504880168872420969807856967187537694807317667974 <span class="comment">// http://oeis.org/A002193</span>
-    <span id="SqrtE">SqrtE</span>   = 1.64872127070012814684865078781416357165377610071014801157507931 <span class="comment">// http://oeis.org/A019774</span>
-    <span id="SqrtPi">SqrtPi</span>  = 1.77245385090551602729816748334114518279754945612238712821380779 <span class="comment">// http://oeis.org/A002161</span>
-    <span id="SqrtPhi">SqrtPhi</span> = 1.27201964951406896425242246173749149171560804184009624861664038 <span class="comment">// http://oeis.org/A139339</span>
+    <span id="Sqrt2">Sqrt2</span>   = 1.41421356237309504880168872420969807856967187537694807317667974 <span class="comment">// https://oeis.org/A002193</span>
+    <span id="SqrtE">SqrtE</span>   = 1.64872127070012814684865078781416357165377610071014801157507931 <span class="comment">// https://oeis.org/A019774</span>
+    <span id="SqrtPi">SqrtPi</span>  = 1.77245385090551602729816748334114518279754945612238712821380779 <span class="comment">// https://oeis.org/A002161</span>
+    <span id="SqrtPhi">SqrtPhi</span> = 1.27201964951406896425242246173749149171560804184009624861664038 <span class="comment">// https://oeis.org/A139339</span>
 
-    <span id="Ln2">Ln2</span>    = 0.693147180559945309417232121458176568075500134360255254120680009 <span class="comment">// http://oeis.org/A002162</span>
+    <span id="Ln2">Ln2</span>    = 0.693147180559945309417232121458176568075500134360255254120680009 <span class="comment">// https://oeis.org/A002162</span>
     <span id="Log2E">Log2E</span>  = 1 / <a href="#Ln2">Ln2</a>
-    <span id="Ln10">Ln10</span>   = 2.30258509299404568401799145468436420760110148862877297603332790 <span class="comment">// http://oeis.org/A002392</span>
+    <span id="Ln10">Ln10</span>   = 2.30258509299404568401799145468436420760110148862877297603332790 <span class="comment">// https://oeis.org/A002392</span>
     <span id="Log10E">Log10E</span> = 1 / <a href="#Ln10">Ln10</a>
 )</pre>
 
@@ -152,6 +170,12 @@ Special case is:
 
     Acos(x) = NaN if x < -1 or x > 1
 
+<a id="exampleAcos"></a>
+Example:
+
+    fmt.Printf("%.2f", math.Acos(1))
+    // Output: 0.00
+
 <h2 id="Acosh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/acosh.go#L32">Acosh</a>
     <a href="#Acosh">¶</a></h2>
 <pre>func Acosh(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
@@ -164,6 +188,12 @@ Special cases are:
     Acosh(x) = NaN if x < 1
     Acosh(NaN) = NaN
 
+<a id="exampleAcosh"></a>
+Example:
+
+    fmt.Printf("%.2f", math.Acosh(1))
+    // Output: 0.00
+
 <h2 id="Asin">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/asin.go#L9">Asin</a>
     <a href="#Asin">¶</a></h2>
 <pre>func Asin(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
@@ -174,6 +204,12 @@ Special cases are:
 
     Asin(±0) = ±0
     Asin(x) = NaN if x < -1 or x > 1
+
+<a id="exampleAsin"></a>
+Example:
+
+    fmt.Printf("%.2f", math.Asin(0))
+    // Output: 0.00
 
 <h2 id="Asinh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/asinh.go#L29">Asinh</a>
     <a href="#Asinh">¶</a></h2>
@@ -187,6 +223,12 @@ Special cases are:
     Asinh(±Inf) = ±Inf
     Asinh(NaN) = NaN
 
+<a id="exampleAsinh"></a>
+Example:
+
+    fmt.Printf("%.2f", math.Asinh(0))
+    // Output: 0.00
+
 <h2 id="Atan">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atan.go#L85">Atan</a>
     <a href="#Atan">¶</a></h2>
 <pre>func Atan(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
@@ -197,6 +239,12 @@ Special cases are:
 
     Atan(±0) = ±0
     Atan(±Inf) = ±Pi/2
+
+<a id="exampleAtan"></a>
+Example:
+
+    fmt.Printf("%.2f", math.Atan(0))
+    // Output: 0.00
 
 <h2 id="Atan2">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atan2.go#L19">Atan2</a>
     <a href="#Atan2">¶</a></h2>
@@ -225,6 +273,12 @@ Special cases are (in order):
     Atan2(+Inf, x) = +Pi/2
     Atan2(-Inf, x) = -Pi/2
 
+<a id="exampleAtan2"></a>
+Example:
+
+    fmt.Printf("%.2f", math.Atan2(0, 0))
+    // Output: 0.00
+
 <h2 id="Atanh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atanh.go#L37">Atanh</a>
     <a href="#Atanh">¶</a></h2>
 <pre>func Atanh(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
@@ -238,6 +292,12 @@ Special cases are:
     Atanh(-1) = -Inf
     Atanh(x) = NaN if x < -1 or x > 1
     Atanh(NaN) = NaN
+
+<a id="exampleAtanh"></a>
+Example:
+
+    fmt.Printf("%.2f", math.Atanh(0))
+    // Output: 0.00
 
 <h2 id="Cbrt">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cbrt.go#L15">Cbrt</a>
     <a href="#Cbrt">¶</a></h2>
@@ -280,6 +340,12 @@ Special cases are:
     Cos(±Inf) = NaN
     Cos(NaN) = NaN
 
+<a id="exampleCos"></a>
+Example:
+
+    fmt.Printf("%.2f", math.Cos(math.Pi/2))
+    // Output: 0.00
+
 <h2 id="Cosh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sinh.go#L61">Cosh</a>
     <a href="#Cosh">¶</a></h2>
 <pre>func Cosh(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
@@ -291,6 +357,12 @@ Special cases are:
     Cosh(±0) = 1
     Cosh(±Inf) = +Inf
     Cosh(NaN) = NaN
+
+<a id="exampleCosh"></a>
+Example:
+
+    fmt.Printf("%.2f", math.Cosh(0))
+    // Output: 1.00
 
 <h2 id="Dim">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/dim.go#L3">Dim</a>
     <a href="#Dim">¶</a></h2>
@@ -327,6 +399,32 @@ Special cases are:
     Erfc(+Inf) = 0
     Erfc(-Inf) = 2
     Erfc(NaN) = NaN
+
+<h2 id="Erfcinv">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/erfinv.go#L115">Erfcinv</a>
+    <a href="#Erfcinv">¶</a></h2>
+<pre>func Erfcinv(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
+
+Erfcinv returns the inverse of Erfc(x).
+
+Special cases are:
+
+    Erfcinv(0) = +Inf
+    Erfcinv(2) = -Inf
+    Erfcinv(x) = NaN if x < 0 or x > 2
+    Erfcinv(NaN) = NaN
+
+<h2 id="Erfinv">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/erfinv.go#L66">Erfinv</a>
+    <a href="#Erfinv">¶</a></h2>
+<pre>func Erfinv(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
+
+Erfinv returns the inverse error function of x.
+
+Special cases are:
+
+    Erfinv(1) = +Inf
+    Erfinv(-1) = -Inf
+    Erfinv(x) = NaN if x < -1 or x > 1
+    Erfinv(NaN) = NaN
 
 <h2 id="Exp">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/exp.go#L4">Exp</a>
     <a href="#Exp">¶</a></h2>
@@ -457,13 +555,13 @@ Special cases are:
     Ilogb(0) = MinInt32
     Ilogb(NaN) = MaxInt32
 
-<h2 id="Inf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go#L7">Inf</a>
+<h2 id="Inf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go#L10">Inf</a>
     <a href="#Inf">¶</a></h2>
 <pre>func Inf(sign <a href="/builtin/#int">int</a>) <a href="/builtin/#float64">float64</a></pre>
 
 Inf returns positive infinity if sign >= 0, negative infinity if sign < 0.
 
-<h2 id="IsInf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go#L33">IsInf</a>
+<h2 id="IsInf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go#L36">IsInf</a>
     <a href="#IsInf">¶</a></h2>
 <pre>func IsInf(f <a href="/builtin/#float64">float64</a>, sign <a href="/builtin/#int">int</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -471,7 +569,7 @@ IsInf reports whether f is an infinity, according to sign. If sign > 0, IsInf
 reports whether f is positive infinity. If sign < 0, IsInf reports whether f is
 negative infinity. If sign == 0, IsInf reports whether f is either infinity.
 
-<h2 id="IsNaN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go#L21">IsNaN</a>
+<h2 id="IsNaN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go#L24">IsNaN</a>
     <a href="#IsNaN">¶</a></h2>
 <pre>func IsNaN(f <a href="/builtin/#float64">float64</a>) (is <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -591,7 +689,7 @@ Special cases are:
     Logb(0) = -Inf
     Logb(NaN) = NaN
 
-<h2 id="Max">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/dim.go#L16">Max</a>
+<h2 id="Max">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/dim.go#L25">Max</a>
     <a href="#Max">¶</a></h2>
 <pre>func Max(x, y <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -604,7 +702,7 @@ Special cases are:
     Max(+0, ±0) = Max(±0, +0) = +0
     Max(-0, -0) = -0
 
-<h2 id="Min">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/dim.go#L43">Min</a>
+<h2 id="Min">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/dim.go#L52">Min</a>
     <a href="#Min">¶</a></h2>
 <pre>func Min(x, y <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -643,7 +741,7 @@ Special cases are:
     Modf(±Inf) = ±Inf, NaN
     Modf(NaN) = NaN, NaN
 
-<h2 id="NaN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go#L18">NaN</a>
+<h2 id="NaN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go#L21">NaN</a>
     <a href="#NaN">¶</a></h2>
 <pre>func NaN() <a href="/builtin/#float64">float64</a></pre>
 
@@ -727,6 +825,30 @@ Special cases are:
     Remainder(x, ±Inf) = x
     Remainder(x, NaN) = NaN
 
+<h2 id="Round">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/floor.go#L54">Round</a>
+    <a href="#Round">¶</a></h2>
+<pre>func Round(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
+
+Round returns the nearest integer, rounding half away from zero.
+
+Special cases are:
+
+    Round(±0) = ±0
+    Round(±Inf) = ±Inf
+    Round(NaN) = NaN
+
+<h2 id="RoundToEven">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/floor.go#L91">RoundToEven</a>
+    <a href="#RoundToEven">¶</a></h2>
+<pre>func RoundToEven(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
+
+RoundToEven returns the nearest integer, rounding ties to even.
+
+Special cases are:
+
+    RoundToEven(±0) = ±0
+    RoundToEven(±Inf) = ±Inf
+    RoundToEven(NaN) = NaN
+
 <h2 id="Signbit">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/signbit.go#L1">Signbit</a>
     <a href="#Signbit">¶</a></h2>
 <pre>func Signbit(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#bool">bool</a></pre>
@@ -745,6 +867,12 @@ Special cases are:
     Sin(±Inf) = NaN
     Sin(NaN) = NaN
 
+<a id="exampleSin"></a>
+Example:
+
+    fmt.Printf("%.2f", math.Sin(math.Pi))
+    // Output: 0.00
+
 <h2 id="Sincos">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sincos.go#L7">Sincos</a>
     <a href="#Sincos">¶</a></h2>
 <pre>func Sincos(x <a href="/builtin/#float64">float64</a>) (sin, cos <a href="/builtin/#float64">float64</a>)</pre>
@@ -757,6 +885,13 @@ Special cases are:
     Sincos(±Inf) = NaN, NaN
     Sincos(NaN) = NaN, NaN
 
+<a id="exampleSincos"></a>
+Example:
+
+    sin, cos := math.Sincos(0)
+    fmt.Printf("%.2f, %.2f", sin, cos)
+    // Output: 0.00, 1.00
+
 <h2 id="Sinh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sinh.go#L15">Sinh</a>
     <a href="#Sinh">¶</a></h2>
 <pre>func Sinh(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
@@ -768,6 +903,12 @@ Special cases are:
     Sinh(±0) = ±0
     Sinh(±Inf) = ±Inf
     Sinh(NaN) = NaN
+
+<a id="exampleSinh"></a>
+Example:
+
+    fmt.Printf("%.2f", math.Sinh(0))
+    // Output: 0.00
 
 <h2 id="Sqrt">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sqrt.go#L82">Sqrt</a>
     <a href="#Sqrt">¶</a></h2>
@@ -805,6 +946,12 @@ Special cases are:
     Tan(±Inf) = NaN
     Tan(NaN) = NaN
 
+<a id="exampleTan"></a>
+Example:
+
+    fmt.Printf("%.2f", math.Tan(0))
+    // Output: 0.00
+
 <h2 id="Tanh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/tanh.go#L64">Tanh</a>
     <a href="#Tanh">¶</a></h2>
 <pre>func Tanh(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
@@ -816,6 +963,12 @@ Special cases are:
     Tanh(±0) = ±0
     Tanh(±Inf) = ±1
     Tanh(NaN) = NaN
+
+<a id="exampleTanh"></a>
+Example:
+
+    fmt.Printf("%.2f", math.Tanh(0))
+    // Output: 0.00
 
 <h2 id="Trunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/floor.go#L38">Trunc</a>
     <a href="#Trunc">¶</a></h2>

@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package dsa
 
   `import "crypto/dsa"`
@@ -79,8 +79,8 @@ itself.
     <a href="#ParameterSizes">¶</a></h2>
 <pre>type ParameterSizes <a href="/builtin/#int">int</a></pre>
 
-ParameterSizes is a enumeration of the acceptable bit lengths of the primes in a
-set of DSA parameters. See FIPS 186-3, section 4.2.
+ParameterSizes is an enumeration of the acceptable bit lengths of the primes in
+a set of DSA parameters. See FIPS 186-3, section 4.2.
 
 <pre>const (
     <span id="L1024N160">L1024N160</span> <a href="#ParameterSizes">ParameterSizes</a> = <a href="/builtin/#iota">iota</a>

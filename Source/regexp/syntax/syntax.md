@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package syntax
 
   `import "regexp/syntax"`
@@ -289,7 +289,7 @@ context.
 
 An Inst is a single instruction in a regular expression program.
 
-<h3 id="Inst.MatchEmptyWidth">func (*Inst) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L252">MatchEmptyWidth</a>
+<h3 id="Inst.MatchEmptyWidth">func (*Inst) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L243">MatchEmptyWidth</a>
     <a href="#Inst.MatchEmptyWidth">¶</a></h3>
 <pre>func (i *<a href="#Inst">Inst</a>) MatchEmptyWidth(before <a href="/builtin/#rune">rune</a>, after <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -313,7 +313,7 @@ MatchRunePos returns the index of the matching rune pair (or, when len(i.Rune)
 == 1, rune singleton). If not, MatchRunePos returns -1. MatchRunePos should only
 be called when i.Op == InstRune.
 
-<h3 id="Inst.String">func (*Inst) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L270">String</a>
+<h3 id="Inst.String">func (*Inst) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L261">String</a>
     <a href="#Inst.String">¶</a></h3>
 <pre>func (i *<a href="#Inst">Inst</a>) String() <a href="/builtin/#string">string</a></pre>
 

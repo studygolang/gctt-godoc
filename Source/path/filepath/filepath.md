@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package filepath
 
   `import "path/filepath"`
@@ -38,10 +38,12 @@ slashes regardless of the operating system, see the path package.
 
 ### Examples
 
+- [Ext](#exampleExt)
 - [Join](#exampleJoin)
 - [Rel](#exampleRel)
 - [Split](#exampleSplit)
 - [SplitList](#exampleSplitList)
+- [Walk](#exampleWalk)
 
 ### Package files
  [match.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/match.go) [path.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go) [path_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path_unix.go) [symlink.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/symlink.go) [symlink_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/symlink_unix.go)
@@ -135,6 +137,17 @@ the result.
 Ext returns the file name extension used by path. The extension is the suffix
 beginning at the final dot in the final element of path; it is empty if there is
 no dot.
+
+<a id="exampleExt"></a>
+Example:
+
+    fmt.Printf("No dots: %q\n", filepath.Ext("index"))
+    fmt.Printf("One dot: %q\n", filepath.Ext("index.js"))
+    fmt.Printf("Two dots: %q\n", filepath.Ext("main.test.js"))
+    // Output:
+    // No dots: ""
+    // One dot: ".js"
+    // Two dots: ".js"
 
 <h2 id="FromSlash">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L165">FromSlash</a>
     <a href="#FromSlash">¶</a></h2>
@@ -333,6 +346,29 @@ directory in the tree, including root. All errors that arise visiting files and
 directories are filtered by walkFn. The files are walked in lexical order, which
 makes the output deterministic but means that for very large directories Walk
 can be inefficient. Walk does not follow symbolic links.
+
+<a id="exampleWalk"></a>
+Example:
+
+    dir := "dir/to/walk"
+    subDirToSkip := "skip" // dir/to/walk/skip
+
+    err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
+        if err != nil {
+            fmt.Printf("prevent panic by handling failure accessing a path %q: %v\n", dir, err)
+            return err
+        }
+        if info.IsDir() && info.Name() == subDirToSkip {
+            fmt.Printf("skipping a dir without errors: %+v \n", info.Name())
+            return filepath.SkipDir
+        }
+        fmt.Printf("visited file: %q\n", path)
+        return nil
+    })
+
+    if err != nil {
+        fmt.Printf("error walking the path %q: %v\n", dir, err)
+    }
 
 <h2 id="WalkFunc">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L340">WalkFunc</a>
     <a href="#WalkFunc">¶</a></h2>

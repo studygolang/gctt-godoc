@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package tls
 
   `import "crypto/tls"`
@@ -119,7 +119,7 @@ NewListener creates a Listener which accepts connections from an inner Listener
 and wraps each connection with Server. The configuration config must be non-nil
 and must include at least one certificate or else set GetCertificate.
 
-<h2 id="Certificate">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L787">Certificate</a>
+<h2 id="Certificate">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L782">Certificate</a>
     <a href="#Certificate">¶</a></h2>
 <pre>type Certificate struct {
 <span id="Certificate.Certificate"></span>    Certificate [][]<a href="/builtin/#byte">byte</a>
@@ -162,7 +162,7 @@ X509KeyPair parses a public/private key pair from a pair of PEM encoded data. On
 successful return, Certificate.Leaf will be nil because the parsed form of the
 certificate is not retained.
 
-<h2 id="CertificateRequestInfo">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L284">CertificateRequestInfo</a>
+<h2 id="CertificateRequestInfo">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L278">CertificateRequestInfo</a>
     <a href="#CertificateRequestInfo">¶</a></h2>
 <pre>type CertificateRequestInfo struct {
 <span id="CertificateRequestInfo.AcceptableCAs"></span>    <span class="comment">// AcceptableCAs contains zero or more, DER-encoded, X.501</span>
@@ -180,7 +180,7 @@ CertificateRequestInfo contains information from a server's CertificateRequest
 message, which is used to demand a certificate and proof of control from a
 client.
 
-<h2 id="ClientAuthType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L175">ClientAuthType</a>
+<h2 id="ClientAuthType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L166">ClientAuthType</a>
     <a href="#ClientAuthType">¶</a></h2>
 <pre>type ClientAuthType <a href="/builtin/#int">int</a></pre>
 
@@ -196,7 +196,7 @@ Authentication.
 )</pre>
 
 
-<h2 id="ClientHelloInfo">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L231">ClientHelloInfo</a>
+<h2 id="ClientHelloInfo">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L225">ClientHelloInfo</a>
     <a href="#ClientHelloInfo">¶</a></h2>
 <pre>type ClientHelloInfo struct {
 <span id="ClientHelloInfo.CipherSuites"></span>    <span class="comment">// CipherSuites lists the CipherSuites supported by the client (e.g.</span>
@@ -251,7 +251,7 @@ Authentication.
 ClientHelloInfo contains information from a ClientHello message in order to
 guide certificate selection in the GetCertificate callback.
 
-<h2 id="ClientSessionCache">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L201">ClientSessionCache</a>
+<h2 id="ClientSessionCache">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L192">ClientSessionCache</a>
     <a href="#ClientSessionCache">¶</a></h2>
 <pre>type ClientSessionCache interface {
     <span class="comment">// Get searches for a ClientSessionState associated with the given key.</span>
@@ -268,7 +268,7 @@ implementations should expect to be called concurrently from different
 goroutines. Only ticket-based resumption is supported, not SessionID-based
 resumption.
 
-<h3 id="NewLRUClientSessionCache">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L831">NewLRUClientSessionCache</a>
+<h3 id="NewLRUClientSessionCache">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L826">NewLRUClientSessionCache</a>
     <a href="#NewLRUClientSessionCache">¶</a></h3>
 <pre>func NewLRUClientSessionCache(capacity <a href="/builtin/#int">int</a>) <a href="#ClientSessionCache">ClientSessionCache</a></pre>
 
@@ -276,7 +276,7 @@ NewLRUClientSessionCache returns a ClientSessionCache with the given capacity
 that uses an LRU strategy. If capacity is < 1, a default capacity is used
 instead.
 
-<h2 id="ClientSessionState">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L187">ClientSessionState</a>
+<h2 id="ClientSessionState">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L178">ClientSessionState</a>
     <a href="#ClientSessionState">¶</a></h2>
 <pre>type ClientSessionState struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -284,7 +284,7 @@ instead.
 
 ClientSessionState contains the state needed by clients to resume TLS sessions.
 
-<h2 id="Config">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L327">Config</a>
+<h2 id="Config">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L321">Config</a>
     <a href="#Config">¶</a></h2>
 <pre>type Config struct {
 <span id="Config.Rand"></span>    <span class="comment">// Rand provides the source of entropy for nonces and RSA blinding.</span>
@@ -364,8 +364,9 @@ ClientSessionState contains the state needed by clients to resume TLS sessions.
     <span class="comment">//</span>
     <span class="comment">// If normal verification fails then the handshake will abort before</span>
     <span class="comment">// considering this callback. If normal verification is disabled by</span>
-    <span class="comment">// setting InsecureSkipVerify then this callback will be considered but</span>
-    <span class="comment">// the verifiedChains argument will always be nil.</span>
+    <span class="comment">// setting InsecureSkipVerify, or (for a server) when ClientAuth is</span>
+    <span class="comment">// RequestClientCert or RequireAnyClientCert, then this callback will</span>
+    <span class="comment">// be considered but the verifiedChains argument will always be nil.</span>
     VerifyPeerCertificate func(rawCerts [][]<a href="/builtin/#byte">byte</a>, verifiedChains [][]*<a href="/crypto/x509/">x509</a>.<a href="/crypto/x509/#Certificate">Certificate</a>) <a href="/builtin/#error">error</a>
 
 <span id="Config.RootCAs"></span>    <span class="comment">// RootCAs defines the set of root certificate authorities</span>
@@ -423,9 +424,9 @@ ClientSessionState contains the state needed by clients to resume TLS sessions.
     <span class="comment">// connections using that key are compromised.</span>
     SessionTicketKey [32]<a href="/builtin/#byte">byte</a>
 
-    <span class="comment">// SessionCache is a cache of ClientSessionState entries for TLS session</span>
-    <span class="comment">// resumption.</span>
-<span id="Config.ClientSessionCache"></span>    ClientSessionCache <a href="#ClientSessionCache">ClientSessionCache</a>
+<span id="Config.ClientSessionCache"></span>    <span class="comment">// ClientSessionCache is a cache of ClientSessionState entries for TLS</span>
+    <span class="comment">// session resumption.</span>
+    ClientSessionCache <a href="#ClientSessionCache">ClientSessionCache</a>
 
 <span id="Config.MinVersion"></span>    <span class="comment">// MinVersion contains the minimum SSL/TLS version that is acceptable.</span>
     <span class="comment">// If zero, then TLS 1.0 is taken as the minimum.</span>
@@ -509,21 +510,21 @@ Example:
     // Output:
     // CLIENT_RANDOM 0000000000000000000000000000000000000000000000000000000000000000 baca0df460a688e44ce018b025183cc2353ae01f89755ef766eedd3ecc302888ee3b3a22962e45f48c20df15a98c0e80
 
-<h3 id="Config.BuildNameToCertificate">func (*Config) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L749">BuildNameToCertificate</a>
+<h3 id="Config.BuildNameToCertificate">func (*Config) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L744">BuildNameToCertificate</a>
     <a href="#Config.BuildNameToCertificate">¶</a></h3>
 <pre>func (c *<a href="#Config">Config</a>) BuildNameToCertificate()</pre>
 
 BuildNameToCertificate parses c.Certificates and builds c.NameToCertificate from
 the CommonName and SubjectAlternateName fields of each of the leaf certificates.
 
-<h3 id="Config.Clone">func (*Config) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L537">Clone</a>
+<h3 id="Config.Clone">func (*Config) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L532">Clone</a>
     <a href="#Config.Clone">¶</a></h3>
 <pre>func (c *<a href="#Config">Config</a>) Clone() *<a href="#Config">Config</a></pre>
 
 Clone returns a shallow clone of c. It is safe to clone a Config that is being
 used concurrently by a TLS client or server.
 
-<h3 id="Config.SetSessionTicketKeys">func (*Config) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L625">SetSessionTicketKeys</a>
+<h3 id="Config.SetSessionTicketKeys">func (*Config) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L620">SetSessionTicketKeys</a>
     <a href="#Config.SetSessionTicketKeys">¶</a></h3>
 <pre>func (c *<a href="#Config">Config</a>) SetSessionTicketKeys(keys [][32]<a href="/builtin/#byte">byte</a>)</pre>
 
@@ -626,13 +627,13 @@ Server returns a new TLS server side connection using conn as the underlying
 transport. The configuration config must be non-nil and must include at least
 one certificate or else set GetCertificate.
 
-<h3 id="Conn.Close">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1174">Close</a>
+<h3 id="Conn.Close">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1196">Close</a>
     <a href="#Conn.Close">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close closes the connection.
 
-<h3 id="Conn.CloseWrite">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1215">CloseWrite</a>
+<h3 id="Conn.CloseWrite">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1237">CloseWrite</a>
     <a href="#Conn.CloseWrite">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) CloseWrite() <a href="/builtin/#error">error</a></pre>
 
@@ -640,13 +641,13 @@ CloseWrite shuts down the writing side of the connection. It should only be
 called once the handshake has completed and does not call CloseWrite on the
 underlying connection. Most callers should just use Close.
 
-<h3 id="Conn.ConnectionState">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1322">ConnectionState</a>
+<h3 id="Conn.ConnectionState">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1344">ConnectionState</a>
     <a href="#Conn.ConnectionState">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) ConnectionState() <a href="#ConnectionState">ConnectionState</a></pre>
 
 ConnectionState returns basic TLS details about the connection.
 
-<h3 id="Conn.Handshake">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1240">Handshake</a>
+<h3 id="Conn.Handshake">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1262">Handshake</a>
     <a href="#Conn.Handshake">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) Handshake() <a href="/builtin/#error">error</a></pre>
 
@@ -654,33 +655,33 @@ Handshake runs the client or server handshake protocol if it has not yet been
 run. Most uses of this package need not call Handshake explicitly: the first
 Read or Write will call it automatically.
 
-<h3 id="Conn.LocalAddr">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L100">LocalAddr</a>
+<h3 id="Conn.LocalAddr">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L104">LocalAddr</a>
     <a href="#Conn.LocalAddr">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) LocalAddr() <a href="/net/">net</a>.<a href="/net/#Addr">Addr</a></pre>
 
 LocalAddr returns the local network address.
 
-<h3 id="Conn.OCSPResponse">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1354">OCSPResponse</a>
+<h3 id="Conn.OCSPResponse">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1376">OCSPResponse</a>
     <a href="#Conn.OCSPResponse">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) OCSPResponse() []<a href="/builtin/#byte">byte</a></pre>
 
 OCSPResponse returns the stapled OCSP response from the TLS server, if any.
 (Only valid for client connections.)
 
-<h3 id="Conn.Read">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1106">Read</a>
+<h3 id="Conn.Read">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1128">Read</a>
     <a href="#Conn.Read">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) Read(b []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 Read can be made to time out and return a net.Error with Timeout() == true after
 a fixed time limit; see SetDeadline and SetReadDeadline.
 
-<h3 id="Conn.RemoteAddr">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L105">RemoteAddr</a>
+<h3 id="Conn.RemoteAddr">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L109">RemoteAddr</a>
     <a href="#Conn.RemoteAddr">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) RemoteAddr() <a href="/net/">net</a>.<a href="/net/#Addr">Addr</a></pre>
 
 RemoteAddr returns the remote network address.
 
-<h3 id="Conn.SetDeadline">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L112">SetDeadline</a>
+<h3 id="Conn.SetDeadline">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L116">SetDeadline</a>
     <a href="#Conn.SetDeadline">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) SetDeadline(t <a href="/time/">time</a>.<a href="/time/#Time">Time</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -688,14 +689,14 @@ SetDeadline sets the read and write deadlines associated with the connection. A
 zero value for t means Read and Write will not time out. After a Write has timed
 out, the TLS state is corrupt and all future writes will return the same error.
 
-<h3 id="Conn.SetReadDeadline">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L118">SetReadDeadline</a>
+<h3 id="Conn.SetReadDeadline">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L122">SetReadDeadline</a>
     <a href="#Conn.SetReadDeadline">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) SetReadDeadline(t <a href="/time/">time</a>.<a href="/time/#Time">Time</a>) <a href="/builtin/#error">error</a></pre>
 
 SetReadDeadline sets the read deadline on the underlying connection. A zero
 value for t means Read will not time out.
 
-<h3 id="Conn.SetWriteDeadline">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L125">SetWriteDeadline</a>
+<h3 id="Conn.SetWriteDeadline">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L129">SetWriteDeadline</a>
     <a href="#Conn.SetWriteDeadline">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) SetWriteDeadline(t <a href="/time/">time</a>.<a href="/time/#Time">Time</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -703,20 +704,20 @@ SetWriteDeadline sets the write deadline on the underlying connection. A zero
 value for t means Write will not time out. After a Write has timed out, the TLS
 state is corrupt and all future writes will return the same error.
 
-<h3 id="Conn.VerifyHostname">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1364">VerifyHostname</a>
+<h3 id="Conn.VerifyHostname">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1386">VerifyHostname</a>
     <a href="#Conn.VerifyHostname">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) VerifyHostname(host <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 VerifyHostname checks that the peer certificate chain is valid for connecting to
 host. If so, it returns nil; if not, it returns an error describing the problem.
 
-<h3 id="Conn.Write">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1006">Write</a>
+<h3 id="Conn.Write">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L1028">Write</a>
     <a href="#Conn.Write">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) Write(b []<a href="/builtin/#byte">byte</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Write writes data to the connection.
 
-<h2 id="ConnectionState">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L151">ConnectionState</a>
+<h2 id="ConnectionState">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L142">ConnectionState</a>
     <a href="#ConnectionState">¶</a></h2>
 <pre>type ConnectionState struct {
 <span id="ConnectionState.Version"></span>    Version                     <a href="/builtin/#uint16">uint16</a>                <span class="comment">// TLS version used by the connection (e.g. VersionTLS12)</span>
@@ -742,7 +743,7 @@ Write writes data to the connection.
 
 ConnectionState records basic TLS details about the connection.
 
-<h2 id="CurveID">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L84">CurveID</a>
+<h2 id="CurveID">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L85">CurveID</a>
     <a href="#CurveID">¶</a></h2>
 <pre>type CurveID <a href="/builtin/#uint16">uint16</a></pre>
 
@@ -757,7 +758,7 @@ http://www.iana.org/assignments/tls-parameters/tls-parameters.xml#tls-parameters
 )</pre>
 
 
-<h2 id="RecordHeaderError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L534">RecordHeaderError</a>
+<h2 id="RecordHeaderError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L539">RecordHeaderError</a>
     <a href="#RecordHeaderError">¶</a></h2>
 <pre>type RecordHeaderError struct {
 <span id="RecordHeaderError.Msg"></span>    <span class="comment">// Msg contains a human readable string that describes the error.</span>
@@ -769,12 +770,12 @@ http://www.iana.org/assignments/tls-parameters/tls-parameters.xml#tls-parameters
 
 RecordHeaderError results when a TLS record header is invalid.
 
-<h3 id="RecordHeaderError.Error">func (RecordHeaderError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L542">Error</a>
+<h3 id="RecordHeaderError.Error">func (RecordHeaderError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/conn.go#L547">Error</a>
     <a href="#RecordHeaderError.Error">¶</a></h3>
 <pre>func (e <a href="#RecordHeaderError">RecordHeaderError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="RenegotiationSupport">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L308">RenegotiationSupport</a>
+<h2 id="RenegotiationSupport">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L302">RenegotiationSupport</a>
     <a href="#RenegotiationSupport">¶</a></h2>
 <pre>type RenegotiationSupport <a href="/builtin/#int">int</a></pre>
 
@@ -804,7 +805,7 @@ with protocols that synchronise with the renegotiation, such as HTTPS.
 )</pre>
 
 
-<h2 id="SignatureScheme">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L212">SignatureScheme</a>
+<h2 id="SignatureScheme">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/tls/common.go#L203">SignatureScheme</a>
     <a href="#SignatureScheme">¶</a></h2>
 <pre>type SignatureScheme <a href="/builtin/#uint16">uint16</a></pre>
 
@@ -824,6 +825,9 @@ https://tools.ietf.org/html/draft-ietf-tls-tls13-18#section-4.2.3.
     <span id="ECDSAWithP256AndSHA256">ECDSAWithP256AndSHA256</span> <a href="#SignatureScheme">SignatureScheme</a> = 0x0403
     <span id="ECDSAWithP384AndSHA384">ECDSAWithP384AndSHA384</span> <a href="#SignatureScheme">SignatureScheme</a> = 0x0503
     <span id="ECDSAWithP521AndSHA512">ECDSAWithP521AndSHA512</span> <a href="#SignatureScheme">SignatureScheme</a> = 0x0603
+
+    <span class="comment">// Legacy signature and hash algorithms for TLS 1.2.</span>
+    <span id="ECDSAWithSHA1">ECDSAWithSHA1</span> <a href="#SignatureScheme">SignatureScheme</a> = 0x0203
 )</pre>
 
 

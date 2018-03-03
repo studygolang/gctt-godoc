@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package elf
 
   `import "debug/elf"`
@@ -184,42 +184,42 @@ Initial magic number for ELF files.
 ErrNoSymbols is returned by File.Symbols and File.DynamicSymbols if there is no
 such section in the File.
 
-<h2 id="R_INFO">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2157">R_INFO</a>
+<h2 id="R_INFO">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2513">R_INFO</a>
     <a href="#R_INFO">¶</a></h2>
 <pre>func R_INFO(sym, typ <a href="/builtin/#uint32">uint32</a>) <a href="/builtin/#uint64">uint64</a></pre>
 
 
-<h2 id="R_INFO32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2055">R_INFO32</a>
+<h2 id="R_INFO32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2411">R_INFO32</a>
     <a href="#R_INFO32">¶</a></h2>
 <pre>func R_INFO32(sym, typ <a href="/builtin/#uint32">uint32</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
 
-<h2 id="R_SYM32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2053">R_SYM32</a>
+<h2 id="R_SYM32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2409">R_SYM32</a>
     <a href="#R_SYM32">¶</a></h2>
 <pre>func R_SYM32(info <a href="/builtin/#uint32">uint32</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
 
-<h2 id="R_SYM64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2155">R_SYM64</a>
+<h2 id="R_SYM64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2511">R_SYM64</a>
     <a href="#R_SYM64">¶</a></h2>
 <pre>func R_SYM64(info <a href="/builtin/#uint64">uint64</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
 
-<h2 id="R_TYPE32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2054">R_TYPE32</a>
+<h2 id="R_TYPE32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2410">R_TYPE32</a>
     <a href="#R_TYPE32">¶</a></h2>
 <pre>func R_TYPE32(info <a href="/builtin/#uint32">uint32</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
 
-<h2 id="R_TYPE64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2156">R_TYPE64</a>
+<h2 id="R_TYPE64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2512">R_TYPE64</a>
     <a href="#R_TYPE64">¶</a></h2>
 <pre>func R_TYPE64(info <a href="/builtin/#uint64">uint64</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
 
-<h2 id="ST_INFO">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2071">ST_INFO</a>
+<h2 id="ST_INFO">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2427">ST_INFO</a>
     <a href="#ST_INFO">¶</a></h2>
 <pre>func ST_INFO(bind <a href="#SymBind">SymBind</a>, typ <a href="#SymType">SymType</a>) <a href="/builtin/#uint8">uint8</a></pre>
 
 
-<h2 id="Chdr32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2030">Chdr32</a>
+<h2 id="Chdr32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2386">Chdr32</a>
     <a href="#Chdr32">¶</a></h2>
 <pre>type Chdr32 struct {
 <span id="Chdr32.Type"></span>    Type      <a href="/builtin/#uint32">uint32</a>
@@ -229,7 +229,7 @@ such section in the File.
 
 ELF32 Compression header.
 
-<h2 id="Chdr64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2131">Chdr64</a>
+<h2 id="Chdr64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2487">Chdr64</a>
     <a href="#Chdr64">¶</a></h2>
 <pre>type Chdr64 struct {
 <span id="Chdr64.Type"></span>    Type <a href="/builtin/#uint32">uint32</a>
@@ -312,7 +312,7 @@ Data is found in Header.Ident[EI_DATA] and Header.Data.
 <pre>func (i <a href="#Data">Data</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Dyn32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2024">Dyn32</a>
+<h2 id="Dyn32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2380">Dyn32</a>
     <a href="#Dyn32">¶</a></h2>
 <pre>type Dyn32 struct {
 <span id="Dyn32.Tag"></span>    Tag <a href="/builtin/#int32">int32</a>  <span class="comment">/* Entry type. */</span>
@@ -321,7 +321,7 @@ Data is found in Header.Ident[EI_DATA] and Header.Data.
 
 ELF32 Dynamic structure. The ".dynamic" section contains an array of them.
 
-<h2 id="Dyn64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2125">Dyn64</a>
+<h2 id="Dyn64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2481">Dyn64</a>
     <a href="#Dyn64">¶</a></h2>
 <pre>type Dyn64 struct {
 <span id="Dyn64.Tag"></span>    Tag <a href="/builtin/#int64">int64</a>  <span class="comment">/* Entry type. */</span>
@@ -427,7 +427,7 @@ Dyn.Tag
 <pre>func (i <a href="#DynTag">DynTag</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="File">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L30">File</a>
+<h2 id="File">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L41">File</a>
     <a href="#File">¶</a></h2>
 <pre>type File struct {
     <a href="#FileHeader">FileHeader</a>
@@ -438,33 +438,33 @@ Dyn.Tag
 
 A File represents an open ELF file.
 
-<h3 id="NewFile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L214">NewFile</a>
+<h3 id="NewFile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L225">NewFile</a>
     <a href="#NewFile">¶</a></h3>
 <pre>func NewFile(r <a href="/io/">io</a>.<a href="/io/#ReaderAt">ReaderAt</a>) (*<a href="#File">File</a>, <a href="/builtin/#error">error</a>)</pre>
 
 NewFile creates a new File for accessing an ELF binary in an underlying reader.
 The ELF binary is expected to start at position 0 in the ReaderAt.
 
-<h3 id="Open">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L175">Open</a>
+<h3 id="Open">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L186">Open</a>
     <a href="#Open">¶</a></h3>
 <pre>func Open(name <a href="/builtin/#string">string</a>) (*<a href="#File">File</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Open opens the named file using os.Open and prepares it for use as an ELF
 binary.
 
-<h3 id="File.Close">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L192">Close</a>
+<h3 id="File.Close">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L203">Close</a>
     <a href="#File.Close">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close closes the File. If the File was created using NewFile directly instead of
 Open, Close has no effect.
 
-<h3 id="File.DWARF">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1042">DWARF</a>
+<h3 id="File.DWARF">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1053">DWARF</a>
     <a href="#File.DWARF">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) DWARF() (*<a href="/debug/dwarf/">dwarf</a>.<a href="/debug/dwarf/#Data">Data</a>, <a href="/builtin/#error">error</a>)</pre>
 
 
-<h3 id="File.DynString">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1284">DynString</a>
+<h3 id="File.DynString">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1295">DynString</a>
     <a href="#File.DynString">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) DynString(tag <a href="#DynTag">DynTag</a>) ([]<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -474,7 +474,7 @@ section.
 The tag must be one that takes string values: DT_NEEDED, DT_SONAME, DT_RPATH, or
 DT_RUNPATH.
 
-<h3 id="File.DynamicSymbols">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1150">DynamicSymbols</a>
+<h3 id="File.DynamicSymbols">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1161">DynamicSymbols</a>
     <a href="#File.DynamicSymbols">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) DynamicSymbols() ([]<a href="#Symbol">Symbol</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -485,14 +485,14 @@ For compatibility with Symbols, DynamicSymbols omits the null symbol at index 0.
 After retrieving the symbols as symtab, an externally supplied index x
 corresponds to symtab[x-1], not symtab[x].
 
-<h3 id="File.ImportedLibraries">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1275">ImportedLibraries</a>
+<h3 id="File.ImportedLibraries">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1286">ImportedLibraries</a>
     <a href="#File.ImportedLibraries">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) ImportedLibraries() ([]<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ImportedLibraries returns the names of all libraries referred to by the binary f
 that are expected to be linked with the binary at dynamic link time.
 
-<h3 id="File.ImportedSymbols">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1165">ImportedSymbols</a>
+<h3 id="File.ImportedSymbols">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1176">ImportedSymbols</a>
     <a href="#File.ImportedSymbols">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) ImportedSymbols() ([]<a href="#ImportedSymbol">ImportedSymbol</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -500,20 +500,20 @@ ImportedSymbols returns the names of all symbols referred to by the binary f
 that are expected to be satisfied by other libraries at dynamic load time. It
 does not return weak symbols.
 
-<h3 id="File.Section">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L562">Section</a>
+<h3 id="File.Section">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L573">Section</a>
     <a href="#File.Section">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Section(name <a href="/builtin/#string">string</a>) *<a href="#Section">Section</a></pre>
 
 Section returns a section with the given name, or nil if no such section exists.
 
-<h3 id="File.SectionByType">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L203">SectionByType</a>
+<h3 id="File.SectionByType">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L214">SectionByType</a>
     <a href="#File.SectionByType">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) SectionByType(typ <a href="#SectionType">SectionType</a>) *<a href="#Section">Section</a></pre>
 
 SectionByType returns the first section in f with the given type, or nil if
 there is no such section.
 
-<h3 id="File.Symbols">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1139">Symbols</a>
+<h3 id="File.Symbols">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1150">Symbols</a>
     <a href="#File.Symbols">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Symbols() ([]<a href="#Symbol">Symbol</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -524,7 +524,7 @@ For compatibility with Go 1.0, Symbols omits the null symbol at index 0. After
 retrieving the symbols as symtab, an externally supplied index x corresponds to
 symtab[x-1], not symtab[x].
 
-<h2 id="FileHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L17">FileHeader</a>
+<h2 id="FileHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L28">FileHeader</a>
     <a href="#FileHeader">¶</a></h2>
 <pre>type FileHeader struct {
 <span id="FileHeader.Class"></span>    Class      <a href="#Class">Class</a>
@@ -540,19 +540,19 @@ symtab[x-1], not symtab[x].
 
 A FileHeader represents an ELF file header.
 
-<h2 id="FormatError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L159">FormatError</a>
+<h2 id="FormatError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L170">FormatError</a>
     <a href="#FormatError">¶</a></h2>
 <pre>type FormatError struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 
 
-<h3 id="FormatError.Error">func (*FormatError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L165">Error</a>
+<h3 id="FormatError.Error">func (*FormatError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L176">Error</a>
     <a href="#FormatError.Error">¶</a></h3>
 <pre>func (e *<a href="#FormatError">FormatError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Header32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1980">Header32</a>
+<h2 id="Header32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2336">Header32</a>
     <a href="#Header32">¶</a></h2>
 <pre>type Header32 struct {
 <span id="Header32.Ident"></span>    Ident     [<a href="#EI_NIDENT">EI_NIDENT</a>]<a href="/builtin/#byte">byte</a> <span class="comment">/* File identification. */</span>
@@ -573,7 +573,7 @@ A FileHeader represents an ELF file header.
 
 ELF32 File header.
 
-<h2 id="Header64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2081">Header64</a>
+<h2 id="Header64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2437">Header64</a>
     <a href="#Header64">¶</a></h2>
 <pre>type Header64 struct {
 <span id="Header64.Ident"></span>    Ident     [<a href="#EI_NIDENT">EI_NIDENT</a>]<a href="/builtin/#byte">byte</a> <span class="comment">/* File identification. */</span>
@@ -594,7 +594,7 @@ ELF32 File header.
 
 ELF64 file header.
 
-<h2 id="ImportedSymbol">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1155">ImportedSymbol</a>
+<h2 id="ImportedSymbol">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1166">ImportedSymbol</a>
     <a href="#ImportedSymbol">¶</a></h2>
 <pre>type ImportedSymbol struct {
 <span id="ImportedSymbol.Name"></span>    Name    <a href="/builtin/#string">string</a>
@@ -733,7 +733,7 @@ OSABI is found in Header.Ident[EI_OSABI] and Header.OSABI.
 <pre>func (i <a href="#OSABI">OSABI</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Prog">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L131">Prog</a>
+<h2 id="Prog">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L142">Prog</a>
     <a href="#Prog">¶</a></h2>
 <pre>type Prog struct {
     <a href="#ProgHeader">ProgHeader</a>
@@ -750,13 +750,13 @@ OSABI is found in Header.Ident[EI_OSABI] and Header.OSABI.
 
 A Prog represents a single ELF program header in an ELF binary.
 
-<h3 id="Prog.Open">func (*Prog) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L145">Open</a>
+<h3 id="Prog.Open">func (*Prog) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L156">Open</a>
     <a href="#Prog.Open">¶</a></h3>
 <pre>func (p *<a href="#Prog">Prog</a>) Open() <a href="/io/">io</a>.<a href="/io/#ReadSeeker">ReadSeeker</a></pre>
 
 Open returns a new ReadSeeker reading the ELF program body.
 
-<h2 id="Prog32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2012">Prog32</a>
+<h2 id="Prog32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2368">Prog32</a>
     <a href="#Prog32">¶</a></h2>
 <pre>type Prog32 struct {
 <span id="Prog32.Type"></span>    Type   <a href="/builtin/#uint32">uint32</a> <span class="comment">/* Entry type. */</span>
@@ -771,7 +771,7 @@ Open returns a new ReadSeeker reading the ELF program body.
 
 ELF32 Program header.
 
-<h2 id="Prog64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2113">Prog64</a>
+<h2 id="Prog64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2469">Prog64</a>
     <a href="#Prog64">¶</a></h2>
 <pre>type Prog64 struct {
 <span id="Prog64.Type"></span>    Type   <a href="/builtin/#uint32">uint32</a> <span class="comment">/* Entry type. */</span>
@@ -811,7 +811,7 @@ Prog.Flag
 <pre>func (i <a href="#ProgFlag">ProgFlag</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="ProgHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L119">ProgHeader</a>
+<h2 id="ProgHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L130">ProgHeader</a>
     <a href="#ProgHeader">¶</a></h2>
 <pre>type ProgHeader struct {
 <span id="ProgHeader.Type"></span>    Type   <a href="#ProgType">ProgType</a>
@@ -858,58 +858,69 @@ Prog.Type
 <pre>func (i <a href="#ProgType">ProgType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_386">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1190">R_386</a>
+<h2 id="R_386">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1472">R_386</a>
     <a href="#R_386">¶</a></h2>
 <pre>type R_386 <a href="/builtin/#int">int</a></pre>
 
 Relocation types for 386.
 
 <pre>const (
-    <span id="R_386_NONE">R_386_NONE</span>         <a href="#R_386">R_386</a> = 0  <span class="comment">/* No relocation. */</span>
-    <span id="R_386_32">R_386_32</span>           <a href="#R_386">R_386</a> = 1  <span class="comment">/* Add symbol value. */</span>
-    <span id="R_386_PC32">R_386_PC32</span>         <a href="#R_386">R_386</a> = 2  <span class="comment">/* Add PC-relative symbol value. */</span>
-    <span id="R_386_GOT32">R_386_GOT32</span>        <a href="#R_386">R_386</a> = 3  <span class="comment">/* Add PC-relative GOT offset. */</span>
-    <span id="R_386_PLT32">R_386_PLT32</span>        <a href="#R_386">R_386</a> = 4  <span class="comment">/* Add PC-relative PLT offset. */</span>
-    <span id="R_386_COPY">R_386_COPY</span>         <a href="#R_386">R_386</a> = 5  <span class="comment">/* Copy data from shared object. */</span>
-    <span id="R_386_GLOB_DAT">R_386_GLOB_DAT</span>     <a href="#R_386">R_386</a> = 6  <span class="comment">/* Set GOT entry to data address. */</span>
-    <span id="R_386_JMP_SLOT">R_386_JMP_SLOT</span>     <a href="#R_386">R_386</a> = 7  <span class="comment">/* Set GOT entry to code address. */</span>
-    <span id="R_386_RELATIVE">R_386_RELATIVE</span>     <a href="#R_386">R_386</a> = 8  <span class="comment">/* Add load address of shared object. */</span>
-    <span id="R_386_GOTOFF">R_386_GOTOFF</span>       <a href="#R_386">R_386</a> = 9  <span class="comment">/* Add GOT-relative symbol address. */</span>
-    <span id="R_386_GOTPC">R_386_GOTPC</span>        <a href="#R_386">R_386</a> = 10 <span class="comment">/* Add PC-relative GOT table address. */</span>
-    <span id="R_386_TLS_TPOFF">R_386_TLS_TPOFF</span>    <a href="#R_386">R_386</a> = 14 <span class="comment">/* Negative offset in static TLS block */</span>
-    <span id="R_386_TLS_IE">R_386_TLS_IE</span>       <a href="#R_386">R_386</a> = 15 <span class="comment">/* Absolute address of GOT for -ve static TLS */</span>
-    <span id="R_386_TLS_GOTIE">R_386_TLS_GOTIE</span>    <a href="#R_386">R_386</a> = 16 <span class="comment">/* GOT entry for negative static TLS block */</span>
-    <span id="R_386_TLS_LE">R_386_TLS_LE</span>       <a href="#R_386">R_386</a> = 17 <span class="comment">/* Negative offset relative to static TLS */</span>
-    <span id="R_386_TLS_GD">R_386_TLS_GD</span>       <a href="#R_386">R_386</a> = 18 <span class="comment">/* 32 bit offset to GOT (index,off) pair */</span>
-    <span id="R_386_TLS_LDM">R_386_TLS_LDM</span>      <a href="#R_386">R_386</a> = 19 <span class="comment">/* 32 bit offset to GOT (index,zero) pair */</span>
-    <span id="R_386_TLS_GD_32">R_386_TLS_GD_32</span>    <a href="#R_386">R_386</a> = 24 <span class="comment">/* 32 bit offset to GOT (index,off) pair */</span>
-    <span id="R_386_TLS_GD_PUSH">R_386_TLS_GD_PUSH</span>  <a href="#R_386">R_386</a> = 25 <span class="comment">/* pushl instruction for Sun ABI GD sequence */</span>
-    <span id="R_386_TLS_GD_CALL">R_386_TLS_GD_CALL</span>  <a href="#R_386">R_386</a> = 26 <span class="comment">/* call instruction for Sun ABI GD sequence */</span>
-    <span id="R_386_TLS_GD_POP">R_386_TLS_GD_POP</span>   <a href="#R_386">R_386</a> = 27 <span class="comment">/* popl instruction for Sun ABI GD sequence */</span>
-    <span id="R_386_TLS_LDM_32">R_386_TLS_LDM_32</span>   <a href="#R_386">R_386</a> = 28 <span class="comment">/* 32 bit offset to GOT (index,zero) pair */</span>
-    <span id="R_386_TLS_LDM_PUSH">R_386_TLS_LDM_PUSH</span> <a href="#R_386">R_386</a> = 29 <span class="comment">/* pushl instruction for Sun ABI LD sequence */</span>
-    <span id="R_386_TLS_LDM_CALL">R_386_TLS_LDM_CALL</span> <a href="#R_386">R_386</a> = 30 <span class="comment">/* call instruction for Sun ABI LD sequence */</span>
-    <span id="R_386_TLS_LDM_POP">R_386_TLS_LDM_POP</span>  <a href="#R_386">R_386</a> = 31 <span class="comment">/* popl instruction for Sun ABI LD sequence */</span>
-    <span id="R_386_TLS_LDO_32">R_386_TLS_LDO_32</span>   <a href="#R_386">R_386</a> = 32 <span class="comment">/* 32 bit offset from start of TLS block */</span>
-    <span id="R_386_TLS_IE_32">R_386_TLS_IE_32</span>    <a href="#R_386">R_386</a> = 33 <span class="comment">/* 32 bit offset to GOT static TLS offset entry */</span>
-    <span id="R_386_TLS_LE_32">R_386_TLS_LE_32</span>    <a href="#R_386">R_386</a> = 34 <span class="comment">/* 32 bit offset within static TLS block */</span>
-    <span id="R_386_TLS_DTPMOD32">R_386_TLS_DTPMOD32</span> <a href="#R_386">R_386</a> = 35 <span class="comment">/* GOT entry containing TLS index */</span>
-    <span id="R_386_TLS_DTPOFF32">R_386_TLS_DTPOFF32</span> <a href="#R_386">R_386</a> = 36 <span class="comment">/* GOT entry containing TLS offset */</span>
-    <span id="R_386_TLS_TPOFF32">R_386_TLS_TPOFF32</span>  <a href="#R_386">R_386</a> = 37 <span class="comment">/* GOT entry of -ve static TLS offset */</span>
+    <span id="R_386_NONE">R_386_NONE</span>          <a href="#R_386">R_386</a> = 0  <span class="comment">/* No relocation. */</span>
+    <span id="R_386_32">R_386_32</span>            <a href="#R_386">R_386</a> = 1  <span class="comment">/* Add symbol value. */</span>
+    <span id="R_386_PC32">R_386_PC32</span>          <a href="#R_386">R_386</a> = 2  <span class="comment">/* Add PC-relative symbol value. */</span>
+    <span id="R_386_GOT32">R_386_GOT32</span>         <a href="#R_386">R_386</a> = 3  <span class="comment">/* Add PC-relative GOT offset. */</span>
+    <span id="R_386_PLT32">R_386_PLT32</span>         <a href="#R_386">R_386</a> = 4  <span class="comment">/* Add PC-relative PLT offset. */</span>
+    <span id="R_386_COPY">R_386_COPY</span>          <a href="#R_386">R_386</a> = 5  <span class="comment">/* Copy data from shared object. */</span>
+    <span id="R_386_GLOB_DAT">R_386_GLOB_DAT</span>      <a href="#R_386">R_386</a> = 6  <span class="comment">/* Set GOT entry to data address. */</span>
+    <span id="R_386_JMP_SLOT">R_386_JMP_SLOT</span>      <a href="#R_386">R_386</a> = 7  <span class="comment">/* Set GOT entry to code address. */</span>
+    <span id="R_386_RELATIVE">R_386_RELATIVE</span>      <a href="#R_386">R_386</a> = 8  <span class="comment">/* Add load address of shared object. */</span>
+    <span id="R_386_GOTOFF">R_386_GOTOFF</span>        <a href="#R_386">R_386</a> = 9  <span class="comment">/* Add GOT-relative symbol address. */</span>
+    <span id="R_386_GOTPC">R_386_GOTPC</span>         <a href="#R_386">R_386</a> = 10 <span class="comment">/* Add PC-relative GOT table address. */</span>
+    <span id="R_386_32PLT">R_386_32PLT</span>         <a href="#R_386">R_386</a> = 11
+    <span id="R_386_TLS_TPOFF">R_386_TLS_TPOFF</span>     <a href="#R_386">R_386</a> = 14 <span class="comment">/* Negative offset in static TLS block */</span>
+    <span id="R_386_TLS_IE">R_386_TLS_IE</span>        <a href="#R_386">R_386</a> = 15 <span class="comment">/* Absolute address of GOT for -ve static TLS */</span>
+    <span id="R_386_TLS_GOTIE">R_386_TLS_GOTIE</span>     <a href="#R_386">R_386</a> = 16 <span class="comment">/* GOT entry for negative static TLS block */</span>
+    <span id="R_386_TLS_LE">R_386_TLS_LE</span>        <a href="#R_386">R_386</a> = 17 <span class="comment">/* Negative offset relative to static TLS */</span>
+    <span id="R_386_TLS_GD">R_386_TLS_GD</span>        <a href="#R_386">R_386</a> = 18 <span class="comment">/* 32 bit offset to GOT (index,off) pair */</span>
+    <span id="R_386_TLS_LDM">R_386_TLS_LDM</span>       <a href="#R_386">R_386</a> = 19 <span class="comment">/* 32 bit offset to GOT (index,zero) pair */</span>
+    <span id="R_386_16">R_386_16</span>            <a href="#R_386">R_386</a> = 20
+    <span id="R_386_PC16">R_386_PC16</span>          <a href="#R_386">R_386</a> = 21
+    <span id="R_386_8">R_386_8</span>             <a href="#R_386">R_386</a> = 22
+    <span id="R_386_PC8">R_386_PC8</span>           <a href="#R_386">R_386</a> = 23
+    <span id="R_386_TLS_GD_32">R_386_TLS_GD_32</span>     <a href="#R_386">R_386</a> = 24 <span class="comment">/* 32 bit offset to GOT (index,off) pair */</span>
+    <span id="R_386_TLS_GD_PUSH">R_386_TLS_GD_PUSH</span>   <a href="#R_386">R_386</a> = 25 <span class="comment">/* pushl instruction for Sun ABI GD sequence */</span>
+    <span id="R_386_TLS_GD_CALL">R_386_TLS_GD_CALL</span>   <a href="#R_386">R_386</a> = 26 <span class="comment">/* call instruction for Sun ABI GD sequence */</span>
+    <span id="R_386_TLS_GD_POP">R_386_TLS_GD_POP</span>    <a href="#R_386">R_386</a> = 27 <span class="comment">/* popl instruction for Sun ABI GD sequence */</span>
+    <span id="R_386_TLS_LDM_32">R_386_TLS_LDM_32</span>    <a href="#R_386">R_386</a> = 28 <span class="comment">/* 32 bit offset to GOT (index,zero) pair */</span>
+    <span id="R_386_TLS_LDM_PUSH">R_386_TLS_LDM_PUSH</span>  <a href="#R_386">R_386</a> = 29 <span class="comment">/* pushl instruction for Sun ABI LD sequence */</span>
+    <span id="R_386_TLS_LDM_CALL">R_386_TLS_LDM_CALL</span>  <a href="#R_386">R_386</a> = 30 <span class="comment">/* call instruction for Sun ABI LD sequence */</span>
+    <span id="R_386_TLS_LDM_POP">R_386_TLS_LDM_POP</span>   <a href="#R_386">R_386</a> = 31 <span class="comment">/* popl instruction for Sun ABI LD sequence */</span>
+    <span id="R_386_TLS_LDO_32">R_386_TLS_LDO_32</span>    <a href="#R_386">R_386</a> = 32 <span class="comment">/* 32 bit offset from start of TLS block */</span>
+    <span id="R_386_TLS_IE_32">R_386_TLS_IE_32</span>     <a href="#R_386">R_386</a> = 33 <span class="comment">/* 32 bit offset to GOT static TLS offset entry */</span>
+    <span id="R_386_TLS_LE_32">R_386_TLS_LE_32</span>     <a href="#R_386">R_386</a> = 34 <span class="comment">/* 32 bit offset within static TLS block */</span>
+    <span id="R_386_TLS_DTPMOD32">R_386_TLS_DTPMOD32</span>  <a href="#R_386">R_386</a> = 35 <span class="comment">/* GOT entry containing TLS index */</span>
+    <span id="R_386_TLS_DTPOFF32">R_386_TLS_DTPOFF32</span>  <a href="#R_386">R_386</a> = 36 <span class="comment">/* GOT entry containing TLS offset */</span>
+    <span id="R_386_TLS_TPOFF32">R_386_TLS_TPOFF32</span>   <a href="#R_386">R_386</a> = 37 <span class="comment">/* GOT entry of -ve static TLS offset */</span>
+    <span id="R_386_SIZE32">R_386_SIZE32</span>        <a href="#R_386">R_386</a> = 38
+    <span id="R_386_TLS_GOTDESC">R_386_TLS_GOTDESC</span>   <a href="#R_386">R_386</a> = 39
+    <span id="R_386_TLS_DESC_CALL">R_386_TLS_DESC_CALL</span> <a href="#R_386">R_386</a> = 40
+    <span id="R_386_TLS_DESC">R_386_TLS_DESC</span>      <a href="#R_386">R_386</a> = 41
+    <span id="R_386_IRELATIVE">R_386_IRELATIVE</span>     <a href="#R_386">R_386</a> = 42
+    <span id="R_386_GOT32X">R_386_GOT32X</span>        <a href="#R_386">R_386</a> = 43
 )</pre>
 
 
-<h3 id="R_386.GoString">func (R_386) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1261">GoString</a>
+<h3 id="R_386.GoString">func (R_386) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1565">GoString</a>
     <a href="#R_386.GoString">¶</a></h3>
 <pre>func (i <a href="#R_386">R_386</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_386.String">func (R_386) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1260">String</a>
+<h3 id="R_386.String">func (R_386) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1564">String</a>
     <a href="#R_386.String">¶</a></h3>
 <pre>func (i <a href="#R_386">R_386</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_390">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1719">R_390</a>
+<h2 id="R_390">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2075">R_390</a>
     <a href="#R_390">¶</a></h2>
 <pre>type R_390 <a href="/builtin/#int">int</a></pre>
 
@@ -980,17 +991,17 @@ Relocation types for s390x processors.
 )</pre>
 
 
-<h3 id="R_390.GoString">func (R_390) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1850">GoString</a>
+<h3 id="R_390.GoString">func (R_390) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2206">GoString</a>
     <a href="#R_390.GoString">¶</a></h3>
 <pre>func (i <a href="#R_390">R_390</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_390.String">func (R_390) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1849">String</a>
+<h3 id="R_390.String">func (R_390) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2205">String</a>
     <a href="#R_390.String">¶</a></h3>
 <pre>func (i <a href="#R_390">R_390</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_AARCH64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L794">R_AARCH64</a>
+<h2 id="R_AARCH64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L832">R_AARCH64</a>
     <a href="#R_AARCH64">¶</a></h2>
 <pre>type R_AARCH64 <a href="/builtin/#int">int</a></pre>
 
@@ -1080,10 +1091,17 @@ Relocation types for AArch64 (aka arm64)
     <span id="R_AARCH64_LDST64_ABS_LO12_NC">R_AARCH64_LDST64_ABS_LO12_NC</span>              <a href="#R_AARCH64">R_AARCH64</a> = 286
     <span id="R_AARCH64_LDST128_ABS_LO12_NC">R_AARCH64_LDST128_ABS_LO12_NC</span>             <a href="#R_AARCH64">R_AARCH64</a> = 299
     <span id="R_AARCH64_GOT_LD_PREL19">R_AARCH64_GOT_LD_PREL19</span>                   <a href="#R_AARCH64">R_AARCH64</a> = 309
+    <span id="R_AARCH64_LD64_GOTOFF_LO15">R_AARCH64_LD64_GOTOFF_LO15</span>                <a href="#R_AARCH64">R_AARCH64</a> = 310
     <span id="R_AARCH64_ADR_GOT_PAGE">R_AARCH64_ADR_GOT_PAGE</span>                    <a href="#R_AARCH64">R_AARCH64</a> = 311
     <span id="R_AARCH64_LD64_GOT_LO12_NC">R_AARCH64_LD64_GOT_LO12_NC</span>                <a href="#R_AARCH64">R_AARCH64</a> = 312
+    <span id="R_AARCH64_LD64_GOTPAGE_LO15">R_AARCH64_LD64_GOTPAGE_LO15</span>               <a href="#R_AARCH64">R_AARCH64</a> = 313
+    <span id="R_AARCH64_TLSGD_ADR_PREL21">R_AARCH64_TLSGD_ADR_PREL21</span>                <a href="#R_AARCH64">R_AARCH64</a> = 512
     <span id="R_AARCH64_TLSGD_ADR_PAGE21">R_AARCH64_TLSGD_ADR_PAGE21</span>                <a href="#R_AARCH64">R_AARCH64</a> = 513
     <span id="R_AARCH64_TLSGD_ADD_LO12_NC">R_AARCH64_TLSGD_ADD_LO12_NC</span>               <a href="#R_AARCH64">R_AARCH64</a> = 514
+    <span id="R_AARCH64_TLSGD_MOVW_G1">R_AARCH64_TLSGD_MOVW_G1</span>                   <a href="#R_AARCH64">R_AARCH64</a> = 515
+    <span id="R_AARCH64_TLSGD_MOVW_G0_NC">R_AARCH64_TLSGD_MOVW_G0_NC</span>                <a href="#R_AARCH64">R_AARCH64</a> = 516
+    <span id="R_AARCH64_TLSLD_ADR_PREL21">R_AARCH64_TLSLD_ADR_PREL21</span>                <a href="#R_AARCH64">R_AARCH64</a> = 517
+    <span id="R_AARCH64_TLSLD_ADR_PAGE21">R_AARCH64_TLSLD_ADR_PAGE21</span>                <a href="#R_AARCH64">R_AARCH64</a> = 518
     <span id="R_AARCH64_TLSIE_MOVW_GOTTPREL_G1">R_AARCH64_TLSIE_MOVW_GOTTPREL_G1</span>          <a href="#R_AARCH64">R_AARCH64</a> = 539
     <span id="R_AARCH64_TLSIE_MOVW_GOTTPREL_G0_NC">R_AARCH64_TLSIE_MOVW_GOTTPREL_G0_NC</span>       <a href="#R_AARCH64">R_AARCH64</a> = 540
     <span id="R_AARCH64_TLSIE_ADR_GOTTPREL_PAGE21">R_AARCH64_TLSIE_ADR_GOTTPREL_PAGE21</span>       <a href="#R_AARCH64">R_AARCH64</a> = 541
@@ -1107,6 +1125,10 @@ Relocation types for AArch64 (aka arm64)
     <span id="R_AARCH64_TLSDESC_LDR">R_AARCH64_TLSDESC_LDR</span>                     <a href="#R_AARCH64">R_AARCH64</a> = 567
     <span id="R_AARCH64_TLSDESC_ADD">R_AARCH64_TLSDESC_ADD</span>                     <a href="#R_AARCH64">R_AARCH64</a> = 568
     <span id="R_AARCH64_TLSDESC_CALL">R_AARCH64_TLSDESC_CALL</span>                    <a href="#R_AARCH64">R_AARCH64</a> = 569
+    <span id="R_AARCH64_TLSLE_LDST128_TPREL_LO12">R_AARCH64_TLSLE_LDST128_TPREL_LO12</span>        <a href="#R_AARCH64">R_AARCH64</a> = 570
+    <span id="R_AARCH64_TLSLE_LDST128_TPREL_LO12_NC">R_AARCH64_TLSLE_LDST128_TPREL_LO12_NC</span>     <a href="#R_AARCH64">R_AARCH64</a> = 571
+    <span id="R_AARCH64_TLSLD_LDST128_DTPREL_LO12">R_AARCH64_TLSLD_LDST128_DTPREL_LO12</span>       <a href="#R_AARCH64">R_AARCH64</a> = 572
+    <span id="R_AARCH64_TLSLD_LDST128_DTPREL_LO12_NC">R_AARCH64_TLSLD_LDST128_DTPREL_LO12_NC</span>    <a href="#R_AARCH64">R_AARCH64</a> = 573
     <span id="R_AARCH64_COPY">R_AARCH64_COPY</span>                            <a href="#R_AARCH64">R_AARCH64</a> = 1024
     <span id="R_AARCH64_GLOB_DAT">R_AARCH64_GLOB_DAT</span>                        <a href="#R_AARCH64">R_AARCH64</a> = 1025
     <span id="R_AARCH64_JUMP_SLOT">R_AARCH64_JUMP_SLOT</span>                       <a href="#R_AARCH64">R_AARCH64</a> = 1026
@@ -1119,17 +1141,17 @@ Relocation types for AArch64 (aka arm64)
 )</pre>
 
 
-<h3 id="R_AARCH64.GoString">func (R_AARCH64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1041">GoString</a>
+<h3 id="R_AARCH64.GoString">func (R_AARCH64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1101">GoString</a>
     <a href="#R_AARCH64.GoString">¶</a></h3>
 <pre>func (i <a href="#R_AARCH64">R_AARCH64</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_AARCH64.String">func (R_AARCH64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1040">String</a>
+<h3 id="R_AARCH64.String">func (R_AARCH64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1100">String</a>
     <a href="#R_AARCH64.String">¶</a></h3>
 <pre>func (i <a href="#R_AARCH64">R_AARCH64</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_ALPHA">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1044">R_ALPHA</a>
+<h2 id="R_ALPHA">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1104">R_ALPHA</a>
     <a href="#R_ALPHA">¶</a></h2>
 <pre>type R_ALPHA <a href="/builtin/#int">int</a></pre>
 
@@ -1167,70 +1189,181 @@ Relocation types for Alpha.
 )</pre>
 
 
-<h3 id="R_ALPHA.GoString">func (R_ALPHA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1109">GoString</a>
+<h3 id="R_ALPHA.GoString">func (R_ALPHA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1169">GoString</a>
     <a href="#R_ALPHA.GoString">¶</a></h3>
 <pre>func (i <a href="#R_ALPHA">R_ALPHA</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_ALPHA.String">func (R_ALPHA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1108">String</a>
+<h3 id="R_ALPHA.String">func (R_ALPHA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1168">String</a>
     <a href="#R_ALPHA.String">¶</a></h3>
 <pre>func (i <a href="#R_ALPHA">R_ALPHA</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_ARM">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1112">R_ARM</a>
+<h2 id="R_ARM">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1172">R_ARM</a>
     <a href="#R_ARM">¶</a></h2>
 <pre>type R_ARM <a href="/builtin/#int">int</a></pre>
 
 Relocation types for ARM.
 
 <pre>const (
-    <span id="R_ARM_NONE">R_ARM_NONE</span>          <a href="#R_ARM">R_ARM</a> = 0 <span class="comment">/* No relocation. */</span>
-    <span id="R_ARM_PC24">R_ARM_PC24</span>          <a href="#R_ARM">R_ARM</a> = 1
-    <span id="R_ARM_ABS32">R_ARM_ABS32</span>         <a href="#R_ARM">R_ARM</a> = 2
-    <span id="R_ARM_REL32">R_ARM_REL32</span>         <a href="#R_ARM">R_ARM</a> = 3
-    <span id="R_ARM_PC13">R_ARM_PC13</span>          <a href="#R_ARM">R_ARM</a> = 4
-    <span id="R_ARM_ABS16">R_ARM_ABS16</span>         <a href="#R_ARM">R_ARM</a> = 5
-    <span id="R_ARM_ABS12">R_ARM_ABS12</span>         <a href="#R_ARM">R_ARM</a> = 6
-    <span id="R_ARM_THM_ABS5">R_ARM_THM_ABS5</span>      <a href="#R_ARM">R_ARM</a> = 7
-    <span id="R_ARM_ABS8">R_ARM_ABS8</span>          <a href="#R_ARM">R_ARM</a> = 8
-    <span id="R_ARM_SBREL32">R_ARM_SBREL32</span>       <a href="#R_ARM">R_ARM</a> = 9
-    <span id="R_ARM_THM_PC22">R_ARM_THM_PC22</span>      <a href="#R_ARM">R_ARM</a> = 10
-    <span id="R_ARM_THM_PC8">R_ARM_THM_PC8</span>       <a href="#R_ARM">R_ARM</a> = 11
-    <span id="R_ARM_AMP_VCALL9">R_ARM_AMP_VCALL9</span>    <a href="#R_ARM">R_ARM</a> = 12
-    <span id="R_ARM_SWI24">R_ARM_SWI24</span>         <a href="#R_ARM">R_ARM</a> = 13
-    <span id="R_ARM_THM_SWI8">R_ARM_THM_SWI8</span>      <a href="#R_ARM">R_ARM</a> = 14
-    <span id="R_ARM_XPC25">R_ARM_XPC25</span>         <a href="#R_ARM">R_ARM</a> = 15
-    <span id="R_ARM_THM_XPC22">R_ARM_THM_XPC22</span>     <a href="#R_ARM">R_ARM</a> = 16
-    <span id="R_ARM_COPY">R_ARM_COPY</span>          <a href="#R_ARM">R_ARM</a> = 20 <span class="comment">/* Copy data from shared object. */</span>
-    <span id="R_ARM_GLOB_DAT">R_ARM_GLOB_DAT</span>      <a href="#R_ARM">R_ARM</a> = 21 <span class="comment">/* Set GOT entry to data address. */</span>
-    <span id="R_ARM_JUMP_SLOT">R_ARM_JUMP_SLOT</span>     <a href="#R_ARM">R_ARM</a> = 22 <span class="comment">/* Set GOT entry to code address. */</span>
-    <span id="R_ARM_RELATIVE">R_ARM_RELATIVE</span>      <a href="#R_ARM">R_ARM</a> = 23 <span class="comment">/* Add load address of shared object. */</span>
-    <span id="R_ARM_GOTOFF">R_ARM_GOTOFF</span>        <a href="#R_ARM">R_ARM</a> = 24 <span class="comment">/* Add GOT-relative symbol address. */</span>
-    <span id="R_ARM_GOTPC">R_ARM_GOTPC</span>         <a href="#R_ARM">R_ARM</a> = 25 <span class="comment">/* Add PC-relative GOT table address. */</span>
-    <span id="R_ARM_GOT32">R_ARM_GOT32</span>         <a href="#R_ARM">R_ARM</a> = 26 <span class="comment">/* Add PC-relative GOT offset. */</span>
-    <span id="R_ARM_PLT32">R_ARM_PLT32</span>         <a href="#R_ARM">R_ARM</a> = 27 <span class="comment">/* Add PC-relative PLT offset. */</span>
-    <span id="R_ARM_GNU_VTENTRY">R_ARM_GNU_VTENTRY</span>   <a href="#R_ARM">R_ARM</a> = 100
-    <span id="R_ARM_GNU_VTINHERIT">R_ARM_GNU_VTINHERIT</span> <a href="#R_ARM">R_ARM</a> = 101
-    <span id="R_ARM_RSBREL32">R_ARM_RSBREL32</span>      <a href="#R_ARM">R_ARM</a> = 250
-    <span id="R_ARM_THM_RPC22">R_ARM_THM_RPC22</span>     <a href="#R_ARM">R_ARM</a> = 251
-    <span id="R_ARM_RREL32">R_ARM_RREL32</span>        <a href="#R_ARM">R_ARM</a> = 252
-    <span id="R_ARM_RABS32">R_ARM_RABS32</span>        <a href="#R_ARM">R_ARM</a> = 253
-    <span id="R_ARM_RPC24">R_ARM_RPC24</span>         <a href="#R_ARM">R_ARM</a> = 254
-    <span id="R_ARM_RBASE">R_ARM_RBASE</span>         <a href="#R_ARM">R_ARM</a> = 255
+    <span id="R_ARM_NONE">R_ARM_NONE</span>               <a href="#R_ARM">R_ARM</a> = 0 <span class="comment">/* No relocation. */</span>
+    <span id="R_ARM_PC24">R_ARM_PC24</span>               <a href="#R_ARM">R_ARM</a> = 1
+    <span id="R_ARM_ABS32">R_ARM_ABS32</span>              <a href="#R_ARM">R_ARM</a> = 2
+    <span id="R_ARM_REL32">R_ARM_REL32</span>              <a href="#R_ARM">R_ARM</a> = 3
+    <span id="R_ARM_PC13">R_ARM_PC13</span>               <a href="#R_ARM">R_ARM</a> = 4
+    <span id="R_ARM_ABS16">R_ARM_ABS16</span>              <a href="#R_ARM">R_ARM</a> = 5
+    <span id="R_ARM_ABS12">R_ARM_ABS12</span>              <a href="#R_ARM">R_ARM</a> = 6
+    <span id="R_ARM_THM_ABS5">R_ARM_THM_ABS5</span>           <a href="#R_ARM">R_ARM</a> = 7
+    <span id="R_ARM_ABS8">R_ARM_ABS8</span>               <a href="#R_ARM">R_ARM</a> = 8
+    <span id="R_ARM_SBREL32">R_ARM_SBREL32</span>            <a href="#R_ARM">R_ARM</a> = 9
+    <span id="R_ARM_THM_PC22">R_ARM_THM_PC22</span>           <a href="#R_ARM">R_ARM</a> = 10
+    <span id="R_ARM_THM_PC8">R_ARM_THM_PC8</span>            <a href="#R_ARM">R_ARM</a> = 11
+    <span id="R_ARM_AMP_VCALL9">R_ARM_AMP_VCALL9</span>         <a href="#R_ARM">R_ARM</a> = 12
+    <span id="R_ARM_SWI24">R_ARM_SWI24</span>              <a href="#R_ARM">R_ARM</a> = 13
+    <span id="R_ARM_THM_SWI8">R_ARM_THM_SWI8</span>           <a href="#R_ARM">R_ARM</a> = 14
+    <span id="R_ARM_XPC25">R_ARM_XPC25</span>              <a href="#R_ARM">R_ARM</a> = 15
+    <span id="R_ARM_THM_XPC22">R_ARM_THM_XPC22</span>          <a href="#R_ARM">R_ARM</a> = 16
+    <span id="R_ARM_TLS_DTPMOD32">R_ARM_TLS_DTPMOD32</span>       <a href="#R_ARM">R_ARM</a> = 17
+    <span id="R_ARM_TLS_DTPOFF32">R_ARM_TLS_DTPOFF32</span>       <a href="#R_ARM">R_ARM</a> = 18
+    <span id="R_ARM_TLS_TPOFF32">R_ARM_TLS_TPOFF32</span>        <a href="#R_ARM">R_ARM</a> = 19
+    <span id="R_ARM_COPY">R_ARM_COPY</span>               <a href="#R_ARM">R_ARM</a> = 20 <span class="comment">/* Copy data from shared object. */</span>
+    <span id="R_ARM_GLOB_DAT">R_ARM_GLOB_DAT</span>           <a href="#R_ARM">R_ARM</a> = 21 <span class="comment">/* Set GOT entry to data address. */</span>
+    <span id="R_ARM_JUMP_SLOT">R_ARM_JUMP_SLOT</span>          <a href="#R_ARM">R_ARM</a> = 22 <span class="comment">/* Set GOT entry to code address. */</span>
+    <span id="R_ARM_RELATIVE">R_ARM_RELATIVE</span>           <a href="#R_ARM">R_ARM</a> = 23 <span class="comment">/* Add load address of shared object. */</span>
+    <span id="R_ARM_GOTOFF">R_ARM_GOTOFF</span>             <a href="#R_ARM">R_ARM</a> = 24 <span class="comment">/* Add GOT-relative symbol address. */</span>
+    <span id="R_ARM_GOTPC">R_ARM_GOTPC</span>              <a href="#R_ARM">R_ARM</a> = 25 <span class="comment">/* Add PC-relative GOT table address. */</span>
+    <span id="R_ARM_GOT32">R_ARM_GOT32</span>              <a href="#R_ARM">R_ARM</a> = 26 <span class="comment">/* Add PC-relative GOT offset. */</span>
+    <span id="R_ARM_PLT32">R_ARM_PLT32</span>              <a href="#R_ARM">R_ARM</a> = 27 <span class="comment">/* Add PC-relative PLT offset. */</span>
+    <span id="R_ARM_CALL">R_ARM_CALL</span>               <a href="#R_ARM">R_ARM</a> = 28
+    <span id="R_ARM_JUMP24">R_ARM_JUMP24</span>             <a href="#R_ARM">R_ARM</a> = 29
+    <span id="R_ARM_THM_JUMP24">R_ARM_THM_JUMP24</span>         <a href="#R_ARM">R_ARM</a> = 30
+    <span id="R_ARM_BASE_ABS">R_ARM_BASE_ABS</span>           <a href="#R_ARM">R_ARM</a> = 31
+    <span id="R_ARM_ALU_PCREL_7_0">R_ARM_ALU_PCREL_7_0</span>      <a href="#R_ARM">R_ARM</a> = 32
+    <span id="R_ARM_ALU_PCREL_15_8">R_ARM_ALU_PCREL_15_8</span>     <a href="#R_ARM">R_ARM</a> = 33
+    <span id="R_ARM_ALU_PCREL_23_15">R_ARM_ALU_PCREL_23_15</span>    <a href="#R_ARM">R_ARM</a> = 34
+    <span id="R_ARM_LDR_SBREL_11_10_NC">R_ARM_LDR_SBREL_11_10_NC</span> <a href="#R_ARM">R_ARM</a> = 35
+    <span id="R_ARM_ALU_SBREL_19_12_NC">R_ARM_ALU_SBREL_19_12_NC</span> <a href="#R_ARM">R_ARM</a> = 36
+    <span id="R_ARM_ALU_SBREL_27_20_CK">R_ARM_ALU_SBREL_27_20_CK</span> <a href="#R_ARM">R_ARM</a> = 37
+    <span id="R_ARM_TARGET1">R_ARM_TARGET1</span>            <a href="#R_ARM">R_ARM</a> = 38
+    <span id="R_ARM_SBREL31">R_ARM_SBREL31</span>            <a href="#R_ARM">R_ARM</a> = 39
+    <span id="R_ARM_V4BX">R_ARM_V4BX</span>               <a href="#R_ARM">R_ARM</a> = 40
+    <span id="R_ARM_TARGET2">R_ARM_TARGET2</span>            <a href="#R_ARM">R_ARM</a> = 41
+    <span id="R_ARM_PREL31">R_ARM_PREL31</span>             <a href="#R_ARM">R_ARM</a> = 42
+    <span id="R_ARM_MOVW_ABS_NC">R_ARM_MOVW_ABS_NC</span>        <a href="#R_ARM">R_ARM</a> = 43
+    <span id="R_ARM_MOVT_ABS">R_ARM_MOVT_ABS</span>           <a href="#R_ARM">R_ARM</a> = 44
+    <span id="R_ARM_MOVW_PREL_NC">R_ARM_MOVW_PREL_NC</span>       <a href="#R_ARM">R_ARM</a> = 45
+    <span id="R_ARM_MOVT_PREL">R_ARM_MOVT_PREL</span>          <a href="#R_ARM">R_ARM</a> = 46
+    <span id="R_ARM_THM_MOVW_ABS_NC">R_ARM_THM_MOVW_ABS_NC</span>    <a href="#R_ARM">R_ARM</a> = 47
+    <span id="R_ARM_THM_MOVT_ABS">R_ARM_THM_MOVT_ABS</span>       <a href="#R_ARM">R_ARM</a> = 48
+    <span id="R_ARM_THM_MOVW_PREL_NC">R_ARM_THM_MOVW_PREL_NC</span>   <a href="#R_ARM">R_ARM</a> = 49
+    <span id="R_ARM_THM_MOVT_PREL">R_ARM_THM_MOVT_PREL</span>      <a href="#R_ARM">R_ARM</a> = 50
+    <span id="R_ARM_THM_JUMP19">R_ARM_THM_JUMP19</span>         <a href="#R_ARM">R_ARM</a> = 51
+    <span id="R_ARM_THM_JUMP6">R_ARM_THM_JUMP6</span>          <a href="#R_ARM">R_ARM</a> = 52
+    <span id="R_ARM_THM_ALU_PREL_11_0">R_ARM_THM_ALU_PREL_11_0</span>  <a href="#R_ARM">R_ARM</a> = 53
+    <span id="R_ARM_THM_PC12">R_ARM_THM_PC12</span>           <a href="#R_ARM">R_ARM</a> = 54
+    <span id="R_ARM_ABS32_NOI">R_ARM_ABS32_NOI</span>          <a href="#R_ARM">R_ARM</a> = 55
+    <span id="R_ARM_REL32_NOI">R_ARM_REL32_NOI</span>          <a href="#R_ARM">R_ARM</a> = 56
+    <span id="R_ARM_ALU_PC_G0_NC">R_ARM_ALU_PC_G0_NC</span>       <a href="#R_ARM">R_ARM</a> = 57
+    <span id="R_ARM_ALU_PC_G0">R_ARM_ALU_PC_G0</span>          <a href="#R_ARM">R_ARM</a> = 58
+    <span id="R_ARM_ALU_PC_G1_NC">R_ARM_ALU_PC_G1_NC</span>       <a href="#R_ARM">R_ARM</a> = 59
+    <span id="R_ARM_ALU_PC_G1">R_ARM_ALU_PC_G1</span>          <a href="#R_ARM">R_ARM</a> = 60
+    <span id="R_ARM_ALU_PC_G2">R_ARM_ALU_PC_G2</span>          <a href="#R_ARM">R_ARM</a> = 61
+    <span id="R_ARM_LDR_PC_G1">R_ARM_LDR_PC_G1</span>          <a href="#R_ARM">R_ARM</a> = 62
+    <span id="R_ARM_LDR_PC_G2">R_ARM_LDR_PC_G2</span>          <a href="#R_ARM">R_ARM</a> = 63
+    <span id="R_ARM_LDRS_PC_G0">R_ARM_LDRS_PC_G0</span>         <a href="#R_ARM">R_ARM</a> = 64
+    <span id="R_ARM_LDRS_PC_G1">R_ARM_LDRS_PC_G1</span>         <a href="#R_ARM">R_ARM</a> = 65
+    <span id="R_ARM_LDRS_PC_G2">R_ARM_LDRS_PC_G2</span>         <a href="#R_ARM">R_ARM</a> = 66
+    <span id="R_ARM_LDC_PC_G0">R_ARM_LDC_PC_G0</span>          <a href="#R_ARM">R_ARM</a> = 67
+    <span id="R_ARM_LDC_PC_G1">R_ARM_LDC_PC_G1</span>          <a href="#R_ARM">R_ARM</a> = 68
+    <span id="R_ARM_LDC_PC_G2">R_ARM_LDC_PC_G2</span>          <a href="#R_ARM">R_ARM</a> = 69
+    <span id="R_ARM_ALU_SB_G0_NC">R_ARM_ALU_SB_G0_NC</span>       <a href="#R_ARM">R_ARM</a> = 70
+    <span id="R_ARM_ALU_SB_G0">R_ARM_ALU_SB_G0</span>          <a href="#R_ARM">R_ARM</a> = 71
+    <span id="R_ARM_ALU_SB_G1_NC">R_ARM_ALU_SB_G1_NC</span>       <a href="#R_ARM">R_ARM</a> = 72
+    <span id="R_ARM_ALU_SB_G1">R_ARM_ALU_SB_G1</span>          <a href="#R_ARM">R_ARM</a> = 73
+    <span id="R_ARM_ALU_SB_G2">R_ARM_ALU_SB_G2</span>          <a href="#R_ARM">R_ARM</a> = 74
+    <span id="R_ARM_LDR_SB_G0">R_ARM_LDR_SB_G0</span>          <a href="#R_ARM">R_ARM</a> = 75
+    <span id="R_ARM_LDR_SB_G1">R_ARM_LDR_SB_G1</span>          <a href="#R_ARM">R_ARM</a> = 76
+    <span id="R_ARM_LDR_SB_G2">R_ARM_LDR_SB_G2</span>          <a href="#R_ARM">R_ARM</a> = 77
+    <span id="R_ARM_LDRS_SB_G0">R_ARM_LDRS_SB_G0</span>         <a href="#R_ARM">R_ARM</a> = 78
+    <span id="R_ARM_LDRS_SB_G1">R_ARM_LDRS_SB_G1</span>         <a href="#R_ARM">R_ARM</a> = 79
+    <span id="R_ARM_LDRS_SB_G2">R_ARM_LDRS_SB_G2</span>         <a href="#R_ARM">R_ARM</a> = 80
+    <span id="R_ARM_LDC_SB_G0">R_ARM_LDC_SB_G0</span>          <a href="#R_ARM">R_ARM</a> = 81
+    <span id="R_ARM_LDC_SB_G1">R_ARM_LDC_SB_G1</span>          <a href="#R_ARM">R_ARM</a> = 82
+    <span id="R_ARM_LDC_SB_G2">R_ARM_LDC_SB_G2</span>          <a href="#R_ARM">R_ARM</a> = 83
+    <span id="R_ARM_MOVW_BREL_NC">R_ARM_MOVW_BREL_NC</span>       <a href="#R_ARM">R_ARM</a> = 84
+    <span id="R_ARM_MOVT_BREL">R_ARM_MOVT_BREL</span>          <a href="#R_ARM">R_ARM</a> = 85
+    <span id="R_ARM_MOVW_BREL">R_ARM_MOVW_BREL</span>          <a href="#R_ARM">R_ARM</a> = 86
+    <span id="R_ARM_THM_MOVW_BREL_NC">R_ARM_THM_MOVW_BREL_NC</span>   <a href="#R_ARM">R_ARM</a> = 87
+    <span id="R_ARM_THM_MOVT_BREL">R_ARM_THM_MOVT_BREL</span>      <a href="#R_ARM">R_ARM</a> = 88
+    <span id="R_ARM_THM_MOVW_BREL">R_ARM_THM_MOVW_BREL</span>      <a href="#R_ARM">R_ARM</a> = 89
+    <span id="R_ARM_TLS_GOTDESC">R_ARM_TLS_GOTDESC</span>        <a href="#R_ARM">R_ARM</a> = 90
+    <span id="R_ARM_TLS_CALL">R_ARM_TLS_CALL</span>           <a href="#R_ARM">R_ARM</a> = 91
+    <span id="R_ARM_TLS_DESCSEQ">R_ARM_TLS_DESCSEQ</span>        <a href="#R_ARM">R_ARM</a> = 92
+    <span id="R_ARM_THM_TLS_CALL">R_ARM_THM_TLS_CALL</span>       <a href="#R_ARM">R_ARM</a> = 93
+    <span id="R_ARM_PLT32_ABS">R_ARM_PLT32_ABS</span>          <a href="#R_ARM">R_ARM</a> = 94
+    <span id="R_ARM_GOT_ABS">R_ARM_GOT_ABS</span>            <a href="#R_ARM">R_ARM</a> = 95
+    <span id="R_ARM_GOT_PREL">R_ARM_GOT_PREL</span>           <a href="#R_ARM">R_ARM</a> = 96
+    <span id="R_ARM_GOT_BREL12">R_ARM_GOT_BREL12</span>         <a href="#R_ARM">R_ARM</a> = 97
+    <span id="R_ARM_GOTOFF12">R_ARM_GOTOFF12</span>           <a href="#R_ARM">R_ARM</a> = 98
+    <span id="R_ARM_GOTRELAX">R_ARM_GOTRELAX</span>           <a href="#R_ARM">R_ARM</a> = 99
+    <span id="R_ARM_GNU_VTENTRY">R_ARM_GNU_VTENTRY</span>        <a href="#R_ARM">R_ARM</a> = 100
+    <span id="R_ARM_GNU_VTINHERIT">R_ARM_GNU_VTINHERIT</span>      <a href="#R_ARM">R_ARM</a> = 101
+    <span id="R_ARM_THM_JUMP11">R_ARM_THM_JUMP11</span>         <a href="#R_ARM">R_ARM</a> = 102
+    <span id="R_ARM_THM_JUMP8">R_ARM_THM_JUMP8</span>          <a href="#R_ARM">R_ARM</a> = 103
+    <span id="R_ARM_TLS_GD32">R_ARM_TLS_GD32</span>           <a href="#R_ARM">R_ARM</a> = 104
+    <span id="R_ARM_TLS_LDM32">R_ARM_TLS_LDM32</span>          <a href="#R_ARM">R_ARM</a> = 105
+    <span id="R_ARM_TLS_LDO32">R_ARM_TLS_LDO32</span>          <a href="#R_ARM">R_ARM</a> = 106
+    <span id="R_ARM_TLS_IE32">R_ARM_TLS_IE32</span>           <a href="#R_ARM">R_ARM</a> = 107
+    <span id="R_ARM_TLS_LE32">R_ARM_TLS_LE32</span>           <a href="#R_ARM">R_ARM</a> = 108
+    <span id="R_ARM_TLS_LDO12">R_ARM_TLS_LDO12</span>          <a href="#R_ARM">R_ARM</a> = 109
+    <span id="R_ARM_TLS_LE12">R_ARM_TLS_LE12</span>           <a href="#R_ARM">R_ARM</a> = 110
+    <span id="R_ARM_TLS_IE12GP">R_ARM_TLS_IE12GP</span>         <a href="#R_ARM">R_ARM</a> = 111
+    <span id="R_ARM_PRIVATE_0">R_ARM_PRIVATE_0</span>          <a href="#R_ARM">R_ARM</a> = 112
+    <span id="R_ARM_PRIVATE_1">R_ARM_PRIVATE_1</span>          <a href="#R_ARM">R_ARM</a> = 113
+    <span id="R_ARM_PRIVATE_2">R_ARM_PRIVATE_2</span>          <a href="#R_ARM">R_ARM</a> = 114
+    <span id="R_ARM_PRIVATE_3">R_ARM_PRIVATE_3</span>          <a href="#R_ARM">R_ARM</a> = 115
+    <span id="R_ARM_PRIVATE_4">R_ARM_PRIVATE_4</span>          <a href="#R_ARM">R_ARM</a> = 116
+    <span id="R_ARM_PRIVATE_5">R_ARM_PRIVATE_5</span>          <a href="#R_ARM">R_ARM</a> = 117
+    <span id="R_ARM_PRIVATE_6">R_ARM_PRIVATE_6</span>          <a href="#R_ARM">R_ARM</a> = 118
+    <span id="R_ARM_PRIVATE_7">R_ARM_PRIVATE_7</span>          <a href="#R_ARM">R_ARM</a> = 119
+    <span id="R_ARM_PRIVATE_8">R_ARM_PRIVATE_8</span>          <a href="#R_ARM">R_ARM</a> = 120
+    <span id="R_ARM_PRIVATE_9">R_ARM_PRIVATE_9</span>          <a href="#R_ARM">R_ARM</a> = 121
+    <span id="R_ARM_PRIVATE_10">R_ARM_PRIVATE_10</span>         <a href="#R_ARM">R_ARM</a> = 122
+    <span id="R_ARM_PRIVATE_11">R_ARM_PRIVATE_11</span>         <a href="#R_ARM">R_ARM</a> = 123
+    <span id="R_ARM_PRIVATE_12">R_ARM_PRIVATE_12</span>         <a href="#R_ARM">R_ARM</a> = 124
+    <span id="R_ARM_PRIVATE_13">R_ARM_PRIVATE_13</span>         <a href="#R_ARM">R_ARM</a> = 125
+    <span id="R_ARM_PRIVATE_14">R_ARM_PRIVATE_14</span>         <a href="#R_ARM">R_ARM</a> = 126
+    <span id="R_ARM_PRIVATE_15">R_ARM_PRIVATE_15</span>         <a href="#R_ARM">R_ARM</a> = 127
+    <span id="R_ARM_ME_TOO">R_ARM_ME_TOO</span>             <a href="#R_ARM">R_ARM</a> = 128
+    <span id="R_ARM_THM_TLS_DESCSEQ16">R_ARM_THM_TLS_DESCSEQ16</span>  <a href="#R_ARM">R_ARM</a> = 129
+    <span id="R_ARM_THM_TLS_DESCSEQ32">R_ARM_THM_TLS_DESCSEQ32</span>  <a href="#R_ARM">R_ARM</a> = 130
+    <span id="R_ARM_THM_GOT_BREL12">R_ARM_THM_GOT_BREL12</span>     <a href="#R_ARM">R_ARM</a> = 131
+    <span id="R_ARM_THM_ALU_ABS_G0_NC">R_ARM_THM_ALU_ABS_G0_NC</span>  <a href="#R_ARM">R_ARM</a> = 132
+    <span id="R_ARM_THM_ALU_ABS_G1_NC">R_ARM_THM_ALU_ABS_G1_NC</span>  <a href="#R_ARM">R_ARM</a> = 133
+    <span id="R_ARM_THM_ALU_ABS_G2_NC">R_ARM_THM_ALU_ABS_G2_NC</span>  <a href="#R_ARM">R_ARM</a> = 134
+    <span id="R_ARM_THM_ALU_ABS_G3">R_ARM_THM_ALU_ABS_G3</span>     <a href="#R_ARM">R_ARM</a> = 135
+    <span id="R_ARM_IRELATIVE">R_ARM_IRELATIVE</span>          <a href="#R_ARM">R_ARM</a> = 160
+    <span id="R_ARM_RXPC25">R_ARM_RXPC25</span>             <a href="#R_ARM">R_ARM</a> = 249
+    <span id="R_ARM_RSBREL32">R_ARM_RSBREL32</span>           <a href="#R_ARM">R_ARM</a> = 250
+    <span id="R_ARM_THM_RPC22">R_ARM_THM_RPC22</span>          <a href="#R_ARM">R_ARM</a> = 251
+    <span id="R_ARM_RREL32">R_ARM_RREL32</span>             <a href="#R_ARM">R_ARM</a> = 252
+    <span id="R_ARM_RABS32">R_ARM_RABS32</span>             <a href="#R_ARM">R_ARM</a> = 253
+    <span id="R_ARM_RPC24">R_ARM_RPC24</span>              <a href="#R_ARM">R_ARM</a> = 254
+    <span id="R_ARM_RBASE">R_ARM_RBASE</span>              <a href="#R_ARM">R_ARM</a> = 255
 )</pre>
 
 
-<h3 id="R_ARM.GoString">func (R_ARM) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1187">GoString</a>
+<h3 id="R_ARM.GoString">func (R_ARM) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1469">GoString</a>
     <a href="#R_ARM.GoString">¶</a></h3>
 <pre>func (i <a href="#R_ARM">R_ARM</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_ARM.String">func (R_ARM) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1186">String</a>
+<h3 id="R_ARM.String">func (R_ARM) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1468">String</a>
     <a href="#R_ARM.String">¶</a></h3>
 <pre>func (i <a href="#R_ARM">R_ARM</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_MIPS">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1264">R_MIPS</a>
+<h2 id="R_MIPS">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1568">R_MIPS</a>
     <a href="#R_MIPS">¶</a></h2>
 <pre>type R_MIPS <a href="/builtin/#int">int</a></pre>
 
@@ -1289,84 +1422,89 @@ Relocation types for MIPS.
 )</pre>
 
 
-<h3 id="R_MIPS.GoString">func (R_MIPS) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1370">GoString</a>
+<h3 id="R_MIPS.GoString">func (R_MIPS) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1674">GoString</a>
     <a href="#R_MIPS.GoString">¶</a></h3>
 <pre>func (i <a href="#R_MIPS">R_MIPS</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_MIPS.String">func (R_MIPS) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1369">String</a>
+<h3 id="R_MIPS.String">func (R_MIPS) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1673">String</a>
     <a href="#R_MIPS.String">¶</a></h3>
 <pre>func (i <a href="#R_MIPS">R_MIPS</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_PPC">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1373">R_PPC</a>
+<h2 id="R_PPC">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1682">R_PPC</a>
     <a href="#R_PPC">¶</a></h2>
 <pre>type R_PPC <a href="/builtin/#int">int</a></pre>
 
 Relocation types for PowerPC.
 
+Values that are shared by both R_PPC and R_PPC64 are prefixed with R_POWERPC_ in
+the ELF standard. For the R_PPC type, the relevant shared relocations have been
+renamed with the prefix R_PPC_. The original name follows the value in a
+comment.
+
 <pre>const (
-    <span id="R_PPC_NONE">R_PPC_NONE</span>            <a href="#R_PPC">R_PPC</a> = 0 <span class="comment">/* No relocation. */</span>
-    <span id="R_PPC_ADDR32">R_PPC_ADDR32</span>          <a href="#R_PPC">R_PPC</a> = 1
-    <span id="R_PPC_ADDR24">R_PPC_ADDR24</span>          <a href="#R_PPC">R_PPC</a> = 2
-    <span id="R_PPC_ADDR16">R_PPC_ADDR16</span>          <a href="#R_PPC">R_PPC</a> = 3
-    <span id="R_PPC_ADDR16_LO">R_PPC_ADDR16_LO</span>       <a href="#R_PPC">R_PPC</a> = 4
-    <span id="R_PPC_ADDR16_HI">R_PPC_ADDR16_HI</span>       <a href="#R_PPC">R_PPC</a> = 5
-    <span id="R_PPC_ADDR16_HA">R_PPC_ADDR16_HA</span>       <a href="#R_PPC">R_PPC</a> = 6
-    <span id="R_PPC_ADDR14">R_PPC_ADDR14</span>          <a href="#R_PPC">R_PPC</a> = 7
-    <span id="R_PPC_ADDR14_BRTAKEN">R_PPC_ADDR14_BRTAKEN</span>  <a href="#R_PPC">R_PPC</a> = 8
-    <span id="R_PPC_ADDR14_BRNTAKEN">R_PPC_ADDR14_BRNTAKEN</span> <a href="#R_PPC">R_PPC</a> = 9
-    <span id="R_PPC_REL24">R_PPC_REL24</span>           <a href="#R_PPC">R_PPC</a> = 10
-    <span id="R_PPC_REL14">R_PPC_REL14</span>           <a href="#R_PPC">R_PPC</a> = 11
-    <span id="R_PPC_REL14_BRTAKEN">R_PPC_REL14_BRTAKEN</span>   <a href="#R_PPC">R_PPC</a> = 12
-    <span id="R_PPC_REL14_BRNTAKEN">R_PPC_REL14_BRNTAKEN</span>  <a href="#R_PPC">R_PPC</a> = 13
-    <span id="R_PPC_GOT16">R_PPC_GOT16</span>           <a href="#R_PPC">R_PPC</a> = 14
-    <span id="R_PPC_GOT16_LO">R_PPC_GOT16_LO</span>        <a href="#R_PPC">R_PPC</a> = 15
-    <span id="R_PPC_GOT16_HI">R_PPC_GOT16_HI</span>        <a href="#R_PPC">R_PPC</a> = 16
-    <span id="R_PPC_GOT16_HA">R_PPC_GOT16_HA</span>        <a href="#R_PPC">R_PPC</a> = 17
+    <span id="R_PPC_NONE">R_PPC_NONE</span>            <a href="#R_PPC">R_PPC</a> = 0  <span class="comment">// R_POWERPC_NONE</span>
+    <span id="R_PPC_ADDR32">R_PPC_ADDR32</span>          <a href="#R_PPC">R_PPC</a> = 1  <span class="comment">// R_POWERPC_ADDR32</span>
+    <span id="R_PPC_ADDR24">R_PPC_ADDR24</span>          <a href="#R_PPC">R_PPC</a> = 2  <span class="comment">// R_POWERPC_ADDR24</span>
+    <span id="R_PPC_ADDR16">R_PPC_ADDR16</span>          <a href="#R_PPC">R_PPC</a> = 3  <span class="comment">// R_POWERPC_ADDR16</span>
+    <span id="R_PPC_ADDR16_LO">R_PPC_ADDR16_LO</span>       <a href="#R_PPC">R_PPC</a> = 4  <span class="comment">// R_POWERPC_ADDR16_LO</span>
+    <span id="R_PPC_ADDR16_HI">R_PPC_ADDR16_HI</span>       <a href="#R_PPC">R_PPC</a> = 5  <span class="comment">// R_POWERPC_ADDR16_HI</span>
+    <span id="R_PPC_ADDR16_HA">R_PPC_ADDR16_HA</span>       <a href="#R_PPC">R_PPC</a> = 6  <span class="comment">// R_POWERPC_ADDR16_HA</span>
+    <span id="R_PPC_ADDR14">R_PPC_ADDR14</span>          <a href="#R_PPC">R_PPC</a> = 7  <span class="comment">// R_POWERPC_ADDR14</span>
+    <span id="R_PPC_ADDR14_BRTAKEN">R_PPC_ADDR14_BRTAKEN</span>  <a href="#R_PPC">R_PPC</a> = 8  <span class="comment">// R_POWERPC_ADDR14_BRTAKEN</span>
+    <span id="R_PPC_ADDR14_BRNTAKEN">R_PPC_ADDR14_BRNTAKEN</span> <a href="#R_PPC">R_PPC</a> = 9  <span class="comment">// R_POWERPC_ADDR14_BRNTAKEN</span>
+    <span id="R_PPC_REL24">R_PPC_REL24</span>           <a href="#R_PPC">R_PPC</a> = 10 <span class="comment">// R_POWERPC_REL24</span>
+    <span id="R_PPC_REL14">R_PPC_REL14</span>           <a href="#R_PPC">R_PPC</a> = 11 <span class="comment">// R_POWERPC_REL14</span>
+    <span id="R_PPC_REL14_BRTAKEN">R_PPC_REL14_BRTAKEN</span>   <a href="#R_PPC">R_PPC</a> = 12 <span class="comment">// R_POWERPC_REL14_BRTAKEN</span>
+    <span id="R_PPC_REL14_BRNTAKEN">R_PPC_REL14_BRNTAKEN</span>  <a href="#R_PPC">R_PPC</a> = 13 <span class="comment">// R_POWERPC_REL14_BRNTAKEN</span>
+    <span id="R_PPC_GOT16">R_PPC_GOT16</span>           <a href="#R_PPC">R_PPC</a> = 14 <span class="comment">// R_POWERPC_GOT16</span>
+    <span id="R_PPC_GOT16_LO">R_PPC_GOT16_LO</span>        <a href="#R_PPC">R_PPC</a> = 15 <span class="comment">// R_POWERPC_GOT16_LO</span>
+    <span id="R_PPC_GOT16_HI">R_PPC_GOT16_HI</span>        <a href="#R_PPC">R_PPC</a> = 16 <span class="comment">// R_POWERPC_GOT16_HI</span>
+    <span id="R_PPC_GOT16_HA">R_PPC_GOT16_HA</span>        <a href="#R_PPC">R_PPC</a> = 17 <span class="comment">// R_POWERPC_GOT16_HA</span>
     <span id="R_PPC_PLTREL24">R_PPC_PLTREL24</span>        <a href="#R_PPC">R_PPC</a> = 18
-    <span id="R_PPC_COPY">R_PPC_COPY</span>            <a href="#R_PPC">R_PPC</a> = 19
-    <span id="R_PPC_GLOB_DAT">R_PPC_GLOB_DAT</span>        <a href="#R_PPC">R_PPC</a> = 20
-    <span id="R_PPC_JMP_SLOT">R_PPC_JMP_SLOT</span>        <a href="#R_PPC">R_PPC</a> = 21
-    <span id="R_PPC_RELATIVE">R_PPC_RELATIVE</span>        <a href="#R_PPC">R_PPC</a> = 22
+    <span id="R_PPC_COPY">R_PPC_COPY</span>            <a href="#R_PPC">R_PPC</a> = 19 <span class="comment">// R_POWERPC_COPY</span>
+    <span id="R_PPC_GLOB_DAT">R_PPC_GLOB_DAT</span>        <a href="#R_PPC">R_PPC</a> = 20 <span class="comment">// R_POWERPC_GLOB_DAT</span>
+    <span id="R_PPC_JMP_SLOT">R_PPC_JMP_SLOT</span>        <a href="#R_PPC">R_PPC</a> = 21 <span class="comment">// R_POWERPC_JMP_SLOT</span>
+    <span id="R_PPC_RELATIVE">R_PPC_RELATIVE</span>        <a href="#R_PPC">R_PPC</a> = 22 <span class="comment">// R_POWERPC_RELATIVE</span>
     <span id="R_PPC_LOCAL24PC">R_PPC_LOCAL24PC</span>       <a href="#R_PPC">R_PPC</a> = 23
-    <span id="R_PPC_UADDR32">R_PPC_UADDR32</span>         <a href="#R_PPC">R_PPC</a> = 24
-    <span id="R_PPC_UADDR16">R_PPC_UADDR16</span>         <a href="#R_PPC">R_PPC</a> = 25
-    <span id="R_PPC_REL32">R_PPC_REL32</span>           <a href="#R_PPC">R_PPC</a> = 26
-    <span id="R_PPC_PLT32">R_PPC_PLT32</span>           <a href="#R_PPC">R_PPC</a> = 27
-    <span id="R_PPC_PLTREL32">R_PPC_PLTREL32</span>        <a href="#R_PPC">R_PPC</a> = 28
-    <span id="R_PPC_PLT16_LO">R_PPC_PLT16_LO</span>        <a href="#R_PPC">R_PPC</a> = 29
-    <span id="R_PPC_PLT16_HI">R_PPC_PLT16_HI</span>        <a href="#R_PPC">R_PPC</a> = 30
-    <span id="R_PPC_PLT16_HA">R_PPC_PLT16_HA</span>        <a href="#R_PPC">R_PPC</a> = 31
+    <span id="R_PPC_UADDR32">R_PPC_UADDR32</span>         <a href="#R_PPC">R_PPC</a> = 24 <span class="comment">// R_POWERPC_UADDR32</span>
+    <span id="R_PPC_UADDR16">R_PPC_UADDR16</span>         <a href="#R_PPC">R_PPC</a> = 25 <span class="comment">// R_POWERPC_UADDR16</span>
+    <span id="R_PPC_REL32">R_PPC_REL32</span>           <a href="#R_PPC">R_PPC</a> = 26 <span class="comment">// R_POWERPC_REL32</span>
+    <span id="R_PPC_PLT32">R_PPC_PLT32</span>           <a href="#R_PPC">R_PPC</a> = 27 <span class="comment">// R_POWERPC_PLT32</span>
+    <span id="R_PPC_PLTREL32">R_PPC_PLTREL32</span>        <a href="#R_PPC">R_PPC</a> = 28 <span class="comment">// R_POWERPC_PLTREL32</span>
+    <span id="R_PPC_PLT16_LO">R_PPC_PLT16_LO</span>        <a href="#R_PPC">R_PPC</a> = 29 <span class="comment">// R_POWERPC_PLT16_LO</span>
+    <span id="R_PPC_PLT16_HI">R_PPC_PLT16_HI</span>        <a href="#R_PPC">R_PPC</a> = 30 <span class="comment">// R_POWERPC_PLT16_HI</span>
+    <span id="R_PPC_PLT16_HA">R_PPC_PLT16_HA</span>        <a href="#R_PPC">R_PPC</a> = 31 <span class="comment">// R_POWERPC_PLT16_HA</span>
     <span id="R_PPC_SDAREL16">R_PPC_SDAREL16</span>        <a href="#R_PPC">R_PPC</a> = 32
-    <span id="R_PPC_SECTOFF">R_PPC_SECTOFF</span>         <a href="#R_PPC">R_PPC</a> = 33
-    <span id="R_PPC_SECTOFF_LO">R_PPC_SECTOFF_LO</span>      <a href="#R_PPC">R_PPC</a> = 34
-    <span id="R_PPC_SECTOFF_HI">R_PPC_SECTOFF_HI</span>      <a href="#R_PPC">R_PPC</a> = 35
-    <span id="R_PPC_SECTOFF_HA">R_PPC_SECTOFF_HA</span>      <a href="#R_PPC">R_PPC</a> = 36
-    <span id="R_PPC_TLS">R_PPC_TLS</span>             <a href="#R_PPC">R_PPC</a> = 67
-    <span id="R_PPC_DTPMOD32">R_PPC_DTPMOD32</span>        <a href="#R_PPC">R_PPC</a> = 68
-    <span id="R_PPC_TPREL16">R_PPC_TPREL16</span>         <a href="#R_PPC">R_PPC</a> = 69
-    <span id="R_PPC_TPREL16_LO">R_PPC_TPREL16_LO</span>      <a href="#R_PPC">R_PPC</a> = 70
-    <span id="R_PPC_TPREL16_HI">R_PPC_TPREL16_HI</span>      <a href="#R_PPC">R_PPC</a> = 71
-    <span id="R_PPC_TPREL16_HA">R_PPC_TPREL16_HA</span>      <a href="#R_PPC">R_PPC</a> = 72
-    <span id="R_PPC_TPREL32">R_PPC_TPREL32</span>         <a href="#R_PPC">R_PPC</a> = 73
-    <span id="R_PPC_DTPREL16">R_PPC_DTPREL16</span>        <a href="#R_PPC">R_PPC</a> = 74
-    <span id="R_PPC_DTPREL16_LO">R_PPC_DTPREL16_LO</span>     <a href="#R_PPC">R_PPC</a> = 75
-    <span id="R_PPC_DTPREL16_HI">R_PPC_DTPREL16_HI</span>     <a href="#R_PPC">R_PPC</a> = 76
-    <span id="R_PPC_DTPREL16_HA">R_PPC_DTPREL16_HA</span>     <a href="#R_PPC">R_PPC</a> = 77
-    <span id="R_PPC_DTPREL32">R_PPC_DTPREL32</span>        <a href="#R_PPC">R_PPC</a> = 78
-    <span id="R_PPC_GOT_TLSGD16">R_PPC_GOT_TLSGD16</span>     <a href="#R_PPC">R_PPC</a> = 79
-    <span id="R_PPC_GOT_TLSGD16_LO">R_PPC_GOT_TLSGD16_LO</span>  <a href="#R_PPC">R_PPC</a> = 80
-    <span id="R_PPC_GOT_TLSGD16_HI">R_PPC_GOT_TLSGD16_HI</span>  <a href="#R_PPC">R_PPC</a> = 81
-    <span id="R_PPC_GOT_TLSGD16_HA">R_PPC_GOT_TLSGD16_HA</span>  <a href="#R_PPC">R_PPC</a> = 82
-    <span id="R_PPC_GOT_TLSLD16">R_PPC_GOT_TLSLD16</span>     <a href="#R_PPC">R_PPC</a> = 83
-    <span id="R_PPC_GOT_TLSLD16_LO">R_PPC_GOT_TLSLD16_LO</span>  <a href="#R_PPC">R_PPC</a> = 84
-    <span id="R_PPC_GOT_TLSLD16_HI">R_PPC_GOT_TLSLD16_HI</span>  <a href="#R_PPC">R_PPC</a> = 85
-    <span id="R_PPC_GOT_TLSLD16_HA">R_PPC_GOT_TLSLD16_HA</span>  <a href="#R_PPC">R_PPC</a> = 86
-    <span id="R_PPC_GOT_TPREL16">R_PPC_GOT_TPREL16</span>     <a href="#R_PPC">R_PPC</a> = 87
-    <span id="R_PPC_GOT_TPREL16_LO">R_PPC_GOT_TPREL16_LO</span>  <a href="#R_PPC">R_PPC</a> = 88
-    <span id="R_PPC_GOT_TPREL16_HI">R_PPC_GOT_TPREL16_HI</span>  <a href="#R_PPC">R_PPC</a> = 89
-    <span id="R_PPC_GOT_TPREL16_HA">R_PPC_GOT_TPREL16_HA</span>  <a href="#R_PPC">R_PPC</a> = 90
+    <span id="R_PPC_SECTOFF">R_PPC_SECTOFF</span>         <a href="#R_PPC">R_PPC</a> = 33 <span class="comment">// R_POWERPC_SECTOFF</span>
+    <span id="R_PPC_SECTOFF_LO">R_PPC_SECTOFF_LO</span>      <a href="#R_PPC">R_PPC</a> = 34 <span class="comment">// R_POWERPC_SECTOFF_LO</span>
+    <span id="R_PPC_SECTOFF_HI">R_PPC_SECTOFF_HI</span>      <a href="#R_PPC">R_PPC</a> = 35 <span class="comment">// R_POWERPC_SECTOFF_HI</span>
+    <span id="R_PPC_SECTOFF_HA">R_PPC_SECTOFF_HA</span>      <a href="#R_PPC">R_PPC</a> = 36 <span class="comment">// R_POWERPC_SECTOFF_HA</span>
+    <span id="R_PPC_TLS">R_PPC_TLS</span>             <a href="#R_PPC">R_PPC</a> = 67 <span class="comment">// R_POWERPC_TLS</span>
+    <span id="R_PPC_DTPMOD32">R_PPC_DTPMOD32</span>        <a href="#R_PPC">R_PPC</a> = 68 <span class="comment">// R_POWERPC_DTPMOD32</span>
+    <span id="R_PPC_TPREL16">R_PPC_TPREL16</span>         <a href="#R_PPC">R_PPC</a> = 69 <span class="comment">// R_POWERPC_TPREL16</span>
+    <span id="R_PPC_TPREL16_LO">R_PPC_TPREL16_LO</span>      <a href="#R_PPC">R_PPC</a> = 70 <span class="comment">// R_POWERPC_TPREL16_LO</span>
+    <span id="R_PPC_TPREL16_HI">R_PPC_TPREL16_HI</span>      <a href="#R_PPC">R_PPC</a> = 71 <span class="comment">// R_POWERPC_TPREL16_HI</span>
+    <span id="R_PPC_TPREL16_HA">R_PPC_TPREL16_HA</span>      <a href="#R_PPC">R_PPC</a> = 72 <span class="comment">// R_POWERPC_TPREL16_HA</span>
+    <span id="R_PPC_TPREL32">R_PPC_TPREL32</span>         <a href="#R_PPC">R_PPC</a> = 73 <span class="comment">// R_POWERPC_TPREL32</span>
+    <span id="R_PPC_DTPREL16">R_PPC_DTPREL16</span>        <a href="#R_PPC">R_PPC</a> = 74 <span class="comment">// R_POWERPC_DTPREL16</span>
+    <span id="R_PPC_DTPREL16_LO">R_PPC_DTPREL16_LO</span>     <a href="#R_PPC">R_PPC</a> = 75 <span class="comment">// R_POWERPC_DTPREL16_LO</span>
+    <span id="R_PPC_DTPREL16_HI">R_PPC_DTPREL16_HI</span>     <a href="#R_PPC">R_PPC</a> = 76 <span class="comment">// R_POWERPC_DTPREL16_HI</span>
+    <span id="R_PPC_DTPREL16_HA">R_PPC_DTPREL16_HA</span>     <a href="#R_PPC">R_PPC</a> = 77 <span class="comment">// R_POWERPC_DTPREL16_HA</span>
+    <span id="R_PPC_DTPREL32">R_PPC_DTPREL32</span>        <a href="#R_PPC">R_PPC</a> = 78 <span class="comment">// R_POWERPC_DTPREL32</span>
+    <span id="R_PPC_GOT_TLSGD16">R_PPC_GOT_TLSGD16</span>     <a href="#R_PPC">R_PPC</a> = 79 <span class="comment">// R_POWERPC_GOT_TLSGD16</span>
+    <span id="R_PPC_GOT_TLSGD16_LO">R_PPC_GOT_TLSGD16_LO</span>  <a href="#R_PPC">R_PPC</a> = 80 <span class="comment">// R_POWERPC_GOT_TLSGD16_LO</span>
+    <span id="R_PPC_GOT_TLSGD16_HI">R_PPC_GOT_TLSGD16_HI</span>  <a href="#R_PPC">R_PPC</a> = 81 <span class="comment">// R_POWERPC_GOT_TLSGD16_HI</span>
+    <span id="R_PPC_GOT_TLSGD16_HA">R_PPC_GOT_TLSGD16_HA</span>  <a href="#R_PPC">R_PPC</a> = 82 <span class="comment">// R_POWERPC_GOT_TLSGD16_HA</span>
+    <span id="R_PPC_GOT_TLSLD16">R_PPC_GOT_TLSLD16</span>     <a href="#R_PPC">R_PPC</a> = 83 <span class="comment">// R_POWERPC_GOT_TLSLD16</span>
+    <span id="R_PPC_GOT_TLSLD16_LO">R_PPC_GOT_TLSLD16_LO</span>  <a href="#R_PPC">R_PPC</a> = 84 <span class="comment">// R_POWERPC_GOT_TLSLD16_LO</span>
+    <span id="R_PPC_GOT_TLSLD16_HI">R_PPC_GOT_TLSLD16_HI</span>  <a href="#R_PPC">R_PPC</a> = 85 <span class="comment">// R_POWERPC_GOT_TLSLD16_HI</span>
+    <span id="R_PPC_GOT_TLSLD16_HA">R_PPC_GOT_TLSLD16_HA</span>  <a href="#R_PPC">R_PPC</a> = 86 <span class="comment">// R_POWERPC_GOT_TLSLD16_HA</span>
+    <span id="R_PPC_GOT_TPREL16">R_PPC_GOT_TPREL16</span>     <a href="#R_PPC">R_PPC</a> = 87 <span class="comment">// R_POWERPC_GOT_TPREL16</span>
+    <span id="R_PPC_GOT_TPREL16_LO">R_PPC_GOT_TPREL16_LO</span>  <a href="#R_PPC">R_PPC</a> = 88 <span class="comment">// R_POWERPC_GOT_TPREL16_LO</span>
+    <span id="R_PPC_GOT_TPREL16_HI">R_PPC_GOT_TPREL16_HI</span>  <a href="#R_PPC">R_PPC</a> = 89 <span class="comment">// R_POWERPC_GOT_TPREL16_HI</span>
+    <span id="R_PPC_GOT_TPREL16_HA">R_PPC_GOT_TPREL16_HA</span>  <a href="#R_PPC">R_PPC</a> = 90 <span class="comment">// R_POWERPC_GOT_TPREL16_HA</span>
     <span id="R_PPC_EMB_NADDR32">R_PPC_EMB_NADDR32</span>     <a href="#R_PPC">R_PPC</a> = 101
     <span id="R_PPC_EMB_NADDR16">R_PPC_EMB_NADDR16</span>     <a href="#R_PPC">R_PPC</a> = 102
     <span id="R_PPC_EMB_NADDR16_LO">R_PPC_EMB_NADDR16_LO</span>  <a href="#R_PPC">R_PPC</a> = 103
@@ -1386,43 +1524,48 @@ Relocation types for PowerPC.
 )</pre>
 
 
-<h3 id="R_PPC.GoString">func (R_PPC) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1538">GoString</a>
+<h3 id="R_PPC.GoString">func (R_PPC) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1845">GoString</a>
     <a href="#R_PPC.GoString">¶</a></h3>
 <pre>func (i <a href="#R_PPC">R_PPC</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_PPC.String">func (R_PPC) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1537">String</a>
+<h3 id="R_PPC.String">func (R_PPC) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1844">String</a>
     <a href="#R_PPC.String">¶</a></h3>
 <pre>func (i <a href="#R_PPC">R_PPC</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_PPC64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1541">R_PPC64</a>
+<h2 id="R_PPC64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1853">R_PPC64</a>
     <a href="#R_PPC64">¶</a></h2>
 <pre>type R_PPC64 <a href="/builtin/#int">int</a></pre>
 
 Relocation types for 64-bit PowerPC or Power Architecture processors.
 
+Values that are shared by both R_PPC and R_PPC64 are prefixed with R_POWERPC_ in
+the ELF standard. For the R_PPC64 type, the relevant shared relocations have
+been renamed with the prefix R_PPC64_. The original name follows the value in a
+comment.
+
 <pre>const (
-    <span id="R_PPC64_NONE">R_PPC64_NONE</span>               <a href="#R_PPC64">R_PPC64</a> = 0
-    <span id="R_PPC64_ADDR32">R_PPC64_ADDR32</span>             <a href="#R_PPC64">R_PPC64</a> = 1
-    <span id="R_PPC64_ADDR24">R_PPC64_ADDR24</span>             <a href="#R_PPC64">R_PPC64</a> = 2
-    <span id="R_PPC64_ADDR16">R_PPC64_ADDR16</span>             <a href="#R_PPC64">R_PPC64</a> = 3
-    <span id="R_PPC64_ADDR16_LO">R_PPC64_ADDR16_LO</span>          <a href="#R_PPC64">R_PPC64</a> = 4
-    <span id="R_PPC64_ADDR16_HI">R_PPC64_ADDR16_HI</span>          <a href="#R_PPC64">R_PPC64</a> = 5
-    <span id="R_PPC64_ADDR16_HA">R_PPC64_ADDR16_HA</span>          <a href="#R_PPC64">R_PPC64</a> = 6
-    <span id="R_PPC64_ADDR14">R_PPC64_ADDR14</span>             <a href="#R_PPC64">R_PPC64</a> = 7
-    <span id="R_PPC64_ADDR14_BRTAKEN">R_PPC64_ADDR14_BRTAKEN</span>     <a href="#R_PPC64">R_PPC64</a> = 8
-    <span id="R_PPC64_ADDR14_BRNTAKEN">R_PPC64_ADDR14_BRNTAKEN</span>    <a href="#R_PPC64">R_PPC64</a> = 9
-    <span id="R_PPC64_REL24">R_PPC64_REL24</span>              <a href="#R_PPC64">R_PPC64</a> = 10
-    <span id="R_PPC64_REL14">R_PPC64_REL14</span>              <a href="#R_PPC64">R_PPC64</a> = 11
-    <span id="R_PPC64_REL14_BRTAKEN">R_PPC64_REL14_BRTAKEN</span>      <a href="#R_PPC64">R_PPC64</a> = 12
-    <span id="R_PPC64_REL14_BRNTAKEN">R_PPC64_REL14_BRNTAKEN</span>     <a href="#R_PPC64">R_PPC64</a> = 13
-    <span id="R_PPC64_GOT16">R_PPC64_GOT16</span>              <a href="#R_PPC64">R_PPC64</a> = 14
-    <span id="R_PPC64_GOT16_LO">R_PPC64_GOT16_LO</span>           <a href="#R_PPC64">R_PPC64</a> = 15
-    <span id="R_PPC64_GOT16_HI">R_PPC64_GOT16_HI</span>           <a href="#R_PPC64">R_PPC64</a> = 16
-    <span id="R_PPC64_GOT16_HA">R_PPC64_GOT16_HA</span>           <a href="#R_PPC64">R_PPC64</a> = 17
-    <span id="R_PPC64_JMP_SLOT">R_PPC64_JMP_SLOT</span>           <a href="#R_PPC64">R_PPC64</a> = 21
-    <span id="R_PPC64_REL32">R_PPC64_REL32</span>              <a href="#R_PPC64">R_PPC64</a> = 26
+    <span id="R_PPC64_NONE">R_PPC64_NONE</span>               <a href="#R_PPC64">R_PPC64</a> = 0  <span class="comment">// R_POWERPC_NONE</span>
+    <span id="R_PPC64_ADDR32">R_PPC64_ADDR32</span>             <a href="#R_PPC64">R_PPC64</a> = 1  <span class="comment">// R_POWERPC_ADDR32</span>
+    <span id="R_PPC64_ADDR24">R_PPC64_ADDR24</span>             <a href="#R_PPC64">R_PPC64</a> = 2  <span class="comment">// R_POWERPC_ADDR24</span>
+    <span id="R_PPC64_ADDR16">R_PPC64_ADDR16</span>             <a href="#R_PPC64">R_PPC64</a> = 3  <span class="comment">// R_POWERPC_ADDR16</span>
+    <span id="R_PPC64_ADDR16_LO">R_PPC64_ADDR16_LO</span>          <a href="#R_PPC64">R_PPC64</a> = 4  <span class="comment">// R_POWERPC_ADDR16_LO</span>
+    <span id="R_PPC64_ADDR16_HI">R_PPC64_ADDR16_HI</span>          <a href="#R_PPC64">R_PPC64</a> = 5  <span class="comment">// R_POWERPC_ADDR16_HI</span>
+    <span id="R_PPC64_ADDR16_HA">R_PPC64_ADDR16_HA</span>          <a href="#R_PPC64">R_PPC64</a> = 6  <span class="comment">// R_POWERPC_ADDR16_HA</span>
+    <span id="R_PPC64_ADDR14">R_PPC64_ADDR14</span>             <a href="#R_PPC64">R_PPC64</a> = 7  <span class="comment">// R_POWERPC_ADDR14</span>
+    <span id="R_PPC64_ADDR14_BRTAKEN">R_PPC64_ADDR14_BRTAKEN</span>     <a href="#R_PPC64">R_PPC64</a> = 8  <span class="comment">// R_POWERPC_ADDR14_BRTAKEN</span>
+    <span id="R_PPC64_ADDR14_BRNTAKEN">R_PPC64_ADDR14_BRNTAKEN</span>    <a href="#R_PPC64">R_PPC64</a> = 9  <span class="comment">// R_POWERPC_ADDR14_BRNTAKEN</span>
+    <span id="R_PPC64_REL24">R_PPC64_REL24</span>              <a href="#R_PPC64">R_PPC64</a> = 10 <span class="comment">// R_POWERPC_REL24</span>
+    <span id="R_PPC64_REL14">R_PPC64_REL14</span>              <a href="#R_PPC64">R_PPC64</a> = 11 <span class="comment">// R_POWERPC_REL14</span>
+    <span id="R_PPC64_REL14_BRTAKEN">R_PPC64_REL14_BRTAKEN</span>      <a href="#R_PPC64">R_PPC64</a> = 12 <span class="comment">// R_POWERPC_REL14_BRTAKEN</span>
+    <span id="R_PPC64_REL14_BRNTAKEN">R_PPC64_REL14_BRNTAKEN</span>     <a href="#R_PPC64">R_PPC64</a> = 13 <span class="comment">// R_POWERPC_REL14_BRNTAKEN</span>
+    <span id="R_PPC64_GOT16">R_PPC64_GOT16</span>              <a href="#R_PPC64">R_PPC64</a> = 14 <span class="comment">// R_POWERPC_GOT16</span>
+    <span id="R_PPC64_GOT16_LO">R_PPC64_GOT16_LO</span>           <a href="#R_PPC64">R_PPC64</a> = 15 <span class="comment">// R_POWERPC_GOT16_LO</span>
+    <span id="R_PPC64_GOT16_HI">R_PPC64_GOT16_HI</span>           <a href="#R_PPC64">R_PPC64</a> = 16 <span class="comment">// R_POWERPC_GOT16_HI</span>
+    <span id="R_PPC64_GOT16_HA">R_PPC64_GOT16_HA</span>           <a href="#R_PPC64">R_PPC64</a> = 17 <span class="comment">// R_POWERPC_GOT16_HA</span>
+    <span id="R_PPC64_JMP_SLOT">R_PPC64_JMP_SLOT</span>           <a href="#R_PPC64">R_PPC64</a> = 21 <span class="comment">// R_POWERPC_JMP_SLOT</span>
+    <span id="R_PPC64_REL32">R_PPC64_REL32</span>              <a href="#R_PPC64">R_PPC64</a> = 26 <span class="comment">// R_POWERPC_REL32</span>
     <span id="R_PPC64_ADDR64">R_PPC64_ADDR64</span>             <a href="#R_PPC64">R_PPC64</a> = 38
     <span id="R_PPC64_ADDR16_HIGHER">R_PPC64_ADDR16_HIGHER</span>      <a href="#R_PPC64">R_PPC64</a> = 39
     <span id="R_PPC64_ADDR16_HIGHERA">R_PPC64_ADDR16_HIGHERA</span>     <a href="#R_PPC64">R_PPC64</a> = 40
@@ -1434,40 +1577,49 @@ Relocation types for 64-bit PowerPC or Power Architecture processors.
     <span id="R_PPC64_TOC16_HI">R_PPC64_TOC16_HI</span>           <a href="#R_PPC64">R_PPC64</a> = 49
     <span id="R_PPC64_TOC16_HA">R_PPC64_TOC16_HA</span>           <a href="#R_PPC64">R_PPC64</a> = 50
     <span id="R_PPC64_TOC">R_PPC64_TOC</span>                <a href="#R_PPC64">R_PPC64</a> = 51
+    <span id="R_PPC64_PLTGOT16">R_PPC64_PLTGOT16</span>           <a href="#R_PPC64">R_PPC64</a> = 52
+    <span id="R_PPC64_PLTGOT16_LO">R_PPC64_PLTGOT16_LO</span>        <a href="#R_PPC64">R_PPC64</a> = 53
+    <span id="R_PPC64_PLTGOT16_HI">R_PPC64_PLTGOT16_HI</span>        <a href="#R_PPC64">R_PPC64</a> = 54
+    <span id="R_PPC64_PLTGOT16_HA">R_PPC64_PLTGOT16_HA</span>        <a href="#R_PPC64">R_PPC64</a> = 55
     <span id="R_PPC64_ADDR16_DS">R_PPC64_ADDR16_DS</span>          <a href="#R_PPC64">R_PPC64</a> = 56
     <span id="R_PPC64_ADDR16_LO_DS">R_PPC64_ADDR16_LO_DS</span>       <a href="#R_PPC64">R_PPC64</a> = 57
     <span id="R_PPC64_GOT16_DS">R_PPC64_GOT16_DS</span>           <a href="#R_PPC64">R_PPC64</a> = 58
     <span id="R_PPC64_GOT16_LO_DS">R_PPC64_GOT16_LO_DS</span>        <a href="#R_PPC64">R_PPC64</a> = 59
+    <span id="R_PPC64_PLT16_LO_DS">R_PPC64_PLT16_LO_DS</span>        <a href="#R_PPC64">R_PPC64</a> = 60
+    <span id="R_PPC64_SECTOFF_DS">R_PPC64_SECTOFF_DS</span>         <a href="#R_PPC64">R_PPC64</a> = 61
+    <span id="R_PPC64_SECTOFF_LO_DS">R_PPC64_SECTOFF_LO_DS</span>      <a href="#R_PPC64">R_PPC64</a> = 61
     <span id="R_PPC64_TOC16_DS">R_PPC64_TOC16_DS</span>           <a href="#R_PPC64">R_PPC64</a> = 63
     <span id="R_PPC64_TOC16_LO_DS">R_PPC64_TOC16_LO_DS</span>        <a href="#R_PPC64">R_PPC64</a> = 64
-    <span id="R_PPC64_TLS">R_PPC64_TLS</span>                <a href="#R_PPC64">R_PPC64</a> = 67
-    <span id="R_PPC64_DTPMOD64">R_PPC64_DTPMOD64</span>           <a href="#R_PPC64">R_PPC64</a> = 68
-    <span id="R_PPC64_TPREL16">R_PPC64_TPREL16</span>            <a href="#R_PPC64">R_PPC64</a> = 69
-    <span id="R_PPC64_TPREL16_LO">R_PPC64_TPREL16_LO</span>         <a href="#R_PPC64">R_PPC64</a> = 70
-    <span id="R_PPC64_TPREL16_HI">R_PPC64_TPREL16_HI</span>         <a href="#R_PPC64">R_PPC64</a> = 71
-    <span id="R_PPC64_TPREL16_HA">R_PPC64_TPREL16_HA</span>         <a href="#R_PPC64">R_PPC64</a> = 72
-    <span id="R_PPC64_TPREL64">R_PPC64_TPREL64</span>            <a href="#R_PPC64">R_PPC64</a> = 73
-    <span id="R_PPC64_DTPREL16">R_PPC64_DTPREL16</span>           <a href="#R_PPC64">R_PPC64</a> = 74
-    <span id="R_PPC64_DTPREL16_LO">R_PPC64_DTPREL16_LO</span>        <a href="#R_PPC64">R_PPC64</a> = 75
-    <span id="R_PPC64_DTPREL16_HI">R_PPC64_DTPREL16_HI</span>        <a href="#R_PPC64">R_PPC64</a> = 76
-    <span id="R_PPC64_DTPREL16_HA">R_PPC64_DTPREL16_HA</span>        <a href="#R_PPC64">R_PPC64</a> = 77
-    <span id="R_PPC64_DTPREL64">R_PPC64_DTPREL64</span>           <a href="#R_PPC64">R_PPC64</a> = 78
-    <span id="R_PPC64_GOT_TLSGD16">R_PPC64_GOT_TLSGD16</span>        <a href="#R_PPC64">R_PPC64</a> = 79
-    <span id="R_PPC64_GOT_TLSGD16_LO">R_PPC64_GOT_TLSGD16_LO</span>     <a href="#R_PPC64">R_PPC64</a> = 80
-    <span id="R_PPC64_GOT_TLSGD16_HI">R_PPC64_GOT_TLSGD16_HI</span>     <a href="#R_PPC64">R_PPC64</a> = 81
-    <span id="R_PPC64_GOT_TLSGD16_HA">R_PPC64_GOT_TLSGD16_HA</span>     <a href="#R_PPC64">R_PPC64</a> = 82
-    <span id="R_PPC64_GOT_TLSLD16">R_PPC64_GOT_TLSLD16</span>        <a href="#R_PPC64">R_PPC64</a> = 83
-    <span id="R_PPC64_GOT_TLSLD16_LO">R_PPC64_GOT_TLSLD16_LO</span>     <a href="#R_PPC64">R_PPC64</a> = 84
-    <span id="R_PPC64_GOT_TLSLD16_HI">R_PPC64_GOT_TLSLD16_HI</span>     <a href="#R_PPC64">R_PPC64</a> = 85
-    <span id="R_PPC64_GOT_TLSLD16_HA">R_PPC64_GOT_TLSLD16_HA</span>     <a href="#R_PPC64">R_PPC64</a> = 86
-    <span id="R_PPC64_GOT_TPREL16_DS">R_PPC64_GOT_TPREL16_DS</span>     <a href="#R_PPC64">R_PPC64</a> = 87
-    <span id="R_PPC64_GOT_TPREL16_LO_DS">R_PPC64_GOT_TPREL16_LO_DS</span>  <a href="#R_PPC64">R_PPC64</a> = 88
-    <span id="R_PPC64_GOT_TPREL16_HI">R_PPC64_GOT_TPREL16_HI</span>     <a href="#R_PPC64">R_PPC64</a> = 89
-    <span id="R_PPC64_GOT_TPREL16_HA">R_PPC64_GOT_TPREL16_HA</span>     <a href="#R_PPC64">R_PPC64</a> = 90
-    <span id="R_PPC64_GOT_DTPREL16_DS">R_PPC64_GOT_DTPREL16_DS</span>    <a href="#R_PPC64">R_PPC64</a> = 91
-    <span id="R_PPC64_GOT_DTPREL16_LO_DS">R_PPC64_GOT_DTPREL16_LO_DS</span> <a href="#R_PPC64">R_PPC64</a> = 92
-    <span id="R_PPC64_GOT_DTPREL16_HI">R_PPC64_GOT_DTPREL16_HI</span>    <a href="#R_PPC64">R_PPC64</a> = 93
-    <span id="R_PPC64_GOT_DTPREL16_HA">R_PPC64_GOT_DTPREL16_HA</span>    <a href="#R_PPC64">R_PPC64</a> = 94
+    <span id="R_PPC64_PLTGOT16_DS">R_PPC64_PLTGOT16_DS</span>        <a href="#R_PPC64">R_PPC64</a> = 65
+    <span id="R_PPC64_PLTGOT_LO_DS">R_PPC64_PLTGOT_LO_DS</span>       <a href="#R_PPC64">R_PPC64</a> = 66
+    <span id="R_PPC64_TLS">R_PPC64_TLS</span>                <a href="#R_PPC64">R_PPC64</a> = 67 <span class="comment">// R_POWERPC_TLS</span>
+    <span id="R_PPC64_DTPMOD64">R_PPC64_DTPMOD64</span>           <a href="#R_PPC64">R_PPC64</a> = 68 <span class="comment">// R_POWERPC_DTPMOD64</span>
+    <span id="R_PPC64_TPREL16">R_PPC64_TPREL16</span>            <a href="#R_PPC64">R_PPC64</a> = 69 <span class="comment">// R_POWERPC_TPREL16</span>
+    <span id="R_PPC64_TPREL16_LO">R_PPC64_TPREL16_LO</span>         <a href="#R_PPC64">R_PPC64</a> = 70 <span class="comment">// R_POWERPC_TPREL16_LO</span>
+    <span id="R_PPC64_TPREL16_HI">R_PPC64_TPREL16_HI</span>         <a href="#R_PPC64">R_PPC64</a> = 71 <span class="comment">// R_POWERPC_TPREL16_HI</span>
+    <span id="R_PPC64_TPREL16_HA">R_PPC64_TPREL16_HA</span>         <a href="#R_PPC64">R_PPC64</a> = 72 <span class="comment">// R_POWERPC_TPREL16_HA</span>
+    <span id="R_PPC64_TPREL64">R_PPC64_TPREL64</span>            <a href="#R_PPC64">R_PPC64</a> = 73 <span class="comment">// R_POWERPC_TPREL64</span>
+    <span id="R_PPC64_DTPREL16">R_PPC64_DTPREL16</span>           <a href="#R_PPC64">R_PPC64</a> = 74 <span class="comment">// R_POWERPC_DTPREL16</span>
+    <span id="R_PPC64_DTPREL16_LO">R_PPC64_DTPREL16_LO</span>        <a href="#R_PPC64">R_PPC64</a> = 75 <span class="comment">// R_POWERPC_DTPREL16_LO</span>
+    <span id="R_PPC64_DTPREL16_HI">R_PPC64_DTPREL16_HI</span>        <a href="#R_PPC64">R_PPC64</a> = 76 <span class="comment">// R_POWERPC_DTPREL16_HI</span>
+    <span id="R_PPC64_DTPREL16_HA">R_PPC64_DTPREL16_HA</span>        <a href="#R_PPC64">R_PPC64</a> = 77 <span class="comment">// R_POWERPC_DTPREL16_HA</span>
+    <span id="R_PPC64_DTPREL64">R_PPC64_DTPREL64</span>           <a href="#R_PPC64">R_PPC64</a> = 78 <span class="comment">// R_POWERPC_DTPREL64</span>
+    <span id="R_PPC64_GOT_TLSGD16">R_PPC64_GOT_TLSGD16</span>        <a href="#R_PPC64">R_PPC64</a> = 79 <span class="comment">// R_POWERPC_GOT_TLSGD16</span>
+    <span id="R_PPC64_GOT_TLSGD16_LO">R_PPC64_GOT_TLSGD16_LO</span>     <a href="#R_PPC64">R_PPC64</a> = 80 <span class="comment">// R_POWERPC_GOT_TLSGD16_LO</span>
+    <span id="R_PPC64_GOT_TLSGD16_HI">R_PPC64_GOT_TLSGD16_HI</span>     <a href="#R_PPC64">R_PPC64</a> = 81 <span class="comment">// R_POWERPC_GOT_TLSGD16_HI</span>
+    <span id="R_PPC64_GOT_TLSGD16_HA">R_PPC64_GOT_TLSGD16_HA</span>     <a href="#R_PPC64">R_PPC64</a> = 82 <span class="comment">// R_POWERPC_GOT_TLSGD16_HA</span>
+    <span id="R_PPC64_GOT_TLSLD16">R_PPC64_GOT_TLSLD16</span>        <a href="#R_PPC64">R_PPC64</a> = 83 <span class="comment">// R_POWERPC_GOT_TLSLD16</span>
+    <span id="R_PPC64_GOT_TLSLD16_LO">R_PPC64_GOT_TLSLD16_LO</span>     <a href="#R_PPC64">R_PPC64</a> = 84 <span class="comment">// R_POWERPC_GOT_TLSLD16_LO</span>
+    <span id="R_PPC64_GOT_TLSLD16_HI">R_PPC64_GOT_TLSLD16_HI</span>     <a href="#R_PPC64">R_PPC64</a> = 85 <span class="comment">// R_POWERPC_GOT_TLSLD16_HI</span>
+    <span id="R_PPC64_GOT_TLSLD16_HA">R_PPC64_GOT_TLSLD16_HA</span>     <a href="#R_PPC64">R_PPC64</a> = 86 <span class="comment">// R_POWERPC_GOT_TLSLD16_HA</span>
+    <span id="R_PPC64_GOT_TPREL16_DS">R_PPC64_GOT_TPREL16_DS</span>     <a href="#R_PPC64">R_PPC64</a> = 87 <span class="comment">// R_POWERPC_GOT_TPREL16_DS</span>
+    <span id="R_PPC64_GOT_TPREL16_LO_DS">R_PPC64_GOT_TPREL16_LO_DS</span>  <a href="#R_PPC64">R_PPC64</a> = 88 <span class="comment">// R_POWERPC_GOT_TPREL16_LO_DS</span>
+    <span id="R_PPC64_GOT_TPREL16_HI">R_PPC64_GOT_TPREL16_HI</span>     <a href="#R_PPC64">R_PPC64</a> = 89 <span class="comment">// R_POWERPC_GOT_TPREL16_HI</span>
+    <span id="R_PPC64_GOT_TPREL16_HA">R_PPC64_GOT_TPREL16_HA</span>     <a href="#R_PPC64">R_PPC64</a> = 90 <span class="comment">// R_POWERPC_GOT_TPREL16_HA</span>
+    <span id="R_PPC64_GOT_DTPREL16_DS">R_PPC64_GOT_DTPREL16_DS</span>    <a href="#R_PPC64">R_PPC64</a> = 91 <span class="comment">// R_POWERPC_GOT_DTPREL16_DS</span>
+    <span id="R_PPC64_GOT_DTPREL16_LO_DS">R_PPC64_GOT_DTPREL16_LO_DS</span> <a href="#R_PPC64">R_PPC64</a> = 92 <span class="comment">// R_POWERPC_GOT_DTPREL16_LO_DS</span>
+    <span id="R_PPC64_GOT_DTPREL16_HI">R_PPC64_GOT_DTPREL16_HI</span>    <a href="#R_PPC64">R_PPC64</a> = 93 <span class="comment">// R_POWERPC_GOT_DTPREL16_HI</span>
+    <span id="R_PPC64_GOT_DTPREL16_HA">R_PPC64_GOT_DTPREL16_HA</span>    <a href="#R_PPC64">R_PPC64</a> = 94 <span class="comment">// R_POWERPC_GOT_DTPREL16_HA</span>
     <span id="R_PPC64_TPREL16_DS">R_PPC64_TPREL16_DS</span>         <a href="#R_PPC64">R_PPC64</a> = 95
     <span id="R_PPC64_TPREL16_LO_DS">R_PPC64_TPREL16_LO_DS</span>      <a href="#R_PPC64">R_PPC64</a> = 96
     <span id="R_PPC64_TPREL16_HIGHER">R_PPC64_TPREL16_HIGHER</span>     <a href="#R_PPC64">R_PPC64</a> = 97
@@ -1482,24 +1634,37 @@ Relocation types for 64-bit PowerPC or Power Architecture processors.
     <span id="R_PPC64_DTPREL16_HIGHESTA">R_PPC64_DTPREL16_HIGHESTA</span>  <a href="#R_PPC64">R_PPC64</a> = 106
     <span id="R_PPC64_TLSGD">R_PPC64_TLSGD</span>              <a href="#R_PPC64">R_PPC64</a> = 107
     <span id="R_PPC64_TLSLD">R_PPC64_TLSLD</span>              <a href="#R_PPC64">R_PPC64</a> = 108
-    <span id="R_PPC64_REL16">R_PPC64_REL16</span>              <a href="#R_PPC64">R_PPC64</a> = 249
-    <span id="R_PPC64_REL16_LO">R_PPC64_REL16_LO</span>           <a href="#R_PPC64">R_PPC64</a> = 250
-    <span id="R_PPC64_REL16_HI">R_PPC64_REL16_HI</span>           <a href="#R_PPC64">R_PPC64</a> = 251
-    <span id="R_PPC64_REL16_HA">R_PPC64_REL16_HA</span>           <a href="#R_PPC64">R_PPC64</a> = 252
+    <span id="R_PPC64_TOCSAVE">R_PPC64_TOCSAVE</span>            <a href="#R_PPC64">R_PPC64</a> = 109
+    <span id="R_PPC64_ADDR16_HIGH">R_PPC64_ADDR16_HIGH</span>        <a href="#R_PPC64">R_PPC64</a> = 110
+    <span id="R_PPC64_ADDR16_HIGHA">R_PPC64_ADDR16_HIGHA</span>       <a href="#R_PPC64">R_PPC64</a> = 111
+    <span id="R_PPC64_TPREL16_HIGH">R_PPC64_TPREL16_HIGH</span>       <a href="#R_PPC64">R_PPC64</a> = 112
+    <span id="R_PPC64_TPREL16_HIGHA">R_PPC64_TPREL16_HIGHA</span>      <a href="#R_PPC64">R_PPC64</a> = 113
+    <span id="R_PPC64_DTPREL16_HIGH">R_PPC64_DTPREL16_HIGH</span>      <a href="#R_PPC64">R_PPC64</a> = 114
+    <span id="R_PPC64_DTPREL16_HIGHA">R_PPC64_DTPREL16_HIGHA</span>     <a href="#R_PPC64">R_PPC64</a> = 115
+    <span id="R_PPC64_REL24_NOTOC">R_PPC64_REL24_NOTOC</span>        <a href="#R_PPC64">R_PPC64</a> = 116
+    <span id="R_PPC64_ADDR64_LOCAL">R_PPC64_ADDR64_LOCAL</span>       <a href="#R_PPC64">R_PPC64</a> = 117
+    <span id="R_PPC64_ENTRY">R_PPC64_ENTRY</span>              <a href="#R_PPC64">R_PPC64</a> = 118
+    <span id="R_PPC64_REL16DX_HA">R_PPC64_REL16DX_HA</span>         <a href="#R_PPC64">R_PPC64</a> = 246 <span class="comment">// R_POWERPC_REL16DX_HA</span>
+    <span id="R_PPC64_JMP_IREL">R_PPC64_JMP_IREL</span>           <a href="#R_PPC64">R_PPC64</a> = 247
+    <span id="R_PPC64_IRELATIVE">R_PPC64_IRELATIVE</span>          <a href="#R_PPC64">R_PPC64</a> = 248 <span class="comment">// R_POWERPC_IRELATIVE</span>
+    <span id="R_PPC64_REL16">R_PPC64_REL16</span>              <a href="#R_PPC64">R_PPC64</a> = 249 <span class="comment">// R_POWERPC_REL16</span>
+    <span id="R_PPC64_REL16_LO">R_PPC64_REL16_LO</span>           <a href="#R_PPC64">R_PPC64</a> = 250 <span class="comment">// R_POWERPC_REL16_LO</span>
+    <span id="R_PPC64_REL16_HI">R_PPC64_REL16_HI</span>           <a href="#R_PPC64">R_PPC64</a> = 251 <span class="comment">// R_POWERPC_REL16_HI</span>
+    <span id="R_PPC64_REL16_HA">R_PPC64_REL16_HA</span>           <a href="#R_PPC64">R_PPC64</a> = 252 <span class="comment">// R_POWERPC_REL16_HA</span>
 )</pre>
 
 
-<h3 id="R_PPC64.GoString">func (R_PPC64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1716">GoString</a>
+<h3 id="R_PPC64.GoString">func (R_PPC64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2072">GoString</a>
     <a href="#R_PPC64.GoString">¶</a></h3>
 <pre>func (i <a href="#R_PPC64">R_PPC64</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_PPC64.String">func (R_PPC64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1715">String</a>
+<h3 id="R_PPC64.String">func (R_PPC64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2071">String</a>
     <a href="#R_PPC64.String">¶</a></h3>
 <pre>func (i <a href="#R_PPC64">R_PPC64</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_SPARC">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1853">R_SPARC</a>
+<h2 id="R_SPARC">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2209">R_SPARC</a>
     <a href="#R_SPARC">¶</a></h2>
 <pre>type R_SPARC <a href="/builtin/#int">int</a></pre>
 
@@ -1565,12 +1730,12 @@ Relocation types for SPARC.
 )</pre>
 
 
-<h3 id="R_SPARC.GoString">func (R_SPARC) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1974">GoString</a>
+<h3 id="R_SPARC.GoString">func (R_SPARC) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2330">GoString</a>
     <a href="#R_SPARC.GoString">¶</a></h3>
 <pre>func (i <a href="#R_SPARC">R_SPARC</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_SPARC.String">func (R_SPARC) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1973">String</a>
+<h3 id="R_SPARC.String">func (R_SPARC) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2329">String</a>
     <a href="#R_SPARC.String">¶</a></h3>
 <pre>func (i <a href="#R_SPARC">R_SPARC</a>) String() <a href="/builtin/#string">string</a></pre>
 
@@ -1582,44 +1747,63 @@ Relocation types for SPARC.
 Relocation types for x86-64.
 
 <pre>const (
-    <span id="R_X86_64_NONE">R_X86_64_NONE</span>     <a href="#R_X86_64">R_X86_64</a> = 0  <span class="comment">/* No relocation. */</span>
-    <span id="R_X86_64_64">R_X86_64_64</span>       <a href="#R_X86_64">R_X86_64</a> = 1  <span class="comment">/* Add 64 bit symbol value. */</span>
-    <span id="R_X86_64_PC32">R_X86_64_PC32</span>     <a href="#R_X86_64">R_X86_64</a> = 2  <span class="comment">/* PC-relative 32 bit signed sym value. */</span>
-    <span id="R_X86_64_GOT32">R_X86_64_GOT32</span>    <a href="#R_X86_64">R_X86_64</a> = 3  <span class="comment">/* PC-relative 32 bit GOT offset. */</span>
-    <span id="R_X86_64_PLT32">R_X86_64_PLT32</span>    <a href="#R_X86_64">R_X86_64</a> = 4  <span class="comment">/* PC-relative 32 bit PLT offset. */</span>
-    <span id="R_X86_64_COPY">R_X86_64_COPY</span>     <a href="#R_X86_64">R_X86_64</a> = 5  <span class="comment">/* Copy data from shared object. */</span>
-    <span id="R_X86_64_GLOB_DAT">R_X86_64_GLOB_DAT</span> <a href="#R_X86_64">R_X86_64</a> = 6  <span class="comment">/* Set GOT entry to data address. */</span>
-    <span id="R_X86_64_JMP_SLOT">R_X86_64_JMP_SLOT</span> <a href="#R_X86_64">R_X86_64</a> = 7  <span class="comment">/* Set GOT entry to code address. */</span>
-    <span id="R_X86_64_RELATIVE">R_X86_64_RELATIVE</span> <a href="#R_X86_64">R_X86_64</a> = 8  <span class="comment">/* Add load address of shared object. */</span>
-    <span id="R_X86_64_GOTPCREL">R_X86_64_GOTPCREL</span> <a href="#R_X86_64">R_X86_64</a> = 9  <span class="comment">/* Add 32 bit signed pcrel offset to GOT. */</span>
-    <span id="R_X86_64_32">R_X86_64_32</span>       <a href="#R_X86_64">R_X86_64</a> = 10 <span class="comment">/* Add 32 bit zero extended symbol value */</span>
-    <span id="R_X86_64_32S">R_X86_64_32S</span>      <a href="#R_X86_64">R_X86_64</a> = 11 <span class="comment">/* Add 32 bit sign extended symbol value */</span>
-    <span id="R_X86_64_16">R_X86_64_16</span>       <a href="#R_X86_64">R_X86_64</a> = 12 <span class="comment">/* Add 16 bit zero extended symbol value */</span>
-    <span id="R_X86_64_PC16">R_X86_64_PC16</span>     <a href="#R_X86_64">R_X86_64</a> = 13 <span class="comment">/* Add 16 bit signed extended pc relative symbol value */</span>
-    <span id="R_X86_64_8">R_X86_64_8</span>        <a href="#R_X86_64">R_X86_64</a> = 14 <span class="comment">/* Add 8 bit zero extended symbol value */</span>
-    <span id="R_X86_64_PC8">R_X86_64_PC8</span>      <a href="#R_X86_64">R_X86_64</a> = 15 <span class="comment">/* Add 8 bit signed extended pc relative symbol value */</span>
-    <span id="R_X86_64_DTPMOD64">R_X86_64_DTPMOD64</span> <a href="#R_X86_64">R_X86_64</a> = 16 <span class="comment">/* ID of module containing symbol */</span>
-    <span id="R_X86_64_DTPOFF64">R_X86_64_DTPOFF64</span> <a href="#R_X86_64">R_X86_64</a> = 17 <span class="comment">/* Offset in TLS block */</span>
-    <span id="R_X86_64_TPOFF64">R_X86_64_TPOFF64</span>  <a href="#R_X86_64">R_X86_64</a> = 18 <span class="comment">/* Offset in static TLS block */</span>
-    <span id="R_X86_64_TLSGD">R_X86_64_TLSGD</span>    <a href="#R_X86_64">R_X86_64</a> = 19 <span class="comment">/* PC relative offset to GD GOT entry */</span>
-    <span id="R_X86_64_TLSLD">R_X86_64_TLSLD</span>    <a href="#R_X86_64">R_X86_64</a> = 20 <span class="comment">/* PC relative offset to LD GOT entry */</span>
-    <span id="R_X86_64_DTPOFF32">R_X86_64_DTPOFF32</span> <a href="#R_X86_64">R_X86_64</a> = 21 <span class="comment">/* Offset in TLS block */</span>
-    <span id="R_X86_64_GOTTPOFF">R_X86_64_GOTTPOFF</span> <a href="#R_X86_64">R_X86_64</a> = 22 <span class="comment">/* PC relative offset to IE GOT entry */</span>
-    <span id="R_X86_64_TPOFF32">R_X86_64_TPOFF32</span>  <a href="#R_X86_64">R_X86_64</a> = 23 <span class="comment">/* Offset in static TLS block */</span>
+    <span id="R_X86_64_NONE">R_X86_64_NONE</span>            <a href="#R_X86_64">R_X86_64</a> = 0  <span class="comment">/* No relocation. */</span>
+    <span id="R_X86_64_64">R_X86_64_64</span>              <a href="#R_X86_64">R_X86_64</a> = 1  <span class="comment">/* Add 64 bit symbol value. */</span>
+    <span id="R_X86_64_PC32">R_X86_64_PC32</span>            <a href="#R_X86_64">R_X86_64</a> = 2  <span class="comment">/* PC-relative 32 bit signed sym value. */</span>
+    <span id="R_X86_64_GOT32">R_X86_64_GOT32</span>           <a href="#R_X86_64">R_X86_64</a> = 3  <span class="comment">/* PC-relative 32 bit GOT offset. */</span>
+    <span id="R_X86_64_PLT32">R_X86_64_PLT32</span>           <a href="#R_X86_64">R_X86_64</a> = 4  <span class="comment">/* PC-relative 32 bit PLT offset. */</span>
+    <span id="R_X86_64_COPY">R_X86_64_COPY</span>            <a href="#R_X86_64">R_X86_64</a> = 5  <span class="comment">/* Copy data from shared object. */</span>
+    <span id="R_X86_64_GLOB_DAT">R_X86_64_GLOB_DAT</span>        <a href="#R_X86_64">R_X86_64</a> = 6  <span class="comment">/* Set GOT entry to data address. */</span>
+    <span id="R_X86_64_JMP_SLOT">R_X86_64_JMP_SLOT</span>        <a href="#R_X86_64">R_X86_64</a> = 7  <span class="comment">/* Set GOT entry to code address. */</span>
+    <span id="R_X86_64_RELATIVE">R_X86_64_RELATIVE</span>        <a href="#R_X86_64">R_X86_64</a> = 8  <span class="comment">/* Add load address of shared object. */</span>
+    <span id="R_X86_64_GOTPCREL">R_X86_64_GOTPCREL</span>        <a href="#R_X86_64">R_X86_64</a> = 9  <span class="comment">/* Add 32 bit signed pcrel offset to GOT. */</span>
+    <span id="R_X86_64_32">R_X86_64_32</span>              <a href="#R_X86_64">R_X86_64</a> = 10 <span class="comment">/* Add 32 bit zero extended symbol value */</span>
+    <span id="R_X86_64_32S">R_X86_64_32S</span>             <a href="#R_X86_64">R_X86_64</a> = 11 <span class="comment">/* Add 32 bit sign extended symbol value */</span>
+    <span id="R_X86_64_16">R_X86_64_16</span>              <a href="#R_X86_64">R_X86_64</a> = 12 <span class="comment">/* Add 16 bit zero extended symbol value */</span>
+    <span id="R_X86_64_PC16">R_X86_64_PC16</span>            <a href="#R_X86_64">R_X86_64</a> = 13 <span class="comment">/* Add 16 bit signed extended pc relative symbol value */</span>
+    <span id="R_X86_64_8">R_X86_64_8</span>               <a href="#R_X86_64">R_X86_64</a> = 14 <span class="comment">/* Add 8 bit zero extended symbol value */</span>
+    <span id="R_X86_64_PC8">R_X86_64_PC8</span>             <a href="#R_X86_64">R_X86_64</a> = 15 <span class="comment">/* Add 8 bit signed extended pc relative symbol value */</span>
+    <span id="R_X86_64_DTPMOD64">R_X86_64_DTPMOD64</span>        <a href="#R_X86_64">R_X86_64</a> = 16 <span class="comment">/* ID of module containing symbol */</span>
+    <span id="R_X86_64_DTPOFF64">R_X86_64_DTPOFF64</span>        <a href="#R_X86_64">R_X86_64</a> = 17 <span class="comment">/* Offset in TLS block */</span>
+    <span id="R_X86_64_TPOFF64">R_X86_64_TPOFF64</span>         <a href="#R_X86_64">R_X86_64</a> = 18 <span class="comment">/* Offset in static TLS block */</span>
+    <span id="R_X86_64_TLSGD">R_X86_64_TLSGD</span>           <a href="#R_X86_64">R_X86_64</a> = 19 <span class="comment">/* PC relative offset to GD GOT entry */</span>
+    <span id="R_X86_64_TLSLD">R_X86_64_TLSLD</span>           <a href="#R_X86_64">R_X86_64</a> = 20 <span class="comment">/* PC relative offset to LD GOT entry */</span>
+    <span id="R_X86_64_DTPOFF32">R_X86_64_DTPOFF32</span>        <a href="#R_X86_64">R_X86_64</a> = 21 <span class="comment">/* Offset in TLS block */</span>
+    <span id="R_X86_64_GOTTPOFF">R_X86_64_GOTTPOFF</span>        <a href="#R_X86_64">R_X86_64</a> = 22 <span class="comment">/* PC relative offset to IE GOT entry */</span>
+    <span id="R_X86_64_TPOFF32">R_X86_64_TPOFF32</span>         <a href="#R_X86_64">R_X86_64</a> = 23 <span class="comment">/* Offset in static TLS block */</span>
+    <span id="R_X86_64_PC64">R_X86_64_PC64</span>            <a href="#R_X86_64">R_X86_64</a> = 24 <span class="comment">/* PC relative 64-bit sign extended symbol value. */</span>
+    <span id="R_X86_64_GOTOFF64">R_X86_64_GOTOFF64</span>        <a href="#R_X86_64">R_X86_64</a> = 25
+    <span id="R_X86_64_GOTPC32">R_X86_64_GOTPC32</span>         <a href="#R_X86_64">R_X86_64</a> = 26
+    <span id="R_X86_64_GOT64">R_X86_64_GOT64</span>           <a href="#R_X86_64">R_X86_64</a> = 27
+    <span id="R_X86_64_GOTPCREL64">R_X86_64_GOTPCREL64</span>      <a href="#R_X86_64">R_X86_64</a> = 28
+    <span id="R_X86_64_GOTPC64">R_X86_64_GOTPC64</span>         <a href="#R_X86_64">R_X86_64</a> = 29
+    <span id="R_X86_64_GOTPLT64">R_X86_64_GOTPLT64</span>        <a href="#R_X86_64">R_X86_64</a> = 30
+    <span id="R_X86_64_PLTOFF64">R_X86_64_PLTOFF64</span>        <a href="#R_X86_64">R_X86_64</a> = 31
+    <span id="R_X86_64_SIZE32">R_X86_64_SIZE32</span>          <a href="#R_X86_64">R_X86_64</a> = 32
+    <span id="R_X86_64_SIZE64">R_X86_64_SIZE64</span>          <a href="#R_X86_64">R_X86_64</a> = 33
+    <span id="R_X86_64_GOTPC32_TLSDESC">R_X86_64_GOTPC32_TLSDESC</span> <a href="#R_X86_64">R_X86_64</a> = 34
+    <span id="R_X86_64_TLSDESC_CALL">R_X86_64_TLSDESC_CALL</span>    <a href="#R_X86_64">R_X86_64</a> = 35
+    <span id="R_X86_64_TLSDESC">R_X86_64_TLSDESC</span>         <a href="#R_X86_64">R_X86_64</a> = 36
+    <span id="R_X86_64_IRELATIVE">R_X86_64_IRELATIVE</span>       <a href="#R_X86_64">R_X86_64</a> = 37
+    <span id="R_X86_64_RELATIVE64">R_X86_64_RELATIVE64</span>      <a href="#R_X86_64">R_X86_64</a> = 38
+    <span id="R_X86_64_PC32_BND">R_X86_64_PC32_BND</span>        <a href="#R_X86_64">R_X86_64</a> = 39
+    <span id="R_X86_64_PLT32_BND">R_X86_64_PLT32_BND</span>       <a href="#R_X86_64">R_X86_64</a> = 40
+    <span id="R_X86_64_GOTPCRELX">R_X86_64_GOTPCRELX</span>       <a href="#R_X86_64">R_X86_64</a> = 41
+    <span id="R_X86_64_REX_GOTPCRELX">R_X86_64_REX_GOTPCRELX</span>   <a href="#R_X86_64">R_X86_64</a> = 42
 )</pre>
 
 
-<h3 id="R_X86_64.GoString">func (R_X86_64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L791">GoString</a>
+<h3 id="R_X86_64.GoString">func (R_X86_64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L829">GoString</a>
     <a href="#R_X86_64.GoString">¶</a></h3>
 <pre>func (i <a href="#R_X86_64">R_X86_64</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_X86_64.String">func (R_X86_64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L790">String</a>
+<h3 id="R_X86_64.String">func (R_X86_64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L828">String</a>
     <a href="#R_X86_64.String">¶</a></h3>
 <pre>func (i <a href="#R_X86_64">R_X86_64</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Rel32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2041">Rel32</a>
+<h2 id="Rel32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2397">Rel32</a>
     <a href="#Rel32">¶</a></h2>
 <pre>type Rel32 struct {
 <span id="Rel32.Off"></span>    Off  <a href="/builtin/#uint32">uint32</a> <span class="comment">/* Location to be relocated. */</span>
@@ -1628,7 +1812,7 @@ Relocation types for x86-64.
 
 ELF32 Relocations that don't need an addend field.
 
-<h2 id="Rel64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2143">Rel64</a>
+<h2 id="Rel64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2499">Rel64</a>
     <a href="#Rel64">¶</a></h2>
 <pre>type Rel64 struct {
 <span id="Rel64.Off"></span>    Off  <a href="/builtin/#uint64">uint64</a> <span class="comment">/* Location to be relocated. */</span>
@@ -1637,7 +1821,7 @@ ELF32 Relocations that don't need an addend field.
 
 ELF64 relocations that don't need an addend field.
 
-<h2 id="Rela32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2047">Rela32</a>
+<h2 id="Rela32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2403">Rela32</a>
     <a href="#Rela32">¶</a></h2>
 <pre>type Rela32 struct {
 <span id="Rela32.Off"></span>    Off    <a href="/builtin/#uint32">uint32</a> <span class="comment">/* Location to be relocated. */</span>
@@ -1647,7 +1831,7 @@ ELF64 relocations that don't need an addend field.
 
 ELF32 Relocations that need an addend field.
 
-<h2 id="Rela64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2149">Rela64</a>
+<h2 id="Rela64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2505">Rela64</a>
     <a href="#Rela64">¶</a></h2>
 <pre>type Rela64 struct {
 <span id="Rela64.Off"></span>    Off    <a href="/builtin/#uint64">uint64</a> <span class="comment">/* Location to be relocated. */</span>
@@ -1657,7 +1841,7 @@ ELF32 Relocations that need an addend field.
 
 ELF64 relocations that need an addend field.
 
-<h2 id="Section">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L60">Section</a>
+<h2 id="Section">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L71">Section</a>
     <a href="#Section">¶</a></h2>
 <pre>type Section struct {
     <a href="#SectionHeader">SectionHeader</a>
@@ -1678,21 +1862,21 @@ ELF64 relocations that need an addend field.
 
 A Section represents a single section in an ELF file.
 
-<h3 id="Section.Data">func (*Section) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L83">Data</a>
+<h3 id="Section.Data">func (*Section) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L94">Data</a>
     <a href="#Section.Data">¶</a></h3>
 <pre>func (s *<a href="#Section">Section</a>) Data() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Data reads and returns the contents of the ELF section. Even if the section is
 stored compressed in the ELF file, Data returns uncompressed data.
 
-<h3 id="Section.Open">func (*Section) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L101">Open</a>
+<h3 id="Section.Open">func (*Section) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L112">Open</a>
     <a href="#Section.Open">¶</a></h3>
 <pre>func (s *<a href="#Section">Section</a>) Open() <a href="/io/">io</a>.<a href="/io/#ReadSeeker">ReadSeeker</a></pre>
 
 Open returns a new ReadSeeker reading the ELF section. Even if the section is
 stored compressed in the ELF file, the ReadSeeker reads uncompressed data.
 
-<h2 id="Section32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1998">Section32</a>
+<h2 id="Section32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2354">Section32</a>
     <a href="#Section32">¶</a></h2>
 <pre>type Section32 struct {
 <span id="Section32.Name"></span>    Name      <a href="/builtin/#uint32">uint32</a> <span class="comment">/* Section name (index into the section header string table). */</span>
@@ -1709,7 +1893,7 @@ stored compressed in the ELF file, the ReadSeeker reads uncompressed data.
 
 ELF32 Section header.
 
-<h2 id="Section64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2099">Section64</a>
+<h2 id="Section64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2455">Section64</a>
     <a href="#Section64">¶</a></h2>
 <pre>type Section64 struct {
 <span id="Section64.Name"></span>    Name      <a href="/builtin/#uint32">uint32</a> <span class="comment">/* Section name (index into the section header string table). */</span>
@@ -1759,7 +1943,7 @@ Section flags.
 <pre>func (i <a href="#SectionFlag">SectionFlag</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="SectionHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L40">SectionHeader</a>
+<h2 id="SectionHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L51">SectionHeader</a>
     <a href="#SectionHeader">¶</a></h2>
 <pre>type SectionHeader struct {
 <span id="SectionHeader.Name"></span>    Name      <a href="/builtin/#string">string</a>
@@ -1861,7 +2045,7 @@ Section type.
 <pre>func (i <a href="#SectionType">SectionType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Sym32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2058">Sym32</a>
+<h2 id="Sym32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2414">Sym32</a>
     <a href="#Sym32">¶</a></h2>
 <pre>type Sym32 struct {
 <span id="Sym32.Name"></span>    Name  <a href="/builtin/#uint32">uint32</a>
@@ -1874,7 +2058,7 @@ Section type.
 
 ELF32 Symbol.
 
-<h2 id="Sym64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2160">Sym64</a>
+<h2 id="Sym64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2516">Sym64</a>
     <a href="#Sym64">¶</a></h2>
 <pre>type Sym64 struct {
 <span id="Sym64.Name"></span>    Name  <a href="/builtin/#uint32">uint32</a> <span class="comment">/* String table index of name. */</span>
@@ -1904,7 +2088,7 @@ Symbol Binding - ELFNN_ST_BIND - st_info
 )</pre>
 
 
-<h3 id="ST_BIND">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2069">ST_BIND</a>
+<h3 id="ST_BIND">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2425">ST_BIND</a>
     <a href="#ST_BIND">¶</a></h3>
 <pre>func ST_BIND(info <a href="/builtin/#uint8">uint8</a>) <a href="#SymBind">SymBind</a></pre>
 
@@ -1940,7 +2124,7 @@ Symbol type - ELFNN_ST_TYPE - st_info
 )</pre>
 
 
-<h3 id="ST_TYPE">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2070">ST_TYPE</a>
+<h3 id="ST_TYPE">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2426">ST_TYPE</a>
     <a href="#ST_TYPE">¶</a></h3>
 <pre>func ST_TYPE(info <a href="/builtin/#uint8">uint8</a>) <a href="#SymType">SymType</a></pre>
 
@@ -1969,7 +2153,7 @@ Symbol visibility - ELFNN_ST_VISIBILITY - st_other
 )</pre>
 
 
-<h3 id="ST_VISIBILITY">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2074">ST_VISIBILITY</a>
+<h3 id="ST_VISIBILITY">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2430">ST_VISIBILITY</a>
     <a href="#ST_VISIBILITY">¶</a></h3>
 <pre>func ST_VISIBILITY(other <a href="/builtin/#uint8">uint8</a>) <a href="#SymVis">SymVis</a></pre>
 
@@ -1984,7 +2168,7 @@ Symbol visibility - ELFNN_ST_VISIBILITY - st_other
 <pre>func (i <a href="#SymVis">SymVis</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Symbol">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L148">Symbol</a>
+<h2 id="Symbol">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L159">Symbol</a>
     <a href="#Symbol">¶</a></h2>
 <pre>type Symbol struct {
 <span id="Symbol.Name"></span>    Name        <a href="/builtin/#string">string</a>

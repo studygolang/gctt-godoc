@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package build
 
   `import "go/build"`
@@ -107,6 +107,7 @@ During a particular build, the following words are satisfied:
     - "go1.7", from Go version 1.7 onward
     - "go1.8", from Go version 1.8 onward
     - "go1.9", from Go version 1.9 onward
+    - "go1.10", from Go version 1.10 onward
     - any additional words listed in ctxt.BuildTags
 
 If a file's name, after stripping the extension and a possible _test suffix,
@@ -194,7 +195,7 @@ documentation.
 
 ToolDir is the directory containing build tools.
 
-<h2 id="ArchChar">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L1595">ArchChar</a>
+<h2 id="ArchChar">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L1601">ArchChar</a>
     <a href="#ArchChar">¶</a></h2>
 <pre>func ArchChar(goarch <a href="/builtin/#string">string</a>) (<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -204,7 +205,7 @@ file suffix, and the default linker output name. As of Go 1.5, those strings no
 longer vary by architecture; they are compile, link, .o, and a.out,
 respectively.
 
-<h2 id="IsLocalImport">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L1585">IsLocalImport</a>
+<h2 id="IsLocalImport">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L1591">IsLocalImport</a>
     <a href="#IsLocalImport">¶</a></h2>
 <pre>func IsLocalImport(path <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -283,7 +284,7 @@ Default is the default Context for builds. It uses the GOARCH, GOOS, GOROOT, and
 GOPATH environment variables if set, or else the compiled code's GOARCH, GOOS,
 and GOROOT.
 
-<h3 id="Context.Import">func (*Context) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L478">Import</a>
+<h3 id="Context.Import">func (*Context) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L481">Import</a>
     <a href="#Context.Import">¶</a></h3>
 <pre>func (ctxt *<a href="#Context">Context</a>) Import(path <a href="/builtin/#string">string</a>, srcDir <a href="/builtin/#string">string</a>, mode <a href="#ImportMode">ImportMode</a>) (*<a href="#Package">Package</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -302,14 +303,14 @@ considered part of the package except for:
 If an error occurs, Import returns a non-nil error and a non-nil *Package
 containing partial information.
 
-<h3 id="Context.ImportDir">func (*Context) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L426">ImportDir</a>
+<h3 id="Context.ImportDir">func (*Context) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L429">ImportDir</a>
     <a href="#Context.ImportDir">¶</a></h3>
 <pre>func (ctxt *<a href="#Context">Context</a>) ImportDir(dir <a href="/builtin/#string">string</a>, mode <a href="#ImportMode">ImportMode</a>) (*<a href="#Package">Package</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ImportDir is like Import but processes the Go package found in the named
 directory.
 
-<h3 id="Context.MatchFile">func (*Context) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L1035">MatchFile</a>
+<h3 id="Context.MatchFile">func (*Context) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L1040">MatchFile</a>
     <a href="#Context.MatchFile">¶</a></h3>
 <pre>func (ctxt *<a href="#Context">Context</a>) MatchFile(dir, name <a href="/builtin/#string">string</a>) (match <a href="/builtin/#bool">bool</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -327,7 +328,7 @@ or all of the file's content.
 SrcDirs returns a list of package source root directories. It draws from the
 current Go root and Go path but omits directories that do not exist.
 
-<h2 id="ImportMode">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L317">ImportMode</a>
+<h2 id="ImportMode">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L320">ImportMode</a>
     <a href="#ImportMode">¶</a></h2>
 <pre>type ImportMode <a href="/builtin/#uint">uint</a></pre>
 
@@ -378,7 +379,7 @@ An ImportMode controls the behavior of the Import method.
 )</pre>
 
 
-<h2 id="MultiplePackageError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L443">MultiplePackageError</a>
+<h2 id="MultiplePackageError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L446">MultiplePackageError</a>
     <a href="#MultiplePackageError">¶</a></h2>
 <pre>type MultiplePackageError struct {
 <span id="MultiplePackageError.Dir"></span>    Dir      <a href="/builtin/#string">string</a>   <span class="comment">// directory containing files</span>
@@ -389,12 +390,12 @@ An ImportMode controls the behavior of the Import method.
 MultiplePackageError describes a directory containing multiple buildable Go
 source files for multiple packages.
 
-<h3 id="MultiplePackageError.Error">func (*MultiplePackageError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L449">Error</a>
+<h3 id="MultiplePackageError.Error">func (*MultiplePackageError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L452">Error</a>
     <a href="#MultiplePackageError.Error">¶</a></h3>
 <pre>func (e *<a href="#MultiplePackageError">MultiplePackageError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="NoGoError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L433">NoGoError</a>
+<h2 id="NoGoError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L436">NoGoError</a>
     <a href="#NoGoError">¶</a></h2>
 <pre>type NoGoError struct {
 <span id="NoGoError.Dir"></span>    Dir <a href="/builtin/#string">string</a>
@@ -404,12 +405,12 @@ NoGoError is the error used by Import to describe a directory containing no
 buildable Go source files. (It may still contain test files, files hidden by
 build tags, and so on.)
 
-<h3 id="NoGoError.Error">func (*NoGoError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L437">Error</a>
+<h3 id="NoGoError.Error">func (*NoGoError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L440">Error</a>
     <a href="#NoGoError.Error">¶</a></h3>
 <pre>func (e *<a href="#NoGoError">NoGoError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Package">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L364">Package</a>
+<h2 id="Package">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L367">Package</a>
     <a href="#Package">¶</a></h2>
 <pre>type Package struct {
 <span id="Package.Dir"></span>    Dir           <a href="/builtin/#string">string</a>   <span class="comment">// directory containing package sources</span>
@@ -466,19 +467,19 @@ build tags, and so on.)
 
 A Package describes the Go package found in a directory.
 
-<h3 id="Import">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L1120">Import</a>
+<h3 id="Import">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L1125">Import</a>
     <a href="#Import">¶</a></h3>
 <pre>func Import(path, srcDir <a href="/builtin/#string">string</a>, mode <a href="#ImportMode">ImportMode</a>) (*<a href="#Package">Package</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Import is shorthand for Default.Import.
 
-<h3 id="ImportDir">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L1125">ImportDir</a>
+<h3 id="ImportDir">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L1130">ImportDir</a>
     <a href="#ImportDir">¶</a></h3>
 <pre>func ImportDir(dir <a href="/builtin/#string">string</a>, mode <a href="#ImportMode">ImportMode</a>) (*<a href="#Package">Package</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ImportDir is shorthand for Default.ImportDir.
 
-<h3 id="Package.IsCommand">func (*Package) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L420">IsCommand</a>
+<h3 id="Package.IsCommand">func (*Package) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/build/build.go#L423">IsCommand</a>
     <a href="#Package.IsCommand">¶</a></h3>
 <pre>func (p *<a href="#Package">Package</a>) IsCommand() <a href="/builtin/#bool">bool</a></pre>
 

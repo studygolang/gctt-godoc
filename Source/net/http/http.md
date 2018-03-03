@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package http
 
   `import "net/http"`
@@ -226,6 +226,7 @@ built-in HTTP/2 support.
 - [Hijacker](#exampleHijacker)
 - [ResponseWriter (Trailers)](#exampleResponseWriter_trailers)
 - [ServeMux.Handle](#exampleServeMux_Handle)
+- [Server.Shutdown](#exampleServer_Shutdown)
 - [StripPrefix](#exampleStripPrefix)
 
 ### Package files
@@ -488,7 +489,7 @@ always returns nil. It can be used in an outgoing client request to explicitly
 signal that a request has zero bytes. An alternative, however, is to simply set
 Request.Body to nil.
 
-<h2 id="CanonicalHeaderKey">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/header.go#L165">CanonicalHeaderKey</a>
+<h2 id="CanonicalHeaderKey">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/header.go#L166">CanonicalHeaderKey</a>
     <a href="#CanonicalHeaderKey">¶</a></h2>
 <pre>func CanonicalHeaderKey(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -508,7 +509,7 @@ data. It considers at most the first 512 bytes of data. DetectContentType always
 returns a valid MIME type: if it cannot determine a more specific one, it
 returns "application/octet-stream".
 
-<h2 id="Error">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L1917">Error</a>
+<h2 id="Error">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L1946">Error</a>
     <a href="#Error">¶</a></h2>
 <pre>func Error(w <a href="#ResponseWriter">ResponseWriter</a>, error <a href="/builtin/#string">string</a>, code <a href="/builtin/#int">int</a>)</pre>
 
@@ -516,14 +517,14 @@ Error replies to the request with the specified error message and HTTP code. It
 does not otherwise end the request; the caller should ensure no further writes
 are done to w. The error message should be plain text.
 
-<h2 id="Handle">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2298">Handle</a>
+<h2 id="Handle">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2364">Handle</a>
     <a href="#Handle">¶</a></h2>
 <pre>func Handle(pattern <a href="/builtin/#string">string</a>, handler <a href="#Handler">Handler</a>)</pre>
 
 Handle registers the handler for the given pattern in the DefaultServeMux. The
 documentation for ServeMux explains how patterns are matched.
 
-<h2 id="HandleFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2303">HandleFunc</a>
+<h2 id="HandleFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2369">HandleFunc</a>
     <a href="#HandleFunc">¶</a></h2>
 <pre>func HandleFunc(pattern <a href="/builtin/#string">string</a>, handler func(<a href="#ResponseWriter">ResponseWriter</a>, *<a href="#Request">Request</a>))</pre>
 
@@ -531,7 +532,7 @@ HandleFunc registers the handler function for the given pattern in the
 DefaultServeMux. The documentation for ServeMux explains how patterns are
 matched.
 
-<h2 id="ListenAndServe">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2870">ListenAndServe</a>
+<h2 id="ListenAndServe">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2957">ListenAndServe</a>
     <a href="#ListenAndServe">¶</a></h2>
 <pre>func ListenAndServe(addr <a href="/builtin/#string">string</a>, handler <a href="#Handler">Handler</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -562,7 +563,7 @@ A trivial example server is:
 
 ListenAndServe always returns a non-nil error.
 
-<h2 id="ListenAndServeTLS">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2903">ListenAndServeTLS</a>
+<h2 id="ListenAndServeTLS">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2990">ListenAndServeTLS</a>
     <a href="#ListenAndServeTLS">¶</a></h2>
 <pre>func ListenAndServeTLS(addr, certFile, keyFile <a href="/builtin/#string">string</a>, handler <a href="#Handler">Handler</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -595,7 +596,7 @@ One can use generate_cert.go in crypto/tls to generate cert.pem and key.pem.
 
 ListenAndServeTLS always returns a non-nil error.
 
-<h2 id="MaxBytesReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L1013">MaxBytesReader</a>
+<h2 id="MaxBytesReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L1017">MaxBytesReader</a>
     <a href="#MaxBytesReader">¶</a></h2>
 <pre>func MaxBytesReader(w <a href="#ResponseWriter">ResponseWriter</a>, r <a href="/io/">io</a>.<a href="/io/#ReadCloser">ReadCloser</a>, n <a href="/builtin/#int64">int64</a>) <a href="/io/">io</a>.<a href="/io/#ReadCloser">ReadCloser</a></pre>
 
@@ -607,13 +608,13 @@ closes the underlying reader when its Close method is called.
 MaxBytesReader prevents clients from accidentally or maliciously sending a large
 request and wasting server resources.
 
-<h2 id="NotFound">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L1925">NotFound</a>
+<h2 id="NotFound">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L1954">NotFound</a>
     <a href="#NotFound">¶</a></h2>
 <pre>func NotFound(w <a href="#ResponseWriter">ResponseWriter</a>, r *<a href="#Request">Request</a>)</pre>
 
 NotFound replies to the request with an HTTP 404 not found error.
 
-<h2 id="ParseHTTPVersion">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L694">ParseHTTPVersion</a>
+<h2 id="ParseHTTPVersion">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L698">ParseHTTPVersion</a>
     <a href="#ParseHTTPVersion">¶</a></h2>
 <pre>func ParseHTTPVersion(vers <a href="/builtin/#string">string</a>) (major, minor <a href="/builtin/#int">int</a>, ok <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -626,7 +627,7 @@ ParseHTTPVersion parses a HTTP version string. "HTTP/1.0" returns (1, 0, true).
 ParseTime parses a time header (such as the Date: header), trying each of the
 three formats allowed by HTTP/1.1: TimeFormat, time.RFC850, and time.ANSIC.
 
-<h2 id="ProxyFromEnvironment">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go#L256">ProxyFromEnvironment</a>
+<h2 id="ProxyFromEnvironment">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go#L265">ProxyFromEnvironment</a>
     <a href="#ProxyFromEnvironment">¶</a></h2>
 <pre>func ProxyFromEnvironment(req *<a href="#Request">Request</a>) (*<a href="/net/url/">url</a>.<a href="/net/url/#URL">URL</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -645,14 +646,14 @@ or a proxy should not be used for the given request, as defined by NO_PROXY.
 As a special case, if req.URL.Host is "localhost" (with or without a port
 number), then a nil URL and nil error will be returned.
 
-<h2 id="ProxyURL">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go#L294">ProxyURL</a>
+<h2 id="ProxyURL">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go#L303">ProxyURL</a>
     <a href="#ProxyURL">¶</a></h2>
 <pre>func ProxyURL(fixedURL *<a href="/net/url/">url</a>.<a href="/net/url/#URL">URL</a>) func(*<a href="#Request">Request</a>) (*<a href="/net/url/">url</a>.<a href="/net/url/#URL">URL</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ProxyURL returns a proxy function (for use in a Transport) that always returns
 the same URL.
 
-<h2 id="Redirect">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L1959">Redirect</a>
+<h2 id="Redirect">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L1988">Redirect</a>
     <a href="#Redirect">¶</a></h2>
 <pre>func Redirect(w <a href="#ResponseWriter">ResponseWriter</a>, r *<a href="#Request">Request</a>, url <a href="/builtin/#string">string</a>, code <a href="/builtin/#int">int</a>)</pre>
 
@@ -662,7 +663,7 @@ relative to the request path.
 The provided code should be in the 3xx range and is usually
 StatusMovedPermanently, StatusFound or StatusSeeOther.
 
-<h2 id="Serve">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2311">Serve</a>
+<h2 id="Serve">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2377">Serve</a>
     <a href="#Serve">¶</a></h2>
 <pre>func Serve(l <a href="/net/">net</a>.<a href="/net/#Listener">Listener</a>, handler <a href="#Handler">Handler</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -671,7 +672,7 @@ service goroutine for each. The service goroutines read requests and then call
 handler to reply to them. Handler is typically nil, in which case the
 DefaultServeMux is used.
 
-<h2 id="ServeContent">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/fs.go#L143">ServeContent</a>
+<h2 id="ServeContent">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/fs.go#L141">ServeContent</a>
     <a href="#ServeContent">¶</a></h2>
 <pre>func ServeContent(w <a href="#ResponseWriter">ResponseWriter</a>, req *<a href="#Request">Request</a>, name <a href="/builtin/#string">string</a>, modtime <a href="/time/">time</a>.<a href="/time/#Time">Time</a>, content <a href="/io/">io</a>.<a href="/io/#ReadSeeker">ReadSeeker</a>)</pre>
 
@@ -700,7 +701,7 @@ If-Range.
 
 Note that *os.File implements the io.ReadSeeker interface.
 
-<h2 id="ServeFile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/fs.go#L656">ServeFile</a>
+<h2 id="ServeFile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/fs.go#L652">ServeFile</a>
     <a href="#ServeFile">¶</a></h2>
 <pre>func ServeFile(w <a href="#ResponseWriter">ResponseWriter</a>, r *<a href="#Request">Request</a>, name <a href="/builtin/#string">string</a>)</pre>
 
@@ -717,11 +718,11 @@ As a special case, ServeFile redirects any request where r.URL.Path ends in
 "/index.html" to the same path, without the final "index.html". To avoid such
 redirects either modify the path or use ServeContent.
 
-<h2 id="ServeTLS">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2326">ServeTLS</a>
+<h2 id="ServeTLS">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2392">ServeTLS</a>
     <a href="#ServeTLS">¶</a></h2>
 <pre>func ServeTLS(l <a href="/net/">net</a>.<a href="/net/#Listener">Listener</a>, handler <a href="#Handler">Handler</a>, certFile, keyFile <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
-Serve accepts incoming HTTPS connections on the listener l, creating a new
+ServeTLS accepts incoming HTTPS connections on the listener l, creating a new
 service goroutine for each. The service goroutines read requests and then call
 handler to reply to them.
 
@@ -828,7 +829,7 @@ mutated cookies will be omitted, with the expectation that the Jar will insert
 those mutated cookies with the updated values (assuming the origin matches). If
 Jar is nil, the initial cookies are forwarded without change.
 
-<h3 id="Client.Do">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L480">Do</a>
+<h3 id="Client.Do">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L483">Do</a>
     <a href="#Client.Do">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) Do(req *<a href="#Request">Request</a>) (*<a href="#Response">Response</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -861,7 +862,7 @@ preserves the original HTTP method and body, provided that the Request.GetBody
 function is defined. The NewRequest function automatically sets GetBody for
 common standard library body types.
 
-<h3 id="Client.Get">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L378">Get</a>
+<h3 id="Client.Get">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L381">Get</a>
     <a href="#Client.Get">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) Get(url <a href="/builtin/#string">string</a>) (resp *<a href="#Response">Response</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -883,7 +884,7 @@ resp.Body when done reading from it.
 
 To make a request with custom headers, use NewRequest and Client.Do.
 
-<h3 id="Client.Head">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L778">Head</a>
+<h3 id="Client.Head">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L791">Head</a>
     <a href="#Client.Head">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) Head(url <a href="/builtin/#string">string</a>) (resp *<a href="#Response">Response</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -897,7 +898,7 @@ CheckRedirect function:
     307 (Temporary Redirect)
     308 (Permanent Redirect)
 
-<h3 id="Client.Post">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L713">Post</a>
+<h3 id="Client.Post">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L726">Post</a>
     <a href="#Client.Post">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) Post(url <a href="/builtin/#string">string</a>, contentType <a href="/builtin/#string">string</a>, body <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (resp *<a href="#Response">Response</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -911,7 +912,7 @@ To set custom headers, use NewRequest and Client.Do.
 
 See the Client.Do method documentation for details on how redirects are handled.
 
-<h3 id="Client.PostForm">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L750">PostForm</a>
+<h3 id="Client.PostForm">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L763">PostForm</a>
     <a href="#Client.PostForm">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) PostForm(url <a href="/builtin/#string">string</a>, data <a href="/net/url/">url</a>.<a href="/net/url/#Values">Values</a>) (resp *<a href="#Response">Response</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -919,14 +920,14 @@ PostForm issues a POST to the specified URL, with data's keys and values
 URL-encoded as the request body.
 
 The Content-Type header is set to application/x-www-form-urlencoded. To set
-other headers, use NewRequest and DefaultClient.Do.
+other headers, use NewRequest and Client.Do.
 
 When err is nil, resp always contains a non-nil resp.Body. Caller should close
 resp.Body when done reading from it.
 
 See the Client.Do method documentation for details on how redirects are handled.
 
-<h2 id="CloseNotifier">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L182">CloseNotifier</a>
+<h2 id="CloseNotifier">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L190">CloseNotifier</a>
     <a href="#CloseNotifier">¶</a></h2>
 <pre>type CloseNotifier interface {
     <span class="comment">// CloseNotify returns a channel that receives at most a</span>
@@ -956,7 +957,7 @@ detecting when the underlying connection has gone away.
 This mechanism can be used to cancel long operations on the server if the client
 has disconnected before the response is ready.
 
-<h2 id="ConnState">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2545">ConnState</a>
+<h2 id="ConnState">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2620">ConnState</a>
     <a href="#ConnState">¶</a></h2>
 <pre>type ConnState <a href="/builtin/#int">int</a></pre>
 
@@ -1000,7 +1001,7 @@ by the optional Server.ConnState hook.
 )</pre>
 
 
-<h3 id="ConnState.String">func (ConnState) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2591">String</a>
+<h3 id="ConnState.String">func (ConnState) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2666">String</a>
     <a href="#ConnState.String">¶</a></h3>
 <pre>func (c <a href="#ConnState">ConnState</a>) String() <a href="/builtin/#string">string</a></pre>
 
@@ -1108,7 +1109,7 @@ A FileSystem implements access to a collection of named files. The elements in a
 file path are separated by slash ('/', U+002F) characters, regardless of host
 operating system convention.
 
-<h2 id="Flusher">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L144">Flusher</a>
+<h2 id="Flusher">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L152">Flusher</a>
     <a href="#Flusher">¶</a></h2>
 <pre>type Flusher interface {
     <span class="comment">// Flush sends any buffered data to the client.</span>
@@ -1153,7 +1154,7 @@ connection or sends an HTTP/2 RST_STREAM, depending on the HTTP protocol. To
 abort a handler so the client sees an interrupted response but the server
 doesn't log an error, panic with the value ErrAbortHandler.
 
-<h3 id="FileServer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/fs.go#L699">FileServer</a>
+<h3 id="FileServer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/fs.go#L695">FileServer</a>
     <a href="#FileServer">¶</a></h3>
 <pre>func FileServer(root <a href="#FileSystem">FileSystem</a>) <a href="#Handler">Handler</a></pre>
 
@@ -1182,14 +1183,14 @@ Example:
     // URL's path before the FileServer sees it:
     http.Handle("/tmpfiles/", http.StripPrefix("/tmpfiles/", http.FileServer(http.Dir("/tmp"))))
 
-<h3 id="NotFoundHandler">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L1929">NotFoundHandler</a>
+<h3 id="NotFoundHandler">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L1958">NotFoundHandler</a>
     <a href="#NotFoundHandler">¶</a></h3>
 <pre>func NotFoundHandler() <a href="#Handler">Handler</a></pre>
 
 NotFoundHandler returns a simple request handler that replies to each request
 with a ``404 page not found'' reply.
 
-<h3 id="RedirectHandler">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2052">RedirectHandler</a>
+<h3 id="RedirectHandler">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2084">RedirectHandler</a>
     <a href="#RedirectHandler">¶</a></h3>
 <pre>func RedirectHandler(url <a href="/builtin/#string">string</a>, code <a href="/builtin/#int">int</a>) <a href="#Handler">Handler</a></pre>
 
@@ -1199,7 +1200,7 @@ receives to the given url using the given status code.
 The provided code should be in the 3xx range and is usually
 StatusMovedPermanently, StatusFound or StatusSeeOther.
 
-<h3 id="StripPrefix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L1936">StripPrefix</a>
+<h3 id="StripPrefix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L1965">StripPrefix</a>
     <a href="#StripPrefix">¶</a></h3>
 <pre>func StripPrefix(prefix <a href="/builtin/#string">string</a>, h <a href="#Handler">Handler</a>) <a href="#Handler">Handler</a></pre>
 
@@ -1216,7 +1217,7 @@ Example:
     // URL's path before the FileServer sees it:
     http.Handle("/tmpfiles/", http.StripPrefix("/tmpfiles/", http.FileServer(http.Dir("/tmp"))))
 
-<h3 id="TimeoutHandler">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2991">TimeoutHandler</a>
+<h3 id="TimeoutHandler">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L3080">TimeoutHandler</a>
     <a href="#TimeoutHandler">¶</a></h3>
 <pre>func TimeoutHandler(h <a href="#Handler">Handler</a>, dt <a href="/time/">time</a>.<a href="/time/#Duration">Duration</a>, msg <a href="/builtin/#string">string</a>) <a href="#Handler">Handler</a></pre>
 
@@ -1231,7 +1232,7 @@ will return ErrHandlerTimeout.
 TimeoutHandler buffers all Handler writes to memory and does not support the
 Hijacker or Flusher interfaces.
 
-<h2 id="HandlerFunc">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L1904">HandlerFunc</a>
+<h2 id="HandlerFunc">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L1933">HandlerFunc</a>
     <a href="#HandlerFunc">¶</a></h2>
 <pre>type HandlerFunc func(<a href="#ResponseWriter">ResponseWriter</a>, *<a href="#Request">Request</a>)</pre>
 
@@ -1239,7 +1240,7 @@ The HandlerFunc type is an adapter to allow the use of ordinary functions as
 HTTP handlers. If f is a function with the appropriate signature, HandlerFunc(f)
 is a Handler that calls f.
 
-<h3 id="HandlerFunc.ServeHTTP">func (HandlerFunc) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L1907">ServeHTTP</a>
+<h3 id="HandlerFunc.ServeHTTP">func (HandlerFunc) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L1936">ServeHTTP</a>
     <a href="#HandlerFunc.ServeHTTP">¶</a></h3>
 <pre>func (f <a href="#HandlerFunc">HandlerFunc</a>) ServeHTTP(w <a href="#ResponseWriter">ResponseWriter</a>, r *<a href="#Request">Request</a>)</pre>
 
@@ -1293,7 +1294,7 @@ Write writes a header in wire format.
 WriteSubset writes a header in wire format. If exclude is not nil, keys where
 exclude[key] == true are not written.
 
-<h2 id="Hijacker">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L156">Hijacker</a>
+<h2 id="Hijacker">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L164">Hijacker</a>
     <a href="#Hijacker">¶</a></h2>
 <pre>type Hijacker interface {
     <span class="comment">// Hijack lets the caller take over the connection.</span>
@@ -1311,7 +1312,7 @@ exclude[key] == true are not written.
     <span class="comment">// The returned bufio.Reader may contain unprocessed buffered</span>
     <span class="comment">// data from the client.</span>
     <span class="comment">//</span>
-    <span class="comment">// After a call to Hijack, the original Request.Body should</span>
+    <span class="comment">// After a call to Hijack, the original Request.Body must</span>
     <span class="comment">// not be used.</span>
     Hijack() (<a href="/net/">net</a>.<a href="/net/#Conn">Conn</a>, *<a href="/bufio/">bufio</a>.<a href="/bufio/#ReadWriter">ReadWriter</a>, <a href="/builtin/#error">error</a>)
 }</pre>
@@ -1416,6 +1417,10 @@ https://tools.ietf.org/html/rfc7540#section-8.2.
 <pre>type Request struct {
 <span id="Request.Method"></span>    <span class="comment">// Method specifies the HTTP method (GET, POST, PUT, etc.).</span>
     <span class="comment">// For client requests an empty string means GET.</span>
+    <span class="comment">//</span>
+    <span class="comment">// Go&#39;s HTTP client does not support sending a request with</span>
+    <span class="comment">// the CONNECT method. See the documentation on Transport for</span>
+    <span class="comment">// details.</span>
     Method <a href="/builtin/#string">string</a>
 
 <span id="Request.URL"></span>    <span class="comment">// URL specifies either the URI being requested (for server</span>
@@ -1622,7 +1627,7 @@ The field semantics differ slightly between client and server usage. In addition
 to the notes on the fields below, see the documentation for Request.Write and
 RoundTripper.
 
-<h3 id="NewRequest">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L755">NewRequest</a>
+<h3 id="NewRequest">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L759">NewRequest</a>
     <a href="#NewRequest">¶</a></h3>
 <pre>func NewRequest(method, url <a href="/builtin/#string">string</a>, body <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (*<a href="#Request">Request</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -1643,13 +1648,13 @@ returned request's ContentLength is set to its exact value (instead of -1),
 GetBody is populated (so 307 and 308 redirects can replay the body), and Body is
 set to NoBody if the ContentLength is 0.
 
-<h3 id="ReadRequest">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L899">ReadRequest</a>
+<h3 id="ReadRequest">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L903">ReadRequest</a>
     <a href="#ReadRequest">¶</a></h3>
 <pre>func ReadRequest(b *<a href="/bufio/">bufio</a>.<a href="/bufio/#Reader">Reader</a>) (*<a href="#Request">Request</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ReadRequest reads and parses an incoming request from b.
 
-<h3 id="Request.AddCookie">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L370">AddCookie</a>
+<h3 id="Request.AddCookie">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L374">AddCookie</a>
     <a href="#Request.AddCookie">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) AddCookie(c *<a href="#Cookie">Cookie</a>)</pre>
 
@@ -1657,7 +1662,7 @@ AddCookie adds a cookie to the request. Per RFC 6265 section 5.4, AddCookie does
 not attach more than one Cookie header field. That means all cookies, if any,
 are written into the same line, separated by semicolon.
 
-<h3 id="Request.BasicAuth">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L835">BasicAuth</a>
+<h3 id="Request.BasicAuth">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L839">BasicAuth</a>
     <a href="#Request.BasicAuth">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) BasicAuth() (username, password <a href="/builtin/#string">string</a>, ok <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -1665,7 +1670,7 @@ BasicAuth returns the username and password provided in the request's
 Authorization header, if the request uses HTTP Basic Authentication. See RFC
 2617, Section 2.
 
-<h3 id="Request.Context">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L306">Context</a>
+<h3 id="Request.Context">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L310">Context</a>
     <a href="#Request.Context">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) Context() <a href="/context/">context</a>.<a href="/context/#Context">Context</a></pre>
 
@@ -1679,7 +1684,7 @@ For incoming server requests, the context is canceled when the client's
 connection closes, the request is canceled (with HTTP/2), or when the ServeHTTP
 method returns.
 
-<h3 id="Request.Cookie">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L359">Cookie</a>
+<h3 id="Request.Cookie">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L363">Cookie</a>
     <a href="#Request.Cookie">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) Cookie(name <a href="/builtin/#string">string</a>) (*<a href="#Cookie">Cookie</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -1687,20 +1692,20 @@ Cookie returns the named cookie provided in the request or ErrNoCookie if not
 found. If multiple cookies match the given name, only one cookie will be
 returned.
 
-<h3 id="Request.Cookies">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L348">Cookies</a>
+<h3 id="Request.Cookies">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L352">Cookies</a>
     <a href="#Request.Cookies">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) Cookies() []*<a href="#Cookie">Cookie</a></pre>
 
 Cookies parses and returns the HTTP cookies sent with the request.
 
-<h3 id="Request.FormFile">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L1254">FormFile</a>
+<h3 id="Request.FormFile">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L1258">FormFile</a>
     <a href="#Request.FormFile">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) FormFile(key <a href="/builtin/#string">string</a>) (<a href="/mime/multipart/">multipart</a>.<a href="/mime/multipart/#File">File</a>, *<a href="/mime/multipart/">multipart</a>.<a href="/mime/multipart/#FileHeader">FileHeader</a>, <a href="/builtin/#error">error</a>)</pre>
 
 FormFile returns the first file for the provided form key. FormFile calls
 ParseMultipartForm and ParseForm if necessary.
 
-<h3 id="Request.FormValue">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L1227">FormValue</a>
+<h3 id="Request.FormValue">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L1231">FormValue</a>
     <a href="#Request.FormValue">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) FormValue(key <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -1711,7 +1716,7 @@ returned by these functions. If key is not present, FormValue returns the empty
 string. To access multiple values of the same key, call ParseForm and then
 inspect Request.Form directly.
 
-<h3 id="Request.MultipartReader">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L403">MultipartReader</a>
+<h3 id="Request.MultipartReader">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L407">MultipartReader</a>
     <a href="#Request.MultipartReader">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) MultipartReader() (*<a href="/mime/multipart/">multipart</a>.<a href="/mime/multipart/#Reader">Reader</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -1719,7 +1724,7 @@ MultipartReader returns a MIME multipart reader if this is a multipart/form-data
 POST request, else returns nil and an error. Use this function instead of
 ParseMultipartForm to process the request body as a stream.
 
-<h3 id="Request.ParseForm">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L1141">ParseForm</a>
+<h3 id="Request.ParseForm">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L1145">ParseForm</a>
     <a href="#Request.ParseForm">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) ParseForm() <a href="/builtin/#error">error</a></pre>
 
@@ -1741,7 +1746,7 @@ size is capped at 10MB.
 
 ParseMultipartForm calls ParseForm automatically. ParseForm is idempotent.
 
-<h3 id="Request.ParseMultipartForm">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L1182">ParseMultipartForm</a>
+<h3 id="Request.ParseMultipartForm">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L1186">ParseMultipartForm</a>
     <a href="#Request.ParseMultipartForm">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) ParseMultipartForm(maxMemory <a href="/builtin/#int64">int64</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -1751,7 +1756,7 @@ are stored in memory, with the remainder stored on disk in temporary files.
 ParseMultipartForm calls ParseForm if necessary. After one call to
 ParseMultipartForm, subsequent calls have no effect.
 
-<h3 id="Request.PostFormValue">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L1242">PostFormValue</a>
+<h3 id="Request.PostFormValue">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L1246">PostFormValue</a>
     <a href="#Request.PostFormValue">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) PostFormValue(key <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -1760,14 +1765,14 @@ request body. URL query parameters are ignored. PostFormValue calls
 ParseMultipartForm and ParseForm if necessary and ignores any errors returned by
 these functions. If key is not present, PostFormValue returns the empty string.
 
-<h3 id="Request.ProtoAtLeast">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L337">ProtoAtLeast</a>
+<h3 id="Request.ProtoAtLeast">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L341">ProtoAtLeast</a>
     <a href="#Request.ProtoAtLeast">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) ProtoAtLeast(major, minor <a href="/builtin/#int">int</a>) <a href="/builtin/#bool">bool</a></pre>
 
 ProtoAtLeast reports whether the HTTP protocol used in the request is at least
 major.minor.
 
-<h3 id="Request.Referer">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L387">Referer</a>
+<h3 id="Request.Referer">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L391">Referer</a>
     <a href="#Request.Referer">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) Referer() <a href="/builtin/#string">string</a></pre>
 
@@ -1779,7 +1784,7 @@ Header["Referer"]; the benefit of making it available as a method is that the
 compiler can diagnose programs that use the alternate (correct English) spelling
 req.Referrer() but cannot diagnose programs that use Header["Referrer"].
 
-<h3 id="Request.SetBasicAuth">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L867">SetBasicAuth</a>
+<h3 id="Request.SetBasicAuth">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L871">SetBasicAuth</a>
     <a href="#Request.SetBasicAuth">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) SetBasicAuth(username, password <a href="/builtin/#string">string</a>)</pre>
 
@@ -1789,20 +1794,20 @@ Authentication with the provided username and password.
 With HTTP Basic Authentication the provided username and password are not
 encrypted.
 
-<h3 id="Request.UserAgent">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L343">UserAgent</a>
+<h3 id="Request.UserAgent">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L347">UserAgent</a>
     <a href="#Request.UserAgent">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) UserAgent() <a href="/builtin/#string">string</a></pre>
 
 UserAgent returns the client's User-Agent, if sent in the request.
 
-<h3 id="Request.WithContext">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L315">WithContext</a>
+<h3 id="Request.WithContext">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L319">WithContext</a>
     <a href="#Request.WithContext">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) WithContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>) *<a href="#Request">Request</a></pre>
 
 WithContext returns a shallow copy of r with its context changed to ctx. The
 provided ctx must be non-nil.
 
-<h3 id="Request.Write">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L463">Write</a>
+<h3 id="Request.Write">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L467">Write</a>
     <a href="#Request.Write">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) Write(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -1821,7 +1826,7 @@ If Body is present, Content-Length is <= 0 and TransferEncoding hasn't been set
 to "identity", Write adds "Transfer-Encoding: chunked" to the header. Body is
 closed after it is sent.
 
-<h3 id="Request.WriteProxy">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L473">WriteProxy</a>
+<h3 id="Request.WriteProxy">func (*Request) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/request.go#L477">WriteProxy</a>
     <a href="#Request.WriteProxy">¶</a></h3>
 <pre>func (r *<a href="#Request">Request</a>) WriteProxy(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -1831,7 +1836,7 @@ request with an absolute URI, per section 5.1.2 of RFC 2616, including the
 scheme and host. In either case, WriteProxy also writes a Host header, using
 either r.Host or r.URL.Host.
 
-<h2 id="Response">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/response.go#L20">Response</a>
+<h2 id="Response">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/response.go#L23">Response</a>
     <a href="#Response">¶</a></h2>
 <pre>type Response struct {
 <span id="Response.Status"></span>    Status     <a href="/builtin/#string">string</a> <span class="comment">// e.g. &#34;200 OK&#34;</span>
@@ -1853,13 +1858,16 @@ either r.Host or r.URL.Host.
 
 <span id="Response.Body"></span>    <span class="comment">// Body represents the response body.</span>
     <span class="comment">//</span>
+    <span class="comment">// The response body is streamed on demand as the Body field</span>
+    <span class="comment">// is read. If the network connection fails or the server</span>
+    <span class="comment">// terminates the response, Body.Read calls return an error.</span>
+    <span class="comment">//</span>
     <span class="comment">// The http Client and Transport guarantee that Body is always</span>
     <span class="comment">// non-nil, even on responses without a body or responses with</span>
     <span class="comment">// a zero-length body. It is the caller&#39;s responsibility to</span>
-    <span class="comment">// close Body. The default HTTP client&#39;s Transport does not</span>
-    <span class="comment">// attempt to reuse HTTP/1.0 or HTTP/1.1 TCP connections</span>
-    <span class="comment">// (&#34;keep-alive&#34;) unless the Body is read to completion and is</span>
-    <span class="comment">// closed.</span>
+    <span class="comment">// close Body. The default HTTP client&#39;s Transport may not</span>
+    <span class="comment">// reuse HTTP/1.x &#34;keep-alive&#34; TCP connections if the Body is</span>
+    <span class="comment">// not read to completion and closed.</span>
     <span class="comment">//</span>
     <span class="comment">// The Body is automatically dechunked if the server replied</span>
     <span class="comment">// with a &#34;chunked&#34; Transfer-Encoding.</span>
@@ -1917,7 +1925,11 @@ either r.Host or r.URL.Host.
 
 Response represents the response from an HTTP request.
 
-<h3 id="Get">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L356">Get</a>
+The Client and Transport return Responses from servers once the response headers
+have been received. The response body is streamed on demand as the Body field is
+read.
+
+<h3 id="Get">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L359">Get</a>
     <a href="#Get">¶</a></h3>
 <pre>func Get(url <a href="/builtin/#string">string</a>) (resp *<a href="#Response">Response</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -1954,7 +1966,7 @@ Example:
     }
     fmt.Printf("%s", robots)
 
-<h3 id="Head">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L765">Head</a>
+<h3 id="Head">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L778">Head</a>
     <a href="#Head">¶</a></h3>
 <pre>func Head(url <a href="/builtin/#string">string</a>) (resp *<a href="#Response">Response</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -1969,7 +1981,7 @@ redirect codes, Head follows the redirect, up to a maximum of 10 redirects:
 
 Head is a wrapper around DefaultClient.Head
 
-<h3 id="Post">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L698">Post</a>
+<h3 id="Post">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L711">Post</a>
     <a href="#Post">¶</a></h3>
 <pre>func Post(url <a href="/builtin/#string">string</a>, contentType <a href="/builtin/#string">string</a>, body <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (resp *<a href="#Response">Response</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -1985,7 +1997,7 @@ To set custom headers, use NewRequest and DefaultClient.Do.
 
 See the Client.Do method documentation for details on how redirects are handled.
 
-<h3 id="PostForm">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L735">PostForm</a>
+<h3 id="PostForm">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/client.go#L748">PostForm</a>
     <a href="#PostForm">¶</a></h3>
 <pre>func PostForm(url <a href="/builtin/#string">string</a>, data <a href="/net/url/">url</a>.<a href="/net/url/#Values">Values</a>) (resp *<a href="#Response">Response</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2002,7 +2014,7 @@ PostForm is a wrapper around DefaultClient.PostForm.
 
 See the Client.Do method documentation for details on how redirects are handled.
 
-<h3 id="ReadResponse">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/response.go#L132">ReadResponse</a>
+<h3 id="ReadResponse">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/response.go#L138">ReadResponse</a>
     <a href="#ReadResponse">¶</a></h3>
 <pre>func ReadResponse(r *<a href="/bufio/">bufio</a>.<a href="/bufio/#Reader">Reader</a>, req *<a href="#Request">Request</a>) (*<a href="#Response">Response</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -2012,13 +2024,13 @@ GET request is assumed. Clients must call resp.Body.Close when finished reading
 resp.Body. After that call, clients can inspect resp.Trailer to find key/value
 pairs included in the response trailer.
 
-<h3 id="Response.Cookies">func (*Response) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/response.go#L103">Cookies</a>
+<h3 id="Response.Cookies">func (*Response) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/response.go#L109">Cookies</a>
     <a href="#Response.Cookies">¶</a></h3>
 <pre>func (r *<a href="#Response">Response</a>) Cookies() []*<a href="#Cookie">Cookie</a></pre>
 
 Cookies parses and returns the cookies set in the Set-Cookie headers.
 
-<h3 id="Response.Location">func (*Response) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/response.go#L115">Location</a>
+<h3 id="Response.Location">func (*Response) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/response.go#L121">Location</a>
     <a href="#Response.Location">¶</a></h3>
 <pre>func (r *<a href="#Response">Response</a>) Location() (*<a href="/net/url/">url</a>.<a href="/net/url/#URL">URL</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -2026,14 +2038,14 @@ Location returns the URL of the response's "Location" header, if present.
 Relative redirects are resolved relative to the Response's Request.
 ErrNoLocation is returned if no Location header is present.
 
-<h3 id="Response.ProtoAtLeast">func (*Response) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/response.go#L202">ProtoAtLeast</a>
+<h3 id="Response.ProtoAtLeast">func (*Response) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/response.go#L208">ProtoAtLeast</a>
     <a href="#Response.ProtoAtLeast">¶</a></h3>
 <pre>func (r *<a href="#Response">Response</a>) ProtoAtLeast(major, minor <a href="/builtin/#int">int</a>) <a href="/builtin/#bool">bool</a></pre>
 
 ProtoAtLeast reports whether the HTTP protocol used in the response is at least
 major.minor.
 
-<h3 id="Response.Write">func (*Response) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/response.go#L223">Write</a>
+<h3 id="Response.Write">func (*Response) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/response.go#L229">Write</a>
     <a href="#Response.Write">¶</a></h3>
 <pre>func (r *<a href="#Response">Response</a>) Write(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -2100,12 +2112,20 @@ The Response Body is closed after it is sent.
     <span class="comment">// possible to maximize compatibility.</span>
     Write([]<a href="/builtin/#byte">byte</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)
 
-    <span class="comment">// WriteHeader sends an HTTP response header with status code.</span>
+    <span class="comment">// WriteHeader sends an HTTP response header with the provided</span>
+    <span class="comment">// status code.</span>
+    <span class="comment">//</span>
     <span class="comment">// If WriteHeader is not called explicitly, the first call to Write</span>
     <span class="comment">// will trigger an implicit WriteHeader(http.StatusOK).</span>
     <span class="comment">// Thus explicit calls to WriteHeader are mainly used to</span>
     <span class="comment">// send error codes.</span>
-    WriteHeader(<a href="/builtin/#int">int</a>)
+    <span class="comment">//</span>
+    <span class="comment">// The provided code must be a valid HTTP 1xx-5xx status code.</span>
+    <span class="comment">// Only one header may be written. Go does not currently</span>
+    <span class="comment">// support sending user-defined 1xx informational headers,</span>
+    <span class="comment">// with the exception of 100-continue response header that the</span>
+    <span class="comment">// Server sends automatically when the Request.Body is read.</span>
+    WriteHeader(statusCode <a href="/builtin/#int">int</a>)
 }</pre>
 
 A ResponseWriter interface is used by an HTTP handler to construct an HTTP
@@ -2150,7 +2170,10 @@ Example:
     <span class="comment">// authentication, or cookies.</span>
     <span class="comment">//</span>
     <span class="comment">// RoundTrip should not modify the request, except for</span>
-    <span class="comment">// consuming and closing the Request&#39;s Body.</span>
+    <span class="comment">// consuming and closing the Request&#39;s Body. RoundTrip may</span>
+    <span class="comment">// read fields of the request in a separate goroutine. Callers</span>
+    <span class="comment">// should not mutate the request until the Response&#39;s Body has</span>
+    <span class="comment">// been closed.</span>
     <span class="comment">//</span>
     <span class="comment">// RoundTrip must always close the body, including on errors,</span>
     <span class="comment">// but depending on the implementation may do so in a separate</span>
@@ -2202,7 +2225,7 @@ with a Transport, as in:
     res, err := c.Get("file:///etc/passwd")
     ...
 
-<h2 id="ServeMux">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2091">ServeMux</a>
+<h2 id="ServeMux">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2123">ServeMux</a>
     <a href="#ServeMux">¶</a></h2>
 <pre>type ServeMux struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -2240,13 +2263,13 @@ ServeMux also takes care of sanitizing the URL request path, redirecting any
 request containing . or .. elements or repeated slashes to an equivalent,
 cleaner URL.
 
-<h3 id="NewServeMux">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2104">NewServeMux</a>
+<h3 id="NewServeMux">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2135">NewServeMux</a>
     <a href="#NewServeMux">¶</a></h3>
 <pre>func NewServeMux() *<a href="#ServeMux">ServeMux</a></pre>
 
 NewServeMux allocates and returns a new ServeMux.
 
-<h3 id="ServeMux.Handle">func (*ServeMux) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2249">Handle</a>
+<h3 id="ServeMux.Handle">func (*ServeMux) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2332">Handle</a>
     <a href="#ServeMux.Handle">¶</a></h3>
 <pre>func (mux *<a href="#ServeMux">ServeMux</a>) Handle(pattern <a href="/builtin/#string">string</a>, handler <a href="#Handler">Handler</a>)</pre>
 
@@ -2268,13 +2291,13 @@ Example:
         fmt.Fprintf(w, "Welcome to the home page!")
     })
 
-<h3 id="ServeMux.HandleFunc">func (*ServeMux) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2291">HandleFunc</a>
+<h3 id="ServeMux.HandleFunc">func (*ServeMux) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2357">HandleFunc</a>
     <a href="#ServeMux.HandleFunc">¶</a></h3>
 <pre>func (mux *<a href="#ServeMux">ServeMux</a>) HandleFunc(pattern <a href="/builtin/#string">string</a>, handler func(<a href="#ResponseWriter">ResponseWriter</a>, *<a href="#Request">Request</a>))</pre>
 
 HandleFunc registers the handler function for the given pattern.
 
-<h3 id="ServeMux.Handler">func (*ServeMux) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2193">Handler</a>
+<h3 id="ServeMux.Handler">func (*ServeMux) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2262">Handler</a>
     <a href="#ServeMux.Handler">¶</a></h3>
 <pre>func (mux *<a href="#ServeMux">ServeMux</a>) Handler(r *<a href="#Request">Request</a>) (h <a href="#Handler">Handler</a>, pattern <a href="/builtin/#string">string</a>)</pre>
 
@@ -2293,19 +2316,27 @@ following the redirect.
 If there is no registered handler that applies to the request, Handler returns a
 ``page not found'' handler and an empty pattern.
 
-<h3 id="ServeMux.ServeHTTP">func (*ServeMux) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2235">ServeHTTP</a>
+<h3 id="ServeMux.ServeHTTP">func (*ServeMux) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2318">ServeHTTP</a>
     <a href="#ServeMux.ServeHTTP">¶</a></h3>
 <pre>func (mux *<a href="#ServeMux">ServeMux</a>) ServeHTTP(w <a href="#ResponseWriter">ResponseWriter</a>, r *<a href="#Request">Request</a>)</pre>
 
 ServeHTTP dispatches the request to the handler whose pattern most closely
 matches the request URL.
 
-<h2 id="Server">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2333">Server</a>
+<h2 id="Server">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2399">Server</a>
     <a href="#Server">¶</a></h2>
 <pre>type Server struct {
-<span id="Server.Addr"></span>    Addr      <a href="/builtin/#string">string</a>      <span class="comment">// TCP address to listen on, &#34;:http&#34; if empty</span>
-<span id="Server.Handler"></span>    Handler   <a href="#Handler">Handler</a>     <span class="comment">// handler to invoke, http.DefaultServeMux if nil</span>
-<span id="Server.TLSConfig"></span>    TLSConfig *<a href="/crypto/tls/">tls</a>.<a href="/crypto/tls/#Config">Config</a> <span class="comment">// optional TLS config, used by ServeTLS and ListenAndServeTLS</span>
+<span id="Server.Addr"></span>    Addr    <a href="/builtin/#string">string</a>  <span class="comment">// TCP address to listen on, &#34;:http&#34; if empty</span>
+<span id="Server.Handler"></span>    Handler <a href="#Handler">Handler</a> <span class="comment">// handler to invoke, http.DefaultServeMux if nil</span>
+
+<span id="Server.TLSConfig"></span>    <span class="comment">// TLSConfig optionally provides a TLS configuration for use</span>
+    <span class="comment">// by ServeTLS and ListenAndServeTLS. Note that this value is</span>
+    <span class="comment">// cloned by ServeTLS and ListenAndServeTLS, so it&#39;s not</span>
+    <span class="comment">// possible to modify the configuration with methods like</span>
+    <span class="comment">// tls.Config.SetSessionTicketKeys. To use</span>
+    <span class="comment">// SetSessionTicketKeys, use Server.Serve with a TLS Listener</span>
+    <span class="comment">// instead.</span>
+    TLSConfig *<a href="/crypto/tls/">tls</a>.<a href="/crypto/tls/#Config">Config</a>
 
 <span id="Server.ReadTimeout"></span>    <span class="comment">// ReadTimeout is the maximum duration for reading the entire</span>
     <span class="comment">// request, including the body.</span>
@@ -2358,9 +2389,9 @@ matches the request URL.
     ConnState func(<a href="/net/">net</a>.<a href="/net/#Conn">Conn</a>, <a href="#ConnState">ConnState</a>)
 
 <span id="Server.ErrorLog"></span>    <span class="comment">// ErrorLog specifies an optional logger for errors accepting</span>
-    <span class="comment">// connections and unexpected behavior from handlers.</span>
-    <span class="comment">// If nil, logging goes to os.Stderr via the log package&#39;s</span>
-    <span class="comment">// standard logger.</span>
+    <span class="comment">// connections, unexpected behavior from handlers, and</span>
+    <span class="comment">// underlying FileSystem errors.</span>
+    <span class="comment">// If nil, logging is done via the log package&#39;s standard logger.</span>
     ErrorLog *<a href="/log/">log</a>.<a href="/log/#Logger">Logger</a>
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
@@ -2368,7 +2399,7 @@ matches the request URL.
 A Server defines parameters for running an HTTP server. The zero value for
 Server is a valid configuration.
 
-<h3 id="Server.Close">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2440">Close</a>
+<h3 id="Server.Close">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2514">Close</a>
     <a href="#Server.Close">¶</a></h3>
 <pre>func (srv *<a href="#Server">Server</a>) Close() <a href="/builtin/#error">error</a></pre>
 
@@ -2381,7 +2412,7 @@ connections, such as WebSockets.
 Close returns any error returned from closing the Server's underlying
 Listener(s).
 
-<h3 id="Server.ListenAndServe">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2617">ListenAndServe</a>
+<h3 id="Server.ListenAndServe">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2692">ListenAndServe</a>
     <a href="#Server.ListenAndServe">¶</a></h3>
 <pre>func (srv *<a href="#Server">Server</a>) ListenAndServe() <a href="/builtin/#error">error</a></pre>
 
@@ -2390,7 +2421,7 @@ to handle requests on incoming connections. Accepted connections are configured
 to enable TCP keep-alives. If srv.Addr is blank, ":http" is used. ListenAndServe
 always returns a non-nil error.
 
-<h3 id="Server.ListenAndServeTLS">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2922">ListenAndServeTLS</a>
+<h3 id="Server.ListenAndServeTLS">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L3009">ListenAndServeTLS</a>
     <a href="#Server.ListenAndServeTLS">¶</a></h3>
 <pre>func (srv *<a href="#Server">Server</a>) ListenAndServeTLS(certFile, keyFile <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -2408,7 +2439,7 @@ If srv.Addr is blank, ":https" is used.
 
 ListenAndServeTLS always returns a non-nil error.
 
-<h3 id="Server.RegisterOnShutdown">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2508">RegisterOnShutdown</a>
+<h3 id="Server.RegisterOnShutdown">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2583">RegisterOnShutdown</a>
     <a href="#Server.RegisterOnShutdown">¶</a></h3>
 <pre>func (srv *<a href="#Server">Server</a>) RegisterOnShutdown(f func())</pre>
 
@@ -2417,7 +2448,7 @@ gracefully shutdown connections that have undergone NPN/ALPN protocol upgrade or
 that have been hijacked. This function should start protocol-specific graceful
 shutdown, but should not wait for shutdown to complete.
 
-<h3 id="Server.Serve">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2668">Serve</a>
+<h3 id="Server.Serve">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2743">Serve</a>
     <a href="#Server.Serve">¶</a></h3>
 <pre>func (srv *<a href="#Server">Server</a>) Serve(l <a href="/net/">net</a>.<a href="/net/#Listener">Listener</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -2433,7 +2464,7 @@ enabled.
 Serve always returns a non-nil error. After Shutdown or Close, the returned
 error is ErrServerClosed.
 
-<h3 id="Server.ServeTLS">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2731">ServeTLS</a>
+<h3 id="Server.ServeTLS">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2806">ServeTLS</a>
     <a href="#Server.ServeTLS">¶</a></h3>
 <pre>func (srv *<a href="#Server">Server</a>) ServeTLS(l <a href="/net/">net</a>.<a href="/net/#Listener">Listener</a>, certFile, keyFile <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -2448,14 +2479,14 @@ certificate authority, the certFile should be the concatenation of the server's
 certificate, any intermediates, and the CA's certificate.
 
 For HTTP/2 support, srv.TLSConfig should be initialized to the provided
-listener's TLS Config before calling Serve. If srv.TLSConfig is non-nil and
+listener's TLS Config before calling ServeTLS. If srv.TLSConfig is non-nil and
 doesn't include the string "h2" in Config.NextProtos, HTTP/2 support is not
 enabled.
 
 ServeTLS always returns a non-nil error. After Shutdown or Close, the returned
 error is ErrServerClosed.
 
-<h3 id="Server.SetKeepAlivesEnabled">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2814">SetKeepAlivesEnabled</a>
+<h3 id="Server.SetKeepAlivesEnabled">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2889">SetKeepAlivesEnabled</a>
     <a href="#Server.SetKeepAlivesEnabled">¶</a></h3>
 <pre>func (srv *<a href="#Server">Server</a>) SetKeepAlivesEnabled(v <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -2463,7 +2494,7 @@ SetKeepAlivesEnabled controls whether HTTP keep-alives are enabled. By default,
 keep-alives are always enabled. Only very resource-constrained environments or
 servers in the process of shutting down should disable them.
 
-<h3 id="Server.Shutdown">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2477">Shutdown</a>
+<h3 id="Server.Shutdown">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/server.go#L2552">Shutdown</a>
     <a href="#Server.Shutdown">¶</a></h3>
 <pre>func (srv *<a href="#Server">Server</a>) Shutdown(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -2480,9 +2511,36 @@ instead for Shutdown to return.
 
 Shutdown does not attempt to close nor wait for hijacked connections such as
 WebSockets. The caller of Shutdown should separately notify such long-lived
-connections of shutdown and wait for them to close, if desired.
+connections of shutdown and wait for them to close, if desired. See
+RegisterOnShutdown for a way to register shutdown notification functions.
 
-<h2 id="Transport">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go#L66">Transport</a>
+<a id="exampleServer_Shutdown"></a>
+Example:
+
+    var srv http.Server
+
+    idleConnsClosed := make(chan struct{})
+    go func() {
+        sigint := make(chan os.Signal, 1)
+        signal.Notify(sigint, os.Interrupt)
+        <-sigint
+
+        // We received an interrupt signal, shut down.
+        if err := srv.Shutdown(context.Background()); err != nil {
+            // Error from closing listeners, or context timeout:
+            log.Printf("HTTP server Shutdown: %v", err)
+        }
+        close(idleConnsClosed)
+    }()
+
+    if err := srv.ListenAndServe(); err != http.ErrServerClosed {
+        // Error starting or closing listener:
+        log.Printf("HTTP server ListenAndServe: %v", err)
+    }
+
+    <-idleConnsClosed
+
+<h2 id="Transport">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go#L75">Transport</a>
     <a href="#Transport">¶</a></h2>
 <pre>type Transport struct {
 
@@ -2619,7 +2677,15 @@ configured. The DefaultTransport supports HTTP/2. To explicitly enable HTTP/2 on
 a transport, use golang.org/x/net/http2 and call ConfigureTransport. See the
 package docs for more about HTTP/2.
 
-<h3 id="Transport.CancelRequest">func (*Transport) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go#L539">CancelRequest</a>
+The Transport will send CONNECT requests to a proxy for its own use when
+processing HTTPS requests, but Transport should generally not be used to send a
+CONNECT request. That is, the Request passed to the RoundTrip method should not
+have a Method of "CONNECT", as Go's HTTP/1.x implementation does not support
+full-duplex request bodies being written while the response body is streamed.
+Go's HTTP/2 implementation does support full duplex, but many CONNECT proxies
+speak HTTP/1.x.
+
+<h3 id="Transport.CancelRequest">func (*Transport) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go#L548">CancelRequest</a>
     <a href="#Transport.CancelRequest">¶</a></h3>
 <pre>func (t *<a href="#Transport">Transport</a>) CancelRequest(req *<a href="#Request">Request</a>)</pre>
 
@@ -2629,7 +2695,7 @@ CancelRequest should only be called after RoundTrip has returned.
 Deprecated: Use Request.WithContext to create a request with a cancelable
 context instead. CancelRequest cannot cancel HTTP/2 requests.
 
-<h3 id="Transport.CloseIdleConnections">func (*Transport) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go#L514">CloseIdleConnections</a>
+<h3 id="Transport.CloseIdleConnections">func (*Transport) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go#L523">CloseIdleConnections</a>
     <a href="#Transport.CloseIdleConnections">¶</a></h3>
 <pre>func (t *<a href="#Transport">Transport</a>) CloseIdleConnections()</pre>
 
@@ -2637,7 +2703,7 @@ CloseIdleConnections closes any connections which were previously connected from
 previous requests but are now sitting idle in a "keep-alive" state. It does not
 interrupt any connections currently in use.
 
-<h3 id="Transport.RegisterProtocol">func (*Transport) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go#L495">RegisterProtocol</a>
+<h3 id="Transport.RegisterProtocol">func (*Transport) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go#L504">RegisterProtocol</a>
     <a href="#Transport.RegisterProtocol">¶</a></h3>
 <pre>func (t *<a href="#Transport">Transport</a>) RegisterProtocol(scheme <a href="/builtin/#string">string</a>, rt <a href="#RoundTripper">RoundTripper</a>)</pre>
 
@@ -2651,7 +2717,7 @@ protocol schemes like "ftp" or "file".
 If rt.RoundTrip returns ErrSkipAltProtocol, the Transport will handle the
 RoundTrip itself for that one request, as if the protocol were not registered.
 
-<h3 id="Transport.RoundTrip">func (*Transport) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go#L331">RoundTrip</a>
+<h3 id="Transport.RoundTrip">func (*Transport) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/transport.go#L340">RoundTrip</a>
     <a href="#Transport.RoundTrip">¶</a></h3>
 <pre>func (t *<a href="#Transport">Transport</a>) RoundTrip(req *<a href="#Request">Request</a>) (*<a href="#Response">Response</a>, <a href="/builtin/#error">error</a>)</pre>
 

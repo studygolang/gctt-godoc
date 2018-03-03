@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package ast
 
   `import "go/ast"`
@@ -697,7 +697,8 @@ A CaseClause represents a case of an expression or type switch statement.
     <a href="#ChanDir">¶</a></h2>
 <pre>type ChanDir <a href="/builtin/#int">int</a></pre>
 
-The direction of a channel type is indicated by one of the following constants.
+The direction of a channel type is indicated by a bit mask including one or both
+of the following constants.
 
 <pre>const (
     <span id="SEND">SEND</span> <a href="#ChanDir">ChanDir</a> = 1 &lt;&lt; <a href="/builtin/#iota">iota</a>

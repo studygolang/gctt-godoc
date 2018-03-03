@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package sha1
 
   `import "crypto/sha1"`
@@ -35,11 +35,13 @@ The blocksize of SHA-1 in bytes.
 
 The size of a SHA-1 checksum in bytes.
 
-<h2 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/sha1/sha1.go#L44">New</a>
+<h2 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/sha1/sha1.go#L110">New</a>
     <a href="#New">¶</a></h2>
 <pre>func New() <a href="/hash/">hash</a>.<a href="/hash/#Hash">Hash</a></pre>
 
-New returns a new hash.Hash computing the SHA1 checksum.
+New returns a new hash.Hash computing the SHA1 checksum. The Hash also
+implements encoding.BinaryMarshaler and encoding.BinaryUnmarshaler to marshal
+and unmarshal the internal state of the hash.
 
 <a id="exampleNew"></a>
 Example:
@@ -67,7 +69,7 @@ Example:
 
     fmt.Printf("% x", h.Sum(nil))
 
-<h2 id="Sum">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/sha1/sha1.go#L186">Sum</a>
+<h2 id="Sum">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/sha1/sha1.go#L250">Sum</a>
     <a href="#Sum">¶</a></h2>
 <pre>func Sum(data []<a href="/builtin/#byte">byte</a>) [<a href="#Size">Size</a>]<a href="/builtin/#byte">byte</a></pre>
 

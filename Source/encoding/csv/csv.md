@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package csv
 
   `import "encoding/csv"`
@@ -81,41 +81,49 @@ results in
 <h2 id="pkg-variables">Variables</h2>
 
 <pre>var (
-    <span id="ErrTrailingComma">ErrTrailingComma</span> = <a href="/errors/">errors</a>.<a href="/errors/#New">New</a>(&#34;extra delimiter at end of line&#34;) <span class="comment">// no longer used</span>
+    <span id="ErrTrailingComma">ErrTrailingComma</span> = <a href="/errors/">errors</a>.<a href="/errors/#New">New</a>(&#34;extra delimiter at end of line&#34;) <span class="comment">// Deprecated: No longer used.</span>
     <span id="ErrBareQuote">ErrBareQuote</span>     = <a href="/errors/">errors</a>.<a href="/errors/#New">New</a>(&#34;bare \&#34; in non-quoted-field&#34;)
-    <span id="ErrQuote">ErrQuote</span>         = <a href="/errors/">errors</a>.<a href="/errors/#New">New</a>(&#34;extraneous \&#34; in field&#34;)
-    <span id="ErrFieldCount">ErrFieldCount</span>    = <a href="/errors/">errors</a>.<a href="/errors/#New">New</a>(&#34;wrong number of fields in line&#34;)
+    <span id="ErrQuote">ErrQuote</span>         = <a href="/errors/">errors</a>.<a href="/errors/#New">New</a>(&#34;extraneous or missing \&#34; in quoted-field&#34;)
+    <span id="ErrFieldCount">ErrFieldCount</span>    = <a href="/errors/">errors</a>.<a href="/errors/#New">New</a>(&#34;wrong number of fields&#34;)
 )</pre>
 
-These are the errors that can be returned in ParseError.Error
+These are the errors that can be returned in ParseError.Err.
 
-<h2 id="ParseError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L55">ParseError</a>
+<h2 id="ParseError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L56">ParseError</a>
     <a href="#ParseError">¶</a></h2>
 <pre>type ParseError struct {
-<span id="ParseError.Line"></span>    Line   <a href="/builtin/#int">int</a>   <span class="comment">// Line where the error occurred</span>
-<span id="ParseError.Column"></span>    Column <a href="/builtin/#int">int</a>   <span class="comment">// Column (rune index) where the error occurred</span>
-<span id="ParseError.Err"></span>    Err    <a href="/builtin/#error">error</a> <span class="comment">// The actual error</span>
+<span id="ParseError.StartLine"></span>    StartLine <a href="/builtin/#int">int</a>   <span class="comment">// Line where the record starts</span>
+<span id="ParseError.Line"></span>    Line      <a href="/builtin/#int">int</a>   <span class="comment">// Line where the error occurred</span>
+<span id="ParseError.Column"></span>    Column    <a href="/builtin/#int">int</a>   <span class="comment">// Column (rune index) where the error occurred</span>
+<span id="ParseError.Err"></span>    Err       <a href="/builtin/#error">error</a> <span class="comment">// The actual error</span>
 }</pre>
 
-A ParseError is returned for parsing errors. The first line is 1. The first
-column is 0.
+A ParseError is returned for parsing errors. Line numbers are 1-indexed and
+columns are 0-indexed.
 
-<h3 id="ParseError.Error">func (*ParseError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L61">Error</a>
+<h3 id="ParseError.Error">func (*ParseError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L63">Error</a>
     <a href="#ParseError.Error">¶</a></h3>
 <pre>func (e *<a href="#ParseError">ParseError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Reader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L80">Reader</a>
+<h2 id="Reader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L96">Reader</a>
     <a href="#Reader">¶</a></h2>
 <pre>type Reader struct {
 <span id="Reader.Comma"></span>    <span class="comment">// Comma is the field delimiter.</span>
     <span class="comment">// It is set to comma (&#39;,&#39;) by NewReader.</span>
+    <span class="comment">// Comma must be a valid rune and must not be \r, \n,</span>
+    <span class="comment">// or the Unicode replacement character (0xFFFD).</span>
     Comma <a href="/builtin/#rune">rune</a>
+
 <span id="Reader.Comment"></span>    <span class="comment">// Comment, if not 0, is the comment character. Lines beginning with the</span>
     <span class="comment">// Comment character without preceding whitespace are ignored.</span>
     <span class="comment">// With leading whitespace the Comment character becomes part of the</span>
     <span class="comment">// field, even if TrimLeadingSpace is true.</span>
+    <span class="comment">// Comment must be a valid rune and must not be \r, \n,</span>
+    <span class="comment">// or the Unicode replacement character (0xFFFD).</span>
+    <span class="comment">// It must also not be equal to Comma.</span>
     Comment <a href="/builtin/#rune">rune</a>
+
 <span id="Reader.FieldsPerRecord"></span>    <span class="comment">// FieldsPerRecord is the number of expected fields per record.</span>
     <span class="comment">// If FieldsPerRecord is positive, Read requires each record to</span>
     <span class="comment">// have the given number of fields. If FieldsPerRecord is 0, Read sets it to</span>
@@ -123,17 +131,21 @@ column is 0.
     <span class="comment">// have the same field count. If FieldsPerRecord is negative, no check is</span>
     <span class="comment">// made and records may have a variable number of fields.</span>
     FieldsPerRecord <a href="/builtin/#int">int</a>
+
     <span class="comment">// If LazyQuotes is true, a quote may appear in an unquoted field and a</span>
     <span class="comment">// non-doubled quote may appear in a quoted field.</span>
-<span id="Reader.LazyQuotes"></span>    LazyQuotes    <a href="/builtin/#bool">bool</a>
-<span id="Reader.TrailingComma"></span>    TrailingComma <a href="/builtin/#bool">bool</a> <span class="comment">// ignored; here for backwards compatibility</span>
+<span id="Reader.LazyQuotes"></span>    LazyQuotes <a href="/builtin/#bool">bool</a>
+
     <span class="comment">// If TrimLeadingSpace is true, leading white space in a field is ignored.</span>
     <span class="comment">// This is done even if the field delimiter, Comma, is white space.</span>
 <span id="Reader.TrimLeadingSpace"></span>    TrimLeadingSpace <a href="/builtin/#bool">bool</a>
+
 <span id="Reader.ReuseRecord"></span>    <span class="comment">// ReuseRecord controls whether calls to Read may return a slice sharing</span>
     <span class="comment">// the backing array of the previous call&#39;s returned slice for performance.</span>
     <span class="comment">// By default, each call to Read returns newly allocated memory owned by the caller.</span>
     ReuseRecord <a href="/builtin/#bool">bool</a>
+
+<span id="Reader.TrailingComma"></span>    TrailingComma <a href="/builtin/#bool">bool</a> <span class="comment">// Deprecated: No longer used.</span>
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 
@@ -142,6 +154,10 @@ A Reader reads records from a CSV-encoded file.
 As returned by NewReader, a Reader expects input conforming to RFC 4180. The
 exported fields can be changed to customize the details before the first call to
 Read or ReadAll.
+
+The Reader converts all \r\n sequences in its input to plain \n, including in
+multiline field values, so that the returned data does not depend on which
+line-ending convention an input file uses.
 
 <a id="exampleReader"></a>
 Example:
@@ -193,13 +209,13 @@ Example:
     // Output:
     // [[first_name last_name username] [Rob Pike rob] [Ken Thompson ken] [Robert Griesemer gri]]
 
-<h3 id="NewReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L125">NewReader</a>
+<h3 id="NewReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L158">NewReader</a>
     <a href="#NewReader">¶</a></h3>
 <pre>func NewReader(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) *<a href="#Reader">Reader</a></pre>
 
 NewReader returns a new Reader that reads from r.
 
-<h3 id="Reader.Read">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L149">Read</a>
+<h3 id="Reader.Read">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L173">Read</a>
     <a href="#Reader.Read">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) Read() (record []<a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -210,7 +226,7 @@ or a non-nil error, but not both. If there is no data left to be read, Read
 returns nil, io.EOF. If ReuseRecord is true, the returned slice may be shared
 between multiple calls to Read.
 
-<h3 id="Reader.ReadAll">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L165">ReadAll</a>
+<h3 id="Reader.ReadAll">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L188">ReadAll</a>
     <a href="#Reader.ReadAll">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) ReadAll() (records [][]<a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -254,7 +270,7 @@ the details before the first call to Write or WriteAll.
 
 Comma is the field delimiter.
 
-If UseCRLF is true, the Writer ends each record with \r\n instead of \n.
+If UseCRLF is true, the Writer ends each output line with \r\n instead of \n.
 
 <a id="exampleWriter"></a>
 Example:
@@ -292,13 +308,13 @@ Example:
 
 NewWriter returns a new Writer that writes to w.
 
-<h3 id="Writer.Error">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/writer.go#L93">Error</a>
+<h3 id="Writer.Error">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/writer.go#L97">Error</a>
     <a href="#Writer.Error">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Error() <a href="/builtin/#error">error</a></pre>
 
 Error reports any error that has occurred during a previous Write or Flush.
 
-<h3 id="Writer.Flush">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/writer.go#L88">Flush</a>
+<h3 id="Writer.Flush">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/writer.go#L92">Flush</a>
     <a href="#Writer.Flush">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Flush()</pre>
 
@@ -312,7 +328,7 @@ occurred during the Flush, call Error.
 Writer writes a single CSV record to w along with any necessary quoting. A
 record is a slice of strings with each string being one field.
 
-<h3 id="Writer.WriteAll">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/writer.go#L99">WriteAll</a>
+<h3 id="Writer.WriteAll">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/writer.go#L103">WriteAll</a>
     <a href="#Writer.WriteAll">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) WriteAll(records [][]<a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 

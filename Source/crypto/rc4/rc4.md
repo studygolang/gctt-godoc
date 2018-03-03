@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package rc4
 
   `import "crypto/rc4"`
@@ -49,7 +49,7 @@ memory.
 <pre>func (c *<a href="#Cipher">Cipher</a>) XORKeyStream(dst, src []<a href="/builtin/#byte">byte</a>)</pre>
 
 XORKeyStream sets dst to the result of XORing src with the key stream. Dst and
-src may be the same slice but otherwise should not overlap.
+src must overlap entirely or not at all.
 
 <h2 id="KeySizeError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rc4/rc4.go#L10">KeySizeError</a>
     <a href="#KeySizeError">¶</a></h2>

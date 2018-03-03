@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package base64
 
   `import "encoding/base64"`
@@ -82,13 +82,13 @@ StdEncoding is the standard base64 encoding, as defined in RFC 4648.
 URLEncoding is the alternate base64 encoding defined in RFC 4648. It is
 typically used in URLs and file names.
 
-<h2 id="NewDecoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L485">NewDecoder</a>
+<h2 id="NewDecoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L593">NewDecoder</a>
     <a href="#NewDecoder">¶</a></h2>
 <pre>func NewDecoder(enc *<a href="#Encoding">Encoding</a>, r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a></pre>
 
 NewDecoder constructs a new base64 stream decoder.
 
-<h2 id="NewEncoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L239">NewEncoder</a>
+<h2 id="NewEncoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L240">NewEncoder</a>
     <a href="#NewEncoder">¶</a></h2>
 <pre>func NewEncoder(enc *<a href="#Encoding">Encoding</a>, w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) <a href="/io/">io</a>.<a href="/io/#WriteCloser">WriteCloser</a></pre>
 
@@ -110,17 +110,17 @@ Example:
     // Output:
     // Zm9vAGJhcg==
 
-<h2 id="CorruptInputError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L256">CorruptInputError</a>
+<h2 id="CorruptInputError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L257">CorruptInputError</a>
     <a href="#CorruptInputError">¶</a></h2>
 <pre>type CorruptInputError <a href="/builtin/#int64">int64</a></pre>
 
 
-<h3 id="CorruptInputError.Error">func (CorruptInputError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L258">Error</a>
+<h3 id="CorruptInputError.Error">func (CorruptInputError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L259">Error</a>
     <a href="#CorruptInputError.Error">¶</a></h3>
 <pre>func (e <a href="#CorruptInputError">CorruptInputError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Encoding">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L12">Encoding</a>
+<h2 id="Encoding">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L13">Encoding</a>
     <a href="#Encoding">¶</a></h2>
 <pre>type Encoding struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -132,7 +132,7 @@ and used in MIME (RFC 2045) and PEM (RFC 1421). RFC 4648 also defines an
 alternate encoding, which is the standard encoding with - and _ substituted for
 + and /.
 
-<h3 id="NewEncoding">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L32">NewEncoding</a>
+<h3 id="NewEncoding">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L33">NewEncoding</a>
     <a href="#NewEncoding">¶</a></h3>
 <pre>func NewEncoding(encoder <a href="/builtin/#string">string</a>) *<a href="#Encoding">Encoding</a></pre>
 
@@ -141,7 +141,7 @@ must be a 64-byte string that does not contain the padding character or CR / LF
 ('\r', '\n'). The resulting Encoding uses the default padding character ('='),
 which may be changed or disabled via WithPadding.
 
-<h3 id="Encoding.Decode">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L368">Decode</a>
+<h3 id="Encoding.Decode">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L452">Decode</a>
     <a href="#Encoding.Decode">¶</a></h3>
 <pre>func (enc *<a href="#Encoding">Encoding</a>) Decode(dst, src []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -151,7 +151,7 @@ src contains invalid base64 data, it will return the number of bytes
 successfully written and CorruptInputError. New line characters (\r and \n) are
 ignored.
 
-<h3 id="Encoding.DecodeString">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L374">DecodeString</a>
+<h3 id="Encoding.DecodeString">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L364">DecodeString</a>
     <a href="#Encoding.DecodeString">¶</a></h3>
 <pre>func (enc *<a href="#Encoding">Encoding</a>) DecodeString(s <a href="/builtin/#string">string</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -170,14 +170,14 @@ Example:
     // Output:
     // "some data with \x00 and \ufeff"
 
-<h3 id="Encoding.DecodedLen">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L491">DecodedLen</a>
+<h3 id="Encoding.DecodedLen">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L599">DecodedLen</a>
     <a href="#Encoding.DecodedLen">¶</a></h3>
 <pre>func (enc *<a href="#Encoding">Encoding</a>) DecodedLen(n <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 DecodedLen returns the maximum length in bytes of the decoded data corresponding
 to n bytes of base64-encoded data.
 
-<h3 id="Encoding.Encode">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L111">Encode</a>
+<h3 id="Encoding.Encode">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L112">Encode</a>
     <a href="#Encoding.Encode">¶</a></h3>
 <pre>func (enc *<a href="#Encoding">Encoding</a>) Encode(dst, src []<a href="/builtin/#byte">byte</a>)</pre>
 
@@ -188,7 +188,7 @@ The encoding pads the output to a multiple of 4 bytes, so Encode is not
 appropriate for use on individual blocks of a large data stream. Use
 NewEncoder() instead.
 
-<h3 id="Encoding.EncodeToString">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L159">EncodeToString</a>
+<h3 id="Encoding.EncodeToString">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L160">EncodeToString</a>
     <a href="#Encoding.EncodeToString">¶</a></h3>
 <pre>func (enc *<a href="#Encoding">Encoding</a>) EncodeToString(src []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -203,14 +203,14 @@ Example:
     // Output:
     // YW55ICsgb2xkICYgZGF0YQ==
 
-<h3 id="Encoding.EncodedLen">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L245">EncodedLen</a>
+<h3 id="Encoding.EncodedLen">func (*Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L246">EncodedLen</a>
     <a href="#Encoding.EncodedLen">¶</a></h3>
 <pre>func (enc *<a href="#Encoding">Encoding</a>) EncodedLen(n <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 EncodedLen returns the length in bytes of the base64 encoding of an input buffer
 of length n.
 
-<h3 id="Encoding.Strict">func (Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L78">Strict</a>
+<h3 id="Encoding.Strict">func (Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L79">Strict</a>
     <a href="#Encoding.Strict">¶</a></h3>
 <pre>func (enc <a href="#Encoding">Encoding</a>) Strict() *<a href="#Encoding">Encoding</a></pre>
 
@@ -218,7 +218,7 @@ Strict creates a new encoding identical to enc except with strict decoding
 enabled. In this mode, the decoder requires that trailing padding bits are zero,
 as described in RFC 4648 section 3.5.
 
-<h3 id="Encoding.WithPadding">func (Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L60">WithPadding</a>
+<h3 id="Encoding.WithPadding">func (Encoding) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/base64/base64.go#L61">WithPadding</a>
     <a href="#Encoding.WithPadding">¶</a></h3>
 <pre>func (enc <a href="#Encoding">Encoding</a>) WithPadding(padding <a href="/builtin/#rune">rune</a>) *<a href="#Encoding">Encoding</a></pre>
 

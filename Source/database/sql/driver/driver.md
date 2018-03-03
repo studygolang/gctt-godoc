@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package driver
 
   `import "database/sql/driver"`
@@ -19,7 +19,9 @@ Most code should use package sql.
 - [type Conn](#Conn)
 - [type ConnBeginTx](#ConnBeginTx)
 - [type ConnPrepareContext](#ConnPrepareContext)
+- [type Connector](#Connector)
 - [type Driver](#Driver)
+- [type DriverContext](#DriverContext)
 - [type Execer](#Execer)
 - [type ExecerContext](#ExecerContext)
 - [type IsolationLevel](#IsolationLevel)
@@ -43,6 +45,7 @@ Most code should use package sql.
 - [type RowsColumnTypePrecisionScale](#RowsColumnTypePrecisionScale)
 - [type RowsColumnTypeScanType](#RowsColumnTypeScanType)
 - [type RowsNextResultSet](#RowsNextResultSet)
+- [type SessionResetter](#SessionResetter)
 - [type Stmt](#Stmt)
 - [type StmtExecContext](#StmtExecContext)
 - [type StmtQueryContext](#StmtQueryContext)
@@ -137,7 +140,7 @@ IsScanValue is equivalent to IsValue. It exists for compatibility.
 
 IsValue reports whether v is a valid Value parameter type.
 
-<h2 id="ColumnConverter">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L288">ColumnConverter</a>
+<h2 id="ColumnConverter">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L348">ColumnConverter</a>
     <a href="#ColumnConverter">¶</a></h2>
 <pre>type ColumnConverter interface {
     <span class="comment">// ColumnConverter returns a ValueConverter for the provided</span>
@@ -152,7 +155,7 @@ of its own columns' types and can convert from any type to a driver Value.
 
 Deprecated: Drivers should implement NamedValueChecker.
 
-<h2 id="Conn">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L133">Conn</a>
+<h2 id="Conn">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L181">Conn</a>
     <a href="#Conn">¶</a></h2>
 <pre>type Conn interface {
     <span class="comment">// Prepare returns a prepared statement, bound to this connection.</span>
@@ -179,7 +182,7 @@ goroutines.
 
 Conn is assumed to be stateful.
 
-<h2 id="ConnBeginTx">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L176">ConnBeginTx</a>
+<h2 id="ConnBeginTx">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L224">ConnBeginTx</a>
     <a href="#ConnBeginTx">¶</a></h2>
 <pre>type ConnBeginTx interface {
     <span class="comment">// BeginTx starts and returns a new transaction.</span>
@@ -199,7 +202,7 @@ Conn is assumed to be stateful.
 
 ConnBeginTx enhances the Conn interface with context and TxOptions.
 
-<h2 id="ConnPrepareContext">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L154">ConnPrepareContext</a>
+<h2 id="ConnPrepareContext">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L202">ConnPrepareContext</a>
     <a href="#ConnPrepareContext">¶</a></h2>
 <pre>type ConnPrepareContext interface {
     <span class="comment">// PrepareContext returns a prepared statement, bound to this connection.</span>
@@ -210,7 +213,37 @@ ConnBeginTx enhances the Conn interface with context and TxOptions.
 
 ConnPrepareContext enhances the Conn interface with context.
 
-<h2 id="Driver">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L35">Driver</a>
+<h2 id="Connector">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L74">Connector</a>
+    <a href="#Connector">¶</a></h2>
+<pre>type Connector interface {
+    <span class="comment">// Connect returns a connection to the database.</span>
+    <span class="comment">// Connect may return a cached connection (one previously</span>
+    <span class="comment">// closed), but doing so is unnecessary; the sql package</span>
+    <span class="comment">// maintains a pool of idle connections for efficient re-use.</span>
+    <span class="comment">//</span>
+    <span class="comment">// The provided context.Context is for dialing purposes only</span>
+    <span class="comment">// (see net.DialContext) and should not be stored or used for</span>
+    <span class="comment">// other purposes.</span>
+    <span class="comment">//</span>
+    <span class="comment">// The returned connection is only used by one goroutine at a</span>
+    <span class="comment">// time.</span>
+    Connect(<a href="/context/">context</a>.<a href="/context/#Context">Context</a>) (<a href="#Conn">Conn</a>, <a href="/builtin/#error">error</a>)
+
+    <span class="comment">// Driver returns the underlying Driver of the Connector,</span>
+    <span class="comment">// mainly to maintain compatibility with the Driver method</span>
+    <span class="comment">// on sql.DB.</span>
+    Driver() <a href="#Driver">Driver</a>
+}</pre>
+
+A Connector represents a driver in a fixed configuration and can create any
+number of equivalent Conns for use by multiple goroutines.
+
+A Connector can be passed to sql.OpenDB, to allow drivers to implement their own
+sql.DB constructors, or returned by DriverContext's OpenConnector method, to
+allow drivers access to context and to avoid repeated parsing of driver
+configuration.
+
+<h2 id="Driver">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L40">Driver</a>
     <a href="#Driver">¶</a></h2>
 <pre>type Driver interface {
     <span class="comment">// Open returns a new connection to the database.</span>
@@ -227,7 +260,24 @@ ConnPrepareContext enhances the Conn interface with context.
 
 Driver is the interface that must be implemented by a database driver.
 
-<h2 id="Execer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L86">Execer</a>
+Database drivers may implement DriverContext for access to contexts and to parse
+the name only once for a pool of connections, instead of once per connection.
+
+<h2 id="DriverContext">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L59">DriverContext</a>
+    <a href="#DriverContext">¶</a></h2>
+<pre>type DriverContext interface {
+    <span class="comment">// OpenConnector must parse the name in the same format that Driver.Open</span>
+    <span class="comment">// parses the name parameter.</span>
+    OpenConnector(name <a href="/builtin/#string">string</a>) (<a href="#Connector">Connector</a>, <a href="/builtin/#error">error</a>)
+}</pre>
+
+If a Driver implements DriverContext, then sql.DB will call OpenConnector to
+obtain a Connector and then invoke that Connector's Conn method to obtain each
+needed connection, instead of invoking the Driver's Open method for each
+connection. The two-step sequence allows drivers to parse the name just once and
+also provides access to per-Conn contexts.
+
+<h2 id="Execer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L132">Execer</a>
     <a href="#Execer">¶</a></h2>
 <pre>type Execer interface {
     Exec(query <a href="/builtin/#string">string</a>, args []<a href="#Value">Value</a>) (<a href="#Result">Result</a>, <a href="/builtin/#error">error</a>)
@@ -235,14 +285,15 @@ Driver is the interface that must be implemented by a database driver.
 
 Execer is an optional interface that may be implemented by a Conn.
 
-If a Conn does not implement Execer, the sql package's DB.Exec will first
-prepare a query, execute the statement, and then close the statement.
+If a Conn implements neither ExecerContext nor Execer Execer, the sql package's
+DB.Exec will first prepare a query, execute the statement, and then close the
+statement.
 
 Exec may return ErrSkip.
 
-Deprecated: Drivers should implement ExecerContext instead (or additionally).
+Deprecated: Drivers should implement ExecerContext instead.
 
-<h2 id="ExecerContext">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L99">ExecerContext</a>
+<h2 id="ExecerContext">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L146">ExecerContext</a>
     <a href="#ExecerContext">¶</a></h2>
 <pre>type ExecerContext interface {
     ExecContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, query <a href="/builtin/#string">string</a>, args []<a href="#NamedValue">NamedValue</a>) (<a href="#Result">Result</a>, <a href="/builtin/#error">error</a>)
@@ -250,7 +301,8 @@ Deprecated: Drivers should implement ExecerContext instead (or additionally).
 
 ExecerContext is an optional interface that may be implemented by a Conn.
 
-If a Conn does not implement ExecerContext, the sql package's DB.Exec will first
+If a Conn does not implement ExecerContext, the sql package's DB.Exec will fall
+back to Execer; if the Conn does not implement Execer either, DB.Exec will first
 prepare a query, execute the statement, and then close the statement.
 
 ExecerContext may return ErrSkip.
@@ -258,7 +310,7 @@ ExecerContext may return ErrSkip.
 ExecerContext must honor the context timeout and return when the context is
 canceled.
 
-<h2 id="IsolationLevel">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L165">IsolationLevel</a>
+<h2 id="IsolationLevel">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L213">IsolationLevel</a>
     <a href="#IsolationLevel">¶</a></h2>
 <pre>type IsolationLevel <a href="/builtin/#int">int</a></pre>
 
@@ -267,7 +319,7 @@ IsolationLevel is the transaction isolation level stored in TxOptions.
 This type should be considered identical to sql.IsolationLevel along with any
 values defined on it.
 
-<h2 id="NamedValue">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L19">NamedValue</a>
+<h2 id="NamedValue">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L20">NamedValue</a>
     <a href="#NamedValue">¶</a></h2>
 <pre>type NamedValue struct {
     <span class="comment">// If the Name is not empty it should be used for the parameter identifier and</span>
@@ -285,7 +337,7 @@ values defined on it.
 
 NamedValue holds both the value name and value.
 
-<h2 id="NamedValueChecker">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L276">NamedValueChecker</a>
+<h2 id="NamedValueChecker">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L336">NamedValueChecker</a>
     <a href="#NamedValueChecker">¶</a></h2>
 <pre>type NamedValueChecker interface {
     <span class="comment">// CheckNamedValue is called before passing arguments to the driver</span>
@@ -338,7 +390,7 @@ otherwise delegating to another ValueConverter.
 <pre>func (n <a href="#Null">Null</a>) ConvertValue(v interface{}) (<a href="#Value">Value</a>, <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Pinger">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L73">Pinger</a>
+<h2 id="Pinger">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L119">Pinger</a>
     <a href="#Pinger">¶</a></h2>
 <pre>type Pinger interface {
     Ping(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>) <a href="/builtin/#error">error</a>
@@ -352,7 +404,7 @@ DB.PingContext will check if there is at least one Conn available.
 If Conn.Ping returns ErrBadConn, DB.Ping and DB.PingContext will remove the Conn
 from pool.
 
-<h2 id="Queryer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L112">Queryer</a>
+<h2 id="Queryer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L159">Queryer</a>
     <a href="#Queryer">¶</a></h2>
 <pre>type Queryer interface {
     Query(query <a href="/builtin/#string">string</a>, args []<a href="#Value">Value</a>) (<a href="#Rows">Rows</a>, <a href="/builtin/#error">error</a>)
@@ -360,14 +412,15 @@ from pool.
 
 Queryer is an optional interface that may be implemented by a Conn.
 
-If a Conn does not implement Queryer, the sql package's DB.Query will first
-prepare a query, execute the statement, and then close the statement.
+If a Conn implements neither QueryerContext nor Queryer, the sql package's
+DB.Query will first prepare a query, execute the statement, and then close the
+statement.
 
 Query may return ErrSkip.
 
-Deprecated: Drivers should implement QueryerContext instead (or additionally).
+Deprecated: Drivers should implement QueryerContext instead.
 
-<h2 id="QueryerContext">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L125">QueryerContext</a>
+<h2 id="QueryerContext">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L173">QueryerContext</a>
     <a href="#QueryerContext">¶</a></h2>
 <pre>type QueryerContext interface {
     QueryContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, query <a href="/builtin/#string">string</a>, args []<a href="#NamedValue">NamedValue</a>) (<a href="#Rows">Rows</a>, <a href="/builtin/#error">error</a>)
@@ -376,14 +429,15 @@ Deprecated: Drivers should implement QueryerContext instead (or additionally).
 QueryerContext is an optional interface that may be implemented by a Conn.
 
 If a Conn does not implement QueryerContext, the sql package's DB.Query will
-first prepare a query, execute the statement, and then close the statement.
+fall back to Queryer; if the Conn does not implement Queryer either, DB.Query
+will first prepare a query, execute the statement, and then close the statement.
 
 QueryerContext may return ErrSkip.
 
 QueryerContext must honor the context timeout and return when the context is
 canceled.
 
-<h2 id="Result">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L193">Result</a>
+<h2 id="Result">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L253">Result</a>
     <a href="#Result">¶</a></h2>
 <pre>type Result interface {
     <span class="comment">// LastInsertId returns the database&#39;s auto-generated ID</span>
@@ -398,7 +452,7 @@ canceled.
 
 Result is the result of a query execution.
 
-<h2 id="Rows">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L297">Rows</a>
+<h2 id="Rows">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L357">Rows</a>
     <a href="#Rows">¶</a></h2>
 <pre>type Rows interface {
     <span class="comment">// Columns returns the names of the columns. The number of</span>
@@ -415,29 +469,33 @@ Result is the result of a query execution.
     <span class="comment">// size as the Columns() are wide.</span>
     <span class="comment">//</span>
     <span class="comment">// Next should return io.EOF when there are no more rows.</span>
+    <span class="comment">//</span>
+    <span class="comment">// The dest should not be written to outside of Next. Care</span>
+    <span class="comment">// should be taken when closing Rows not to modify</span>
+    <span class="comment">// a buffer held in dest.</span>
     Next(dest []<a href="#Value">Value</a>) <a href="/builtin/#error">error</a>
 }</pre>
 
 Rows is an iterator over an executed query's results.
 
-<h2 id="RowsAffected">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L393">RowsAffected</a>
+<h2 id="RowsAffected">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L457">RowsAffected</a>
     <a href="#RowsAffected">¶</a></h2>
 <pre>type RowsAffected <a href="/builtin/#int64">int64</a></pre>
 
 RowsAffected implements Result for an INSERT or UPDATE operation which mutates a
 number of rows.
 
-<h3 id="RowsAffected.LastInsertId">func (RowsAffected) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L397">LastInsertId</a>
+<h3 id="RowsAffected.LastInsertId">func (RowsAffected) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L461">LastInsertId</a>
     <a href="#RowsAffected.LastInsertId">¶</a></h3>
 <pre>func (<a href="#RowsAffected">RowsAffected</a>) LastInsertId() (<a href="/builtin/#int64">int64</a>, <a href="/builtin/#error">error</a>)</pre>
 
 
-<h3 id="RowsAffected.RowsAffected">func (RowsAffected) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L401">RowsAffected</a>
+<h3 id="RowsAffected.RowsAffected">func (RowsAffected) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L465">RowsAffected</a>
     <a href="#RowsAffected.RowsAffected">¶</a></h3>
 <pre>func (v <a href="#RowsAffected">RowsAffected</a>) RowsAffected() (<a href="/builtin/#int64">int64</a>, <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="RowsColumnTypeDatabaseTypeName">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L344">RowsColumnTypeDatabaseTypeName</a>
+<h2 id="RowsColumnTypeDatabaseTypeName">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L408">RowsColumnTypeDatabaseTypeName</a>
     <a href="#RowsColumnTypeDatabaseTypeName">¶</a></h2>
 <pre>type RowsColumnTypeDatabaseTypeName interface {
     <a href="#Rows">Rows</a>
@@ -450,7 +508,7 @@ Examples of returned types: "VARCHAR", "NVARCHAR", "VARCHAR2", "CHAR", "TEXT",
 "DECIMAL", "SMALLINT", "INT", "BIGINT", "BOOL", "[]BIGINT", "JSONB", "XML",
 "TIMESTAMP".
 
-<h2 id="RowsColumnTypeLength">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L360">RowsColumnTypeLength</a>
+<h2 id="RowsColumnTypeLength">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L424">RowsColumnTypeLength</a>
     <a href="#RowsColumnTypeLength">¶</a></h2>
 <pre>type RowsColumnTypeLength interface {
     <a href="#Rows">Rows</a>
@@ -470,7 +528,7 @@ returned values for various types:
     int           (0, false)
     bytea(30)     (30, true)
 
-<h2 id="RowsColumnTypeNullable">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L369">RowsColumnTypeNullable</a>
+<h2 id="RowsColumnTypeNullable">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L433">RowsColumnTypeNullable</a>
     <a href="#RowsColumnTypeNullable">¶</a></h2>
 <pre>type RowsColumnTypeNullable interface {
     <a href="#Rows">Rows</a>
@@ -481,7 +539,7 @@ RowsColumnTypeNullable may be implemented by Rows. The nullable value should be
 true if it is known the column may be null, or false if the column is known to
 be not nullable. If the column nullability is unknown, ok should be false.
 
-<h2 id="RowsColumnTypePrecisionScale">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L380">RowsColumnTypePrecisionScale</a>
+<h2 id="RowsColumnTypePrecisionScale">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L444">RowsColumnTypePrecisionScale</a>
     <a href="#RowsColumnTypePrecisionScale">¶</a></h2>
 <pre>type RowsColumnTypePrecisionScale interface {
     <a href="#Rows">Rows</a>
@@ -496,7 +554,7 @@ The following are examples of returned values for various types:
     int               (0, 0, false)
     decimal           (math.MaxInt64, math.MaxInt64, true)
 
-<h2 id="RowsColumnTypeScanType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L334">RowsColumnTypeScanType</a>
+<h2 id="RowsColumnTypeScanType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L398">RowsColumnTypeScanType</a>
     <a href="#RowsColumnTypeScanType">¶</a></h2>
 <pre>type RowsColumnTypeScanType interface {
     <a href="#Rows">Rows</a>
@@ -507,7 +565,7 @@ RowsColumnTypeScanType may be implemented by Rows. It should return the value
 type that can be used to scan types into. For example, the database column type
 "bigint" this should return "reflect.TypeOf(int64(0))".
 
-<h2 id="RowsNextResultSet">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L317">RowsNextResultSet</a>
+<h2 id="RowsNextResultSet">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L381">RowsNextResultSet</a>
     <a href="#RowsNextResultSet">¶</a></h2>
 <pre>type RowsNextResultSet interface {
     <a href="#Rows">Rows</a>
@@ -526,7 +584,22 @@ type that can be used to scan types into. For example, the database column type
 RowsNextResultSet extends the Rows interface by providing a way to signal the
 driver to advance to the next result set.
 
-<h2 id="Stmt">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L206">Stmt</a>
+<h2 id="SessionResetter">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L242">SessionResetter</a>
+    <a href="#SessionResetter">¶</a></h2>
+<pre>type SessionResetter interface {
+    <span class="comment">// ResetSession is called while a connection is in the connection</span>
+    <span class="comment">// pool. No queries will run on this connection until this method returns.</span>
+    <span class="comment">//</span>
+    <span class="comment">// If the connection is bad this should return driver.ErrBadConn to prevent</span>
+    <span class="comment">// the connection from being returned to the connection pool. Any other</span>
+    <span class="comment">// error will be discarded.</span>
+    ResetSession(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>) <a href="/builtin/#error">error</a>
+}</pre>
+
+SessionResetter may be implemented by Conn to allow drivers to reset the session
+state associated with the connection and to signal a bad connection.
+
+<h2 id="Stmt">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L266">Stmt</a>
     <a href="#Stmt">¶</a></h2>
 <pre>type Stmt interface {
     <span class="comment">// Close closes the statement.</span>
@@ -562,7 +635,7 @@ driver to advance to the next result set.
 Stmt is a prepared statement. It is bound to a Conn and not used by multiple
 goroutines concurrently.
 
-<h2 id="StmtExecContext">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L238">StmtExecContext</a>
+<h2 id="StmtExecContext">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L298">StmtExecContext</a>
     <a href="#StmtExecContext">¶</a></h2>
 <pre>type StmtExecContext interface {
     <span class="comment">// ExecContext executes a query that doesn&#39;t return rows, such</span>
@@ -574,7 +647,7 @@ goroutines concurrently.
 
 StmtExecContext enhances the Stmt interface by providing Exec with context.
 
-<h2 id="StmtQueryContext">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L247">StmtQueryContext</a>
+<h2 id="StmtQueryContext">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L307">StmtQueryContext</a>
     <a href="#StmtQueryContext">¶</a></h2>
 <pre>type StmtQueryContext interface {
     <span class="comment">// QueryContext executes a query that may return rows, such as a</span>
@@ -586,7 +659,7 @@ StmtExecContext enhances the Stmt interface by providing Exec with context.
 
 StmtQueryContext enhances the Stmt interface by providing Query with context.
 
-<h2 id="Tx">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L386">Tx</a>
+<h2 id="Tx">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L450">Tx</a>
     <a href="#Tx">¶</a></h2>
 <pre>type Tx interface {
     Commit() <a href="/builtin/#error">error</a>
@@ -595,7 +668,7 @@ StmtQueryContext enhances the Stmt interface by providing Query with context.
 
 Tx is a transaction.
 
-<h2 id="TxOptions">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L170">TxOptions</a>
+<h2 id="TxOptions">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L218">TxOptions</a>
     <a href="#TxOptions">¶</a></h2>
 <pre>type TxOptions struct {
 <span id="TxOptions.Isolation"></span>    Isolation <a href="#IsolationLevel">IsolationLevel</a>
@@ -606,12 +679,13 @@ TxOptions holds the transaction options.
 
 This type should be considered identical to sql.TxOptions.
 
-<h2 id="Value">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L16">Value</a>
+<h2 id="Value">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/driver/driver.go#L17">Value</a>
     <a href="#Value">¶</a></h2>
 <pre>type Value interface{}</pre>
 
-Value is a value that drivers must be able to handle. It is either nil or an
-instance of one of these types:
+Value is a value that drivers must be able to handle. It is either nil, a type
+handled by a database driver's NamedValueChecker interface, or an instance of
+one of these types:
 
     int64
     float64

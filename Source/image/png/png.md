@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package png
 
   `import "image/png"`
@@ -32,7 +32,7 @@ The PNG specification is at http://www.w3.org/TR/PNG/.
 ### Package files
  [paeth.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/paeth.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/reader.go) [writer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/writer.go)
 
-<h2 id="Decode">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/reader.go#L936">Decode</a>
+<h2 id="Decode">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/reader.go#L942">Decode</a>
     <a href="#Decode">¶</a></h2>
 <pre>func Decode(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (<a href="/image/">image</a>.<a href="/image/#Image">Image</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -63,7 +63,7 @@ Example:
         fmt.Print("\n")
     }
 
-<h2 id="DecodeConfig">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/reader.go#L960">DecodeConfig</a>
+<h2 id="DecodeConfig">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/reader.go#L966">DecodeConfig</a>
     <a href="#DecodeConfig">¶</a></h2>
 <pre>func DecodeConfig(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (<a href="/image/">image</a>.<a href="/image/#Config">Config</a>, <a href="/builtin/#error">error</a>)</pre>
 

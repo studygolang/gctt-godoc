@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package syscall
 
   `import "syscall"`
@@ -2289,12 +2289,12 @@ Signals
 For testing: clients can set this flag to force creation of IPv6 sockets to
 return EAFNOSUPPORT.
 
-<h2 id="Accept">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L424">Accept</a>
+<h2 id="Accept">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L426">Accept</a>
     <a href="#Accept">¶</a></h2>
 <pre>func Accept(fd <a href="/builtin/#int">int</a>) (nfd <a href="/builtin/#int">int</a>, sa <a href="#Sockaddr">Sockaddr</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Accept4">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L439">Accept4</a>
+<h2 id="Accept4">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L441">Accept4</a>
     <a href="#Accept4">¶</a></h2>
 <pre>func Accept4(fd <a href="/builtin/#int">int</a>, flags <a href="/builtin/#int">int</a>) (nfd <a href="/builtin/#int">int</a>, sa <a href="#Sockaddr">Sockaddr</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2325,7 +2325,7 @@ Deprecated: Use golang.org/x/net/bpf instead.
 <pre>func Bind(fd <a href="/builtin/#int">int</a>, sa <a href="#Sockaddr">Sockaddr</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="BindToDevice">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L597">BindToDevice</a>
+<h2 id="BindToDevice">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L609">BindToDevice</a>
     <a href="#BindToDevice">¶</a></h2>
 <pre>func BindToDevice(fd <a href="/builtin/#int">int</a>, device <a href="/builtin/#string">string</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2416,7 +2416,7 @@ Deprecated: Use golang.org/x/net/bpf instead.
 <pre>func Dup(oldfd <a href="/builtin/#int">int</a>) (fd <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Dup2">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1155">Dup2</a>
+<h2 id="Dup2">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1148">Dup2</a>
     <a href="#Dup2">¶</a></h2>
 <pre>func Dup2(oldfd <a href="/builtin/#int">int</a>, newfd <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2457,42 +2457,42 @@ Deprecated: Use golang.org/x/net/bpf instead.
 
 Exec invokes the execve(2) system call.
 
-<h2 id="Exit">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L349">Exit</a>
+<h2 id="Exit">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall.go#L98">Exit</a>
     <a href="#Exit">¶</a></h2>
 <pre>func Exit(code <a href="/builtin/#int">int</a>)</pre>
 
 
-<h2 id="Faccessat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L356">Faccessat</a>
+<h2 id="Faccessat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L349">Faccessat</a>
     <a href="#Faccessat">¶</a></h2>
 <pre>func Faccessat(dirfd <a href="/builtin/#int">int</a>, path <a href="/builtin/#string">string</a>, mode <a href="/builtin/#uint32">uint32</a>, flags <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Fallocate">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L371">Fallocate</a>
+<h2 id="Fallocate">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L364">Fallocate</a>
     <a href="#Fallocate">¶</a></h2>
 <pre>func Fallocate(fd <a href="/builtin/#int">int</a>, mode <a href="/builtin/#uint32">uint32</a>, off <a href="/builtin/#int64">int64</a>, len <a href="/builtin/#int64">int64</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Fchdir">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L381">Fchdir</a>
+<h2 id="Fchdir">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L374">Fchdir</a>
     <a href="#Fchdir">¶</a></h2>
 <pre>func Fchdir(fd <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Fchmod">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L391">Fchmod</a>
+<h2 id="Fchmod">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L384">Fchmod</a>
     <a href="#Fchmod">¶</a></h2>
 <pre>func Fchmod(fd <a href="/builtin/#int">int</a>, mode <a href="/builtin/#uint32">uint32</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Fchmodat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L401">Fchmodat</a>
+<h2 id="Fchmodat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L394">Fchmodat</a>
     <a href="#Fchmodat">¶</a></h2>
 <pre>func Fchmodat(dirfd <a href="/builtin/#int">int</a>, path <a href="/builtin/#string">string</a>, mode <a href="/builtin/#uint32">uint32</a>, flags <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Fchown">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1165">Fchown</a>
+<h2 id="Fchown">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1158">Fchown</a>
     <a href="#Fchown">¶</a></h2>
 <pre>func Fchown(fd <a href="/builtin/#int">int</a>, uid <a href="/builtin/#int">int</a>, gid <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Fchownat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L416">Fchownat</a>
+<h2 id="Fchownat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L409">Fchownat</a>
     <a href="#Fchownat">¶</a></h2>
 <pre>func Fchownat(dirfd <a href="/builtin/#int">int</a>, path <a href="/builtin/#string">string</a>, uid <a href="/builtin/#int">int</a>, gid <a href="/builtin/#int">int</a>, flags <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2504,12 +2504,12 @@ Exec invokes the execve(2) system call.
 FcntlFlock performs a fcntl syscall for the F_GETLK, F_SETLK or F_SETLKW
 command.
 
-<h2 id="Fdatasync">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L442">Fdatasync</a>
+<h2 id="Fdatasync">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L435">Fdatasync</a>
     <a href="#Fdatasync">¶</a></h2>
 <pre>func Fdatasync(fd <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Flock">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L452">Flock</a>
+<h2 id="Flock">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L445">Flock</a>
     <a href="#Flock">¶</a></h2>
 <pre>func Flock(fd <a href="/builtin/#int">int</a>, how <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2520,27 +2520,27 @@ command.
 
 Combination of fork and exec, careful to be thread safe.
 
-<h2 id="Fstat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1175">Fstat</a>
+<h2 id="Fstat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1168">Fstat</a>
     <a href="#Fstat">¶</a></h2>
 <pre>func Fstat(fd <a href="/builtin/#int">int</a>, stat *<a href="#Stat_t">Stat_t</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Fstatfs">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1185">Fstatfs</a>
+<h2 id="Fstatfs">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1178">Fstatfs</a>
     <a href="#Fstatfs">¶</a></h2>
 <pre>func Fstatfs(fd <a href="/builtin/#int">int</a>, buf *<a href="#Statfs_t">Statfs_t</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Fsync">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L462">Fsync</a>
+<h2 id="Fsync">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L455">Fsync</a>
     <a href="#Fsync">¶</a></h2>
 <pre>func Fsync(fd <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Ftruncate">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1195">Ftruncate</a>
+<h2 id="Ftruncate">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1188">Ftruncate</a>
     <a href="#Ftruncate">¶</a></h2>
 <pre>func Ftruncate(fd <a href="/builtin/#int">int</a>, length <a href="/builtin/#int64">int64</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Futimes">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L123">Futimes</a>
+<h2 id="Futimes">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L122">Futimes</a>
     <a href="#Futimes">¶</a></h2>
 <pre>func Futimes(fd <a href="/builtin/#int">int</a>, tv []<a href="#Timeval">Timeval</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2555,12 +2555,12 @@ Combination of fork and exec, careful to be thread safe.
 <pre>func Getcwd(buf []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Getdents">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L472">Getdents</a>
+<h2 id="Getdents">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L465">Getdents</a>
     <a href="#Getdents">¶</a></h2>
 <pre>func Getdents(fd <a href="/builtin/#int">int</a>, buf []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Getegid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1205">Getegid</a>
+<h2 id="Getegid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1198">Getegid</a>
     <a href="#Getegid">¶</a></h2>
 <pre>func Getegid() (egid <a href="/builtin/#int">int</a>)</pre>
 
@@ -2570,62 +2570,62 @@ Combination of fork and exec, careful to be thread safe.
 <pre>func Getenv(key <a href="/builtin/#string">string</a>) (value <a href="/builtin/#string">string</a>, found <a href="/builtin/#bool">bool</a>)</pre>
 
 
-<h2 id="Geteuid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1213">Geteuid</a>
+<h2 id="Geteuid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1206">Geteuid</a>
     <a href="#Geteuid">¶</a></h2>
 <pre>func Geteuid() (euid <a href="/builtin/#int">int</a>)</pre>
 
 
-<h2 id="Getgid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1221">Getgid</a>
+<h2 id="Getgid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1214">Getgid</a>
     <a href="#Getgid">¶</a></h2>
 <pre>func Getgid() (gid <a href="/builtin/#int">int</a>)</pre>
 
 
-<h2 id="Getgroups">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L146">Getgroups</a>
+<h2 id="Getgroups">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L145">Getgroups</a>
     <a href="#Getgroups">¶</a></h2>
 <pre>func Getgroups() (gids []<a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Getpagesize">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall.go#L91">Getpagesize</a>
+<h2 id="Getpagesize">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall.go#L97">Getpagesize</a>
     <a href="#Getpagesize">¶</a></h2>
 <pre>func Getpagesize() <a href="/builtin/#int">int</a></pre>
 
 
-<h2 id="Getpgid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L489">Getpgid</a>
+<h2 id="Getpgid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L482">Getpgid</a>
     <a href="#Getpgid">¶</a></h2>
 <pre>func Getpgid(pid <a href="/builtin/#int">int</a>) (pgid <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Getpgrp">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L817">Getpgrp</a>
+<h2 id="Getpgrp">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L827">Getpgrp</a>
     <a href="#Getpgrp">¶</a></h2>
 <pre>func Getpgrp() (pid <a href="/builtin/#int">int</a>)</pre>
 
 
-<h2 id="Getpid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L500">Getpid</a>
+<h2 id="Getpid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L493">Getpid</a>
     <a href="#Getpid">¶</a></h2>
 <pre>func Getpid() (pid <a href="/builtin/#int">int</a>)</pre>
 
 
-<h2 id="Getppid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L508">Getppid</a>
+<h2 id="Getppid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L501">Getppid</a>
     <a href="#Getppid">¶</a></h2>
 <pre>func Getppid() (ppid <a href="/builtin/#int">int</a>)</pre>
 
 
-<h2 id="Getpriority">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L516">Getpriority</a>
+<h2 id="Getpriority">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L509">Getpriority</a>
     <a href="#Getpriority">¶</a></h2>
 <pre>func Getpriority(which <a href="/builtin/#int">int</a>, who <a href="/builtin/#int">int</a>) (prio <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Getrlimit">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1229">Getrlimit</a>
+<h2 id="Getrlimit">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1222">Getrlimit</a>
     <a href="#Getrlimit">¶</a></h2>
 <pre>func Getrlimit(resource <a href="/builtin/#int">int</a>, rlim *<a href="#Rlimit">Rlimit</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Getrusage">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L527">Getrusage</a>
+<h2 id="Getrusage">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L520">Getrusage</a>
     <a href="#Getrusage">¶</a></h2>
 <pre>func Getrusage(who <a href="/builtin/#int">int</a>, rusage *<a href="#Rusage">Rusage</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="GetsockoptInet4Addr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L466">GetsockoptInet4Addr</a>
+<h2 id="GetsockoptInet4Addr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L468">GetsockoptInet4Addr</a>
     <a href="#GetsockoptInet4Addr">¶</a></h2>
 <pre>func GetsockoptInet4Addr(fd, level, opt <a href="/builtin/#int">int</a>) (value [4]<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2635,72 +2635,72 @@ Combination of fork and exec, careful to be thread safe.
 <pre>func GetsockoptInt(fd, level, opt <a href="/builtin/#int">int</a>) (value <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Gettid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L537">Gettid</a>
+<h2 id="Gettid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L530">Gettid</a>
     <a href="#Gettid">¶</a></h2>
 <pre>func Gettid() (tid <a href="/builtin/#int">int</a>)</pre>
 
 
-<h2 id="Gettimeofday">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L58">Gettimeofday</a>
+<h2 id="Gettimeofday">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L57">Gettimeofday</a>
     <a href="#Gettimeofday">¶</a></h2>
 <pre>func Gettimeofday(tv *<a href="#Timeval">Timeval</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Getuid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1239">Getuid</a>
+<h2 id="Getuid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1232">Getuid</a>
     <a href="#Getuid">¶</a></h2>
 <pre>func Getuid() (uid <a href="/builtin/#int">int</a>)</pre>
 
 
-<h2 id="Getwd">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L133">Getwd</a>
+<h2 id="Getwd">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L132">Getwd</a>
     <a href="#Getwd">¶</a></h2>
 <pre>func Getwd() (wd <a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Getxattr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L545">Getxattr</a>
+<h2 id="Getxattr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L538">Getxattr</a>
     <a href="#Getxattr">¶</a></h2>
 <pre>func Getxattr(path <a href="/builtin/#string">string</a>, attr <a href="/builtin/#string">string</a>, dest []<a href="/builtin/#byte">byte</a>) (sz <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="InotifyAddWatch">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L572">InotifyAddWatch</a>
+<h2 id="InotifyAddWatch">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L565">InotifyAddWatch</a>
     <a href="#InotifyAddWatch">¶</a></h2>
 <pre>func InotifyAddWatch(fd <a href="/builtin/#int">int</a>, pathname <a href="/builtin/#string">string</a>, mask <a href="/builtin/#uint32">uint32</a>) (watchdesc <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="InotifyInit">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1247">InotifyInit</a>
+<h2 id="InotifyInit">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1240">InotifyInit</a>
     <a href="#InotifyInit">¶</a></h2>
 <pre>func InotifyInit() (fd <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="InotifyInit1">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L588">InotifyInit1</a>
+<h2 id="InotifyInit1">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L581">InotifyInit1</a>
     <a href="#InotifyInit1">¶</a></h2>
 <pre>func InotifyInit1(flags <a href="/builtin/#int">int</a>) (fd <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="InotifyRmWatch">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L599">InotifyRmWatch</a>
+<h2 id="InotifyRmWatch">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L592">InotifyRmWatch</a>
     <a href="#InotifyRmWatch">¶</a></h2>
 <pre>func InotifyRmWatch(fd <a href="/builtin/#int">int</a>, watchdesc <a href="/builtin/#uint32">uint32</a>) (success <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Ioperm">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1258">Ioperm</a>
+<h2 id="Ioperm">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1251">Ioperm</a>
     <a href="#Ioperm">¶</a></h2>
 <pre>func Ioperm(from <a href="/builtin/#int">int</a>, num <a href="/builtin/#int">int</a>, on <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Iopl">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1268">Iopl</a>
+<h2 id="Iopl">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1261">Iopl</a>
     <a href="#Iopl">¶</a></h2>
 <pre>func Iopl(level <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Kill">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L610">Kill</a>
+<h2 id="Kill">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L603">Kill</a>
     <a href="#Kill">¶</a></h2>
 <pre>func Kill(pid <a href="/builtin/#int">int</a>, sig <a href="#Signal">Signal</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Klogctl">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L620">Klogctl</a>
+<h2 id="Klogctl">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L613">Klogctl</a>
     <a href="#Klogctl">¶</a></h2>
 <pre>func Klogctl(typ <a href="/builtin/#int">int</a>, buf []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Lchown">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1278">Lchown</a>
+<h2 id="Lchown">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1271">Lchown</a>
     <a href="#Lchown">¶</a></h2>
 <pre>func Lchown(path <a href="/builtin/#string">string</a>, uid <a href="/builtin/#int">int</a>, gid <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2710,12 +2710,12 @@ Combination of fork and exec, careful to be thread safe.
 <pre>func Link(oldpath <a href="/builtin/#string">string</a>, newpath <a href="/builtin/#string">string</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Listen">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1293">Listen</a>
+<h2 id="Listen">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1286">Listen</a>
     <a href="#Listen">¶</a></h2>
 <pre>func Listen(s <a href="/builtin/#int">int</a>, n <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Listxattr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L637">Listxattr</a>
+<h2 id="Listxattr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L630">Listxattr</a>
     <a href="#Listxattr">¶</a></h2>
 <pre>func Listxattr(path <a href="/builtin/#string">string</a>, dest []<a href="/builtin/#byte">byte</a>) (sz <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2726,12 +2726,12 @@ Combination of fork and exec, careful to be thread safe.
 
 Deprecated: Use golang.org/x/net/bpf instead.
 
-<h2 id="Lstat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1303">Lstat</a>
+<h2 id="Lstat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1296">Lstat</a>
     <a href="#Lstat">¶</a></h2>
 <pre>func Lstat(path <a href="/builtin/#string">string</a>, stat *<a href="#Stat_t">Stat_t</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Madvise">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1071">Madvise</a>
+<h2 id="Madvise">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1064">Madvise</a>
     <a href="#Madvise">¶</a></h2>
 <pre>func Madvise(b []<a href="/builtin/#byte">byte</a>, advice <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2741,12 +2741,12 @@ Deprecated: Use golang.org/x/net/bpf instead.
 <pre>func Mkdir(path <a href="/builtin/#string">string</a>, mode <a href="/builtin/#uint32">uint32</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Mkdirat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L659">Mkdirat</a>
+<h2 id="Mkdirat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L652">Mkdirat</a>
     <a href="#Mkdirat">¶</a></h2>
 <pre>func Mkdirat(dirfd <a href="/builtin/#int">int</a>, path <a href="/builtin/#string">string</a>, mode <a href="/builtin/#uint32">uint32</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Mkfifo">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L252">Mkfifo</a>
+<h2 id="Mkfifo">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L251">Mkfifo</a>
     <a href="#Mkfifo">¶</a></h2>
 <pre>func Mkfifo(path <a href="/builtin/#string">string</a>, mode <a href="/builtin/#uint32">uint32</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2756,52 +2756,52 @@ Deprecated: Use golang.org/x/net/bpf instead.
 <pre>func Mknod(path <a href="/builtin/#string">string</a>, mode <a href="/builtin/#uint32">uint32</a>, dev <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Mknodat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L674">Mknodat</a>
+<h2 id="Mknodat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L667">Mknodat</a>
     <a href="#Mknodat">¶</a></h2>
 <pre>func Mknodat(dirfd <a href="/builtin/#int">int</a>, path <a href="/builtin/#string">string</a>, mode <a href="/builtin/#uint32">uint32</a>, dev <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Mlock">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1103">Mlock</a>
+<h2 id="Mlock">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1096">Mlock</a>
     <a href="#Mlock">¶</a></h2>
 <pre>func Mlock(b []<a href="/builtin/#byte">byte</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Mlockall">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1135">Mlockall</a>
+<h2 id="Mlockall">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1128">Mlockall</a>
     <a href="#Mlockall">¶</a></h2>
 <pre>func Mlockall(flags <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Mmap">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L889">Mmap</a>
+<h2 id="Mmap">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L899">Mmap</a>
     <a href="#Mmap">¶</a></h2>
 <pre>func Mmap(fd <a href="/builtin/#int">int</a>, offset <a href="/builtin/#int64">int64</a>, length <a href="/builtin/#int">int</a>, prot <a href="/builtin/#int">int</a>, flags <a href="/builtin/#int">int</a>) (data []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Mount">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L771">Mount</a>
+<h2 id="Mount">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L783">Mount</a>
     <a href="#Mount">¶</a></h2>
 <pre>func Mount(source <a href="/builtin/#string">string</a>, target <a href="/builtin/#string">string</a>, fstype <a href="/builtin/#string">string</a>, flags <a href="/builtin/#uintptr">uintptr</a>, data <a href="/builtin/#string">string</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Mprotect">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1087">Mprotect</a>
+<h2 id="Mprotect">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1080">Mprotect</a>
     <a href="#Mprotect">¶</a></h2>
 <pre>func Mprotect(b []<a href="/builtin/#byte">byte</a>, prot <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Munlock">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1119">Munlock</a>
+<h2 id="Munlock">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1112">Munlock</a>
     <a href="#Munlock">¶</a></h2>
 <pre>func Munlock(b []<a href="/builtin/#byte">byte</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Munlockall">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1145">Munlockall</a>
+<h2 id="Munlockall">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1138">Munlockall</a>
     <a href="#Munlockall">¶</a></h2>
 <pre>func Munlockall() (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Munmap">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L893">Munmap</a>
+<h2 id="Munmap">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L903">Munmap</a>
     <a href="#Munmap">¶</a></h2>
 <pre>func Munmap(b []<a href="/builtin/#byte">byte</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Nanosleep">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L689">Nanosleep</a>
+<h2 id="Nanosleep">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L682">Nanosleep</a>
     <a href="#Nanosleep">¶</a></h2>
 <pre>func Nanosleep(time *<a href="#Timespec">Timespec</a>, leftover *<a href="#Timespec">Timespec</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2858,97 +2858,97 @@ ParseSocketControlMessage parses b as an array of socket control messages.
 ParseUnixRights decodes a socket control message that contains an integer array
 of open file descriptors from another process.
 
-<h2 id="Pause">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L699">Pause</a>
+<h2 id="Pause">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L692">Pause</a>
     <a href="#Pause">¶</a></h2>
 <pre>func Pause() (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Pipe">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L88">Pipe</a>
+<h2 id="Pipe">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L87">Pipe</a>
     <a href="#Pipe">¶</a></h2>
 <pre>func Pipe(p []<a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Pipe2">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L101">Pipe2</a>
+<h2 id="Pipe2">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L100">Pipe2</a>
     <a href="#Pipe2">¶</a></h2>
 <pre>func Pipe2(p []<a href="/builtin/#int">int</a>, flags <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PivotRoot">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L709">PivotRoot</a>
+<h2 id="PivotRoot">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L702">PivotRoot</a>
     <a href="#PivotRoot">¶</a></h2>
 <pre>func PivotRoot(newroot <a href="/builtin/#string">string</a>, putold <a href="/builtin/#string">string</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Pread">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1318">Pread</a>
+<h2 id="Pread">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1311">Pread</a>
     <a href="#Pread">¶</a></h2>
 <pre>func Pread(fd <a href="/builtin/#int">int</a>, p []<a href="/builtin/#byte">byte</a>, offset <a href="/builtin/#int64">int64</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PtraceAttach">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L739">PtraceAttach</a>
+<h2 id="PtraceAttach">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L751">PtraceAttach</a>
     <a href="#PtraceAttach">¶</a></h2>
 <pre>func PtraceAttach(pid <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PtraceCont">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L729">PtraceCont</a>
+<h2 id="PtraceCont">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L741">PtraceCont</a>
     <a href="#PtraceCont">¶</a></h2>
 <pre>func PtraceCont(pid <a href="/builtin/#int">int</a>, signal <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PtraceDetach">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L741">PtraceDetach</a>
+<h2 id="PtraceDetach">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L753">PtraceDetach</a>
     <a href="#PtraceDetach">¶</a></h2>
 <pre>func PtraceDetach(pid <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PtraceGetEventMsg">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L722">PtraceGetEventMsg</a>
+<h2 id="PtraceGetEventMsg">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L734">PtraceGetEventMsg</a>
     <a href="#PtraceGetEventMsg">¶</a></h2>
 <pre>func PtraceGetEventMsg(pid <a href="/builtin/#int">int</a>) (msg <a href="/builtin/#uint">uint</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PtraceGetRegs">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L710">PtraceGetRegs</a>
+<h2 id="PtraceGetRegs">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L722">PtraceGetRegs</a>
     <a href="#PtraceGetRegs">¶</a></h2>
 <pre>func PtraceGetRegs(pid <a href="/builtin/#int">int</a>, regsout *<a href="#PtraceRegs">PtraceRegs</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PtracePeekData">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L647">PtracePeekData</a>
+<h2 id="PtracePeekData">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L659">PtracePeekData</a>
     <a href="#PtracePeekData">¶</a></h2>
 <pre>func PtracePeekData(pid <a href="/builtin/#int">int</a>, addr <a href="/builtin/#uintptr">uintptr</a>, out []<a href="/builtin/#byte">byte</a>) (count <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PtracePeekText">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L643">PtracePeekText</a>
+<h2 id="PtracePeekText">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L655">PtracePeekText</a>
     <a href="#PtracePeekText">¶</a></h2>
 <pre>func PtracePeekText(pid <a href="/builtin/#int">int</a>, addr <a href="/builtin/#uintptr">uintptr</a>, out []<a href="/builtin/#byte">byte</a>) (count <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PtracePokeData">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L706">PtracePokeData</a>
+<h2 id="PtracePokeData">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L718">PtracePokeData</a>
     <a href="#PtracePokeData">¶</a></h2>
 <pre>func PtracePokeData(pid <a href="/builtin/#int">int</a>, addr <a href="/builtin/#uintptr">uintptr</a>, data []<a href="/builtin/#byte">byte</a>) (count <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PtracePokeText">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L702">PtracePokeText</a>
+<h2 id="PtracePokeText">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L714">PtracePokeText</a>
     <a href="#PtracePokeText">¶</a></h2>
 <pre>func PtracePokeText(pid <a href="/builtin/#int">int</a>, addr <a href="/builtin/#uintptr">uintptr</a>, data []<a href="/builtin/#byte">byte</a>) (count <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PtraceSetOptions">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L718">PtraceSetOptions</a>
+<h2 id="PtraceSetOptions">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L730">PtraceSetOptions</a>
     <a href="#PtraceSetOptions">¶</a></h2>
 <pre>func PtraceSetOptions(pid <a href="/builtin/#int">int</a>, options <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PtraceSetRegs">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L714">PtraceSetRegs</a>
+<h2 id="PtraceSetRegs">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L726">PtraceSetRegs</a>
     <a href="#PtraceSetRegs">¶</a></h2>
 <pre>func PtraceSetRegs(pid <a href="/builtin/#int">int</a>, regs *<a href="#PtraceRegs">PtraceRegs</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PtraceSingleStep">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L737">PtraceSingleStep</a>
+<h2 id="PtraceSingleStep">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L749">PtraceSingleStep</a>
     <a href="#PtraceSingleStep">¶</a></h2>
 <pre>func PtraceSingleStep(pid <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PtraceSyscall">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L733">PtraceSyscall</a>
+<h2 id="PtraceSyscall">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L745">PtraceSyscall</a>
     <a href="#PtraceSyscall">¶</a></h2>
 <pre>func PtraceSyscall(pid <a href="/builtin/#int">int</a>, signal <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Pwrite">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1335">Pwrite</a>
+<h2 id="Pwrite">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1328">Pwrite</a>
     <a href="#Pwrite">¶</a></h2>
 <pre>func Pwrite(fd <a href="/builtin/#int">int</a>, p []<a href="/builtin/#byte">byte</a>, offset <a href="/builtin/#int64">int64</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2968,7 +2968,7 @@ of open file descriptors from another process.
 <pre>func Read(fd <a href="/builtin/#int">int</a>, p []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="ReadDirent">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L749">ReadDirent</a>
+<h2 id="ReadDirent">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L761">ReadDirent</a>
     <a href="#ReadDirent">¶</a></h2>
 <pre>func ReadDirent(fd <a href="/builtin/#int">int</a>, buf []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2978,7 +2978,7 @@ of open file descriptors from another process.
 <pre>func Readlink(path <a href="/builtin/#string">string</a>, buf []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Reboot">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L745">Reboot</a>
+<h2 id="Reboot">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L757">Reboot</a>
     <a href="#Reboot">¶</a></h2>
 <pre>func Reboot(cmd <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2988,12 +2988,12 @@ of open file descriptors from another process.
 <pre>func Recvfrom(fd <a href="/builtin/#int">int</a>, p []<a href="/builtin/#byte">byte</a>, flags <a href="/builtin/#int">int</a>) (n <a href="/builtin/#int">int</a>, from <a href="#Sockaddr">Sockaddr</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Recvmsg">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L518">Recvmsg</a>
+<h2 id="Recvmsg">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L520">Recvmsg</a>
     <a href="#Recvmsg">¶</a></h2>
 <pre>func Recvmsg(fd <a href="/builtin/#int">int</a>, p, oob []<a href="/builtin/#byte">byte</a>, flags <a href="/builtin/#int">int</a>) (n, oobn <a href="/builtin/#int">int</a>, recvflags <a href="/builtin/#int">int</a>, from <a href="#Sockaddr">Sockaddr</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Removexattr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L756">Removexattr</a>
+<h2 id="Removexattr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L749">Removexattr</a>
     <a href="#Removexattr">¶</a></h2>
 <pre>func Removexattr(path <a href="/builtin/#string">string</a>, attr <a href="/builtin/#string">string</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3003,7 +3003,7 @@ of open file descriptors from another process.
 <pre>func Rename(oldpath <a href="/builtin/#string">string</a>, newpath <a href="/builtin/#string">string</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Renameat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L776">Renameat</a>
+<h2 id="Renameat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L769">Renameat</a>
     <a href="#Renameat">¶</a></h2>
 <pre>func Renameat(olddirfd <a href="/builtin/#int">int</a>, oldpath <a href="/builtin/#string">string</a>, newdirfd <a href="/builtin/#int">int</a>, newpath <a href="/builtin/#string">string</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3013,12 +3013,12 @@ of open file descriptors from another process.
 <pre>func Rmdir(path <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 
-<h2 id="Seek">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1352">Seek</a>
+<h2 id="Seek">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1345">Seek</a>
     <a href="#Seek">¶</a></h2>
 <pre>func Seek(fd <a href="/builtin/#int">int</a>, offset <a href="/builtin/#int64">int64</a>, whence <a href="/builtin/#int">int</a>) (off <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Select">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1363">Select</a>
+<h2 id="Select">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1356">Select</a>
     <a href="#Select">¶</a></h2>
 <pre>func Select(nfd <a href="/builtin/#int">int</a>, r *<a href="#FdSet">FdSet</a>, w *<a href="#FdSet">FdSet</a>, e *<a href="#FdSet">FdSet</a>, timeout *<a href="#Timeval">Timeval</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3028,12 +3028,12 @@ of open file descriptors from another process.
 <pre>func Sendfile(outfd <a href="/builtin/#int">int</a>, infd <a href="/builtin/#int">int</a>, offset *<a href="/builtin/#int64">int64</a>, count <a href="/builtin/#int">int</a>) (written <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Sendmsg">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L552">Sendmsg</a>
+<h2 id="Sendmsg">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L559">Sendmsg</a>
     <a href="#Sendmsg">¶</a></h2>
 <pre>func Sendmsg(fd <a href="/builtin/#int">int</a>, p, oob []<a href="/builtin/#byte">byte</a>, to <a href="#Sockaddr">Sockaddr</a>, flags <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="SendmsgN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L557">SendmsgN</a>
+<h2 id="SendmsgN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L564">SendmsgN</a>
     <a href="#SendmsgN">¶</a></h2>
 <pre>func SendmsgN(fd <a href="/builtin/#int">int</a>, p, oob []<a href="/builtin/#byte">byte</a>, to <a href="#Sockaddr">Sockaddr</a>, flags <a href="/builtin/#int">int</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3054,7 +3054,7 @@ Deprecated: Use golang.org/x/net/bpf instead.
 <pre>func SetNonblock(fd <a href="/builtin/#int">int</a>, nonblocking <a href="/builtin/#bool">bool</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Setdomainname">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L796">Setdomainname</a>
+<h2 id="Setdomainname">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L789">Setdomainname</a>
     <a href="#Setdomainname">¶</a></h2>
 <pre>func Setdomainname(p []<a href="/builtin/#byte">byte</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3064,67 +3064,67 @@ Deprecated: Use golang.org/x/net/bpf instead.
 <pre>func Setenv(key, value <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 
-<h2 id="Setfsgid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1385">Setfsgid</a>
+<h2 id="Setfsgid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1378">Setfsgid</a>
     <a href="#Setfsgid">¶</a></h2>
 <pre>func Setfsgid(gid <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Setfsuid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1395">Setfsuid</a>
+<h2 id="Setfsuid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1388">Setfsuid</a>
     <a href="#Setfsuid">¶</a></h2>
 <pre>func Setfsuid(uid <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Setgid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L858">Setgid</a>
+<h2 id="Setgid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L868">Setgid</a>
     <a href="#Setgid">¶</a></h2>
 <pre>func Setgid(gid <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Setgroups">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L172">Setgroups</a>
+<h2 id="Setgroups">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L171">Setgroups</a>
     <a href="#Setgroups">¶</a></h2>
 <pre>func Setgroups(gids []<a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Sethostname">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L812">Sethostname</a>
+<h2 id="Sethostname">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L805">Sethostname</a>
     <a href="#Sethostname">¶</a></h2>
 <pre>func Sethostname(p []<a href="/builtin/#byte">byte</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Setpgid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L828">Setpgid</a>
+<h2 id="Setpgid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L821">Setpgid</a>
     <a href="#Setpgid">¶</a></h2>
 <pre>func Setpgid(pid <a href="/builtin/#int">int</a>, pgid <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Setpriority">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L859">Setpriority</a>
+<h2 id="Setpriority">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L852">Setpriority</a>
     <a href="#Setpriority">¶</a></h2>
 <pre>func Setpriority(which <a href="/builtin/#int">int</a>, who <a href="/builtin/#int">int</a>, prio <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Setregid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1405">Setregid</a>
+<h2 id="Setregid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1398">Setregid</a>
     <a href="#Setregid">¶</a></h2>
 <pre>func Setregid(rgid <a href="/builtin/#int">int</a>, egid <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Setresgid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1415">Setresgid</a>
+<h2 id="Setresgid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1408">Setresgid</a>
     <a href="#Setresgid">¶</a></h2>
 <pre>func Setresgid(rgid <a href="/builtin/#int">int</a>, egid <a href="/builtin/#int">int</a>, sgid <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Setresuid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1425">Setresuid</a>
+<h2 id="Setresuid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1418">Setresuid</a>
     <a href="#Setresuid">¶</a></h2>
 <pre>func Setresuid(ruid <a href="/builtin/#int">int</a>, euid <a href="/builtin/#int">int</a>, suid <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Setreuid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1445">Setreuid</a>
+<h2 id="Setreuid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1438">Setreuid</a>
     <a href="#Setreuid">¶</a></h2>
 <pre>func Setreuid(ruid <a href="/builtin/#int">int</a>, euid <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Setrlimit">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1435">Setrlimit</a>
+<h2 id="Setrlimit">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1428">Setrlimit</a>
     <a href="#Setrlimit">¶</a></h2>
 <pre>func Setrlimit(resource <a href="/builtin/#int">int</a>, rlim *<a href="#Rlimit">Rlimit</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Setsid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L838">Setsid</a>
+<h2 id="Setsid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L831">Setsid</a>
     <a href="#Setsid">¶</a></h2>
 <pre>func Setsid() (pid <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3144,7 +3144,7 @@ Deprecated: Use golang.org/x/net/bpf instead.
 <pre>func SetsockoptIPMreq(fd, level, opt <a href="/builtin/#int">int</a>, mreq *<a href="#IPMreq">IPMreq</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="SetsockoptIPMreqn">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L514">SetsockoptIPMreqn</a>
+<h2 id="SetsockoptIPMreqn">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L516">SetsockoptIPMreqn</a>
     <a href="#SetsockoptIPMreqn">¶</a></h2>
 <pre>func SetsockoptIPMreqn(fd, level, opt <a href="/builtin/#int">int</a>, mreq *<a href="#IPMreqn">IPMreqn</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3179,22 +3179,22 @@ Deprecated: Use golang.org/x/net/bpf instead.
 <pre>func SetsockoptTimeval(fd, level, opt <a href="/builtin/#int">int</a>, tv *<a href="#Timeval">Timeval</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Settimeofday">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L849">Settimeofday</a>
+<h2 id="Settimeofday">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L842">Settimeofday</a>
     <a href="#Settimeofday">¶</a></h2>
 <pre>func Settimeofday(tv *<a href="#Timeval">Timeval</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Setuid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L854">Setuid</a>
+<h2 id="Setuid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L864">Setuid</a>
     <a href="#Setuid">¶</a></h2>
 <pre>func Setuid(uid <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Setxattr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L869">Setxattr</a>
+<h2 id="Setxattr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L862">Setxattr</a>
     <a href="#Setxattr">¶</a></h2>
 <pre>func Setxattr(path <a href="/builtin/#string">string</a>, attr <a href="/builtin/#string">string</a>, data []<a href="/builtin/#byte">byte</a>, flags <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Shutdown">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1455">Shutdown</a>
+<h2 id="Shutdown">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1448">Shutdown</a>
     <a href="#Shutdown">¶</a></h2>
 <pre>func Shutdown(fd <a href="/builtin/#int">int</a>, how <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3217,7 +3217,7 @@ EINVAL).
 <pre>func Socketpair(domain, typ, proto <a href="/builtin/#int">int</a>) (fd [2]<a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Splice">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1465">Splice</a>
+<h2 id="Splice">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1458">Splice</a>
     <a href="#Splice">¶</a></h2>
 <pre>func Splice(rfd <a href="/builtin/#int">int</a>, roff *<a href="/builtin/#int64">int64</a>, wfd <a href="/builtin/#int">int</a>, woff *<a href="/builtin/#int64">int64</a>, len <a href="/builtin/#int">int</a>, flags <a href="/builtin/#int">int</a>) (n <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3228,12 +3228,12 @@ EINVAL).
 
 StartProcess wraps ForkExec for package os.
 
-<h2 id="Stat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1476">Stat</a>
+<h2 id="Stat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1469">Stat</a>
     <a href="#Stat">¶</a></h2>
 <pre>func Stat(path <a href="/builtin/#string">string</a>, stat *<a href="#Stat_t">Stat_t</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Statfs">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1491">Statfs</a>
+<h2 id="Statfs">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1484">Statfs</a>
     <a href="#Statfs">¶</a></h2>
 <pre>func Statfs(path <a href="/builtin/#string">string</a>, buf *<a href="#Statfs_t">Statfs_t</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3271,12 +3271,12 @@ Deprecated: Use SlicePtrFromStrings instead.
 <pre>func Symlink(oldpath <a href="/builtin/#string">string</a>, newpath <a href="/builtin/#string">string</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Sync">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L895">Sync</a>
+<h2 id="Sync">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L888">Sync</a>
     <a href="#Sync">¶</a></h2>
 <pre>func Sync()</pre>
 
 
-<h2 id="SyncFileRange">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1506">SyncFileRange</a>
+<h2 id="SyncFileRange">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1499">SyncFileRange</a>
     <a href="#SyncFileRange">¶</a></h2>
 <pre>func SyncFileRange(fd <a href="/builtin/#int">int</a>, off <a href="/builtin/#int64">int64</a>, n <a href="/builtin/#int64">int64</a>, flags <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3291,22 +3291,22 @@ Deprecated: Use SlicePtrFromStrings instead.
 <pre>func Syscall6(trap, a1, a2, a3, a4, a5, a6 <a href="/builtin/#uintptr">uintptr</a>) (r1, r2 <a href="/builtin/#uintptr">uintptr</a>, err <a href="#Errno">Errno</a>)</pre>
 
 
-<h2 id="Sysinfo">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L902">Sysinfo</a>
+<h2 id="Sysinfo">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L895">Sysinfo</a>
     <a href="#Sysinfo">¶</a></h2>
 <pre>func Sysinfo(info *<a href="#Sysinfo_t">Sysinfo_t</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Tee">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L912">Tee</a>
+<h2 id="Tee">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L905">Tee</a>
     <a href="#Tee">¶</a></h2>
 <pre>func Tee(rfd <a href="/builtin/#int">int</a>, wfd <a href="/builtin/#int">int</a>, len <a href="/builtin/#int">int</a>, flags <a href="/builtin/#int">int</a>) (n <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Tgkill">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L923">Tgkill</a>
+<h2 id="Tgkill">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L916">Tgkill</a>
     <a href="#Tgkill">¶</a></h2>
 <pre>func Tgkill(tgid <a href="/builtin/#int">int</a>, tid <a href="/builtin/#int">int</a>, sig <a href="#Signal">Signal</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Times">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L933">Times</a>
+<h2 id="Times">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L926">Times</a>
     <a href="#Times">¶</a></h2>
 <pre>func Times(tms *<a href="#Tms">Tms</a>) (ticks <a href="/builtin/#uintptr">uintptr</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3325,17 +3325,17 @@ Unix epoch.
 TimevalToNsec converts a Timeval value into a number of nanoseconds since the
 Unix epoch.
 
-<h2 id="Truncate">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1516">Truncate</a>
+<h2 id="Truncate">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L1509">Truncate</a>
     <a href="#Truncate">¶</a></h2>
 <pre>func Truncate(path <a href="/builtin/#string">string</a>, length <a href="/builtin/#int64">int64</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Umask">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L944">Umask</a>
+<h2 id="Umask">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L937">Umask</a>
     <a href="#Umask">¶</a></h2>
 <pre>func Umask(mask <a href="/builtin/#int">int</a>) (oldmask <a href="/builtin/#int">int</a>)</pre>
 
 
-<h2 id="Uname">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L952">Uname</a>
+<h2 id="Uname">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L945">Uname</a>
     <a href="#Uname">¶</a></h2>
 <pre>func Uname(buf *<a href="#Utsname">Utsname</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3364,7 +3364,7 @@ for sending to another process.
 <pre>func Unlinkat(dirfd <a href="/builtin/#int">int</a>, path <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 
-<h2 id="Unmount">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L962">Unmount</a>
+<h2 id="Unmount">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L955">Unmount</a>
     <a href="#Unmount">¶</a></h2>
 <pre>func Unmount(target <a href="/builtin/#string">string</a>, flags <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3374,17 +3374,17 @@ for sending to another process.
 <pre>func Unsetenv(key <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 
-<h2 id="Unshare">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L977">Unshare</a>
+<h2 id="Unshare">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L970">Unshare</a>
     <a href="#Unshare">¶</a></h2>
 <pre>func Unshare(flags <a href="/builtin/#int">int</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Ustat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L987">Ustat</a>
+<h2 id="Ustat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L980">Ustat</a>
     <a href="#Ustat">¶</a></h2>
 <pre>func Ustat(dev <a href="/builtin/#int">int</a>, ubuf *<a href="#Ustat_t">Ustat_t</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Utime">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L997">Utime</a>
+<h2 id="Utime">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/zsyscall_linux_amd64.go#L990">Utime</a>
     <a href="#Utime">¶</a></h2>
 <pre>func Utime(path <a href="/builtin/#string">string</a>, buf *<a href="#Utimbuf">Utimbuf</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3399,7 +3399,7 @@ for sending to another process.
 <pre>func UtimesNano(path <a href="/builtin/#string">string</a>, ts []<a href="#Timespec">Timespec</a>) (err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="Wait4">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L243">Wait4</a>
+<h2 id="Wait4">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L242">Wait4</a>
     <a href="#Wait4">¶</a></h2>
 <pre>func Wait4(pid <a href="/builtin/#int">int</a>, wstatus *<a href="#WaitStatus">WaitStatus</a>, options <a href="/builtin/#int">int</a>, rusage *<a href="#Rusage">Rusage</a>) (wpid <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -3418,7 +3418,7 @@ for sending to another process.
 }</pre>
 
 
-<h3 id="Cmsghdr.SetLen">func (*Cmsghdr) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L124">SetLen</a>
+<h3 id="Cmsghdr.SetLen">func (*Cmsghdr) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L123">SetLen</a>
     <a href="#Cmsghdr.SetLen">¶</a></h3>
 <pre>func (cmsg *<a href="#Cmsghdr">Cmsghdr</a>) SetLen(length <a href="/builtin/#int">int</a>)</pre>
 
@@ -3528,7 +3528,7 @@ from Errno to error should use:
 }</pre>
 
 
-<h3 id="GetsockoptICMPv6Filter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L500">GetsockoptICMPv6Filter</a>
+<h3 id="GetsockoptICMPv6Filter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L502">GetsockoptICMPv6Filter</a>
     <a href="#GetsockoptICMPv6Filter">¶</a></h3>
 <pre>func GetsockoptICMPv6Filter(fd, level, opt <a href="/builtin/#int">int</a>) (*<a href="#ICMPv6Filter">ICMPv6Filter</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -3541,7 +3541,7 @@ from Errno to error should use:
 }</pre>
 
 
-<h3 id="GetsockoptIPMreq">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L472">GetsockoptIPMreq</a>
+<h3 id="GetsockoptIPMreq">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L474">GetsockoptIPMreq</a>
     <a href="#GetsockoptIPMreq">¶</a></h3>
 <pre>func GetsockoptIPMreq(fd, level, opt <a href="/builtin/#int">int</a>) (*<a href="#IPMreq">IPMreq</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -3555,7 +3555,7 @@ from Errno to error should use:
 }</pre>
 
 
-<h3 id="GetsockoptIPMreqn">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L479">GetsockoptIPMreqn</a>
+<h3 id="GetsockoptIPMreqn">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L481">GetsockoptIPMreqn</a>
     <a href="#GetsockoptIPMreqn">¶</a></h3>
 <pre>func GetsockoptIPMreqn(fd, level, opt <a href="/builtin/#int">int</a>) (*<a href="#IPMreqn">IPMreqn</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -3568,7 +3568,7 @@ from Errno to error should use:
 }</pre>
 
 
-<h3 id="GetsockoptIPv6MTUInfo">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L493">GetsockoptIPv6MTUInfo</a>
+<h3 id="GetsockoptIPv6MTUInfo">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L495">GetsockoptIPv6MTUInfo</a>
     <a href="#GetsockoptIPv6MTUInfo">¶</a></h3>
 <pre>func GetsockoptIPv6MTUInfo(fd, level, opt <a href="/builtin/#int">int</a>) (*<a href="#IPv6MTUInfo">IPv6MTUInfo</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -3581,7 +3581,7 @@ from Errno to error should use:
 }</pre>
 
 
-<h3 id="GetsockoptIPv6Mreq">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L486">GetsockoptIPv6Mreq</a>
+<h3 id="GetsockoptIPv6Mreq">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L488">GetsockoptIPv6Mreq</a>
     <a href="#GetsockoptIPv6Mreq">¶</a></h3>
 <pre>func GetsockoptIPv6Mreq(fd, level, opt <a href="/builtin/#int">int</a>) (*<a href="#IPv6Mreq">IPv6Mreq</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -3645,7 +3645,7 @@ from Errno to error should use:
 }</pre>
 
 
-<h3 id="Iovec.SetLen">func (*Iovec) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L116">SetLen</a>
+<h3 id="Iovec.SetLen">func (*Iovec) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L115">SetLen</a>
     <a href="#Iovec.SetLen">¶</a></h3>
 <pre>func (iov *<a href="#Iovec">Iovec</a>) SetLen(length <a href="/builtin/#int">int</a>)</pre>
 
@@ -3673,7 +3673,7 @@ from Errno to error should use:
 }</pre>
 
 
-<h3 id="Msghdr.SetControllen">func (*Msghdr) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L120">SetControllen</a>
+<h3 id="Msghdr.SetControllen">func (*Msghdr) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L119">SetControllen</a>
     <a href="#Msghdr.SetControllen">¶</a></h3>
 <pre>func (msghdr *<a href="#Msghdr">Msghdr</a>) SetControllen(length <a href="/builtin/#int">int</a>)</pre>
 
@@ -3778,12 +3778,12 @@ StartProcess.
 }</pre>
 
 
-<h3 id="PtraceRegs.PC">func (*PtraceRegs) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L112">PC</a>
+<h3 id="PtraceRegs.PC">func (*PtraceRegs) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L111">PC</a>
     <a href="#PtraceRegs.PC">¶</a></h3>
 <pre>func (r *<a href="#PtraceRegs">PtraceRegs</a>) PC() <a href="/builtin/#uint64">uint64</a></pre>
 
 
-<h3 id="PtraceRegs.SetPC">func (*PtraceRegs) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L114">SetPC</a>
+<h3 id="PtraceRegs.SetPC">func (*PtraceRegs) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L113">SetPC</a>
     <a href="#PtraceRegs.SetPC">¶</a></h3>
 <pre>func (r *<a href="#PtraceRegs">PtraceRegs</a>) SetPC(pc <a href="/builtin/#uint64">uint64</a>)</pre>
 
@@ -4011,7 +4011,7 @@ Deprecated: Use golang.org/x/net/bpf instead.
 <pre>func Getpeername(fd <a href="/builtin/#int">int</a>) (sa <a href="#Sockaddr">Sockaddr</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h3 id="Getsockname">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L457">Getsockname</a>
+<h3 id="Getsockname">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L459">Getsockname</a>
     <a href="#Getsockname">¶</a></h3>
 <pre>func Getsockname(fd <a href="/builtin/#int">int</a>) (sa <a href="#Sockaddr">Sockaddr</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -4035,7 +4035,7 @@ Deprecated: Use golang.org/x/net/bpf instead.
 }</pre>
 
 
-<h2 id="SockaddrLinklayer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L309">SockaddrLinklayer</a>
+<h2 id="SockaddrLinklayer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L311">SockaddrLinklayer</a>
     <a href="#SockaddrLinklayer">¶</a></h2>
 <pre>type SockaddrLinklayer struct {
 <span id="SockaddrLinklayer.Protocol"></span>    Protocol <a href="/builtin/#uint16">uint16</a>
@@ -4048,7 +4048,7 @@ Deprecated: Use golang.org/x/net/bpf instead.
 }</pre>
 
 
-<h2 id="SockaddrNetlink">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L335">SockaddrNetlink</a>
+<h2 id="SockaddrNetlink">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L337">SockaddrNetlink</a>
     <a href="#SockaddrNetlink">¶</a></h2>
 <pre>type SockaddrNetlink struct {
 <span id="SockaddrNetlink.Family"></span>    Family <a href="/builtin/#uint16">uint16</a>
@@ -4232,7 +4232,7 @@ Linux. See user_namespaces(7).
 <pre>type Time_t <a href="/builtin/#int64">int64</a></pre>
 
 
-<h3 id="Time">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L66">Time</a>
+<h3 id="Time">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux_amd64.go#L65">Time</a>
     <a href="#Time">¶</a></h3>
 <pre>func Time(t *<a href="#Time_t">Time_t</a>) (tt <a href="#Time_t">Time_t</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -4252,15 +4252,18 @@ Linux. See user_namespaces(7).
 NsecToTimespec takes a number of nanoseconds since the Unix epoch and returns
 the corresponding Timespec value.
 
-<h3 id="Timespec.Nano">func (*Timespec) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall.go#L81">Nano</a>
+<h3 id="Timespec.Nano">func (*Timespec) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall.go#L86">Nano</a>
     <a href="#Timespec.Nano">¶</a></h3>
 <pre>func (ts *<a href="#Timespec">Timespec</a>) Nano() <a href="/builtin/#int64">int64</a></pre>
 
+Nano returns ts as the number of nanoseconds elapsed since the Unix epoch.
 
-<h3 id="Timespec.Unix">func (*Timespec) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall.go#L73">Unix</a>
+<h3 id="Timespec.Unix">func (*Timespec) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall.go#L75">Unix</a>
     <a href="#Timespec.Unix">¶</a></h3>
 <pre>func (ts *<a href="#Timespec">Timespec</a>) Unix() (sec <a href="/builtin/#int64">int64</a>, nsec <a href="/builtin/#int64">int64</a>)</pre>
 
+Unix returns ts as the number of seconds and nanoseconds elapsed since the Unix
+epoch.
 
 <h2 id="Timeval">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/ztypes_linux_amd64.go#L19">Timeval</a>
     <a href="#Timeval">¶</a></h2>
@@ -4277,15 +4280,18 @@ the corresponding Timespec value.
 NsecToTimeval takes a number of nanoseconds since the Unix epoch and returns the
 corresponding Timeval value.
 
-<h3 id="Timeval.Nano">func (*Timeval) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall.go#L85">Nano</a>
+<h3 id="Timeval.Nano">func (*Timeval) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall.go#L91">Nano</a>
     <a href="#Timeval.Nano">¶</a></h3>
 <pre>func (tv *<a href="#Timeval">Timeval</a>) Nano() <a href="/builtin/#int64">int64</a></pre>
 
+Nano returns tv as the number of nanoseconds elapsed since the Unix epoch.
 
-<h3 id="Timeval.Unix">func (*Timeval) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall.go#L77">Unix</a>
+<h3 id="Timeval.Unix">func (*Timeval) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall.go#L81">Unix</a>
     <a href="#Timeval.Unix">¶</a></h3>
 <pre>func (tv *<a href="#Timeval">Timeval</a>) Unix() (sec <a href="/builtin/#int64">int64</a>, nsec <a href="/builtin/#int64">int64</a>)</pre>
 
+Unix returns tv as the number of seconds and nanoseconds elapsed since the Unix
+epoch.
 
 <h2 id="Timex">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/ztypes_linux_amd64.go#L24">Timex</a>
     <a href="#Timex">¶</a></h2>
@@ -4336,7 +4342,7 @@ corresponding Timeval value.
 }</pre>
 
 
-<h3 id="GetsockoptUcred">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L507">GetsockoptUcred</a>
+<h3 id="GetsockoptUcred">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L509">GetsockoptUcred</a>
     <a href="#GetsockoptUcred">¶</a></h3>
 <pre>func GetsockoptUcred(fd, level, opt <a href="/builtin/#int">int</a>) (*<a href="#Ucred">Ucred</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -4381,52 +4387,52 @@ enabled on the socket.
 }</pre>
 
 
-<h2 id="WaitStatus">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L184">WaitStatus</a>
+<h2 id="WaitStatus">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L183">WaitStatus</a>
     <a href="#WaitStatus">¶</a></h2>
 <pre>type WaitStatus <a href="/builtin/#uint32">uint32</a></pre>
 
 
-<h3 id="WaitStatus.Continued">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L209">Continued</a>
+<h3 id="WaitStatus.Continued">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L208">Continued</a>
     <a href="#WaitStatus.Continued">¶</a></h3>
 <pre>func (w <a href="#WaitStatus">WaitStatus</a>) Continued() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="WaitStatus.CoreDump">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L211">CoreDump</a>
+<h3 id="WaitStatus.CoreDump">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L210">CoreDump</a>
     <a href="#WaitStatus.CoreDump">¶</a></h3>
 <pre>func (w <a href="#WaitStatus">WaitStatus</a>) CoreDump() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="WaitStatus.ExitStatus">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L213">ExitStatus</a>
+<h3 id="WaitStatus.ExitStatus">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L212">ExitStatus</a>
     <a href="#WaitStatus.ExitStatus">¶</a></h3>
 <pre>func (w <a href="#WaitStatus">WaitStatus</a>) ExitStatus() <a href="/builtin/#int">int</a></pre>
 
 
-<h3 id="WaitStatus.Exited">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L203">Exited</a>
+<h3 id="WaitStatus.Exited">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L202">Exited</a>
     <a href="#WaitStatus.Exited">¶</a></h3>
 <pre>func (w <a href="#WaitStatus">WaitStatus</a>) Exited() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="WaitStatus.Signal">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L220">Signal</a>
+<h3 id="WaitStatus.Signal">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L219">Signal</a>
     <a href="#WaitStatus.Signal">¶</a></h3>
 <pre>func (w <a href="#WaitStatus">WaitStatus</a>) Signal() <a href="#Signal">Signal</a></pre>
 
 
-<h3 id="WaitStatus.Signaled">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L205">Signaled</a>
+<h3 id="WaitStatus.Signaled">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L204">Signaled</a>
     <a href="#WaitStatus.Signaled">¶</a></h3>
 <pre>func (w <a href="#WaitStatus">WaitStatus</a>) Signaled() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="WaitStatus.StopSignal">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L227">StopSignal</a>
+<h3 id="WaitStatus.StopSignal">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L226">StopSignal</a>
     <a href="#WaitStatus.StopSignal">¶</a></h3>
 <pre>func (w <a href="#WaitStatus">WaitStatus</a>) StopSignal() <a href="#Signal">Signal</a></pre>
 
 
-<h3 id="WaitStatus.Stopped">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L207">Stopped</a>
+<h3 id="WaitStatus.Stopped">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L206">Stopped</a>
     <a href="#WaitStatus.Stopped">¶</a></h3>
 <pre>func (w <a href="#WaitStatus">WaitStatus</a>) Stopped() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="WaitStatus.TrapCause">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L234">TrapCause</a>
+<h3 id="WaitStatus.TrapCause">func (WaitStatus) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/syscall/syscall_linux.go#L233">TrapCause</a>
     <a href="#WaitStatus.TrapCause">¶</a></h3>
 <pre>func (w <a href="#WaitStatus">WaitStatus</a>) TrapCause() <a href="/builtin/#int">int</a></pre>
 

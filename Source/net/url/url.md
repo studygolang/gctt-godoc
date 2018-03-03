@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package url
 
   `import "net/url"`
@@ -53,46 +53,56 @@ Package url parses URLs and implements query escaping.
 
 - [ParseQuery](#exampleParseQuery)
 - [URL](#exampleURL)
+- [URL.EscapedPath](#exampleURL_EscapedPath)
 - [URL.Hostname](#exampleURL_Hostname)
+- [URL.IsAbs](#exampleURL_IsAbs)
+- [URL.MarshalBinary](#exampleURL_MarshalBinary)
+- [URL.Parse](#exampleURL_Parse)
+- [URL.Port](#exampleURL_Port)
+- [URL.Query](#exampleURL_Query)
 - [URL.RequestURI](#exampleURL_RequestURI)
 - [URL.ResolveReference](#exampleURL_ResolveReference)
+- [URL.String](#exampleURL_String)
+- [URL.UnmarshalBinary](#exampleURL_UnmarshalBinary)
 - [URL (Roundtrip)](#exampleURL_roundtrip)
 - [Values](#exampleValues)
 
 ### Package files
  [url.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go)
 
-<h2 id="PathEscape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L260">PathEscape</a>
+<h2 id="PathEscape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L265">PathEscape</a>
     <a href="#PathEscape">¶</a></h2>
 <pre>func PathEscape(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
 PathEscape escapes the string so it can be safely placed inside a URL path
 segment.
 
-<h2 id="PathUnescape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L168">PathUnescape</a>
+<h2 id="PathUnescape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L173">PathUnescape</a>
     <a href="#PathUnescape">¶</a></h2>
 <pre>func PathUnescape(s <a href="/builtin/#string">string</a>) (<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
-PathUnescape does the inverse transformation of PathEscape, converting %AB into
-the byte 0xAB. It returns an error if any % is not followed by two hexadecimal
-digits.
+PathUnescape does the inverse transformation of PathEscape, converting each
+3-byte encoded substring of the form "%AB" into the hex-decoded byte 0xAB. It
+also converts '+' into ' ' (space). It returns an error if any % is not followed
+by two hexadecimal digits.
 
 PathUnescape is identical to QueryUnescape except that it does not unescape '+'
 to ' ' (space).
 
-<h2 id="QueryEscape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L254">QueryEscape</a>
+<h2 id="QueryEscape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L259">QueryEscape</a>
     <a href="#QueryEscape">¶</a></h2>
 <pre>func QueryEscape(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
 QueryEscape escapes the string so it can be safely placed inside a URL query.
 
-<h2 id="QueryUnescape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L159">QueryUnescape</a>
+<h2 id="QueryUnescape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L161">QueryUnescape</a>
     <a href="#QueryUnescape">¶</a></h2>
 <pre>func QueryUnescape(s <a href="/builtin/#string">string</a>) (<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
-QueryUnescape does the inverse transformation of QueryEscape, converting %AB
-into the byte 0xAB and '+' into ' ' (space). It returns an error if any % is not
-followed by two hexadecimal digits.
+QueryUnescape does the inverse transformation of QueryEscape, converting each
+3-byte encoded substring of the form "%AB" into the hex-decoded byte 0xAB. It
+also converts '+' into ' ' (space). It returns an error if any % is not followed
+by two hexadecimal digits.
 
 <h2 id="Error">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L13">Error</a>
     <a href="#Error">¶</a></h2>
@@ -139,7 +149,7 @@ Error reports an error and the operation and URL that caused it.
 <pre>func (e <a href="#InvalidHostError">InvalidHostError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="URL">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L318">URL</a>
+<h2 id="URL">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L323">URL</a>
     <a href="#URL">¶</a></h2>
 <pre>type URL struct {
 <span id="URL.Scheme"></span>    Scheme     <a href="/builtin/#string">string</a>
@@ -202,14 +212,17 @@ Example:
     // /foo%2fbar
     // https://example.com/foo%2fbar
 
-<h3 id="Parse">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L421">Parse</a>
+<h3 id="Parse">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L439">Parse</a>
     <a href="#Parse">¶</a></h3>
 <pre>func Parse(rawurl <a href="/builtin/#string">string</a>) (*<a href="#URL">URL</a>, <a href="/builtin/#error">error</a>)</pre>
 
-Parse parses rawurl into a URL structure. The rawurl may be relative or
-absolute.
+Parse parses rawurl into a URL structure.
 
-<h3 id="ParseRequestURI">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L442">ParseRequestURI</a>
+The rawurl may be relative (a path, without a host) or absolute (starting with a
+scheme). Trying to parse a hostname and path without a scheme is invalid but may
+not necessarily return an error, due to parsing ambiguities.
+
+<h3 id="ParseRequestURI">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L460">ParseRequestURI</a>
     <a href="#ParseRequestURI">¶</a></h3>
 <pre>func ParseRequestURI(rawurl <a href="/builtin/#string">string</a>) (*<a href="#URL">URL</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -218,7 +231,7 @@ received in an HTTP request, so the rawurl is interpreted only as an absolute
 URI or an absolute path. The string rawurl is assumed not to have a #fragment
 suffix. (Web browsers strip #fragment before sending the URL to a web server.)
 
-<h3 id="URL.EscapedPath">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L634">EscapedPath</a>
+<h3 id="URL.EscapedPath">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L655">EscapedPath</a>
     <a href="#URL.EscapedPath">¶</a></h3>
 <pre>func (u *<a href="#URL">URL</a>) EscapedPath() <a href="/builtin/#string">string</a></pre>
 
@@ -229,7 +242,18 @@ an escaped form on its own. The String and RequestURI methods use EscapedPath to
 construct their results. In general, code should call EscapedPath instead of
 reading u.RawPath directly.
 
-<h3 id="URL.Hostname">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L994">Hostname</a>
+<a id="exampleURL_EscapedPath"></a>
+Example:
+
+    u, err := url.Parse("http://example.com/path with spaces")
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Println(u.EscapedPath())
+    // Output:
+    // /path%20with%20spaces
+
+<h3 id="URL.Hostname">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L1015">Hostname</a>
     <a href="#URL.Hostname">¶</a></h3>
 <pre>func (u *<a href="#URL">URL</a>) Hostname() <a href="/builtin/#string">string</a></pre>
 
@@ -255,19 +279,42 @@ Example:
     // example.org
     // 2001:0db8:85a3:0000:0000:8a2e:0370:7334
 
-<h3 id="URL.IsAbs">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L907">IsAbs</a>
+<h3 id="URL.IsAbs">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L930">IsAbs</a>
     <a href="#URL.IsAbs">¶</a></h3>
 <pre>func (u *<a href="#URL">URL</a>) IsAbs() <a href="/builtin/#bool">bool</a></pre>
 
 IsAbs reports whether the URL is absolute. Absolute means that it has a
 non-empty scheme.
 
-<h3 id="URL.MarshalBinary">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L1032">MarshalBinary</a>
+<a id="exampleURL_IsAbs"></a>
+Example:
+
+    u := url.URL{Host: "example.com", Path: "foo"}
+    fmt.Println(u.IsAbs())
+    u.Scheme = "http"
+    fmt.Println(u.IsAbs())
+    // Output:
+    // false
+    // true
+
+<h3 id="URL.MarshalBinary">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L1053">MarshalBinary</a>
     <a href="#URL.MarshalBinary">¶</a></h3>
 <pre>func (u *<a href="#URL">URL</a>) MarshalBinary() (text []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h3 id="URL.Parse">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L914">Parse</a>
+<a id="exampleURL_MarshalBinary"></a>
+Example:
+
+    u, _ := url.Parse("https://example.org")
+    b, err := u.MarshalBinary()
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("%s\n", b)
+    // Output:
+    // https://example.org
+
+<h3 id="URL.Parse">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L937">Parse</a>
     <a href="#URL.Parse">¶</a></h3>
 <pre>func (u *<a href="#URL">URL</a>) Parse(ref <a href="/builtin/#string">string</a>) (*<a href="#URL">URL</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -275,21 +322,73 @@ Parse parses a URL in the context of the receiver. The provided URL may be
 relative or absolute. Parse returns nil, err on parse failure, otherwise its
 return value is the same as ResolveReference.
 
-<h3 id="URL.Port">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L1000">Port</a>
+<a id="exampleURL_Parse"></a>
+Example:
+
+    u, err := url.Parse("https://example.org")
+    if err != nil {
+        log.Fatal(err)
+    }
+    rel, err := u.Parse("/foo")
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Println(rel)
+    _, err = u.Parse(":foo")
+    if _, ok := err.(*url.Error); !ok {
+        log.Fatal(err)
+    }
+    // Output:
+    // https://example.org/foo
+
+<h3 id="URL.Port">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L1021">Port</a>
     <a href="#URL.Port">¶</a></h3>
 <pre>func (u *<a href="#URL">URL</a>) Port() <a href="/builtin/#string">string</a></pre>
 
 Port returns the port part of u.Host, without the leading colon. If u.Host
 doesn't contain a port, Port returns an empty string.
 
-<h3 id="URL.Query">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L964">Query</a>
+<a id="exampleURL_Port"></a>
+Example:
+
+    u, err := url.Parse("https://example.org")
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Println(u.Port())
+    u, err = url.Parse("https://example.org:8080")
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Println(u.Port())
+    // Output:
+    //
+    // 8080
+
+<h3 id="URL.Query">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L985">Query</a>
     <a href="#URL.Query">¶</a></h3>
 <pre>func (u *<a href="#URL">URL</a>) Query() <a href="#Values">Values</a></pre>
 
 Query parses RawQuery and returns the corresponding values. It silently discards
 malformed value pairs. To check errors use ParseQuery.
 
-<h3 id="URL.RequestURI">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L971">RequestURI</a>
+<a id="exampleURL_Query"></a>
+Example:
+
+    u, err := url.Parse("https://example.org/?a=1&a=2&b=&=3&&&&")
+    if err != nil {
+        log.Fatal(err)
+    }
+    q := u.Query()
+    fmt.Println(q["a"])
+    fmt.Println(q.Get("b"))
+    fmt.Println(q.Get(""))
+    // Output:
+    // [1 2]
+    //
+    // 3
+
+<h3 id="URL.RequestURI">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L992">RequestURI</a>
     <a href="#URL.RequestURI">¶</a></h3>
 <pre>func (u *<a href="#URL">URL</a>) RequestURI() <a href="/builtin/#string">string</a></pre>
 
@@ -306,7 +405,7 @@ Example:
     fmt.Println(u.RequestURI())
     // Output: /path?foo=bar
 
-<h3 id="URL.ResolveReference">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L928">ResolveReference</a>
+<h3 id="URL.ResolveReference">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L951">ResolveReference</a>
     <a href="#URL.ResolveReference">¶</a></h3>
 <pre>func (u *<a href="#URL">URL</a>) ResolveReference(ref *<a href="#URL">URL</a>) *<a href="#URL">URL</a></pre>
 
@@ -331,7 +430,7 @@ Example:
     // Output:
     // http://example.com/search?q=dotnet
 
-<h3 id="URL.String">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L709">String</a>
+<h3 id="URL.String">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L730">String</a>
     <a href="#URL.String">¶</a></h3>
 <pre>func (u *<a href="#URL">URL</a>) String() <a href="/builtin/#string">string</a></pre>
 
@@ -356,12 +455,42 @@ In the second form, the following rules apply:
     - if u.RawQuery is empty, ?query is omitted.
     - if u.Fragment is empty, #fragment is omitted.
 
-<h3 id="URL.UnmarshalBinary">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L1036">UnmarshalBinary</a>
+<a id="exampleURL_String"></a>
+Example:
+
+    u := &url.URL{
+        Scheme:   "https",
+        User:     url.UserPassword("me", "pass"),
+        Host:     "example.com",
+        Path:     "foo/bar",
+        RawQuery: "x=1&y=2",
+        Fragment: "anchor",
+    }
+    fmt.Println(u.String())
+    u.Opaque = "opaque"
+    fmt.Println(u.String())
+    // Output:
+    // https://me:pass@example.com/foo/bar?x=1&y=2#anchor
+    // https:opaque?x=1&y=2#anchor
+
+<h3 id="URL.UnmarshalBinary">func (*URL) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L1057">UnmarshalBinary</a>
     <a href="#URL.UnmarshalBinary">¶</a></h3>
 <pre>func (u *<a href="#URL">URL</a>) UnmarshalBinary(text []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
 
-<h2 id="Userinfo">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L352">Userinfo</a>
+<a id="exampleURL_UnmarshalBinary"></a>
+Example:
+
+    u := &url.URL{}
+    err := u.UnmarshalBinary([]byte("https://example.org/foo"))
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("%s\n", u)
+    // Output:
+    // https://example.org/foo
+
+<h2 id="Userinfo">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L357">Userinfo</a>
     <a href="#Userinfo">¶</a></h2>
 <pre>type Userinfo struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -371,13 +500,13 @@ The Userinfo type is an immutable encapsulation of username and password details
 for a URL. An existing Userinfo value is guaranteed to have a username set
 (potentially empty, as allowed by RFC 2396), and optionally a password.
 
-<h3 id="User">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L332">User</a>
+<h3 id="User">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L337">User</a>
     <a href="#User">¶</a></h3>
 <pre>func User(username <a href="/builtin/#string">string</a>) *<a href="#Userinfo">Userinfo</a></pre>
 
 User returns a Userinfo containing the provided username and no password set.
 
-<h3 id="UserPassword">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L344">UserPassword</a>
+<h3 id="UserPassword">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L349">UserPassword</a>
     <a href="#UserPassword">¶</a></h3>
 <pre>func UserPassword(username, password <a href="/builtin/#string">string</a>) *<a href="#Userinfo">Userinfo</a></pre>
 
@@ -388,26 +517,26 @@ that interpreting Userinfo this way ``is NOT RECOMMENDED, because the passing of
 authentication information in clear text (such as URI) has proven to be a
 security risk in almost every case where it has been used.''
 
-<h3 id="Userinfo.Password">func (*Userinfo) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L364">Password</a>
+<h3 id="Userinfo.Password">func (*Userinfo) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L372">Password</a>
     <a href="#Userinfo.Password">¶</a></h3>
 <pre>func (u *<a href="#Userinfo">Userinfo</a>) Password() (<a href="/builtin/#string">string</a>, <a href="/builtin/#bool">bool</a>)</pre>
 
 Password returns the password in case it is set, and whether it is set.
 
-<h3 id="Userinfo.String">func (*Userinfo) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L370">String</a>
+<h3 id="Userinfo.String">func (*Userinfo) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L381">String</a>
     <a href="#Userinfo.String">¶</a></h3>
 <pre>func (u *<a href="#Userinfo">Userinfo</a>) String() <a href="/builtin/#string">string</a></pre>
 
 String returns the encoded userinfo information in the standard form of
 "username[:password]".
 
-<h3 id="Userinfo.Username">func (*Userinfo) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L359">Username</a>
+<h3 id="Userinfo.Username">func (*Userinfo) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L364">Username</a>
     <a href="#Userinfo.Username">¶</a></h3>
 <pre>func (u *<a href="#Userinfo">Userinfo</a>) Username() <a href="/builtin/#string">string</a></pre>
 
 Username returns the username.
 
-<h2 id="Values">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L760">Values</a>
+<h2 id="Values">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L783">Values</a>
     <a href="#Values">¶</a></h2>
 <pre>type Values map[<a href="/builtin/#string">string</a>][]<a href="/builtin/#string">string</a></pre>
 
@@ -432,7 +561,7 @@ Example:
     // Jess
     // [Jess Sarah Zoe]
 
-<h3 id="ParseQuery">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L803">ParseQuery</a>
+<h3 id="ParseQuery">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L826">ParseQuery</a>
     <a href="#ParseQuery">¶</a></h3>
 <pre>func ParseQuery(query <a href="/builtin/#string">string</a>) (<a href="#Values">Values</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -456,27 +585,27 @@ Example:
     // Output:
     // {"x":["1"], "y":["2", "3"], "z":[""]}
 
-<h3 id="Values.Add">func (Values) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L785">Add</a>
+<h3 id="Values.Add">func (Values) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L808">Add</a>
     <a href="#Values.Add">¶</a></h3>
 <pre>func (v <a href="#Values">Values</a>) Add(key, value <a href="/builtin/#string">string</a>)</pre>
 
 Add adds the value to key. It appends to any existing values associated with
 key.
 
-<h3 id="Values.Del">func (Values) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L790">Del</a>
+<h3 id="Values.Del">func (Values) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L813">Del</a>
     <a href="#Values.Del">¶</a></h3>
 <pre>func (v <a href="#Values">Values</a>) Del(key <a href="/builtin/#string">string</a>)</pre>
 
 Del deletes the values associated with key.
 
-<h3 id="Values.Encode">func (Values) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L845">Encode</a>
+<h3 id="Values.Encode">func (Values) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L868">Encode</a>
     <a href="#Values.Encode">¶</a></h3>
 <pre>func (v <a href="#Values">Values</a>) Encode() <a href="/builtin/#string">string</a></pre>
 
 Encode encodes the values into ``URL encoded'' form ("bar=baz&foo=quux") sorted
 by key.
 
-<h3 id="Values.Get">func (Values) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L766">Get</a>
+<h3 id="Values.Get">func (Values) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L789">Get</a>
     <a href="#Values.Get">¶</a></h3>
 <pre>func (v <a href="#Values">Values</a>) Get(key <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -484,7 +613,7 @@ Get gets the first value associated with the given key. If there are no values
 associated with the key, Get returns the empty string. To access multiple
 values, use the map directly.
 
-<h3 id="Values.Set">func (Values) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L779">Set</a>
+<h3 id="Values.Set">func (Values) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/url/url.go#L802">Set</a>
     <a href="#Values.Set">¶</a></h3>
 <pre>func (v <a href="#Values">Values</a>) Set(key, value <a href="/builtin/#string">string</a>)</pre>
 

@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package time
 
   `import "time"`
@@ -89,6 +89,7 @@ difference will be visible when printing t.String() and u.String().
 - [type Location](#Location)
   - [func FixedZone(name string, offset int) *Location](#FixedZone)
   - [func LoadLocation(name string) (*Location, error)](#LoadLocation)
+  - [func LoadLocationFromTZData(name string, data []byte) (*Location, error)](#LoadLocationFromTZData)
   - [func (l *Location) String() string](#Location.String)
 - [type Month](#Month)
   - [func (m Month) String() string](#Month.String)
@@ -155,14 +156,35 @@ difference will be visible when printing t.String() and u.String().
 - [After](#exampleAfter)
 - [Date](#exampleDate)
 - [Duration](#exampleDuration)
+- [Duration.Hours](#exampleDuration_Hours)
+- [Duration.Minutes](#exampleDuration_Minutes)
+- [Duration.Nanoseconds](#exampleDuration_Nanoseconds)
+- [Duration.Round](#exampleDuration_Round)
+- [Duration.Seconds](#exampleDuration_Seconds)
+- [Duration.String](#exampleDuration_String)
+- [Duration.Truncate](#exampleDuration_Truncate)
+- [Location](#exampleLocation)
 - [Month](#exampleMonth)
+- [NewTicker](#exampleNewTicker)
 - [Parse](#exampleParse)
+- [ParseDuration](#exampleParseDuration)
 - [ParseInLocation](#exampleParseInLocation)
 - [Sleep](#exampleSleep)
 - [Tick](#exampleTick)
+- [Time.Add](#exampleTime_Add)
+- [Time.AddDate](#exampleTime_AddDate)
+- [Time.After](#exampleTime_After)
+- [Time.AppendFormat](#exampleTime_AppendFormat)
+- [Time.Before](#exampleTime_Before)
+- [Time.Date](#exampleTime_Date)
+- [Time.Day](#exampleTime_Day)
+- [Time.Equal](#exampleTime_Equal)
 - [Time.Format](#exampleTime_Format)
 - [Time.Round](#exampleTime_Round)
+- [Time.String](#exampleTime_String)
+- [Time.Sub](#exampleTime_Sub)
 - [Time.Truncate](#exampleTime_Truncate)
+- [Time.Unix](#exampleTime_Unix)
 
 ### Package files
  [format.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go) [sleep.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go) [sys_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sys_unix.go) [tick.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/tick.go) [time.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go) [zoneinfo.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo.go) [zoneinfo_read.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo_read.go) [zoneinfo_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo_unix.go)
@@ -188,7 +210,7 @@ difference will be visible when printing t.String() and u.String().
     <span id="StampNano">StampNano</span>  = &#34;Jan _2 15:04:05.000000000&#34;
 )</pre>
 
-These are predefined layouts for use in Time.Format and Time.Parse. The
+These are predefined layouts for use in Time.Format and time.Parse. The
 reference time used in the layouts is the specific time:
 
     Mon Jan 2 15:04:05 MST 2006
@@ -203,6 +225,9 @@ formatted your way; see the values of constants like ANSIC, StampMicro or
 Kitchen for examples. The model is to demonstrate what the reference time looks
 like so that the Format and Parse methods can apply the same transformation to a
 general time value.
+
+Some valid layouts are invalid time values for time.Parse, due to formats such
+as _ for space padding and Z for zone information.
 
 Within the format string, an underscore _ represents a space that may be
 replaced by a digit if the following number (a day) has two digits; for
@@ -236,7 +261,7 @@ Text in the format string that is not recognized as part of the reference time
 is echoed verbatim during Format and expected to appear verbatim in the input to
 Parse.
 
-The executable example for time.Format demonstrates the working of the layout
+The executable example for Time.Format demonstrates the working of the layout
 string in detail and is a good reference.
 
 Note that the RFC822, RFC850, and RFC1123 formats should be applied only to
@@ -244,12 +269,12 @@ local times. Applying them to UTC times will use "UTC" as the time zone
 abbreviation, while strictly speaking those RFCs require the use of "GMT" in
 that case. In general RFC1123Z should be used instead of RFC1123 for servers
 that insist on that format, and RFC3339 should be preferred for new protocols.
-RFC822, RFC822Z, RFC1123, and RFC1123Z are useful for formatting; when used with
-time.Parse they do not accept all the time formats permitted by the RFCs. The
-RFC3339Nano format removes trailing zeros from the seconds field and thus may
-not sort correctly once formatted.
+RFC3339, RFC822, RFC822Z, RFC1123, and RFC1123Z are useful for formatting; when
+used with time.Parse they do not accept all the time formats permitted by the
+RFCs. The RFC3339Nano format removes trailing zeros from the seconds field and
+thus may not sort correctly once formatted.
 
-<h2 id="After">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L140">After</a>
+<h2 id="After">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L142">After</a>
     <a href="#After">¶</a></h2>
 <pre>func After(d <a href="#Duration">Duration</a>) &lt;-chan <a href="#Time">Time</a></pre>
 
@@ -337,7 +362,7 @@ Example:
     t1 := time.Now()
     fmt.Printf("The call took %v to run.\n", t1.Sub(t0))
 
-<h3 id="ParseDuration">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L1252">ParseDuration</a>
+<h3 id="ParseDuration">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L1255">ParseDuration</a>
     <a href="#ParseDuration">¶</a></h3>
 <pre>func ParseDuration(s <a href="/builtin/#string">string</a>) (<a href="#Duration">Duration</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -345,6 +370,20 @@ ParseDuration parses a duration string. A duration string is a possibly signed
 sequence of decimal numbers, each with optional fraction and a unit suffix, such
 as "300ms", "-1.5h" or "2h45m". Valid time units are "ns", "us" (or "µs"), "ms",
 "s", "m", "h".
+
+<a id="exampleParseDuration"></a>
+Example:
+
+    hours, _ := time.ParseDuration("10h")
+    complex, _ := time.ParseDuration("1h10m10s")
+
+    fmt.Println(hours)
+    fmt.Println(complex)
+    fmt.Printf("there are %.0f seconds in %v\n", complex.Seconds(), complex)
+    // Output:
+    // 10h0m0s
+    // 1h10m10s
+    // there are 4210 seconds in 1h10m10s
 
 <h3 id="Since">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L889">Since</a>
     <a href="#Since">¶</a></h3>
@@ -364,17 +403,38 @@ Until returns the duration until t. It is shorthand for t.Sub(time.Now()).
 
 Hours returns the duration as a floating point number of hours.
 
+<a id="exampleDuration_Hours"></a>
+Example:
+
+    h, _ := time.ParseDuration("4h30m")
+    fmt.Printf("I've got %.1f hours of work left.", h.Hours())
+    // Output: I've got 4.5 hours of work left.
+
 <h3 id="Duration.Minutes">func (Duration) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L775">Minutes</a>
     <a href="#Duration.Minutes">¶</a></h3>
 <pre>func (d <a href="#Duration">Duration</a>) Minutes() <a href="/builtin/#float64">float64</a></pre>
 
 Minutes returns the duration as a floating point number of minutes.
 
+<a id="exampleDuration_Minutes"></a>
+Example:
+
+    m, _ := time.ParseDuration("1h30m")
+    fmt.Printf("The movie is %.0f minutes long.", m.Minutes())
+    // Output: The movie is 90 minutes long.
+
 <h3 id="Duration.Nanoseconds">func (Duration) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L756">Nanoseconds</a>
     <a href="#Duration.Nanoseconds">¶</a></h3>
 <pre>func (d <a href="#Duration">Duration</a>) Nanoseconds() <a href="/builtin/#int64">int64</a></pre>
 
 Nanoseconds returns the duration as an integer nanosecond count.
+
+<a id="exampleDuration_Nanoseconds"></a>
+Example:
+
+    ns, _ := time.ParseDuration("1000ns")
+    fmt.Printf("one microsecond has %d nanoseconds.", ns.Nanoseconds())
+    // Output: one microsecond has 1000 nanoseconds.
 
 <h3 id="Duration.Round">func (Duration) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L809">Round</a>
     <a href="#Duration.Round">¶</a></h3>
@@ -385,11 +445,50 @@ rounding behavior for halfway values is to round away from zero. If the result
 exceeds the maximum (or minimum) value that can be stored in a Duration, Round
 returns the maximum (or minimum) duration. If m <= 0, Round returns d unchanged.
 
+<a id="exampleDuration_Round"></a>
+Example:
+
+    d, err := time.ParseDuration("1h15m30.918273645s")
+    if err != nil {
+        panic(err)
+    }
+
+    round := []time.Duration{
+        time.Nanosecond,
+        time.Microsecond,
+        time.Millisecond,
+        time.Second,
+        2 * time.Second,
+        time.Minute,
+        10 * time.Minute,
+        time.Hour,
+    }
+
+    for _, r := range round {
+        fmt.Printf("d.Round(%6s) = %s\n", r, d.Round(r).String())
+    }
+    // Output:
+    // d.Round(   1ns) = 1h15m30.918273645s
+    // d.Round(   1µs) = 1h15m30.918274s
+    // d.Round(   1ms) = 1h15m30.918s
+    // d.Round(    1s) = 1h15m31s
+    // d.Round(    2s) = 1h15m30s
+    // d.Round(  1m0s) = 1h16m0s
+    // d.Round( 10m0s) = 1h20m0s
+    // d.Round(1h0m0s) = 1h0m0s
+
 <h3 id="Duration.Seconds">func (Duration) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L768">Seconds</a>
     <a href="#Duration.Seconds">¶</a></h3>
 <pre>func (d <a href="#Duration">Duration</a>) Seconds() <a href="/builtin/#float64">float64</a></pre>
 
 Seconds returns the duration as a floating point number of seconds.
+
+<a id="exampleDuration_Seconds"></a>
+Example:
+
+    m, _ := time.ParseDuration("1m30s")
+    fmt.Printf("take off in t-%.0f seconds.", m.Seconds())
+    // Output: take off in t-90 seconds.
 
 <h3 id="Duration.String">func (Duration) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L641">String</a>
     <a href="#Duration.String">¶</a></h3>
@@ -400,12 +499,52 @@ Leading zero units are omitted. As a special case, durations less than one
 second format use a smaller unit (milli-, micro-, or nanoseconds) to ensure that
 the leading digit is non-zero. The zero duration formats as 0s.
 
+<a id="exampleDuration_String"></a>
+Example:
+
+    t1 := time.Date(2016, time.August, 15, 0, 0, 0, 0, time.UTC)
+    t2 := time.Date(2017, time.February, 16, 0, 0, 0, 0, time.UTC)
+    fmt.Println(t2.Sub(t1).String())
+    // Output: 4440h0m0s
+
 <h3 id="Duration.Truncate">func (Duration) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L790">Truncate</a>
     <a href="#Duration.Truncate">¶</a></h3>
 <pre>func (d <a href="#Duration">Duration</a>) Truncate(m <a href="#Duration">Duration</a>) <a href="#Duration">Duration</a></pre>
 
 Truncate returns the result of rounding d toward zero to a multiple of m. If m
 <= 0, Truncate returns d unchanged.
+
+<a id="exampleDuration_Truncate"></a>
+Example:
+
+    d, err := time.ParseDuration("1h15m30.918273645s")
+    if err != nil {
+        panic(err)
+    }
+
+    trunc := []time.Duration{
+        time.Nanosecond,
+        time.Microsecond,
+        time.Millisecond,
+        time.Second,
+        2 * time.Second,
+        time.Minute,
+        10 * time.Minute,
+        time.Hour,
+    }
+
+    for _, t := range trunc {
+        fmt.Printf("t.Truncate(%6s) = %s\n", t, d.Truncate(t).String())
+    }
+    // Output:
+    // t.Truncate(   1ns) = 1h15m30.918273645s
+    // t.Truncate(   1µs) = 1h15m30.918273s
+    // t.Truncate(   1ms) = 1h15m30.918s
+    // t.Truncate(    1s) = 1h15m30s
+    // t.Truncate(    2s) = 1h15m30s
+    // t.Truncate(  1m0s) = 1h15m0s
+    // t.Truncate( 10m0s) = 1h10m0s
+    // t.Truncate(1h0m0s) = 1h0m0s
 
 <h2 id="Location">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo.go#L8">Location</a>
     <a href="#Location">¶</a></h2>
@@ -424,6 +563,29 @@ Local represents the system's local time zone.
 <pre>var <span id="UTC">UTC</span> *<a href="#Location">Location</a> = &amp;utcLoc</pre>
 
 UTC represents Universal Coordinated Time (UTC).
+
+<a id="exampleLocation"></a>
+Example:
+
+    // China doesn't have daylight saving. It uses a fixed 8 hour offset from UTC.
+    secondsEastOfUTC := int((8 * time.Hour).Seconds())
+    beijing := time.FixedZone("Beijing Time", secondsEastOfUTC)
+
+    // If the system has a timezone database present, it's possible to load a location
+    // from that, e.g.:
+    //    newYork, err := time.LoadLocation("America/New_York")
+
+    // Creating a time requires a location. Common locations are time.Local and time.UTC.
+    timeInUTC := time.Date(2009, 1, 1, 12, 0, 0, 0, time.UTC)
+    sameTimeInBeijing := time.Date(2009, 1, 1, 20, 0, 0, 0, beijing)
+
+    // Although the UTC clock time is 1200 and the Beijing clock time is 2000, Beijing is
+    // 8 hours ahead so the two dates actually represent the same instant.
+    timesAreEqual := timeInUTC.Equal(sameTimeInBeijing)
+    fmt.Println(timesAreEqual)
+
+    // Output:
+    // true
 
 <h3 id="FixedZone">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo.go#L82">FixedZone</a>
     <a href="#FixedZone">¶</a></h3>
@@ -449,6 +611,15 @@ especially non-Unix systems. LoadLocation looks in the directory or uncompressed
 zip file named by the ZONEINFO environment variable, if any, then looks in known
 installation locations on Unix systems, and finally looks in
 $GOROOT/lib/time/zoneinfo.zip.
+
+<h3 id="LoadLocationFromTZData">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo_read.go#L76">LoadLocationFromTZData</a>
+    <a href="#LoadLocationFromTZData">¶</a></h3>
+<pre>func LoadLocationFromTZData(name <a href="/builtin/#string">string</a>, data []<a href="/builtin/#byte">byte</a>) (*<a href="#Location">Location</a>, <a href="/builtin/#error">error</a>)</pre>
+
+LoadLocationFromTZData returns a Location with the given name initialized from
+the IANA Time Zone database-formatted data. The data should be in the format of
+a standard IANA time zone file (for example, the content of /etc/localtime on
+Unix systems).
 
 <h3 id="Location.String">func (*Location) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo.go#L76">String</a>
     <a href="#Location.String">¶</a></h3>
@@ -493,7 +664,7 @@ Example:
 
 String returns the English name of the month ("January", "February", ...).
 
-<h2 id="ParseError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L646">ParseError</a>
+<h2 id="ParseError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L647">ParseError</a>
     <a href="#ParseError">¶</a></h2>
 <pre>type ParseError struct {
 <span id="ParseError.Layout"></span>    Layout     <a href="/builtin/#string">string</a>
@@ -505,7 +676,7 @@ String returns the English name of the month ("January", "February", ...).
 
 ParseError describes a problem parsing a time string.
 
-<h3 id="ParseError.Error">func (*ParseError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L659">Error</a>
+<h3 id="ParseError.Error">func (*ParseError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L660">Error</a>
     <a href="#ParseError.Error">¶</a></h3>
 <pre>func (e *<a href="#ParseError">ParseError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
@@ -528,6 +699,26 @@ NewTicker returns a new Ticker containing a channel that will send the time with
 a period specified by the duration argument. It adjusts the intervals or drops
 ticks to make up for slow receivers. The duration d must be greater than zero;
 if not, NewTicker will panic. Stop the ticker to release associated resources.
+
+<a id="exampleNewTicker"></a>
+Example:
+
+    ticker := time.NewTicker(time.Second)
+    defer ticker.Stop()
+    done := make(chan bool)
+    go func() {
+        time.Sleep(10 * time.Second)
+        done <- true
+    }()
+    for {
+        select {
+        case <-done:
+            fmt.Println("Done!")
+            return
+        case t := <-ticker.C:
+            fmt.Println("Current time: ", t)
+        }
+    }
 
 <h3 id="Ticker.Stop">func (*Ticker) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/tick.go#L35">Stop</a>
     <a href="#Ticker.Stop">¶</a></h3>
@@ -567,6 +758,11 @@ the location in this way changes only the presentation; it does not change the
 instant in time being denoted and therefore does not affect the computations
 described in earlier paragraphs.
 
+In addition to the required “wall clock” reading, a Time may contain an optional
+reading of the current process's monotonic clock, to provide additional
+precision for comparison or subtraction. See the “Monotonic Clocks” section in
+the package documentation for details.
+
 Note that the Go == operator compares not just the time instant but also the
 Location and the monotonic clock reading. Therefore, Time values should not be
 used as map or database keys without first guaranteeing that the identical
@@ -575,11 +771,6 @@ UTC or Local method, and that the monotonic clock reading has been stripped by
 setting t = t.Round(0). In general, prefer t.Equal(u) to t == u, since t.Equal
 uses the most accurate comparison available and correctly handles the case when
 only one of its arguments has a monotonic clock reading.
-
-In addition to the required “wall clock” reading, a Time may contain an optional
-reading of the current process's monotonic clock, to provide additional
-precision for comparison or subtraction. See the “Monotonic Clocks” section in
-the package documentation for details.
 
 <h3 id="Date">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1301">Date</a>
     <a href="#Date">¶</a></h3>
@@ -616,7 +807,7 @@ Example:
 
 Now returns the current local time.
 
-<h3 id="Parse">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L762">Parse</a>
+<h3 id="Parse">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L763">Parse</a>
     <a href="#Parse">¶</a></h3>
 <pre>func Parse(layout, value <a href="/builtin/#string">string</a>) (<a href="#Time">Time</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -632,7 +823,7 @@ Predefined layouts ANSIC, UnixDate, RFC3339 and others describe standard and
 convenient representations of the reference time. For more information about the
 formats and the definition of the reference time, see the documentation for
 ANSIC and the other constants defined by this package. Also, the executable
-example for time.Format demonstrates the working of the layout string in detail
+example for Time.Format demonstrates the working of the layout string in detail
 and is a good reference.
 
 Elements omitted from the value are assumed to be zero or, when zero is
@@ -661,7 +852,7 @@ offset, or use ParseInLocation.
 <a id="exampleParse"></a>
 Example:
 
-    // See the example for time.Format for a thorough description of how
+    // See the example for Time.Format for a thorough description of how
     // to define the layout string to parse a time.Time value; Parse and
     // Format use the same model to describe their input and output.
 
@@ -678,11 +869,27 @@ Example:
     t, _ = time.Parse(shortForm, "2013-Feb-03")
     fmt.Println(t)
 
+    // Some valid layouts are invalid time values, due to format specifiers
+    // such as _ for space padding and Z for zone information.
+    // For example the RFC3339 layout 2006-01-02T15:04:05Z07:00
+    // contains both Z and a time zone offset in order to handle both valid options:
+    // 2006-01-02T15:04:05Z
+    // 2006-01-02T15:04:05+07:00
+    t, _ = time.Parse(time.RFC3339, "2006-01-02T15:04:05Z")
+    fmt.Println(t)
+    t, _ = time.Parse(time.RFC3339, "2006-01-02T15:04:05+07:00")
+    fmt.Println(t)
+    _, err := time.Parse(time.RFC3339, time.RFC3339)
+    fmt.Println("error", err) // Returns an error as the layout is not a valid time value
+
     // Output:
     // 2013-02-03 19:54:00 -0800 PST
     // 2013-02-03 00:00:00 +0000 UTC
+    // 2006-01-02 15:04:05 +0000 UTC
+    // 2006-01-02 15:04:05 +0700 +0700
+    // error parsing time "2006-01-02T15:04:05Z07:00": extra text: 07:00
 
-<h3 id="ParseInLocation">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L771">ParseInLocation</a>
+<h3 id="ParseInLocation">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L772">ParseInLocation</a>
     <a href="#ParseInLocation">¶</a></h3>
 <pre>func ParseInLocation(layout, value <a href="/builtin/#string">string</a>, loc *<a href="#Location">Location</a>) (<a href="#Time">Time</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -725,6 +932,28 @@ One such value is 1<<63-1 (the largest int64 value).
 
 Add returns the time t+d.
 
+<a id="exampleTime_Add"></a>
+Example:
+
+    start := time.Date(2009, 1, 1, 12, 0, 0, 0, time.UTC)
+    afterTenSeconds := start.Add(time.Second * 10)
+    afterTenMinutes := start.Add(time.Minute * 10)
+    afterTenHours := start.Add(time.Hour * 10)
+    afterTenDays := start.Add(time.Hour * 24 * 10)
+
+    fmt.Printf("start = %v\n", start)
+    fmt.Printf("start.Add(time.Second * 10) = %v\n", afterTenSeconds)
+    fmt.Printf("start.Add(time.Minute * 10) = %v\n", afterTenMinutes)
+    fmt.Printf("start.Add(time.Hour * 10) = %v\n", afterTenHours)
+    fmt.Printf("start.Add(time.Hour * 24 * 10) = %v\n", afterTenDays)
+
+    // Output:
+    // start = 2009-01-01 12:00:00 +0000 UTC
+    // start.Add(time.Second * 10) = 2009-01-01 12:00:10 +0000 UTC
+    // start.Add(time.Minute * 10) = 2009-01-01 12:10:00 +0000 UTC
+    // start.Add(time.Hour * 10) = 2009-01-01 22:00:00 +0000 UTC
+    // start.Add(time.Hour * 24 * 10) = 2009-01-11 12:00:00 +0000 UTC
+
 <h3 id="Time.AddDate">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L907">AddDate</a>
     <a href="#Time.AddDate">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) AddDate(years <a href="/builtin/#int">int</a>, months <a href="/builtin/#int">int</a>, days <a href="/builtin/#int">int</a>) <a href="#Time">Time</a></pre>
@@ -737,24 +966,85 @@ AddDate normalizes its result in the same way that Date does, so, for example,
 adding one month to October 31 yields December 1, the normalized form for
 November 31.
 
+<a id="exampleTime_AddDate"></a>
+Example:
+
+    start := time.Date(2009, 1, 1, 0, 0, 0, 0, time.UTC)
+    oneDayLater := start.AddDate(0, 0, 1)
+    oneMonthLater := start.AddDate(0, 1, 0)
+    oneYearLater := start.AddDate(1, 0, 0)
+
+    fmt.Printf("oneDayLater: start.AddDate(0, 0, 1) = %v\n", oneDayLater)
+    fmt.Printf("oneMonthLater: start.AddDate(0, 1, 0) = %v\n", oneMonthLater)
+    fmt.Printf("oneYearLater: start.AddDate(1, 0, 0) = %v\n", oneYearLater)
+
+    // Output:
+    // oneDayLater: start.AddDate(0, 0, 1) = 2009-01-02 00:00:00 +0000 UTC
+    // oneMonthLater: start.AddDate(0, 1, 0) = 2009-02-01 00:00:00 +0000 UTC
+    // oneYearLater: start.AddDate(1, 0, 0) = 2010-01-01 00:00:00 +0000 UTC
+
 <h3 id="Time.After">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L220">After</a>
     <a href="#Time.After">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) After(u <a href="#Time">Time</a>) <a href="/builtin/#bool">bool</a></pre>
 
 After reports whether the time instant t is after u.
 
-<h3 id="Time.AppendFormat">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L488">AppendFormat</a>
+<a id="exampleTime_After"></a>
+Example:
+
+    year2000 := time.Date(2000, 1, 1, 0, 0, 0, 0, time.UTC)
+    year3000 := time.Date(3000, 1, 1, 0, 0, 0, 0, time.UTC)
+
+    isYear3000AfterYear2000 := year3000.After(year2000) // True
+    isYear2000AfterYear3000 := year2000.After(year3000) // False
+
+    fmt.Printf("year3000.After(year2000) = %v\n", isYear3000AfterYear2000)
+    fmt.Printf("year2000.After(year3000) = %v\n", isYear2000AfterYear3000)
+
+    // Output:
+    // year3000.After(year2000) = true
+    // year2000.After(year3000) = false
+
+<h3 id="Time.AppendFormat">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L489">AppendFormat</a>
     <a href="#Time.AppendFormat">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) AppendFormat(b []<a href="/builtin/#byte">byte</a>, layout <a href="/builtin/#string">string</a>) []<a href="/builtin/#byte">byte</a></pre>
 
 AppendFormat is like Format but appends the textual representation to b and
 returns the extended buffer.
 
+<a id="exampleTime_AppendFormat"></a>
+Example:
+
+    t := time.Date(2017, time.November, 4, 11, 0, 0, 0, time.UTC)
+    text := []byte("Time: ")
+
+    text = t.AppendFormat(text, time.Kitchen)
+    fmt.Println(string(text))
+
+    // Output:
+    // Time: 11:00AM
+
 <h3 id="Time.Before">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L230">Before</a>
     <a href="#Time.Before">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Before(u <a href="#Time">Time</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Before reports whether the time instant t is before u.
+
+<a id="exampleTime_Before"></a>
+Example:
+
+    year2000 := time.Date(2000, 1, 1, 0, 0, 0, 0, time.UTC)
+    year3000 := time.Date(3000, 1, 1, 0, 0, 0, 0, time.UTC)
+
+    isYear2000BeforeYear3000 := year2000.Before(year3000) // True
+    isYear3000BeforeYear2000 := year3000.Before(year2000) // False
+
+    fmt.Printf("year2000.Before(year3000) = %v\n", isYear2000BeforeYear3000)
+    fmt.Printf("year3000.Before(year2000) = %v\n", isYear3000BeforeYear2000)
+
+    // Output:
+    // year2000.Before(year3000) = true
+    // year3000.Before(year2000) = false
 
 <h3 id="Time.Clock">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L565">Clock</a>
     <a href="#Time.Clock">¶</a></h3>
@@ -768,11 +1058,37 @@ Clock returns the hour, minute, and second within the day specified by t.
 
 Date returns the year, month, and day in which t occurs.
 
+<a id="exampleTime_Date"></a>
+Example:
+
+    d := time.Date(2000, 2, 1, 12, 30, 0, 0, time.UTC)
+    year, month, day := d.Date()
+
+    fmt.Printf("year = %v\n", year)
+    fmt.Printf("month = %v\n", month)
+    fmt.Printf("day = %v\n", day)
+
+    // Output:
+    // year = 2000
+    // month = February
+    // day = 1
+
 <h3 id="Time.Day">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L488">Day</a>
     <a href="#Time.Day">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Day() <a href="/builtin/#int">int</a></pre>
 
 Day returns the day of the month specified by t.
+
+<a id="exampleTime_Day"></a>
+Example:
+
+    d := time.Date(2000, 2, 1, 12, 30, 0, 0, time.UTC)
+    day := d.Day()
+
+    fmt.Printf("day = %v\n", day)
+
+    // Output:
+    // day = 1
 
 <h3 id="Time.Equal">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L242">Equal</a>
     <a href="#Time.Equal">¶</a></h3>
@@ -783,7 +1099,28 @@ equal even if they are in different locations. For example, 6:00 +0200 CEST and
 4:00 UTC are Equal. See the documentation on the Time type for the pitfalls of
 using == with Time values; most code should use Equal instead.
 
-<h3 id="Time.Format">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L472">Format</a>
+<a id="exampleTime_Equal"></a>
+Example:
+
+    secondsEastOfUTC := int((8 * time.Hour).Seconds())
+    beijing := time.FixedZone("Beijing Time", secondsEastOfUTC)
+
+    // Unlike the equal operator, Equal is aware that d1 and d2 are the
+    // same instant but in different time zones.
+    d1 := time.Date(2000, 2, 1, 12, 30, 0, 0, time.UTC)
+    d2 := time.Date(2000, 2, 1, 20, 30, 0, 0, beijing)
+
+    datesEqualUsingEqualOperator := d1 == d2
+    datesEqualUsingFunction := d1.Equal(d2)
+
+    fmt.Printf("datesEqualUsingEqualOperator = %v\n", datesEqualUsingEqualOperator)
+    fmt.Printf("datesEqualUsingFunction = %v\n", datesEqualUsingFunction)
+
+    // Output:
+    // datesEqualUsingEqualOperator = false
+    // datesEqualUsingFunction = true
+
+<h3 id="Time.Format">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L473">Format</a>
     <a href="#Time.Format">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Format(layout <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -863,10 +1200,10 @@ Example:
     // value.
     do("No pad", "<2>", "<7>")
 
-    // An underscore represents a zero pad, if required.
+    // An underscore represents a space pad, if the date only has one digit.
     do("Spaces", "<_2>", "< 7>")
 
-    // Similarly, a 0 indicates zero padding.
+    // A "0" indicates zero padding for single-digit values.
     do("Zeros", "<02>", "<07>")
 
     // If the value is already the right width, padding is not used.
@@ -1062,7 +1399,7 @@ Example:
 Second returns the second offset within the minute specified by t, in the range
 [0, 59].
 
-<h3 id="Time.String">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L427">String</a>
+<h3 id="Time.String">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L428">String</a>
     <a href="#Time.String">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) String() <a href="/builtin/#string">string</a></pre>
 
@@ -1078,6 +1415,22 @@ The returned string is meant for debugging; for a stable serialized
 representation, use t.MarshalText, t.MarshalBinary, or t.Format with an explicit
 format string.
 
+<a id="exampleTime_String"></a>
+Example:
+
+    timeWithNanoseconds := time.Date(2000, 2, 1, 12, 13, 14, 15, time.UTC)
+    withNanoseconds := timeWithNanoseconds.String()
+
+    timeWithoutNanoseconds := time.Date(2000, 2, 1, 12, 13, 14, 0, time.UTC)
+    withoutNanoseconds := timeWithoutNanoseconds.String()
+
+    fmt.Printf("withNanoseconds = %v\n", string(withNanoseconds))
+    fmt.Printf("withoutNanoseconds = %v\n", string(withoutNanoseconds))
+
+    // Output:
+    // withNanoseconds = 2000-02-01 12:13:14.000000015 +0000 UTC
+    // withoutNanoseconds = 2000-02-01 12:13:14 +0000 UTC
+
 <h3 id="Time.Sub">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L862">Sub</a>
     <a href="#Time.Sub">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Sub(u <a href="#Time">Time</a>) <a href="#Duration">Duration</a></pre>
@@ -1085,6 +1438,18 @@ format string.
 Sub returns the duration t-u. If the result exceeds the maximum (or minimum)
 value that can be stored in a Duration, the maximum (or minimum) duration will
 be returned. To compute t-d for a duration d, use t.Add(-d).
+
+<a id="exampleTime_Sub"></a>
+Example:
+
+    start := time.Date(2000, 1, 1, 0, 0, 0, 0, time.UTC)
+    end := time.Date(2000, 1, 1, 12, 0, 0, 0, time.UTC)
+
+    difference := end.Sub(start)
+    fmt.Printf("difference = %v\n", difference)
+
+    // Output:
+    // difference = 12h0m0s
 
 <h3 id="Time.Truncate">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1382">Truncate</a>
     <a href="#Time.Truncate">¶</a></h3>
@@ -1140,6 +1505,25 @@ UTC returns t with the location set to UTC.
 
 Unix returns t as a Unix time, the number of seconds elapsed since January 1,
 1970 UTC.
+
+<a id="exampleTime_Unix"></a>
+Example:
+
+    // 1 billion seconds of Unix, three ways.
+    fmt.Println(time.Unix(1e9, 0).UTC())     // 1e9 seconds
+    fmt.Println(time.Unix(0, 1e18).UTC())    // 1e18 nanoseconds
+    fmt.Println(time.Unix(2e9, -1e18).UTC()) // 2e9 seconds - 1e18 nanoseconds
+
+    t := time.Date(2001, time.September, 9, 1, 46, 40, 0, time.UTC)
+    fmt.Println(t.Unix())     // seconds since 1970
+    fmt.Println(t.UnixNano()) // nanoseconds since 1970
+
+    // Output:
+    // 2001-09-09 01:46:40 +0000 UTC
+    // 2001-09-09 01:46:40 +0000 UTC
+    // 2001-09-09 01:46:40 +0000 UTC
+    // 1000000000
+    // 1000000000000000000
 
 <h3 id="Time.UnixNano">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1096">UnixNano</a>
     <a href="#Time.UnixNano">¶</a></h3>
@@ -1197,7 +1581,7 @@ non-leap years, and [1,366] in leap years.
 Zone computes the time zone in effect at time t, returning the abbreviated name
 of the zone (such as "CET") and its offset in seconds east of UTC.
 
-<h2 id="Timer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L37">Timer</a>
+<h2 id="Timer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L39">Timer</a>
     <a href="#Timer">¶</a></h2>
 <pre>type Timer struct {
 <span id="Timer.C"></span>    C &lt;-chan <a href="#Time">Time</a>
@@ -1208,7 +1592,7 @@ The Timer type represents a single event. When the Timer expires, the current
 time will be sent on C, unless the Timer was created by AfterFunc. A Timer must
 be created with NewTimer or AfterFunc.
 
-<h3 id="AfterFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L147">AfterFunc</a>
+<h3 id="AfterFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L149">AfterFunc</a>
     <a href="#AfterFunc">¶</a></h3>
 <pre>func AfterFunc(d <a href="#Duration">Duration</a>, f func()) *<a href="#Timer">Timer</a></pre>
 
@@ -1216,14 +1600,14 @@ AfterFunc waits for the duration to elapse and then calls f in its own
 goroutine. It returns a Timer that can be used to cancel the call using its Stop
 method.
 
-<h3 id="NewTimer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L73">NewTimer</a>
+<h3 id="NewTimer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L75">NewTimer</a>
     <a href="#NewTimer">¶</a></h3>
 <pre>func NewTimer(d <a href="#Duration">Duration</a>) *<a href="#Timer">Timer</a></pre>
 
 NewTimer creates a new Timer that will send the current time on its channel
 after at least duration d.
 
-<h3 id="Timer.Reset">func (*Timer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L111">Reset</a>
+<h3 id="Timer.Reset">func (*Timer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L113">Reset</a>
     <a href="#Timer.Reset">¶</a></h3>
 <pre>func (t *<a href="#Timer">Timer</a>) Reset(d <a href="#Duration">Duration</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -1249,7 +1633,7 @@ a race condition between draining the channel and the new timer expiring. Reset
 should always be invoked on stopped or expired channels, as described above. The
 return value exists to preserve compatibility with existing programs.
 
-<h3 id="Timer.Stop">func (*Timer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L64">Stop</a>
+<h3 id="Timer.Stop">func (*Timer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L66">Stop</a>
     <a href="#Timer.Stop">¶</a></h3>
 <pre>func (t *<a href="#Timer">Timer</a>) Stop() <a href="/builtin/#bool">bool</a></pre>
 

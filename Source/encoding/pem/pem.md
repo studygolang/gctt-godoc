@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package pem
 
   `import "encoding/pem"`
@@ -19,19 +19,46 @@ certificates. See RFC 1421.
 ### Examples
 
 - [Decode](#exampleDecode)
+- [Encode](#exampleEncode)
 
 ### Package files
  [pem.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/pem/pem.go)
 
-<h2 id="Encode">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/pem/pem.go#L245">Encode</a>
+<h2 id="Encode">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/pem/pem.go#L246">Encode</a>
     <a href="#Encode">¶</a></h2>
 <pre>func Encode(out <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, b *<a href="#Block">Block</a>) <a href="/builtin/#error">error</a></pre>
 
+Encode writes the PEM encoding of b to out.
 
-<h2 id="EncodeToMemory">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/pem/pem.go#L303">EncodeToMemory</a>
+<a id="exampleEncode"></a>
+Example:
+
+    block := &pem.Block{
+        Type: "MESSAGE",
+        Headers: map[string]string{
+            "Animal": "Gopher",
+        },
+        Bytes: []byte("test"),
+    }
+
+    if err := pem.Encode(os.Stdout, block); err != nil {
+        log.Fatal(err)
+    }
+    // Output:
+    // -----BEGIN MESSAGE-----
+    // Animal: Gopher
+    //
+    // dGVzdA==
+    // -----END MESSAGE-----
+
+<h2 id="EncodeToMemory">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/pem/pem.go#L316">EncodeToMemory</a>
     <a href="#EncodeToMemory">¶</a></h2>
 <pre>func EncodeToMemory(b *<a href="#Block">Block</a>) []<a href="/builtin/#byte">byte</a></pre>
 
+EncodeToMemory returns the PEM encoding of b.
+
+If b has invalid headers and cannot be encoded, EncodeToMemory returns nil. If
+it is important to report details about this error case, use Encode instead.
 
 <h2 id="Block">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/pem/pem.go#L17">Block</a>
     <a href="#Block">¶</a></h2>

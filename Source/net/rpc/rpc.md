@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package rpc
 
   `import "net/rpc"`
@@ -185,7 +185,7 @@ DefaultServer is the default instance of *Server.
 <pre>var <span id="ErrShutdown">ErrShutdown</span> = <a href="/errors/">errors</a>.<a href="/errors/#New">New</a>(&#34;connection is shut down&#34;)</pre>
 
 
-<h2 id="Accept">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L671">Accept</a>
+<h2 id="Accept">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L679">Accept</a>
     <a href="#Accept">¶</a></h2>
 <pre>func Accept(lis <a href="/net/">net</a>.<a href="/net/#Listener">Listener</a>)</pre>
 
@@ -193,7 +193,7 @@ Accept accepts connections on the listener and serves requests to DefaultServer
 for each incoming connection. Accept blocks; the caller typically invokes it in
 a go statement.
 
-<h2 id="HandleHTTP">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L704">HandleHTTP</a>
+<h2 id="HandleHTTP">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L712">HandleHTTP</a>
     <a href="#HandleHTTP">¶</a></h2>
 <pre>func HandleHTTP()</pre>
 
@@ -201,27 +201,27 @@ HandleHTTP registers an HTTP handler for RPC messages to DefaultServer on
 DefaultRPCPath and a debugging handler on DefaultDebugPath. It is still
 necessary to invoke http.Serve(), typically in a go statement.
 
-<h2 id="Register">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L623">Register</a>
+<h2 id="Register">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L631">Register</a>
     <a href="#Register">¶</a></h2>
 <pre>func Register(rcvr interface{}) <a href="/builtin/#error">error</a></pre>
 
 Register publishes the receiver's methods in the DefaultServer.
 
-<h2 id="RegisterName">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L627">RegisterName</a>
+<h2 id="RegisterName">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L635">RegisterName</a>
     <a href="#RegisterName">¶</a></h2>
 <pre>func RegisterName(name <a href="/builtin/#string">string</a>, rcvr interface{}) <a href="/builtin/#error">error</a></pre>
 
 RegisterName is like Register but uses the provided name for the type instead of
 the receiver's concrete type.
 
-<h2 id="ServeCodec">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L658">ServeCodec</a>
+<h2 id="ServeCodec">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L666">ServeCodec</a>
     <a href="#ServeCodec">¶</a></h2>
 <pre>func ServeCodec(codec <a href="#ServerCodec">ServerCodec</a>)</pre>
 
 ServeCodec is like ServeConn but uses the specified codec to decode requests and
 encode responses.
 
-<h2 id="ServeConn">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L652">ServeConn</a>
+<h2 id="ServeConn">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L660">ServeConn</a>
     <a href="#ServeConn">¶</a></h2>
 <pre>func ServeConn(conn <a href="/io/">io</a>.<a href="/io/#ReadWriteCloser">ReadWriteCloser</a>)</pre>
 
@@ -230,7 +230,7 @@ serving the connection until the client hangs up. The caller typically invokes
 ServeConn in a go statement. ServeConn uses the gob wire format (see package
 gob) on the connection. To use an alternate codec, use ServeCodec.
 
-<h2 id="ServeRequest">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L664">ServeRequest</a>
+<h2 id="ServeRequest">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L672">ServeRequest</a>
     <a href="#ServeRequest">¶</a></h2>
 <pre>func ServeRequest(codec <a href="#ServerCodec">ServerCodec</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -372,7 +372,7 @@ Server represents an RPC Server.
 
 NewServer returns a new Server.
 
-<h3 id="Server.Accept">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L611">Accept</a>
+<h3 id="Server.Accept">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L619">Accept</a>
     <a href="#Server.Accept">¶</a></h3>
 <pre>func (server *<a href="#Server">Server</a>) Accept(lis <a href="/net/">net</a>.<a href="/net/#Listener">Listener</a>)</pre>
 
@@ -380,7 +380,7 @@ Accept accepts connections on the listener and serves requests for each incoming
 connection. Accept blocks until the listener returns a non-nil error. The caller
 typically invokes Accept in a go statement.
 
-<h3 id="Server.HandleHTTP">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L696">HandleHTTP</a>
+<h3 id="Server.HandleHTTP">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L704">HandleHTTP</a>
     <a href="#Server.HandleHTTP">¶</a></h3>
 <pre>func (server *<a href="#Server">Server</a>) HandleHTTP(rpcPath, debugPath <a href="/builtin/#string">string</a>)</pre>
 
@@ -412,14 +412,14 @@ concrete type.
 RegisterName is like Register but uses the provided name for the type instead of
 the receiver's concrete type.
 
-<h3 id="Server.ServeCodec">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L447">ServeCodec</a>
+<h3 id="Server.ServeCodec">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L450">ServeCodec</a>
     <a href="#Server.ServeCodec">¶</a></h3>
 <pre>func (server *<a href="#Server">Server</a>) ServeCodec(codec <a href="#ServerCodec">ServerCodec</a>)</pre>
 
 ServeCodec is like ServeConn but uses the specified codec to decode requests and
 encode responses.
 
-<h3 id="Server.ServeConn">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L434">ServeConn</a>
+<h3 id="Server.ServeConn">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L437">ServeConn</a>
     <a href="#Server.ServeConn">¶</a></h3>
 <pre>func (server *<a href="#Server">Server</a>) ServeConn(conn <a href="/io/">io</a>.<a href="/io/#ReadWriteCloser">ReadWriteCloser</a>)</pre>
 
@@ -428,20 +428,20 @@ connection until the client hangs up. The caller typically invokes ServeConn in
 a go statement. ServeConn uses the gob wire format (see package gob) on the
 connection. To use an alternate codec, use ServeCodec.
 
-<h3 id="Server.ServeHTTP">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L677">ServeHTTP</a>
+<h3 id="Server.ServeHTTP">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L685">ServeHTTP</a>
     <a href="#Server.ServeHTTP">¶</a></h3>
 <pre>func (server *<a href="#Server">Server</a>) ServeHTTP(w <a href="/net/http/">http</a>.<a href="/net/http/#ResponseWriter">ResponseWriter</a>, req *<a href="/net/http/">http</a>.<a href="/net/http/#Request">Request</a>)</pre>
 
 ServeHTTP implements an http.Handler that answers RPC requests.
 
-<h3 id="Server.ServeRequest">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L472">ServeRequest</a>
+<h3 id="Server.ServeRequest">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L480">ServeRequest</a>
     <a href="#Server.ServeRequest">¶</a></h3>
 <pre>func (server *<a href="#Server">Server</a>) ServeRequest(codec <a href="#ServerCodec">ServerCodec</a>) <a href="/builtin/#error">error</a></pre>
 
 ServeRequest is like ServeCodec but synchronously serves a single request. It
 does not close the codec upon completion.
 
-<h2 id="ServerCodec">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L638">ServerCodec</a>
+<h2 id="ServerCodec">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rpc/server.go#L646">ServerCodec</a>
     <a href="#ServerCodec">¶</a></h2>
 <pre>type ServerCodec interface {
     ReadRequestHeader(*<a href="#Request">Request</a>) <a href="/builtin/#error">error</a>

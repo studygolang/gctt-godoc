@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package doc
 
   `import "go/doc"`
@@ -56,7 +56,7 @@ Playable Examples must be in a package whose name ends in "_test". An Example is
       top-level function, type, variable, or constant declaration other
       than the example function.
 
-<h2 id="IsPredeclared">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/reader.go#L812">IsPredeclared</a>
+<h2 id="IsPredeclared">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/reader.go#L823">IsPredeclared</a>
     <a href="#IsPredeclared">¶</a></h2>
 <pre>func IsPredeclared(s <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 

@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package strconv
 
   `import "strconv"`
@@ -315,7 +315,7 @@ Example:
     // uint (base 10):42
     // uint (base 16):2a
 
-<h2 id="Atoi">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atoi.go#L191">Atoi</a>
+<h2 id="Atoi">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atoi.go#L192">Atoi</a>
     <a href="#Atoi">¶</a></h2>
 <pre>func Atoi(s <a href="/builtin/#string">string</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -550,12 +550,16 @@ Example:
     <a href="#ParseInt">¶</a></h2>
 <pre>func ParseInt(s <a href="/builtin/#string">string</a>, base <a href="/builtin/#int">int</a>, bitSize <a href="/builtin/#int">int</a>) (i <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)</pre>
 
-ParseInt interprets a string s in the given base (2 to 36) and returns the
-corresponding value i. If base == 0, the base is implied by the string's prefix:
-base 16 for "0x", base 8 for "0", and base 10 otherwise.
+ParseInt interprets a string s in the given base (0, 2 to 36) and bit size (0 to
+64) and returns the corresponding value i.
+
+If base == 0, the base is implied by the string's prefix: base 16 for "0x", base
+8 for "0", and base 10 otherwise. For bases 1, below 0 or above 36 an error is
+returned.
 
 The bitSize argument specifies the integer type that the result must fit into.
 Bit sizes 0, 8, 16, 32, and 64 correspond to int, int8, int16, int32, and int64.
+For a bitSize below 0 or above 64 an error is returned.
 
 The errors that ParseInt returns have concrete type *NumError and include
 err.Num = s. If s is empty or contains invalid digits, err.Err = ErrSyntax and
@@ -586,7 +590,7 @@ Example:
     // int64, -354634382
     // int64, -3546343826724305832
 
-<h2 id="ParseUint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atoi.go#L32">ParseUint</a>
+<h2 id="ParseUint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atoi.go#L40">ParseUint</a>
     <a href="#ParseUint">¶</a></h2>
 <pre>func ParseUint(s <a href="/builtin/#string">string</a>, base <a href="/builtin/#int">int</a>, bitSize <a href="/builtin/#int">int</a>) (<a href="/builtin/#uint64">uint64</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -765,7 +769,7 @@ Example:
 <pre>type NumError struct {
 <span id="NumError.Func"></span>    Func <a href="/builtin/#string">string</a> <span class="comment">// the failing function (ParseBool, ParseInt, ParseUint, ParseFloat)</span>
 <span id="NumError.Num"></span>    Num  <a href="/builtin/#string">string</a> <span class="comment">// the input</span>
-<span id="NumError.Err"></span>    Err  <a href="/builtin/#error">error</a>  <span class="comment">// the reason the conversion failed (ErrRange, ErrSyntax)</span>
+<span id="NumError.Err"></span>    Err  <a href="/builtin/#error">error</a>  <span class="comment">// the reason the conversion failed (e.g. ErrRange, ErrSyntax, etc.)</span>
 }</pre>
 
 A NumError records a failed conversion.

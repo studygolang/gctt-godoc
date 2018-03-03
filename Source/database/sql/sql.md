@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package sql
 
   `import "database/sql"`
@@ -37,6 +37,7 @@ For usage examples, see the wiki page at https://golang.org/s/sqlwiki.
   - [func (c *Conn) QueryRowContext(ctx context.Context, query string, args ...interface{}) *Row](#Conn.QueryRowContext)
 - [type DB](#DB)
   - [func Open(driverName, dataSourceName string) (*DB, error)](#Open)
+  - [func OpenDB(c driver.Connector) *DB](#OpenDB)
   - [func (db *DB) Begin() (*Tx, error)](#DB.Begin)
   - [func (db *DB) BeginTx(ctx context.Context, opts *TxOptions) (*Tx, error)](#DB.BeginTx)
   - [func (db *DB) Close() error](#DB.Close)
@@ -123,7 +124,7 @@ For usage examples, see the wiki page at https://golang.org/s/sqlwiki.
 <pre>var <span id="ErrConnDone">ErrConnDone</span> = <a href="/errors/">errors</a>.<a href="/errors/#New">New</a>(&#34;database/sql: connection is already closed&#34;)</pre>
 
 ErrConnDone is returned by any operation that is performed on a connection that
-has already been committed or rolled back.
+has already been returned to the connection pool.
 
 <pre>var <span id="ErrNoRows">ErrNoRows</span> = <a href="/errors/">errors</a>.<a href="/errors/#New">New</a>(&#34;sql: no rows in result set&#34;)</pre>
 
@@ -149,7 +150,7 @@ Drivers returns a sorted list of the names of the registered drivers.
 Register makes a database driver available by the provided name. If Register is
 called twice with the same name or if driver is nil, it panics.
 
-<h2 id="ColumnType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2557">ColumnType</a>
+<h2 id="ColumnType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2722">ColumnType</a>
     <a href="#ColumnType">¶</a></h2>
 <pre>type ColumnType struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -157,7 +158,7 @@ called twice with the same name or if driver is nil, it panics.
 
 ColumnType contains the name and type of a column.
 
-<h3 id="ColumnType.DatabaseTypeName">func (*ColumnType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2610">DatabaseTypeName</a>
+<h3 id="ColumnType.DatabaseTypeName">func (*ColumnType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2775">DatabaseTypeName</a>
     <a href="#ColumnType.DatabaseTypeName">¶</a></h3>
 <pre>func (ci *<a href="#ColumnType">ColumnType</a>) DatabaseTypeName() <a href="/builtin/#string">string</a></pre>
 
@@ -167,14 +168,14 @@ driver documentation for a list of driver data types. Length specifiers are not
 included. Common type include "VARCHAR", "TEXT", "NVARCHAR", "DECIMAL", "BOOL",
 "INT", "BIGINT".
 
-<h3 id="ColumnType.DecimalSize">func (*ColumnType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2588">DecimalSize</a>
+<h3 id="ColumnType.DecimalSize">func (*ColumnType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2753">DecimalSize</a>
     <a href="#ColumnType.DecimalSize">¶</a></h3>
 <pre>func (ci *<a href="#ColumnType">ColumnType</a>) DecimalSize() (precision, scale <a href="/builtin/#int64">int64</a>, ok <a href="/builtin/#bool">bool</a>)</pre>
 
 DecimalSize returns the scale and precision of a decimal type. If not applicable
 or if not supported ok is false.
 
-<h3 id="ColumnType.Length">func (*ColumnType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2582">Length</a>
+<h3 id="ColumnType.Length">func (*ColumnType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2747">Length</a>
     <a href="#ColumnType.Length">¶</a></h3>
 <pre>func (ci *<a href="#ColumnType">ColumnType</a>) Length() (length <a href="/builtin/#int64">int64</a>, ok <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -183,20 +184,20 @@ text and binary field types. If the type length is unbounded the value will be
 math.MaxInt64 (any database limits will still apply). If the column type is not
 variable length, such as an int, or if not supported by the driver ok is false.
 
-<h3 id="ColumnType.Name">func (*ColumnType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2573">Name</a>
+<h3 id="ColumnType.Name">func (*ColumnType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2738">Name</a>
     <a href="#ColumnType.Name">¶</a></h3>
 <pre>func (ci *<a href="#ColumnType">ColumnType</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 Name returns the name or alias of the column.
 
-<h3 id="ColumnType.Nullable">func (*ColumnType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2601">Nullable</a>
+<h3 id="ColumnType.Nullable">func (*ColumnType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2766">Nullable</a>
     <a href="#ColumnType.Nullable">¶</a></h3>
 <pre>func (ci *<a href="#ColumnType">ColumnType</a>) Nullable() (nullable, ok <a href="/builtin/#bool">bool</a>)</pre>
 
 Nullable returns whether the column may be null. If a driver does not support
 this property ok will be false.
 
-<h3 id="ColumnType.ScanType">func (*ColumnType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2595">ScanType</a>
+<h3 id="ColumnType.ScanType">func (*ColumnType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2760">ScanType</a>
     <a href="#ColumnType.ScanType">¶</a></h3>
 <pre>func (ci *<a href="#ColumnType">ColumnType</a>) ScanType() <a href="/reflect/">reflect</a>.<a href="/reflect/#Type">Type</a></pre>
 
@@ -204,22 +205,22 @@ ScanType returns a Go type suitable for scanning into using Rows.Scan. If a
 driver does not support this property ScanType will return the type of an empty
 interface.
 
-<h2 id="Conn">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1495">Conn</a>
+<h2 id="Conn">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1639">Conn</a>
     <a href="#Conn">¶</a></h2>
 <pre>type Conn struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 
-Conn represents a single database session rather a pool of database sessions.
-Prefer running queries from DB unless there is a specific need for a continuous
-single database session.
+Conn represents a single database connection rather than a pool of database
+connections. Prefer running queries from DB unless there is a specific need for
+a continuous single database connection.
 
 A Conn must call Close to return the connection to the database pool and may do
 so concurrently with a running query.
 
 After a call to Close, all operations on the connection fail with ErrConnDone.
 
-<h3 id="Conn.BeginTx">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1587">BeginTx</a>
+<h3 id="Conn.BeginTx">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1731">BeginTx</a>
     <a href="#Conn.BeginTx">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) BeginTx(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, opts *<a href="#TxOptions">TxOptions</a>) (*<a href="#Tx">Tx</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -233,7 +234,7 @@ The provided TxOptions is optional and may be nil if defaults should be used. If
 a non-default isolation level is used that the driver doesn't support, an error
 will be returned.
 
-<h3 id="Conn.Close">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1629">Close</a>
+<h3 id="Conn.Close">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1773">Close</a>
     <a href="#Conn.Close">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) Close() <a href="/builtin/#error">error</a></pre>
 
@@ -242,20 +243,20 @@ Close will return with ErrConnDone. Close is safe to call concurrently with
 other operations and will block until all other operations finish. It may be
 useful to first cancel any used context and then call close directly after.
 
-<h3 id="Conn.ExecContext">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1532">ExecContext</a>
+<h3 id="Conn.ExecContext">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1676">ExecContext</a>
     <a href="#Conn.ExecContext">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) ExecContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, query <a href="/builtin/#string">string</a>, args ...interface{}) (<a href="#Result">Result</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ExecContext executes a query without returning any rows. The args are for any
 placeholder parameters in the query.
 
-<h3 id="Conn.PingContext">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1522">PingContext</a>
+<h3 id="Conn.PingContext">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1666">PingContext</a>
     <a href="#Conn.PingContext">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) PingContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>) <a href="/builtin/#error">error</a></pre>
 
 PingContext verifies the connection to the database is still alive.
 
-<h3 id="Conn.PrepareContext">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1569">PrepareContext</a>
+<h3 id="Conn.PrepareContext">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1713">PrepareContext</a>
     <a href="#Conn.PrepareContext">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) PrepareContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, query <a href="/builtin/#string">string</a>) (*<a href="#Stmt">Stmt</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -267,14 +268,14 @@ is no longer needed.
 The provided context is used for the preparation of the statement, not for the
 execution of the statement.
 
-<h3 id="Conn.QueryContext">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1542">QueryContext</a>
+<h3 id="Conn.QueryContext">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1686">QueryContext</a>
     <a href="#Conn.QueryContext">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) QueryContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, query <a href="/builtin/#string">string</a>, args ...interface{}) (*<a href="#Rows">Rows</a>, <a href="/builtin/#error">error</a>)</pre>
 
 QueryContext executes a query that returns rows, typically a SELECT. The args
 are for any placeholder parameters in the query.
 
-<h3 id="Conn.QueryRowContext">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1556">QueryRowContext</a>
+<h3 id="Conn.QueryRowContext">func (*Conn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1700">QueryRowContext</a>
     <a href="#Conn.QueryRowContext">¶</a></h3>
 <pre>func (c *<a href="#Conn">Conn</a>) QueryRowContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, query <a href="/builtin/#string">string</a>, args ...interface{}) *<a href="#Row">Row</a></pre>
 
@@ -301,7 +302,7 @@ or Rollback is called on the transaction, that transaction's connection is
 returned to DB's idle connection pool. The pool size can be controlled with
 SetMaxIdleConns.
 
-<h3 id="Open">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L585">Open</a>
+<h3 id="Open">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L647">Open</a>
     <a href="#Open">¶</a></h3>
 <pre>func Open(driverName, dataSourceName <a href="/builtin/#string">string</a>) (*<a href="#DB">DB</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -320,14 +321,32 @@ The returned DB is safe for concurrent use by multiple goroutines and maintains
 its own pool of idle connections. Thus, the Open function should be called just
 once. It is rarely necessary to close a DB.
 
-<h3 id="DB.Begin">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1407">Begin</a>
+<h3 id="OpenDB">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L613">OpenDB</a>
+    <a href="#OpenDB">¶</a></h3>
+<pre>func OpenDB(c <a href="/database/sql/driver/">driver</a>.<a href="/database/sql/driver/#Connector">Connector</a>) *<a href="#DB">DB</a></pre>
+
+OpenDB opens a database using a Connector, allowing drivers to bypass a string
+based data source name.
+
+Most users will open a database via a driver-specific connection helper function
+that returns a *DB. No database drivers are included in the Go standard library.
+See https://golang.org/s/sqldrivers for a list of third-party drivers.
+
+OpenDB may just validate its arguments without creating a connection to the
+database. To verify that the data source name is valid, call Ping.
+
+The returned DB is safe for concurrent use by multiple goroutines and maintains
+its own pool of idle connections. Thus, the OpenDB function should be called
+just once. It is rarely necessary to close a DB.
+
+<h3 id="DB.Begin">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1551">Begin</a>
     <a href="#DB.Begin">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) Begin() (*<a href="#Tx">Tx</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Begin starts a transaction. The default isolation level is dependent on the
 driver.
 
-<h3 id="DB.BeginTx">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1390">BeginTx</a>
+<h3 id="DB.BeginTx">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1534">BeginTx</a>
     <a href="#DB.BeginTx">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) BeginTx(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, opts *<a href="#TxOptions">TxOptions</a>) (*<a href="#Tx">Tx</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -341,7 +360,7 @@ The provided TxOptions is optional and may be nil if defaults should be used. If
 a non-default isolation level is used that the driver doesn't support, an error
 will be returned.
 
-<h3 id="DB.Close">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L646">Close</a>
+<h3 id="DB.Close">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L709">Close</a>
     <a href="#DB.Close">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) Close() <a href="/builtin/#error">error</a></pre>
 
@@ -350,7 +369,7 @@ Close closes the database, releasing any open resources.
 It is rare to Close a DB, as the DB handle is meant to be long-lived and shared
 between many goroutines.
 
-<h3 id="DB.Conn">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1461">Conn</a>
+<h3 id="DB.Conn">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1605">Conn</a>
     <a href="#DB.Conn">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) Conn(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>) (*<a href="#Conn">Conn</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -362,41 +381,41 @@ run in the same database session.
 Every Conn must be returned to the database pool after use by calling
 Conn.Close.
 
-<h3 id="DB.Driver">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1446">Driver</a>
+<h3 id="DB.Driver">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1590">Driver</a>
     <a href="#DB.Driver">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) Driver() <a href="/database/sql/driver/">driver</a>.<a href="/database/sql/driver/#Driver">Driver</a></pre>
 
 Driver returns the database's underlying driver.
 
-<h3 id="DB.Exec">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1219">Exec</a>
+<h3 id="DB.Exec">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1352">Exec</a>
     <a href="#DB.Exec">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) Exec(query <a href="/builtin/#string">string</a>, args ...interface{}) (<a href="#Result">Result</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Exec executes a query without returning any rows. The args are for any
 placeholder parameters in the query.
 
-<h3 id="DB.ExecContext">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1202">ExecContext</a>
+<h3 id="DB.ExecContext">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1335">ExecContext</a>
     <a href="#DB.ExecContext">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) ExecContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, query <a href="/builtin/#string">string</a>, args ...interface{}) (<a href="#Result">Result</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ExecContext executes a query without returning any rows. The args are for any
 placeholder parameters in the query.
 
-<h3 id="DB.Ping">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L638">Ping</a>
+<h3 id="DB.Ping">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L701">Ping</a>
     <a href="#DB.Ping">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) Ping() <a href="/builtin/#error">error</a></pre>
 
 Ping verifies a connection to the database is still alive, establishing a
 connection if necessary.
 
-<h3 id="DB.PingContext">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L616">PingContext</a>
+<h3 id="DB.PingContext">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L679">PingContext</a>
     <a href="#DB.PingContext">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) PingContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>) <a href="/builtin/#error">error</a></pre>
 
 PingContext verifies a connection to the database is still alive, establishing a
 connection if necessary.
 
-<h3 id="DB.Prepare">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1149">Prepare</a>
+<h3 id="DB.Prepare">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1282">Prepare</a>
     <a href="#DB.Prepare">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) Prepare(query <a href="/builtin/#string">string</a>) (*<a href="#Stmt">Stmt</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -405,7 +424,7 @@ queries or executions may be run concurrently from the returned statement. The
 caller must call the statement's Close method when the statement is no longer
 needed.
 
-<h3 id="DB.PrepareContext">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1129">PrepareContext</a>
+<h3 id="DB.PrepareContext">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1262">PrepareContext</a>
     <a href="#DB.PrepareContext">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) PrepareContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, query <a href="/builtin/#string">string</a>) (*<a href="#Stmt">Stmt</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -417,7 +436,7 @@ is no longer needed.
 The provided context is used for the preparation of the statement, not for the
 execution of the statement.
 
-<h3 id="DB.Query">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1284">Query</a>
+<h3 id="DB.Query">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1422">Query</a>
     <a href="#DB.Query">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) Query(query <a href="/builtin/#string">string</a>, args ...interface{}) (*<a href="#Rows">Rows</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -508,14 +527,14 @@ Example:
         log.Fatal(err)
     }
 
-<h3 id="DB.QueryContext">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1267">QueryContext</a>
+<h3 id="DB.QueryContext">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1405">QueryContext</a>
     <a href="#DB.QueryContext">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) QueryContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, query <a href="/builtin/#string">string</a>, args ...interface{}) (*<a href="#Rows">Rows</a>, <a href="/builtin/#error">error</a>)</pre>
 
 QueryContext executes a query that returns rows, typically a SELECT. The args
 are for any placeholder parameters in the query.
 
-<h3 id="DB.QueryRow">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1376">QueryRow</a>
+<h3 id="DB.QueryRow">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1520">QueryRow</a>
     <a href="#DB.QueryRow">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) QueryRow(query <a href="/builtin/#string">string</a>, args ...interface{}) *<a href="#Row">Row</a></pre>
 
@@ -539,7 +558,7 @@ Example:
         fmt.Printf("Username is %s\n", username)
     }
 
-<h3 id="DB.QueryRowContext">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1365">QueryRowContext</a>
+<h3 id="DB.QueryRowContext">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1509">QueryRowContext</a>
     <a href="#DB.QueryRowContext">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) QueryRowContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, query <a href="/builtin/#string">string</a>, args ...interface{}) *<a href="#Row">Row</a></pre>
 
@@ -549,7 +568,7 @@ Scan method is called. If the query selects no rows, the *Row's Scan will return
 ErrNoRows. Otherwise, the *Row's Scan scans the first selected row and discards
 the rest.
 
-<h3 id="DB.SetConnMaxLifetime">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L749">SetConnMaxLifetime</a>
+<h3 id="DB.SetConnMaxLifetime">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L812">SetConnMaxLifetime</a>
     <a href="#DB.SetConnMaxLifetime">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) SetConnMaxLifetime(d <a href="/time/">time</a>.<a href="/time/#Duration">Duration</a>)</pre>
 
@@ -559,7 +578,7 @@ Expired connections may be closed lazily before reuse.
 
 If d <= 0, connections are reused forever.
 
-<h3 id="DB.SetMaxIdleConns">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L698">SetMaxIdleConns</a>
+<h3 id="DB.SetMaxIdleConns">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L761">SetMaxIdleConns</a>
     <a href="#DB.SetMaxIdleConns">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) SetMaxIdleConns(n <a href="/builtin/#int">int</a>)</pre>
 
@@ -571,7 +590,7 @@ new MaxIdleConns will be reduced to match the MaxOpenConns limit
 
 If n <= 0, no idle connections are retained.
 
-<h3 id="DB.SetMaxOpenConns">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L731">SetMaxOpenConns</a>
+<h3 id="DB.SetMaxOpenConns">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L794">SetMaxOpenConns</a>
     <a href="#DB.SetMaxOpenConns">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) SetMaxOpenConns(n <a href="/builtin/#int">int</a>)</pre>
 
@@ -584,13 +603,13 @@ limit
 If n <= 0, then there is no limit on the number of open connections. The default
 is 0 (unlimited).
 
-<h3 id="DB.Stats">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L829">Stats</a>
+<h3 id="DB.Stats">func (*DB) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L892">Stats</a>
     <a href="#DB.Stats">¶</a></h3>
 <pre>func (db *<a href="#DB">DB</a>) Stats() <a href="#DBStats">DBStats</a></pre>
 
 Stats returns database statistics.
 
-<h2 id="DBStats">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L823">DBStats</a>
+<h2 id="DBStats">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L886">DBStats</a>
     <a href="#DBStats">¶</a></h2>
 <pre>type DBStats struct {
 <span id="DBStats.OpenConnections"></span>    <span class="comment">// OpenConnections is the number of open connections to the database.</span>
@@ -783,7 +802,7 @@ Not all drivers and databases support OUTPUT value parameters.
 Example usage:
 
     var outArg string
-    _, err := db.ExecContext(ctx, "ProcName", sql.Named("Arg1", Out{Dest: &outArg}))
+    _, err := db.ExecContext(ctx, "ProcName", sql.Named("Arg1", sql.Out{Dest: &outArg}))
 
 <h2 id="RawBytes">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L136">RawBytes</a>
     <a href="#RawBytes">¶</a></h2>
@@ -793,7 +812,7 @@ RawBytes is a byte slice that holds a reference to memory owned by the database
 itself. After a Scan into a RawBytes, the slice is only valid until the next
 call to Next, Scan, or Close.
 
-<h2 id="Result">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2817">Result</a>
+<h2 id="Result">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2982">Result</a>
     <a href="#Result">¶</a></h2>
 <pre>type Result interface {
     <span class="comment">// LastInsertId returns the integer generated by the database</span>
@@ -811,7 +830,7 @@ call to Next, Scan, or Close.
 
 A Result summarizes an executed SQL command.
 
-<h2 id="Row">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2762">Row</a>
+<h2 id="Row">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2927">Row</a>
     <a href="#Row">¶</a></h2>
 <pre>type Row struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -819,7 +838,7 @@ A Result summarizes an executed SQL command.
 
 Row is the result of calling QueryRow to select a single row.
 
-<h3 id="Row.Scan">func (*Row) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2773">Scan</a>
+<h3 id="Row.Scan">func (*Row) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2938">Scan</a>
     <a href="#Row.Scan">¶</a></h3>
 <pre>func (r *<a href="#Row">Row</a>) Scan(dest ...interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -828,7 +847,7 @@ See the documentation on Rows.Scan for details. If more than one row matches the
 query, Scan uses the first row and discards the rest. If no row matches the
 query, Scan returns ErrNoRows.
 
-<h2 id="Rows">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2381">Rows</a>
+<h2 id="Rows">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2539">Rows</a>
     <a href="#Rows">¶</a></h2>
 <pre>type Rows struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -849,7 +868,7 @@ result set. Use Next to advance through the rows:
     err = rows.Err() // get any error encountered during iteration
     ...
 
-<h3 id="Rows.Close">func (*Rows) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2727">Close</a>
+<h3 id="Rows.Close">func (*Rows) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2892">Close</a>
     <a href="#Rows.Close">¶</a></h3>
 <pre>func (rs *<a href="#Rows">Rows</a>) Close() <a href="/builtin/#error">error</a></pre>
 
@@ -858,28 +877,28 @@ returns false and there are no further result sets, the Rows are closed
 automatically and it will suffice to check the result of Err. Close is
 idempotent and does not affect the result of Err.
 
-<h3 id="Rows.ColumnTypes">func (*Rows) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2544">ColumnTypes</a>
+<h3 id="Rows.ColumnTypes">func (*Rows) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2706">ColumnTypes</a>
     <a href="#Rows.ColumnTypes">¶</a></h3>
 <pre>func (rs *<a href="#Rows">Rows</a>) ColumnTypes() ([]*<a href="#ColumnType">ColumnType</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ColumnTypes returns column information such as column type, length, and
 nullable. Some information may not be available from some drivers.
 
-<h3 id="Rows.Columns">func (*Rows) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2530">Columns</a>
+<h3 id="Rows.Columns">func (*Rows) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2689">Columns</a>
     <a href="#Rows.Columns">¶</a></h3>
 <pre>func (rs *<a href="#Rows">Rows</a>) Columns() ([]<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Columns returns the column names. Columns returns an error if the rows are
 closed, or if the rows are from QueryRow and there was a deferred error.
 
-<h3 id="Rows.Err">func (*Rows) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2518">Err</a>
+<h3 id="Rows.Err">func (*Rows) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2677">Err</a>
     <a href="#Rows.Err">¶</a></h3>
 <pre>func (rs *<a href="#Rows">Rows</a>) Err() <a href="/builtin/#error">error</a></pre>
 
 Err returns the error, if any, that was encountered during iteration. Err may be
 called after an explicit or implicit Close.
 
-<h3 id="Rows.Next">func (*Rows) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2429">Next</a>
+<h3 id="Rows.Next">func (*Rows) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2587">Next</a>
     <a href="#Rows.Next">¶</a></h3>
 <pre>func (rs *<a href="#Rows">Rows</a>) Next() <a href="/builtin/#bool">bool</a></pre>
 
@@ -890,7 +909,7 @@ cases.
 
 Every call to Scan, even the first one, must be preceded by a call to Next.
 
-<h3 id="Rows.NextResultSet">func (*Rows) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2482">NextResultSet</a>
+<h3 id="Rows.NextResultSet">func (*Rows) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2641">NextResultSet</a>
     <a href="#Rows.NextResultSet">¶</a></h3>
 <pre>func (rs *<a href="#Rows">Rows</a>) NextResultSet() <a href="/builtin/#bool">bool</a></pre>
 
@@ -903,7 +922,7 @@ After calling NextResultSet, the Next method should always be called before
 scanning. If there are further result sets they may not have rows in the result
 set.
 
-<h3 id="Rows.Scan">func (*Rows) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2696">Scan</a>
+<h3 id="Rows.Scan">func (*Rows) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2861">Scan</a>
     <a href="#Rows.Scan">¶</a></h3>
 <pre>func (rs *<a href="#Rows">Rows</a>) Scan(dest ...interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -978,7 +997,7 @@ parseable by strconv.ParseBool.
 
 Scanner is an interface used by Scan.
 
-<h2 id="Stmt">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2017">Stmt</a>
+<h2 id="Stmt">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2173">Stmt</a>
     <a href="#Stmt">¶</a></h2>
 <pre>type Stmt struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -987,41 +1006,41 @@ Scanner is an interface used by Scan.
 Stmt is a prepared statement. A Stmt is safe for concurrent use by multiple
 goroutines.
 
-<h3 id="Stmt.Close">func (*Stmt) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2324">Close</a>
+<h3 id="Stmt.Close">func (*Stmt) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2482">Close</a>
     <a href="#Stmt.Close">¶</a></h3>
 <pre>func (s *<a href="#Stmt">Stmt</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close closes the statement.
 
-<h3 id="Stmt.Exec">func (*Stmt) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2086">Exec</a>
+<h3 id="Stmt.Exec">func (*Stmt) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2242">Exec</a>
     <a href="#Stmt.Exec">¶</a></h3>
 <pre>func (s *<a href="#Stmt">Stmt</a>) Exec(args ...interface{}) (<a href="#Result">Result</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Exec executes a prepared statement with the given arguments and returns a Result
 summarizing the effect of the statement.
 
-<h3 id="Stmt.ExecContext">func (*Stmt) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2057">ExecContext</a>
+<h3 id="Stmt.ExecContext">func (*Stmt) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2213">ExecContext</a>
     <a href="#Stmt.ExecContext">¶</a></h3>
 <pre>func (s *<a href="#Stmt">Stmt</a>) ExecContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, args ...interface{}) (<a href="#Result">Result</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ExecContext executes a prepared statement with the given arguments and returns a
 Result summarizing the effect of the statement.
 
-<h3 id="Stmt.Query">func (*Stmt) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2257">Query</a>
+<h3 id="Stmt.Query">func (*Stmt) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2420">Query</a>
     <a href="#Stmt.Query">¶</a></h3>
 <pre>func (s *<a href="#Stmt">Stmt</a>) Query(args ...interface{}) (*<a href="#Rows">Rows</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Query executes a prepared query statement with the given arguments and returns
 the query results as a *Rows.
 
-<h3 id="Stmt.QueryContext">func (*Stmt) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2202">QueryContext</a>
+<h3 id="Stmt.QueryContext">func (*Stmt) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2365">QueryContext</a>
     <a href="#Stmt.QueryContext">¶</a></h3>
 <pre>func (s *<a href="#Stmt">Stmt</a>) QueryContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, args ...interface{}) (*<a href="#Rows">Rows</a>, <a href="/builtin/#error">error</a>)</pre>
 
 QueryContext executes a prepared query statement with the given arguments and
 returns the query results as a *Rows.
 
-<h3 id="Stmt.QueryRow">func (*Stmt) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2319">QueryRow</a>
+<h3 id="Stmt.QueryRow">func (*Stmt) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2477">QueryRow</a>
     <a href="#Stmt.QueryRow">¶</a></h3>
 <pre>func (s *<a href="#Stmt">Stmt</a>) QueryRow(args ...interface{}) *<a href="#Row">Row</a></pre>
 
@@ -1036,7 +1055,7 @@ Example usage:
     var name string
     err := nameByUseridStmt.QueryRow(id).Scan(&name)
 
-<h3 id="Stmt.QueryRowContext">func (*Stmt) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2300">QueryRowContext</a>
+<h3 id="Stmt.QueryRowContext">func (*Stmt) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2458">QueryRowContext</a>
     <a href="#Stmt.QueryRowContext">¶</a></h3>
 <pre>func (s *<a href="#Stmt">Stmt</a>) QueryRowContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, args ...interface{}) *<a href="#Row">Row</a></pre>
 
@@ -1051,7 +1070,7 @@ Example usage:
     var name string
     err := nameByUseridStmt.QueryRowContext(ctx, id).Scan(&name)
 
-<h2 id="Tx">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1643">Tx</a>
+<h2 id="Tx">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1787">Tx</a>
     <a href="#Tx">¶</a></h2>
 <pre>type Tx struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1067,27 +1086,27 @@ ErrTxDone.
 The statements prepared for a transaction by calling the transaction's Prepare
 or Stmt methods are closed by the call to Commit or Rollback.
 
-<h3 id="Tx.Commit">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1761">Commit</a>
+<h3 id="Tx.Commit">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1905">Commit</a>
     <a href="#Tx.Commit">¶</a></h3>
 <pre>func (tx *<a href="#Tx">Tx</a>) Commit() <a href="/builtin/#error">error</a></pre>
 
 Commit commits the transaction.
 
-<h3 id="Tx.Exec">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1951">Exec</a>
+<h3 id="Tx.Exec">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2107">Exec</a>
     <a href="#Tx.Exec">¶</a></h3>
 <pre>func (tx *<a href="#Tx">Tx</a>) Exec(query <a href="/builtin/#string">string</a>, args ...interface{}) (<a href="#Result">Result</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Exec executes a query that doesn't return rows. For example: an INSERT and
 UPDATE.
 
-<h3 id="Tx.ExecContext">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1941">ExecContext</a>
+<h3 id="Tx.ExecContext">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2097">ExecContext</a>
     <a href="#Tx.ExecContext">¶</a></h3>
 <pre>func (tx *<a href="#Tx">Tx</a>) ExecContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, query <a href="/builtin/#string">string</a>, args ...interface{}) (<a href="#Result">Result</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ExecContext executes a query that doesn't return rows. For example: an INSERT
 and UPDATE.
 
-<h3 id="Tx.Prepare">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1838">Prepare</a>
+<h3 id="Tx.Prepare">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1988">Prepare</a>
     <a href="#Tx.Prepare">¶</a></h3>
 <pre>func (tx *<a href="#Tx">Tx</a>) Prepare(query <a href="/builtin/#string">string</a>) (*<a href="#Stmt">Stmt</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -1098,7 +1117,7 @@ once the transaction has been committed or rolled back.
 
 To use an existing prepared statement on this transaction, see Tx.Stmt.
 
-<h3 id="Tx.PrepareContext">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1816">PrepareContext</a>
+<h3 id="Tx.PrepareContext">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1966">PrepareContext</a>
     <a href="#Tx.PrepareContext">¶</a></h3>
 <pre>func (tx *<a href="#Tx">Tx</a>) PrepareContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, query <a href="/builtin/#string">string</a>) (*<a href="#Stmt">Stmt</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -1113,19 +1132,19 @@ The provided context will be used for the preparation of the context, not for
 the execution of the returned statement. The returned statement will run in the
 transaction context.
 
-<h3 id="Tx.Query">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1966">Query</a>
+<h3 id="Tx.Query">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2122">Query</a>
     <a href="#Tx.Query">¶</a></h3>
 <pre>func (tx *<a href="#Tx">Tx</a>) Query(query <a href="/builtin/#string">string</a>, args ...interface{}) (*<a href="#Rows">Rows</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Query executes a query that returns rows, typically a SELECT.
 
-<h3 id="Tx.QueryContext">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1956">QueryContext</a>
+<h3 id="Tx.QueryContext">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2112">QueryContext</a>
     <a href="#Tx.QueryContext">¶</a></h3>
 <pre>func (tx *<a href="#Tx">Tx</a>) QueryContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, query <a href="/builtin/#string">string</a>, args ...interface{}) (*<a href="#Rows">Rows</a>, <a href="/builtin/#error">error</a>)</pre>
 
 QueryContext executes a query that returns rows, typically a SELECT.
 
-<h3 id="Tx.QueryRow">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1987">QueryRow</a>
+<h3 id="Tx.QueryRow">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2143">QueryRow</a>
     <a href="#Tx.QueryRow">¶</a></h3>
 <pre>func (tx *<a href="#Tx">Tx</a>) QueryRow(query <a href="/builtin/#string">string</a>, args ...interface{}) *<a href="#Row">Row</a></pre>
 
@@ -1134,7 +1153,7 @@ always returns a non-nil value. Errors are deferred until Row's Scan method is
 called. If the query selects no rows, the *Row's Scan will return ErrNoRows.
 Otherwise, the *Row's Scan scans the first selected row and discards the rest.
 
-<h3 id="Tx.QueryRowContext">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1976">QueryRowContext</a>
+<h3 id="Tx.QueryRowContext">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2132">QueryRowContext</a>
     <a href="#Tx.QueryRowContext">¶</a></h3>
 <pre>func (tx *<a href="#Tx">Tx</a>) QueryRowContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, query <a href="/builtin/#string">string</a>, args ...interface{}) *<a href="#Row">Row</a></pre>
 
@@ -1144,13 +1163,13 @@ Scan method is called. If the query selects no rows, the *Row's Scan will return
 ErrNoRows. Otherwise, the *Row's Scan scans the first selected row and discards
 the rest.
 
-<h3 id="Tx.Rollback">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1802">Rollback</a>
+<h3 id="Tx.Rollback">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1952">Rollback</a>
     <a href="#Tx.Rollback">¶</a></h3>
 <pre>func (tx *<a href="#Tx">Tx</a>) Rollback() <a href="/builtin/#error">error</a></pre>
 
 Rollback aborts the transaction.
 
-<h3 id="Tx.Stmt">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1935">Stmt</a>
+<h3 id="Tx.Stmt">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2091">Stmt</a>
     <a href="#Tx.Stmt">¶</a></h3>
 <pre>func (tx *<a href="#Tx">Tx</a>) Stmt(stmt *<a href="#Stmt">Stmt</a>) *<a href="#Stmt">Stmt</a></pre>
 
@@ -1168,7 +1187,7 @@ Example:
 The returned statement operates within the transaction and will be closed when
 the transaction has been committed or rolled back.
 
-<h3 id="Tx.StmtContext">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L1854">StmtContext</a>
+<h3 id="Tx.StmtContext">func (*Tx) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/database/sql/sql.go#L2007">StmtContext</a>
     <a href="#Tx.StmtContext">¶</a></h3>
 <pre>func (tx *<a href="#Tx">Tx</a>) StmtContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, stmt *<a href="#Stmt">Stmt</a>) *<a href="#Stmt">Stmt</a></pre>
 
@@ -1182,6 +1201,9 @@ Example:
     tx, err := db.Begin()
     ...
     res, err := tx.StmtContext(ctx, updateMoney).Exec(123.45, 98293203)
+
+The provided context is used for the preparation of the statement, not for the
+execution of the statement.
 
 The returned statement operates within the transaction and will be closed when
 the transaction has been committed or rolled back.

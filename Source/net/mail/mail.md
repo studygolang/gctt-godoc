@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package mail
 
   `import "net/mail"`
@@ -12,10 +12,10 @@ extended by RFC 6532. Notable divergences:
 
     * Obsolete address formats are not parsed, including addresses with
       embedded route information.
-    * Group addresses are not parsed.
     * The full range of spacing (the CFWS syntax element) is not supported,
       such as breaking addresses across lines.
     * No unicode normalization is performed.
+    * The special characters ()[]:;@\, are allowed to appear unquoted in names.
 
 ## Index
 

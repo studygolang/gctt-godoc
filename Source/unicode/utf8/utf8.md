@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package utf8
 
   `import "unicode/utf8"`
@@ -58,7 +58,7 @@ sequences.
 
 Numbers fundamental to the encoding.
 
-<h2 id="DecodeLastRune">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L239">DecodeLastRune</a>
+<h2 id="DecodeLastRune">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L235">DecodeLastRune</a>
     <a href="#DecodeLastRune">¶</a></h2>
 <pre>func DecodeLastRune(p []<a href="/builtin/#byte">byte</a>) (r <a href="/builtin/#rune">rune</a>, size <a href="/builtin/#int">int</a>)</pre>
 
@@ -93,7 +93,7 @@ Example:
     // e 1
     // H 1
 
-<h2 id="DecodeLastRuneInString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L279">DecodeLastRuneInString</a>
+<h2 id="DecodeLastRuneInString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L275">DecodeLastRuneInString</a>
     <a href="#DecodeLastRuneInString">¶</a></h2>
 <pre>func DecodeLastRuneInString(s <a href="/builtin/#string">string</a>) (r <a href="/builtin/#rune">rune</a>, size <a href="/builtin/#int">int</a>)</pre>
 
@@ -128,7 +128,7 @@ Example:
     // e 1
     // H 1
 
-<h2 id="DecodeRune">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L143">DecodeRune</a>
+<h2 id="DecodeRune">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L139">DecodeRune</a>
     <a href="#DecodeRune">¶</a></h2>
 <pre>func DecodeRune(p []<a href="/builtin/#byte">byte</a>) (r <a href="/builtin/#rune">rune</a>, size <a href="/builtin/#int">int</a>)</pre>
 
@@ -163,7 +163,7 @@ Example:
     // 世 3
     // 界 3
 
-<h2 id="DecodeRuneInString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L191">DecodeRuneInString</a>
+<h2 id="DecodeRuneInString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L187">DecodeRuneInString</a>
     <a href="#DecodeRuneInString">¶</a></h2>
 <pre>func DecodeRuneInString(s <a href="/builtin/#string">string</a>) (r <a href="/builtin/#rune">rune</a>, size <a href="/builtin/#int">int</a>)</pre>
 
@@ -197,7 +197,7 @@ Example:
     // 世 3
     // 界 3
 
-<h2 id="EncodeRune">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L333">EncodeRune</a>
+<h2 id="EncodeRune">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L329">EncodeRune</a>
     <a href="#EncodeRune">¶</a></h2>
 <pre>func EncodeRune(p []<a href="/builtin/#byte">byte</a>, r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -236,7 +236,7 @@ Example:
     // true
     // false
 
-<h2 id="FullRuneInString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L114">FullRuneInString</a>
+<h2 id="FullRuneInString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L112">FullRuneInString</a>
     <a href="#FullRuneInString">¶</a></h2>
 <pre>func FullRuneInString(s <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -252,7 +252,7 @@ Example:
     // true
     // false
 
-<h2 id="RuneCount">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L365">RuneCount</a>
+<h2 id="RuneCount">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L361">RuneCount</a>
     <a href="#RuneCount">¶</a></h2>
 <pre>func RuneCount(p []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -269,7 +269,7 @@ Example:
     // bytes = 13
     // runes = 9
 
-<h2 id="RuneCountInString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L402">RuneCountInString</a>
+<h2 id="RuneCountInString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L398">RuneCountInString</a>
     <a href="#RuneCountInString">¶</a></h2>
 <pre>func RuneCountInString(s <a href="/builtin/#string">string</a>) (n <a href="/builtin/#int">int</a>)</pre>
 
@@ -285,7 +285,7 @@ Example:
     // bytes = 13
     // runes = 9
 
-<h2 id="RuneLen">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L313">RuneLen</a>
+<h2 id="RuneLen">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L309">RuneLen</a>
     <a href="#RuneLen">¶</a></h2>
 <pre>func RuneLen(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -301,7 +301,7 @@ Example:
     // 1
     // 3
 
-<h2 id="RuneStart">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L439">RuneStart</a>
+<h2 id="RuneStart">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L435">RuneStart</a>
     <a href="#RuneStart">¶</a></h2>
 <pre>func RuneStart(b <a href="/builtin/#byte">byte</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -321,7 +321,7 @@ Example:
     // true
     // false
 
-<h2 id="Valid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L442">Valid</a>
+<h2 id="Valid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L438">Valid</a>
     <a href="#Valid">¶</a></h2>
 <pre>func Valid(p []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -339,7 +339,7 @@ Example:
     // true
     // false
 
-<h2 id="ValidRune">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L507">ValidRune</a>
+<h2 id="ValidRune">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L503">ValidRune</a>
     <a href="#ValidRune">¶</a></h2>
 <pre>func ValidRune(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -358,7 +358,7 @@ Example:
     // true
     // false
 
-<h2 id="ValidString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L474">ValidString</a>
+<h2 id="ValidString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/utf8/utf8.go#L470">ValidString</a>
     <a href="#ValidString">¶</a></h2>
 <pre>func ValidString(s <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 

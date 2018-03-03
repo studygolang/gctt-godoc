@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package template
 
   `import "text/template"`
@@ -490,26 +490,26 @@ or to invoke a particular template explicitly by name,
 ### Package files
  [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/doc.go) [exec.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/exec.go) [funcs.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go) [helper.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/helper.go) [option.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/option.go) [template.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/template.go)
 
-<h2 id="HTMLEscape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go#L486">HTMLEscape</a>
+<h2 id="HTMLEscape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go#L500">HTMLEscape</a>
     <a href="#HTMLEscape">¶</a></h2>
 <pre>func HTMLEscape(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, b []<a href="/builtin/#byte">byte</a>)</pre>
 
 HTMLEscape writes to w the escaped HTML equivalent of the plain text data b.
 
-<h2 id="HTMLEscapeString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go#L514">HTMLEscapeString</a>
+<h2 id="HTMLEscapeString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go#L528">HTMLEscapeString</a>
     <a href="#HTMLEscapeString">¶</a></h2>
 <pre>func HTMLEscapeString(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
 HTMLEscapeString returns the escaped HTML equivalent of the plain text data s.
 
-<h2 id="HTMLEscaper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go#L526">HTMLEscaper</a>
+<h2 id="HTMLEscaper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go#L540">HTMLEscaper</a>
     <a href="#HTMLEscaper">¶</a></h2>
 <pre>func HTMLEscaper(args ...interface{}) <a href="/builtin/#string">string</a></pre>
 
 HTMLEscaper returns the escaped HTML equivalent of the textual representation of
 its arguments.
 
-<h2 id="IsTrue">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/exec.go#L272">IsTrue</a>
+<h2 id="IsTrue">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/exec.go#L269">IsTrue</a>
     <a href="#IsTrue">¶</a></h2>
 <pre>func IsTrue(val interface{}) (truth, ok <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -517,34 +517,34 @@ IsTrue reports whether the value is 'true', in the sense of not the zero of its
 type, and whether the value has a meaningful truth value. This is the definition
 of truth used by if and other such actions.
 
-<h2 id="JSEscape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go#L544">JSEscape</a>
+<h2 id="JSEscape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go#L558">JSEscape</a>
     <a href="#JSEscape">¶</a></h2>
 <pre>func JSEscape(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, b []<a href="/builtin/#byte">byte</a>)</pre>
 
 JSEscape writes to w the escaped JavaScript equivalent of the plain text data b.
 
-<h2 id="JSEscapeString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go#L591">JSEscapeString</a>
+<h2 id="JSEscapeString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go#L605">JSEscapeString</a>
     <a href="#JSEscapeString">¶</a></h2>
 <pre>func JSEscapeString(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
 JSEscapeString returns the escaped JavaScript equivalent of the plain text data
 s.
 
-<h2 id="JSEscaper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go#L611">JSEscaper</a>
+<h2 id="JSEscaper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go#L625">JSEscaper</a>
     <a href="#JSEscaper">¶</a></h2>
 <pre>func JSEscaper(args ...interface{}) <a href="/builtin/#string">string</a></pre>
 
 JSEscaper returns the escaped JavaScript equivalent of the textual
 representation of its arguments.
 
-<h2 id="URLQueryEscaper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go#L617">URLQueryEscaper</a>
+<h2 id="URLQueryEscaper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/funcs.go#L631">URLQueryEscaper</a>
     <a href="#URLQueryEscaper">¶</a></h2>
 <pre>func URLQueryEscaper(args ...interface{}) <a href="/builtin/#string">string</a></pre>
 
 URLQueryEscaper returns the escaped value of the textual representation of its
 arguments in a form suitable for embedding in a URL query.
 
-<h2 id="ExecError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/exec.go#L85">ExecError</a>
+<h2 id="ExecError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/exec.go#L82">ExecError</a>
     <a href="#ExecError">¶</a></h2>
 <pre>type ExecError struct {
 <span id="ExecError.Name"></span>    Name <a href="/builtin/#string">string</a> <span class="comment">// Name of template.</span>
@@ -555,7 +555,7 @@ ExecError is the custom error type returned when Execute has an error evaluating
 its template. (If a write error occurs, the actual error is returned; it will
 not be of type ExecError.)
 
-<h3 id="ExecError.Error">func (ExecError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/exec.go#L90">Error</a>
+<h3 id="ExecError.Error">func (ExecError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/exec.go#L87">Error</a>
     <a href="#ExecError.Error">¶</a></h3>
 <pre>func (e <a href="#ExecError">ExecError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
@@ -932,7 +932,7 @@ copy but not to the original. Clone can be used to prepare common templates and
 use them with variant definitions for other templates by adding the variants
 after the clone is made.
 
-<h3 id="Template.DefinedTemplates">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/exec.go#L195">DefinedTemplates</a>
+<h3 id="Template.DefinedTemplates">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/exec.go#L192">DefinedTemplates</a>
     <a href="#Template.DefinedTemplates">¶</a></h3>
 <pre>func (t *<a href="#Template">Template</a>) DefinedTemplates() <a href="/builtin/#string">string</a></pre>
 
@@ -949,7 +949,7 @@ subsequent calls to Parse, ParseFiles, or ParseGlob. Nested template definitions
 will inherit the settings. An empty delimiter stands for the corresponding
 default: {{ or }}. The return value is the template, so calls can be chained.
 
-<h3 id="Template.Execute">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/exec.go#L169">Execute</a>
+<h3 id="Template.Execute">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/exec.go#L166">Execute</a>
     <a href="#Template.Execute">¶</a></h3>
 <pre>func (t *<a href="#Template">Template</a>) Execute(wr <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, data interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -962,7 +962,7 @@ executions share a Writer the output may be interleaved.
 If data is a reflect.Value, the template applies to the concrete value that the
 reflect.Value holds, as in fmt.Print.
 
-<h3 id="Template.ExecuteTemplate">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/exec.go#L148">ExecuteTemplate</a>
+<h3 id="Template.ExecuteTemplate">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/template/exec.go#L145">ExecuteTemplate</a>
     <a href="#Template.ExecuteTemplate">¶</a></h3>
 <pre>func (t *<a href="#Template">Template</a>) ExecuteTemplate(wr <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, name <a href="/builtin/#string">string</a>, data interface{}) <a href="/builtin/#error">error</a></pre>
 

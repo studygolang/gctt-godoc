@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package hmac
 
   `import "crypto/hmac"`
@@ -29,16 +29,18 @@ timing side-channels:
 ### Package files
  [hmac.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/hmac/hmac.go)
 
-<h2 id="Equal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/hmac/hmac.go#L83">Equal</a>
+<h2 id="Equal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/hmac/hmac.go#L86">Equal</a>
     <a href="#Equal">¶</a></h2>
 <pre>func Equal(mac1, mac2 []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Equal compares two MACs for equality without leaking timing information.
 
-<h2 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/hmac/hmac.go#L57">New</a>
+<h2 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/hmac/hmac.go#L60">New</a>
     <a href="#New">¶</a></h2>
 <pre>func New(h func() <a href="/hash/">hash</a>.<a href="/hash/#Hash">Hash</a>, key []<a href="/builtin/#byte">byte</a>) <a href="/hash/">hash</a>.<a href="/hash/#Hash">Hash</a></pre>
 
-New returns a new HMAC hash using the given hash.Hash type and key.
+New returns a new HMAC hash using the given hash.Hash type and key. Note that
+unlike other hash implementations in the standard library, the returned Hash
+does not implement encoding.BinaryMarshaler or encoding.BinaryUnmarshaler.
 
 

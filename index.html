@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>go 标准库中文版</title>
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" title="vue">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/dark.css" title="dark" disabled>
+  <style>
+    .theme-choose a:hover {
+      cursor: pointer;
+    }
+    .markdown-section.markdown-section a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <nav class="theme-choose">
+    <a data-theme="vue">vue.css</a>
+    <a data-theme="dark">dark.css</a>
+  </nav>
+  <div id="app">加载中</div>
+</body>
+<script>
+  window.$docsify = {
+    loadSidebar: true,
+    subMaxLevel: 3,
+    name: '首页',
+    auto2top: true,
+    noEmoji: true,
+    homepage: 'list.md',
+    alias: {
+      '/(.+/)*([^.]+)': '/$1$2/$2.md'
+    },
+    search: {
+      placeholder: '全文搜索',
+      noData: '没有结果!',
+      paths: []
+    }
+  }
+</script>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-go.min.js"></script>
+<script>
+  var preview = Docsify.dom.find('.theme-choose');
+  var themes = Docsify.dom.findAll('[rel="stylesheet"]');
+  preview.onclick = function(e) {
+    var title = e.target.getAttribute('data-theme');
+    themes.forEach(function(theme) {
+      theme.disabled = theme.title !== title;
+    });
+  };
+</script>
+</html>

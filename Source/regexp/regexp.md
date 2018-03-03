@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package regexp
 
   `import "regexp"`
@@ -133,6 +133,8 @@ Example:
 
 - [Package](#example)
 - [MatchString](#exampleMatchString)
+- [Regexp.Expand](#exampleRegexp_Expand)
+- [Regexp.ExpandString](#exampleRegexp_ExpandString)
 - [Regexp.FindAllString](#exampleRegexp_FindAllString)
 - [Regexp.FindAllStringSubmatch](#exampleRegexp_FindAllStringSubmatch)
 - [Regexp.FindAllStringSubmatchIndex](#exampleRegexp_FindAllStringSubmatchIndex)
@@ -282,6 +284,39 @@ ${1x}, not ${1}x, and, $10 is equivalent to ${10}, not ${1}0.
 
 To insert a literal $ in the output, use $$ in the template.
 
+<a id="exampleRegexp_Expand"></a>
+Example:
+
+    content := []byte(`
+    	# comment line
+    	option1: value1
+    	option2: value2
+    
+    	# another comment line
+    	option3: value3
+    `)
+
+    // Regex pattern captures "key: value" pair from the content.
+    pattern := regexp.MustCompile(`(?m)(?P<key>\w+):\s+(?P<value>\w+)$`)
+
+    // Template to convert "key: value" to "key=value" by
+    // referencing the values captured by the regex pattern.
+    template := []byte("$key=$value\n")
+
+    result := []byte{}
+
+    // For each match of the regex in the content.
+    for _, submatches := range pattern.FindAllSubmatchIndex(content, -1) {
+        // Apply the captured submatches to the template and append the output
+        // to the result.
+        result = pattern.Expand(result, template, content, submatches)
+    }
+    fmt.Println(string(result))
+    // Output:
+    // option1=value1
+    // option2=value2
+    // option3=value3
+
 <h3 id="Regexp.ExpandString">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L816">ExpandString</a>
     <a href="#Regexp.ExpandString">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) ExpandString(dst []<a href="/builtin/#byte">byte</a>, template <a href="/builtin/#string">string</a>, src <a href="/builtin/#string">string</a>, match []<a href="/builtin/#int">int</a>) []<a href="/builtin/#byte">byte</a></pre>
@@ -289,6 +324,39 @@ To insert a literal $ in the output, use $$ in the template.
 ExpandString is like Expand but the template and source are strings. It appends
 to and returns a byte slice in order to give the calling code control over
 allocation.
+
+<a id="exampleRegexp_ExpandString"></a>
+Example:
+
+    content := `
+    	# comment line
+    	option1: value1
+    	option2: value2
+    
+    	# another comment line
+    	option3: value3
+    `
+
+    // Regex pattern captures "key: value" pair from the content.
+    pattern := regexp.MustCompile(`(?m)(?P<key>\w+):\s+(?P<value>\w+)$`)
+
+    // Template to convert "key: value" to "key=value" by
+    // referencing the values captured by the regex pattern.
+    template := "$key=$value\n"
+
+    result := []byte{}
+
+    // For each match of the regex in the content.
+    for _, submatches := range pattern.FindAllStringSubmatchIndex(content, -1) {
+        // Apply the captured submatches to the template and append the output
+        // to the result.
+        result = pattern.ExpandString(result, template, content, submatches)
+    }
+    fmt.Println(string(result))
+    // Output:
+    // option1=value1
+    // option2=value2
+    // option3=value3
 
 <h3 id="Regexp.Find">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L712">Find</a>
     <a href="#Regexp.Find">¶</a></h3>
