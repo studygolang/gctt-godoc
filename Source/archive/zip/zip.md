@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package zip
 
   `import "archive/zip"`
@@ -49,6 +49,7 @@ fields will be 0xffffffff and the 64 bit fields must be used instead.
   - [func (w *Writer) CreateHeader(fh *FileHeader) (io.Writer, error)](#Writer.CreateHeader)
   - [func (w *Writer) Flush() error](#Writer.Flush)
   - [func (w *Writer) RegisterCompressor(method uint16, comp Compressor)](#Writer.RegisterCompressor)
+  - [func (w *Writer) SetComment(comment string) error](#Writer.SetComment)
   - [func (w *Writer) SetOffset(n int64)](#Writer.SetOffset)
 
 ### Examples
@@ -63,8 +64,8 @@ fields will be 0xffffffff and the 64 bit fields must be used instead.
 <h2 id="pkg-constants">Constants</h2>
 
 <pre>const (
-    <span id="Store">Store</span>   <a href="/builtin/#uint16">uint16</a> = 0
-    <span id="Deflate">Deflate</span> <a href="/builtin/#uint16">uint16</a> = 8
+    <span id="Store">Store</span>   <a href="/builtin/#uint16">uint16</a> = 0 <span class="comment">// no compression</span>
+    <span id="Deflate">Deflate</span> <a href="/builtin/#uint16">uint16</a> = 8 <span class="comment">// DEFLATE compressed</span>
 )</pre>
 
 Compression methods.
@@ -111,7 +112,7 @@ Decompressor itself must be safe to invoke from multiple goroutines
 simultaneously, but each returned reader will be used only by one goroutine at a
 time.
 
-<h2 id="File">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L26">File</a>
+<h2 id="File">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L27">File</a>
     <a href="#File">¶</a></h2>
 <pre>type File struct {
     <a href="#FileHeader">FileHeader</a>
@@ -119,7 +120,7 @@ time.
 }</pre>
 
 
-<h3 id="File.DataOffset">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L136">DataOffset</a>
+<h3 id="File.DataOffset">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L137">DataOffset</a>
     <a href="#File.DataOffset">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) DataOffset() (offset <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -129,28 +130,55 @@ to the beginning of the zip file.
 Most callers should instead use Open, which transparently decompresses data and
 verifies checksums.
 
-<h3 id="File.Open">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L146">Open</a>
+<h3 id="File.Open">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L147">Open</a>
     <a href="#File.Open">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Open() (<a href="/io/">io</a>.<a href="/io/#ReadCloser">ReadCloser</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Open returns a ReadCloser that provides access to the File's contents. Multiple
 files may be read concurrently.
 
-<h2 id="FileHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go#L60">FileHeader</a>
+<h2 id="FileHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go#L72">FileHeader</a>
     <a href="#FileHeader">¶</a></h2>
 <pre>type FileHeader struct {
 <span id="FileHeader.Name"></span>    <span class="comment">// Name is the name of the file.</span>
-    <span class="comment">// It must be a relative path: it must not start with a drive</span>
-    <span class="comment">// letter (e.g. C:) or leading slash, and only forward slashes</span>
-    <span class="comment">// are allowed.</span>
+    <span class="comment">// It must be a relative path, not start with a drive letter (e.g. C:),</span>
+    <span class="comment">// and must use forward slashes instead of back slashes.</span>
     Name <a href="/builtin/#string">string</a>
 
-<span id="FileHeader.CreatorVersion"></span>    CreatorVersion     <a href="/builtin/#uint16">uint16</a>
-<span id="FileHeader.ReaderVersion"></span>    ReaderVersion      <a href="/builtin/#uint16">uint16</a>
-<span id="FileHeader.Flags"></span>    Flags              <a href="/builtin/#uint16">uint16</a>
-<span id="FileHeader.Method"></span>    Method             <a href="/builtin/#uint16">uint16</a>
-<span id="FileHeader.ModifiedTime"></span>    ModifiedTime       <a href="/builtin/#uint16">uint16</a> <span class="comment">// MS-DOS time</span>
-<span id="FileHeader.ModifiedDate"></span>    ModifiedDate       <a href="/builtin/#uint16">uint16</a> <span class="comment">// MS-DOS date</span>
+<span id="FileHeader.Comment"></span>    <span class="comment">// Comment is any arbitrary user-defined string shorter than 64KiB.</span>
+    Comment <a href="/builtin/#string">string</a>
+
+<span id="FileHeader.NonUTF8"></span>    <span class="comment">// NonUTF8 indicates that Name and Comment are not encoded in UTF-8.</span>
+    <span class="comment">//</span>
+    <span class="comment">// By specification, the only other encoding permitted should be CP-437,</span>
+    <span class="comment">// but historically many ZIP readers interpret Name and Comment as whatever</span>
+    <span class="comment">// the system&#39;s local character encoding happens to be.</span>
+    <span class="comment">//</span>
+    <span class="comment">// This flag should only be set if the user intends to encode a non-portable</span>
+    <span class="comment">// ZIP file for a specific localized region. Otherwise, the Writer</span>
+    <span class="comment">// automatically sets the ZIP format&#39;s UTF-8 flag for valid UTF-8 strings.</span>
+    NonUTF8 <a href="/builtin/#bool">bool</a>
+
+<span id="FileHeader.CreatorVersion"></span>    CreatorVersion <a href="/builtin/#uint16">uint16</a>
+<span id="FileHeader.ReaderVersion"></span>    ReaderVersion  <a href="/builtin/#uint16">uint16</a>
+<span id="FileHeader.Flags"></span>    Flags          <a href="/builtin/#uint16">uint16</a>
+
+<span id="FileHeader.Method"></span>    <span class="comment">// Method is the compression method. If zero, Store is used.</span>
+    Method <a href="/builtin/#uint16">uint16</a>
+
+<span id="FileHeader.Modified"></span>    <span class="comment">// Modified is the modified time of the file.</span>
+    <span class="comment">//</span>
+    <span class="comment">// When reading, an extended timestamp is preferred over the legacy MS-DOS</span>
+    <span class="comment">// date field, and the offset between the times is used as the timezone.</span>
+    <span class="comment">// If only the MS-DOS date is present, the timezone is assumed to be UTC.</span>
+    <span class="comment">//</span>
+    <span class="comment">// When writing, an extended timestamp (which is timezone-agnostic) is</span>
+    <span class="comment">// always emitted. The legacy MS-DOS date field is encoded according to the</span>
+    <span class="comment">// location of the Modified time.</span>
+    Modified     <a href="/time/">time</a>.<a href="/time/#Time">Time</a>
+<span id="FileHeader.ModifiedTime"></span>    ModifiedTime <a href="/builtin/#uint16">uint16</a> <span class="comment">// Deprecated: Legacy MS-DOS date; use Modified instead.</span>
+<span id="FileHeader.ModifiedDate"></span>    ModifiedDate <a href="/builtin/#uint16">uint16</a> <span class="comment">// Deprecated: Legacy MS-DOS time; use Modified instead.</span>
+
 <span id="FileHeader.CRC32"></span>    CRC32              <a href="/builtin/#uint32">uint32</a>
 <span id="FileHeader.CompressedSize"></span>    CompressedSize     <a href="/builtin/#uint32">uint32</a> <span class="comment">// Deprecated: Use CompressedSize64 instead.</span>
 <span id="FileHeader.UncompressedSize"></span>    UncompressedSize   <a href="/builtin/#uint32">uint32</a> <span class="comment">// Deprecated: Use UncompressedSize64 instead.</span>
@@ -158,52 +186,57 @@ files may be read concurrently.
 <span id="FileHeader.UncompressedSize64"></span>    UncompressedSize64 <a href="/builtin/#uint64">uint64</a>
 <span id="FileHeader.Extra"></span>    Extra              []<a href="/builtin/#byte">byte</a>
 <span id="FileHeader.ExternalAttrs"></span>    ExternalAttrs      <a href="/builtin/#uint32">uint32</a> <span class="comment">// Meaning depends on CreatorVersion</span>
-<span id="FileHeader.Comment"></span>    Comment            <a href="/builtin/#string">string</a>
 }</pre>
 
 FileHeader describes a file within a zip file. See the zip spec for details.
 
-<h3 id="FileInfoHeader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go#L110">FileInfoHeader</a>
+<h3 id="FileInfoHeader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go#L150">FileInfoHeader</a>
     <a href="#FileInfoHeader">¶</a></h3>
 <pre>func FileInfoHeader(fi <a href="/os/">os</a>.<a href="/os/#FileInfo">FileInfo</a>) (*<a href="#FileHeader">FileHeader</a>, <a href="/builtin/#error">error</a>)</pre>
 
 FileInfoHeader creates a partially-populated FileHeader from an os.FileInfo.
 Because os.FileInfo's Name method returns only the base name of the file it
 describes, it may be necessary to modify the Name field of the returned header
-to provide the full path name of the file.
+to provide the full path name of the file. If compression is desired, callers
+should set the FileHeader.Method field; it is unset by default.
 
-<h3 id="FileHeader.FileInfo">func (*FileHeader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go#L84">FileInfo</a>
+<h3 id="FileHeader.FileInfo">func (*FileHeader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go#L122">FileInfo</a>
     <a href="#FileHeader.FileInfo">¶</a></h3>
 <pre>func (h *<a href="#FileHeader">FileHeader</a>) FileInfo() <a href="/os/">os</a>.<a href="/os/#FileInfo">FileInfo</a></pre>
 
 FileInfo returns an os.FileInfo for the FileHeader.
 
-<h3 id="FileHeader.ModTime">func (*FileHeader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go#L169">ModTime</a>
+<h3 id="FileHeader.ModTime">func (*FileHeader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go#L225">ModTime</a>
     <a href="#FileHeader.ModTime">¶</a></h3>
 <pre>func (h *<a href="#FileHeader">FileHeader</a>) ModTime() <a href="/time/">time</a>.<a href="/time/#Time">Time</a></pre>
 
-ModTime returns the modification time in UTC. The resolution is 2s.
+ModTime returns the modification time in UTC using the legacy ModifiedDate and
+ModifiedTime fields.
 
-<h3 id="FileHeader.Mode">func (*FileHeader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go#L199">Mode</a>
+Deprecated: Use Modified instead.
+
+<h3 id="FileHeader.Mode">func (*FileHeader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go#L259">Mode</a>
     <a href="#FileHeader.Mode">¶</a></h3>
 <pre>func (h *<a href="#FileHeader">FileHeader</a>) Mode() (mode <a href="/os/">os</a>.<a href="/os/#FileMode">FileMode</a>)</pre>
 
 Mode returns the permission and mode bits for the FileHeader.
 
-<h3 id="FileHeader.SetModTime">func (*FileHeader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go#L175">SetModTime</a>
+<h3 id="FileHeader.SetModTime">func (*FileHeader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go#L233">SetModTime</a>
     <a href="#FileHeader.SetModTime">¶</a></h3>
 <pre>func (h *<a href="#FileHeader">FileHeader</a>) SetModTime(t <a href="/time/">time</a>.<a href="/time/#Time">Time</a>)</pre>
 
-SetModTime sets the ModifiedTime and ModifiedDate fields to the given time in
-UTC. The resolution is 2s.
+SetModTime sets the Modified, ModifiedTime, and ModifiedDate fields to the given
+time in UTC.
 
-<h3 id="FileHeader.SetMode">func (*FileHeader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go#L213">SetMode</a>
+Deprecated: Use Modified instead.
+
+<h3 id="FileHeader.SetMode">func (*FileHeader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/struct.go#L273">SetMode</a>
     <a href="#FileHeader.SetMode">¶</a></h3>
 <pre>func (h *<a href="#FileHeader">FileHeader</a>) SetMode(mode <a href="/os/">os</a>.<a href="/os/#FileMode">FileMode</a>)</pre>
 
 SetMode changes the permission and mode bits for the FileHeader.
 
-<h2 id="ReadCloser">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L21">ReadCloser</a>
+<h2 id="ReadCloser">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L22">ReadCloser</a>
     <a href="#ReadCloser">¶</a></h2>
 <pre>type ReadCloser struct {
     <a href="#Reader">Reader</a>
@@ -211,19 +244,19 @@ SetMode changes the permission and mode bits for the FileHeader.
 }</pre>
 
 
-<h3 id="OpenReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L39">OpenReader</a>
+<h3 id="OpenReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L40">OpenReader</a>
     <a href="#OpenReader">¶</a></h3>
 <pre>func OpenReader(name <a href="/builtin/#string">string</a>) (*<a href="#ReadCloser">ReadCloser</a>, <a href="/builtin/#error">error</a>)</pre>
 
 OpenReader will open the Zip file specified by name and return a ReadCloser.
 
-<h3 id="ReadCloser.Close">func (*ReadCloser) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L127">Close</a>
+<h3 id="ReadCloser.Close">func (*ReadCloser) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L128">Close</a>
     <a href="#ReadCloser.Close">¶</a></h3>
 <pre>func (rc *<a href="#ReadCloser">ReadCloser</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close closes the Zip file, rendering it unusable for I/O.
 
-<h2 id="Reader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L14">Reader</a>
+<h2 id="Reader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L15">Reader</a>
     <a href="#Reader">¶</a></h2>
 <pre>type Reader struct {
 <span id="Reader.File"></span>    File    []*<a href="#File">File</a>
@@ -261,14 +294,14 @@ Example:
     // Contents of README:
     // This is the source code repository for the Go programming language.
 
-<h3 id="NewReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L60">NewReader</a>
+<h3 id="NewReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L61">NewReader</a>
     <a href="#NewReader">¶</a></h3>
 <pre>func NewReader(r <a href="/io/">io</a>.<a href="/io/#ReaderAt">ReaderAt</a>, size <a href="/builtin/#int64">int64</a>) (*<a href="#Reader">Reader</a>, <a href="/builtin/#error">error</a>)</pre>
 
 NewReader returns a new Reader reading from r, which is assumed to have the
 given size in bytes.
 
-<h3 id="Reader.RegisterDecompressor">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L111">RegisterDecompressor</a>
+<h3 id="Reader.RegisterDecompressor">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/reader.go#L112">RegisterDecompressor</a>
     <a href="#Reader.RegisterDecompressor">¶</a></h3>
 <pre>func (z *<a href="#Reader">Reader</a>) RegisterDecompressor(method <a href="/builtin/#uint16">uint16</a>, dcomp <a href="#Decompressor">Decompressor</a>)</pre>
 
@@ -276,7 +309,7 @@ RegisterDecompressor registers or overrides a custom decompressor for a specific
 method ID. If a decompressor for a given method is not found, Reader will
 default to looking up the decompressor at the package level.
 
-<h2 id="Writer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L8">Writer</a>
+<h2 id="Writer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L13">Writer</a>
     <a href="#Writer">¶</a></h2>
 <pre>type Writer struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -318,48 +351,50 @@ Example:
         log.Fatal(err)
     }
 
-<h3 id="NewWriter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L26">NewWriter</a>
+<h3 id="NewWriter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L32">NewWriter</a>
     <a href="#NewWriter">¶</a></h3>
 <pre>func NewWriter(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) *<a href="#Writer">Writer</a></pre>
 
 NewWriter returns a new Writer writing a zip file to w.
 
-<h3 id="Writer.Close">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L49">Close</a>
+<h3 id="Writer.Close">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L65">Close</a>
     <a href="#Writer.Close">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close finishes writing the zip file by writing the central directory. It does
 not (and cannot) close the underlying writer.
 
-<h3 id="Writer.Create">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L185">Create</a>
+<h3 id="Writer.Create">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L205">Create</a>
     <a href="#Writer.Create">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Create(name <a href="/builtin/#string">string</a>) (<a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Create adds a file to the zip file using the provided name. It returns a Writer
-to which the file contents should be written. The name must be a relative path:
-it must not start with a drive letter (e.g. C:) or leading slash, and only
-forward slashes are allowed. The file's contents must be written to the
-io.Writer before the next call to Create, CreateHeader, or Close.
+to which the file contents should be written. The file contents will be
+compressed using the Deflate method. The name must be a relative path: it must
+not start with a drive letter (e.g. C:) or leading slash, and only forward
+slashes are allowed. The file's contents must be written to the io.Writer before
+the next call to Create, CreateHeader, or Close.
 
-<h3 id="Writer.CreateHeader">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L214">CreateHeader</a>
+<h3 id="Writer.CreateHeader">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L243">CreateHeader</a>
     <a href="#Writer.CreateHeader">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) CreateHeader(fh *<a href="#FileHeader">FileHeader</a>) (<a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, <a href="/builtin/#error">error</a>)</pre>
 
-CreateHeader adds a file to the zip file using the provided FileHeader for the
-file metadata. It returns a Writer to which the file contents should be written.
+CreateHeader adds a file to the zip archive using the provided FileHeader for
+the file metadata. Writer takes ownership of fh and may mutate its fields. The
+caller must not modify fh after calling CreateHeader.
 
-The file's contents must be written to the io.Writer before the next call to
-Create, CreateHeader, or Close. The provided FileHeader fh must not be modified
-after a call to CreateHeader.
+This returns a Writer to which the file contents should be written. The file's
+contents must be written to the io.Writer before the next call to Create,
+CreateHeader, or Close.
 
-<h3 id="Writer.Flush">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L43">Flush</a>
+<h3 id="Writer.Flush">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L49">Flush</a>
     <a href="#Writer.Flush">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Flush() <a href="/builtin/#error">error</a></pre>
 
 Flush flushes any buffered data to the underlying writer. Calling Flush is not
 normally necessary; calling Close is sufficient.
 
-<h3 id="Writer.RegisterCompressor">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L292">RegisterCompressor</a>
+<h3 id="Writer.RegisterCompressor">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L378">RegisterCompressor</a>
     <a href="#Writer.RegisterCompressor">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) RegisterCompressor(method <a href="/builtin/#uint16">uint16</a>, comp <a href="#Compressor">Compressor</a>)</pre>
 
@@ -385,7 +420,14 @@ Example:
 
     // Proceed to add files to w.
 
-<h3 id="Writer.SetOffset">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L34">SetOffset</a>
+<h3 id="Writer.SetComment">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L55">SetComment</a>
+    <a href="#Writer.SetComment">¶</a></h3>
+<pre>func (w *<a href="#Writer">Writer</a>) SetComment(comment <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
+
+SetComment sets the end-of-central-directory comment field. It can only be
+called before Close.
+
+<h3 id="Writer.SetOffset">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/zip/writer.go#L40">SetOffset</a>
     <a href="#Writer.SetOffset">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) SetOffset(n <a href="/builtin/#int64">int64</a>)</pre>
 

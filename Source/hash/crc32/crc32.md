@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package crc32
 
   `import "hash/crc32"`
@@ -65,47 +65,52 @@ The size of a CRC-32 checksum in bytes.
 
 IEEETable is the table for the IEEE polynomial.
 
-<h2 id="Checksum">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go#L190">Checksum</a>
+<h2 id="Checksum">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go#L237">Checksum</a>
     <a href="#Checksum">¶</a></h2>
 <pre>func Checksum(data []<a href="/builtin/#byte">byte</a>, tab *<a href="#Table">Table</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
 Checksum returns the CRC-32 checksum of data using the polynomial represented by
 the Table.
 
-<h2 id="ChecksumIEEE">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go#L194">ChecksumIEEE</a>
+<h2 id="ChecksumIEEE">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go#L241">ChecksumIEEE</a>
     <a href="#ChecksumIEEE">¶</a></h2>
 <pre>func ChecksumIEEE(data []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
 ChecksumIEEE returns the CRC-32 checksum of data using the IEEE polynomial.
 
-<h2 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go#L134">New</a>
+<h2 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go#L137">New</a>
     <a href="#New">¶</a></h2>
 <pre>func New(tab *<a href="#Table">Table</a>) <a href="/hash/">hash</a>.<a href="/hash/#Hash32">Hash32</a></pre>
 
 New creates a new hash.Hash32 computing the CRC-32 checksum using the polynomial
 represented by the Table. Its Sum method will lay the value out in big-endian
-byte order.
+byte order. The returned Hash32 also implements encoding.BinaryMarshaler and
+encoding.BinaryUnmarshaler to marshal and unmarshal the internal state of the
+hash.
 
-<h2 id="NewIEEE">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go#L144">NewIEEE</a>
+<h2 id="NewIEEE">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go#L149">NewIEEE</a>
     <a href="#NewIEEE">¶</a></h2>
 <pre>func NewIEEE() <a href="/hash/">hash</a>.<a href="/hash/#Hash32">Hash32</a></pre>
 
 NewIEEE creates a new hash.Hash32 computing the CRC-32 checksum using the IEEE
-polynomial. Its Sum method will lay the value out in big-endian byte order.
+polynomial. Its Sum method will lay the value out in big-endian byte order. The
+returned Hash32 also implements encoding.BinaryMarshaler and
+encoding.BinaryUnmarshaler to marshal and unmarshal the internal state of the
+hash.
 
-<h2 id="Update">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go#L153">Update</a>
+<h2 id="Update">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go#L200">Update</a>
     <a href="#Update">¶</a></h2>
 <pre>func Update(crc <a href="/builtin/#uint32">uint32</a>, tab *<a href="#Table">Table</a>, p []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
 Update returns the result of adding the bytes in p to the crc.
 
-<h2 id="Table">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go#L31">Table</a>
+<h2 id="Table">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go#L32">Table</a>
     <a href="#Table">¶</a></h2>
 <pre>type Table [256]<a href="/builtin/#uint32">uint32</a></pre>
 
 Table is a 256-word table representing the polynomial for efficient processing.
 
-<h3 id="MakeTable">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go#L113">MakeTable</a>
+<h3 id="MakeTable">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/crc32/crc32.go#L114">MakeTable</a>
     <a href="#MakeTable">¶</a></h3>
 <pre>func MakeTable(poly <a href="/builtin/#uint32">uint32</a>) *<a href="#Table">Table</a></pre>
 

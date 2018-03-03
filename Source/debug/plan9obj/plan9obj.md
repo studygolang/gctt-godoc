@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package plan9obj
 
   `import "debug/plan9obj"`

@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package strings
 
   `import "strings"`
@@ -54,6 +54,15 @@ For information about UTF-8 strings in Go, see https://blog.golang.org/strings.
 - [func TrimRightFunc(s string, f func(rune) bool) string](#TrimRightFunc)
 - [func TrimSpace(s string) string](#TrimSpace)
 - [func TrimSuffix(s, suffix string) string](#TrimSuffix)
+- [type Builder](#Builder)
+  - [func (b *Builder) Grow(n int)](#Builder.Grow)
+  - [func (b *Builder) Len() int](#Builder.Len)
+  - [func (b *Builder) Reset()](#Builder.Reset)
+  - [func (b *Builder) String() string](#Builder.String)
+  - [func (b *Builder) Write(p []byte) (int, error)](#Builder.Write)
+  - [func (b *Builder) WriteByte(c byte) error](#Builder.WriteByte)
+  - [func (b *Builder) WriteRune(r rune) (int, error)](#Builder.WriteRune)
+  - [func (b *Builder) WriteString(s string) (int, error)](#Builder.WriteString)
 - [type Reader](#Reader)
   - [func NewReader(s string) *Reader](#NewReader)
   - [func (r *Reader) Len() int](#Reader.Len)
@@ -75,6 +84,7 @@ For information about UTF-8 strings in Go, see https://blog.golang.org/strings.
 
 ### Examples
 
+- [Builder](#exampleBuilder)
 - [Compare](#exampleCompare)
 - [Contains](#exampleContains)
 - [ContainsAny](#exampleContainsAny)
@@ -93,6 +103,8 @@ For information about UTF-8 strings in Go, see https://blog.golang.org/strings.
 - [Join](#exampleJoin)
 - [LastIndex](#exampleLastIndex)
 - [LastIndexAny](#exampleLastIndexAny)
+- [LastIndexByte](#exampleLastIndexByte)
+- [LastIndexFunc](#exampleLastIndexFunc)
 - [Map](#exampleMap)
 - [NewReplacer](#exampleNewReplacer)
 - [Repeat](#exampleRepeat)
@@ -103,16 +115,23 @@ For information about UTF-8 strings in Go, see https://blog.golang.org/strings.
 - [SplitN](#exampleSplitN)
 - [Title](#exampleTitle)
 - [ToLower](#exampleToLower)
+- [ToLowerSpecial](#exampleToLowerSpecial)
 - [ToTitle](#exampleToTitle)
+- [ToTitleSpecial](#exampleToTitleSpecial)
 - [ToUpper](#exampleToUpper)
+- [ToUpperSpecial](#exampleToUpperSpecial)
 - [Trim](#exampleTrim)
 - [TrimFunc](#exampleTrimFunc)
+- [TrimLeft](#exampleTrimLeft)
+- [TrimLeftFunc](#exampleTrimLeftFunc)
 - [TrimPrefix](#exampleTrimPrefix)
+- [TrimRight](#exampleTrimRight)
+- [TrimRightFunc](#exampleTrimRightFunc)
 - [TrimSpace](#exampleTrimSpace)
 - [TrimSuffix](#exampleTrimSuffix)
 
 ### Package files
- [compare.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/compare.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go) [replace.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/replace.go) [search.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/search.go) [strings.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go) [strings_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_amd64.go) [strings_decl.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_decl.go)
+ [builder.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go) [compare.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/compare.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go) [replace.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/replace.go) [search.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/search.go) [strings.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go) [strings_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_amd64.go) [strings_decl.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_decl.go)
 
 <h2 id="Compare">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/compare.go#L3">Compare</a>
     <a href="#Compare">¶</a></h2>
@@ -191,7 +210,7 @@ Example:
     // true
     // false
 
-<h2 id="Count">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_amd64.go#L91">Count</a>
+<h2 id="Count">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_amd64.go#L73">Count</a>
     <a href="#Count">¶</a></h2>
 <pre>func Count(s, substr <a href="/builtin/#string">string</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -207,7 +226,7 @@ Example:
     // 3
     // 5
 
-<h2 id="EqualFold">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L864">EqualFold</a>
+<h2 id="EqualFold">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L867">EqualFold</a>
     <a href="#EqualFold">¶</a></h2>
 <pre>func EqualFold(s, t <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -220,13 +239,13 @@ Example:
     fmt.Println(strings.EqualFold("Go", "go"))
     // Output: true
 
-<h2 id="Fields">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L305">Fields</a>
+<h2 id="Fields">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L309">Fields</a>
     <a href="#Fields">¶</a></h2>
 <pre>func Fields(s <a href="/builtin/#string">string</a>) []<a href="/builtin/#string">string</a></pre>
 
 Fields splits the string s around each instance of one or more consecutive white
-space characters, as defined by unicode.IsSpace, returning an array of
-substrings of s or an empty list if s contains only white space.
+space characters, as defined by unicode.IsSpace, returning a slice of substrings
+of s or an empty slice if s contains only white space.
 
 <a id="exampleFields"></a>
 Example:
@@ -234,7 +253,7 @@ Example:
     fmt.Printf("Fields are: %q", strings.Fields("  foo bar  baz   "))
     // Output: Fields are: ["foo" "bar" "baz"]
 
-<h2 id="FieldsFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L419">FieldsFunc</a>
+<h2 id="FieldsFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L363">FieldsFunc</a>
     <a href="#FieldsFunc">¶</a></h2>
 <pre>func FieldsFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) []<a href="/builtin/#string">string</a></pre>
 
@@ -253,7 +272,7 @@ Example:
     fmt.Printf("Fields are: %q", strings.FieldsFunc("  foo1;bar2,baz3...", f))
     // Output: Fields are: ["foo1" "bar2" "baz3"]
 
-<h2 id="HasPrefix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L484">HasPrefix</a>
+<h2 id="HasPrefix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L435">HasPrefix</a>
     <a href="#HasPrefix">¶</a></h2>
 <pre>func HasPrefix(s, prefix <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -270,7 +289,7 @@ Example:
     // false
     // true
 
-<h2 id="HasSuffix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L489">HasSuffix</a>
+<h2 id="HasSuffix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L440">HasSuffix</a>
     <a href="#HasSuffix">¶</a></h2>
 <pre>func HasSuffix(s, suffix <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -339,7 +358,7 @@ Example:
     // 3
     // -1
 
-<h2 id="IndexFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L695">IndexFunc</a>
+<h2 id="IndexFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L698">IndexFunc</a>
     <a href="#IndexFunc">¶</a></h2>
 <pre>func IndexFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -375,7 +394,7 @@ Example:
     // 4
     // -1
 
-<h2 id="Join">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L454">Join</a>
+<h2 id="Join">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L405">Join</a>
     <a href="#Join">¶</a></h2>
 <pre>func Join(a []<a href="/builtin/#string">string</a>, sep <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -407,7 +426,7 @@ Example:
     // 3
     // -1
 
-<h2 id="LastIndexAny">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L184">LastIndexAny</a>
+<h2 id="LastIndexAny">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L186">LastIndexAny</a>
     <a href="#LastIndexAny">¶</a></h2>
 <pre>func LastIndexAny(s, chars <a href="/builtin/#string">string</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -425,21 +444,43 @@ Example:
     // 8
     // -1
 
-<h2 id="LastIndexByte">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L210">LastIndexByte</a>
+<h2 id="LastIndexByte">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L214">LastIndexByte</a>
     <a href="#LastIndexByte">¶</a></h2>
 <pre>func LastIndexByte(s <a href="/builtin/#string">string</a>, c <a href="/builtin/#byte">byte</a>) <a href="/builtin/#int">int</a></pre>
 
 LastIndexByte returns the index of the last instance of c in s, or -1 if c is
 not present in s.
 
-<h2 id="LastIndexFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L701">LastIndexFunc</a>
+<a id="exampleLastIndexByte"></a>
+Example:
+
+    fmt.Println(strings.LastIndexByte("Hello, world", 'l'))
+    fmt.Println(strings.LastIndexByte("Hello, world", 'o'))
+    fmt.Println(strings.LastIndexByte("Hello, world", 'x'))
+    // Output:
+    // 10
+    // 8
+    // -1
+
+<h2 id="LastIndexFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L704">LastIndexFunc</a>
     <a href="#LastIndexFunc">¶</a></h2>
 <pre>func LastIndexFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#int">int</a></pre>
 
 LastIndexFunc returns the index into s of the last Unicode code point satisfying
 f(c), or -1 if none do.
 
-<h2 id="Map">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L496">Map</a>
+<a id="exampleLastIndexFunc"></a>
+Example:
+
+    fmt.Println(strings.LastIndexFunc("go 123", unicode.IsNumber))
+    fmt.Println(strings.LastIndexFunc("123 go", unicode.IsNumber))
+    fmt.Println(strings.LastIndexFunc("go", unicode.IsNumber))
+    // Output:
+    // 5
+    // 2
+    // -1
+
+<h2 id="Map">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L447">Map</a>
     <a href="#Map">¶</a></h2>
 <pre>func Map(mapping func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#rune">rune</a>, s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -462,7 +503,7 @@ Example:
     fmt.Println(strings.Map(rot13, "'Twas brillig and the slithy gopher..."))
     // Output: 'Gjnf oevyyvt naq gur fyvgul tbcure...
 
-<h2 id="Repeat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L571">Repeat</a>
+<h2 id="Repeat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L522">Repeat</a>
     <a href="#Repeat">¶</a></h2>
 <pre>func Repeat(s <a href="/builtin/#string">string</a>, count <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -476,7 +517,7 @@ Example:
     fmt.Println("ba" + strings.Repeat("na", 2))
     // Output: banana
 
-<h2 id="Replace">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L828">Replace</a>
+<h2 id="Replace">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L831">Replace</a>
     <a href="#Replace">¶</a></h2>
 <pre>func Replace(s, old, new <a href="/builtin/#string">string</a>, n <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -494,7 +535,7 @@ Example:
     // oinky oinky oink
     // moo moo moo
 
-<h2 id="Split">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L284">Split</a>
+<h2 id="Split">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L288">Split</a>
     <a href="#Split">¶</a></h2>
 <pre>func Split(s, sep <a href="/builtin/#string">string</a>) []<a href="/builtin/#string">string</a></pre>
 
@@ -522,7 +563,7 @@ Example:
     // [" " "x" "y" "z" " "]
     // [""]
 
-<h2 id="SplitAfter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L296">SplitAfter</a>
+<h2 id="SplitAfter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L300">SplitAfter</a>
     <a href="#SplitAfter">¶</a></h2>
 <pre>func SplitAfter(s, sep <a href="/builtin/#string">string</a>) []<a href="/builtin/#string">string</a></pre>
 
@@ -543,7 +584,7 @@ Example:
     fmt.Printf("%q\n", strings.SplitAfter("a,b,c", ","))
     // Output: ["a," "b," "c"]
 
-<h2 id="SplitAfterN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L270">SplitAfterN</a>
+<h2 id="SplitAfterN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L274">SplitAfterN</a>
     <a href="#SplitAfterN">¶</a></h2>
 <pre>func SplitAfterN(s, sep <a href="/builtin/#string">string</a>, n <a href="/builtin/#int">int</a>) []<a href="/builtin/#string">string</a></pre>
 
@@ -565,7 +606,7 @@ Example:
     fmt.Printf("%q\n", strings.SplitAfterN("a,b,c", ",", 2))
     // Output: ["a," "b,c"]
 
-<h2 id="SplitN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L258">SplitN</a>
+<h2 id="SplitN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L262">SplitN</a>
     <a href="#SplitN">¶</a></h2>
 <pre>func SplitN(s, sep <a href="/builtin/#string">string</a>, n <a href="/builtin/#int">int</a>) []<a href="/builtin/#string">string</a></pre>
 
@@ -591,7 +632,7 @@ Example:
     // ["a" "b,c"]
     // [] (nil = true)
 
-<h2 id="Title">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L647">Title</a>
+<h2 id="Title">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L650">Title</a>
     <a href="#Title">¶</a></h2>
 <pre>func Title(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -607,7 +648,7 @@ Example:
     fmt.Println(strings.Title("her royal highness"))
     // Output: Her Royal Highness
 
-<h2 id="ToLower">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L595">ToLower</a>
+<h2 id="ToLower">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L572">ToLower</a>
     <a href="#ToLower">¶</a></h2>
 <pre>func ToLower(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -620,14 +661,20 @@ Example:
     fmt.Println(strings.ToLower("Gopher"))
     // Output: gopher
 
-<h2 id="ToLowerSpecial">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L608">ToLowerSpecial</a>
+<h2 id="ToLowerSpecial">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L611">ToLowerSpecial</a>
     <a href="#ToLowerSpecial">¶</a></h2>
 <pre>func ToLowerSpecial(c <a href="/unicode/">unicode</a>.<a href="/unicode/#SpecialCase">SpecialCase</a>, s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
 ToLowerSpecial returns a copy of the string s with all Unicode letters mapped to
 their lower case, giving priority to the special casing rules.
 
-<h2 id="ToTitle">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L598">ToTitle</a>
+<a id="exampleToLowerSpecial"></a>
+Example:
+
+    fmt.Println(strings.ToLowerSpecial(unicode.TurkishCase, "Önnek İş"))
+    // Output: önnek iş
+
+<h2 id="ToTitle">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L601">ToTitle</a>
     <a href="#ToTitle">¶</a></h2>
 <pre>func ToTitle(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -643,14 +690,21 @@ Example:
     // LOUD NOISES
     // ХЛЕБ
 
-<h2 id="ToTitleSpecial">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L614">ToTitleSpecial</a>
+<h2 id="ToTitleSpecial">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L617">ToTitleSpecial</a>
     <a href="#ToTitleSpecial">¶</a></h2>
 <pre>func ToTitleSpecial(c <a href="/unicode/">unicode</a>.<a href="/unicode/#SpecialCase">SpecialCase</a>, s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
 ToTitleSpecial returns a copy of the string s with all Unicode letters mapped to
 their title case, giving priority to the special casing rules.
 
-<h2 id="ToUpper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L592">ToUpper</a>
+<a id="exampleToTitleSpecial"></a>
+Example:
+
+    fmt.Println(strings.ToTitleSpecial(unicode.TurkishCase, "dünyanın ilk borsa yapısı Aizonai kabul edilir"))
+    // Output:
+    // DÜNYANIN İLK BORSA YAPISI AİZONAİ KABUL EDİLİR
+
+<h2 id="ToUpper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L543">ToUpper</a>
     <a href="#ToUpper">¶</a></h2>
 <pre>func ToUpper(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -663,14 +717,20 @@ Example:
     fmt.Println(strings.ToUpper("Gopher"))
     // Output: GOPHER
 
-<h2 id="ToUpperSpecial">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L602">ToUpperSpecial</a>
+<h2 id="ToUpperSpecial">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L605">ToUpperSpecial</a>
     <a href="#ToUpperSpecial">¶</a></h2>
 <pre>func ToUpperSpecial(c <a href="/unicode/">unicode</a>.<a href="/unicode/#SpecialCase">SpecialCase</a>, s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
 ToUpperSpecial returns a copy of the string s with all Unicode letters mapped to
 their upper case, giving priority to the special casing rules.
 
-<h2 id="Trim">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L773">Trim</a>
+<a id="exampleToUpperSpecial"></a>
+Example:
+
+    fmt.Println(strings.ToUpperSpecial(unicode.TurkishCase, "örnek iş"))
+    // Output: ÖRNEK İŞ
+
+<h2 id="Trim">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L776">Trim</a>
     <a href="#Trim">¶</a></h2>
 <pre>func Trim(s <a href="/builtin/#string">string</a>, cutset <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -680,10 +740,10 @@ points contained in cutset removed.
 <a id="exampleTrim"></a>
 Example:
 
-    fmt.Printf("[%q]", strings.Trim(" !!! Achtung! Achtung! !!! ", "! "))
-    // Output: ["Achtung! Achtung"]
+    fmt.Print(strings.Trim("¡¡¡Hello, Gophers!!!", "!¡"))
+    // Output: Hello, Gophers
 
-<h2 id="TrimFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L689">TrimFunc</a>
+<h2 id="TrimFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L692">TrimFunc</a>
     <a href="#TrimFunc">¶</a></h2>
 <pre>func TrimFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -693,27 +753,40 @@ code points c satisfying f(c) removed.
 <a id="exampleTrimFunc"></a>
 Example:
 
-    f := func(c rune) bool {
-        return !unicode.IsLetter(c) && !unicode.IsNumber(c)
-    }
-    fmt.Printf("[%q]", strings.TrimFunc("  Achtung1! Achtung2,...", f))
-    // Output: ["Achtung1! Achtung2"]
+    fmt.Print(strings.TrimFunc("¡¡¡Hello, Gophers!!!", func(r rune) bool {
+        return !unicode.IsLetter(r) && !unicode.IsNumber(r)
+    }))
+    // Output: Hello, Gophers
 
-<h2 id="TrimLeft">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L782">TrimLeft</a>
+<h2 id="TrimLeft">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L785">TrimLeft</a>
     <a href="#TrimLeft">¶</a></h2>
 <pre>func TrimLeft(s <a href="/builtin/#string">string</a>, cutset <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
 TrimLeft returns a slice of the string s with all leading Unicode code points
 contained in cutset removed.
 
-<h2 id="TrimLeftFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L666">TrimLeftFunc</a>
+<a id="exampleTrimLeft"></a>
+Example:
+
+    fmt.Print(strings.TrimLeft("¡¡¡Hello, Gophers!!!", "!¡"))
+    // Output: Hello, Gophers!!!
+
+<h2 id="TrimLeftFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L669">TrimLeftFunc</a>
     <a href="#TrimLeftFunc">¶</a></h2>
 <pre>func TrimLeftFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#string">string</a></pre>
 
 TrimLeftFunc returns a slice of the string s with all leading Unicode code
 points c satisfying f(c) removed.
 
-<h2 id="TrimPrefix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L806">TrimPrefix</a>
+<a id="exampleTrimLeftFunc"></a>
+Example:
+
+    fmt.Print(strings.TrimLeftFunc("¡¡¡Hello, Gophers!!!", func(r rune) bool {
+        return !unicode.IsLetter(r) && !unicode.IsNumber(r)
+    }))
+    // Output: Hello, Gophers!!!
+
+<h2 id="TrimPrefix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L809">TrimPrefix</a>
     <a href="#TrimPrefix">¶</a></h2>
 <pre>func TrimPrefix(s, prefix <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -723,27 +796,41 @@ start with prefix, s is returned unchanged.
 <a id="exampleTrimPrefix"></a>
 Example:
 
-    var s = "Goodbye,, world!"
-    s = strings.TrimPrefix(s, "Goodbye,")
-    s = strings.TrimPrefix(s, "Howdy,")
-    fmt.Print("Hello" + s)
-    // Output: Hello, world!
+    var s = "¡¡¡Hello, Gophers!!!"
+    s = strings.TrimPrefix(s, "¡¡¡Hello, ")
+    s = strings.TrimPrefix(s, "¡¡¡Howdy, ")
+    fmt.Print(s)
+    // Output: Gophers!!!
 
-<h2 id="TrimRight">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L791">TrimRight</a>
+<h2 id="TrimRight">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L794">TrimRight</a>
     <a href="#TrimRight">¶</a></h2>
 <pre>func TrimRight(s <a href="/builtin/#string">string</a>, cutset <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
 TrimRight returns a slice of the string s, with all trailing Unicode code points
 contained in cutset removed.
 
-<h2 id="TrimRightFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L676">TrimRightFunc</a>
+<a id="exampleTrimRight"></a>
+Example:
+
+    fmt.Print(strings.TrimRight("¡¡¡Hello, Gophers!!!", "!¡"))
+    // Output: ¡¡¡Hello, Gophers
+
+<h2 id="TrimRightFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L679">TrimRightFunc</a>
     <a href="#TrimRightFunc">¶</a></h2>
 <pre>func TrimRightFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#string">string</a></pre>
 
 TrimRightFunc returns a slice of the string s with all trailing Unicode code
 points c satisfying f(c) removed.
 
-<h2 id="TrimSpace">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L800">TrimSpace</a>
+<a id="exampleTrimRightFunc"></a>
+Example:
+
+    fmt.Print(strings.TrimRightFunc("¡¡¡Hello, Gophers!!!", func(r rune) bool {
+        return !unicode.IsLetter(r) && !unicode.IsNumber(r)
+    }))
+    // Output: ¡¡¡Hello, Gophers
+
+<h2 id="TrimSpace">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L803">TrimSpace</a>
     <a href="#TrimSpace">¶</a></h2>
 <pre>func TrimSpace(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -753,10 +840,10 @@ space removed, as defined by Unicode.
 <a id="exampleTrimSpace"></a>
 Example:
 
-    fmt.Println(strings.TrimSpace(" \t\n a lone gopher \n\t\r\n"))
-    // Output: a lone gopher
+    fmt.Println(strings.TrimSpace(" \t\n Hello, Gophers \n\t\r\n"))
+    // Output: Hello, Gophers
 
-<h2 id="TrimSuffix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L815">TrimSuffix</a>
+<h2 id="TrimSuffix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L818">TrimSuffix</a>
     <a href="#TrimSuffix">¶</a></h2>
 <pre>func TrimSuffix(s, suffix <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -766,11 +853,85 @@ end with suffix, s is returned unchanged.
 <a id="exampleTrimSuffix"></a>
 Example:
 
-    var s = "Hello, goodbye, etc!"
-    s = strings.TrimSuffix(s, "goodbye, etc!")
-    s = strings.TrimSuffix(s, "planet")
-    fmt.Print(s, "world!")
-    // Output: Hello, world!
+    var s = "¡¡¡Hello, Gophers!!!"
+    s = strings.TrimSuffix(s, ", Gophers!!!")
+    s = strings.TrimSuffix(s, ", Marmots!!!")
+    fmt.Print(s)
+    // Output: ¡¡¡Hello
+
+<h2 id="Builder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L5">Builder</a>
+    <a href="#Builder">¶</a></h2>
+<pre>type Builder struct {
+    <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+
+A Builder is used to efficiently build a string using Write methods. It
+minimizes memory copying. The zero value is ready to use. Do not copy a non-zero
+Builder.
+
+<a id="exampleBuilder"></a>
+Example:
+
+    var b strings.Builder
+    for i := 3; i >= 1; i-- {
+        fmt.Fprintf(&b, "%d...", i)
+    }
+    b.WriteString("ignition")
+    fmt.Println(b.String())
+
+    // Output: 3...2...1...ignition
+
+<h3 id="Builder.Grow">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L60">Grow</a>
+    <a href="#Builder.Grow">¶</a></h3>
+<pre>func (b *<a href="#Builder">Builder</a>) Grow(n <a href="/builtin/#int">int</a>)</pre>
+
+Grow grows b's capacity, if necessary, to guarantee space for another n bytes.
+After Grow(n), at least n bytes can be written to b without another allocation.
+If n is negative, Grow panics.
+
+<h3 id="Builder.Len">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L41">Len</a>
+    <a href="#Builder.Len">¶</a></h3>
+<pre>func (b *<a href="#Builder">Builder</a>) Len() <a href="/builtin/#int">int</a></pre>
+
+Len returns the number of accumulated bytes; b.Len() == len(b.String()).
+
+<h3 id="Builder.Reset">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L44">Reset</a>
+    <a href="#Builder.Reset">¶</a></h3>
+<pre>func (b *<a href="#Builder">Builder</a>) Reset()</pre>
+
+Reset resets the Builder to be empty.
+
+<h3 id="Builder.String">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L36">String</a>
+    <a href="#Builder.String">¶</a></h3>
+<pre>func (b *<a href="#Builder">Builder</a>) String() <a href="/builtin/#string">string</a></pre>
+
+String returns the accumulated string.
+
+<h3 id="Builder.Write">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L72">Write</a>
+    <a href="#Builder.Write">¶</a></h3>
+<pre>func (b *<a href="#Builder">Builder</a>) Write(p []<a href="/builtin/#byte">byte</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
+
+Write appends the contents of p to b's buffer. Write always returns len(p), nil.
+
+<h3 id="Builder.WriteByte">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L80">WriteByte</a>
+    <a href="#Builder.WriteByte">¶</a></h3>
+<pre>func (b *<a href="#Builder">Builder</a>) WriteByte(c <a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
+
+WriteByte appends the byte c to b's buffer. The returned error is always nil.
+
+<h3 id="Builder.WriteRune">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L88">WriteRune</a>
+    <a href="#Builder.WriteRune">¶</a></h3>
+<pre>func (b *<a href="#Builder">Builder</a>) WriteRune(r <a href="/builtin/#rune">rune</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
+
+WriteRune appends the UTF-8 encoding of Unicode code point r to b's buffer. It
+returns the length of r and a nil error.
+
+<h3 id="Builder.WriteString">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L105">WriteString</a>
+    <a href="#Builder.WriteString">¶</a></h3>
+<pre>func (b *<a href="#Builder">Builder</a>) WriteString(s <a href="/builtin/#string">string</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
+
+WriteString appends the contents of s to b's buffer. It returns the length of s
+and a nil error.
 
 <h2 id="Reader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L6">Reader</a>
     <a href="#Reader">¶</a></h2>
@@ -887,7 +1048,7 @@ WriteString writes s to w with all replacements performed.
 
 <h2 id="pkg-note-BUG">Bugs</h2>
 
-- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L646)  The rule Title uses for word boundaries does not handle Unicode punctuation
+- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L649)  The rule Title uses for word boundaries does not handle Unicode punctuation
   properly.
 
 

@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package sync
 
   `import "sync"`
@@ -121,41 +121,43 @@ Wait in a loop:
 
 A Locker represents an object that can be locked and unlocked.
 
-<h2 id="Map">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L16">Map</a>
+<h2 id="Map">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L17">Map</a>
     <a href="#Map">¶</a></h2>
 <pre>type Map struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 
-Map is a concurrent map with amortized-constant-time loads, stores, and deletes.
-It is safe for multiple goroutines to call a Map's methods concurrently.
+Map is like a Go map[interface{}]interface{} but is safe for concurrent use by
+multiple goroutines without additional locking or coordination. Loads, stores,
+and deletes run in amortized constant time.
 
-It is optimized for use in concurrent loops with keys that are stable over time,
-and either few steady-state stores, or stores localized to one goroutine per
-key.
+The Map type is specialized. Most code should use a plain Go map instead, with
+separate locking or coordination, for better type safety and to make it easier
+to maintain other invariants along with the map content.
 
-For use cases that do not share these attributes, it will likely have comparable
-or worse performance and worse type safety than an ordinary map paired with a
-read-write mutex.
+The Map type is optimized for two common use cases: (1) when the entry for a
+given key is only ever written once but read many times, as in caches that only
+grow, or (2) when multiple goroutines read, write, and overwrite entries for
+disjoint sets of keys. In these two cases, use of a Map may significantly reduce
+lock contention compared to a Go map paired with a separate Mutex or RWMutex.
 
-The zero Map is valid and empty.
+The zero Map is empty and ready for use. A Map must not be copied after first
+use.
 
-A Map must not be copied after first use.
-
-<h3 id="Map.Delete">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L260">Delete</a>
+<h3 id="Map.Delete">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L261">Delete</a>
     <a href="#Map.Delete">¶</a></h3>
 <pre>func (m *<a href="#Map">Map</a>) Delete(key interface{})</pre>
 
 Delete deletes the value for a key.
 
-<h3 id="Map.Load">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L91">Load</a>
+<h3 id="Map.Load">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L92">Load</a>
     <a href="#Map.Load">¶</a></h3>
 <pre>func (m *<a href="#Map">Map</a>) Load(key interface{}) (value interface{}, ok <a href="/builtin/#bool">bool</a>)</pre>
 
 Load returns the value stored in the map for a key, or nil if no value is
 present. The ok result indicates whether value was found in the map.
 
-<h3 id="Map.LoadOrStore">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L192">LoadOrStore</a>
+<h3 id="Map.LoadOrStore">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L193">LoadOrStore</a>
     <a href="#Map.LoadOrStore">¶</a></h3>
 <pre>func (m *<a href="#Map">Map</a>) LoadOrStore(key, value interface{}) (actual interface{}, loaded <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -163,7 +165,7 @@ LoadOrStore returns the existing value for the key if present. Otherwise, it
 stores and returns the given value. The loaded result is true if the value was
 loaded, false if stored.
 
-<h3 id="Map.Range">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L299">Range</a>
+<h3 id="Map.Range">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L300">Range</a>
     <a href="#Map.Range">¶</a></h3>
 <pre>func (m *<a href="#Map">Map</a>) Range(f func(key, value interface{}) <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -178,7 +180,7 @@ any point during the Range call.
 Range may be O(N) with the number of elements in the map even if f returns false
 after a constant number of calls.
 
-<h3 id="Map.Store">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L125">Store</a>
+<h3 id="Map.Store">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L126">Store</a>
     <a href="#Map.Store">¶</a></h3>
 <pre>func (m *<a href="#Map">Map</a>) Store(key, value interface{})</pre>
 
@@ -374,11 +376,11 @@ Put adds x to the pool.
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 
-An RWMutex is a reader/writer mutual exclusion lock. The lock can be held by an
+A RWMutex is a reader/writer mutual exclusion lock. The lock can be held by an
 arbitrary number of readers or a single writer. The zero value for a RWMutex is
 an unlocked mutex.
 
-An RWMutex must not be copied after first use.
+A RWMutex must not be copied after first use.
 
 If a goroutine holds a RWMutex for reading and another goroutine might call
 Lock, no goroutine should expect to be able to acquire a read lock until the
@@ -425,7 +427,7 @@ Unlock unlocks rw for writing. It is a run-time error if rw is not locked for
 writing on entry to Unlock.
 
 As with Mutexes, a locked RWMutex is not associated with a particular goroutine.
-One goroutine may RLock (Lock) an RWMutex and then arrange for another goroutine
+One goroutine may RLock (Lock) a RWMutex and then arrange for another goroutine
 to RUnlock (Unlock) it.
 
 <h2 id="WaitGroup">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/waitgroup.go#L10">WaitGroup</a>
@@ -480,13 +482,13 @@ creating the goroutine or other event to be waited for. If a WaitGroup is reused
 to wait for several independent sets of events, new Add calls must happen after
 all previous Wait calls have returned. See the WaitGroup example.
 
-<h3 id="WaitGroup.Done">func (*WaitGroup) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/waitgroup.go#L89">Done</a>
+<h3 id="WaitGroup.Done">func (*WaitGroup) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/waitgroup.go#L87">Done</a>
     <a href="#WaitGroup.Done">¶</a></h3>
 <pre>func (wg *<a href="#WaitGroup">WaitGroup</a>) Done()</pre>
 
 Done decrements the WaitGroup counter by one.
 
-<h3 id="WaitGroup.Wait">func (*WaitGroup) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/waitgroup.go#L94">Wait</a>
+<h3 id="WaitGroup.Wait">func (*WaitGroup) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/waitgroup.go#L92">Wait</a>
     <a href="#WaitGroup.Wait">¶</a></h3>
 <pre>func (wg *<a href="#WaitGroup">WaitGroup</a>) Wait()</pre>
 

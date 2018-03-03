@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package template
 
   `import "html/template"`
@@ -323,6 +323,7 @@ Example:
 - [type HTMLAttr](#HTMLAttr)
 - [type JS](#JS)
 - [type JSStr](#JSStr)
+- [type Srcset](#Srcset)
 - [type Template](#Template)
   - [func Must(t *Template, err error) *Template](#Must)
   - [func New(name string) *Template](#New)
@@ -359,26 +360,26 @@ Example:
 ### Package files
  [attr.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/attr.go) [content.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/content.go) [context.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/context.go) [css.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/css.go) [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/doc.go) [error.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/error.go) [escape.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go) [html.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/html.go) [js.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/js.go) [template.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go) [transition.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/transition.go) [url.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/url.go)
 
-<h2 id="HTMLEscape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go#L836">HTMLEscape</a>
+<h2 id="HTMLEscape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go#L855">HTMLEscape</a>
     <a href="#HTMLEscape">¶</a></h2>
 <pre>func HTMLEscape(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, b []<a href="/builtin/#byte">byte</a>)</pre>
 
 HTMLEscape writes to w the escaped HTML equivalent of the plain text data b.
 
-<h2 id="HTMLEscapeString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go#L841">HTMLEscapeString</a>
+<h2 id="HTMLEscapeString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go#L860">HTMLEscapeString</a>
     <a href="#HTMLEscapeString">¶</a></h2>
 <pre>func HTMLEscapeString(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
 HTMLEscapeString returns the escaped HTML equivalent of the plain text data s.
 
-<h2 id="HTMLEscaper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go#L847">HTMLEscaper</a>
+<h2 id="HTMLEscaper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go#L866">HTMLEscaper</a>
     <a href="#HTMLEscaper">¶</a></h2>
 <pre>func HTMLEscaper(args ...interface{}) <a href="/builtin/#string">string</a></pre>
 
 HTMLEscaper returns the escaped HTML equivalent of the textual representation of
 its arguments.
 
-<h2 id="IsTrue">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L469">IsTrue</a>
+<h2 id="IsTrue">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L477">IsTrue</a>
     <a href="#IsTrue">¶</a></h2>
 <pre>func IsTrue(val interface{}) (truth, ok <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -386,27 +387,27 @@ IsTrue reports whether the value is 'true', in the sense of not the zero of its
 type, and whether the value has a meaningful truth value. This is the definition
 of truth used by if and other such actions.
 
-<h2 id="JSEscape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go#L852">JSEscape</a>
+<h2 id="JSEscape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go#L871">JSEscape</a>
     <a href="#JSEscape">¶</a></h2>
 <pre>func JSEscape(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, b []<a href="/builtin/#byte">byte</a>)</pre>
 
 JSEscape writes to w the escaped JavaScript equivalent of the plain text data b.
 
-<h2 id="JSEscapeString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go#L857">JSEscapeString</a>
+<h2 id="JSEscapeString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go#L876">JSEscapeString</a>
     <a href="#JSEscapeString">¶</a></h2>
 <pre>func JSEscapeString(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
 JSEscapeString returns the escaped JavaScript equivalent of the plain text data
 s.
 
-<h2 id="JSEscaper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go#L863">JSEscaper</a>
+<h2 id="JSEscaper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go#L882">JSEscaper</a>
     <a href="#JSEscaper">¶</a></h2>
 <pre>func JSEscaper(args ...interface{}) <a href="/builtin/#string">string</a></pre>
 
 JSEscaper returns the escaped JavaScript equivalent of the textual
 representation of its arguments.
 
-<h2 id="URLQueryEscaper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go#L869">URLQueryEscaper</a>
+<h2 id="URLQueryEscaper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/escape.go#L888">URLQueryEscaper</a>
     <a href="#URLQueryEscaper">¶</a></h2>
 <pre>func URLQueryEscaper(args ...interface{}) <a href="/builtin/#string">string</a></pre>
 
@@ -648,7 +649,7 @@ Discussion:
     If the data comes from a trusted source, use content types to exempt it
     from filtering: URL(`javascript:...`).
 
-<h2 id="FuncMap">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L318">FuncMap</a>
+<h2 id="FuncMap">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L326">FuncMap</a>
     <a href="#FuncMap">¶</a></h2>
 <pre>type FuncMap map[<a href="/builtin/#string">string</a>]interface{}</pre>
 
@@ -711,6 +712,16 @@ in a JavaScript expression. The string must match a series of StringCharacters:
 
 Note that LineContinuations are not allowed. JSStr("foo\\nbar") is fine, but
 JSStr("foo\\\nbar") is not.
+
+Use of this type presents a security risk: the encapsulated content should come
+from a trusted source, as it will be included verbatim in the template output.
+
+<h2 id="Srcset">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/content.go#L83">Srcset</a>
+    <a href="#Srcset">¶</a></h2>
+<pre>type Srcset <a href="/builtin/#string">string</a></pre>
+
+Srcset encapsulates a known safe srcset attribute (see
+http://w3c.github.io/html/semantics-embedded-content.html#element-attrdef-img-srcset).
 
 Use of this type presents a security risk: the encapsulated content should come
 from a trusted source, as it will be included verbatim in the template output.
@@ -943,7 +954,7 @@ Example:
     // T0 (second version) invokes T1: (T1 invokes T2: (T2, version B))
     // T0 (first version) invokes T1: (T1 invokes T2: (T2, version A))
 
-<h3 id="Must">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L352">Must</a>
+<h3 id="Must">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L360">Must</a>
     <a href="#Must">¶</a></h3>
 <pre>func Must(t *<a href="#Template">Template</a>, err <a href="/builtin/#error">error</a>) *<a href="#Template">Template</a></pre>
 
@@ -959,7 +970,7 @@ initializations such as
 
 New allocates a new HTML template with the given name.
 
-<h3 id="ParseFiles">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L368">ParseFiles</a>
+<h3 id="ParseFiles">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L376">ParseFiles</a>
     <a href="#ParseFiles">¶</a></h3>
 <pre>func ParseFiles(filenames ...<a href="/builtin/#string">string</a>) (*<a href="#Template">Template</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -973,7 +984,7 @@ last one mentioned will be the one that results. For instance,
 ParseFiles("a/foo", "b/foo") stores "b/foo" as the template named "foo", while
 "a/foo" is unavailable.
 
-<h3 id="ParseGlob">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L433">ParseGlob</a>
+<h3 id="ParseGlob">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L441">ParseGlob</a>
     <a href="#ParseGlob">¶</a></h3>
 <pre>func ParseGlob(pattern <a href="/builtin/#string">string</a>) (*<a href="#Template">Template</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -1016,7 +1027,7 @@ DefinedTemplates returns a string listing the defined templates, prefixed by the
 string "; defined templates are: ". If there are none, it returns the empty
 string. Used to generate an error message.
 
-<h3 id="Template.Delims">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L335">Delims</a>
+<h3 id="Template.Delims">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L343">Delims</a>
     <a href="#Template.Delims">¶</a></h3>
 <pre>func (t *<a href="#Template">Template</a>) Delims(left, right <a href="/builtin/#string">string</a>) *<a href="#Template">Template</a></pre>
 
@@ -1046,7 +1057,7 @@ results may already have been written to the output writer. A template may be
 executed safely in parallel, although if parallel executions share a Writer the
 output may be interleaved.
 
-<h3 id="Template.Funcs">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L325">Funcs</a>
+<h3 id="Template.Funcs">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L333">Funcs</a>
     <a href="#Template.Funcs">¶</a></h3>
 <pre>func (t *<a href="#Template">Template</a>) Funcs(funcMap <a href="#FuncMap">FuncMap</a>) *<a href="#Template">Template</a></pre>
 
@@ -1055,26 +1066,29 @@ must be called before the template is parsed. It panics if a value in the map is
 not a function with appropriate return type. However, it is legal to overwrite
 elements of the map. The return value is the template, so calls can be chained.
 
-<h3 id="Template.Lookup">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L342">Lookup</a>
+<h3 id="Template.Lookup">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L350">Lookup</a>
     <a href="#Template.Lookup">¶</a></h3>
 <pre>func (t *<a href="#Template">Template</a>) Lookup(name <a href="/builtin/#string">string</a>) *<a href="#Template">Template</a></pre>
 
 Lookup returns the template with the given name that is associated with t, or
 nil if there is no such template.
 
-<h3 id="Template.Name">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L307">Name</a>
+<h3 id="Template.Name">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L315">Name</a>
     <a href="#Template.Name">¶</a></h3>
 <pre>func (t *<a href="#Template">Template</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 Name returns the name of the template.
 
-<h3 id="Template.New">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L288">New</a>
+<h3 id="Template.New">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L292">New</a>
     <a href="#Template.New">¶</a></h3>
 <pre>func (t *<a href="#Template">Template</a>) New(name <a href="/builtin/#string">string</a>) *<a href="#Template">Template</a></pre>
 
 New allocates a new HTML template associated with the given one and with the
 same delimiters. The association, which is transitive, allows one template to
 invoke another with a {{template}} action.
+
+If a template with the given name already exists, the new HTML template will
+replace it. The existing template will be reset and disassociated with t.
 
 <h3 id="Template.Option">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L64">Option</a>
     <a href="#Template.Option">¶</a></h3>
@@ -1113,7 +1127,7 @@ containing only white space and comments is considered empty and will not
 replace an existing template's body. This allows using Parse to add new named
 template definitions without overwriting the main template body.
 
-<h3 id="Template.ParseFiles">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L380">ParseFiles</a>
+<h3 id="Template.ParseFiles">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L388">ParseFiles</a>
     <a href="#Template.ParseFiles">¶</a></h3>
 <pre>func (t *<a href="#Template">Template</a>) ParseFiles(filenames ...<a href="/builtin/#string">string</a>) (*<a href="#Template">Template</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -1127,7 +1141,7 @@ last one mentioned will be the one that results.
 ParseFiles returns an error if t or any associated template has already been
 executed.
 
-<h3 id="Template.ParseGlob">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L447">ParseGlob</a>
+<h3 id="Template.ParseGlob">func (*Template) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/template/template.go#L455">ParseGlob</a>
     <a href="#Template.ParseGlob">¶</a></h3>
 <pre>func (t *<a href="#Template">Template</a>) ParseGlob(pattern <a href="/builtin/#string">string</a>) (*<a href="#Template">Template</a>, <a href="/builtin/#error">error</a>)</pre>
 

@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package cgi
 
   `import "net/http/cgi"`

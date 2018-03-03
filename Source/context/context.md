@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package context
 
   `import "context"`
@@ -54,7 +54,7 @@ Contexts.
   - [func Background() Context](#Background)
   - [func TODO() Context](#TODO)
   - [func WithCancel(parent Context) (ctx Context, cancel CancelFunc)](#WithCancel)
-  - [func WithDeadline(parent Context, deadline time.Time) (Context, CancelFunc)](#WithDeadline)
+  - [func WithDeadline(parent Context, d time.Time) (Context, CancelFunc)](#WithDeadline)
   - [func WithTimeout(parent Context, timeout time.Duration) (Context, CancelFunc)](#WithTimeout)
   - [func WithValue(parent Context, key, val interface{}) Context](#WithValue)
 
@@ -166,7 +166,7 @@ nothing.
     <span class="comment">// 	// userKey is the key for user.User values in Contexts. It is</span>
     <span class="comment">// 	// unexported; clients use user.NewContext and user.FromContext</span>
     <span class="comment">// 	// instead of using this key directly.</span>
-    <span class="comment">// 	var userKey key = 0</span>
+    <span class="comment">// 	var userKey key</span>
     <span class="comment">//</span>
     <span class="comment">// 	// NewContext returns a new Context that carries value u.</span>
     <span class="comment">// 	func NewContext(ctx context.Context, u *User) context.Context {</span>
@@ -257,7 +257,7 @@ Example:
 
 <h3 id="WithDeadline">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/context/context.go#L373">WithDeadline</a>
     <a href="#WithDeadline">¶</a></h3>
-<pre>func WithDeadline(parent <a href="#Context">Context</a>, deadline <a href="/time/">time</a>.<a href="/time/#Time">Time</a>) (<a href="#Context">Context</a>, <a href="#CancelFunc">CancelFunc</a>)</pre>
+<pre>func WithDeadline(parent <a href="#Context">Context</a>, d <a href="/time/">time</a>.<a href="/time/#Time">Time</a>) (<a href="#Context">Context</a>, <a href="#CancelFunc">CancelFunc</a>)</pre>
 
 WithDeadline returns a copy of the parent context with the deadline adjusted to
 be no later than d. If the parent's deadline is already earlier than d,

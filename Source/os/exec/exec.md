@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package exec
 
   `import "os/exec"`
@@ -112,9 +112,12 @@ Example:
     Dir <a href="/builtin/#string">string</a>
 
 <span id="Cmd.Stdin"></span>    <span class="comment">// Stdin specifies the process&#39;s standard input.</span>
+    <span class="comment">//</span>
     <span class="comment">// If Stdin is nil, the process reads from the null device (os.DevNull).</span>
+    <span class="comment">//</span>
     <span class="comment">// If Stdin is an *os.File, the process&#39;s standard input is connected</span>
     <span class="comment">// directly to that file.</span>
+    <span class="comment">//</span>
     <span class="comment">// Otherwise, during the execution of the command a separate</span>
     <span class="comment">// goroutine reads from Stdin and delivers that data to the command</span>
     <span class="comment">// over a pipe. In this case, Wait does not complete until the goroutine</span>
@@ -127,8 +130,16 @@ Example:
     <span class="comment">// If either is nil, Run connects the corresponding file descriptor</span>
     <span class="comment">// to the null device (os.DevNull).</span>
     <span class="comment">//</span>
-    <span class="comment">// If Stdout and Stderr are the same writer, and have a type that can be compared with ==,</span>
-    <span class="comment">// at most one goroutine at a time will call Write.</span>
+    <span class="comment">// If either is an *os.File, the corresponding output from the process</span>
+    <span class="comment">// is connected directly to that file.</span>
+    <span class="comment">//</span>
+    <span class="comment">// Otherwise, during the execution of the command a separate goroutine</span>
+    <span class="comment">// reads from the process over a pipe and delivers that data to the</span>
+    <span class="comment">// corresponding Writer. In this case, Wait does not complete until the</span>
+    <span class="comment">// goroutine reaches EOF or encounters an error.</span>
+    <span class="comment">//</span>
+    <span class="comment">// If Stdout and Stderr are the same writer, and have a type that can</span>
+    <span class="comment">// be compared with ==, at most one goroutine at a time will call Write.</span>
     Stdout <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>
 <span id="Cmd.Stderr"></span>    Stderr <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>
 
@@ -154,7 +165,7 @@ Cmd represents an external command being prepared or run.
 
 A Cmd cannot be reused after calling its Run, Output or CombinedOutput methods.
 
-<h3 id="Command">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L130">Command</a>
+<h3 id="Command">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L141">Command</a>
     <a href="#Command">¶</a></h3>
 <pre>func Command(name <a href="/builtin/#string">string</a>, arg ...<a href="/builtin/#string">string</a>) *<a href="#Cmd">Cmd</a></pre>
 
@@ -197,7 +208,7 @@ Example:
         log.Fatal(err)
     }
 
-<h3 id="CommandContext">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L150">CommandContext</a>
+<h3 id="CommandContext">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L161">CommandContext</a>
     <a href="#CommandContext">¶</a></h3>
 <pre>func CommandContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, name <a href="/builtin/#string">string</a>, arg ...<a href="/builtin/#string">string</a>) *<a href="#Cmd">Cmd</a></pre>
 
@@ -217,7 +228,7 @@ Example:
         // will be interrupted.
     }
 
-<h3 id="Cmd.CombinedOutput">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L486">CombinedOutput</a>
+<h3 id="Cmd.CombinedOutput">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L501">CombinedOutput</a>
     <a href="#Cmd.CombinedOutput">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) CombinedOutput() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -234,7 +245,7 @@ Example:
     }
     fmt.Printf("%s\n", stdoutStderr)
 
-<h3 id="Cmd.Output">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L463">Output</a>
+<h3 id="Cmd.Output">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L478">Output</a>
     <a href="#Cmd.Output">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) Output() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -251,7 +262,7 @@ Example:
     }
     fmt.Printf("The date is %s\n", out)
 
-<h3 id="Cmd.Run">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L275">Run</a>
+<h3 id="Cmd.Run">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L291">Run</a>
     <a href="#Cmd.Run">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) Run() <a href="/builtin/#error">error</a></pre>
 
@@ -263,6 +274,11 @@ stdout, and stderr, and exits with a zero exit status.
 If the command starts but does not complete successfully, the error is of type
 *ExitError. Other error types may be returned for other situations.
 
+If the calling goroutine has locked the operating system thread with
+runtime.LockOSThread and modified any inheritable OS-level thread state (for
+example, Linux or Plan 9 name spaces), the new process will inherit the caller's
+thread state.
+
 <a id="exampleCmd_Run"></a>
 Example:
 
@@ -271,7 +287,7 @@ Example:
     err := cmd.Run()
     log.Printf("Command finished with error: %v", err)
 
-<h3 id="Cmd.Start">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L312">Start</a>
+<h3 id="Cmd.Start">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L328">Start</a>
     <a href="#Cmd.Start">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) Start() <a href="/builtin/#error">error</a></pre>
 
@@ -292,7 +308,7 @@ Example:
     err = cmd.Wait()
     log.Printf("Command finished with error: %v", err)
 
-<h3 id="Cmd.StderrPipe">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L623">StderrPipe</a>
+<h3 id="Cmd.StderrPipe">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L588">StderrPipe</a>
     <a href="#Cmd.StderrPipe">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) StderrPipe() (<a href="/io/">io</a>.<a href="/io/#ReadCloser">ReadCloser</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -325,7 +341,7 @@ Example:
         log.Fatal(err)
     }
 
-<h3 id="Cmd.StdinPipe">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L506">StdinPipe</a>
+<h3 id="Cmd.StdinPipe">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L521">StdinPipe</a>
     <a href="#Cmd.StdinPipe">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) StdinPipe() (<a href="/io/">io</a>.<a href="/io/#WriteCloser">WriteCloser</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -356,7 +372,7 @@ Example:
 
     fmt.Printf("%s\n", out)
 
-<h3 id="Cmd.StdoutPipe">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L598">StdoutPipe</a>
+<h3 id="Cmd.StdoutPipe">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L563">StdoutPipe</a>
     <a href="#Cmd.StdoutPipe">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) StdoutPipe() (<a href="/io/">io</a>.<a href="/io/#ReadCloser">ReadCloser</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -392,7 +408,7 @@ Example:
     }
     fmt.Printf("%s is %d years old\n", person.Name, person.Age)
 
-<h3 id="Cmd.Wait">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L427">Wait</a>
+<h3 id="Cmd.Wait">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L442">Wait</a>
     <a href="#Cmd.Wait">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) Wait() <a href="/builtin/#error">error</a></pre>
 
@@ -407,8 +423,8 @@ stdout, and stderr, and exits with a zero exit status.
 If the command fails to run or doesn't complete successfully, the error is of
 type *ExitError. Other error types may be returned for I/O problems.
 
-If c.Stdin is not an *os.File, Wait also waits for the I/O loop copying from
-c.Stdin into the process's standard input to complete.
+If any of c.Stdin, c.Stdout or c.Stderr are not an *os.File, Wait also waits for
+the respective I/O loop copying to or from the process to complete.
 
 Wait releases any resources associated with the Cmd.
 
@@ -427,7 +443,7 @@ failed.
 <pre>func (e *<a href="#Error">Error</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="ExitError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L389">ExitError</a>
+<h2 id="ExitError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L405">ExitError</a>
     <a href="#ExitError">¶</a></h2>
 <pre>type ExitError struct {
     *<a href="/os/">os</a>.<a href="/os/#ProcessState">ProcessState</a>
@@ -447,7 +463,7 @@ failed.
 
 An ExitError reports an unsuccessful exit by a command.
 
-<h3 id="ExitError.Error">func (*ExitError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L405">Error</a>
+<h3 id="ExitError.Error">func (*ExitError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L421">Error</a>
     <a href="#ExitError.Error">¶</a></h3>
 <pre>func (e *<a href="#ExitError">ExitError</a>) Error() <a href="/builtin/#string">string</a></pre>
 

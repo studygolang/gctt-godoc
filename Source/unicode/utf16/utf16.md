@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package utf16
 
   `import "unicode/utf16"`

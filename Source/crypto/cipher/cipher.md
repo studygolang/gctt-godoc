@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package cipher
 
   `import "crypto/cipher"`
@@ -62,7 +62,7 @@ Publication 800-38A.
     <span class="comment">// slice. The nonce must be NonceSize() bytes long and unique for all</span>
     <span class="comment">// time, for a given key.</span>
     <span class="comment">//</span>
-    <span class="comment">// The plaintext and dst may alias exactly or not at all. To reuse</span>
+    <span class="comment">// The plaintext and dst must overlap exactly or not at all. To reuse</span>
     <span class="comment">// plaintext&#39;s storage for the encrypted output, use plaintext[:0] as dst.</span>
     Seal(dst, nonce, plaintext, additionalData []<a href="/builtin/#byte">byte</a>) []<a href="/builtin/#byte">byte</a>
 
@@ -72,7 +72,7 @@ Publication 800-38A.
     <span class="comment">// bytes long and both it and the additional data must match the</span>
     <span class="comment">// value passed to Seal.</span>
     <span class="comment">//</span>
-    <span class="comment">// The ciphertext and dst may alias exactly or not at all. To reuse</span>
+    <span class="comment">// The ciphertext and dst must overlap exactly or not at all. To reuse</span>
     <span class="comment">// ciphertext&#39;s storage for the decrypted output, use ciphertext[:0] as dst.</span>
     <span class="comment">//</span>
     <span class="comment">// Even if the function fails, the contents of dst, up to its capacity,</span>
@@ -100,12 +100,14 @@ package documentation for details.
 <a id="exampleNewGCM_decrypt"></a>
 Example:
 
-    // The key argument should be the AES key, either 16 or 32 bytes
-    // to select AES-128 or AES-256.
-    key := []byte("AES256Key-32Characters1234567890")
-    ciphertext, _ := hex.DecodeString("1019aa66cd7c024f9efd0038899dae1973ee69427f5a6579eba292ffe1b5a260")
-
-    nonce, _ := hex.DecodeString("37b8e8a308c354048d245f6d")
+    // Load your secret key from a safe place and reuse it across multiple
+    // Seal/Open calls. (Obviously don't use this example key for anything
+    // real.) If you want to convert a passphrase to a key, use a suitable
+    // package like bcrypt or scrypt.
+    // When decoded the key should be 16 bytes (AES-128) or 32 (AES-256).
+    key, _ := hex.DecodeString("6368616e676520746869732070617373776f726420746f206120736563726574")
+    ciphertext, _ := hex.DecodeString("c3aaa29f002ca75870806e44086700f62ce4d43e902b3888e23ceff797a7a471")
+    nonce, _ := hex.DecodeString("64a9433eae7ccceee2fc0eda")
 
     block, err := aes.NewCipher(key)
     if err != nil {
@@ -129,9 +131,12 @@ Example:
 <a id="exampleNewGCM_encrypt"></a>
 Example:
 
-    // The key argument should be the AES key, either 16 or 32 bytes
-    // to select AES-128 or AES-256.
-    key := []byte("AES256Key-32Characters1234567890")
+    // Load your secret key from a safe place and reuse it across multiple
+    // Seal/Open calls. (Obviously don't use this example key for anything
+    // real.) If you want to convert a passphrase to a key, use a suitable
+    // package like bcrypt or scrypt.
+    // When decoded the key should be 16 bytes (AES-128) or 32 (AES-256).
+    key, _ := hex.DecodeString("6368616e676520746869732070617373776f726420746f206120736563726574")
     plaintext := []byte("exampleplaintext")
 
     block, err := aes.NewCipher(key)
@@ -171,11 +176,11 @@ NewGCM, which is faster and more resistant to misuse.
     BlockSize() <a href="/builtin/#int">int</a>
 
     <span class="comment">// Encrypt encrypts the first block in src into dst.</span>
-    <span class="comment">// Dst and src may point at the same memory.</span>
+    <span class="comment">// Dst and src must overlap entirely or not at all.</span>
     Encrypt(dst, src []<a href="/builtin/#byte">byte</a>)
 
     <span class="comment">// Decrypt decrypts the first block in src into dst.</span>
-    <span class="comment">// Dst and src may point at the same memory.</span>
+    <span class="comment">// Dst and src must overlap entirely or not at all.</span>
     Decrypt(dst, src []<a href="/builtin/#byte">byte</a>)
 }</pre>
 
@@ -183,15 +188,23 @@ A Block represents an implementation of block cipher using a given key. It
 provides the capability to encrypt or decrypt individual blocks. The mode
 implementations extend that capability to streams of blocks.
 
-<h2 id="BlockMode">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cipher.go#L30">BlockMode</a>
+<h2 id="BlockMode">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cipher.go#L35">BlockMode</a>
     <a href="#BlockMode">¶</a></h2>
 <pre>type BlockMode interface {
     <span class="comment">// BlockSize returns the mode&#39;s block size.</span>
     BlockSize() <a href="/builtin/#int">int</a>
 
     <span class="comment">// CryptBlocks encrypts or decrypts a number of blocks. The length of</span>
-    <span class="comment">// src must be a multiple of the block size. Dst and src may point to</span>
-    <span class="comment">// the same memory.</span>
+    <span class="comment">// src must be a multiple of the block size. Dst and src must overlap</span>
+    <span class="comment">// entirely or not at all.</span>
+    <span class="comment">//</span>
+    <span class="comment">// If len(dst) &lt; len(src), CryptBlocks should panic. It is acceptable</span>
+    <span class="comment">// to pass a dst bigger than src, and in that case, CryptBlocks will</span>
+    <span class="comment">// only update dst[:len(src)] and will not touch the rest of dst.</span>
+    <span class="comment">//</span>
+    <span class="comment">// Multiple calls to CryptBlocks behave as if the concatenation of</span>
+    <span class="comment">// the src buffers was passed in a single run. That is, BlockMode</span>
+    <span class="comment">// maintains state and does not reset at each CryptBlocks call.</span>
     CryptBlocks(dst, src []<a href="/builtin/#byte">byte</a>)
 }</pre>
 
@@ -209,8 +222,12 @@ block size and must match the iv used to encrypt the data.
 <a id="exampleNewCBCDecrypter"></a>
 Example:
 
-    key := []byte("example key 1234")
-    ciphertext, _ := hex.DecodeString("f363f3ccdcb12bb883abf484ba77d9cd7d32b5baecb3d4b1b3e0e4beffdb3ded")
+    // Load your secret key from a safe place and reuse it across multiple
+    // NewCipher calls. (Obviously don't use this example key for anything
+    // real.) If you want to convert a passphrase to a key, use a suitable
+    // package like bcrypt or scrypt.
+    key, _ := hex.DecodeString("6368616e676520746869732070617373")
+    ciphertext, _ := hex.DecodeString("73c86d43a9d700a253a96c85b0f6b03ac9792e0e757f869cca306bd3cba1c62b")
 
     block, err := aes.NewCipher(key)
     if err != nil {
@@ -257,7 +274,11 @@ block size.
 <a id="exampleNewCBCEncrypter"></a>
 Example:
 
-    key := []byte("example key 1234")
+    // Load your secret key from a safe place and reuse it across multiple
+    // NewCipher calls. (Obviously don't use this example key for anything
+    // real.) If you want to convert a passphrase to a key, use a suitable
+    // package like bcrypt or scrypt.
+    key, _ := hex.DecodeString("6368616e676520746869732070617373")
     plaintext := []byte("exampleplaintext")
 
     // CBC mode works on blocks so plaintexts may need to be padded to the
@@ -294,10 +315,15 @@ Example:
     <a href="#Stream">¶</a></h2>
 <pre>type Stream interface {
     <span class="comment">// XORKeyStream XORs each byte in the given slice with a byte from the</span>
-    <span class="comment">// cipher&#39;s key stream. Dst and src may point to the same memory.</span>
+    <span class="comment">// cipher&#39;s key stream. Dst and src must overlap entirely or not at all.</span>
+    <span class="comment">//</span>
     <span class="comment">// If len(dst) &lt; len(src), XORKeyStream should panic. It is acceptable</span>
     <span class="comment">// to pass a dst bigger than src, and in that case, XORKeyStream will</span>
     <span class="comment">// only update dst[:len(src)] and will not touch the rest of dst.</span>
+    <span class="comment">//</span>
+    <span class="comment">// Multiple calls to XORKeyStream behave as if the concatenation of</span>
+    <span class="comment">// the src buffers was passed in a single run. That is, Stream</span>
+    <span class="comment">// maintains state and does not reset at each XORKeyStream call.</span>
     XORKeyStream(dst, src []<a href="/builtin/#byte">byte</a>)
 }</pre>
 
@@ -313,8 +339,12 @@ the given Block. The iv must be the same length as the Block's block size.
 <a id="exampleNewCFBDecrypter"></a>
 Example:
 
-    key := []byte("example key 1234")
-    ciphertext, _ := hex.DecodeString("22277966616d9bc47177bd02603d08c9a67d5380d0fe8cf3b44438dff7b9")
+    // Load your secret key from a safe place and reuse it across multiple
+    // NewCipher calls. (Obviously don't use this example key for anything
+    // real.) If you want to convert a passphrase to a key, use a suitable
+    // package like bcrypt or scrypt.
+    key, _ := hex.DecodeString("6368616e676520746869732070617373")
+    ciphertext, _ := hex.DecodeString("7dd015f06bec7f1b8f6559dad89f4131da62261786845100056b353194ad")
 
     block, err := aes.NewCipher(key)
     if err != nil {
@@ -346,7 +376,11 @@ the given Block. The iv must be the same length as the Block's block size.
 <a id="exampleNewCFBEncrypter"></a>
 Example:
 
-    key := []byte("example key 1234")
+    // Load your secret key from a safe place and reuse it across multiple
+    // NewCipher calls. (Obviously don't use this example key for anything
+    // real.) If you want to convert a passphrase to a key, use a suitable
+    // package like bcrypt or scrypt.
+    key, _ := hex.DecodeString("6368616e676520746869732070617373")
     plaintext := []byte("some plaintext")
 
     block, err := aes.NewCipher(key)
@@ -368,6 +402,7 @@ Example:
     // It's important to remember that ciphertexts must be authenticated
     // (i.e. by using crypto/hmac) as well as being encrypted in order to
     // be secure.
+    fmt.Printf("%x\n", ciphertext)
 
 <h3 id="NewCTR">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/ctr.go#L23">NewCTR</a>
     <a href="#NewCTR">¶</a></h3>
@@ -379,7 +414,11 @@ mode. The length of iv must be the same as the Block's block size.
 <a id="exampleNewCTR"></a>
 Example:
 
-    key := []byte("example key 1234")
+    // Load your secret key from a safe place and reuse it across multiple
+    // NewCipher calls. (Obviously don't use this example key for anything
+    // real.) If you want to convert a passphrase to a key, use a suitable
+    // package like bcrypt or scrypt.
+    key, _ := hex.DecodeString("6368616e676520746869732070617373")
     plaintext := []byte("some plaintext")
 
     block, err := aes.NewCipher(key)
@@ -423,7 +462,11 @@ block size.
 <a id="exampleNewOFB"></a>
 Example:
 
-    key := []byte("example key 1234")
+    // Load your secret key from a safe place and reuse it across multiple
+    // NewCipher calls. (Obviously don't use this example key for anything
+    // real.) If you want to convert a passphrase to a key, use a suitable
+    // package like bcrypt or scrypt.
+    key, _ := hex.DecodeString("6368616e676520746869732070617373")
     plaintext := []byte("some plaintext")
 
     block, err := aes.NewCipher(key)
@@ -469,7 +512,11 @@ each slice of data which passes through.
 <a id="exampleStreamReader"></a>
 Example:
 
-    key := []byte("example key 1234")
+    // Load your secret key from a safe place and reuse it across multiple
+    // NewCipher calls. (Obviously don't use this example key for anything
+    // real.) If you want to convert a passphrase to a key, use a suitable
+    // package like bcrypt or scrypt.
+    key, _ := hex.DecodeString("6368616e676520746869732070617373")
 
     inFile, err := os.Open("encrypted-file")
     if err != nil {
@@ -525,7 +572,11 @@ internal buffering; Close does not need to be called to flush write data.
 <a id="exampleStreamWriter"></a>
 Example:
 
-    key := []byte("example key 1234")
+    // Load your secret key from a safe place and reuse it across multiple
+    // NewCipher calls. (Obviously don't use this example key for anything
+    // real.) If you want to convert a passphrase to a key, use a suitable
+    // package like bcrypt or scrypt.
+    key, _ := hex.DecodeString("6368616e676520746869732070617373")
 
     inFile, err := os.Open("plaintext-file")
     if err != nil {
@@ -560,7 +611,7 @@ Example:
     // StreamReader in this manner, an attacker could flip arbitrary bits in
     // the decrypted result.
 
-<h3 id="StreamWriter.Close">func (StreamWriter) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/io.go#L40">Close</a>
+<h3 id="StreamWriter.Close">func (StreamWriter) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/io.go#L38">Close</a>
     <a href="#StreamWriter.Close">¶</a></h3>
 <pre>func (w <a href="#StreamWriter">StreamWriter</a>) Close() <a href="/builtin/#error">error</a></pre>
 

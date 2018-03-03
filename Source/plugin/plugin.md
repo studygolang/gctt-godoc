@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package plugin
 
   `import "plugin"`
@@ -16,8 +16,8 @@ When a plugin is first opened, the init functions of all packages not already
 part of the program are called. The main function is not run. A plugin is only
 initialized once, and cannot be closed.
 
-The plugin support is currently incomplete, only supports Linux, and has known
-bugs. Please report any issues.
+Currently plugins are only supported on Linux and macOS. Please report any
+issues.
 
 ## Index
 
@@ -37,14 +37,14 @@ bugs. Please report any issues.
 
 Plugin is a loaded Go plugin.
 
-<h3 id="Open">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/plugin/plugin.go#L20">Open</a>
+<h3 id="Open">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/plugin/plugin.go#L21">Open</a>
     <a href="#Open">¶</a></h3>
 <pre>func Open(path <a href="/builtin/#string">string</a>) (*<a href="#Plugin">Plugin</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Open opens a Go plugin. If a path has already been opened, then the existing
 *Plugin is returned. It is safe for concurrent use by multiple goroutines.
 
-<h3 id="Plugin.Lookup">func (*Plugin) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/plugin/plugin.go#L28">Lookup</a>
+<h3 id="Plugin.Lookup">func (*Plugin) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/plugin/plugin.go#L29">Lookup</a>
     <a href="#Plugin.Lookup">¶</a></h3>
 <pre>func (p *<a href="#Plugin">Plugin</a>) Lookup(symName <a href="/builtin/#string">string</a>) (<a href="#Symbol">Symbol</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -52,7 +52,7 @@ Lookup searches for a symbol named symName in plugin p. A symbol is any exported
 variable or function. It reports an error if the symbol is not found. It is safe
 for concurrent use by multiple goroutines.
 
-<h2 id="Symbol">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/plugin/plugin.go#L61">Symbol</a>
+<h2 id="Symbol">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/plugin/plugin.go#L62">Symbol</a>
     <a href="#Symbol">¶</a></h2>
 <pre>type Symbol interface{}</pre>
 

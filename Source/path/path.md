@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package path
 
   `import "path"`
@@ -125,11 +125,15 @@ Example:
 
     fmt.Println(path.Dir("/a/b/c"))
     fmt.Println(path.Dir("a/b/c"))
+    fmt.Println(path.Dir("/a/"))
+    fmt.Println(path.Dir("a/"))
     fmt.Println(path.Dir("/"))
     fmt.Println(path.Dir(""))
     // Output:
     // /a/b
     // a/b
+    // /a
+    // a
     // /
     // .
 

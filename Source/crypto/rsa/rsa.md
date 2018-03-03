@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package rsa
 
   `import "crypto/rsa"`
@@ -49,7 +49,7 @@ algorithms.
   - [func (priv *PrivateKey) Decrypt(rand io.Reader, ciphertext []byte, opts crypto.DecrypterOpts) (plaintext []byte, err error)](#PrivateKey.Decrypt)
   - [func (priv *PrivateKey) Precompute()](#PrivateKey.Precompute)
   - [func (priv *PrivateKey) Public() crypto.PublicKey](#PrivateKey.Public)
-  - [func (priv *PrivateKey) Sign(rand io.Reader, msg []byte, opts crypto.SignerOpts) ([]byte, error)](#PrivateKey.Sign)
+  - [func (priv *PrivateKey) Sign(rand io.Reader, digest []byte, opts crypto.SignerOpts) ([]byte, error)](#PrivateKey.Sign)
   - [func (priv *PrivateKey) Validate() error](#PrivateKey.Validate)
 - [type PublicKey](#PublicKey)
 
@@ -93,7 +93,7 @@ large for the size of the public key.
 ErrVerification represents a failure to verify a signature. It is deliberately
 vague to avoid adaptive attacks.
 
-<h2 id="DecryptOAEP">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L575">DecryptOAEP</a>
+<h2 id="DecryptOAEP">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L576">DecryptOAEP</a>
     <a href="#DecryptOAEP">¶</a></h2>
 <pre>func DecryptOAEP(hash <a href="/hash/">hash</a>.<a href="/hash/#Hash">Hash</a>, random <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, priv *<a href="#PrivateKey">PrivateKey</a>, ciphertext []<a href="/builtin/#byte">byte</a>, label []<a href="/builtin/#byte">byte</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -218,7 +218,7 @@ Example:
 
     fmt.Printf("Plaintext: %s\n", string(plaintext))
 
-<h2 id="EncryptOAEP">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L359">EncryptOAEP</a>
+<h2 id="EncryptOAEP">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L361">EncryptOAEP</a>
     <a href="#EncryptOAEP">¶</a></h2>
 <pre>func EncryptOAEP(hash <a href="/hash/">hash</a>.<a href="/hash/#Hash">Hash</a>, random <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, pub *<a href="#PublicKey">PublicKey</a>, msg []<a href="/builtin/#byte">byte</a>, label []<a href="/builtin/#byte">byte</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -364,7 +364,7 @@ message using the given hash function and sig is the signature. A valid
 signature is indicated by returning a nil error. The opts argument may be nil,
 in which case sensible defaults are used.
 
-<h2 id="CRTValue">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L141">CRTValue</a>
+<h2 id="CRTValue">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L143">CRTValue</a>
     <a href="#CRTValue">¶</a></h2>
 <pre>type CRTValue struct {
 <span id="CRTValue.Exp"></span>    Exp   *<a href="/math/big/">big</a>.<a href="/math/big/#Int">Int</a> <span class="comment">// D mod (prime-1).</span>
@@ -422,7 +422,7 @@ PSSOptions contains options for creating and verifying PSS signatures.
 
 HashFunc returns pssOpts.Hash so that PSSOptions implements crypto.SignerOpts.
 
-<h2 id="PrecomputedValues">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L129">PrecomputedValues</a>
+<h2 id="PrecomputedValues">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L131">PrecomputedValues</a>
     <a href="#PrecomputedValues">¶</a></h2>
 <pre>type PrecomputedValues struct {
 <span id="PrecomputedValues.Dp"></span>    Dp, Dq *<a href="/math/big/">big</a>.<a href="/math/big/#Int">Int</a> <span class="comment">// D mod (P-1) (or mod Q-1)</span>
@@ -450,14 +450,14 @@ HashFunc returns pssOpts.Hash so that PSSOptions implements crypto.SignerOpts.
 
 A PrivateKey represents an RSA key
 
-<h3 id="GenerateKey">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L187">GenerateKey</a>
+<h3 id="GenerateKey">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L189">GenerateKey</a>
     <a href="#GenerateKey">¶</a></h3>
 <pre>func GenerateKey(random <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, bits <a href="/builtin/#int">int</a>) (*<a href="#PrivateKey">PrivateKey</a>, <a href="/builtin/#error">error</a>)</pre>
 
 GenerateKey generates an RSA keypair of the given bit size using the random
 source random (for example, crypto/rand.Reader).
 
-<h3 id="GenerateMultiPrimeKey">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L202">GenerateMultiPrimeKey</a>
+<h3 id="GenerateMultiPrimeKey">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L204">GenerateMultiPrimeKey</a>
     <a href="#GenerateMultiPrimeKey">¶</a></h3>
 <pre>func GenerateMultiPrimeKey(random <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, nprimes <a href="/builtin/#int">int</a>, bits <a href="/builtin/#int">int</a>) (*<a href="#PrivateKey">PrivateKey</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -472,7 +472,7 @@ Table 1 in [2] suggests maximum numbers of primes for a given size.
 [1] US patent 4405829 (1972, expired) [2]
 http://www.cacr.math.uwaterloo.ca/techreports/2006/cacr2006-16.pdf
 
-<h3 id="PrivateKey.Decrypt">func (*PrivateKey) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L101">Decrypt</a>
+<h3 id="PrivateKey.Decrypt">func (*PrivateKey) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L103">Decrypt</a>
     <a href="#PrivateKey.Decrypt">¶</a></h3>
 <pre>func (priv *<a href="#PrivateKey">PrivateKey</a>) Decrypt(rand <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, ciphertext []<a href="/builtin/#byte">byte</a>, opts <a href="/crypto/">crypto</a>.<a href="/crypto/#DecrypterOpts">DecrypterOpts</a>) (plaintext []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -480,7 +480,7 @@ Decrypt decrypts ciphertext with priv. If opts is nil or of type
 *PKCS1v15DecryptOptions then PKCS#1 v1.5 decryption is performed. Otherwise opts
 must have type *OAEPOptions and OAEP decryption is done.
 
-<h3 id="PrivateKey.Precompute">func (*PrivateKey) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L438">Precompute</a>
+<h3 id="PrivateKey.Precompute">func (*PrivateKey) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L439">Precompute</a>
     <a href="#PrivateKey.Precompute">¶</a></h3>
 <pre>func (priv *<a href="#PrivateKey">PrivateKey</a>) Precompute()</pre>
 
@@ -493,17 +493,19 @@ the future.
 
 Public returns the public key corresponding to priv.
 
-<h3 id="PrivateKey.Sign">func (*PrivateKey) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L90">Sign</a>
+<h3 id="PrivateKey.Sign">func (*PrivateKey) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L92">Sign</a>
     <a href="#PrivateKey.Sign">¶</a></h3>
-<pre>func (priv *<a href="#PrivateKey">PrivateKey</a>) Sign(rand <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, msg []<a href="/builtin/#byte">byte</a>, opts <a href="/crypto/">crypto</a>.<a href="/crypto/#SignerOpts">SignerOpts</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
+<pre>func (priv *<a href="#PrivateKey">PrivateKey</a>) Sign(rand <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, digest []<a href="/builtin/#byte">byte</a>, opts <a href="/crypto/">crypto</a>.<a href="/crypto/#SignerOpts">SignerOpts</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
-Sign signs msg with priv, reading randomness from rand. If opts is a *PSSOptions
-then the PSS algorithm will be used, otherwise PKCS#1 v1.5 will be used. This
-method is intended to support keys where the private part is kept in, for
-example, a hardware module. Common uses should use the Sign* functions in this
-package.
+Sign signs digest with priv, reading randomness from rand. If opts is a
+*PSSOptions then the PSS algorithm will be used, otherwise PKCS#1 v1.5 will be
+used.
 
-<h3 id="PrivateKey.Validate">func (*PrivateKey) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L149">Validate</a>
+This method implements crypto.Signer, which is an interface to support keys
+where the private part is kept in, for example, a hardware module. Common uses
+should use the Sign* functions in this package directly.
+
+<h3 id="PrivateKey.Validate">func (*PrivateKey) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rsa/rsa.go#L151">Validate</a>
     <a href="#PrivateKey.Validate">¶</a></h3>
 <pre>func (priv *<a href="#PrivateKey">PrivateKey</a>) Validate() <a href="/builtin/#error">error</a></pre>
 

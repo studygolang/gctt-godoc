@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package gif
 
   `import "image/gif"`
@@ -33,34 +33,34 @@ The GIF specification is at http://www.w3.org/Graphics/GIF/spec-gif89a.txt.
 
 Disposal Methods.
 
-<h2 id="Decode">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/gif/reader.go#L482">Decode</a>
+<h2 id="Decode">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/gif/reader.go#L549">Decode</a>
     <a href="#Decode">¶</a></h2>
 <pre>func Decode(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (<a href="/image/">image</a>.<a href="/image/#Image">Image</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Decode reads a GIF image from r and returns the first embedded image as an
 image.Image.
 
-<h2 id="DecodeConfig">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/gif/reader.go#L539">DecodeConfig</a>
+<h2 id="DecodeConfig">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/gif/reader.go#L606">DecodeConfig</a>
     <a href="#DecodeConfig">¶</a></h2>
 <pre>func DecodeConfig(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (<a href="/image/">image</a>.<a href="/image/#Config">Config</a>, <a href="/builtin/#error">error</a>)</pre>
 
 DecodeConfig returns the global color model and dimensions of a GIF image
 without decoding the entire image.
 
-<h2 id="Encode">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/gif/writer.go#L351">Encode</a>
+<h2 id="Encode">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/gif/writer.go#L411">Encode</a>
     <a href="#Encode">¶</a></h2>
 <pre>func Encode(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, m <a href="/image/">image</a>.<a href="/image/#Image">Image</a>, o *<a href="#Options">Options</a>) <a href="/builtin/#error">error</a></pre>
 
 Encode writes the Image m to w in GIF format.
 
-<h2 id="EncodeAll">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/gif/writer.go#L302">EncodeAll</a>
+<h2 id="EncodeAll">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/gif/writer.go#L362">EncodeAll</a>
     <a href="#EncodeAll">¶</a></h2>
 <pre>func EncodeAll(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, g *<a href="#GIF">GIF</a>) <a href="/builtin/#error">error</a></pre>
 
 EncodeAll writes the images in g to w in GIF format with the given loop count
 and delay between frames.
 
-<h2 id="GIF">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/gif/reader.go#L491">GIF</a>
+<h2 id="GIF">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/gif/reader.go#L558">GIF</a>
     <a href="#GIF">¶</a></h2>
 <pre>type GIF struct {
 <span id="GIF.Image"></span>    Image     []*<a href="/image/">image</a>.<a href="/image/#Paletted">Paletted</a> <span class="comment">// The successive images.</span>
@@ -88,14 +88,14 @@ and delay between frames.
 
 GIF represents the possibly multiple images stored in a GIF file.
 
-<h3 id="DecodeAll">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/gif/reader.go#L517">DecodeAll</a>
+<h3 id="DecodeAll">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/gif/reader.go#L584">DecodeAll</a>
     <a href="#DecodeAll">¶</a></h3>
 <pre>func DecodeAll(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (*<a href="#GIF">GIF</a>, <a href="/builtin/#error">error</a>)</pre>
 
 DecodeAll reads a GIF image from r and returns the sequential frames and timing
 information.
 
-<h2 id="Options">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/gif/writer.go#L286">Options</a>
+<h2 id="Options">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/gif/writer.go#L346">Options</a>
     <a href="#Options">¶</a></h2>
 <pre>type Options struct {
 <span id="Options.NumColors"></span>    <span class="comment">// NumColors is the maximum number of colors used in the image.</span>

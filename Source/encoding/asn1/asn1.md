@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package asn1
 
   `import "encoding/asn1"`
@@ -16,6 +16,7 @@ http://luca.ntop.org/Teaching/Appunti/asn1.html.
 - [Constants](#pkg-constants)
 - [Variables](#pkg-variables)
 - [func Marshal(val interface{}) ([]byte, error)](#Marshal)
+- [func MarshalWithParams(val interface{}, params string) ([]byte, error)](#MarshalWithParams)
 - [func Unmarshal(b []byte, val interface{}) (rest []byte, err error)](#Unmarshal)
 - [func UnmarshalWithParams(b []byte, val interface{}, params string) (rest []byte, err error)](#UnmarshalWithParams)
 - [type BitString](#BitString)
@@ -49,6 +50,7 @@ http://luca.ntop.org/Teaching/Appunti/asn1.html.
     <span id="TagUTF8String">TagUTF8String</span>      = 12
     <span id="TagSequence">TagSequence</span>        = 16
     <span id="TagSet">TagSet</span>             = 17
+    <span id="TagNumericString">TagNumericString</span>   = 18
     <span id="TagPrintableString">TagPrintableString</span> = 19
     <span id="TagT61String">TagT61String</span>       = 20
     <span id="TagIA5String">TagIA5String</span>       = 22
@@ -78,7 +80,7 @@ NullBytes contains bytes representing the DER-encoded ASN.1 NULL type.
 
 NullRawValue is a RawValue with its Tag set to the ASN.1 NULL type tag (5).
 
-<h2 id="Marshal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/marshal.go#L642">Marshal</a>
+<h2 id="Marshal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/marshal.go#L665">Marshal</a>
     <a href="#Marshal">¶</a></h2>
 <pre>func Marshal(val interface{}) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -94,7 +96,14 @@ used:
     utc:         causes time.Time to be marshaled as ASN.1, UTCTime values
     generalized: causes time.Time to be marshaled as ASN.1, GeneralizedTime values
 
-<h2 id="Unmarshal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L1001">Unmarshal</a>
+<h2 id="MarshalWithParams">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/marshal.go#L671">MarshalWithParams</a>
+    <a href="#MarshalWithParams">¶</a></h2>
+<pre>func MarshalWithParams(val interface{}, params <a href="/builtin/#string">string</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
+
+MarshalWithParams allows field parameters to be specified for the top-level
+element. The form of the params is the same as the field tags.
+
+<h2 id="Unmarshal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L1036">Unmarshal</a>
     <a href="#Unmarshal">¶</a></h2>
 <pre>func Unmarshal(b []<a href="/builtin/#byte">byte</a>, val interface{}) (rest []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -117,7 +126,8 @@ An ASN.1 ENUMERATED can be written to an Enumerated.
 
 An ASN.1 UTCTIME or GENERALIZEDTIME can be written to a time.Time.
 
-An ASN.1 PrintableString or IA5String can be written to a string.
+An ASN.1 PrintableString, IA5String, or NumericString can be written to a
+string.
 
 Any of the above ASN.1 values can be written to an interface{}. The value stored
 in the interface has the corresponding Go type. For integers, that type is
@@ -131,7 +141,7 @@ the sequence can be written to the corresponding element in the struct.
 
 The following tags on struct fields have special meaning to Unmarshal:
 
-    application specifies that a APPLICATION tag is used
+    application specifies that an APPLICATION tag is used
     default:x   sets the default value for optional integer fields (only used if optional is also present)
     explicit    specifies that an additional, explicit tag wraps the implicit one
     optional    marks the field as ASN.1 OPTIONAL
@@ -148,7 +158,7 @@ cannot be given.
 Other ASN.1 types are not supported; if it encounters them, Unmarshal returns a
 parse error.
 
-<h2 id="UnmarshalWithParams">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L1007">UnmarshalWithParams</a>
+<h2 id="UnmarshalWithParams">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L1042">UnmarshalWithParams</a>
     <a href="#UnmarshalWithParams">¶</a></h2>
 <pre>func UnmarshalWithParams(b []<a href="/builtin/#byte">byte</a>, val interface{}, params <a href="/builtin/#string">string</a>) (rest []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -209,7 +219,7 @@ Equal reports whether oi and other represent the same identifier.
 <pre>func (oi <a href="#ObjectIdentifier">ObjectIdentifier</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="RawContent">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L442">RawContent</a>
+<h2 id="RawContent">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L479">RawContent</a>
     <a href="#RawContent">¶</a></h2>
 <pre>type RawContent []<a href="/builtin/#byte">byte</a></pre>
 
@@ -217,7 +227,7 @@ RawContent is used to signal that the undecoded, DER data needs to be preserved
 for a struct. To use it, the first field of the struct must have this type. It's
 an error for any of the other fields to have this type.
 
-<h2 id="RawValue">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L432">RawValue</a>
+<h2 id="RawValue">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L469">RawValue</a>
     <a href="#RawValue">¶</a></h2>
 <pre>type RawValue struct {
 <span id="RawValue.Class"></span>    Class, Tag <a href="/builtin/#int">int</a>

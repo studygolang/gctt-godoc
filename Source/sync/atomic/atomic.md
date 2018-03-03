@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package atomic
 
   `import "sync/atomic"`
@@ -334,14 +334,14 @@ Example:
     }
     _, _ = read, insert
 
-<h3 id="Value.Load">func (*Value) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/value.go#L20">Load</a>
+<h3 id="Value.Load">func (*Value) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/value.go#L18">Load</a>
     <a href="#Value.Load">¶</a></h3>
 <pre>func (v *<a href="#Value">Value</a>) Load() (x interface{})</pre>
 
 Load returns the value set by the most recent Store. It returns nil if there has
 been no call to Store for this Value.
 
-<h3 id="Value.Store">func (*Value) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/value.go#L37">Store</a>
+<h3 id="Value.Store">func (*Value) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/value.go#L35">Store</a>
     <a href="#Value.Store">¶</a></h3>
 <pre>func (v *<a href="#Value">Value</a>) Store(x interface{})</pre>
 

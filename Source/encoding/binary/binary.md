@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package binary
 
   `import "encoding/binary"`
@@ -43,6 +43,7 @@ buffers.
 - [PutUvarint](#examplePutUvarint)
 - [PutVarint](#examplePutVarint)
 - [Read](#exampleRead)
+- [Read (Multi)](#exampleRead_multi)
 - [Uvarint](#exampleUvarint)
 - [Varint](#exampleVarint)
 - [Write](#exampleWrite)
@@ -150,6 +151,34 @@ Example:
     }
     fmt.Print(pi)
     // Output: 3.141592653589793
+
+
+<a id="exampleRead_multi"></a>
+Example:
+
+    b := []byte{0x18, 0x2d, 0x44, 0x54, 0xfb, 0x21, 0x09, 0x40, 0xff, 0x01, 0x02, 0x03, 0xbe, 0xef}
+    r := bytes.NewReader(b)
+
+    var data struct {
+        PI   float64
+        Uate uint8
+        Mine [3]byte
+        Too  uint16
+    }
+
+    if err := binary.Read(r, binary.LittleEndian, &data); err != nil {
+        fmt.Println("binary.Read failed:", err)
+    }
+
+    fmt.Println(data.PI)
+    fmt.Println(data.Uate)
+    fmt.Printf("% x\n", data.Mine)
+    fmt.Println(data.Too)
+    // Output:
+    // 3.141592653589793
+    // 255
+    // 01 02 03
+    // 61374
 
 <h2 id="ReadUvarint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/varint.go#L96">ReadUvarint</a>
     <a href="#ReadUvarint">¶</a></h2>

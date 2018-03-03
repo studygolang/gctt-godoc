@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package elliptic
 
   `import "crypto/elliptic"`
@@ -39,14 +39,16 @@ using the given reader, which must return random data.
     <a href="#Marshal">¶</a></h2>
 <pre>func Marshal(curve <a href="#Curve">Curve</a>, x, y *<a href="/math/big/">big</a>.<a href="/math/big/#Int">Int</a>) []<a href="/builtin/#byte">byte</a></pre>
 
-Marshal converts a point into the form specified in section 4.3.6 of ANSI X9.62.
+Marshal converts a point into the uncompressed form specified in section 4.3.6
+of ANSI X9.62.
 
-<h2 id="Unmarshal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/elliptic/elliptic.go#L310">Unmarshal</a>
+<h2 id="Unmarshal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/elliptic/elliptic.go#L311">Unmarshal</a>
     <a href="#Unmarshal">¶</a></h2>
 <pre>func Unmarshal(curve <a href="#Curve">Curve</a>, data []<a href="/builtin/#byte">byte</a>) (x, y *<a href="/math/big/">big</a>.<a href="/math/big/#Int">Int</a>)</pre>
 
 Unmarshal converts a point, serialized by Marshal, into an x, y pair. It is an
-error if the point is not on the curve. On error, x = nil.
+error if the point is not in uncompressed form or is not on the curve. On error,
+x = nil.
 
 <h2 id="Curve">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/elliptic/elliptic.go#L14">Curve</a>
     <a href="#Curve">¶</a></h2>
@@ -77,7 +79,7 @@ P224 returns a Curve which implements P-224 (see FIPS 186-3, section D.2.2).
 
 The cryptographic operations are implemented using constant-time algorithms.
 
-<h3 id="P256">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/elliptic/elliptic.go#L362">P256</a>
+<h3 id="P256">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/elliptic/elliptic.go#L367">P256</a>
     <a href="#P256">¶</a></h3>
 <pre>func P256() <a href="#Curve">Curve</a></pre>
 
@@ -85,7 +87,7 @@ P256 returns a Curve which implements P-256 (see FIPS 186-3, section D.2.3)
 
 The cryptographic operations are implemented using constant-time algorithms.
 
-<h3 id="P384">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/elliptic/elliptic.go#L370">P384</a>
+<h3 id="P384">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/elliptic/elliptic.go#L375">P384</a>
     <a href="#P384">¶</a></h3>
 <pre>func P384() <a href="#Curve">Curve</a></pre>
 
@@ -93,7 +95,7 @@ P384 returns a Curve which implements P-384 (see FIPS 186-3, section D.2.4)
 
 The cryptographic operations do not use constant-time algorithms.
 
-<h3 id="P521">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/elliptic/elliptic.go#L378">P521</a>
+<h3 id="P521">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/elliptic/elliptic.go#L383">P521</a>
     <a href="#P521">¶</a></h3>
 <pre>func P521() <a href="#Curve">Curve</a></pre>
 

@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package dwarf
 
   `import "debug/dwarf"`
@@ -403,7 +403,7 @@ The []byte arguments are the data from the corresponding debug section in the
 object file; for example, for an ELF object, abbrev is the contents of the
 ".debug_abbrev" section.
 
-<h3 id="Data.AddTypes">func (*Data) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/open.go#L75">AddTypes</a>
+<h3 id="Data.AddTypes">func (*Data) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/open.go#L84">AddTypes</a>
     <a href="#Data.AddTypes">¶</a></h3>
 <pre>func (d *<a href="#Data">Data</a>) AddTypes(name <a href="/builtin/#string">string</a>, types []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -851,7 +851,7 @@ called, SkipChildren is a no-op.
 <span id="StructField.Name"></span>    Name       <a href="/builtin/#string">string</a>
 <span id="StructField.Type"></span>    Type       <a href="#Type">Type</a>
 <span id="StructField.ByteOffset"></span>    ByteOffset <a href="/builtin/#int64">int64</a>
-<span id="StructField.ByteSize"></span>    ByteSize   <a href="/builtin/#int64">int64</a>
+<span id="StructField.ByteSize"></span>    ByteSize   <a href="/builtin/#int64">int64</a> <span class="comment">// usually zero; use Type.Size() for normal fields</span>
 <span id="StructField.BitOffset"></span>    BitOffset  <a href="/builtin/#int64">int64</a> <span class="comment">// within the ByteSize bytes at ByteOffset</span>
 <span id="StructField.BitSize"></span>    BitSize    <a href="/builtin/#int64">int64</a> <span class="comment">// zero if not a bit field</span>
 }</pre>

@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package iotest
 
   `import "testing/iotest"`
@@ -48,7 +48,7 @@ requested bytes from r.
 <pre>func NewReadLogger(prefix <a href="/builtin/#string">string</a>, r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a></pre>
 
 NewReadLogger returns a reader that behaves like r except that it logs (using
-log.Print) each read to standard error, printing the prefix and the hexadecimal
+log.Printf) each read to standard error, printing the prefix and the hexadecimal
 data read.
 
 <h2 id="NewWriteLogger">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/testing/iotest/logger.go#L20">NewWriteLogger</a>

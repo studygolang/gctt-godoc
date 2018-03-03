@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package gob
 
   `import "encoding/gob"`
@@ -552,7 +552,7 @@ sources.
 NewDecoder returns a new decoder that reads from the io.Reader. If r does not
 also implement io.ByteReader, it will be wrapped in a bufio.Reader.
 
-<h3 id="Decoder.Decode">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/decoder.go#L168">Decode</a>
+<h3 id="Decoder.Decode">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/decoder.go#L166">Decode</a>
     <a href="#Decoder.Decode">¶</a></h3>
 <pre>func (dec *<a href="#Decoder">Decoder</a>) Decode(e interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -562,7 +562,7 @@ discarded. Otherwise, the value underlying e must be a pointer to the correct
 type for the next data item received. If the input is at EOF, Decode returns
 io.EOF and does not modify e.
 
-<h3 id="Decoder.DecodeValue">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/decoder.go#L188">DecodeValue</a>
+<h3 id="Decoder.DecodeValue">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/decoder.go#L186">DecodeValue</a>
     <a href="#Decoder.DecodeValue">¶</a></h3>
 <pre>func (dec *<a href="#Decoder">Decoder</a>) DecodeValue(v <a href="/reflect/">reflect</a>.<a href="/reflect/#Value">Value</a>) <a href="/builtin/#error">error</a></pre>
 

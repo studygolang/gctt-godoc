@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package sort
 
   `import "sort"`
@@ -44,12 +44,26 @@ Example:
         }
 
         fmt.Println(people)
+        // There are two ways to sort a slice. First, one can define
+        // a set of methods for the slice type, as with ByAge, and
+        // call sort.Sort. In this first example we use that technique.
         sort.Sort(ByAge(people))
+        fmt.Println(people)
+
+        // The other way is to use sort.Slice with a custom Less
+        // function, which can be provided as a closure. In this
+        // case no methods are needed. (And if they exist, they
+        // are ignored.) Here we re-sort in reverse order: compare
+        // the closure with ByAge.Less.
+        sort.Slice(people, func(i, j int) bool {
+            return people[i].Age > people[j].Age
+        })
         fmt.Println(people)
 
         // Output:
         // [Bob: 31 John: 42 Michael: 17 Jenny: 26]
         // [Michael: 17 Jenny: 26 Bob: 31 John: 42]
+        // [John: 42 Bob: 31 Jenny: 26 Michael: 17]
     }
 
 
@@ -127,7 +141,7 @@ Example:
             return p1.distance < p2.distance
         }
         decreasingDistance := func(p1, p2 *Planet) bool {
-            return !distance(p1, p2)
+            return distance(p2, p1)
         }
 
         // Sort the planets by the various criteria.
@@ -200,10 +214,11 @@ Example:
     }
 
     // Less is part of sort.Interface. It is implemented by looping along the
-    // less functions until it finds a comparison that is either Less or
-    // !Less. Note that it can call the less functions twice per call. We
-    // could change the functions to return -1, 0, 1 and reduce the
-    // number of calls for greater efficiency: an exercise for the reader.
+    // less functions until it finds a comparison that discriminates between
+    // the two items (one is less than the other). Note that it can call the
+    // less functions twice per call. We could change the functions to return
+    // -1, 0, 1 and reduce the number of calls for greater efficiency: an
+    // exercise for the reader.
     func (ms *multiSorter) Less(i, j int) bool {
         p, q := &ms.changes[i], &ms.changes[j]
         // Try all but the last comparison.
@@ -401,7 +416,10 @@ Example:
 ### Examples
 
 - [Package](#example)
+- [Float64s](#exampleFloat64s)
+- [Float64sAreSorted](#exampleFloat64sAreSorted)
 - [Ints](#exampleInts)
+- [IntsAreSorted](#exampleIntsAreSorted)
 - [Reverse](#exampleReverse)
 - [Search](#exampleSearch)
 - [Search (DescendingOrder)](#exampleSearch_descendingOrder)
@@ -413,23 +431,53 @@ Example:
 - [Package (SortWrapper)](#example_sortWrapper)
 
 ### Package files
- [search.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/search.go) [sort.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go) [zfuncversion.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/zfuncversion.go)
+ [search.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/search.go) [slice.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/slice.go) [sort.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go) [zfuncversion.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/zfuncversion.go)
 
-<h2 id="Float64s">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L340">Float64s</a>
+<h2 id="Float64s">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L301">Float64s</a>
     <a href="#Float64s">¶</a></h2>
 <pre>func Float64s(a []<a href="/builtin/#float64">float64</a>)</pre>
 
 Float64s sorts a slice of float64s in increasing order (not-a-number values are
 treated as less than other values).
 
-<h2 id="Float64sAreSorted">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L350">Float64sAreSorted</a>
+<a id="exampleFloat64s"></a>
+Example:
+
+    s := []float64{5.2, -1.3, 0.7, -3.8, 2.6} // unsorted
+    sort.Float64s(s)
+    fmt.Println(s)
+
+    s = []float64{math.Inf(1), math.NaN(), math.Inf(-1), 0.0} // unsorted
+    sort.Float64s(s)
+    fmt.Println(s)
+
+    // Output: [-3.8 -1.3 0.7 2.6 5.2]
+    // [NaN -Inf 0 +Inf]
+
+<h2 id="Float64sAreSorted">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L311">Float64sAreSorted</a>
     <a href="#Float64sAreSorted">¶</a></h2>
 <pre>func Float64sAreSorted(a []<a href="/builtin/#float64">float64</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Float64sAreSorted tests whether a slice of float64s is sorted in increasing
 order (not-a-number values are treated as less than other values).
 
-<h2 id="Ints">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L336">Ints</a>
+<a id="exampleFloat64sAreSorted"></a>
+Example:
+
+    s := []float64{0.7, 1.3, 2.6, 3.8, 5.2} // sorted ascending
+    fmt.Println(sort.Float64sAreSorted(s))
+
+    s = []float64{5.2, 3.8, 2.6, 1.3, 0.7} // sorted descending
+    fmt.Println(sort.Float64sAreSorted(s))
+
+    s = []float64{5.2, 1.3, 0.7, 3.8, 2.6} // unsorted
+    fmt.Println(sort.Float64sAreSorted(s))
+
+    // Output: true
+    // false
+    // false
+
+<h2 id="Ints">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L297">Ints</a>
     <a href="#Ints">¶</a></h2>
 <pre>func Ints(a []<a href="/builtin/#int">int</a>)</pre>
 
@@ -443,13 +491,29 @@ Example:
     fmt.Println(s)
     // Output: [1 2 3 4 5 6]
 
-<h2 id="IntsAreSorted">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L346">IntsAreSorted</a>
+<h2 id="IntsAreSorted">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L307">IntsAreSorted</a>
     <a href="#IntsAreSorted">¶</a></h2>
 <pre>func IntsAreSorted(a []<a href="/builtin/#int">int</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IntsAreSorted tests whether a slice of ints is sorted in increasing order.
 
-<h2 id="IsSorted">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L285">IsSorted</a>
+<a id="exampleIntsAreSorted"></a>
+Example:
+
+    s := []int{1, 2, 3, 4, 5, 6} // sorted ascending
+    fmt.Println(sort.IntsAreSorted(s))
+
+    s = []int{6, 5, 4, 3, 2, 1} // sorted descending
+    fmt.Println(sort.IntsAreSorted(s))
+
+    s = []int{3, 2, 4, 1, 5} // unsorted
+    fmt.Println(sort.IntsAreSorted(s))
+
+    // Output: true
+    // false
+    // false
+
+<h2 id="IsSorted">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L246">IsSorted</a>
     <a href="#IsSorted">¶</a></h2>
 <pre>func IsSorted(data <a href="#Interface">Interface</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -560,7 +624,7 @@ SearchStrings searches for x in a sorted slice of strings and returns the index
 as specified by Search. The return value is the index to insert x if x is not
 present (it could be len(a)). The slice must be sorted in ascending order.
 
-<h2 id="Slice">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L237">Slice</a>
+<h2 id="Slice">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/slice.go#L7">Slice</a>
     <a href="#Slice">¶</a></h2>
 <pre>func Slice(slice interface{}, less func(i, j <a href="/builtin/#int">int</a>) <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -590,7 +654,7 @@ Example:
     // Output: By name: [{Alice 55} {Bob 75} {Gopher 7} {Vera 24}]
     // By age: [{Gopher 7} {Vera 24} {Alice 55} {Bob 75}]
 
-<h2 id="SliceIsSorted">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L257">SliceIsSorted</a>
+<h2 id="SliceIsSorted">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/slice.go#L27">SliceIsSorted</a>
     <a href="#SliceIsSorted">¶</a></h2>
 <pre>func SliceIsSorted(slice interface{}, less func(i, j <a href="/builtin/#int">int</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -598,7 +662,7 @@ SliceIsSorted tests whether a slice is sorted.
 
 The function panics if the provided interface is not a slice.
 
-<h2 id="SliceStable">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L248">SliceStable</a>
+<h2 id="SliceStable">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/slice.go#L18">SliceStable</a>
     <a href="#SliceStable">¶</a></h2>
 <pre>func SliceStable(slice interface{}, less func(i, j <a href="/builtin/#int">int</a>) <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -635,14 +699,14 @@ Example:
     // Output: By name: [{Alice 25} {Alice 75} {Alice 75} {Bob 75} {Bob 25} {Colin 25} {Elizabeth 75} {Elizabeth 25}]
     // By age,name: [{Alice 25} {Bob 25} {Colin 25} {Elizabeth 25} {Alice 75} {Alice 75} {Bob 75} {Elizabeth 75}]
 
-<h2 id="Sort">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L208">Sort</a>
+<h2 id="Sort">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L206">Sort</a>
     <a href="#Sort">¶</a></h2>
 <pre>func Sort(data <a href="#Interface">Interface</a>)</pre>
 
 Sort sorts data. It makes one call to data.Len to determine n, and O(n*log(n))
 calls to data.Less and data.Swap. The sort is not guaranteed to be stable.
 
-<h2 id="Stable">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L385">Stable</a>
+<h2 id="Stable">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L346">Stable</a>
     <a href="#Stable">¶</a></h2>
 <pre>func Stable(data <a href="#Interface">Interface</a>)</pre>
 
@@ -651,7 +715,7 @@ Stable sorts data while keeping the original order of equal elements.
 It makes one call to data.Len to determine n, O(n*log(n)) calls to data.Less and
 O(n*log(n)*log(n)) calls to data.Swap.
 
-<h2 id="Strings">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L343">Strings</a>
+<h2 id="Strings">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L304">Strings</a>
     <a href="#Strings">¶</a></h2>
 <pre>func Strings(a []<a href="/builtin/#string">string</a>)</pre>
 
@@ -665,25 +729,25 @@ Example:
     fmt.Println(s)
     // Output: [Alpha Bravo Delta Go Gopher Grin]
 
-<h2 id="StringsAreSorted">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L353">StringsAreSorted</a>
+<h2 id="StringsAreSorted">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L314">StringsAreSorted</a>
     <a href="#StringsAreSorted">¶</a></h2>
 <pre>func StringsAreSorted(a []<a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
 StringsAreSorted tests whether a slice of strings is sorted in increasing order.
 
-<h2 id="Float64Slice">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L309">Float64Slice</a>
+<h2 id="Float64Slice">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L270">Float64Slice</a>
     <a href="#Float64Slice">¶</a></h2>
 <pre>type Float64Slice []<a href="/builtin/#float64">float64</a></pre>
 
 Float64Slice attaches the methods of Interface to []float64, sorting in
 increasing order (not-a-number values are treated as less than other values).
 
-<h3 id="Float64Slice.Len">func (Float64Slice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L311">Len</a>
+<h3 id="Float64Slice.Len">func (Float64Slice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L272">Len</a>
     <a href="#Float64Slice.Len">¶</a></h3>
 <pre>func (p <a href="#Float64Slice">Float64Slice</a>) Len() <a href="/builtin/#int">int</a></pre>
 
 
-<h3 id="Float64Slice.Less">func (Float64Slice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L312">Less</a>
+<h3 id="Float64Slice.Less">func (Float64Slice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L273">Less</a>
     <a href="#Float64Slice.Less">¶</a></h3>
 <pre>func (p <a href="#Float64Slice">Float64Slice</a>) Less(i, j <a href="/builtin/#int">int</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -694,30 +758,30 @@ increasing order (not-a-number values are treated as less than other values).
 
 Search returns the result of applying SearchFloat64s to the receiver and x.
 
-<h3 id="Float64Slice.Sort">func (Float64Slice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L321">Sort</a>
+<h3 id="Float64Slice.Sort">func (Float64Slice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L282">Sort</a>
     <a href="#Float64Slice.Sort">¶</a></h3>
 <pre>func (p <a href="#Float64Slice">Float64Slice</a>) Sort()</pre>
 
 Sort is a convenience method.
 
-<h3 id="Float64Slice.Swap">func (Float64Slice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L313">Swap</a>
+<h3 id="Float64Slice.Swap">func (Float64Slice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L274">Swap</a>
     <a href="#Float64Slice.Swap">¶</a></h3>
 <pre>func (p <a href="#Float64Slice">Float64Slice</a>) Swap(i, j <a href="/builtin/#int">int</a>)</pre>
 
 
-<h2 id="IntSlice">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L298">IntSlice</a>
+<h2 id="IntSlice">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L259">IntSlice</a>
     <a href="#IntSlice">¶</a></h2>
 <pre>type IntSlice []<a href="/builtin/#int">int</a></pre>
 
 IntSlice attaches the methods of Interface to []int, sorting in increasing
 order.
 
-<h3 id="IntSlice.Len">func (IntSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L300">Len</a>
+<h3 id="IntSlice.Len">func (IntSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L261">Len</a>
     <a href="#IntSlice.Len">¶</a></h3>
 <pre>func (p <a href="#IntSlice">IntSlice</a>) Len() <a href="/builtin/#int">int</a></pre>
 
 
-<h3 id="IntSlice.Less">func (IntSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L301">Less</a>
+<h3 id="IntSlice.Less">func (IntSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L262">Less</a>
     <a href="#IntSlice.Less">¶</a></h3>
 <pre>func (p <a href="#IntSlice">IntSlice</a>) Less(i, j <a href="/builtin/#int">int</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -728,18 +792,18 @@ order.
 
 Search returns the result of applying SearchInts to the receiver and x.
 
-<h3 id="IntSlice.Sort">func (IntSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L305">Sort</a>
+<h3 id="IntSlice.Sort">func (IntSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L266">Sort</a>
     <a href="#IntSlice.Sort">¶</a></h3>
 <pre>func (p <a href="#IntSlice">IntSlice</a>) Sort()</pre>
 
 Sort is a convenience method.
 
-<h3 id="IntSlice.Swap">func (IntSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L302">Swap</a>
+<h3 id="IntSlice.Swap">func (IntSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L263">Swap</a>
     <a href="#IntSlice.Swap">¶</a></h3>
 <pre>func (p <a href="#IntSlice">IntSlice</a>) Swap(i, j <a href="/builtin/#int">int</a>)</pre>
 
 
-<h2 id="Interface">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L6">Interface</a>
+<h2 id="Interface">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L4">Interface</a>
     <a href="#Interface">¶</a></h2>
 <pre>type Interface interface {
     <span class="comment">// Len is the number of elements in the collection.</span>
@@ -755,7 +819,7 @@ A type, typically a collection, that satisfies sort.Interface can be sorted by
 the routines in this package. The methods require that the elements of the
 collection be enumerated by an integer index.
 
-<h3 id="Reverse">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L280">Reverse</a>
+<h3 id="Reverse">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L241">Reverse</a>
     <a href="#Reverse">¶</a></h3>
 <pre>func Reverse(data <a href="#Interface">Interface</a>) <a href="#Interface">Interface</a></pre>
 
@@ -769,19 +833,19 @@ Example:
     fmt.Println(s)
     // Output: [6 5 4 3 2 1]
 
-<h2 id="StringSlice">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L324">StringSlice</a>
+<h2 id="StringSlice">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L285">StringSlice</a>
     <a href="#StringSlice">¶</a></h2>
 <pre>type StringSlice []<a href="/builtin/#string">string</a></pre>
 
 StringSlice attaches the methods of Interface to []string, sorting in increasing
 order.
 
-<h3 id="StringSlice.Len">func (StringSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L326">Len</a>
+<h3 id="StringSlice.Len">func (StringSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L287">Len</a>
     <a href="#StringSlice.Len">¶</a></h3>
 <pre>func (p <a href="#StringSlice">StringSlice</a>) Len() <a href="/builtin/#int">int</a></pre>
 
 
-<h3 id="StringSlice.Less">func (StringSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L327">Less</a>
+<h3 id="StringSlice.Less">func (StringSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L288">Less</a>
     <a href="#StringSlice.Less">¶</a></h3>
 <pre>func (p <a href="#StringSlice">StringSlice</a>) Less(i, j <a href="/builtin/#int">int</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -792,13 +856,13 @@ order.
 
 Search returns the result of applying SearchStrings to the receiver and x.
 
-<h3 id="StringSlice.Sort">func (StringSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L331">Sort</a>
+<h3 id="StringSlice.Sort">func (StringSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L292">Sort</a>
     <a href="#StringSlice.Sort">¶</a></h3>
 <pre>func (p <a href="#StringSlice">StringSlice</a>) Sort()</pre>
 
 Sort is a convenience method.
 
-<h3 id="StringSlice.Swap">func (StringSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L328">Swap</a>
+<h3 id="StringSlice.Swap">func (StringSlice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sort/sort.go#L289">Swap</a>
     <a href="#StringSlice.Swap">¶</a></h3>
 <pre>func (p <a href="#StringSlice">StringSlice</a>) Swap(i, j <a href="/builtin/#int">int</a>)</pre>
 

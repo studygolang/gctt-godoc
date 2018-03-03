@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package cmplx
 
   `import "math/cmplx"`
@@ -59,13 +59,13 @@ Example:
     fmt.Printf("%.1f", cmplx.Abs(3+4i))
     // Output: 5.0
 
-<h2 id="Acos">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/asin.go#L84">Acos</a>
+<h2 id="Acos">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/asin.go#L77">Acos</a>
     <a href="#Acos">¶</a></h2>
 <pre>func Acos(x <a href="/builtin/#complex128">complex128</a>) <a href="/builtin/#complex128">complex128</a></pre>
 
 Acos returns the inverse cosine of x.
 
-<h2 id="Acosh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/asin.go#L90">Acosh</a>
+<h2 id="Acosh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/asin.go#L83">Acosh</a>
     <a href="#Acosh">¶</a></h2>
 <pre>func Acosh(x <a href="/builtin/#complex128">complex128</a>) <a href="/builtin/#complex128">complex128</a></pre>
 
@@ -77,19 +77,19 @@ Acosh returns the inverse hyperbolic cosine of x.
 
 Asin returns the inverse sine of x.
 
-<h2 id="Asinh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/asin.go#L57">Asinh</a>
+<h2 id="Asinh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/asin.go#L54">Asinh</a>
     <a href="#Asinh">¶</a></h2>
 <pre>func Asinh(x <a href="/builtin/#complex128">complex128</a>) <a href="/builtin/#complex128">complex128</a></pre>
 
 Asinh returns the inverse hyperbolic sine of x.
 
-<h2 id="Atan">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/asin.go#L132">Atan</a>
+<h2 id="Atan">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/asin.go#L125">Atan</a>
     <a href="#Atan">¶</a></h2>
 <pre>func Atan(x <a href="/builtin/#complex128">complex128</a>) <a href="/builtin/#complex128">complex128</a></pre>
 
 Atan returns the inverse tangent of x.
 
-<h2 id="Atanh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/asin.go#L156">Atanh</a>
+<h2 id="Atanh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cmplx/asin.go#L145">Atanh</a>
     <a href="#Atanh">¶</a></h2>
 <pre>func Atanh(x <a href="/builtin/#complex128">complex128</a>) <a href="/builtin/#complex128">complex128</a></pre>
 

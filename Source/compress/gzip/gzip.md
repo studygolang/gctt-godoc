@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package gzip
 
   `import "compress/gzip"`
@@ -131,7 +131,7 @@ header. Reads from the Reader return the concatenation of the uncompressed data
 of each. Only the first header is recorded in the Reader fields.
 
 Gzip files store a length and checksum of the uncompressed data. The Reader will
-return a ErrChecksum when Read reaches the end of the uncompressed data if it
+return an ErrChecksum when Read reaches the end of the uncompressed data if it
 does not have the expected length or checksum. Clients should treat data
 returned by Read as tentative until they receive the io.EOF marking the end of
 the data.

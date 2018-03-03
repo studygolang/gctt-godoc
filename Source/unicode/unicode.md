@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package unicode
 
   `import "unicode"`
@@ -184,7 +184,7 @@ Indices into the Delta arrays inside CaseRanges for case mapping.
 If the Delta field of a CaseRange is UpperLower, it means this CaseRange
 represents a sequence of the form (say) Upper Lower Upper Lower.
 
-<pre>const <span id="Version">Version</span> = &#34;9.0.0&#34;</pre>
+<pre>const <span id="Version">Version</span> = &#34;10.0.0&#34;</pre>
 
 Version is the Unicode edition from which the tables are derived.
 
@@ -317,6 +317,7 @@ These variables have type *RangeTable.
     <span id="Mandaic">Mandaic</span>                = _Mandaic                <span class="comment">// Mandaic is the set of Unicode characters in script Mandaic.</span>
     <span id="Manichaean">Manichaean</span>             = _Manichaean             <span class="comment">// Manichaean is the set of Unicode characters in script Manichaean.</span>
     <span id="Marchen">Marchen</span>                = _Marchen                <span class="comment">// Marchen is the set of Unicode characters in script Marchen.</span>
+    <span id="Masaram_Gondi">Masaram_Gondi</span>          = _Masaram_Gondi          <span class="comment">// Masaram_Gondi is the set of Unicode characters in script Masaram_Gondi.</span>
     <span id="Meetei_Mayek">Meetei_Mayek</span>           = _Meetei_Mayek           <span class="comment">// Meetei_Mayek is the set of Unicode characters in script Meetei_Mayek.</span>
     <span id="Mende_Kikakui">Mende_Kikakui</span>          = _Mende_Kikakui          <span class="comment">// Mende_Kikakui is the set of Unicode characters in script Mende_Kikakui.</span>
     <span id="Meroitic_Cursive">Meroitic_Cursive</span>       = _Meroitic_Cursive       <span class="comment">// Meroitic_Cursive is the set of Unicode characters in script Meroitic_Cursive.</span>
@@ -331,6 +332,7 @@ These variables have type *RangeTable.
     <span id="New_Tai_Lue">New_Tai_Lue</span>            = _New_Tai_Lue            <span class="comment">// New_Tai_Lue is the set of Unicode characters in script New_Tai_Lue.</span>
     <span id="Newa">Newa</span>                   = _Newa                   <span class="comment">// Newa is the set of Unicode characters in script Newa.</span>
     <span id="Nko">Nko</span>                    = _Nko                    <span class="comment">// Nko is the set of Unicode characters in script Nko.</span>
+    <span id="Nushu">Nushu</span>                  = _Nushu                  <span class="comment">// Nushu is the set of Unicode characters in script Nushu.</span>
     <span id="Ogham">Ogham</span>                  = _Ogham                  <span class="comment">// Ogham is the set of Unicode characters in script Ogham.</span>
     <span id="Ol_Chiki">Ol_Chiki</span>               = _Ol_Chiki               <span class="comment">// Ol_Chiki is the set of Unicode characters in script Ol_Chiki.</span>
     <span id="Old_Hungarian">Old_Hungarian</span>          = _Old_Hungarian          <span class="comment">// Old_Hungarian is the set of Unicode characters in script Old_Hungarian.</span>
@@ -359,6 +361,7 @@ These variables have type *RangeTable.
     <span id="SignWriting">SignWriting</span>            = _SignWriting            <span class="comment">// SignWriting is the set of Unicode characters in script SignWriting.</span>
     <span id="Sinhala">Sinhala</span>                = _Sinhala                <span class="comment">// Sinhala is the set of Unicode characters in script Sinhala.</span>
     <span id="Sora_Sompeng">Sora_Sompeng</span>           = _Sora_Sompeng           <span class="comment">// Sora_Sompeng is the set of Unicode characters in script Sora_Sompeng.</span>
+    <span id="Soyombo">Soyombo</span>                = _Soyombo                <span class="comment">// Soyombo is the set of Unicode characters in script Soyombo.</span>
     <span id="Sundanese">Sundanese</span>              = _Sundanese              <span class="comment">// Sundanese is the set of Unicode characters in script Sundanese.</span>
     <span id="Syloti_Nagri">Syloti_Nagri</span>           = _Syloti_Nagri           <span class="comment">// Syloti_Nagri is the set of Unicode characters in script Syloti_Nagri.</span>
     <span id="Syriac">Syriac</span>                 = _Syriac                 <span class="comment">// Syriac is the set of Unicode characters in script Syriac.</span>
@@ -380,6 +383,7 @@ These variables have type *RangeTable.
     <span id="Vai">Vai</span>                    = _Vai                    <span class="comment">// Vai is the set of Unicode characters in script Vai.</span>
     <span id="Warang_Citi">Warang_Citi</span>            = _Warang_Citi            <span class="comment">// Warang_Citi is the set of Unicode characters in script Warang_Citi.</span>
     <span id="Yi">Yi</span>                     = _Yi                     <span class="comment">// Yi is the set of Unicode characters in script Yi.</span>
+    <span id="Zanabazar_Square">Zanabazar_Square</span>       = _Zanabazar_Square       <span class="comment">// Zanabazar_Square is the set of Unicode characters in script Zanabazar_Square.</span>
 )</pre>
 
 These variables have type *RangeTable.
@@ -412,6 +416,7 @@ These variables have type *RangeTable.
     <span id="Prepended_Concatenation_Mark">Prepended_Concatenation_Mark</span>       = _Prepended_Concatenation_Mark       <span class="comment">// Prepended_Concatenation_Mark is the set of Unicode characters with property Prepended_Concatenation_Mark.</span>
     <span id="Quotation_Mark">Quotation_Mark</span>                     = _Quotation_Mark                     <span class="comment">// Quotation_Mark is the set of Unicode characters with property Quotation_Mark.</span>
     <span id="Radical">Radical</span>                            = _Radical                            <span class="comment">// Radical is the set of Unicode characters with property Radical.</span>
+    <span id="Regional_Indicator">Regional_Indicator</span>                 = _Regional_Indicator                 <span class="comment">// Regional_Indicator is the set of Unicode characters with property Regional_Indicator.</span>
     <span id="STerm">STerm</span>                              = _Sentence_Terminal                  <span class="comment">// STerm is an alias for Sentence_Terminal.</span>
     <span id="Sentence_Terminal">Sentence_Terminal</span>                  = _Sentence_Terminal                  <span class="comment">// Sentence_Terminal is the set of Unicode characters with property Sentence_Terminal.</span>
     <span id="Soft_Dotted">Soft_Dotted</span>                        = _Soft_Dotted                        <span class="comment">// Soft_Dotted is the set of Unicode characters with property Soft_Dotted.</span>
@@ -533,6 +538,7 @@ space, U+0020, is handled separately.
     &#34;Prepended_Concatenation_Mark&#34;:       <a href="#Prepended_Concatenation_Mark">Prepended_Concatenation_Mark</a>,
     &#34;Quotation_Mark&#34;:                     <a href="#Quotation_Mark">Quotation_Mark</a>,
     &#34;Radical&#34;:                            <a href="#Radical">Radical</a>,
+    &#34;Regional_Indicator&#34;:                 <a href="#Regional_Indicator">Regional_Indicator</a>,
     &#34;Sentence_Terminal&#34;:                  <a href="#Sentence_Terminal">Sentence_Terminal</a>,
     &#34;STerm&#34;:                              <a href="#Sentence_Terminal">Sentence_Terminal</a>,
     &#34;Soft_Dotted&#34;:                        <a href="#Soft_Dotted">Soft_Dotted</a>,
@@ -619,6 +625,7 @@ Properties is the set of Unicode property tables.
     &#34;Mandaic&#34;:                <a href="#Mandaic">Mandaic</a>,
     &#34;Manichaean&#34;:             <a href="#Manichaean">Manichaean</a>,
     &#34;Marchen&#34;:                <a href="#Marchen">Marchen</a>,
+    &#34;Masaram_Gondi&#34;:          <a href="#Masaram_Gondi">Masaram_Gondi</a>,
     &#34;Meetei_Mayek&#34;:           <a href="#Meetei_Mayek">Meetei_Mayek</a>,
     &#34;Mende_Kikakui&#34;:          <a href="#Mende_Kikakui">Mende_Kikakui</a>,
     &#34;Meroitic_Cursive&#34;:       <a href="#Meroitic_Cursive">Meroitic_Cursive</a>,
@@ -633,6 +640,7 @@ Properties is the set of Unicode property tables.
     &#34;New_Tai_Lue&#34;:            <a href="#New_Tai_Lue">New_Tai_Lue</a>,
     &#34;Newa&#34;:                   <a href="#Newa">Newa</a>,
     &#34;Nko&#34;:                    <a href="#Nko">Nko</a>,
+    &#34;Nushu&#34;:                  <a href="#Nushu">Nushu</a>,
     &#34;Ogham&#34;:                  <a href="#Ogham">Ogham</a>,
     &#34;Ol_Chiki&#34;:               <a href="#Ol_Chiki">Ol_Chiki</a>,
     &#34;Old_Hungarian&#34;:          <a href="#Old_Hungarian">Old_Hungarian</a>,
@@ -661,6 +669,7 @@ Properties is the set of Unicode property tables.
     &#34;SignWriting&#34;:            <a href="#SignWriting">SignWriting</a>,
     &#34;Sinhala&#34;:                <a href="#Sinhala">Sinhala</a>,
     &#34;Sora_Sompeng&#34;:           <a href="#Sora_Sompeng">Sora_Sompeng</a>,
+    &#34;Soyombo&#34;:                <a href="#Soyombo">Soyombo</a>,
     &#34;Sundanese&#34;:              <a href="#Sundanese">Sundanese</a>,
     &#34;Syloti_Nagri&#34;:           <a href="#Syloti_Nagri">Syloti_Nagri</a>,
     &#34;Syriac&#34;:                 <a href="#Syriac">Syriac</a>,
@@ -682,6 +691,7 @@ Properties is the set of Unicode property tables.
     &#34;Vai&#34;:                    <a href="#Vai">Vai</a>,
     &#34;Warang_Citi&#34;:            <a href="#Warang_Citi">Warang_Citi</a>,
     &#34;Yi&#34;:                     <a href="#Yi">Yi</a>,
+    &#34;Zanabazar_Square&#34;:       <a href="#Zanabazar_Square">Zanabazar_Square</a>,
 }</pre>
 
 Scripts is the set of Unicode script tables.

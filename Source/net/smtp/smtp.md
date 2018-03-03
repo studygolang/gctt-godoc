@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package smtp
 
   `import "net/smtp"`
@@ -71,6 +71,7 @@ Example:
   - [func (c *Client) Extension(ext string) (bool, string)](#Client.Extension)
   - [func (c *Client) Hello(localName string) error](#Client.Hello)
   - [func (c *Client) Mail(from string) error](#Client.Mail)
+  - [func (c *Client) Noop() error](#Client.Noop)
   - [func (c *Client) Quit() error](#Client.Quit)
   - [func (c *Client) Rcpt(to string) error](#Client.Rcpt)
   - [func (c *Client) Reset() error](#Client.Reset)
@@ -88,7 +89,7 @@ Example:
 ### Package files
  [auth.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/auth.go) [smtp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go)
 
-<h2 id="SendMail">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L297">SendMail</a>
+<h2 id="SendMail">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L309">SendMail</a>
     <a href="#SendMail">¶</a></h2>
 <pre>func SendMail(addr <a href="/builtin/#string">string</a>, a <a href="#Auth">Auth</a>, from <a href="/builtin/#string">string</a>, to []<a href="/builtin/#string">string</a>, msg []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -209,7 +210,7 @@ include a port, as in "mail.example.com:smtp".
 NewClient returns a new Client using an existing connection and host as a server
 name to be used when authenticating.
 
-<h3 id="Client.Auth">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L183">Auth</a>
+<h3 id="Client.Auth">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L189">Auth</a>
     <a href="#Client.Auth">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) Auth(a <a href="#Auth">Auth</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -223,7 +224,7 @@ AUTH extension support this function.
 
 Close closes the connection.
 
-<h3 id="Client.Data">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L267">Data</a>
+<h3 id="Client.Data">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L279">Data</a>
     <a href="#Client.Data">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) Data() (<a href="/io/">io</a>.<a href="/io/#WriteCloser">WriteCloser</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -232,7 +233,7 @@ to write the mail headers and body. The caller should close the writer before
 calling any more methods on c. A call to Data must be preceded by one or more
 calls to Rcpt.
 
-<h3 id="Client.Extension">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L349">Extension</a>
+<h3 id="Client.Extension">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L369">Extension</a>
     <a href="#Client.Extension">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) Extension(ext <a href="/builtin/#string">string</a>) (<a href="/builtin/#bool">bool</a>, <a href="/builtin/#string">string</a>)</pre>
 
@@ -249,7 +250,7 @@ method is only necessary if the client needs control over the host name used.
 The client will introduce itself as "localhost" automatically otherwise. If
 Hello is called, it must be called before any of the other methods.
 
-<h3 id="Client.Mail">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L230">Mail</a>
+<h3 id="Client.Mail">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L236">Mail</a>
     <a href="#Client.Mail">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) Mail(from <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -258,13 +259,20 @@ the server supports the 8BITMIME extension, Mail adds the BODY=8BITMIME
 parameter. This initiates a mail transaction and is followed by one or more Rcpt
 calls.
 
-<h3 id="Client.Quit">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L372">Quit</a>
+<h3 id="Client.Noop">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L393">Noop</a>
+    <a href="#Client.Noop">¶</a></h3>
+<pre>func (c *<a href="#Client">Client</a>) Noop() <a href="/builtin/#error">error</a></pre>
+
+Noop sends the NOOP command to the server. It does nothing but check that the
+connection to the server is okay.
+
+<h3 id="Client.Quit">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L402">Quit</a>
     <a href="#Client.Quit">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) Quit() <a href="/builtin/#error">error</a></pre>
 
 Quit sends the QUIT command and closes the connection to the server.
 
-<h3 id="Client.Rcpt">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L247">Rcpt</a>
+<h3 id="Client.Rcpt">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L256">Rcpt</a>
     <a href="#Client.Rcpt">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) Rcpt(to <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -272,28 +280,28 @@ Rcpt issues a RCPT command to the server using the provided email address. A
 call to Rcpt must be preceded by a call to Mail and may be followed by a Data
 call or another Rcpt call.
 
-<h3 id="Client.Reset">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L363">Reset</a>
+<h3 id="Client.Reset">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L383">Reset</a>
     <a href="#Client.Reset">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) Reset() <a href="/builtin/#error">error</a></pre>
 
 Reset sends the RSET command to the server, aborting the current mail
 transaction.
 
-<h3 id="Client.StartTLS">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L143">StartTLS</a>
+<h3 id="Client.StartTLS">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L146">StartTLS</a>
     <a href="#Client.StartTLS">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) StartTLS(config *<a href="/crypto/tls/">tls</a>.<a href="/crypto/tls/#Config">Config</a>) <a href="/builtin/#error">error</a></pre>
 
 StartTLS sends the STARTTLS command and encrypts all further communication. Only
 servers that advertise the STARTTLS extension support this function.
 
-<h3 id="Client.TLSConnectionState">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L160">TLSConnectionState</a>
+<h3 id="Client.TLSConnectionState">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L163">TLSConnectionState</a>
     <a href="#Client.TLSConnectionState">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) TLSConnectionState() (state <a href="/crypto/tls/">tls</a>.<a href="/crypto/tls/#ConnectionState">ConnectionState</a>, ok <a href="/builtin/#bool">bool</a>)</pre>
 
 TLSConnectionState returns the client's TLS connection state. The return values
 are their zero values if StartTLS did not succeed.
 
-<h3 id="Client.Verify">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L172">Verify</a>
+<h3 id="Client.Verify">func (*Client) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/smtp/smtp.go#L175">Verify</a>
     <a href="#Client.Verify">¶</a></h3>
 <pre>func (c *<a href="#Client">Client</a>) Verify(addr <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 

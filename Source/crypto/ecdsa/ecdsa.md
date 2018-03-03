@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package ecdsa
 
   `import "crypto/ecdsa"`
@@ -19,13 +19,13 @@ result of Coron; the AES-CTR stream is IRO under standard assumptions.
 - [type PrivateKey](#PrivateKey)
   - [func GenerateKey(c elliptic.Curve, rand io.Reader) (*PrivateKey, error)](#GenerateKey)
   - [func (priv *PrivateKey) Public() crypto.PublicKey](#PrivateKey.Public)
-  - [func (priv *PrivateKey) Sign(rand io.Reader, msg []byte, opts crypto.SignerOpts) ([]byte, error)](#PrivateKey.Sign)
+  - [func (priv *PrivateKey) Sign(rand io.Reader, digest []byte, opts crypto.SignerOpts) ([]byte, error)](#PrivateKey.Sign)
 - [type PublicKey](#PublicKey)
 
 ### Package files
  [ecdsa.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/ecdsa/ecdsa.go)
 
-<h2 id="Sign">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/ecdsa/ecdsa.go#L141">Sign</a>
+<h2 id="Sign">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/ecdsa/ecdsa.go#L144">Sign</a>
     <a href="#Sign">¶</a></h2>
 <pre>func Sign(rand <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, priv *<a href="#PrivateKey">PrivateKey</a>, hash []<a href="/builtin/#byte">byte</a>) (r, s *<a href="/math/big/">big</a>.<a href="/math/big/#Int">Int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -35,7 +35,7 @@ key's curve order, the hash will be truncated to that length. It returns the
 signature as a pair of integers. The security of the private key depends on the
 entropy of rand.
 
-<h2 id="Verify">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/ecdsa/ecdsa.go#L217">Verify</a>
+<h2 id="Verify">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/ecdsa/ecdsa.go#L220">Verify</a>
     <a href="#Verify">¶</a></h2>
 <pre>func Verify(pub *<a href="#PublicKey">PublicKey</a>, hash []<a href="/builtin/#byte">byte</a>, r, s *<a href="/math/big/">big</a>.<a href="/math/big/#Int">Int</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -49,9 +49,9 @@ return value records whether the signature is valid.
 <span id="PrivateKey.D"></span>    D *<a href="/math/big/">big</a>.<a href="/math/big/#Int">Int</a>
 }</pre>
 
-PrivateKey represents a ECDSA private key.
+PrivateKey represents an ECDSA private key.
 
-<h3 id="GenerateKey">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/ecdsa/ecdsa.go#L90">GenerateKey</a>
+<h3 id="GenerateKey">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/ecdsa/ecdsa.go#L93">GenerateKey</a>
     <a href="#GenerateKey">¶</a></h3>
 <pre>func GenerateKey(c <a href="/crypto/elliptic/">elliptic</a>.<a href="/crypto/elliptic/#Curve">Curve</a>, rand <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (*<a href="#PrivateKey">PrivateKey</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -63,13 +63,17 @@ GenerateKey generates a public and private key pair.
 
 Public returns the public key corresponding to priv.
 
-<h3 id="PrivateKey.Sign">func (*PrivateKey) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/ecdsa/ecdsa.go#L61">Sign</a>
+<h3 id="PrivateKey.Sign">func (*PrivateKey) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/ecdsa/ecdsa.go#L64">Sign</a>
     <a href="#PrivateKey.Sign">¶</a></h3>
-<pre>func (priv *<a href="#PrivateKey">PrivateKey</a>) Sign(rand <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, msg []<a href="/builtin/#byte">byte</a>, opts <a href="/crypto/">crypto</a>.<a href="/crypto/#SignerOpts">SignerOpts</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
+<pre>func (priv *<a href="#PrivateKey">PrivateKey</a>) Sign(rand <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, digest []<a href="/builtin/#byte">byte</a>, opts <a href="/crypto/">crypto</a>.<a href="/crypto/#SignerOpts">SignerOpts</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
-Sign signs msg with priv, reading randomness from rand. This method is intended
-to support keys where the private part is kept in, for example, a hardware
-module. Common uses should use the Sign function in this package directly.
+Sign signs digest with priv, reading randomness from rand. The opts argument is
+not currently used but, in keeping with the crypto.Signer interface, should be
+the hash function used to digest the message.
+
+This method implements crypto.Signer, which is an interface to support keys
+where the private part is kept in, for example, a hardware module. Common uses
+should use the Sign function in this package directly.
 
 <h2 id="PublicKey">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/ecdsa/ecdsa.go#L37">PublicKey</a>
     <a href="#PublicKey">¶</a></h2>

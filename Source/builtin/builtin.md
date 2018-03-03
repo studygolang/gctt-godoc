@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package builtin
 
   `import "builtin"`
@@ -112,7 +112,7 @@ The cap built-in function returns the capacity of v, according to its type:
     Channel: the channel buffer capacity, in units of elements;
     if v is nil, cap(v) is zero.
 
-<h2 id="close">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L203">close</a>
+<h2 id="close">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L204">close</a>
     <a href="#close">¶</a></h2>
 <pre>func close(c chan&lt;- <a href="#Type">Type</a>)</pre>
 
@@ -127,7 +127,7 @@ channel element. The form
 
 will also set ok to false for a closed channel.
 
-<h2 id="complex">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L184">complex</a>
+<h2 id="complex">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L185">complex</a>
     <a href="#complex">¶</a></h2>
 <pre>func complex(r, i <a href="#FloatType">FloatType</a>) <a href="#ComplexType">ComplexType</a></pre>
 
@@ -152,7 +152,7 @@ number of elements copied, which will be the minimum of len(src) and len(dst).
 The delete built-in function deletes the element with the specified key (m[key])
 from the map. If m is nil or there is no such element, delete is a no-op.
 
-<h2 id="imag">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L193">imag</a>
+<h2 id="imag">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L194">imag</a>
     <a href="#imag">¶</a></h2>
 <pre>func imag(c <a href="#ComplexType">ComplexType</a>) <a href="#FloatType">FloatType</a></pre>
 
@@ -172,7 +172,7 @@ The len built-in function returns the length of v, according to its type:
     Channel: the number of elements queued (unread) in the channel buffer;
     if v is nil, len(v) is zero.
 
-<h2 id="make">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L172">make</a>
+<h2 id="make">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L173">make</a>
     <a href="#make">¶</a></h2>
 <pre>func make(t <a href="#Type">Type</a>, size ...<a href="#IntegerType">IntegerType</a>) <a href="#Type">Type</a></pre>
 
@@ -184,8 +184,9 @@ to it. The specification of the result depends on the type:
     Slice: The size specifies the length. The capacity of the slice is
     equal to its length. A second integer argument may be provided to
     specify a different capacity; it must be no smaller than the
-    length, so make([]int, 0, 10) allocates a slice of length 0 and
-    capacity 10.
+    length. For example, make([]int, 0, 10) allocates an underlying array
+    of size 10 and returns a slice of length 0 and capacity 10 that is
+    backed by this underlying array.
     Map: An empty map is allocated with enough space to hold the
     specified number of elements. The size may be omitted, in which case
     a small starting size is allocated.
@@ -193,7 +194,7 @@ to it. The specification of the result depends on the type:
     buffer capacity. If zero, or the size is omitted, the channel is
     unbuffered.
 
-<h2 id="new">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L177">new</a>
+<h2 id="new">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L178">new</a>
     <a href="#new">¶</a></h2>
 <pre>func new(<a href="#Type">Type</a>) *<a href="#Type">Type</a></pre>
 
@@ -201,7 +202,7 @@ The new built-in function allocates memory. The first argument is a type, not a
 value, and the value returned is a pointer to a newly allocated zero value of
 that type.
 
-<h2 id="panic">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L216">panic</a>
+<h2 id="panic">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L217">panic</a>
     <a href="#panic">¶</a></h2>
 <pre>func panic(v interface{})</pre>
 
@@ -216,7 +217,7 @@ is reported, including the value of the argument to panic. This termination
 sequence is called panicking and can be controlled by the built-in function
 recover.
 
-<h2 id="print">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L233">print</a>
+<h2 id="print">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L234">print</a>
     <a href="#print">¶</a></h2>
 <pre>func print(args ...<a href="#Type">Type</a>)</pre>
 
@@ -224,7 +225,7 @@ The print built-in function formats its arguments in an implementation-specific
 way and writes the result to standard error. Print is useful for bootstrapping
 and debugging; it is not guaranteed to stay in the language.
 
-<h2 id="println">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L240">println</a>
+<h2 id="println">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L241">println</a>
     <a href="#println">¶</a></h2>
 <pre>func println(args ...<a href="#Type">Type</a>)</pre>
 
@@ -233,14 +234,14 @@ implementation-specific way and writes the result to standard error. Spaces are
 always added between arguments and a newline is appended. Println is useful for
 bootstrapping and debugging; it is not guaranteed to stay in the language.
 
-<h2 id="real">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L188">real</a>
+<h2 id="real">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L189">real</a>
     <a href="#real">¶</a></h2>
 <pre>func real(c <a href="#ComplexType">ComplexType</a>) <a href="#FloatType">FloatType</a></pre>
 
 The real built-in function returns the real part of the complex number c. The
 return value will be floating point type corresponding to the type of c.
 
-<h2 id="recover">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L227">recover</a>
+<h2 id="recover">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L228">recover</a>
     <a href="#recover">¶</a></h2>
 <pre>func recover() interface{}</pre>
 
@@ -315,7 +316,7 @@ parts.
 complex64 is the set of all complex numbers with float32 real and imaginary
 parts.
 
-<h2 id="error">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L244">error</a>
+<h2 id="error">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L245">error</a>
     <a href="#error">¶</a></h2>
 <pre>type error interface {
     Error() string

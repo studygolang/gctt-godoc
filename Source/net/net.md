@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package net
 
   `import "net"`
@@ -246,6 +246,7 @@ and DnsQuery.
   - [func (l *TCPListener) Close() error](#TCPListener.Close)
   - [func (l *TCPListener) File() (f *os.File, err error)](#TCPListener.File)
   - [func (l *TCPListener) SetDeadline(t time.Time) error](#TCPListener.SetDeadline)
+  - [func (l *TCPListener) SyscallConn() (syscall.RawConn, error)](#TCPListener.SyscallConn)
 - [type UDPAddr](#UDPAddr)
   - [func ResolveUDPAddr(network, address string) (*UDPAddr, error)](#ResolveUDPAddr)
   - [func (a *UDPAddr) Network() string](#UDPAddr.Network)
@@ -308,6 +309,7 @@ and DnsQuery.
   - [func (l *UnixListener) File() (f *os.File, err error)](#UnixListener.File)
   - [func (l *UnixListener) SetDeadline(t time.Time) error](#UnixListener.SetDeadline)
   - [func (l *UnixListener) SetUnlinkOnClose(unlink bool)](#UnixListener.SetUnlinkOnClose)
+  - [func (l *UnixListener) SyscallConn() (syscall.RawConn, error)](#UnixListener.SyscallConn)
 - [type UnknownNetworkError](#UnknownNetworkError)
   - [func (e UnknownNetworkError) Error() string](#UnknownNetworkError.Error)
   - [func (e UnknownNetworkError) Temporary() bool](#UnknownNetworkError.Temporary)
@@ -395,7 +397,7 @@ JoinHostPort returns "[host]:port".
 
 See func Dial for a description of the host and port parameters.
 
-<h2 id="LookupAddr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L349">LookupAddr</a>
+<h2 id="LookupAddr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L359">LookupAddr</a>
     <a href="#LookupAddr">¶</a></h2>
 <pre>func LookupAddr(addr <a href="/builtin/#string">string</a>) (names []<a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -405,7 +407,7 @@ names mapping to that address.
 When using the host C library resolver, at most one result will be returned. To
 bypass the host resolver, use a custom Resolver.
 
-<h2 id="LookupCNAME">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L270">LookupCNAME</a>
+<h2 id="LookupCNAME">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L280">LookupCNAME</a>
     <a href="#LookupCNAME">¶</a></h2>
 <pre>func LookupCNAME(host <a href="/builtin/#string">string</a>) (cname <a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -417,40 +419,40 @@ A canonical name is the final name after following zero or more CNAME records.
 LookupCNAME does not return an error if host does not contain DNS "CNAME"
 records, as long as host resolves to address records.
 
-<h2 id="LookupHost">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L127">LookupHost</a>
+<h2 id="LookupHost">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L132">LookupHost</a>
     <a href="#LookupHost">¶</a></h2>
 <pre>func LookupHost(host <a href="/builtin/#string">string</a>) (addrs []<a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 LookupHost looks up the given host using the local resolver. It returns a slice
 of that host's addresses.
 
-<h2 id="LookupIP">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L147">LookupIP</a>
+<h2 id="LookupIP">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L152">LookupIP</a>
     <a href="#LookupIP">¶</a></h2>
 <pre>func LookupIP(host <a href="/builtin/#string">string</a>) ([]<a href="#IP">IP</a>, <a href="/builtin/#error">error</a>)</pre>
 
 LookupIP looks up host using the local resolver. It returns a slice of that
 host's IPv4 and IPv6 addresses.
 
-<h2 id="LookupMX">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L315">LookupMX</a>
+<h2 id="LookupMX">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L325">LookupMX</a>
     <a href="#LookupMX">¶</a></h2>
 <pre>func LookupMX(name <a href="/builtin/#string">string</a>) ([]*<a href="#MX">MX</a>, <a href="/builtin/#error">error</a>)</pre>
 
 LookupMX returns the DNS MX records for the given domain name sorted by
 preference.
 
-<h2 id="LookupNS">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L325">LookupNS</a>
+<h2 id="LookupNS">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L335">LookupNS</a>
     <a href="#LookupNS">¶</a></h2>
 <pre>func LookupNS(name <a href="/builtin/#string">string</a>) ([]*<a href="#NS">NS</a>, <a href="/builtin/#error">error</a>)</pre>
 
 LookupNS returns the DNS NS records for the given domain name.
 
-<h2 id="LookupPort">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L241">LookupPort</a>
+<h2 id="LookupPort">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L251">LookupPort</a>
     <a href="#LookupPort">¶</a></h2>
 <pre>func LookupPort(network, service <a href="/builtin/#string">string</a>) (port <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 LookupPort looks up the port for the given network and service.
 
-<h2 id="LookupSRV">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L297">LookupSRV</a>
+<h2 id="LookupSRV">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L307">LookupSRV</a>
     <a href="#LookupSRV">¶</a></h2>
 <pre>func LookupSRV(service, proto, name <a href="/builtin/#string">string</a>) (cname <a href="/builtin/#string">string</a>, addrs []*<a href="#SRV">SRV</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -463,7 +465,7 @@ looks up _service._proto.name. To accommodate services publishing SRV records
 under non-standard names, if both service and proto are empty strings, LookupSRV
 looks up name directly.
 
-<h2 id="LookupTXT">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L335">LookupTXT</a>
+<h2 id="LookupTXT">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L345">LookupTXT</a>
     <a href="#LookupTXT">¶</a></h2>
 <pre>func LookupTXT(name <a href="/builtin/#string">string</a>) ([]<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -496,7 +498,7 @@ The two methods Network and String conventionally return strings that can be
 passed as the arguments to Dial, but the exact form and meaning of the strings
 is up to the implementation.
 
-<h2 id="AddrError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L500">AddrError</a>
+<h2 id="AddrError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L502">AddrError</a>
     <a href="#AddrError">¶</a></h2>
 <pre>type AddrError struct {
 <span id="AddrError.Err"></span>    Err  <a href="/builtin/#string">string</a>
@@ -504,22 +506,22 @@ is up to the implementation.
 }</pre>
 
 
-<h3 id="AddrError.Error">func (*AddrError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L505">Error</a>
+<h3 id="AddrError.Error">func (*AddrError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L507">Error</a>
     <a href="#AddrError.Error">¶</a></h3>
 <pre>func (e *<a href="#AddrError">AddrError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="AddrError.Temporary">func (*AddrError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L517">Temporary</a>
+<h3 id="AddrError.Temporary">func (*AddrError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L519">Temporary</a>
     <a href="#AddrError.Temporary">¶</a></h3>
 <pre>func (e *<a href="#AddrError">AddrError</a>) Temporary() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="AddrError.Timeout">func (*AddrError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L516">Timeout</a>
+<h3 id="AddrError.Timeout">func (*AddrError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L518">Timeout</a>
     <a href="#AddrError.Timeout">¶</a></h3>
 <pre>func (e *<a href="#AddrError">AddrError</a>) Timeout() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h2 id="Buffers">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L617">Buffers</a>
+<h2 id="Buffers">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L619">Buffers</a>
     <a href="#Buffers">¶</a></h2>
 <pre>type Buffers [][]<a href="/builtin/#byte">byte</a></pre>
 
@@ -528,12 +530,12 @@ Buffers contains zero or more runs of bytes to write.
 On certain machines, for certain types of connections, this is optimized into an
 OS-specific batch write operation (such as "writev").
 
-<h3 id="Buffers.Read">func (*Buffers) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L640">Read</a>
+<h3 id="Buffers.Read">func (*Buffers) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L642">Read</a>
     <a href="#Buffers.Read">¶</a></h3>
 <pre>func (v *<a href="#Buffers">Buffers</a>) Read(p []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h3 id="Buffers.WriteTo">func (*Buffers) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L624">WriteTo</a>
+<h3 id="Buffers.WriteTo">func (*Buffers) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L626">WriteTo</a>
     <a href="#Buffers.WriteTo">¶</a></h3>
 <pre>func (v *<a href="#Buffers">Buffers</a>) WriteTo(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) (n <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -663,7 +665,7 @@ FileConn returns a copy of the network connection corresponding to the open file
 f. It is the caller's responsibility to close f when finished. Closing c does
 not affect f, and closing f does not affect c.
 
-<h3 id="Pipe">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/pipe.go#L8">Pipe</a>
+<h3 id="Pipe">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/pipe.go#L108">Pipe</a>
     <a href="#Pipe">¶</a></h3>
 <pre>func Pipe() (<a href="#Conn">Conn</a>, <a href="#Conn">Conn</a>)</pre>
 
@@ -671,7 +673,7 @@ Pipe creates a synchronous, in-memory, full duplex network connection; both ends
 implement the Conn interface. Reads on one end are matched with writes on the
 other, copying data directly between the two; there is no internal buffering.
 
-<h2 id="DNSConfigError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L533">DNSConfigError</a>
+<h2 id="DNSConfigError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L535">DNSConfigError</a>
     <a href="#DNSConfigError">¶</a></h2>
 <pre>type DNSConfigError struct {
 <span id="DNSConfigError.Err"></span>    Err <a href="/builtin/#error">error</a>
@@ -680,22 +682,22 @@ other, copying data directly between the two; there is no internal buffering.
 DNSConfigError represents an error reading the machine's DNS configuration. (No
 longer used; kept for compatibility.)
 
-<h3 id="DNSConfigError.Error">func (*DNSConfigError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L537">Error</a>
+<h3 id="DNSConfigError.Error">func (*DNSConfigError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L539">Error</a>
     <a href="#DNSConfigError.Error">¶</a></h3>
 <pre>func (e *<a href="#DNSConfigError">DNSConfigError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="DNSConfigError.Temporary">func (*DNSConfigError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L539">Temporary</a>
+<h3 id="DNSConfigError.Temporary">func (*DNSConfigError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L541">Temporary</a>
     <a href="#DNSConfigError.Temporary">¶</a></h3>
 <pre>func (e *<a href="#DNSConfigError">DNSConfigError</a>) Temporary() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="DNSConfigError.Timeout">func (*DNSConfigError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L538">Timeout</a>
+<h3 id="DNSConfigError.Timeout">func (*DNSConfigError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L540">Timeout</a>
     <a href="#DNSConfigError.Timeout">¶</a></h3>
 <pre>func (e *<a href="#DNSConfigError">DNSConfigError</a>) Timeout() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h2 id="DNSError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L547">DNSError</a>
+<h2 id="DNSError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L549">DNSError</a>
     <a href="#DNSError">¶</a></h2>
 <pre>type DNSError struct {
 <span id="DNSError.Err"></span>    Err         <a href="/builtin/#string">string</a> <span class="comment">// description of the error</span>
@@ -707,12 +709,12 @@ longer used; kept for compatibility.)
 
 DNSError represents a DNS lookup error.
 
-<h3 id="DNSError.Error">func (*DNSError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L555">Error</a>
+<h3 id="DNSError.Error">func (*DNSError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L557">Error</a>
     <a href="#DNSError.Error">¶</a></h3>
 <pre>func (e *<a href="#DNSError">DNSError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="DNSError.Temporary">func (*DNSError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L575">Temporary</a>
+<h3 id="DNSError.Temporary">func (*DNSError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L577">Temporary</a>
     <a href="#DNSError.Temporary">¶</a></h3>
 <pre>func (e *<a href="#DNSError">DNSError</a>) Temporary() <a href="/builtin/#bool">bool</a></pre>
 
@@ -720,7 +722,7 @@ Temporary reports whether the DNS error is known to be temporary. This is not
 always known; a DNS lookup may fail due to a temporary error and return a
 DNSError for which Temporary returns false.
 
-<h3 id="DNSError.Timeout">func (*DNSError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L570">Timeout</a>
+<h3 id="DNSError.Timeout">func (*DNSError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L572">Timeout</a>
     <a href="#DNSError.Timeout">¶</a></h3>
 <pre>func (e *<a href="#DNSError">DNSError</a>) Timeout() <a href="/builtin/#bool">bool</a></pre>
 
@@ -820,7 +822,7 @@ trying the next one.
 
 See func Dial for a description of the network and address parameters.
 
-<h2 id="Error">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L364">Error</a>
+<h2 id="Error">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L366">Error</a>
     <a href="#Error">¶</a></h2>
 <pre>type Error interface {
     <a href="/builtin/#error">error</a>
@@ -1165,7 +1167,7 @@ on all available IP addresses of the local system except multicast IP addresses.
 
 Close closes the connection.
 
-<h3 id="IPConn.File">func (*IPConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L281">File</a>
+<h3 id="IPConn.File">func (*IPConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L283">File</a>
     <a href="#IPConn.File">¶</a></h3>
 <pre>func (c *<a href="#IPConn">IPConn</a>) File() (f *<a href="/os/">os</a>.<a href="/os/#File">File</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -1176,6 +1178,8 @@ and closing f does not affect c.
 The returned os.File's file descriptor is different from the connection's.
 Attempting to change properties of the original using this duplicate may or may
 not have the desired effect.
+
+On Unix systems this will cause the SetDeadline methods to stop working.
 
 <h3 id="IPConn.LocalAddr">func (*IPConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L200">LocalAddr</a>
     <a href="#IPConn.LocalAddr">¶</a></h3>
@@ -1415,27 +1419,27 @@ Addrs returns a list of unicast interface addresses for a specific interface.
 MulticastAddrs returns a list of multicast, joined group addresses for a
 specific interface.
 
-<h2 id="InvalidAddrError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L525">InvalidAddrError</a>
+<h2 id="InvalidAddrError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L527">InvalidAddrError</a>
     <a href="#InvalidAddrError">¶</a></h2>
 <pre>type InvalidAddrError <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="InvalidAddrError.Error">func (InvalidAddrError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L527">Error</a>
+<h3 id="InvalidAddrError.Error">func (InvalidAddrError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L529">Error</a>
     <a href="#InvalidAddrError.Error">¶</a></h3>
 <pre>func (e <a href="#InvalidAddrError">InvalidAddrError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="InvalidAddrError.Temporary">func (InvalidAddrError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L529">Temporary</a>
+<h3 id="InvalidAddrError.Temporary">func (InvalidAddrError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L531">Temporary</a>
     <a href="#InvalidAddrError.Temporary">¶</a></h3>
 <pre>func (e <a href="#InvalidAddrError">InvalidAddrError</a>) Temporary() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="InvalidAddrError.Timeout">func (InvalidAddrError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L528">Timeout</a>
+<h3 id="InvalidAddrError.Timeout">func (InvalidAddrError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L530">Timeout</a>
     <a href="#InvalidAddrError.Timeout">¶</a></h3>
 <pre>func (e <a href="#InvalidAddrError">InvalidAddrError</a>) Timeout() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h2 id="Listener">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L351">Listener</a>
+<h2 id="Listener">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L353">Listener</a>
     <a href="#Listener">¶</a></h2>
 <pre>type Listener interface {
     <span class="comment">// Accept waits for and returns the next connection to the listener.</span>
@@ -1524,7 +1528,7 @@ An MX represents a single DNS MX record.
 
 An NS represents a single DNS NS record.
 
-<h2 id="OpError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L402">OpError</a>
+<h2 id="OpError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L404">OpError</a>
     <a href="#OpError">¶</a></h2>
 <pre>type OpError struct {
 <span id="OpError.Op"></span>    <span class="comment">// Op is the operation which caused the error, such as</span>
@@ -1555,22 +1559,22 @@ An NS represents a single DNS NS record.
 OpError is the error type usually returned by functions in the net package. It
 describes the operation, network type, and address of an error.
 
-<h3 id="OpError.Error">func (*OpError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L428">Error</a>
+<h3 id="OpError.Error">func (*OpError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L430">Error</a>
     <a href="#OpError.Error">¶</a></h3>
 <pre>func (e *<a href="#OpError">OpError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="OpError.Temporary">func (*OpError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L479">Temporary</a>
+<h3 id="OpError.Temporary">func (*OpError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L481">Temporary</a>
     <a href="#OpError.Temporary">¶</a></h3>
 <pre>func (e *<a href="#OpError">OpError</a>) Temporary() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="OpError.Timeout">func (*OpError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L466">Timeout</a>
+<h3 id="OpError.Timeout">func (*OpError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L468">Timeout</a>
     <a href="#OpError.Timeout">¶</a></h3>
 <pre>func (e *<a href="#OpError">OpError</a>) Timeout() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h2 id="PacketConn">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L292">PacketConn</a>
+<h2 id="PacketConn">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L294">PacketConn</a>
     <a href="#PacketConn">¶</a></h2>
 <pre>type PacketConn interface {
     <span class="comment">// ReadFrom reads a packet from the connection,</span>
@@ -1659,7 +1663,7 @@ method of PacketConn can be used to discover the chosen port.
 
 See func Dial for a description of the network and address parameters.
 
-<h2 id="ParseError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L489">ParseError</a>
+<h2 id="ParseError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L491">ParseError</a>
     <a href="#ParseError">¶</a></h2>
 <pre>type ParseError struct {
 <span id="ParseError.Type"></span>    <span class="comment">// Type is the type of string that was expected, such as</span>
@@ -1672,12 +1676,12 @@ See func Dial for a description of the network and address parameters.
 
 A ParseError is the error type of literal network address parsers.
 
-<h3 id="ParseError.Error">func (*ParseError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L498">Error</a>
+<h3 id="ParseError.Error">func (*ParseError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L500">Error</a>
     <a href="#ParseError.Error">¶</a></h3>
 <pre>func (e *<a href="#ParseError">ParseError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Resolver">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L92">Resolver</a>
+<h2 id="Resolver">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L97">Resolver</a>
     <a href="#Resolver">¶</a></h2>
 <pre>type Resolver struct {
 <span id="Resolver.PreferGo"></span>    <span class="comment">// PreferGo controls whether Go&#39;s built-in DNS resolver is preferred</span>
@@ -1713,14 +1717,14 @@ A Resolver looks up names and numbers.
 
 A nil *Resolver is equivalent to a zero Resolver.
 
-<h3 id="Resolver.LookupAddr">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L355">LookupAddr</a>
+<h3 id="Resolver.LookupAddr">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L365">LookupAddr</a>
     <a href="#Resolver.LookupAddr">¶</a></h3>
 <pre>func (r *<a href="#Resolver">Resolver</a>) LookupAddr(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, addr <a href="/builtin/#string">string</a>) (names []<a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 LookupAddr performs a reverse lookup for the given address, returning a list of
 names mapping to that address.
 
-<h3 id="Resolver.LookupCNAME">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L284">LookupCNAME</a>
+<h3 id="Resolver.LookupCNAME">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L294">LookupCNAME</a>
     <a href="#Resolver.LookupCNAME">¶</a></h3>
 <pre>func (r *<a href="#Resolver">Resolver</a>) LookupCNAME(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, host <a href="/builtin/#string">string</a>) (cname <a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -1732,40 +1736,40 @@ A canonical name is the final name after following zero or more CNAME records.
 LookupCNAME does not return an error if host does not contain DNS "CNAME"
 records, as long as host resolves to address records.
 
-<h3 id="Resolver.LookupHost">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L133">LookupHost</a>
+<h3 id="Resolver.LookupHost">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L138">LookupHost</a>
     <a href="#Resolver.LookupHost">¶</a></h3>
 <pre>func (r *<a href="#Resolver">Resolver</a>) LookupHost(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, host <a href="/builtin/#string">string</a>) (addrs []<a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 LookupHost looks up the given host using the local resolver. It returns a slice
 of that host's addresses.
 
-<h3 id="Resolver.LookupIPAddr">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L161">LookupIPAddr</a>
+<h3 id="Resolver.LookupIPAddr">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L166">LookupIPAddr</a>
     <a href="#Resolver.LookupIPAddr">¶</a></h3>
 <pre>func (r *<a href="#Resolver">Resolver</a>) LookupIPAddr(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, host <a href="/builtin/#string">string</a>) ([]<a href="#IPAddr">IPAddr</a>, <a href="/builtin/#error">error</a>)</pre>
 
 LookupIPAddr looks up host using the local resolver. It returns a slice of that
 host's IPv4 and IPv6 addresses.
 
-<h3 id="Resolver.LookupMX">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L320">LookupMX</a>
+<h3 id="Resolver.LookupMX">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L330">LookupMX</a>
     <a href="#Resolver.LookupMX">¶</a></h3>
 <pre>func (r *<a href="#Resolver">Resolver</a>) LookupMX(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, name <a href="/builtin/#string">string</a>) ([]*<a href="#MX">MX</a>, <a href="/builtin/#error">error</a>)</pre>
 
 LookupMX returns the DNS MX records for the given domain name sorted by
 preference.
 
-<h3 id="Resolver.LookupNS">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L330">LookupNS</a>
+<h3 id="Resolver.LookupNS">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L340">LookupNS</a>
     <a href="#Resolver.LookupNS">¶</a></h3>
 <pre>func (r *<a href="#Resolver">Resolver</a>) LookupNS(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, name <a href="/builtin/#string">string</a>) ([]*<a href="#NS">NS</a>, <a href="/builtin/#error">error</a>)</pre>
 
 LookupNS returns the DNS NS records for the given domain name.
 
-<h3 id="Resolver.LookupPort">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L246">LookupPort</a>
+<h3 id="Resolver.LookupPort">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L256">LookupPort</a>
     <a href="#Resolver.LookupPort">¶</a></h3>
 <pre>func (r *<a href="#Resolver">Resolver</a>) LookupPort(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, network, service <a href="/builtin/#string">string</a>) (port <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 LookupPort looks up the port for the given network and service.
 
-<h3 id="Resolver.LookupSRV">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L310">LookupSRV</a>
+<h3 id="Resolver.LookupSRV">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L320">LookupSRV</a>
     <a href="#Resolver.LookupSRV">¶</a></h3>
 <pre>func (r *<a href="#Resolver">Resolver</a>) LookupSRV(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, service, proto, name <a href="/builtin/#string">string</a>) (cname <a href="/builtin/#string">string</a>, addrs []*<a href="#SRV">SRV</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -1778,7 +1782,7 @@ looks up _service._proto.name. To accommodate services publishing SRV records
 under non-standard names, if both service and proto are empty strings, LookupSRV
 looks up name directly.
 
-<h3 id="Resolver.LookupTXT">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L340">LookupTXT</a>
+<h3 id="Resolver.LookupTXT">func (*Resolver) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/lookup.go#L350">LookupTXT</a>
     <a href="#Resolver.LookupTXT">¶</a></h3>
 <pre>func (r *<a href="#Resolver">Resolver</a>) LookupTXT(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, name <a href="/builtin/#string">string</a>) ([]<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -1871,7 +1875,7 @@ just use Close.
 CloseWrite shuts down the writing side of the TCP connection. Most callers
 should just use Close.
 
-<h3 id="TCPConn.File">func (*TCPConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L281">File</a>
+<h3 id="TCPConn.File">func (*TCPConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L283">File</a>
     <a href="#TCPConn.File">¶</a></h3>
 <pre>func (c *<a href="#TCPConn">TCPConn</a>) File() (f *<a href="/os/">os</a>.<a href="/os/#File">File</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -1882,6 +1886,8 @@ and closing f does not affect c.
 The returned os.File's file descriptor is different from the connection's.
 Attempting to change properties of the original using this duplicate may or may
 not have the desired effect.
+
+On Unix systems this will cause the SetDeadline methods to stop working.
 
 <h3 id="TCPConn.LocalAddr">func (*TCPConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L200">LocalAddr</a>
     <a href="#TCPConn.LocalAddr">¶</a></h3>
@@ -2000,7 +2006,7 @@ Write implements the Conn Write method.
 TCPListener is a TCP network listener. Clients should typically use variables of
 type Listener instead of assuming TCP.
 
-<h3 id="ListenTCP">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L300">ListenTCP</a>
+<h3 id="ListenTCP">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L312">ListenTCP</a>
     <a href="#ListenTCP">¶</a></h3>
 <pre>func ListenTCP(network <a href="/builtin/#string">string</a>, laddr *<a href="#TCPAddr">TCPAddr</a>) (*<a href="#TCPListener">TCPListener</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -2012,34 +2018,34 @@ If the IP field of laddr is nil or an unspecified IP address, ListenTCP listens
 on all available unicast and anycast IP addresses of the local system. If the
 Port field of laddr is 0, a port number is automatically chosen.
 
-<h3 id="TCPListener.Accept">func (*TCPListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L233">Accept</a>
+<h3 id="TCPListener.Accept">func (*TCPListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L245">Accept</a>
     <a href="#TCPListener.Accept">¶</a></h3>
 <pre>func (l *<a href="#TCPListener">TCPListener</a>) Accept() (<a href="#Conn">Conn</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Accept implements the Accept method in the Listener interface; it waits for the
 next call and returns a generic Conn.
 
-<h3 id="TCPListener.AcceptTCP">func (*TCPListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L220">AcceptTCP</a>
+<h3 id="TCPListener.AcceptTCP">func (*TCPListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L232">AcceptTCP</a>
     <a href="#TCPListener.AcceptTCP">¶</a></h3>
 <pre>func (l *<a href="#TCPListener">TCPListener</a>) AcceptTCP() (*<a href="#TCPConn">TCPConn</a>, <a href="/builtin/#error">error</a>)</pre>
 
 AcceptTCP accepts the next incoming call and returns the new connection.
 
-<h3 id="TCPListener.Addr">func (*TCPListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L259">Addr</a>
+<h3 id="TCPListener.Addr">func (*TCPListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L271">Addr</a>
     <a href="#TCPListener.Addr">¶</a></h3>
 <pre>func (l *<a href="#TCPListener">TCPListener</a>) Addr() <a href="#Addr">Addr</a></pre>
 
 Addr returns the listener's network address, a *TCPAddr. The Addr returned is
 shared by all invocations of Addr, so do not modify it.
 
-<h3 id="TCPListener.Close">func (*TCPListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L246">Close</a>
+<h3 id="TCPListener.Close">func (*TCPListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L258">Close</a>
     <a href="#TCPListener.Close">¶</a></h3>
 <pre>func (l *<a href="#TCPListener">TCPListener</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close stops listening on the TCP address. Already Accepted connections are not
 closed.
 
-<h3 id="TCPListener.File">func (*TCPListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L280">File</a>
+<h3 id="TCPListener.File">func (*TCPListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L292">File</a>
     <a href="#TCPListener.File">¶</a></h3>
 <pre>func (l *<a href="#TCPListener">TCPListener</a>) File() (f *<a href="/os/">os</a>.<a href="/os/#File">File</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2051,12 +2057,22 @@ The returned os.File's file descriptor is different from the connection's.
 Attempting to change properties of the original using this duplicate may or may
 not have the desired effect.
 
-<h3 id="TCPListener.SetDeadline">func (*TCPListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L263">SetDeadline</a>
+<h3 id="TCPListener.SetDeadline">func (*TCPListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L275">SetDeadline</a>
     <a href="#TCPListener.SetDeadline">¶</a></h3>
 <pre>func (l *<a href="#TCPListener">TCPListener</a>) SetDeadline(t <a href="/time/">time</a>.<a href="/time/#Time">Time</a>) <a href="/builtin/#error">error</a></pre>
 
 SetDeadline sets the deadline associated with the listener. A zero time value
 disables the deadline.
+
+<h3 id="TCPListener.SyscallConn">func (*TCPListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L223">SyscallConn</a>
+    <a href="#TCPListener.SyscallConn">¶</a></h3>
+<pre>func (l *<a href="#TCPListener">TCPListener</a>) SyscallConn() (<a href="/syscall/">syscall</a>.<a href="/syscall/#RawConn">RawConn</a>, <a href="/builtin/#error">error</a>)</pre>
+
+SyscallConn returns a raw network connection. This implements the syscall.Conn
+interface.
+
+The returned RawConn only supports calling Control. Read and Write return an
+error.
 
 <h2 id="UDPAddr">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/udpsock.go#L12">UDPAddr</a>
     <a href="#UDPAddr">¶</a></h2>
@@ -2153,7 +2169,7 @@ If the Port field of laddr is 0, a port number is automatically chosen.
 
 Close closes the connection.
 
-<h3 id="UDPConn.File">func (*UDPConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L281">File</a>
+<h3 id="UDPConn.File">func (*UDPConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L283">File</a>
     <a href="#UDPConn.File">¶</a></h3>
 <pre>func (c *<a href="#UDPConn">UDPConn</a>) File() (f *<a href="/os/">os</a>.<a href="/os/#File">File</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2164,6 +2180,8 @@ and closing f does not affect c.
 The returned os.File's file descriptor is different from the connection's.
 Attempting to change properties of the original using this duplicate may or may
 not have the desired effect.
+
+On Unix systems this will cause the SetDeadline methods to stop working.
 
 <h3 id="UDPConn.LocalAddr">func (*UDPConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L200">LocalAddr</a>
     <a href="#UDPConn.LocalAddr">¶</a></h3>
@@ -2327,7 +2345,7 @@ The network must be a Unix network name; see func Dial for details.
 
 If laddr is non-nil, it is used as the local address for the connection.
 
-<h3 id="ListenUnixgram">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L307">ListenUnixgram</a>
+<h3 id="ListenUnixgram">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L319">ListenUnixgram</a>
     <a href="#ListenUnixgram">¶</a></h3>
 <pre>func ListenUnixgram(network <a href="/builtin/#string">string</a>, laddr *<a href="#UnixAddr">UnixAddr</a>) (*<a href="#UnixConn">UnixConn</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -2355,7 +2373,7 @@ callers should just use Close.
 CloseWrite shuts down the writing side of the Unix domain connection. Most
 callers should just use Close.
 
-<h3 id="UnixConn.File">func (*UnixConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L281">File</a>
+<h3 id="UnixConn.File">func (*UnixConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L283">File</a>
     <a href="#UnixConn.File">¶</a></h3>
 <pre>func (c *<a href="#UnixConn">UnixConn</a>) File() (f *<a href="/os/">os</a>.<a href="/os/#File">File</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2366,6 +2384,8 @@ and closing f does not affect c.
 The returned os.File's file descriptor is different from the connection's.
 Attempting to change properties of the original using this duplicate may or may
 not have the desired effect.
+
+On Unix systems this will cause the SetDeadline methods to stop working.
 
 <h3 id="UnixConn.LocalAddr">func (*UnixConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L200">LocalAddr</a>
     <a href="#UnixConn.LocalAddr">¶</a></h3>
@@ -2488,7 +2508,7 @@ WriteToUnix acts like WriteTo but takes a UnixAddr.
 UnixListener is a Unix domain socket listener. Clients should typically use
 variables of type Listener instead of assuming Unix domain sockets.
 
-<h3 id="ListenUnix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L288">ListenUnix</a>
+<h3 id="ListenUnix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L300">ListenUnix</a>
     <a href="#ListenUnix">¶</a></h3>
 <pre>func ListenUnix(network <a href="/builtin/#string">string</a>, laddr *<a href="#UnixAddr">UnixAddr</a>) (*<a href="#UnixListener">UnixListener</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -2496,34 +2516,34 @@ ListenUnix acts like Listen for Unix networks.
 
 The network must be "unix" or "unixpacket".
 
-<h3 id="UnixListener.Accept">func (*UnixListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L227">Accept</a>
+<h3 id="UnixListener.Accept">func (*UnixListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L239">Accept</a>
     <a href="#UnixListener.Accept">¶</a></h3>
 <pre>func (l *<a href="#UnixListener">UnixListener</a>) Accept() (<a href="#Conn">Conn</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Accept implements the Accept method in the Listener interface. Returned
 connections will be of type *UnixConn.
 
-<h3 id="UnixListener.AcceptUnix">func (*UnixListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L214">AcceptUnix</a>
+<h3 id="UnixListener.AcceptUnix">func (*UnixListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L226">AcceptUnix</a>
     <a href="#UnixListener.AcceptUnix">¶</a></h3>
 <pre>func (l *<a href="#UnixListener">UnixListener</a>) AcceptUnix() (*<a href="#UnixConn">UnixConn</a>, <a href="/builtin/#error">error</a>)</pre>
 
 AcceptUnix accepts the next incoming call and returns the new connection.
 
-<h3 id="UnixListener.Addr">func (*UnixListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L253">Addr</a>
+<h3 id="UnixListener.Addr">func (*UnixListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L265">Addr</a>
     <a href="#UnixListener.Addr">¶</a></h3>
 <pre>func (l *<a href="#UnixListener">UnixListener</a>) Addr() <a href="#Addr">Addr</a></pre>
 
 Addr returns the listener's network address. The Addr returned is shared by all
 invocations of Addr, so do not modify it.
 
-<h3 id="UnixListener.Close">func (*UnixListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L240">Close</a>
+<h3 id="UnixListener.Close">func (*UnixListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L252">Close</a>
     <a href="#UnixListener.Close">¶</a></h3>
 <pre>func (l *<a href="#UnixListener">UnixListener</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close stops listening on the Unix address. Already accepted connections are not
 closed.
 
-<h3 id="UnixListener.File">func (*UnixListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L274">File</a>
+<h3 id="UnixListener.File">func (*UnixListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L286">File</a>
     <a href="#UnixListener.File">¶</a></h3>
 <pre>func (l *<a href="#UnixListener">UnixListener</a>) File() (f *<a href="/os/">os</a>.<a href="/os/#File">File</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -2535,7 +2555,7 @@ The returned os.File's file descriptor is different from the connection's.
 Attempting to change properties of the original using this duplicate may or may
 not have the desired effect.
 
-<h3 id="UnixListener.SetDeadline">func (*UnixListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L257">SetDeadline</a>
+<h3 id="UnixListener.SetDeadline">func (*UnixListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L269">SetDeadline</a>
     <a href="#UnixListener.SetDeadline">¶</a></h3>
 <pre>func (l *<a href="#UnixListener">UnixListener</a>) SetDeadline(t <a href="/time/">time</a>.<a href="/time/#Time">Time</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -2556,22 +2576,32 @@ the socket file. but if the listener was created by a call to FileListener to
 use an already existing socket file, then by default closing the listener will
 not remove the socket file.
 
-<h2 id="UnknownNetworkError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L519">UnknownNetworkError</a>
+<h3 id="UnixListener.SyscallConn">func (*UnixListener) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/unixsock.go#L217">SyscallConn</a>
+    <a href="#UnixListener.SyscallConn">¶</a></h3>
+<pre>func (l *<a href="#UnixListener">UnixListener</a>) SyscallConn() (<a href="/syscall/">syscall</a>.<a href="/syscall/#RawConn">RawConn</a>, <a href="/builtin/#error">error</a>)</pre>
+
+SyscallConn returns a raw network connection. This implements the syscall.Conn
+interface.
+
+The returned RawConn only supports calling Control. Read and Write return an
+error.
+
+<h2 id="UnknownNetworkError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L521">UnknownNetworkError</a>
     <a href="#UnknownNetworkError">¶</a></h2>
 <pre>type UnknownNetworkError <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="UnknownNetworkError.Error">func (UnknownNetworkError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L521">Error</a>
+<h3 id="UnknownNetworkError.Error">func (UnknownNetworkError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L523">Error</a>
     <a href="#UnknownNetworkError.Error">¶</a></h3>
 <pre>func (e <a href="#UnknownNetworkError">UnknownNetworkError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="UnknownNetworkError.Temporary">func (UnknownNetworkError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L523">Temporary</a>
+<h3 id="UnknownNetworkError.Temporary">func (UnknownNetworkError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L525">Temporary</a>
     <a href="#UnknownNetworkError.Temporary">¶</a></h3>
 <pre>func (e <a href="#UnknownNetworkError">UnknownNetworkError</a>) Temporary() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="UnknownNetworkError.Timeout">func (UnknownNetworkError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L522">Timeout</a>
+<h3 id="UnknownNetworkError.Timeout">func (UnknownNetworkError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/net.go#L524">Timeout</a>
     <a href="#UnknownNetworkError.Timeout">¶</a></h3>
 <pre>func (e <a href="#UnknownNetworkError">UnknownNetworkError</a>) Timeout() <a href="/builtin/#bool">bool</a></pre>
 
@@ -2592,8 +2622,8 @@ not remove the socket file.
 
   The Go 1 compatibility guidelines make it impossible for us to change the
   behavior of these methods; use Read or ReadMsgIP instead.
-- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/iprawsock.go#L14)  On NaCl, Plan 9 and Windows, the ReadMsgIP and WriteMsgIP methods of IPConn
-  are not implemented.
+- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/iprawsock.go#L14)  On NaCl and Plan 9, the ReadMsgIP and WriteMsgIP methods of IPConn are not
+  implemented.
 - [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/iprawsock.go#L17)  On Windows, the File method of IPConn is not implemented.
 - [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/ipsock.go#L2)  On DragonFly BSD and OpenBSD, listening on the "tcp" and "udp" networks does
   not listen for both IPv4 and IPv6 connections. This is due to the fact that
@@ -2605,8 +2635,8 @@ not remove the socket file.
 - [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/rawconn.go#L5)  On NaCl and Plan 9, the Control, Read and Write methods of syscall.RawConn
   are not implemented.
 - [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/tcpsock.go#L5)  On Windows, the File method of TCPListener is not implemented.
-- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/udpsock.go#L2)  On NaCl, Plan 9 and Windows, the ReadMsgUDP and WriteMsgUDP methods of
-  UDPConn are not implemented.
+- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/udpsock.go#L2)  On NaCl and Plan 9, the ReadMsgUDP and WriteMsgUDP methods of UDPConn are
+  not implemented.
 - [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/udpsock.go#L5)  On Windows, the File method of UDPConn is not implemented.
 - [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/udpsock.go#L8)  On NaCl, the ListenMulticastUDP function is not implemented.
 

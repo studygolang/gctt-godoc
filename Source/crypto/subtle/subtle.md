@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package subtle
 
   `import "crypto/subtle"`
@@ -34,7 +34,7 @@ ConstantTimeCompare returns 1 if and only if the two slices, x and y, have equal
 contents. The time taken is a function of the length of the slices and is
 independent of the contents.
 
-<h2 id="ConstantTimeCopy">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/subtle/constant_time.go#L45">ConstantTimeCopy</a>
+<h2 id="ConstantTimeCopy">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/subtle/constant_time.go#L33">ConstantTimeCopy</a>
     <a href="#ConstantTimeCopy">¶</a></h2>
 <pre>func ConstantTimeCopy(v <a href="/builtin/#int">int</a>, x, y []<a href="/builtin/#byte">byte</a>)</pre>
 
@@ -42,13 +42,13 @@ ConstantTimeCopy copies the contents of y into x (a slice of equal length) if v
 == 1. If v == 0, x is left unchanged. Its behavior is undefined if v takes any
 other value.
 
-<h2 id="ConstantTimeEq">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/subtle/constant_time.go#L31">ConstantTimeEq</a>
+<h2 id="ConstantTimeEq">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/subtle/constant_time.go#L26">ConstantTimeEq</a>
     <a href="#ConstantTimeEq">¶</a></h2>
 <pre>func ConstantTimeEq(x, y <a href="/builtin/#int32">int32</a>) <a href="/builtin/#int">int</a></pre>
 
 ConstantTimeEq returns 1 if x == y and 0 otherwise.
 
-<h2 id="ConstantTimeLessOrEq">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/subtle/constant_time.go#L59">ConstantTimeLessOrEq</a>
+<h2 id="ConstantTimeLessOrEq">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/subtle/constant_time.go#L47">ConstantTimeLessOrEq</a>
     <a href="#ConstantTimeLessOrEq">¶</a></h2>
 <pre>func ConstantTimeLessOrEq(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 

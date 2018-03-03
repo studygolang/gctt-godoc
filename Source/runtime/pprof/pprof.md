@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package pprof
 
   `import "runtime/pprof"`
@@ -21,7 +21,7 @@ directory and writes the CPU and memory profiles to cpu.prof and mem.prof:
 To add equivalent profiling support to a standalone program, add code like the
 following to your main function:
 
-    var cpuprofile = flag.String("cpuprofile", "", "write cpu profile `file`")
+    var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to `file`")
     var memprofile = flag.String("memprofile", "", "write memory profile to `file`")
 
     func main() {
@@ -135,7 +135,7 @@ Profiles returns a slice of all the known profiles, sorted by name.
 SetGoroutineLabels sets the current goroutine's labels to match ctx. This is a
 lower-level API than Do, which should be used instead when possible.
 
-<h2 id="StartCPUProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L660">StartCPUProfile</a>
+<h2 id="StartCPUProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L702">StartCPUProfile</a>
     <a href="#StartCPUProfile">¶</a></h2>
 <pre>func StartCPUProfile(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -150,7 +150,7 @@ signal handler (if any) not to the one used by Go. To make it work, call
 os/signal.Notify for syscall.SIGPROF, but note that doing so may break any
 profiling being done by the main program.
 
-<h2 id="StopCPUProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L719">StopCPUProfile</a>
+<h2 id="StopCPUProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L761">StopCPUProfile</a>
     <a href="#StopCPUProfile">¶</a></h2>
 <pre>func StopCPUProfile()</pre>
 
@@ -164,7 +164,7 @@ returns after all the writes for the profile have completed.
 WithLabels returns a new context.Context with the given labels added. A label
 overwrites a prior label with the same key.
 
-<h2 id="WriteHeapProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L457">WriteHeapProfile</a>
+<h2 id="WriteHeapProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L492">WriteHeapProfile</a>
     <a href="#WriteHeapProfile">¶</a></h2>
 <pre>func WriteHeapProfile(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) <a href="/builtin/#error">error</a></pre>
 

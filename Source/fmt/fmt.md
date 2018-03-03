@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package fmt
 
   `import "fmt"`
@@ -58,6 +58,8 @@ String and slice of bytes (treated equivalently with these verbs):
 Pointer:
 
     %p	base 16 notation, with leading 0x
+    The %b, %d, %o, %x and %X verbs also work with pointers,
+    formatting the value exactly as if it were an integer.
 
 The default format for %v is:
 
@@ -92,8 +94,8 @@ following number specifies a precision of zero. Examples:
 Width and precision are measured in units of Unicode code points, that is,
 runes. (This differs from C's printf where the units are always measured in
 bytes.) Either or both of the flags may be replaced with the character '*',
-causing their values to be obtained from the next operand, which must be of type
-int.
+causing their values to be obtained from the next operand (preceding the one to
+format), which must be of type int.
 
 For most values, width is the minimum number of runes to output, padding the
 formatted form with spaces if necessary.
@@ -366,17 +368,21 @@ bufio.NewReader.
 - [type State](#State)
 - [type Stringer](#Stringer)
 
+### Examples
+
+- [Stringer](#exampleStringer)
+
 ### Package files
  [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/doc.go) [format.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/format.go) [print.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go) [scan.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/scan.go)
 
-<h2 id="Errorf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L194">Errorf</a>
+<h2 id="Errorf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L201">Errorf</a>
     <a href="#Errorf">¶</a></h2>
 <pre>func Errorf(format <a href="/builtin/#string">string</a>, a ...interface{}) <a href="/builtin/#error">error</a></pre>
 
 Errorf formats according to a format specifier and returns the string as a value
 that satisfies error.
 
-<h2 id="Fprint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L203">Fprint</a>
+<h2 id="Fprint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L210">Fprint</a>
     <a href="#Fprint">¶</a></h2>
 <pre>func Fprint(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -384,14 +390,14 @@ Fprint formats using the default formats for its operands and writes to w.
 Spaces are added between operands when neither is a string. It returns the
 number of bytes written and any write error encountered.
 
-<h2 id="Fprintf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L169">Fprintf</a>
+<h2 id="Fprintf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L176">Fprintf</a>
     <a href="#Fprintf">¶</a></h2>
 <pre>func Fprintf(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, format <a href="/builtin/#string">string</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 Fprintf formats according to a format specifier and writes to w. It returns the
 number of bytes written and any write error encountered.
 
-<h2 id="Fprintln">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L235">Fprintln</a>
+<h2 id="Fprintln">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L242">Fprintln</a>
     <a href="#Fprintln">¶</a></h2>
 <pre>func Fprintln(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -423,7 +429,7 @@ successfully parsed. Newlines in the input must match newlines in the format.
 Fscanln is similar to Fscan, but stops scanning at a newline and after the final
 item there must be a newline or EOF.
 
-<h2 id="Print">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L214">Print</a>
+<h2 id="Print">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L221">Print</a>
     <a href="#Print">¶</a></h2>
 <pre>func Print(a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -431,14 +437,14 @@ Print formats using the default formats for its operands and writes to standard
 output. Spaces are added between operands when neither is a string. It returns
 the number of bytes written and any write error encountered.
 
-<h2 id="Printf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L179">Printf</a>
+<h2 id="Printf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L186">Printf</a>
     <a href="#Printf">¶</a></h2>
 <pre>func Printf(format <a href="/builtin/#string">string</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 Printf formats according to a format specifier and writes to standard output. It
 returns the number of bytes written and any write error encountered.
 
-<h2 id="Println">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L246">Println</a>
+<h2 id="Println">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L253">Println</a>
     <a href="#Println">¶</a></h2>
 <pre>func Println(a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -474,21 +480,21 @@ even if it is a space (or tab etc.) or newline.
 Scanln is similar to Scan, but stops scanning at a newline and after the final
 item there must be a newline or EOF.
 
-<h2 id="Sprint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L220">Sprint</a>
+<h2 id="Sprint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L227">Sprint</a>
     <a href="#Sprint">¶</a></h2>
 <pre>func Sprint(a ...interface{}) <a href="/builtin/#string">string</a></pre>
 
 Sprint formats using the default formats for its operands and returns the
 resulting string. Spaces are added between operands when neither is a string.
 
-<h2 id="Sprintf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L184">Sprintf</a>
+<h2 id="Sprintf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L191">Sprintf</a>
     <a href="#Sprintf">¶</a></h2>
 <pre>func Sprintf(format <a href="/builtin/#string">string</a>, a ...interface{}) <a href="/builtin/#string">string</a></pre>
 
 Sprintf formats according to a format specifier and returns the resulting
 string.
 
-<h2 id="Sprintln">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L252">Sprintln</a>
+<h2 id="Sprintln">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L259">Sprintln</a>
     <a href="#Sprintln">¶</a></h2>
 <pre>func Sprintln(a ...interface{}) <a href="/builtin/#string">string</a></pre>
 
@@ -615,5 +621,34 @@ Stringer is implemented by any value that has a String method, which defines the
 ``native'' format for that value. The String method is used to print values
 passed as an operand to any format that accepts a string or to an unformatted
 printer such as Print.
+
+<a id="exampleStringer"></a>
+Example:
+
+    package fmt_test
+
+    import (
+        "fmt"
+    )
+
+    // Animal has a Name and an Age to represent an animal.
+    type Animal struct {
+        Name string
+        Age  uint
+    }
+
+    // String makes Animal satisfy the Stringer interface.
+    func (a Animal) String() string {
+        return fmt.Sprintf("%v (%d)", a.Name, a.Age)
+    }
+
+    func ExampleStringer() {
+        a := Animal{
+            Name: "Gopher",
+            Age:  2,
+        }
+        fmt.Println(a)
+        // Output: Gopher (2)
+    }
 
 

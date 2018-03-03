@@ -1,4 +1,4 @@
-version: 1.9.2
+version: 1.10
 ## package textproto
 
   `import "net/textproto"`
@@ -68,7 +68,7 @@ single network connection.
 ### Package files
  [header.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/textproto/header.go) [pipeline.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/textproto/pipeline.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/textproto/reader.go) [textproto.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/textproto/textproto.go) [writer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/textproto/writer.go)
 
-<h2 id="CanonicalMIMEHeaderKey">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/textproto/reader.go#L552">CanonicalMIMEHeaderKey</a>
+<h2 id="CanonicalMIMEHeaderKey">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/textproto/reader.go#L562">CanonicalMIMEHeaderKey</a>
     <a href="#CanonicalMIMEHeaderKey">¶</a></h2>
 <pre>func CanonicalMIMEHeaderKey(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
