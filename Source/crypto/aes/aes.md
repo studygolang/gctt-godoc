@@ -24,7 +24,7 @@ constant-time.
   - [func (k KeySizeError) Error() string](#KeySizeError.Error)
 
 ### Package files
- [aes_gcm.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/aes/aes_gcm.go) [block.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/aes/block.go) [cipher.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/aes/cipher.go) [cipher_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/aes/cipher_amd64.go) [const.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/aes/const.go) [modes.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/aes/modes.go)
+ [aes_gcm.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/aes/aes_gcm.go) [block.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/aes/block.go) [cipher.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/aes/cipher.go) [cipher_amd64.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/aes/cipher_amd64.go) [const.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/aes/const.go) [modes.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/aes/modes.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -32,19 +32,19 @@ constant-time.
 
 The AES block size in bytes.
 
-<h2 id="NewCipher">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/aes/cipher.go#L21">NewCipher</a>
+<h2 id="NewCipher">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/aes/cipher.go#L21">NewCipher</a>
     <a href="#NewCipher">¶</a></h2>
 <pre>func NewCipher(key []<a href="/builtin/#byte">byte</a>) (<a href="/crypto/cipher/">cipher</a>.<a href="/crypto/cipher/#Block">Block</a>, <a href="/builtin/#error">error</a>)</pre>
 
 NewCipher creates and returns a new cipher.Block. The key argument should be the
 AES key, either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256.
 
-<h2 id="KeySizeError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/aes/cipher.go#L11">KeySizeError</a>
+<h2 id="KeySizeError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/aes/cipher.go#L11">KeySizeError</a>
     <a href="#KeySizeError">¶</a></h2>
 <pre>type KeySizeError <a href="/builtin/#int">int</a></pre>
 
 
-<h3 id="KeySizeError.Error">func (KeySizeError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/aes/cipher.go#L13">Error</a>
+<h3 id="KeySizeError.Error">func (KeySizeError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/aes/cipher.go#L13">Error</a>
     <a href="#KeySizeError.Error">¶</a></h3>
 <pre>func (k <a href="#KeySizeError">KeySizeError</a>) Error() <a href="/builtin/#string">string</a></pre>
 

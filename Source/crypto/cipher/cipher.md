@@ -44,9 +44,9 @@ Publication 800-38A.
 - [StreamWriter](#exampleStreamWriter)
 
 ### Package files
- [cbc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cbc.go) [cfb.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cfb.go) [cipher.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cipher.go) [ctr.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/ctr.go) [gcm.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/gcm.go) [io.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/io.go) [ofb.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/ofb.go) [xor.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/xor.go)
+ [cbc.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/cbc.go) [cfb.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/cfb.go) [cipher.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/cipher.go) [ctr.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/ctr.go) [gcm.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/gcm.go) [io.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/io.go) [ofb.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/ofb.go) [xor.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/xor.go)
 
-<h2 id="AEAD">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/gcm.go#L5">AEAD</a>
+<h2 id="AEAD">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/gcm.go#L5">AEAD</a>
     <a href="#AEAD">¶</a></h2>
 <pre>type AEAD interface {
     <span class="comment">// NonceSize returns the size of the nonce that must be passed to Seal</span>
@@ -85,7 +85,7 @@ For a description of the methodology, see
 
     https://en.wikipedia.org/wiki/Authenticated_encryption
 
-<h3 id="NewGCM">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/gcm.go#L71">NewGCM</a>
+<h3 id="NewGCM">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/gcm.go#L71">NewGCM</a>
     <a href="#NewGCM">¶</a></h3>
 <pre>func NewGCM(cipher <a href="#Block">Block</a>) (<a href="#AEAD">AEAD</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -158,7 +158,7 @@ Example:
     ciphertext := aesgcm.Seal(nil, nonce, plaintext, nil)
     fmt.Printf("%x\n", ciphertext)
 
-<h3 id="NewGCMWithNonceSize">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/gcm.go#L81">NewGCMWithNonceSize</a>
+<h3 id="NewGCMWithNonceSize">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/gcm.go#L81">NewGCMWithNonceSize</a>
     <a href="#NewGCMWithNonceSize">¶</a></h3>
 <pre>func NewGCMWithNonceSize(cipher <a href="#Block">Block</a>, size <a href="/builtin/#int">int</a>) (<a href="#AEAD">AEAD</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -169,7 +169,7 @@ Only use this function if you require compatibility with an existing
 cryptosystem that uses non-standard nonce lengths. All other users should use
 NewGCM, which is faster and more resistant to misuse.
 
-<h2 id="Block">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cipher.go#L5">Block</a>
+<h2 id="Block">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/cipher.go#L5">Block</a>
     <a href="#Block">¶</a></h2>
 <pre>type Block interface {
     <span class="comment">// BlockSize returns the cipher&#39;s block size.</span>
@@ -188,7 +188,7 @@ A Block represents an implementation of block cipher using a given key. It
 provides the capability to encrypt or decrypt individual blocks. The mode
 implementations extend that capability to streams of blocks.
 
-<h2 id="BlockMode">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cipher.go#L35">BlockMode</a>
+<h2 id="BlockMode">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/cipher.go#L35">BlockMode</a>
     <a href="#BlockMode">¶</a></h2>
 <pre>type BlockMode interface {
     <span class="comment">// BlockSize returns the mode&#39;s block size.</span>
@@ -211,7 +211,7 @@ implementations extend that capability to streams of blocks.
 A BlockMode represents a block cipher running in a block-based mode (CBC, ECB
 etc).
 
-<h3 id="NewCBCDecrypter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cbc.go#L90">NewCBCDecrypter</a>
+<h3 id="NewCBCDecrypter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/cbc.go#L90">NewCBCDecrypter</a>
     <a href="#NewCBCDecrypter">¶</a></h3>
 <pre>func NewCBCDecrypter(b <a href="#Block">Block</a>, iv []<a href="/builtin/#byte">byte</a>) <a href="#BlockMode">BlockMode</a></pre>
 
@@ -263,7 +263,7 @@ Example:
     fmt.Printf("%s\n", ciphertext)
     // Output: exampleplaintext
 
-<h3 id="NewCBCEncrypter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cbc.go#L33">NewCBCEncrypter</a>
+<h3 id="NewCBCEncrypter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/cbc.go#L33">NewCBCEncrypter</a>
     <a href="#NewCBCEncrypter">¶</a></h3>
 <pre>func NewCBCEncrypter(b <a href="#Block">Block</a>, iv []<a href="/builtin/#byte">byte</a>) <a href="#BlockMode">BlockMode</a></pre>
 
@@ -311,7 +311,7 @@ Example:
 
     fmt.Printf("%x\n", ciphertext)
 
-<h2 id="Stream">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cipher.go#L19">Stream</a>
+<h2 id="Stream">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/cipher.go#L19">Stream</a>
     <a href="#Stream">¶</a></h2>
 <pre>type Stream interface {
     <span class="comment">// XORKeyStream XORs each byte in the given slice with a byte from the</span>
@@ -329,7 +329,7 @@ Example:
 
 A Stream represents a stream cipher.
 
-<h3 id="NewCFBDecrypter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cfb.go#L42">NewCFBDecrypter</a>
+<h3 id="NewCFBDecrypter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/cfb.go#L42">NewCFBDecrypter</a>
     <a href="#NewCFBDecrypter">¶</a></h3>
 <pre>func NewCFBDecrypter(block <a href="#Block">Block</a>, iv []<a href="/builtin/#byte">byte</a>) <a href="#Stream">Stream</a></pre>
 
@@ -366,7 +366,7 @@ Example:
     fmt.Printf("%s", ciphertext)
     // Output: some plaintext
 
-<h3 id="NewCFBEncrypter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/cfb.go#L35">NewCFBEncrypter</a>
+<h3 id="NewCFBEncrypter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/cfb.go#L35">NewCFBEncrypter</a>
     <a href="#NewCFBEncrypter">¶</a></h3>
 <pre>func NewCFBEncrypter(block <a href="#Block">Block</a>, iv []<a href="/builtin/#byte">byte</a>) <a href="#Stream">Stream</a></pre>
 
@@ -404,7 +404,7 @@ Example:
     // be secure.
     fmt.Printf("%x\n", ciphertext)
 
-<h3 id="NewCTR">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/ctr.go#L23">NewCTR</a>
+<h3 id="NewCTR">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/ctr.go#L23">NewCTR</a>
     <a href="#NewCTR">¶</a></h3>
 <pre>func NewCTR(block <a href="#Block">Block</a>, iv []<a href="/builtin/#byte">byte</a>) <a href="#Stream">Stream</a></pre>
 
@@ -451,7 +451,7 @@ Example:
     fmt.Printf("%s\n", plaintext2)
     // Output: some plaintext
 
-<h3 id="NewOFB">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/ofb.go#L9">NewOFB</a>
+<h3 id="NewOFB">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/ofb.go#L9">NewOFB</a>
     <a href="#NewOFB">¶</a></h3>
 <pre>func NewOFB(b <a href="#Block">Block</a>, iv []<a href="/builtin/#byte">byte</a>) <a href="#Stream">Stream</a></pre>
 
@@ -499,7 +499,7 @@ Example:
     fmt.Printf("%s\n", plaintext2)
     // Output: some plaintext
 
-<h2 id="StreamReader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/io.go#L4">StreamReader</a>
+<h2 id="StreamReader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/io.go#L4">StreamReader</a>
     <a href="#StreamReader">¶</a></h2>
 <pre>type StreamReader struct {
 <span id="StreamReader.S"></span>    S <a href="#Stream">Stream</a>
@@ -551,12 +551,12 @@ Example:
     // StreamReader in this manner, an attacker could flip arbitrary bits in
     // the output.
 
-<h3 id="StreamReader.Read">func (StreamReader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/io.go#L9">Read</a>
+<h3 id="StreamReader.Read">func (StreamReader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/io.go#L9">Read</a>
     <a href="#StreamReader.Read">¶</a></h3>
 <pre>func (r <a href="#StreamReader">StreamReader</a>) Read(dst []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="StreamWriter">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/io.go#L20">StreamWriter</a>
+<h2 id="StreamWriter">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/io.go#L20">StreamWriter</a>
     <a href="#StreamWriter">¶</a></h2>
 <pre>type StreamWriter struct {
 <span id="StreamWriter.S"></span>    S   <a href="#Stream">Stream</a>
@@ -611,14 +611,14 @@ Example:
     // StreamReader in this manner, an attacker could flip arbitrary bits in
     // the decrypted result.
 
-<h3 id="StreamWriter.Close">func (StreamWriter) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/io.go#L38">Close</a>
+<h3 id="StreamWriter.Close">func (StreamWriter) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/io.go#L38">Close</a>
     <a href="#StreamWriter.Close">¶</a></h3>
 <pre>func (w <a href="#StreamWriter">StreamWriter</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close closes the underlying Writer and returns its Close return value, if the
 Writer is also an io.Closer. Otherwise it returns nil.
 
-<h3 id="StreamWriter.Write">func (StreamWriter) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/cipher/io.go#L26">Write</a>
+<h3 id="StreamWriter.Write">func (StreamWriter) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/cipher/io.go#L26">Write</a>
     <a href="#StreamWriter.Write">¶</a></h3>
 <pre>func (w <a href="#StreamWriter">StreamWriter</a>) Write(src []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 

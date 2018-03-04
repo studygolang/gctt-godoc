@@ -14,16 +14,16 @@ Package importer provides access to export data importers.
 - [type Lookup](#Lookup)
 
 ### Package files
- [importer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/importer/importer.go)
+ [importer.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/importer/importer.go)
 
-<h2 id="Default">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/importer/importer.go#L65">Default</a>
+<h2 id="Default">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/importer/importer.go#L65">Default</a>
     <a href="#Default">¶</a></h2>
 <pre>func Default() <a href="/go/types/">types</a>.<a href="/go/types/#Importer">Importer</a></pre>
 
 Default returns an Importer for the compiler that built the running binary. If
 available, the result implements types.ImporterFrom.
 
-<h2 id="For">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/importer/importer.go#L32">For</a>
+<h2 id="For">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/importer/importer.go#L32">For</a>
     <a href="#For">¶</a></h2>
 <pre>func For(compiler <a href="/builtin/#string">string</a>, lookup <a href="#Lookup">Lookup</a>) <a href="/go/types/">types</a>.<a href="/go/types/#Importer">Importer</a></pre>
 
@@ -44,7 +44,7 @@ canonical import paths (not relative or absolute ones); it is assumed that the
 translation to canonical import paths is being done by the client of the
 importer.
 
-<h2 id="Lookup">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/importer/importer.go#L11">Lookup</a>
+<h2 id="Lookup">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/importer/importer.go#L11">Lookup</a>
     <a href="#Lookup">¶</a></h2>
 <pre>type Lookup func(path <a href="/builtin/#string">string</a>) (<a href="/io/">io</a>.<a href="/io/#ReadCloser">ReadCloser</a>, <a href="/builtin/#error">error</a>)</pre>
 

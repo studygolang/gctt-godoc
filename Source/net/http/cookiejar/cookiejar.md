@@ -21,9 +21,9 @@ Package cookiejar implements an in-memory RFC 6265-compliant http.CookieJar.
 - [New](#exampleNew)
 
 ### Package files
- [jar.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cookiejar/jar.go) [punycode.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cookiejar/punycode.go)
+ [jar.go](//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cookiejar/jar.go) [punycode.go](//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cookiejar/punycode.go)
 
-<h2 id="Jar">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cookiejar/jar.go#L50">Jar</a>
+<h2 id="Jar">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cookiejar/jar.go#L50">Jar</a>
     <a href="#Jar">¶</a></h2>
 <pre>type Jar struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -31,7 +31,7 @@ Package cookiejar implements an in-memory RFC 6265-compliant http.CookieJar.
 
 Jar implements the http.CookieJar interface from the net/http package.
 
-<h3 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cookiejar/jar.go#L67">New</a>
+<h3 id="New">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cookiejar/jar.go#L67">New</a>
     <a href="#New">¶</a></h3>
 <pre>func New(o *<a href="#Options">Options</a>) (*<a href="#Jar">Jar</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -89,7 +89,7 @@ Example:
     // After 2nd request:
     //   Flavor: Oatmeal Raisin
 
-<h3 id="Jar.Cookies">func (*Jar) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cookiejar/jar.go#L143">Cookies</a>
+<h3 id="Jar.Cookies">func (*Jar) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cookiejar/jar.go#L143">Cookies</a>
     <a href="#Jar.Cookies">¶</a></h3>
 <pre>func (j *<a href="#Jar">Jar</a>) Cookies(u *<a href="/net/url/">url</a>.<a href="/net/url/#URL">URL</a>) (cookies []*<a href="/net/http/">http</a>.<a href="/net/http/#Cookie">Cookie</a>)</pre>
 
@@ -97,7 +97,7 @@ Cookies implements the Cookies method of the http.CookieJar interface.
 
 It returns an empty slice if the URL's scheme is not HTTP or HTTPS.
 
-<h3 id="Jar.SetCookies">func (*Jar) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cookiejar/jar.go#L218">SetCookies</a>
+<h3 id="Jar.SetCookies">func (*Jar) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cookiejar/jar.go#L218">SetCookies</a>
     <a href="#Jar.SetCookies">¶</a></h3>
 <pre>func (j *<a href="#Jar">Jar</a>) SetCookies(u *<a href="/net/url/">url</a>.<a href="/net/url/#URL">URL</a>, cookies []*<a href="/net/http/">http</a>.<a href="/net/http/#Cookie">Cookie</a>)</pre>
 
@@ -105,7 +105,7 @@ SetCookies implements the SetCookies method of the http.CookieJar interface.
 
 It does nothing if the URL's scheme is not HTTP or HTTPS.
 
-<h2 id="Options">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cookiejar/jar.go#L39">Options</a>
+<h2 id="Options">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cookiejar/jar.go#L39">Options</a>
     <a href="#Options">¶</a></h2>
 <pre>type Options struct {
 <span id="Options.PublicSuffixList"></span>    <span class="comment">// PublicSuffixList is the public suffix list that determines whether</span>
@@ -119,7 +119,7 @@ It does nothing if the URL's scheme is not HTTP or HTTPS.
 
 Options are the options for creating a new Jar.
 
-<h2 id="PublicSuffixList">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cookiejar/jar.go#L24">PublicSuffixList</a>
+<h2 id="PublicSuffixList">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cookiejar/jar.go#L24">PublicSuffixList</a>
     <a href="#PublicSuffixList">¶</a></h2>
 <pre>type PublicSuffixList interface {
     <span class="comment">// PublicSuffix returns the public suffix of domain.</span>

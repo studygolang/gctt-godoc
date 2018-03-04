@@ -35,7 +35,7 @@ http://luca.ntop.org/Teaching/Appunti/asn1.html.
   - [func (e SyntaxError) Error() string](#SyntaxError.Error)
 
 ### Package files
- [asn1.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go) [common.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/common.go) [marshal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/marshal.go)
+ [asn1.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go) [common.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/common.go) [marshal.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/marshal.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -80,7 +80,7 @@ NullBytes contains bytes representing the DER-encoded ASN.1 NULL type.
 
 NullRawValue is a RawValue with its Tag set to the ASN.1 NULL type tag (5).
 
-<h2 id="Marshal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/marshal.go#L665">Marshal</a>
+<h2 id="Marshal">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/marshal.go#L665">Marshal</a>
     <a href="#Marshal">¶</a></h2>
 <pre>func Marshal(val interface{}) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -96,14 +96,14 @@ used:
     utc:         causes time.Time to be marshaled as ASN.1, UTCTime values
     generalized: causes time.Time to be marshaled as ASN.1, GeneralizedTime values
 
-<h2 id="MarshalWithParams">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/marshal.go#L671">MarshalWithParams</a>
+<h2 id="MarshalWithParams">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/marshal.go#L671">MarshalWithParams</a>
     <a href="#MarshalWithParams">¶</a></h2>
 <pre>func MarshalWithParams(val interface{}, params <a href="/builtin/#string">string</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 MarshalWithParams allows field parameters to be specified for the top-level
 element. The form of the params is the same as the field tags.
 
-<h2 id="Unmarshal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L1036">Unmarshal</a>
+<h2 id="Unmarshal">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L1036">Unmarshal</a>
     <a href="#Unmarshal">¶</a></h2>
 <pre>func Unmarshal(b []<a href="/builtin/#byte">byte</a>, val interface{}) (rest []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -158,14 +158,14 @@ cannot be given.
 Other ASN.1 types are not supported; if it encounters them, Unmarshal returns a
 parse error.
 
-<h2 id="UnmarshalWithParams">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L1042">UnmarshalWithParams</a>
+<h2 id="UnmarshalWithParams">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L1042">UnmarshalWithParams</a>
     <a href="#UnmarshalWithParams">¶</a></h2>
 <pre>func UnmarshalWithParams(b []<a href="/builtin/#byte">byte</a>, val interface{}, params <a href="/builtin/#string">string</a>) (rest []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 UnmarshalWithParams allows field parameters to be specified for the top-level
 element. The form of the params is the same as the field tags.
 
-<h2 id="BitString">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L148">BitString</a>
+<h2 id="BitString">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L148">BitString</a>
     <a href="#BitString">¶</a></h2>
 <pre>type BitString struct {
 <span id="BitString.Bytes"></span>    Bytes     []<a href="/builtin/#byte">byte</a> <span class="comment">// bits packed into bytes.</span>
@@ -176,50 +176,50 @@ BitString is the structure to use when you want an ASN.1 BIT STRING type. A bit
 string is padded up to the nearest byte in memory and the number of valid bits
 is recorded. Padding bits will be zero.
 
-<h3 id="BitString.At">func (BitString) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L155">At</a>
+<h3 id="BitString.At">func (BitString) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L155">At</a>
     <a href="#BitString.At">¶</a></h3>
 <pre>func (b <a href="#BitString">BitString</a>) At(i <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 At returns the bit at the given index. If the index is out of range it returns
 false.
 
-<h3 id="BitString.RightAlign">func (BitString) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L166">RightAlign</a>
+<h3 id="BitString.RightAlign">func (BitString) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L166">RightAlign</a>
     <a href="#BitString.RightAlign">¶</a></h3>
 <pre>func (b <a href="#BitString">BitString</a>) RightAlign() []<a href="/builtin/#byte">byte</a></pre>
 
 RightAlign returns a slice where the padding bits are at the beginning. The
 slice may share memory with the BitString.
 
-<h2 id="Enumerated">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L284">Enumerated</a>
+<h2 id="Enumerated">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L284">Enumerated</a>
     <a href="#Enumerated">¶</a></h2>
 <pre>type Enumerated <a href="/builtin/#int">int</a></pre>
 
 An Enumerated is represented as a plain int.
 
-<h2 id="Flag">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L289">Flag</a>
+<h2 id="Flag">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L289">Flag</a>
     <a href="#Flag">¶</a></h2>
 <pre>type Flag <a href="/builtin/#bool">bool</a></pre>
 
 A Flag accepts any data and is set to true if present.
 
-<h2 id="ObjectIdentifier">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L211">ObjectIdentifier</a>
+<h2 id="ObjectIdentifier">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L211">ObjectIdentifier</a>
     <a href="#ObjectIdentifier">¶</a></h2>
 <pre>type ObjectIdentifier []<a href="/builtin/#int">int</a></pre>
 
 An ObjectIdentifier represents an ASN.1 OBJECT IDENTIFIER.
 
-<h3 id="ObjectIdentifier.Equal">func (ObjectIdentifier) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L214">Equal</a>
+<h3 id="ObjectIdentifier.Equal">func (ObjectIdentifier) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L214">Equal</a>
     <a href="#ObjectIdentifier.Equal">¶</a></h3>
 <pre>func (oi <a href="#ObjectIdentifier">ObjectIdentifier</a>) Equal(other <a href="#ObjectIdentifier">ObjectIdentifier</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Equal reports whether oi and other represent the same identifier.
 
-<h3 id="ObjectIdentifier.String">func (ObjectIdentifier) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L227">String</a>
+<h3 id="ObjectIdentifier.String">func (ObjectIdentifier) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L227">String</a>
     <a href="#ObjectIdentifier.String">¶</a></h3>
 <pre>func (oi <a href="#ObjectIdentifier">ObjectIdentifier</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="RawContent">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L479">RawContent</a>
+<h2 id="RawContent">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L479">RawContent</a>
     <a href="#RawContent">¶</a></h2>
 <pre>type RawContent []<a href="/builtin/#byte">byte</a></pre>
 
@@ -227,7 +227,7 @@ RawContent is used to signal that the undecoded, DER data needs to be preserved
 for a struct. To use it, the first field of the struct must have this type. It's
 an error for any of the other fields to have this type.
 
-<h2 id="RawValue">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L469">RawValue</a>
+<h2 id="RawValue">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L469">RawValue</a>
     <a href="#RawValue">¶</a></h2>
 <pre>type RawValue struct {
 <span id="RawValue.Class"></span>    Class, Tag <a href="/builtin/#int">int</a>
@@ -238,7 +238,7 @@ an error for any of the other fields to have this type.
 
 A RawValue represents an undecoded ASN.1 object.
 
-<h2 id="StructuralError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L25">StructuralError</a>
+<h2 id="StructuralError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L25">StructuralError</a>
     <a href="#StructuralError">¶</a></h2>
 <pre>type StructuralError struct {
 <span id="StructuralError.Msg"></span>    Msg <a href="/builtin/#string">string</a>
@@ -247,12 +247,12 @@ A RawValue represents an undecoded ASN.1 object.
 A StructuralError suggests that the ASN.1 data is valid, but the Go type which
 is receiving it doesn't match.
 
-<h3 id="StructuralError.Error">func (StructuralError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L29">Error</a>
+<h3 id="StructuralError.Error">func (StructuralError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L29">Error</a>
     <a href="#StructuralError.Error">¶</a></h3>
 <pre>func (e <a href="#StructuralError">StructuralError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="SyntaxError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L32">SyntaxError</a>
+<h2 id="SyntaxError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L32">SyntaxError</a>
     <a href="#SyntaxError">¶</a></h2>
 <pre>type SyntaxError struct {
 <span id="SyntaxError.Msg"></span>    Msg <a href="/builtin/#string">string</a>
@@ -260,7 +260,7 @@ is receiving it doesn't match.
 
 A SyntaxError suggests that the ASN.1 data is invalid.
 
-<h3 id="SyntaxError.Error">func (SyntaxError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/asn1/asn1.go#L36">Error</a>
+<h3 id="SyntaxError.Error">func (SyntaxError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/asn1/asn1.go#L36">Error</a>
     <a href="#SyntaxError.Error">¶</a></h3>
 <pre>func (e <a href="#SyntaxError">SyntaxError</a>) Error() <a href="/builtin/#string">string</a></pre>
 

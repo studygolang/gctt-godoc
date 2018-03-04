@@ -80,21 +80,21 @@ are the atomic equivalents of "return *addr" and "*addr = val".
 - [Value (ReadMostly)](#exampleValue_readMostly)
 
 ### Package files
- [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go) [value.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/value.go)
+ [doc.go](//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go) [value.go](//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/value.go)
 
-<h2 id="AddInt32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L82">AddInt32</a>
+<h2 id="AddInt32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L82">AddInt32</a>
     <a href="#AddInt32">¶</a></h2>
 <pre>func AddInt32(addr *<a href="/builtin/#int32">int32</a>, delta <a href="/builtin/#int32">int32</a>) (new <a href="/builtin/#int32">int32</a>)</pre>
 
 AddInt32 atomically adds delta to *addr and returns the new value.
 
-<h2 id="AddInt64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L90">AddInt64</a>
+<h2 id="AddInt64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L90">AddInt64</a>
     <a href="#AddInt64">¶</a></h2>
 <pre>func AddInt64(addr *<a href="/builtin/#int64">int64</a>, delta <a href="/builtin/#int64">int64</a>) (new <a href="/builtin/#int64">int64</a>)</pre>
 
 AddInt64 atomically adds delta to *addr and returns the new value.
 
-<h2 id="AddUint32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L87">AddUint32</a>
+<h2 id="AddUint32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L87">AddUint32</a>
     <a href="#AddUint32">¶</a></h2>
 <pre>func AddUint32(addr *<a href="/builtin/#uint32">uint32</a>, delta <a href="/builtin/#uint32">uint32</a>) (new <a href="/builtin/#uint32">uint32</a>)</pre>
 
@@ -102,7 +102,7 @@ AddUint32 atomically adds delta to *addr and returns the new value. To subtract
 a signed positive constant value c from x, do AddUint32(&x, ^uint32(c-1)). In
 particular, to decrement x, do AddUint32(&x, ^uint32(0)).
 
-<h2 id="AddUint64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L95">AddUint64</a>
+<h2 id="AddUint64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L95">AddUint64</a>
     <a href="#AddUint64">¶</a></h2>
 <pre>func AddUint64(addr *<a href="/builtin/#uint64">uint64</a>, delta <a href="/builtin/#uint64">uint64</a>) (new <a href="/builtin/#uint64">uint64</a>)</pre>
 
@@ -110,163 +110,163 @@ AddUint64 atomically adds delta to *addr and returns the new value. To subtract
 a signed positive constant value c from x, do AddUint64(&x, ^uint64(c-1)). In
 particular, to decrement x, do AddUint64(&x, ^uint64(0)).
 
-<h2 id="AddUintptr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L98">AddUintptr</a>
+<h2 id="AddUintptr">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L98">AddUintptr</a>
     <a href="#AddUintptr">¶</a></h2>
 <pre>func AddUintptr(addr *<a href="/builtin/#uintptr">uintptr</a>, delta <a href="/builtin/#uintptr">uintptr</a>) (new <a href="/builtin/#uintptr">uintptr</a>)</pre>
 
 AddUintptr atomically adds delta to *addr and returns the new value.
 
-<h2 id="CompareAndSwapInt32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L64">CompareAndSwapInt32</a>
+<h2 id="CompareAndSwapInt32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L64">CompareAndSwapInt32</a>
     <a href="#CompareAndSwapInt32">¶</a></h2>
 <pre>func CompareAndSwapInt32(addr *<a href="/builtin/#int32">int32</a>, old, new <a href="/builtin/#int32">int32</a>) (swapped <a href="/builtin/#bool">bool</a>)</pre>
 
 CompareAndSwapInt32 executes the compare-and-swap operation for an int32 value.
 
-<h2 id="CompareAndSwapInt64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L67">CompareAndSwapInt64</a>
+<h2 id="CompareAndSwapInt64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L67">CompareAndSwapInt64</a>
     <a href="#CompareAndSwapInt64">¶</a></h2>
 <pre>func CompareAndSwapInt64(addr *<a href="/builtin/#int64">int64</a>, old, new <a href="/builtin/#int64">int64</a>) (swapped <a href="/builtin/#bool">bool</a>)</pre>
 
 CompareAndSwapInt64 executes the compare-and-swap operation for an int64 value.
 
-<h2 id="CompareAndSwapPointer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L79">CompareAndSwapPointer</a>
+<h2 id="CompareAndSwapPointer">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L79">CompareAndSwapPointer</a>
     <a href="#CompareAndSwapPointer">¶</a></h2>
 <pre>func CompareAndSwapPointer(addr *<a href="/unsafe/">unsafe</a>.<a href="/unsafe/#Pointer">Pointer</a>, old, new <a href="/unsafe/">unsafe</a>.<a href="/unsafe/#Pointer">Pointer</a>) (swapped <a href="/builtin/#bool">bool</a>)</pre>
 
 CompareAndSwapPointer executes the compare-and-swap operation for a
 unsafe.Pointer value.
 
-<h2 id="CompareAndSwapUint32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L70">CompareAndSwapUint32</a>
+<h2 id="CompareAndSwapUint32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L70">CompareAndSwapUint32</a>
     <a href="#CompareAndSwapUint32">¶</a></h2>
 <pre>func CompareAndSwapUint32(addr *<a href="/builtin/#uint32">uint32</a>, old, new <a href="/builtin/#uint32">uint32</a>) (swapped <a href="/builtin/#bool">bool</a>)</pre>
 
 CompareAndSwapUint32 executes the compare-and-swap operation for a uint32 value.
 
-<h2 id="CompareAndSwapUint64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L73">CompareAndSwapUint64</a>
+<h2 id="CompareAndSwapUint64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L73">CompareAndSwapUint64</a>
     <a href="#CompareAndSwapUint64">¶</a></h2>
 <pre>func CompareAndSwapUint64(addr *<a href="/builtin/#uint64">uint64</a>, old, new <a href="/builtin/#uint64">uint64</a>) (swapped <a href="/builtin/#bool">bool</a>)</pre>
 
 CompareAndSwapUint64 executes the compare-and-swap operation for a uint64 value.
 
-<h2 id="CompareAndSwapUintptr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L76">CompareAndSwapUintptr</a>
+<h2 id="CompareAndSwapUintptr">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L76">CompareAndSwapUintptr</a>
     <a href="#CompareAndSwapUintptr">¶</a></h2>
 <pre>func CompareAndSwapUintptr(addr *<a href="/builtin/#uintptr">uintptr</a>, old, new <a href="/builtin/#uintptr">uintptr</a>) (swapped <a href="/builtin/#bool">bool</a>)</pre>
 
 CompareAndSwapUintptr executes the compare-and-swap operation for a uintptr
 value.
 
-<h2 id="LoadInt32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L101">LoadInt32</a>
+<h2 id="LoadInt32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L101">LoadInt32</a>
     <a href="#LoadInt32">¶</a></h2>
 <pre>func LoadInt32(addr *<a href="/builtin/#int32">int32</a>) (val <a href="/builtin/#int32">int32</a>)</pre>
 
 LoadInt32 atomically loads *addr.
 
-<h2 id="LoadInt64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L104">LoadInt64</a>
+<h2 id="LoadInt64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L104">LoadInt64</a>
     <a href="#LoadInt64">¶</a></h2>
 <pre>func LoadInt64(addr *<a href="/builtin/#int64">int64</a>) (val <a href="/builtin/#int64">int64</a>)</pre>
 
 LoadInt64 atomically loads *addr.
 
-<h2 id="LoadPointer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L116">LoadPointer</a>
+<h2 id="LoadPointer">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L116">LoadPointer</a>
     <a href="#LoadPointer">¶</a></h2>
 <pre>func LoadPointer(addr *<a href="/unsafe/">unsafe</a>.<a href="/unsafe/#Pointer">Pointer</a>) (val <a href="/unsafe/">unsafe</a>.<a href="/unsafe/#Pointer">Pointer</a>)</pre>
 
 LoadPointer atomically loads *addr.
 
-<h2 id="LoadUint32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L107">LoadUint32</a>
+<h2 id="LoadUint32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L107">LoadUint32</a>
     <a href="#LoadUint32">¶</a></h2>
 <pre>func LoadUint32(addr *<a href="/builtin/#uint32">uint32</a>) (val <a href="/builtin/#uint32">uint32</a>)</pre>
 
 LoadUint32 atomically loads *addr.
 
-<h2 id="LoadUint64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L110">LoadUint64</a>
+<h2 id="LoadUint64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L110">LoadUint64</a>
     <a href="#LoadUint64">¶</a></h2>
 <pre>func LoadUint64(addr *<a href="/builtin/#uint64">uint64</a>) (val <a href="/builtin/#uint64">uint64</a>)</pre>
 
 LoadUint64 atomically loads *addr.
 
-<h2 id="LoadUintptr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L113">LoadUintptr</a>
+<h2 id="LoadUintptr">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L113">LoadUintptr</a>
     <a href="#LoadUintptr">¶</a></h2>
 <pre>func LoadUintptr(addr *<a href="/builtin/#uintptr">uintptr</a>) (val <a href="/builtin/#uintptr">uintptr</a>)</pre>
 
 LoadUintptr atomically loads *addr.
 
-<h2 id="StoreInt32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L119">StoreInt32</a>
+<h2 id="StoreInt32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L119">StoreInt32</a>
     <a href="#StoreInt32">¶</a></h2>
 <pre>func StoreInt32(addr *<a href="/builtin/#int32">int32</a>, val <a href="/builtin/#int32">int32</a>)</pre>
 
 StoreInt32 atomically stores val into *addr.
 
-<h2 id="StoreInt64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L122">StoreInt64</a>
+<h2 id="StoreInt64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L122">StoreInt64</a>
     <a href="#StoreInt64">¶</a></h2>
 <pre>func StoreInt64(addr *<a href="/builtin/#int64">int64</a>, val <a href="/builtin/#int64">int64</a>)</pre>
 
 StoreInt64 atomically stores val into *addr.
 
-<h2 id="StorePointer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L134">StorePointer</a>
+<h2 id="StorePointer">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L134">StorePointer</a>
     <a href="#StorePointer">¶</a></h2>
 <pre>func StorePointer(addr *<a href="/unsafe/">unsafe</a>.<a href="/unsafe/#Pointer">Pointer</a>, val <a href="/unsafe/">unsafe</a>.<a href="/unsafe/#Pointer">Pointer</a>)</pre>
 
 StorePointer atomically stores val into *addr.
 
-<h2 id="StoreUint32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L125">StoreUint32</a>
+<h2 id="StoreUint32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L125">StoreUint32</a>
     <a href="#StoreUint32">¶</a></h2>
 <pre>func StoreUint32(addr *<a href="/builtin/#uint32">uint32</a>, val <a href="/builtin/#uint32">uint32</a>)</pre>
 
 StoreUint32 atomically stores val into *addr.
 
-<h2 id="StoreUint64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L128">StoreUint64</a>
+<h2 id="StoreUint64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L128">StoreUint64</a>
     <a href="#StoreUint64">¶</a></h2>
 <pre>func StoreUint64(addr *<a href="/builtin/#uint64">uint64</a>, val <a href="/builtin/#uint64">uint64</a>)</pre>
 
 StoreUint64 atomically stores val into *addr.
 
-<h2 id="StoreUintptr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L131">StoreUintptr</a>
+<h2 id="StoreUintptr">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L131">StoreUintptr</a>
     <a href="#StoreUintptr">¶</a></h2>
 <pre>func StoreUintptr(addr *<a href="/builtin/#uintptr">uintptr</a>, val <a href="/builtin/#uintptr">uintptr</a>)</pre>
 
 StoreUintptr atomically stores val into *addr.
 
-<h2 id="SwapInt32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L46">SwapInt32</a>
+<h2 id="SwapInt32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L46">SwapInt32</a>
     <a href="#SwapInt32">¶</a></h2>
 <pre>func SwapInt32(addr *<a href="/builtin/#int32">int32</a>, new <a href="/builtin/#int32">int32</a>) (old <a href="/builtin/#int32">int32</a>)</pre>
 
 SwapInt32 atomically stores new into *addr and returns the previous *addr value.
 
-<h2 id="SwapInt64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L49">SwapInt64</a>
+<h2 id="SwapInt64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L49">SwapInt64</a>
     <a href="#SwapInt64">¶</a></h2>
 <pre>func SwapInt64(addr *<a href="/builtin/#int64">int64</a>, new <a href="/builtin/#int64">int64</a>) (old <a href="/builtin/#int64">int64</a>)</pre>
 
 SwapInt64 atomically stores new into *addr and returns the previous *addr value.
 
-<h2 id="SwapPointer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L61">SwapPointer</a>
+<h2 id="SwapPointer">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L61">SwapPointer</a>
     <a href="#SwapPointer">¶</a></h2>
 <pre>func SwapPointer(addr *<a href="/unsafe/">unsafe</a>.<a href="/unsafe/#Pointer">Pointer</a>, new <a href="/unsafe/">unsafe</a>.<a href="/unsafe/#Pointer">Pointer</a>) (old <a href="/unsafe/">unsafe</a>.<a href="/unsafe/#Pointer">Pointer</a>)</pre>
 
 SwapPointer atomically stores new into *addr and returns the previous *addr
 value.
 
-<h2 id="SwapUint32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L52">SwapUint32</a>
+<h2 id="SwapUint32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L52">SwapUint32</a>
     <a href="#SwapUint32">¶</a></h2>
 <pre>func SwapUint32(addr *<a href="/builtin/#uint32">uint32</a>, new <a href="/builtin/#uint32">uint32</a>) (old <a href="/builtin/#uint32">uint32</a>)</pre>
 
 SwapUint32 atomically stores new into *addr and returns the previous *addr
 value.
 
-<h2 id="SwapUint64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L55">SwapUint64</a>
+<h2 id="SwapUint64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L55">SwapUint64</a>
     <a href="#SwapUint64">¶</a></h2>
 <pre>func SwapUint64(addr *<a href="/builtin/#uint64">uint64</a>, new <a href="/builtin/#uint64">uint64</a>) (old <a href="/builtin/#uint64">uint64</a>)</pre>
 
 SwapUint64 atomically stores new into *addr and returns the previous *addr
 value.
 
-<h2 id="SwapUintptr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L58">SwapUintptr</a>
+<h2 id="SwapUintptr">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L58">SwapUintptr</a>
     <a href="#SwapUintptr">¶</a></h2>
 <pre>func SwapUintptr(addr *<a href="/builtin/#uintptr">uintptr</a>, new <a href="/builtin/#uintptr">uintptr</a>) (old <a href="/builtin/#uintptr">uintptr</a>)</pre>
 
 SwapUintptr atomically stores new into *addr and returns the previous *addr
 value.
 
-<h2 id="Value">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/value.go#L6">Value</a>
+<h2 id="Value">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/value.go#L6">Value</a>
     <a href="#Value">¶</a></h2>
 <pre>type Value struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -334,14 +334,14 @@ Example:
     }
     _, _ = read, insert
 
-<h3 id="Value.Load">func (*Value) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/value.go#L18">Load</a>
+<h3 id="Value.Load">func (*Value) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/value.go#L18">Load</a>
     <a href="#Value.Load">¶</a></h3>
 <pre>func (v *<a href="#Value">Value</a>) Load() (x interface{})</pre>
 
 Load returns the value set by the most recent Store. It returns nil if there has
 been no call to Store for this Value.
 
-<h3 id="Value.Store">func (*Value) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/value.go#L35">Store</a>
+<h3 id="Value.Store">func (*Value) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/value.go#L35">Store</a>
     <a href="#Value.Store">¶</a></h3>
 <pre>func (v *<a href="#Value">Value</a>) Store(x interface{})</pre>
 
@@ -351,7 +351,7 @@ as does Store(nil).
 
 <h2 id="pkg-note-BUG">Bugs</h2>
 
-- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/atomic/doc.go#L36)  On x86-32, the 64-bit functions use instructions unavailable before the
+- [☞](//github.com/golang/go/blob/release-branch.go1.10/src/sync/atomic/doc.go#L36)  On x86-32, the 64-bit functions use instructions unavailable before the
   Pentium MMX.
 
   On non-Linux ARM, the 64-bit functions use instructions unavailable before

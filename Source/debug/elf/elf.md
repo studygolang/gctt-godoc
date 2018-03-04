@@ -147,7 +147,7 @@ Package elf implements access to ELF object files.
   - [func (i Version) String() string](#Version.String)
 
 ### Package files
- [elf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go) [file.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/reader.go)
+ [elf.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go) [file.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go) [reader.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/reader.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -184,42 +184,42 @@ Initial magic number for ELF files.
 ErrNoSymbols is returned by File.Symbols and File.DynamicSymbols if there is no
 such section in the File.
 
-<h2 id="R_INFO">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2513">R_INFO</a>
+<h2 id="R_INFO">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2513">R_INFO</a>
     <a href="#R_INFO">¶</a></h2>
 <pre>func R_INFO(sym, typ <a href="/builtin/#uint32">uint32</a>) <a href="/builtin/#uint64">uint64</a></pre>
 
 
-<h2 id="R_INFO32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2411">R_INFO32</a>
+<h2 id="R_INFO32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2411">R_INFO32</a>
     <a href="#R_INFO32">¶</a></h2>
 <pre>func R_INFO32(sym, typ <a href="/builtin/#uint32">uint32</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
 
-<h2 id="R_SYM32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2409">R_SYM32</a>
+<h2 id="R_SYM32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2409">R_SYM32</a>
     <a href="#R_SYM32">¶</a></h2>
 <pre>func R_SYM32(info <a href="/builtin/#uint32">uint32</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
 
-<h2 id="R_SYM64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2511">R_SYM64</a>
+<h2 id="R_SYM64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2511">R_SYM64</a>
     <a href="#R_SYM64">¶</a></h2>
 <pre>func R_SYM64(info <a href="/builtin/#uint64">uint64</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
 
-<h2 id="R_TYPE32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2410">R_TYPE32</a>
+<h2 id="R_TYPE32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2410">R_TYPE32</a>
     <a href="#R_TYPE32">¶</a></h2>
 <pre>func R_TYPE32(info <a href="/builtin/#uint32">uint32</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
 
-<h2 id="R_TYPE64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2512">R_TYPE64</a>
+<h2 id="R_TYPE64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2512">R_TYPE64</a>
     <a href="#R_TYPE64">¶</a></h2>
 <pre>func R_TYPE64(info <a href="/builtin/#uint64">uint64</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
 
-<h2 id="ST_INFO">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2427">ST_INFO</a>
+<h2 id="ST_INFO">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2427">ST_INFO</a>
     <a href="#ST_INFO">¶</a></h2>
 <pre>func ST_INFO(bind <a href="#SymBind">SymBind</a>, typ <a href="#SymType">SymType</a>) <a href="/builtin/#uint8">uint8</a></pre>
 
 
-<h2 id="Chdr32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2386">Chdr32</a>
+<h2 id="Chdr32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2386">Chdr32</a>
     <a href="#Chdr32">¶</a></h2>
 <pre>type Chdr32 struct {
 <span id="Chdr32.Type"></span>    Type      <a href="/builtin/#uint32">uint32</a>
@@ -229,7 +229,7 @@ such section in the File.
 
 ELF32 Compression header.
 
-<h2 id="Chdr64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2487">Chdr64</a>
+<h2 id="Chdr64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2487">Chdr64</a>
     <a href="#Chdr64">¶</a></h2>
 <pre>type Chdr64 struct {
 <span id="Chdr64.Type"></span>    Type <a href="/builtin/#uint32">uint32</a>
@@ -241,7 +241,7 @@ ELF32 Compression header.
 
 ELF64 Compression header.
 
-<h2 id="Class">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L71">Class</a>
+<h2 id="Class">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L71">Class</a>
     <a href="#Class">¶</a></h2>
 <pre>type Class <a href="/builtin/#byte">byte</a></pre>
 
@@ -254,17 +254,17 @@ Class is found in Header.Ident[EI_CLASS] and Header.Class.
 )</pre>
 
 
-<h3 id="Class.GoString">func (Class) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L86">GoString</a>
+<h3 id="Class.GoString">func (Class) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L86">GoString</a>
     <a href="#Class.GoString">¶</a></h3>
 <pre>func (i <a href="#Class">Class</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Class.String">func (Class) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L85">String</a>
+<h3 id="Class.String">func (Class) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L85">String</a>
     <a href="#Class.String">¶</a></h3>
 <pre>func (i <a href="#Class">Class</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="CompressionType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L427">CompressionType</a>
+<h2 id="CompressionType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L427">CompressionType</a>
     <a href="#CompressionType">¶</a></h2>
 <pre>type CompressionType <a href="/builtin/#int">int</a></pre>
 
@@ -279,17 +279,17 @@ Section compression type.
 )</pre>
 
 
-<h3 id="CompressionType.GoString">func (CompressionType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L446">GoString</a>
+<h3 id="CompressionType.GoString">func (CompressionType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L446">GoString</a>
     <a href="#CompressionType.GoString">¶</a></h3>
 <pre>func (i <a href="#CompressionType">CompressionType</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="CompressionType.String">func (CompressionType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L445">String</a>
+<h3 id="CompressionType.String">func (CompressionType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L445">String</a>
     <a href="#CompressionType.String">¶</a></h3>
 <pre>func (i <a href="#CompressionType">CompressionType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Data">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L89">Data</a>
+<h2 id="Data">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L89">Data</a>
     <a href="#Data">¶</a></h2>
 <pre>type Data <a href="/builtin/#byte">byte</a></pre>
 
@@ -302,17 +302,17 @@ Data is found in Header.Ident[EI_DATA] and Header.Data.
 )</pre>
 
 
-<h3 id="Data.GoString">func (Data) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L104">GoString</a>
+<h3 id="Data.GoString">func (Data) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L104">GoString</a>
     <a href="#Data.GoString">¶</a></h3>
 <pre>func (i <a href="#Data">Data</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Data.String">func (Data) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L103">String</a>
+<h3 id="Data.String">func (Data) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L103">String</a>
     <a href="#Data.String">¶</a></h3>
 <pre>func (i <a href="#Data">Data</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Dyn32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2380">Dyn32</a>
+<h2 id="Dyn32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2380">Dyn32</a>
     <a href="#Dyn32">¶</a></h2>
 <pre>type Dyn32 struct {
 <span id="Dyn32.Tag"></span>    Tag <a href="/builtin/#int32">int32</a>  <span class="comment">/* Entry type. */</span>
@@ -321,7 +321,7 @@ Data is found in Header.Ident[EI_DATA] and Header.Data.
 
 ELF32 Dynamic structure. The ".dynamic" section contains an array of them.
 
-<h2 id="Dyn64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2481">Dyn64</a>
+<h2 id="Dyn64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2481">Dyn64</a>
     <a href="#Dyn64">¶</a></h2>
 <pre>type Dyn64 struct {
 <span id="Dyn64.Tag"></span>    Tag <a href="/builtin/#int64">int64</a>  <span class="comment">/* Entry type. */</span>
@@ -330,7 +330,7 @@ ELF32 Dynamic structure. The ".dynamic" section contains an array of them.
 
 ELF64 Dynamic structure. The ".dynamic" section contains an array of them.
 
-<h2 id="DynFlag">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L603">DynFlag</a>
+<h2 id="DynFlag">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L603">DynFlag</a>
     <a href="#DynFlag">¶</a></h2>
 <pre>type DynFlag <a href="/builtin/#int">int</a></pre>
 
@@ -352,17 +352,17 @@ DT_FLAGS values.
 )</pre>
 
 
-<h3 id="DynFlag.GoString">func (DynFlag) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L629">GoString</a>
+<h3 id="DynFlag.GoString">func (DynFlag) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L629">GoString</a>
     <a href="#DynFlag.GoString">¶</a></h3>
 <pre>func (i <a href="#DynFlag">DynFlag</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="DynFlag.String">func (DynFlag) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L628">String</a>
+<h3 id="DynFlag.String">func (DynFlag) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L628">String</a>
     <a href="#DynFlag.String">¶</a></h3>
 <pre>func (i <a href="#DynFlag">DynFlag</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="DynTag">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L505">DynTag</a>
+<h2 id="DynTag">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L505">DynTag</a>
     <a href="#DynTag">¶</a></h2>
 <pre>type DynTag <a href="/builtin/#int">int</a></pre>
 
@@ -417,17 +417,17 @@ Dyn.Tag
 )</pre>
 
 
-<h3 id="DynTag.GoString">func (DynTag) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L600">GoString</a>
+<h3 id="DynTag.GoString">func (DynTag) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L600">GoString</a>
     <a href="#DynTag.GoString">¶</a></h3>
 <pre>func (i <a href="#DynTag">DynTag</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="DynTag.String">func (DynTag) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L599">String</a>
+<h3 id="DynTag.String">func (DynTag) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L599">String</a>
     <a href="#DynTag.String">¶</a></h3>
 <pre>func (i <a href="#DynTag">DynTag</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="File">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L41">File</a>
+<h2 id="File">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L41">File</a>
     <a href="#File">¶</a></h2>
 <pre>type File struct {
     <a href="#FileHeader">FileHeader</a>
@@ -438,33 +438,33 @@ Dyn.Tag
 
 A File represents an open ELF file.
 
-<h3 id="NewFile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L225">NewFile</a>
+<h3 id="NewFile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L225">NewFile</a>
     <a href="#NewFile">¶</a></h3>
 <pre>func NewFile(r <a href="/io/">io</a>.<a href="/io/#ReaderAt">ReaderAt</a>) (*<a href="#File">File</a>, <a href="/builtin/#error">error</a>)</pre>
 
 NewFile creates a new File for accessing an ELF binary in an underlying reader.
 The ELF binary is expected to start at position 0 in the ReaderAt.
 
-<h3 id="Open">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L186">Open</a>
+<h3 id="Open">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L186">Open</a>
     <a href="#Open">¶</a></h3>
 <pre>func Open(name <a href="/builtin/#string">string</a>) (*<a href="#File">File</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Open opens the named file using os.Open and prepares it for use as an ELF
 binary.
 
-<h3 id="File.Close">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L203">Close</a>
+<h3 id="File.Close">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L203">Close</a>
     <a href="#File.Close">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close closes the File. If the File was created using NewFile directly instead of
 Open, Close has no effect.
 
-<h3 id="File.DWARF">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1053">DWARF</a>
+<h3 id="File.DWARF">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L1053">DWARF</a>
     <a href="#File.DWARF">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) DWARF() (*<a href="/debug/dwarf/">dwarf</a>.<a href="/debug/dwarf/#Data">Data</a>, <a href="/builtin/#error">error</a>)</pre>
 
 
-<h3 id="File.DynString">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1295">DynString</a>
+<h3 id="File.DynString">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L1295">DynString</a>
     <a href="#File.DynString">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) DynString(tag <a href="#DynTag">DynTag</a>) ([]<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -474,7 +474,7 @@ section.
 The tag must be one that takes string values: DT_NEEDED, DT_SONAME, DT_RPATH, or
 DT_RUNPATH.
 
-<h3 id="File.DynamicSymbols">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1161">DynamicSymbols</a>
+<h3 id="File.DynamicSymbols">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L1161">DynamicSymbols</a>
     <a href="#File.DynamicSymbols">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) DynamicSymbols() ([]<a href="#Symbol">Symbol</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -485,14 +485,14 @@ For compatibility with Symbols, DynamicSymbols omits the null symbol at index 0.
 After retrieving the symbols as symtab, an externally supplied index x
 corresponds to symtab[x-1], not symtab[x].
 
-<h3 id="File.ImportedLibraries">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1286">ImportedLibraries</a>
+<h3 id="File.ImportedLibraries">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L1286">ImportedLibraries</a>
     <a href="#File.ImportedLibraries">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) ImportedLibraries() ([]<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ImportedLibraries returns the names of all libraries referred to by the binary f
 that are expected to be linked with the binary at dynamic link time.
 
-<h3 id="File.ImportedSymbols">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1176">ImportedSymbols</a>
+<h3 id="File.ImportedSymbols">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L1176">ImportedSymbols</a>
     <a href="#File.ImportedSymbols">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) ImportedSymbols() ([]<a href="#ImportedSymbol">ImportedSymbol</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -500,20 +500,20 @@ ImportedSymbols returns the names of all symbols referred to by the binary f
 that are expected to be satisfied by other libraries at dynamic load time. It
 does not return weak symbols.
 
-<h3 id="File.Section">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L573">Section</a>
+<h3 id="File.Section">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L573">Section</a>
     <a href="#File.Section">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Section(name <a href="/builtin/#string">string</a>) *<a href="#Section">Section</a></pre>
 
 Section returns a section with the given name, or nil if no such section exists.
 
-<h3 id="File.SectionByType">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L214">SectionByType</a>
+<h3 id="File.SectionByType">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L214">SectionByType</a>
     <a href="#File.SectionByType">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) SectionByType(typ <a href="#SectionType">SectionType</a>) *<a href="#Section">Section</a></pre>
 
 SectionByType returns the first section in f with the given type, or nil if
 there is no such section.
 
-<h3 id="File.Symbols">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1150">Symbols</a>
+<h3 id="File.Symbols">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L1150">Symbols</a>
     <a href="#File.Symbols">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Symbols() ([]<a href="#Symbol">Symbol</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -524,7 +524,7 @@ For compatibility with Go 1.0, Symbols omits the null symbol at index 0. After
 retrieving the symbols as symtab, an externally supplied index x corresponds to
 symtab[x-1], not symtab[x].
 
-<h2 id="FileHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L28">FileHeader</a>
+<h2 id="FileHeader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L28">FileHeader</a>
     <a href="#FileHeader">¶</a></h2>
 <pre>type FileHeader struct {
 <span id="FileHeader.Class"></span>    Class      <a href="#Class">Class</a>
@@ -540,19 +540,19 @@ symtab[x-1], not symtab[x].
 
 A FileHeader represents an ELF file header.
 
-<h2 id="FormatError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L170">FormatError</a>
+<h2 id="FormatError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L170">FormatError</a>
     <a href="#FormatError">¶</a></h2>
 <pre>type FormatError struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 
 
-<h3 id="FormatError.Error">func (*FormatError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L176">Error</a>
+<h3 id="FormatError.Error">func (*FormatError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L176">Error</a>
     <a href="#FormatError.Error">¶</a></h3>
 <pre>func (e *<a href="#FormatError">FormatError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Header32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2336">Header32</a>
+<h2 id="Header32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2336">Header32</a>
     <a href="#Header32">¶</a></h2>
 <pre>type Header32 struct {
 <span id="Header32.Ident"></span>    Ident     [<a href="#EI_NIDENT">EI_NIDENT</a>]<a href="/builtin/#byte">byte</a> <span class="comment">/* File identification. */</span>
@@ -573,7 +573,7 @@ A FileHeader represents an ELF file header.
 
 ELF32 File header.
 
-<h2 id="Header64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2437">Header64</a>
+<h2 id="Header64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2437">Header64</a>
     <a href="#Header64">¶</a></h2>
 <pre>type Header64 struct {
 <span id="Header64.Ident"></span>    Ident     [<a href="#EI_NIDENT">EI_NIDENT</a>]<a href="/builtin/#byte">byte</a> <span class="comment">/* File identification. */</span>
@@ -594,7 +594,7 @@ ELF32 File header.
 
 ELF64 file header.
 
-<h2 id="ImportedSymbol">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L1166">ImportedSymbol</a>
+<h2 id="ImportedSymbol">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L1166">ImportedSymbol</a>
     <a href="#ImportedSymbol">¶</a></h2>
 <pre>type ImportedSymbol struct {
 <span id="ImportedSymbol.Name"></span>    Name    <a href="/builtin/#string">string</a>
@@ -603,7 +603,7 @@ ELF64 file header.
 }</pre>
 
 
-<h2 id="Machine">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L183">Machine</a>
+<h2 id="Machine">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L183">Machine</a>
     <a href="#Machine">¶</a></h2>
 <pre>type Machine <a href="/builtin/#uint16">uint16</a></pre>
 
@@ -663,17 +663,17 @@ Machine is found in Header.Machine.
 )</pre>
 
 
-<h3 id="Machine.GoString">func (Machine) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L291">GoString</a>
+<h3 id="Machine.GoString">func (Machine) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L291">GoString</a>
     <a href="#Machine.GoString">¶</a></h3>
 <pre>func (i <a href="#Machine">Machine</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Machine.String">func (Machine) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L290">String</a>
+<h3 id="Machine.String">func (Machine) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L290">String</a>
     <a href="#Machine.String">¶</a></h3>
 <pre>func (i <a href="#Machine">Machine</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="NType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L632">NType</a>
+<h2 id="NType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L632">NType</a>
     <a href="#NType">¶</a></h2>
 <pre>type NType <a href="/builtin/#int">int</a></pre>
 
@@ -686,17 +686,17 @@ NType values; used in core files.
 )</pre>
 
 
-<h3 id="NType.GoString">func (NType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L647">GoString</a>
+<h3 id="NType.GoString">func (NType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L647">GoString</a>
     <a href="#NType.GoString">¶</a></h3>
 <pre>func (i <a href="#NType">NType</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="NType.String">func (NType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L646">String</a>
+<h3 id="NType.String">func (NType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L646">String</a>
     <a href="#NType.String">¶</a></h3>
 <pre>func (i <a href="#NType">NType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="OSABI">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L107">OSABI</a>
+<h2 id="OSABI">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L107">OSABI</a>
     <a href="#OSABI">¶</a></h2>
 <pre>type OSABI <a href="/builtin/#byte">byte</a></pre>
 
@@ -723,17 +723,17 @@ OSABI is found in Header.Ident[EI_OSABI] and Header.OSABI.
 )</pre>
 
 
-<h3 id="OSABI.GoString">func (OSABI) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L150">GoString</a>
+<h3 id="OSABI.GoString">func (OSABI) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L150">GoString</a>
     <a href="#OSABI.GoString">¶</a></h3>
 <pre>func (i <a href="#OSABI">OSABI</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="OSABI.String">func (OSABI) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L149">String</a>
+<h3 id="OSABI.String">func (OSABI) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L149">String</a>
     <a href="#OSABI.String">¶</a></h3>
 <pre>func (i <a href="#OSABI">OSABI</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Prog">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L142">Prog</a>
+<h2 id="Prog">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L142">Prog</a>
     <a href="#Prog">¶</a></h2>
 <pre>type Prog struct {
     <a href="#ProgHeader">ProgHeader</a>
@@ -750,13 +750,13 @@ OSABI is found in Header.Ident[EI_OSABI] and Header.OSABI.
 
 A Prog represents a single ELF program header in an ELF binary.
 
-<h3 id="Prog.Open">func (*Prog) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L156">Open</a>
+<h3 id="Prog.Open">func (*Prog) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L156">Open</a>
     <a href="#Prog.Open">¶</a></h3>
 <pre>func (p *<a href="#Prog">Prog</a>) Open() <a href="/io/">io</a>.<a href="/io/#ReadSeeker">ReadSeeker</a></pre>
 
 Open returns a new ReadSeeker reading the ELF program body.
 
-<h2 id="Prog32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2368">Prog32</a>
+<h2 id="Prog32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2368">Prog32</a>
     <a href="#Prog32">¶</a></h2>
 <pre>type Prog32 struct {
 <span id="Prog32.Type"></span>    Type   <a href="/builtin/#uint32">uint32</a> <span class="comment">/* Entry type. */</span>
@@ -771,7 +771,7 @@ Open returns a new ReadSeeker reading the ELF program body.
 
 ELF32 Program header.
 
-<h2 id="Prog64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2469">Prog64</a>
+<h2 id="Prog64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2469">Prog64</a>
     <a href="#Prog64">¶</a></h2>
 <pre>type Prog64 struct {
 <span id="Prog64.Type"></span>    Type   <a href="/builtin/#uint32">uint32</a> <span class="comment">/* Entry type. */</span>
@@ -786,7 +786,7 @@ ELF32 Program header.
 
 ELF64 Program header.
 
-<h2 id="ProgFlag">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L485">ProgFlag</a>
+<h2 id="ProgFlag">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L485">ProgFlag</a>
     <a href="#ProgFlag">¶</a></h2>
 <pre>type ProgFlag <a href="/builtin/#uint32">uint32</a></pre>
 
@@ -801,17 +801,17 @@ Prog.Flag
 )</pre>
 
 
-<h3 id="ProgFlag.GoString">func (ProgFlag) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L502">GoString</a>
+<h3 id="ProgFlag.GoString">func (ProgFlag) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L502">GoString</a>
     <a href="#ProgFlag.GoString">¶</a></h3>
 <pre>func (i <a href="#ProgFlag">ProgFlag</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="ProgFlag.String">func (ProgFlag) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L501">String</a>
+<h3 id="ProgFlag.String">func (ProgFlag) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L501">String</a>
     <a href="#ProgFlag.String">¶</a></h3>
 <pre>func (i <a href="#ProgFlag">ProgFlag</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="ProgHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L130">ProgHeader</a>
+<h2 id="ProgHeader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L130">ProgHeader</a>
     <a href="#ProgHeader">¶</a></h2>
 <pre>type ProgHeader struct {
 <span id="ProgHeader.Type"></span>    Type   <a href="#ProgType">ProgType</a>
@@ -826,7 +826,7 @@ Prog.Flag
 
 A ProgHeader represents a single ELF program header.
 
-<h2 id="ProgType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L449">ProgType</a>
+<h2 id="ProgType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L449">ProgType</a>
     <a href="#ProgType">¶</a></h2>
 <pre>type ProgType <a href="/builtin/#int">int</a></pre>
 
@@ -848,17 +848,17 @@ Prog.Type
 )</pre>
 
 
-<h3 id="ProgType.GoString">func (ProgType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L482">GoString</a>
+<h3 id="ProgType.GoString">func (ProgType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L482">GoString</a>
     <a href="#ProgType.GoString">¶</a></h3>
 <pre>func (i <a href="#ProgType">ProgType</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="ProgType.String">func (ProgType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L481">String</a>
+<h3 id="ProgType.String">func (ProgType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L481">String</a>
     <a href="#ProgType.String">¶</a></h3>
 <pre>func (i <a href="#ProgType">ProgType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_386">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1472">R_386</a>
+<h2 id="R_386">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1472">R_386</a>
     <a href="#R_386">¶</a></h2>
 <pre>type R_386 <a href="/builtin/#int">int</a></pre>
 
@@ -910,17 +910,17 @@ Relocation types for 386.
 )</pre>
 
 
-<h3 id="R_386.GoString">func (R_386) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1565">GoString</a>
+<h3 id="R_386.GoString">func (R_386) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1565">GoString</a>
     <a href="#R_386.GoString">¶</a></h3>
 <pre>func (i <a href="#R_386">R_386</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_386.String">func (R_386) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1564">String</a>
+<h3 id="R_386.String">func (R_386) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1564">String</a>
     <a href="#R_386.String">¶</a></h3>
 <pre>func (i <a href="#R_386">R_386</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_390">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2075">R_390</a>
+<h2 id="R_390">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2075">R_390</a>
     <a href="#R_390">¶</a></h2>
 <pre>type R_390 <a href="/builtin/#int">int</a></pre>
 
@@ -991,17 +991,17 @@ Relocation types for s390x processors.
 )</pre>
 
 
-<h3 id="R_390.GoString">func (R_390) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2206">GoString</a>
+<h3 id="R_390.GoString">func (R_390) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2206">GoString</a>
     <a href="#R_390.GoString">¶</a></h3>
 <pre>func (i <a href="#R_390">R_390</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_390.String">func (R_390) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2205">String</a>
+<h3 id="R_390.String">func (R_390) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2205">String</a>
     <a href="#R_390.String">¶</a></h3>
 <pre>func (i <a href="#R_390">R_390</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_AARCH64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L832">R_AARCH64</a>
+<h2 id="R_AARCH64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L832">R_AARCH64</a>
     <a href="#R_AARCH64">¶</a></h2>
 <pre>type R_AARCH64 <a href="/builtin/#int">int</a></pre>
 
@@ -1141,17 +1141,17 @@ Relocation types for AArch64 (aka arm64)
 )</pre>
 
 
-<h3 id="R_AARCH64.GoString">func (R_AARCH64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1101">GoString</a>
+<h3 id="R_AARCH64.GoString">func (R_AARCH64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1101">GoString</a>
     <a href="#R_AARCH64.GoString">¶</a></h3>
 <pre>func (i <a href="#R_AARCH64">R_AARCH64</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_AARCH64.String">func (R_AARCH64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1100">String</a>
+<h3 id="R_AARCH64.String">func (R_AARCH64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1100">String</a>
     <a href="#R_AARCH64.String">¶</a></h3>
 <pre>func (i <a href="#R_AARCH64">R_AARCH64</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_ALPHA">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1104">R_ALPHA</a>
+<h2 id="R_ALPHA">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1104">R_ALPHA</a>
     <a href="#R_ALPHA">¶</a></h2>
 <pre>type R_ALPHA <a href="/builtin/#int">int</a></pre>
 
@@ -1189,17 +1189,17 @@ Relocation types for Alpha.
 )</pre>
 
 
-<h3 id="R_ALPHA.GoString">func (R_ALPHA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1169">GoString</a>
+<h3 id="R_ALPHA.GoString">func (R_ALPHA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1169">GoString</a>
     <a href="#R_ALPHA.GoString">¶</a></h3>
 <pre>func (i <a href="#R_ALPHA">R_ALPHA</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_ALPHA.String">func (R_ALPHA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1168">String</a>
+<h3 id="R_ALPHA.String">func (R_ALPHA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1168">String</a>
     <a href="#R_ALPHA.String">¶</a></h3>
 <pre>func (i <a href="#R_ALPHA">R_ALPHA</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_ARM">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1172">R_ARM</a>
+<h2 id="R_ARM">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1172">R_ARM</a>
     <a href="#R_ARM">¶</a></h2>
 <pre>type R_ARM <a href="/builtin/#int">int</a></pre>
 
@@ -1353,17 +1353,17 @@ Relocation types for ARM.
 )</pre>
 
 
-<h3 id="R_ARM.GoString">func (R_ARM) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1469">GoString</a>
+<h3 id="R_ARM.GoString">func (R_ARM) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1469">GoString</a>
     <a href="#R_ARM.GoString">¶</a></h3>
 <pre>func (i <a href="#R_ARM">R_ARM</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_ARM.String">func (R_ARM) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1468">String</a>
+<h3 id="R_ARM.String">func (R_ARM) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1468">String</a>
     <a href="#R_ARM.String">¶</a></h3>
 <pre>func (i <a href="#R_ARM">R_ARM</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_MIPS">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1568">R_MIPS</a>
+<h2 id="R_MIPS">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1568">R_MIPS</a>
     <a href="#R_MIPS">¶</a></h2>
 <pre>type R_MIPS <a href="/builtin/#int">int</a></pre>
 
@@ -1422,17 +1422,17 @@ Relocation types for MIPS.
 )</pre>
 
 
-<h3 id="R_MIPS.GoString">func (R_MIPS) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1674">GoString</a>
+<h3 id="R_MIPS.GoString">func (R_MIPS) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1674">GoString</a>
     <a href="#R_MIPS.GoString">¶</a></h3>
 <pre>func (i <a href="#R_MIPS">R_MIPS</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_MIPS.String">func (R_MIPS) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1673">String</a>
+<h3 id="R_MIPS.String">func (R_MIPS) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1673">String</a>
     <a href="#R_MIPS.String">¶</a></h3>
 <pre>func (i <a href="#R_MIPS">R_MIPS</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_PPC">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1682">R_PPC</a>
+<h2 id="R_PPC">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1682">R_PPC</a>
     <a href="#R_PPC">¶</a></h2>
 <pre>type R_PPC <a href="/builtin/#int">int</a></pre>
 
@@ -1524,17 +1524,17 @@ comment.
 )</pre>
 
 
-<h3 id="R_PPC.GoString">func (R_PPC) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1845">GoString</a>
+<h3 id="R_PPC.GoString">func (R_PPC) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1845">GoString</a>
     <a href="#R_PPC.GoString">¶</a></h3>
 <pre>func (i <a href="#R_PPC">R_PPC</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_PPC.String">func (R_PPC) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1844">String</a>
+<h3 id="R_PPC.String">func (R_PPC) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1844">String</a>
     <a href="#R_PPC.String">¶</a></h3>
 <pre>func (i <a href="#R_PPC">R_PPC</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_PPC64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L1853">R_PPC64</a>
+<h2 id="R_PPC64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L1853">R_PPC64</a>
     <a href="#R_PPC64">¶</a></h2>
 <pre>type R_PPC64 <a href="/builtin/#int">int</a></pre>
 
@@ -1654,17 +1654,17 @@ comment.
 )</pre>
 
 
-<h3 id="R_PPC64.GoString">func (R_PPC64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2072">GoString</a>
+<h3 id="R_PPC64.GoString">func (R_PPC64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2072">GoString</a>
     <a href="#R_PPC64.GoString">¶</a></h3>
 <pre>func (i <a href="#R_PPC64">R_PPC64</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_PPC64.String">func (R_PPC64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2071">String</a>
+<h3 id="R_PPC64.String">func (R_PPC64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2071">String</a>
     <a href="#R_PPC64.String">¶</a></h3>
 <pre>func (i <a href="#R_PPC64">R_PPC64</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_SPARC">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2209">R_SPARC</a>
+<h2 id="R_SPARC">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2209">R_SPARC</a>
     <a href="#R_SPARC">¶</a></h2>
 <pre>type R_SPARC <a href="/builtin/#int">int</a></pre>
 
@@ -1730,17 +1730,17 @@ Relocation types for SPARC.
 )</pre>
 
 
-<h3 id="R_SPARC.GoString">func (R_SPARC) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2330">GoString</a>
+<h3 id="R_SPARC.GoString">func (R_SPARC) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2330">GoString</a>
     <a href="#R_SPARC.GoString">¶</a></h3>
 <pre>func (i <a href="#R_SPARC">R_SPARC</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_SPARC.String">func (R_SPARC) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2329">String</a>
+<h3 id="R_SPARC.String">func (R_SPARC) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2329">String</a>
     <a href="#R_SPARC.String">¶</a></h3>
 <pre>func (i <a href="#R_SPARC">R_SPARC</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="R_X86_64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L734">R_X86_64</a>
+<h2 id="R_X86_64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L734">R_X86_64</a>
     <a href="#R_X86_64">¶</a></h2>
 <pre>type R_X86_64 <a href="/builtin/#int">int</a></pre>
 
@@ -1793,17 +1793,17 @@ Relocation types for x86-64.
 )</pre>
 
 
-<h3 id="R_X86_64.GoString">func (R_X86_64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L829">GoString</a>
+<h3 id="R_X86_64.GoString">func (R_X86_64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L829">GoString</a>
     <a href="#R_X86_64.GoString">¶</a></h3>
 <pre>func (i <a href="#R_X86_64">R_X86_64</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="R_X86_64.String">func (R_X86_64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L828">String</a>
+<h3 id="R_X86_64.String">func (R_X86_64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L828">String</a>
     <a href="#R_X86_64.String">¶</a></h3>
 <pre>func (i <a href="#R_X86_64">R_X86_64</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Rel32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2397">Rel32</a>
+<h2 id="Rel32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2397">Rel32</a>
     <a href="#Rel32">¶</a></h2>
 <pre>type Rel32 struct {
 <span id="Rel32.Off"></span>    Off  <a href="/builtin/#uint32">uint32</a> <span class="comment">/* Location to be relocated. */</span>
@@ -1812,7 +1812,7 @@ Relocation types for x86-64.
 
 ELF32 Relocations that don't need an addend field.
 
-<h2 id="Rel64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2499">Rel64</a>
+<h2 id="Rel64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2499">Rel64</a>
     <a href="#Rel64">¶</a></h2>
 <pre>type Rel64 struct {
 <span id="Rel64.Off"></span>    Off  <a href="/builtin/#uint64">uint64</a> <span class="comment">/* Location to be relocated. */</span>
@@ -1821,7 +1821,7 @@ ELF32 Relocations that don't need an addend field.
 
 ELF64 relocations that don't need an addend field.
 
-<h2 id="Rela32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2403">Rela32</a>
+<h2 id="Rela32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2403">Rela32</a>
     <a href="#Rela32">¶</a></h2>
 <pre>type Rela32 struct {
 <span id="Rela32.Off"></span>    Off    <a href="/builtin/#uint32">uint32</a> <span class="comment">/* Location to be relocated. */</span>
@@ -1831,7 +1831,7 @@ ELF64 relocations that don't need an addend field.
 
 ELF32 Relocations that need an addend field.
 
-<h2 id="Rela64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2505">Rela64</a>
+<h2 id="Rela64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2505">Rela64</a>
     <a href="#Rela64">¶</a></h2>
 <pre>type Rela64 struct {
 <span id="Rela64.Off"></span>    Off    <a href="/builtin/#uint64">uint64</a> <span class="comment">/* Location to be relocated. */</span>
@@ -1841,7 +1841,7 @@ ELF32 Relocations that need an addend field.
 
 ELF64 relocations that need an addend field.
 
-<h2 id="Section">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L71">Section</a>
+<h2 id="Section">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L71">Section</a>
     <a href="#Section">¶</a></h2>
 <pre>type Section struct {
     <a href="#SectionHeader">SectionHeader</a>
@@ -1862,21 +1862,21 @@ ELF64 relocations that need an addend field.
 
 A Section represents a single section in an ELF file.
 
-<h3 id="Section.Data">func (*Section) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L94">Data</a>
+<h3 id="Section.Data">func (*Section) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L94">Data</a>
     <a href="#Section.Data">¶</a></h3>
 <pre>func (s *<a href="#Section">Section</a>) Data() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Data reads and returns the contents of the ELF section. Even if the section is
 stored compressed in the ELF file, Data returns uncompressed data.
 
-<h3 id="Section.Open">func (*Section) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L112">Open</a>
+<h3 id="Section.Open">func (*Section) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L112">Open</a>
     <a href="#Section.Open">¶</a></h3>
 <pre>func (s *<a href="#Section">Section</a>) Open() <a href="/io/">io</a>.<a href="/io/#ReadSeeker">ReadSeeker</a></pre>
 
 Open returns a new ReadSeeker reading the ELF section. Even if the section is
 stored compressed in the ELF file, the ReadSeeker reads uncompressed data.
 
-<h2 id="Section32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2354">Section32</a>
+<h2 id="Section32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2354">Section32</a>
     <a href="#Section32">¶</a></h2>
 <pre>type Section32 struct {
 <span id="Section32.Name"></span>    Name      <a href="/builtin/#uint32">uint32</a> <span class="comment">/* Section name (index into the section header string table). */</span>
@@ -1893,7 +1893,7 @@ stored compressed in the ELF file, the ReadSeeker reads uncompressed data.
 
 ELF32 Section header.
 
-<h2 id="Section64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2455">Section64</a>
+<h2 id="Section64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2455">Section64</a>
     <a href="#Section64">¶</a></h2>
 <pre>type Section64 struct {
 <span id="Section64.Name"></span>    Name      <a href="/builtin/#uint32">uint32</a> <span class="comment">/* Section name (index into the section header string table). */</span>
@@ -1910,7 +1910,7 @@ ELF32 Section header.
 
 ELF64 Section header.
 
-<h2 id="SectionFlag">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L391">SectionFlag</a>
+<h2 id="SectionFlag">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L391">SectionFlag</a>
     <a href="#SectionFlag">¶</a></h2>
 <pre>type SectionFlag <a href="/builtin/#uint32">uint32</a></pre>
 
@@ -1933,17 +1933,17 @@ Section flags.
 )</pre>
 
 
-<h3 id="SectionFlag.GoString">func (SectionFlag) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L424">GoString</a>
+<h3 id="SectionFlag.GoString">func (SectionFlag) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L424">GoString</a>
     <a href="#SectionFlag.GoString">¶</a></h3>
 <pre>func (i <a href="#SectionFlag">SectionFlag</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="SectionFlag.String">func (SectionFlag) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L423">String</a>
+<h3 id="SectionFlag.String">func (SectionFlag) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L423">String</a>
     <a href="#SectionFlag.String">¶</a></h3>
 <pre>func (i <a href="#SectionFlag">SectionFlag</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="SectionHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L51">SectionHeader</a>
+<h2 id="SectionHeader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L51">SectionHeader</a>
     <a href="#SectionHeader">¶</a></h2>
 <pre>type SectionHeader struct {
 <span id="SectionHeader.Name"></span>    Name      <a href="/builtin/#string">string</a>
@@ -1966,7 +1966,7 @@ Section flags.
 
 A SectionHeader represents a single ELF section header.
 
-<h2 id="SectionIndex">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L294">SectionIndex</a>
+<h2 id="SectionIndex">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L294">SectionIndex</a>
     <a href="#SectionIndex">¶</a></h2>
 <pre>type SectionIndex <a href="/builtin/#int">int</a></pre>
 
@@ -1986,17 +1986,17 @@ Special section indices.
 )</pre>
 
 
-<h3 id="SectionIndex.GoString">func (SectionIndex) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L319">GoString</a>
+<h3 id="SectionIndex.GoString">func (SectionIndex) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L319">GoString</a>
     <a href="#SectionIndex.GoString">¶</a></h3>
 <pre>func (i <a href="#SectionIndex">SectionIndex</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="SectionIndex.String">func (SectionIndex) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L318">String</a>
+<h3 id="SectionIndex.String">func (SectionIndex) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L318">String</a>
     <a href="#SectionIndex.String">¶</a></h3>
 <pre>func (i <a href="#SectionIndex">SectionIndex</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="SectionType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L322">SectionType</a>
+<h2 id="SectionType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L322">SectionType</a>
     <a href="#SectionType">¶</a></h2>
 <pre>type SectionType <a href="/builtin/#uint32">uint32</a></pre>
 
@@ -2035,17 +2035,17 @@ Section type.
 )</pre>
 
 
-<h3 id="SectionType.GoString">func (SectionType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L388">GoString</a>
+<h3 id="SectionType.GoString">func (SectionType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L388">GoString</a>
     <a href="#SectionType.GoString">¶</a></h3>
 <pre>func (i <a href="#SectionType">SectionType</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="SectionType.String">func (SectionType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L387">String</a>
+<h3 id="SectionType.String">func (SectionType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L387">String</a>
     <a href="#SectionType.String">¶</a></h3>
 <pre>func (i <a href="#SectionType">SectionType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Sym32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2414">Sym32</a>
+<h2 id="Sym32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2414">Sym32</a>
     <a href="#Sym32">¶</a></h2>
 <pre>type Sym32 struct {
 <span id="Sym32.Name"></span>    Name  <a href="/builtin/#uint32">uint32</a>
@@ -2058,7 +2058,7 @@ Section type.
 
 ELF32 Symbol.
 
-<h2 id="Sym64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2516">Sym64</a>
+<h2 id="Sym64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2516">Sym64</a>
     <a href="#Sym64">¶</a></h2>
 <pre>type Sym64 struct {
 <span id="Sym64.Name"></span>    Name  <a href="/builtin/#uint32">uint32</a> <span class="comment">/* String table index of name. */</span>
@@ -2071,7 +2071,7 @@ ELF32 Symbol.
 
 ELF64 symbol table entries.
 
-<h2 id="SymBind">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L650">SymBind</a>
+<h2 id="SymBind">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L650">SymBind</a>
     <a href="#SymBind">¶</a></h2>
 <pre>type SymBind <a href="/builtin/#int">int</a></pre>
 
@@ -2088,22 +2088,22 @@ Symbol Binding - ELFNN_ST_BIND - st_info
 )</pre>
 
 
-<h3 id="ST_BIND">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2425">ST_BIND</a>
+<h3 id="ST_BIND">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2425">ST_BIND</a>
     <a href="#ST_BIND">¶</a></h3>
 <pre>func ST_BIND(info <a href="/builtin/#uint8">uint8</a>) <a href="#SymBind">SymBind</a></pre>
 
 
-<h3 id="SymBind.GoString">func (SymBind) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L673">GoString</a>
+<h3 id="SymBind.GoString">func (SymBind) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L673">GoString</a>
     <a href="#SymBind.GoString">¶</a></h3>
 <pre>func (i <a href="#SymBind">SymBind</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="SymBind.String">func (SymBind) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L672">String</a>
+<h3 id="SymBind.String">func (SymBind) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L672">String</a>
     <a href="#SymBind.String">¶</a></h3>
 <pre>func (i <a href="#SymBind">SymBind</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="SymType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L676">SymType</a>
+<h2 id="SymType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L676">SymType</a>
     <a href="#SymType">¶</a></h2>
 <pre>type SymType <a href="/builtin/#int">int</a></pre>
 
@@ -2124,22 +2124,22 @@ Symbol type - ELFNN_ST_TYPE - st_info
 )</pre>
 
 
-<h3 id="ST_TYPE">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2426">ST_TYPE</a>
+<h3 id="ST_TYPE">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2426">ST_TYPE</a>
     <a href="#ST_TYPE">¶</a></h3>
 <pre>func ST_TYPE(info <a href="/builtin/#uint8">uint8</a>) <a href="#SymType">SymType</a></pre>
 
 
-<h3 id="SymType.GoString">func (SymType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L707">GoString</a>
+<h3 id="SymType.GoString">func (SymType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L707">GoString</a>
     <a href="#SymType.GoString">¶</a></h3>
 <pre>func (i <a href="#SymType">SymType</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="SymType.String">func (SymType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L706">String</a>
+<h3 id="SymType.String">func (SymType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L706">String</a>
     <a href="#SymType.String">¶</a></h3>
 <pre>func (i <a href="#SymType">SymType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="SymVis">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L710">SymVis</a>
+<h2 id="SymVis">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L710">SymVis</a>
     <a href="#SymVis">¶</a></h2>
 <pre>type SymVis <a href="/builtin/#int">int</a></pre>
 
@@ -2153,22 +2153,22 @@ Symbol visibility - ELFNN_ST_VISIBILITY - st_other
 )</pre>
 
 
-<h3 id="ST_VISIBILITY">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L2430">ST_VISIBILITY</a>
+<h3 id="ST_VISIBILITY">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L2430">ST_VISIBILITY</a>
     <a href="#ST_VISIBILITY">¶</a></h3>
 <pre>func ST_VISIBILITY(other <a href="/builtin/#uint8">uint8</a>) <a href="#SymVis">SymVis</a></pre>
 
 
-<h3 id="SymVis.GoString">func (SymVis) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L727">GoString</a>
+<h3 id="SymVis.GoString">func (SymVis) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L727">GoString</a>
     <a href="#SymVis.GoString">¶</a></h3>
 <pre>func (i <a href="#SymVis">SymVis</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="SymVis.String">func (SymVis) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L726">String</a>
+<h3 id="SymVis.String">func (SymVis) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L726">String</a>
     <a href="#SymVis.String">¶</a></h3>
 <pre>func (i <a href="#SymVis">SymVis</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Symbol">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/file.go#L159">Symbol</a>
+<h2 id="Symbol">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/file.go#L159">Symbol</a>
     <a href="#Symbol">¶</a></h2>
 <pre>type Symbol struct {
 <span id="Symbol.Name"></span>    Name        <a href="/builtin/#string">string</a>
@@ -2179,7 +2179,7 @@ Symbol visibility - ELFNN_ST_VISIBILITY - st_other
 
 A Symbol represents an entry in an ELF symbol table section.
 
-<h2 id="Type">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L153">Type</a>
+<h2 id="Type">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L153">Type</a>
     <a href="#Type">¶</a></h2>
 <pre>type Type <a href="/builtin/#uint16">uint16</a></pre>
 
@@ -2198,17 +2198,17 @@ Type is found in Header.Type.
 )</pre>
 
 
-<h3 id="Type.GoString">func (Type) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L180">GoString</a>
+<h3 id="Type.GoString">func (Type) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L180">GoString</a>
     <a href="#Type.GoString">¶</a></h3>
 <pre>func (i <a href="#Type">Type</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Type.String">func (Type) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L179">String</a>
+<h3 id="Type.String">func (Type) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L179">String</a>
     <a href="#Type.String">¶</a></h3>
 <pre>func (i <a href="#Type">Type</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Version">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L55">Version</a>
+<h2 id="Version">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L55">Version</a>
     <a href="#Version">¶</a></h2>
 <pre>type Version <a href="/builtin/#byte">byte</a></pre>
 
@@ -2220,12 +2220,12 @@ Version is found in Header.Ident[EI_VERSION] and Header.Version.
 )</pre>
 
 
-<h3 id="Version.GoString">func (Version) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L68">GoString</a>
+<h3 id="Version.GoString">func (Version) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L68">GoString</a>
     <a href="#Version.GoString">¶</a></h3>
 <pre>func (i <a href="#Version">Version</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Version.String">func (Version) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/elf/elf.go#L67">String</a>
+<h3 id="Version.String">func (Version) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/elf/elf.go#L67">String</a>
     <a href="#Version.String">¶</a></h3>
 <pre>func (i <a href="#Version">Version</a>) String() <a href="/builtin/#string">string</a></pre>
 

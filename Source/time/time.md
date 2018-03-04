@@ -187,7 +187,7 @@ difference will be visible when printing t.String() and u.String().
 - [Time.Unix](#exampleTime_Unix)
 
 ### Package files
- [format.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go) [sleep.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go) [sys_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sys_unix.go) [tick.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/tick.go) [time.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go) [zoneinfo.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo.go) [zoneinfo_read.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo_read.go) [zoneinfo_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo_unix.go)
+ [format.go](//github.com/golang/go/blob/release-branch.go1.10/src/time/format.go) [sleep.go](//github.com/golang/go/blob/release-branch.go1.10/src/time/sleep.go) [sys_unix.go](//github.com/golang/go/blob/release-branch.go1.10/src/time/sys_unix.go) [tick.go](//github.com/golang/go/blob/release-branch.go1.10/src/time/tick.go) [time.go](//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go) [zoneinfo.go](//github.com/golang/go/blob/release-branch.go1.10/src/time/zoneinfo.go) [zoneinfo_read.go](//github.com/golang/go/blob/release-branch.go1.10/src/time/zoneinfo_read.go) [zoneinfo_unix.go](//github.com/golang/go/blob/release-branch.go1.10/src/time/zoneinfo_unix.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -274,7 +274,7 @@ used with time.Parse they do not accept all the time formats permitted by the
 RFCs. The RFC3339Nano format removes trailing zeros from the seconds field and
 thus may not sort correctly once formatted.
 
-<h2 id="After">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L142">After</a>
+<h2 id="After">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/sleep.go#L142">After</a>
     <a href="#After">¶</a></h2>
 <pre>func After(d <a href="#Duration">Duration</a>) &lt;-chan <a href="#Time">Time</a></pre>
 
@@ -294,7 +294,7 @@ Example:
         fmt.Println("timed out")
     }
 
-<h2 id="Sleep">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L1">Sleep</a>
+<h2 id="Sleep">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/sleep.go#L1">Sleep</a>
     <a href="#Sleep">¶</a></h2>
 <pre>func Sleep(d <a href="#Duration">Duration</a>)</pre>
 
@@ -306,7 +306,7 @@ Example:
 
     time.Sleep(100 * time.Millisecond)
 
-<h2 id="Tick">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/tick.go#L44">Tick</a>
+<h2 id="Tick">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/tick.go#L44">Tick</a>
     <a href="#Tick">¶</a></h2>
 <pre>func Tick(d <a href="#Duration">Duration</a>) &lt;-chan <a href="#Time">Time</a></pre>
 
@@ -324,7 +324,7 @@ Example:
         fmt.Printf("%v %s\n", now, statusUpdate())
     }
 
-<h2 id="Duration">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L610">Duration</a>
+<h2 id="Duration">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L610">Duration</a>
     <a href="#Duration">¶</a></h2>
 <pre>type Duration <a href="/builtin/#int64">int64</a></pre>
 
@@ -362,7 +362,7 @@ Example:
     t1 := time.Now()
     fmt.Printf("The call took %v to run.\n", t1.Sub(t0))
 
-<h3 id="ParseDuration">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L1255">ParseDuration</a>
+<h3 id="ParseDuration">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/format.go#L1255">ParseDuration</a>
     <a href="#ParseDuration">¶</a></h3>
 <pre>func ParseDuration(s <a href="/builtin/#string">string</a>) (<a href="#Duration">Duration</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -385,19 +385,19 @@ Example:
     // 1h10m10s
     // there are 4210 seconds in 1h10m10s
 
-<h3 id="Since">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L889">Since</a>
+<h3 id="Since">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L889">Since</a>
     <a href="#Since">¶</a></h3>
 <pre>func Since(t <a href="#Time">Time</a>) <a href="#Duration">Duration</a></pre>
 
 Since returns the time elapsed since t. It is shorthand for time.Now().Sub(t).
 
-<h3 id="Until">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L895">Until</a>
+<h3 id="Until">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L895">Until</a>
     <a href="#Until">¶</a></h3>
 <pre>func Until(t <a href="#Time">Time</a>) <a href="#Duration">Duration</a></pre>
 
 Until returns the duration until t. It is shorthand for t.Sub(time.Now()).
 
-<h3 id="Duration.Hours">func (Duration) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L782">Hours</a>
+<h3 id="Duration.Hours">func (Duration) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L782">Hours</a>
     <a href="#Duration.Hours">¶</a></h3>
 <pre>func (d <a href="#Duration">Duration</a>) Hours() <a href="/builtin/#float64">float64</a></pre>
 
@@ -410,7 +410,7 @@ Example:
     fmt.Printf("I've got %.1f hours of work left.", h.Hours())
     // Output: I've got 4.5 hours of work left.
 
-<h3 id="Duration.Minutes">func (Duration) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L775">Minutes</a>
+<h3 id="Duration.Minutes">func (Duration) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L775">Minutes</a>
     <a href="#Duration.Minutes">¶</a></h3>
 <pre>func (d <a href="#Duration">Duration</a>) Minutes() <a href="/builtin/#float64">float64</a></pre>
 
@@ -423,7 +423,7 @@ Example:
     fmt.Printf("The movie is %.0f minutes long.", m.Minutes())
     // Output: The movie is 90 minutes long.
 
-<h3 id="Duration.Nanoseconds">func (Duration) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L756">Nanoseconds</a>
+<h3 id="Duration.Nanoseconds">func (Duration) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L756">Nanoseconds</a>
     <a href="#Duration.Nanoseconds">¶</a></h3>
 <pre>func (d <a href="#Duration">Duration</a>) Nanoseconds() <a href="/builtin/#int64">int64</a></pre>
 
@@ -436,7 +436,7 @@ Example:
     fmt.Printf("one microsecond has %d nanoseconds.", ns.Nanoseconds())
     // Output: one microsecond has 1000 nanoseconds.
 
-<h3 id="Duration.Round">func (Duration) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L809">Round</a>
+<h3 id="Duration.Round">func (Duration) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L809">Round</a>
     <a href="#Duration.Round">¶</a></h3>
 <pre>func (d <a href="#Duration">Duration</a>) Round(m <a href="#Duration">Duration</a>) <a href="#Duration">Duration</a></pre>
 
@@ -477,7 +477,7 @@ Example:
     // d.Round( 10m0s) = 1h20m0s
     // d.Round(1h0m0s) = 1h0m0s
 
-<h3 id="Duration.Seconds">func (Duration) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L768">Seconds</a>
+<h3 id="Duration.Seconds">func (Duration) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L768">Seconds</a>
     <a href="#Duration.Seconds">¶</a></h3>
 <pre>func (d <a href="#Duration">Duration</a>) Seconds() <a href="/builtin/#float64">float64</a></pre>
 
@@ -490,7 +490,7 @@ Example:
     fmt.Printf("take off in t-%.0f seconds.", m.Seconds())
     // Output: take off in t-90 seconds.
 
-<h3 id="Duration.String">func (Duration) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L641">String</a>
+<h3 id="Duration.String">func (Duration) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L641">String</a>
     <a href="#Duration.String">¶</a></h3>
 <pre>func (d <a href="#Duration">Duration</a>) String() <a href="/builtin/#string">string</a></pre>
 
@@ -507,7 +507,7 @@ Example:
     fmt.Println(t2.Sub(t1).String())
     // Output: 4440h0m0s
 
-<h3 id="Duration.Truncate">func (Duration) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L790">Truncate</a>
+<h3 id="Duration.Truncate">func (Duration) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L790">Truncate</a>
     <a href="#Duration.Truncate">¶</a></h3>
 <pre>func (d <a href="#Duration">Duration</a>) Truncate(m <a href="#Duration">Duration</a>) <a href="#Duration">Duration</a></pre>
 
@@ -546,7 +546,7 @@ Example:
     // t.Truncate( 10m0s) = 1h10m0s
     // t.Truncate(1h0m0s) = 1h0m0s
 
-<h2 id="Location">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo.go#L8">Location</a>
+<h2 id="Location">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/zoneinfo.go#L8">Location</a>
     <a href="#Location">¶</a></h2>
 <pre>type Location struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -587,14 +587,14 @@ Example:
     // Output:
     // true
 
-<h3 id="FixedZone">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo.go#L82">FixedZone</a>
+<h3 id="FixedZone">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/zoneinfo.go#L82">FixedZone</a>
     <a href="#FixedZone">¶</a></h3>
 <pre>func FixedZone(name <a href="/builtin/#string">string</a>, offset <a href="/builtin/#int">int</a>) *<a href="#Location">Location</a></pre>
 
 FixedZone returns a Location that always uses the given zone name and offset
 (seconds east of UTC).
 
-<h3 id="LoadLocation">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo.go#L269">LoadLocation</a>
+<h3 id="LoadLocation">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/zoneinfo.go#L269">LoadLocation</a>
     <a href="#LoadLocation">¶</a></h3>
 <pre>func LoadLocation(name <a href="/builtin/#string">string</a>) (*<a href="#Location">Location</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -612,7 +612,7 @@ zip file named by the ZONEINFO environment variable, if any, then looks in known
 installation locations on Unix systems, and finally looks in
 $GOROOT/lib/time/zoneinfo.zip.
 
-<h3 id="LoadLocationFromTZData">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo_read.go#L76">LoadLocationFromTZData</a>
+<h3 id="LoadLocationFromTZData">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/zoneinfo_read.go#L76">LoadLocationFromTZData</a>
     <a href="#LoadLocationFromTZData">¶</a></h3>
 <pre>func LoadLocationFromTZData(name <a href="/builtin/#string">string</a>, data []<a href="/builtin/#byte">byte</a>) (*<a href="#Location">Location</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -621,14 +621,14 @@ the IANA Time Zone database-formatted data. The data should be in the format of
 a standard IANA time zone file (for example, the content of /etc/localtime on
 Unix systems).
 
-<h3 id="Location.String">func (*Location) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/zoneinfo.go#L76">String</a>
+<h3 id="Location.String">func (*Location) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/zoneinfo.go#L76">String</a>
     <a href="#Location.String">¶</a></h3>
 <pre>func (l *<a href="#Location">Location</a>) String() <a href="/builtin/#string">string</a></pre>
 
 String returns a descriptive name for the time zone information, corresponding
 to the name argument to LoadLocation or FixedZone.
 
-<h2 id="Month">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L250">Month</a>
+<h2 id="Month">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L250">Month</a>
     <a href="#Month">¶</a></h2>
 <pre>type Month <a href="/builtin/#int">int</a></pre>
 
@@ -658,13 +658,13 @@ Example:
         fmt.Println("Happy Go day!")
     }
 
-<h3 id="Month.String">func (Month) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L283">String</a>
+<h3 id="Month.String">func (Month) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L283">String</a>
     <a href="#Month.String">¶</a></h3>
 <pre>func (m <a href="#Month">Month</a>) String() <a href="/builtin/#string">string</a></pre>
 
 String returns the English name of the month ("January", "February", ...).
 
-<h2 id="ParseError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L647">ParseError</a>
+<h2 id="ParseError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/format.go#L647">ParseError</a>
     <a href="#ParseError">¶</a></h2>
 <pre>type ParseError struct {
 <span id="ParseError.Layout"></span>    Layout     <a href="/builtin/#string">string</a>
@@ -676,13 +676,13 @@ String returns the English name of the month ("January", "February", ...).
 
 ParseError describes a problem parsing a time string.
 
-<h3 id="ParseError.Error">func (*ParseError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L660">Error</a>
+<h3 id="ParseError.Error">func (*ParseError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/format.go#L660">Error</a>
     <a href="#ParseError.Error">¶</a></h3>
 <pre>func (e *<a href="#ParseError">ParseError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 Error returns the string representation of a ParseError.
 
-<h2 id="Ticker">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/tick.go#L1">Ticker</a>
+<h2 id="Ticker">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/tick.go#L1">Ticker</a>
     <a href="#Ticker">¶</a></h2>
 <pre>type Ticker struct {
 <span id="Ticker.C"></span>    C &lt;-chan <a href="#Time">Time</a> <span class="comment">// The channel on which the ticks are delivered.</span>
@@ -691,7 +691,7 @@ Error returns the string representation of a ParseError.
 
 A Ticker holds a channel that delivers `ticks' of a clock at intervals.
 
-<h3 id="NewTicker">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/tick.go#L11">NewTicker</a>
+<h3 id="NewTicker">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/tick.go#L11">NewTicker</a>
     <a href="#NewTicker">¶</a></h3>
 <pre>func NewTicker(d <a href="#Duration">Duration</a>) *<a href="#Ticker">Ticker</a></pre>
 
@@ -720,14 +720,14 @@ Example:
         }
     }
 
-<h3 id="Ticker.Stop">func (*Ticker) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/tick.go#L35">Stop</a>
+<h3 id="Ticker.Stop">func (*Ticker) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/tick.go#L35">Stop</a>
     <a href="#Ticker.Stop">¶</a></h3>
 <pre>func (t *<a href="#Ticker">Ticker</a>) Stop()</pre>
 
 Stop turns off a ticker. After Stop, no more ticks will be sent. Stop does not
 close the channel, to prevent a read from the channel succeeding incorrectly.
 
-<h2 id="Time">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L106">Time</a>
+<h2 id="Time">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L106">Time</a>
     <a href="#Time">¶</a></h2>
 <pre>type Time struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -772,7 +772,7 @@ setting t = t.Round(0). In general, prefer t.Equal(u) to t == u, since t.Equal
 uses the most accurate comparison available and correctly handles the case when
 only one of its arguments has a monotonic clock reading.
 
-<h3 id="Date">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1301">Date</a>
+<h3 id="Date">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1301">Date</a>
     <a href="#Date">¶</a></h3>
 <pre>func Date(year <a href="/builtin/#int">int</a>, month <a href="#Month">Month</a>, day, hour, min, sec, nsec <a href="/builtin/#int">int</a>, loc *<a href="#Location">Location</a>) <a href="#Time">Time</a></pre>
 
@@ -801,13 +801,13 @@ Example:
     fmt.Printf("Go launched at %s\n", t.Local())
     // Output: Go launched at 2009-11-10 15:00:00 -0800 PST
 
-<h3 id="Now">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1033">Now</a>
+<h3 id="Now">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1033">Now</a>
     <a href="#Now">¶</a></h3>
 <pre>func Now() <a href="#Time">Time</a></pre>
 
 Now returns the current local time.
 
-<h3 id="Parse">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L763">Parse</a>
+<h3 id="Parse">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/format.go#L763">Parse</a>
     <a href="#Parse">¶</a></h3>
 <pre>func Parse(layout, value <a href="/builtin/#string">string</a>) (<a href="#Time">Time</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -889,7 +889,7 @@ Example:
     // 2006-01-02 15:04:05 +0700 +0700
     // error parsing time "2006-01-02T15:04:05Z07:00": extra text: 07:00
 
-<h3 id="ParseInLocation">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L772">ParseInLocation</a>
+<h3 id="ParseInLocation">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/format.go#L772">ParseInLocation</a>
     <a href="#ParseInLocation">¶</a></h3>
 <pre>func ParseInLocation(layout, value <a href="/builtin/#string">string</a>, loc *<a href="#Location">Location</a>) (<a href="#Time">Time</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -917,7 +917,7 @@ Example:
     // 2012-07-09 05:02:00 +0200 CEST
     // 2012-07-09 00:00:00 +0200 CEST
 
-<h3 id="Unix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1251">Unix</a>
+<h3 id="Unix">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1251">Unix</a>
     <a href="#Unix">¶</a></h3>
 <pre>func Unix(sec <a href="/builtin/#int64">int64</a>, nsec <a href="/builtin/#int64">int64</a>) <a href="#Time">Time</a></pre>
 
@@ -926,7 +926,7 @@ and nsec nanoseconds since January 1, 1970 UTC. It is valid to pass nsec outside
 the range [0, 999999999]. Not all sec values have a corresponding time value.
 One such value is 1<<63-1 (the largest int64 value).
 
-<h3 id="Time.Add">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L834">Add</a>
+<h3 id="Time.Add">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L834">Add</a>
     <a href="#Time.Add">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Add(d <a href="#Duration">Duration</a>) <a href="#Time">Time</a></pre>
 
@@ -954,7 +954,7 @@ Example:
     // start.Add(time.Hour * 10) = 2009-01-01 22:00:00 +0000 UTC
     // start.Add(time.Hour * 24 * 10) = 2009-01-11 12:00:00 +0000 UTC
 
-<h3 id="Time.AddDate">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L907">AddDate</a>
+<h3 id="Time.AddDate">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L907">AddDate</a>
     <a href="#Time.AddDate">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) AddDate(years <a href="/builtin/#int">int</a>, months <a href="/builtin/#int">int</a>, days <a href="/builtin/#int">int</a>) <a href="#Time">Time</a></pre>
 
@@ -983,7 +983,7 @@ Example:
     // oneMonthLater: start.AddDate(0, 1, 0) = 2009-02-01 00:00:00 +0000 UTC
     // oneYearLater: start.AddDate(1, 0, 0) = 2010-01-01 00:00:00 +0000 UTC
 
-<h3 id="Time.After">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L220">After</a>
+<h3 id="Time.After">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L220">After</a>
     <a href="#Time.After">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) After(u <a href="#Time">Time</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -1005,7 +1005,7 @@ Example:
     // year3000.After(year2000) = true
     // year2000.After(year3000) = false
 
-<h3 id="Time.AppendFormat">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L489">AppendFormat</a>
+<h3 id="Time.AppendFormat">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/format.go#L489">AppendFormat</a>
     <a href="#Time.AppendFormat">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) AppendFormat(b []<a href="/builtin/#byte">byte</a>, layout <a href="/builtin/#string">string</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -1024,7 +1024,7 @@ Example:
     // Output:
     // Time: 11:00AM
 
-<h3 id="Time.Before">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L230">Before</a>
+<h3 id="Time.Before">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L230">Before</a>
     <a href="#Time.Before">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Before(u <a href="#Time">Time</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -1046,13 +1046,13 @@ Example:
     // year2000.Before(year3000) = true
     // year3000.Before(year2000) = false
 
-<h3 id="Time.Clock">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L565">Clock</a>
+<h3 id="Time.Clock">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L565">Clock</a>
     <a href="#Time.Clock">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Clock() (hour, min, sec <a href="/builtin/#int">int</a>)</pre>
 
 Clock returns the hour, minute, and second within the day specified by t.
 
-<h3 id="Time.Date">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L470">Date</a>
+<h3 id="Time.Date">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L470">Date</a>
     <a href="#Time.Date">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Date() (year <a href="/builtin/#int">int</a>, month <a href="#Month">Month</a>, day <a href="/builtin/#int">int</a>)</pre>
 
@@ -1073,7 +1073,7 @@ Example:
     // month = February
     // day = 1
 
-<h3 id="Time.Day">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L488">Day</a>
+<h3 id="Time.Day">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L488">Day</a>
     <a href="#Time.Day">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Day() <a href="/builtin/#int">int</a></pre>
 
@@ -1090,7 +1090,7 @@ Example:
     // Output:
     // day = 1
 
-<h3 id="Time.Equal">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L242">Equal</a>
+<h3 id="Time.Equal">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L242">Equal</a>
     <a href="#Time.Equal">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Equal(u <a href="#Time">Time</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -1120,7 +1120,7 @@ Example:
     // datesEqualUsingEqualOperator = false
     // datesEqualUsingFunction = true
 
-<h3 id="Time.Format">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L473">Format</a>
+<h3 id="Time.Format">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/format.go#L473">Format</a>
     <a href="#Time.Format">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Format(layout <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -1259,25 +1259,25 @@ Example:
     // 0s for fraction "15:04:05.00000" gives "11:06:39.12340"
     // 9s for fraction "15:04:05.99999999" gives "11:06:39.1234"
 
-<h3 id="Time.GobDecode">func (*Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1193">GobDecode</a>
+<h3 id="Time.GobDecode">func (*Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1193">GobDecode</a>
     <a href="#Time.GobDecode">¶</a></h3>
 <pre>func (t *<a href="#Time">Time</a>) GobDecode(data []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
 GobDecode implements the gob.GobDecoder interface.
 
-<h3 id="Time.GobEncode">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1188">GobEncode</a>
+<h3 id="Time.GobEncode">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1188">GobEncode</a>
     <a href="#Time.GobEncode">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) GobEncode() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 GobEncode implements the gob.GobEncoder interface.
 
-<h3 id="Time.Hour">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L580">Hour</a>
+<h3 id="Time.Hour">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L580">Hour</a>
     <a href="#Time.Hour">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Hour() <a href="/builtin/#int">int</a></pre>
 
 Hour returns the hour within the day specified by t, in the range [0, 23].
 
-<h3 id="Time.ISOWeek">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L509">ISOWeek</a>
+<h3 id="Time.ISOWeek">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L509">ISOWeek</a>
     <a href="#Time.ISOWeek">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) ISOWeek() (year, week <a href="/builtin/#int">int</a>)</pre>
 
@@ -1285,7 +1285,7 @@ ISOWeek returns the ISO 8601 year and week number in which t occurs. Week ranges
 from 1 to 53. Jan 01 to Jan 03 of year n might belong to week 52 or 53 of year
 n-1, and Dec 29 to Dec 31 might belong to week 1 of year n+1.
 
-<h3 id="Time.In">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1061">In</a>
+<h3 id="Time.In">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1061">In</a>
     <a href="#Time.In">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) In(loc *<a href="#Location">Location</a>) <a href="#Time">Time</a></pre>
 
@@ -1293,66 +1293,66 @@ In returns t with the location information set to loc.
 
 In panics if loc is nil.
 
-<h3 id="Time.IsZero">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L421">IsZero</a>
+<h3 id="Time.IsZero">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L421">IsZero</a>
     <a href="#Time.IsZero">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) IsZero() <a href="/builtin/#bool">bool</a></pre>
 
 IsZero reports whether t represents the zero time instant, January 1, year 1,
 00:00:00 UTC.
 
-<h3 id="Time.Local">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1053">Local</a>
+<h3 id="Time.Local">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1053">Local</a>
     <a href="#Time.Local">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Local() <a href="#Time">Time</a></pre>
 
 Local returns t with the location set to local time.
 
-<h3 id="Time.Location">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1070">Location</a>
+<h3 id="Time.Location">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1070">Location</a>
     <a href="#Time.Location">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Location() *<a href="#Location">Location</a></pre>
 
 Location returns the time zone information associated with t.
 
-<h3 id="Time.MarshalBinary">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1103">MarshalBinary</a>
+<h3 id="Time.MarshalBinary">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1103">MarshalBinary</a>
     <a href="#Time.MarshalBinary">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) MarshalBinary() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 MarshalBinary implements the encoding.BinaryMarshaler interface.
 
-<h3 id="Time.MarshalJSON">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1199">MarshalJSON</a>
+<h3 id="Time.MarshalJSON">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1199">MarshalJSON</a>
     <a href="#Time.MarshalJSON">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) MarshalJSON() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 MarshalJSON implements the json.Marshaler interface. The time is a quoted string
 in RFC 3339 format, with sub-second precision added if present.
 
-<h3 id="Time.MarshalText">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1228">MarshalText</a>
+<h3 id="Time.MarshalText">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1228">MarshalText</a>
     <a href="#Time.MarshalText">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) MarshalText() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 MarshalText implements the encoding.TextMarshaler interface. The time is
 formatted in RFC 3339 format, with sub-second precision added if present.
 
-<h3 id="Time.Minute">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L585">Minute</a>
+<h3 id="Time.Minute">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L585">Minute</a>
     <a href="#Time.Minute">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Minute() <a href="/builtin/#int">int</a></pre>
 
 Minute returns the minute offset within the hour specified by t, in the range
 [0, 59].
 
-<h3 id="Time.Month">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L482">Month</a>
+<h3 id="Time.Month">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L482">Month</a>
     <a href="#Time.Month">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Month() <a href="#Month">Month</a></pre>
 
 Month returns the month of the year specified by t.
 
-<h3 id="Time.Nanosecond">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L596">Nanosecond</a>
+<h3 id="Time.Nanosecond">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L596">Nanosecond</a>
     <a href="#Time.Nanosecond">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Nanosecond() <a href="/builtin/#int">int</a></pre>
 
 Nanosecond returns the nanosecond offset within the second specified by t, in
 the range [0, 999999999].
 
-<h3 id="Time.Round">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1399">Round</a>
+<h3 id="Time.Round">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1399">Round</a>
     <a href="#Time.Round">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Round(d <a href="#Duration">Duration</a>) <a href="#Time">Time</a></pre>
 
@@ -1392,14 +1392,14 @@ Example:
     // t.Round( 10m0s) = 12:20:00
     // t.Round(1h0m0s) = 12:00:00
 
-<h3 id="Time.Second">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L590">Second</a>
+<h3 id="Time.Second">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L590">Second</a>
     <a href="#Time.Second">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Second() <a href="/builtin/#int">int</a></pre>
 
 Second returns the second offset within the minute specified by t, in the range
 [0, 59].
 
-<h3 id="Time.String">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/format.go#L428">String</a>
+<h3 id="Time.String">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/format.go#L428">String</a>
     <a href="#Time.String">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) String() <a href="/builtin/#string">string</a></pre>
 
@@ -1431,7 +1431,7 @@ Example:
     // withNanoseconds = 2000-02-01 12:13:14.000000015 +0000 UTC
     // withoutNanoseconds = 2000-02-01 12:13:14 +0000 UTC
 
-<h3 id="Time.Sub">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L862">Sub</a>
+<h3 id="Time.Sub">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L862">Sub</a>
     <a href="#Time.Sub">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Sub(u <a href="#Time">Time</a>) <a href="#Duration">Duration</a></pre>
 
@@ -1451,7 +1451,7 @@ Example:
     // Output:
     // difference = 12h0m0s
 
-<h3 id="Time.Truncate">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1382">Truncate</a>
+<h3 id="Time.Truncate">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1382">Truncate</a>
     <a href="#Time.Truncate">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Truncate(d <a href="#Duration">Duration</a>) <a href="#Time">Time</a></pre>
 
@@ -1493,13 +1493,13 @@ Example:
     // t.Truncate( 1m0s) = 12:15:00
     // t.Truncate(10m0s) = 12:10:00
 
-<h3 id="Time.UTC">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1047">UTC</a>
+<h3 id="Time.UTC">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1047">UTC</a>
     <a href="#Time.UTC">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) UTC() <a href="#Time">Time</a></pre>
 
 UTC returns t with the location set to UTC.
 
-<h3 id="Time.Unix">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1087">Unix</a>
+<h3 id="Time.Unix">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1087">Unix</a>
     <a href="#Time.Unix">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Unix() <a href="/builtin/#int64">int64</a></pre>
 
@@ -1525,7 +1525,7 @@ Example:
     // 1000000000
     // 1000000000000000000
 
-<h3 id="Time.UnixNano">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1096">UnixNano</a>
+<h3 id="Time.UnixNano">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1096">UnixNano</a>
     <a href="#Time.UnixNano">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) UnixNano() <a href="/builtin/#int64">int64</a></pre>
 
@@ -1535,53 +1535,53 @@ cannot be represented by an int64 (a date before the year 1678 or after 2262).
 Note that this means the result of calling UnixNano on the zero Time is
 undefined.
 
-<h3 id="Time.UnmarshalBinary">func (*Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1144">UnmarshalBinary</a>
+<h3 id="Time.UnmarshalBinary">func (*Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1144">UnmarshalBinary</a>
     <a href="#Time.UnmarshalBinary">¶</a></h3>
 <pre>func (t *<a href="#Time">Time</a>) UnmarshalBinary(data []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
 UnmarshalBinary implements the encoding.BinaryUnmarshaler interface.
 
-<h3 id="Time.UnmarshalJSON">func (*Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1215">UnmarshalJSON</a>
+<h3 id="Time.UnmarshalJSON">func (*Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1215">UnmarshalJSON</a>
     <a href="#Time.UnmarshalJSON">¶</a></h3>
 <pre>func (t *<a href="#Time">Time</a>) UnmarshalJSON(data []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
 UnmarshalJSON implements the json.Unmarshaler interface. The time is expected to
 be a quoted string in RFC 3339 format.
 
-<h3 id="Time.UnmarshalText">func (*Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1239">UnmarshalText</a>
+<h3 id="Time.UnmarshalText">func (*Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1239">UnmarshalText</a>
     <a href="#Time.UnmarshalText">¶</a></h3>
 <pre>func (t *<a href="#Time">Time</a>) UnmarshalText(data []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
 UnmarshalText implements the encoding.TextUnmarshaler interface. The time is
 expected to be in RFC 3339 format.
 
-<h3 id="Time.Weekday">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L494">Weekday</a>
+<h3 id="Time.Weekday">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L494">Weekday</a>
     <a href="#Time.Weekday">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Weekday() <a href="#Weekday">Weekday</a></pre>
 
 Weekday returns the day of the week specified by t.
 
-<h3 id="Time.Year">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L476">Year</a>
+<h3 id="Time.Year">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L476">Year</a>
     <a href="#Time.Year">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Year() <a href="/builtin/#int">int</a></pre>
 
 Year returns the year in which t occurs.
 
-<h3 id="Time.YearDay">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L602">YearDay</a>
+<h3 id="Time.YearDay">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L602">YearDay</a>
     <a href="#Time.YearDay">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) YearDay() <a href="/builtin/#int">int</a></pre>
 
 YearDay returns the day of the year specified by t, in the range [1,365] for
 non-leap years, and [1,366] in leap years.
 
-<h3 id="Time.Zone">func (Time) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L1080">Zone</a>
+<h3 id="Time.Zone">func (Time) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L1080">Zone</a>
     <a href="#Time.Zone">¶</a></h3>
 <pre>func (t <a href="#Time">Time</a>) Zone() (name <a href="/builtin/#string">string</a>, offset <a href="/builtin/#int">int</a>)</pre>
 
 Zone computes the time zone in effect at time t, returning the abbreviated name
 of the zone (such as "CET") and its offset in seconds east of UTC.
 
-<h2 id="Timer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L39">Timer</a>
+<h2 id="Timer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/sleep.go#L39">Timer</a>
     <a href="#Timer">¶</a></h2>
 <pre>type Timer struct {
 <span id="Timer.C"></span>    C &lt;-chan <a href="#Time">Time</a>
@@ -1592,7 +1592,7 @@ The Timer type represents a single event. When the Timer expires, the current
 time will be sent on C, unless the Timer was created by AfterFunc. A Timer must
 be created with NewTimer or AfterFunc.
 
-<h3 id="AfterFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L149">AfterFunc</a>
+<h3 id="AfterFunc">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/sleep.go#L149">AfterFunc</a>
     <a href="#AfterFunc">¶</a></h3>
 <pre>func AfterFunc(d <a href="#Duration">Duration</a>, f func()) *<a href="#Timer">Timer</a></pre>
 
@@ -1600,14 +1600,14 @@ AfterFunc waits for the duration to elapse and then calls f in its own
 goroutine. It returns a Timer that can be used to cancel the call using its Stop
 method.
 
-<h3 id="NewTimer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L75">NewTimer</a>
+<h3 id="NewTimer">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/sleep.go#L75">NewTimer</a>
     <a href="#NewTimer">¶</a></h3>
 <pre>func NewTimer(d <a href="#Duration">Duration</a>) *<a href="#Timer">Timer</a></pre>
 
 NewTimer creates a new Timer that will send the current time on its channel
 after at least duration d.
 
-<h3 id="Timer.Reset">func (*Timer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L113">Reset</a>
+<h3 id="Timer.Reset">func (*Timer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/sleep.go#L113">Reset</a>
     <a href="#Timer.Reset">¶</a></h3>
 <pre>func (t *<a href="#Timer">Timer</a>) Reset(d <a href="#Duration">Duration</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -1633,7 +1633,7 @@ a race condition between draining the channel and the new timer expiring. Reset
 should always be invoked on stopped or expired channels, as described above. The
 return value exists to preserve compatibility with existing programs.
 
-<h3 id="Timer.Stop">func (*Timer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/sleep.go#L66">Stop</a>
+<h3 id="Timer.Stop">func (*Timer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/sleep.go#L66">Stop</a>
     <a href="#Timer.Stop">¶</a></h3>
 <pre>func (t *<a href="#Timer">Timer</a>) Stop() <a href="/builtin/#bool">bool</a></pre>
 
@@ -1656,7 +1656,7 @@ timer has already expired and the function f has been started in its own
 goroutine; Stop does not wait for f to complete before returning. If the caller
 needs to know whether f is completed, it must coordinate with f explicitly.
 
-<h2 id="Weekday">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L293">Weekday</a>
+<h2 id="Weekday">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L293">Weekday</a>
     <a href="#Weekday">¶</a></h2>
 <pre>type Weekday <a href="/builtin/#int">int</a></pre>
 
@@ -1673,7 +1673,7 @@ A Weekday specifies a day of the week (Sunday = 0, ...).
 )</pre>
 
 
-<h3 id="Weekday.String">func (Weekday) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/time/time.go#L316">String</a>
+<h3 id="Weekday.String">func (Weekday) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/time/time.go#L316">String</a>
     <a href="#Weekday.String">¶</a></h3>
 <pre>func (d <a href="#Weekday">Weekday</a>) String() <a href="/builtin/#string">string</a></pre>
 

@@ -20,7 +20,7 @@ Currently only the responder role is supported.
 - [func Serve(l net.Listener, handler http.Handler) error](#Serve)
 
 ### Package files
- [child.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/fcgi/child.go) [fcgi.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/fcgi/fcgi.go)
+ [child.go](//github.com/golang/go/blob/release-branch.go1.10/src/net/http/fcgi/child.go) [fcgi.go](//github.com/golang/go/blob/release-branch.go1.10/src/net/http/fcgi/fcgi.go)
 
 <h2 id="pkg-variables">Variables</h2>
 
@@ -34,7 +34,7 @@ request after the connection to the web server has been closed.
 ErrRequestAborted is returned by Read when a handler attempts to read the body
 of a request that has been aborted by the web server.
 
-<h2 id="ProcessEnv">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/fcgi/child.go#L348">ProcessEnv</a>
+<h2 id="ProcessEnv">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/fcgi/child.go#L348">ProcessEnv</a>
     <a href="#ProcessEnv">¶</a></h2>
 <pre>func ProcessEnv(r *<a href="/net/http/">http</a>.<a href="/net/http/#Request">Request</a>) map[<a href="/builtin/#string">string</a>]<a href="/builtin/#string">string</a></pre>
 
@@ -44,7 +44,7 @@ hidden in the request's context. As an example, if REMOTE_USER is set for a
 request, it will not be found anywhere in r, but it will be included in
 ProcessEnv's response (via r's context).
 
-<h2 id="Serve">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/fcgi/child.go#L321">Serve</a>
+<h2 id="Serve">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/fcgi/child.go#L321">Serve</a>
     <a href="#Serve">¶</a></h2>
 <pre>func Serve(l <a href="/net/">net</a>.<a href="/net/#Listener">Listener</a>, handler <a href="/net/http/">http</a>.<a href="/net/http/#Handler">Handler</a>) <a href="/builtin/#error">error</a></pre>
 

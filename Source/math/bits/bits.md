@@ -77,7 +77,7 @@ predeclared unsigned integer types.
 - [TrailingZeros8](#exampleTrailingZeros8)
 
 ### Package files
- [bits.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go) [bits_tables.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits_tables.go)
+ [bits.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go) [bits_tables.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits_tables.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -85,14 +85,14 @@ predeclared unsigned integer types.
 
 UintSize is the size of a uint in bits.
 
-<h2 id="LeadingZeros">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L9">LeadingZeros</a>
+<h2 id="LeadingZeros">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L9">LeadingZeros</a>
     <a href="#LeadingZeros">¶</a></h2>
 <pre>func LeadingZeros(x <a href="/builtin/#uint">uint</a>) <a href="/builtin/#int">int</a></pre>
 
 LeadingZeros returns the number of leading zero bits in x; the result is
 UintSize for x == 0.
 
-<h2 id="LeadingZeros16">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L15">LeadingZeros16</a>
+<h2 id="LeadingZeros16">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L15">LeadingZeros16</a>
     <a href="#LeadingZeros16">¶</a></h2>
 <pre>func LeadingZeros16(x <a href="/builtin/#uint16">uint16</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -106,7 +106,7 @@ Example:
     // Output:
     // LeadingZeros16(0000000000000001) = 15
 
-<h2 id="LeadingZeros32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L18">LeadingZeros32</a>
+<h2 id="LeadingZeros32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L18">LeadingZeros32</a>
     <a href="#LeadingZeros32">¶</a></h2>
 <pre>func LeadingZeros32(x <a href="/builtin/#uint32">uint32</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -120,7 +120,7 @@ Example:
     // Output:
     // LeadingZeros32(00000000000000000000000000000001) = 31
 
-<h2 id="LeadingZeros64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L21">LeadingZeros64</a>
+<h2 id="LeadingZeros64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L21">LeadingZeros64</a>
     <a href="#LeadingZeros64">¶</a></h2>
 <pre>func LeadingZeros64(x <a href="/builtin/#uint64">uint64</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -134,7 +134,7 @@ Example:
     // Output:
     // LeadingZeros64(0000000000000000000000000000000000000000000000000000000000000001) = 63
 
-<h2 id="LeadingZeros8">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L12">LeadingZeros8</a>
+<h2 id="LeadingZeros8">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L12">LeadingZeros8</a>
     <a href="#LeadingZeros8">¶</a></h2>
 <pre>func LeadingZeros8(x <a href="/builtin/#uint8">uint8</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -148,14 +148,14 @@ Example:
     // Output:
     // LeadingZeros8(00000001) = 7
 
-<h2 id="Len">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L271">Len</a>
+<h2 id="Len">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L271">Len</a>
     <a href="#Len">¶</a></h2>
 <pre>func Len(x <a href="/builtin/#uint">uint</a>) <a href="/builtin/#int">int</a></pre>
 
 Len returns the minimum number of bits required to represent x; the result is 0
 for x == 0.
 
-<h2 id="Len16">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L284">Len16</a>
+<h2 id="Len16">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L284">Len16</a>
     <a href="#Len16">¶</a></h2>
 <pre>func Len16(x <a href="/builtin/#uint16">uint16</a>) (n <a href="/builtin/#int">int</a>)</pre>
 
@@ -169,7 +169,7 @@ Example:
     // Output:
     // Len16(0000000000001000) = 4
 
-<h2 id="Len32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L293">Len32</a>
+<h2 id="Len32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L293">Len32</a>
     <a href="#Len32">¶</a></h2>
 <pre>func Len32(x <a href="/builtin/#uint32">uint32</a>) (n <a href="/builtin/#int">int</a>)</pre>
 
@@ -183,7 +183,7 @@ Example:
     // Output:
     // Len32(00000000000000000000000000001000) = 4
 
-<h2 id="Len64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L306">Len64</a>
+<h2 id="Len64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L306">Len64</a>
     <a href="#Len64">¶</a></h2>
 <pre>func Len64(x <a href="/builtin/#uint64">uint64</a>) (n <a href="/builtin/#int">int</a>)</pre>
 
@@ -197,7 +197,7 @@ Example:
     // Output:
     // Len64(0000000000000000000000000000000000000000000000000000000000001000) = 4
 
-<h2 id="Len8">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L279">Len8</a>
+<h2 id="Len8">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L279">Len8</a>
     <a href="#Len8">¶</a></h2>
 <pre>func Len8(x <a href="/builtin/#uint8">uint8</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -211,13 +211,13 @@ Example:
     // Output:
     // Len8(00001000) = 4
 
-<h2 id="OnesCount">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L101">OnesCount</a>
+<h2 id="OnesCount">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L101">OnesCount</a>
     <a href="#OnesCount">¶</a></h2>
 <pre>func OnesCount(x <a href="/builtin/#uint">uint</a>) <a href="/builtin/#int">int</a></pre>
 
 OnesCount returns the number of one bits ("population count") in x.
 
-<h2 id="OnesCount16">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L114">OnesCount16</a>
+<h2 id="OnesCount16">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L114">OnesCount16</a>
     <a href="#OnesCount16">¶</a></h2>
 <pre>func OnesCount16(x <a href="/builtin/#uint16">uint16</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -230,7 +230,7 @@ Example:
     // Output:
     // OnesCount16(0000000000001110) = 3
 
-<h2 id="OnesCount32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L119">OnesCount32</a>
+<h2 id="OnesCount32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L119">OnesCount32</a>
     <a href="#OnesCount32">¶</a></h2>
 <pre>func OnesCount32(x <a href="/builtin/#uint32">uint32</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -243,7 +243,7 @@ Example:
     // Output:
     // OnesCount32(00000000000000000000000000001110) = 3
 
-<h2 id="OnesCount64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L124">OnesCount64</a>
+<h2 id="OnesCount64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L124">OnesCount64</a>
     <a href="#OnesCount64">¶</a></h2>
 <pre>func OnesCount64(x <a href="/builtin/#uint64">uint64</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -256,7 +256,7 @@ Example:
     // Output:
     // OnesCount64(0000000000000000000000000000000000000000000000000000000000001110) = 3
 
-<h2 id="OnesCount8">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L109">OnesCount8</a>
+<h2 id="OnesCount8">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L109">OnesCount8</a>
     <a href="#OnesCount8">¶</a></h2>
 <pre>func OnesCount8(x <a href="/builtin/#uint8">uint8</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -269,13 +269,13 @@ Example:
     // Output:
     // OnesCount8(00001110) = 3
 
-<h2 id="Reverse">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L200">Reverse</a>
+<h2 id="Reverse">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L200">Reverse</a>
     <a href="#Reverse">¶</a></h2>
 <pre>func Reverse(x <a href="/builtin/#uint">uint</a>) <a href="/builtin/#uint">uint</a></pre>
 
 Reverse returns the value of x with its bits in reversed order.
 
-<h2 id="Reverse16">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L213">Reverse16</a>
+<h2 id="Reverse16">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L213">Reverse16</a>
     <a href="#Reverse16">¶</a></h2>
 <pre>func Reverse16(x <a href="/builtin/#uint16">uint16</a>) <a href="/builtin/#uint16">uint16</a></pre>
 
@@ -290,7 +290,7 @@ Example:
     // 0000000000010011
     // 1100100000000000
 
-<h2 id="Reverse32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L218">Reverse32</a>
+<h2 id="Reverse32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L218">Reverse32</a>
     <a href="#Reverse32">¶</a></h2>
 <pre>func Reverse32(x <a href="/builtin/#uint32">uint32</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
@@ -305,7 +305,7 @@ Example:
     // 00000000000000000000000000010011
     // 11001000000000000000000000000000
 
-<h2 id="Reverse64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L228">Reverse64</a>
+<h2 id="Reverse64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L228">Reverse64</a>
     <a href="#Reverse64">¶</a></h2>
 <pre>func Reverse64(x <a href="/builtin/#uint64">uint64</a>) <a href="/builtin/#uint64">uint64</a></pre>
 
@@ -320,7 +320,7 @@ Example:
     // 0000000000000000000000000000000000000000000000000000000000010011
     // 1100100000000000000000000000000000000000000000000000000000000000
 
-<h2 id="Reverse8">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L208">Reverse8</a>
+<h2 id="Reverse8">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L208">Reverse8</a>
     <a href="#Reverse8">¶</a></h2>
 <pre>func Reverse8(x <a href="/builtin/#uint8">uint8</a>) <a href="/builtin/#uint8">uint8</a></pre>
 
@@ -335,13 +335,13 @@ Example:
     // 00010011
     // 11001000
 
-<h2 id="ReverseBytes">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L241">ReverseBytes</a>
+<h2 id="ReverseBytes">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L241">ReverseBytes</a>
     <a href="#ReverseBytes">¶</a></h2>
 <pre>func ReverseBytes(x <a href="/builtin/#uint">uint</a>) <a href="/builtin/#uint">uint</a></pre>
 
 ReverseBytes returns the value of x with its bytes in reversed order.
 
-<h2 id="ReverseBytes16">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L249">ReverseBytes16</a>
+<h2 id="ReverseBytes16">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L249">ReverseBytes16</a>
     <a href="#ReverseBytes16">¶</a></h2>
 <pre>func ReverseBytes16(x <a href="/builtin/#uint16">uint16</a>) <a href="/builtin/#uint16">uint16</a></pre>
 
@@ -356,7 +356,7 @@ Example:
     // 0000000000001111
     // 0000111100000000
 
-<h2 id="ReverseBytes32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L254">ReverseBytes32</a>
+<h2 id="ReverseBytes32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L254">ReverseBytes32</a>
     <a href="#ReverseBytes32">¶</a></h2>
 <pre>func ReverseBytes32(x <a href="/builtin/#uint32">uint32</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
@@ -371,7 +371,7 @@ Example:
     // 00000000000000000000000000001111
     // 00001111000000000000000000000000
 
-<h2 id="ReverseBytes64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L261">ReverseBytes64</a>
+<h2 id="ReverseBytes64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L261">ReverseBytes64</a>
     <a href="#ReverseBytes64">¶</a></h2>
 <pre>func ReverseBytes64(x <a href="/builtin/#uint64">uint64</a>) <a href="/builtin/#uint64">uint64</a></pre>
 
@@ -386,14 +386,14 @@ Example:
     // 0000000000000000000000000000000000000000000000000000000000001111
     // 0000111100000000000000000000000000000000000000000000000000000000
 
-<h2 id="RotateLeft">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L158">RotateLeft</a>
+<h2 id="RotateLeft">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L158">RotateLeft</a>
     <a href="#RotateLeft">¶</a></h2>
 <pre>func RotateLeft(x <a href="/builtin/#uint">uint</a>, k <a href="/builtin/#int">int</a>) <a href="/builtin/#uint">uint</a></pre>
 
 RotateLeft returns the value of x rotated left by (k mod UintSize) bits. To
 rotate x right by k bits, call RotateLeft(x, -k).
 
-<h2 id="RotateLeft16">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L175">RotateLeft16</a>
+<h2 id="RotateLeft16">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L175">RotateLeft16</a>
     <a href="#RotateLeft16">¶</a></h2>
 <pre>func RotateLeft16(x <a href="/builtin/#uint16">uint16</a>, k <a href="/builtin/#int">int</a>) <a href="/builtin/#uint16">uint16</a></pre>
 
@@ -411,7 +411,7 @@ Example:
     // 0000000000111100
     // 1100000000000011
 
-<h2 id="RotateLeft32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L183">RotateLeft32</a>
+<h2 id="RotateLeft32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L183">RotateLeft32</a>
     <a href="#RotateLeft32">¶</a></h2>
 <pre>func RotateLeft32(x <a href="/builtin/#uint32">uint32</a>, k <a href="/builtin/#int">int</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
@@ -429,7 +429,7 @@ Example:
     // 00000000000000000000000000111100
     // 11000000000000000000000000000011
 
-<h2 id="RotateLeft64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L191">RotateLeft64</a>
+<h2 id="RotateLeft64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L191">RotateLeft64</a>
     <a href="#RotateLeft64">¶</a></h2>
 <pre>func RotateLeft64(x <a href="/builtin/#uint64">uint64</a>, k <a href="/builtin/#int">int</a>) <a href="/builtin/#uint64">uint64</a></pre>
 
@@ -447,7 +447,7 @@ Example:
     // 0000000000000000000000000000000000000000000000000000000000111100
     // 1100000000000000000000000000000000000000000000000000000000000011
 
-<h2 id="RotateLeft8">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L167">RotateLeft8</a>
+<h2 id="RotateLeft8">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L167">RotateLeft8</a>
     <a href="#RotateLeft8">¶</a></h2>
 <pre>func RotateLeft8(x <a href="/builtin/#uint8">uint8</a>, k <a href="/builtin/#int">int</a>) <a href="/builtin/#uint8">uint8</a></pre>
 
@@ -465,14 +465,14 @@ Example:
     // 00111100
     // 11000011
 
-<h2 id="TrailingZeros">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L43">TrailingZeros</a>
+<h2 id="TrailingZeros">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L43">TrailingZeros</a>
     <a href="#TrailingZeros">¶</a></h2>
 <pre>func TrailingZeros(x <a href="/builtin/#uint">uint</a>) <a href="/builtin/#int">int</a></pre>
 
 TrailingZeros returns the number of trailing zero bits in x; the result is
 UintSize for x == 0.
 
-<h2 id="TrailingZeros16">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L56">TrailingZeros16</a>
+<h2 id="TrailingZeros16">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L56">TrailingZeros16</a>
     <a href="#TrailingZeros16">¶</a></h2>
 <pre>func TrailingZeros16(x <a href="/builtin/#uint16">uint16</a>) (n <a href="/builtin/#int">int</a>)</pre>
 
@@ -486,7 +486,7 @@ Example:
     // Output:
     // TrailingZeros16(0000000000001110) = 1
 
-<h2 id="TrailingZeros32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L65">TrailingZeros32</a>
+<h2 id="TrailingZeros32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L65">TrailingZeros32</a>
     <a href="#TrailingZeros32">¶</a></h2>
 <pre>func TrailingZeros32(x <a href="/builtin/#uint32">uint32</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -500,7 +500,7 @@ Example:
     // Output:
     // TrailingZeros32(00000000000000000000000000001110) = 1
 
-<h2 id="TrailingZeros64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L74">TrailingZeros64</a>
+<h2 id="TrailingZeros64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L74">TrailingZeros64</a>
     <a href="#TrailingZeros64">¶</a></h2>
 <pre>func TrailingZeros64(x <a href="/builtin/#uint64">uint64</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -514,7 +514,7 @@ Example:
     // Output:
     // TrailingZeros64(0000000000000000000000000000000000000000000000000000000000001110) = 1
 
-<h2 id="TrailingZeros8">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits/bits.go#L51">TrailingZeros8</a>
+<h2 id="TrailingZeros8">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits/bits.go#L51">TrailingZeros8</a>
     <a href="#TrailingZeros8">¶</a></h2>
 <pre>func TrailingZeros8(x <a href="/builtin/#uint8">uint8</a>) <a href="/builtin/#int">int</a></pre>
 

@@ -50,7 +50,7 @@ buffers.
 - [Write (Multi)](#exampleWrite_multi)
 
 ### Package files
- [binary.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/binary.go) [varint.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/varint.go)
+ [binary.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/binary/binary.go) [varint.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/binary/varint.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -72,7 +72,7 @@ BigEndian is the big-endian implementation of ByteOrder.
 
 LittleEndian is the little-endian implementation of ByteOrder.
 
-<h2 id="PutUvarint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/varint.go#L31">PutUvarint</a>
+<h2 id="PutUvarint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/binary/varint.go#L31">PutUvarint</a>
     <a href="#PutUvarint">¶</a></h2>
 <pre>func PutUvarint(buf []<a href="/builtin/#byte">byte</a>, x <a href="/builtin/#uint64">uint64</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -96,7 +96,7 @@ Example:
     // ff01
     // 8002
 
-<h2 id="PutVarint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/varint.go#L68">PutVarint</a>
+<h2 id="PutVarint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/binary/varint.go#L68">PutVarint</a>
     <a href="#PutVarint">¶</a></h2>
 <pre>func PutVarint(buf []<a href="/builtin/#byte">byte</a>, x <a href="/builtin/#int64">int64</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -123,7 +123,7 @@ Example:
     // 7e
     // 8001
 
-<h2 id="Read">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/binary.go#L151">Read</a>
+<h2 id="Read">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/binary/binary.go#L151">Read</a>
     <a href="#Read">¶</a></h2>
 <pre>func Read(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, order <a href="#ByteOrder">ByteOrder</a>, data interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -180,19 +180,19 @@ Example:
     // 01 02 03
     // 61374
 
-<h2 id="ReadUvarint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/varint.go#L96">ReadUvarint</a>
+<h2 id="ReadUvarint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/binary/varint.go#L96">ReadUvarint</a>
     <a href="#ReadUvarint">¶</a></h2>
 <pre>func ReadUvarint(r <a href="/io/">io</a>.<a href="/io/#ByteReader">ByteReader</a>) (<a href="/builtin/#uint64">uint64</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ReadUvarint reads an encoded unsigned integer from r and returns it as a uint64.
 
-<h2 id="ReadVarint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/varint.go#L116">ReadVarint</a>
+<h2 id="ReadVarint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/binary/varint.go#L116">ReadVarint</a>
     <a href="#ReadVarint">¶</a></h2>
 <pre>func ReadVarint(r <a href="/io/">io</a>.<a href="/io/#ByteReader">ByteReader</a>) (<a href="/builtin/#int64">int64</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ReadVarint reads an encoded signed integer from r and returns it as an int64.
 
-<h2 id="Size">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/binary.go#L364">Size</a>
+<h2 id="Size">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/binary/binary.go#L364">Size</a>
     <a href="#Size">¶</a></h2>
 <pre>func Size(v interface{}) <a href="/builtin/#int">int</a></pre>
 
@@ -200,7 +200,7 @@ Size returns how many bytes Write would generate to encode the value v, which
 must be a fixed-size value or a slice of fixed-size values, or a pointer to such
 data. If v is neither of these, Size returns -1.
 
-<h2 id="Uvarint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/varint.go#L50">Uvarint</a>
+<h2 id="Uvarint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/binary/varint.go#L50">Uvarint</a>
     <a href="#Uvarint">¶</a></h2>
 <pre>func Uvarint(buf []<a href="/builtin/#byte">byte</a>) (<a href="/builtin/#uint64">uint64</a>, <a href="/builtin/#int">int</a>)</pre>
 
@@ -238,7 +238,7 @@ Example:
     // 255
     // 256
 
-<h2 id="Varint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/varint.go#L84">Varint</a>
+<h2 id="Varint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/binary/varint.go#L84">Varint</a>
     <a href="#Varint">¶</a></h2>
 <pre>func Varint(buf []<a href="/builtin/#byte">byte</a>) (<a href="/builtin/#int64">int64</a>, <a href="/builtin/#int">int</a>)</pre>
 
@@ -282,7 +282,7 @@ Example:
     // 63
     // 64
 
-<h2 id="Write">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/binary.go#L250">Write</a>
+<h2 id="Write">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/binary/binary.go#L250">Write</a>
     <a href="#Write">¶</a></h2>
 <pre>func Write(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, order <a href="#ByteOrder">ByteOrder</a>, data interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -323,7 +323,7 @@ Example:
     fmt.Printf("%x", buf.Bytes())
     // Output: beefcafe
 
-<h2 id="ByteOrder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/binary/binary.go#L23">ByteOrder</a>
+<h2 id="ByteOrder">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/binary/binary.go#L23">ByteOrder</a>
     <a href="#ByteOrder">¶</a></h2>
 <pre>type ByteOrder interface {
     Uint16([]<a href="/builtin/#byte">byte</a>) <a href="/builtin/#uint16">uint16</a>

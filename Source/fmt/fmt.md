@@ -373,16 +373,16 @@ bufio.NewReader.
 - [Stringer](#exampleStringer)
 
 ### Package files
- [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/doc.go) [format.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/format.go) [print.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go) [scan.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/scan.go)
+ [doc.go](//github.com/golang/go/blob/release-branch.go1.10/src/fmt/doc.go) [format.go](//github.com/golang/go/blob/release-branch.go1.10/src/fmt/format.go) [print.go](//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go) [scan.go](//github.com/golang/go/blob/release-branch.go1.10/src/fmt/scan.go)
 
-<h2 id="Errorf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L201">Errorf</a>
+<h2 id="Errorf">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go#L201">Errorf</a>
     <a href="#Errorf">¶</a></h2>
 <pre>func Errorf(format <a href="/builtin/#string">string</a>, a ...interface{}) <a href="/builtin/#error">error</a></pre>
 
 Errorf formats according to a format specifier and returns the string as a value
 that satisfies error.
 
-<h2 id="Fprint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L210">Fprint</a>
+<h2 id="Fprint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go#L210">Fprint</a>
     <a href="#Fprint">¶</a></h2>
 <pre>func Fprint(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -390,14 +390,14 @@ Fprint formats using the default formats for its operands and writes to w.
 Spaces are added between operands when neither is a string. It returns the
 number of bytes written and any write error encountered.
 
-<h2 id="Fprintf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L176">Fprintf</a>
+<h2 id="Fprintf">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go#L176">Fprintf</a>
     <a href="#Fprintf">¶</a></h2>
 <pre>func Fprintf(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, format <a href="/builtin/#string">string</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 Fprintf formats according to a format specifier and writes to w. It returns the
 number of bytes written and any write error encountered.
 
-<h2 id="Fprintln">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L242">Fprintln</a>
+<h2 id="Fprintln">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go#L242">Fprintln</a>
     <a href="#Fprintln">¶</a></h2>
 <pre>func Fprintln(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -405,7 +405,7 @@ Fprintln formats using the default formats for its operands and writes to w.
 Spaces are always added between operands and a newline is appended. It returns
 the number of bytes written and any write error encountered.
 
-<h2 id="Fscan">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/scan.go#L111">Fscan</a>
+<h2 id="Fscan">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/scan.go#L111">Fscan</a>
     <a href="#Fscan">¶</a></h2>
 <pre>func Fscan(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -414,7 +414,7 @@ successive arguments. Newlines count as space. It returns the number of items
 successfully scanned. If that is less than the number of arguments, err will
 report why.
 
-<h2 id="Fscanf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/scan.go#L131">Fscanf</a>
+<h2 id="Fscanf">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/scan.go#L131">Fscanf</a>
     <a href="#Fscanf">¶</a></h2>
 <pre>func Fscanf(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, format <a href="/builtin/#string">string</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -422,14 +422,14 @@ Fscanf scans text read from r, storing successive space-separated values into
 successive arguments as determined by the format. It returns the number of items
 successfully parsed. Newlines in the input must match newlines in the format.
 
-<h2 id="Fscanln">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/scan.go#L120">Fscanln</a>
+<h2 id="Fscanln">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/scan.go#L120">Fscanln</a>
     <a href="#Fscanln">¶</a></h2>
 <pre>func Fscanln(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 Fscanln is similar to Fscan, but stops scanning at a newline and after the final
 item there must be a newline or EOF.
 
-<h2 id="Print">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L221">Print</a>
+<h2 id="Print">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go#L221">Print</a>
     <a href="#Print">¶</a></h2>
 <pre>func Print(a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -437,14 +437,14 @@ Print formats using the default formats for its operands and writes to standard
 output. Spaces are added between operands when neither is a string. It returns
 the number of bytes written and any write error encountered.
 
-<h2 id="Printf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L186">Printf</a>
+<h2 id="Printf">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go#L186">Printf</a>
     <a href="#Printf">¶</a></h2>
 <pre>func Printf(format <a href="/builtin/#string">string</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 Printf formats according to a format specifier and writes to standard output. It
 returns the number of bytes written and any write error encountered.
 
-<h2 id="Println">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L253">Println</a>
+<h2 id="Println">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go#L253">Println</a>
     <a href="#Println">¶</a></h2>
 <pre>func Println(a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -453,7 +453,7 @@ standard output. Spaces are always added between operands and a newline is
 appended. It returns the number of bytes written and any write error
 encountered.
 
-<h2 id="Scan">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/scan.go#L53">Scan</a>
+<h2 id="Scan">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/scan.go#L53">Scan</a>
     <a href="#Scan">¶</a></h2>
 <pre>func Scan(a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -462,7 +462,7 @@ values into successive arguments. Newlines count as space. It returns the number
 of items successfully scanned. If that is less than the number of arguments, err
 will report why.
 
-<h2 id="Scanf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/scan.go#L70">Scanf</a>
+<h2 id="Scanf">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/scan.go#L70">Scanf</a>
     <a href="#Scanf">¶</a></h2>
 <pre>func Scanf(format <a href="/builtin/#string">string</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -473,28 +473,28 @@ arguments, err will report why. Newlines in the input must match newlines in the
 format. The one exception: the verb %c always scans the next rune in the input,
 even if it is a space (or tab etc.) or newline.
 
-<h2 id="Scanln">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/scan.go#L59">Scanln</a>
+<h2 id="Scanln">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/scan.go#L59">Scanln</a>
     <a href="#Scanln">¶</a></h2>
 <pre>func Scanln(a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 Scanln is similar to Scan, but stops scanning at a newline and after the final
 item there must be a newline or EOF.
 
-<h2 id="Sprint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L227">Sprint</a>
+<h2 id="Sprint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go#L227">Sprint</a>
     <a href="#Sprint">¶</a></h2>
 <pre>func Sprint(a ...interface{}) <a href="/builtin/#string">string</a></pre>
 
 Sprint formats using the default formats for its operands and returns the
 resulting string. Spaces are added between operands when neither is a string.
 
-<h2 id="Sprintf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L191">Sprintf</a>
+<h2 id="Sprintf">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go#L191">Sprintf</a>
     <a href="#Sprintf">¶</a></h2>
 <pre>func Sprintf(format <a href="/builtin/#string">string</a>, a ...interface{}) <a href="/builtin/#string">string</a></pre>
 
 Sprintf formats according to a format specifier and returns the resulting
 string.
 
-<h2 id="Sprintln">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L259">Sprintln</a>
+<h2 id="Sprintln">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go#L259">Sprintln</a>
     <a href="#Sprintln">¶</a></h2>
 <pre>func Sprintln(a ...interface{}) <a href="/builtin/#string">string</a></pre>
 
@@ -502,7 +502,7 @@ Sprintln formats using the default formats for its operands and returns the
 resulting string. Spaces are always added between operands and a newline is
 appended.
 
-<h2 id="Sscan">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/scan.go#L89">Sscan</a>
+<h2 id="Sscan">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/scan.go#L89">Sscan</a>
     <a href="#Sscan">¶</a></h2>
 <pre>func Sscan(str <a href="/builtin/#string">string</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -511,7 +511,7 @@ successive arguments. Newlines count as space. It returns the number of items
 successfully scanned. If that is less than the number of arguments, err will
 report why.
 
-<h2 id="Sscanf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/scan.go#L103">Sscanf</a>
+<h2 id="Sscanf">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/scan.go#L103">Sscanf</a>
     <a href="#Sscanf">¶</a></h2>
 <pre>func Sscanf(str <a href="/builtin/#string">string</a>, format <a href="/builtin/#string">string</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -519,14 +519,14 @@ Sscanf scans the argument string, storing successive space-separated values into
 successive arguments as determined by the format. It returns the number of items
 successfully parsed. Newlines in the input must match newlines in the format.
 
-<h2 id="Sscanln">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/scan.go#L95">Sscanln</a>
+<h2 id="Sscanln">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/scan.go#L95">Sscanln</a>
     <a href="#Sscanln">¶</a></h2>
 <pre>func Sscanln(str <a href="/builtin/#string">string</a>, a ...interface{}) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 Sscanln is similar to Sscan, but stops scanning at a newline and after the final
 item there must be a newline or EOF.
 
-<h2 id="Formatter">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L43">Formatter</a>
+<h2 id="Formatter">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go#L43">Formatter</a>
     <a href="#Formatter">¶</a></h2>
 <pre>type Formatter interface {
     Format(f <a href="#State">State</a>, c <a href="/builtin/#rune">rune</a>)
@@ -536,7 +536,7 @@ Formatter is the interface implemented by values with a custom formatter. The
 implementation of Format may call Sprint(f) or Fprint(f) etc. to generate its
 output.
 
-<h2 id="GoStringer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L60">GoStringer</a>
+<h2 id="GoStringer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go#L60">GoStringer</a>
     <a href="#GoStringer">¶</a></h2>
 <pre>type GoStringer interface {
     GoString() <a href="/builtin/#string">string</a>
@@ -546,7 +546,7 @@ GoStringer is implemented by any value that has a GoString method, which defines
 the Go syntax for that value. The GoString method is used to print values passed
 as an operand to a %#v format.
 
-<h2 id="ScanState">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/scan.go#L11">ScanState</a>
+<h2 id="ScanState">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/scan.go#L11">ScanState</a>
     <a href="#ScanState">¶</a></h2>
 <pre>type ScanState interface {
     <span class="comment">// ReadRune reads the next rune (Unicode code point) from the input.</span>
@@ -582,7 +582,7 @@ ScanState represents the scanner state passed to custom scanners. Scanners may
 do rune-at-a-time scanning or ask the ScanState to discover the next
 space-delimited token.
 
-<h2 id="Scanner">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/scan.go#L45">Scanner</a>
+<h2 id="Scanner">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/scan.go#L45">Scanner</a>
     <a href="#Scanner">¶</a></h2>
 <pre>type Scanner interface {
     Scan(state <a href="#ScanState">ScanState</a>, verb <a href="/builtin/#rune">rune</a>) <a href="/builtin/#error">error</a>
@@ -593,7 +593,7 @@ input for the representation of a value and stores the result in the receiver,
 which must be a pointer to be useful. The Scan method is called for any argument
 to Scan, Scanf, or Scanln that implements it.
 
-<h2 id="State">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L28">State</a>
+<h2 id="State">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go#L28">State</a>
     <a href="#State">¶</a></h2>
 <pre>type State interface {
     <span class="comment">// Write is the function to call to emit formatted output to be printed.</span>
@@ -611,7 +611,7 @@ State represents the printer state passed to custom formatters. It provides
 access to the io.Writer interface plus information about the flags and options
 for the operand's format specifier.
 
-<h2 id="Stringer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/fmt/print.go#L52">Stringer</a>
+<h2 id="Stringer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/fmt/print.go#L52">Stringer</a>
     <a href="#Stringer">¶</a></h2>
 <pre>type Stringer interface {
     String() <a href="/builtin/#string">string</a>

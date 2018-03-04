@@ -23,7 +23,7 @@ applications.
 - [Sum](#exampleSum)
 
 ### Package files
- [sha1.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/sha1/sha1.go) [sha1block.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/sha1/sha1block.go) [sha1block_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/sha1/sha1block_amd64.go)
+ [sha1.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/sha1/sha1.go) [sha1block.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/sha1/sha1block.go) [sha1block_amd64.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/sha1/sha1block_amd64.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -35,7 +35,7 @@ The blocksize of SHA-1 in bytes.
 
 The size of a SHA-1 checksum in bytes.
 
-<h2 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/sha1/sha1.go#L110">New</a>
+<h2 id="New">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/sha1/sha1.go#L110">New</a>
     <a href="#New">¶</a></h2>
 <pre>func New() <a href="/hash/">hash</a>.<a href="/hash/#Hash">Hash</a></pre>
 
@@ -69,7 +69,7 @@ Example:
 
     fmt.Printf("% x", h.Sum(nil))
 
-<h2 id="Sum">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/sha1/sha1.go#L250">Sum</a>
+<h2 id="Sum">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/sha1/sha1.go#L250">Sum</a>
     <a href="#Sum">¶</a></h2>
 <pre>func Sum(data []<a href="/builtin/#byte">byte</a>) [<a href="#Size">Size</a>]<a href="/builtin/#byte">byte</a></pre>
 

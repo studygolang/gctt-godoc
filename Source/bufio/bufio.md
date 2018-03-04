@@ -69,7 +69,7 @@ interface but provides buffering and some help for textual I/O.
 - [Writer](#exampleWriter)
 
 ### Package files
- [bufio.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go) [scan.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go)
+ [bufio.go](//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go) [scan.go](//github.com/golang/go/blob/release-branch.go1.10/src/bufio/scan.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -110,13 +110,13 @@ processing early or when it is necessary to deliver a final empty token. One
 could achieve the same behavior with a custom error value but providing one here
 is tidier. See the emptyFinalToken example for a use of this value.
 
-<h2 id="ScanBytes">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go#L269">ScanBytes</a>
+<h2 id="ScanBytes">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/scan.go#L269">ScanBytes</a>
     <a href="#ScanBytes">¶</a></h2>
 <pre>func ScanBytes(data []<a href="/builtin/#byte">byte</a>, atEOF <a href="/builtin/#bool">bool</a>) (advance <a href="/builtin/#int">int</a>, token []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 ScanBytes is a split function for a Scanner that returns each byte as a token.
 
-<h2 id="ScanLines">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go#L330">ScanLines</a>
+<h2 id="ScanLines">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/scan.go#L330">ScanLines</a>
     <a href="#ScanLines">¶</a></h2>
 <pre>func ScanLines(data []<a href="/builtin/#byte">byte</a>, atEOF <a href="/builtin/#bool">bool</a>) (advance <a href="/builtin/#int">int</a>, token []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -126,7 +126,7 @@ end-of-line marker is one optional carriage return followed by one mandatory
 newline. In regular expression notation, it is `\r?\n`. The last non-empty line
 of input will be returned even if it has no newline.
 
-<h2 id="ScanRunes">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go#L284">ScanRunes</a>
+<h2 id="ScanRunes">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/scan.go#L284">ScanRunes</a>
     <a href="#ScanRunes">¶</a></h2>
 <pre>func ScanRunes(data []<a href="/builtin/#byte">byte</a>, atEOF <a href="/builtin/#bool">bool</a>) (advance <a href="/builtin/#int">int</a>, token []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -137,7 +137,7 @@ translate to U+FFFD = "\xef\xbf\xbd". Because of the Scan interface, this makes
 it impossible for the client to distinguish correctly encoded replacement runes
 from encoding errors.
 
-<h2 id="ScanWords">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go#L375">ScanWords</a>
+<h2 id="ScanWords">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/scan.go#L375">ScanWords</a>
     <a href="#ScanWords">¶</a></h2>
 <pre>func ScanWords(data []<a href="/builtin/#byte">byte</a>, atEOF <a href="/builtin/#bool">bool</a>) (advance <a href="/builtin/#int">int</a>, token []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -145,7 +145,7 @@ ScanWords is a split function for a Scanner that returns each space-separated
 word of text, with surrounding spaces deleted. It will never return an empty
 string. The definition of space is set by unicode.IsSpace.
 
-<h2 id="ReadWriter">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L723">ReadWriter</a>
+<h2 id="ReadWriter">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L723">ReadWriter</a>
     <a href="#ReadWriter">¶</a></h2>
 <pre>type ReadWriter struct {
     *<a href="#Reader">Reader</a>
@@ -155,13 +155,13 @@ string. The definition of space is set by unicode.IsSpace.
 ReadWriter stores pointers to a Reader and a Writer. It implements
 io.ReadWriter.
 
-<h3 id="NewReadWriter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L729">NewReadWriter</a>
+<h3 id="NewReadWriter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L729">NewReadWriter</a>
     <a href="#NewReadWriter">¶</a></h3>
 <pre>func NewReadWriter(r *<a href="#Reader">Reader</a>, w *<a href="#Writer">Writer</a>) *<a href="#ReadWriter">ReadWriter</a></pre>
 
 NewReadWriter allocates a new ReadWriter that dispatches to r and w.
 
-<h2 id="Reader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L21">Reader</a>
+<h2 id="Reader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L21">Reader</a>
     <a href="#Reader">¶</a></h2>
 <pre>type Reader struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -169,13 +169,13 @@ NewReadWriter allocates a new ReadWriter that dispatches to r and w.
 
 Reader implements buffering for an io.Reader object.
 
-<h3 id="NewReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L51">NewReader</a>
+<h3 id="NewReader">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L51">NewReader</a>
     <a href="#NewReader">¶</a></h3>
 <pre>func NewReader(rd <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) *<a href="#Reader">Reader</a></pre>
 
 NewReader returns a new Reader whose buffer has the default size.
 
-<h3 id="NewReaderSize">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L36">NewReaderSize</a>
+<h3 id="NewReaderSize">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L36">NewReaderSize</a>
     <a href="#NewReaderSize">¶</a></h3>
 <pre>func NewReaderSize(rd <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, size <a href="/builtin/#int">int</a>) *<a href="#Reader">Reader</a></pre>
 
@@ -183,13 +183,13 @@ NewReaderSize returns a new Reader whose buffer has at least the specified size.
 If the argument io.Reader is already a Reader with large enough size, it returns
 the underlying Reader.
 
-<h3 id="Reader.Buffered">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L294">Buffered</a>
+<h3 id="Reader.Buffered">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L294">Buffered</a>
     <a href="#Reader.Buffered">¶</a></h3>
 <pre>func (b *<a href="#Reader">Reader</a>) Buffered() <a href="/builtin/#int">int</a></pre>
 
 Buffered returns the number of bytes that can be read from the current buffer.
 
-<h3 id="Reader.Discard">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L147">Discard</a>
+<h3 id="Reader.Discard">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L147">Discard</a>
     <a href="#Reader.Discard">¶</a></h3>
 <pre>func (b *<a href="#Reader">Reader</a>) Discard(n <a href="/builtin/#int">int</a>) (discarded <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -199,7 +199,7 @@ If Discard skips fewer than n bytes, it also returns an error. If 0 <= n <=
 b.Buffered(), Discard is guaranteed to succeed without reading from the
 underlying io.Reader.
 
-<h3 id="Reader.Peek">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L116">Peek</a>
+<h3 id="Reader.Peek">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L116">Peek</a>
     <a href="#Reader.Peek">¶</a></h3>
 <pre>func (b *<a href="#Reader">Reader</a>) Peek(n <a href="/builtin/#int">int</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -208,7 +208,7 @@ valid at the next read call. If Peek returns fewer than n bytes, it also returns
 an error explaining why the read is short. The error is ErrBufferFull if n is
 larger than b's buffer size.
 
-<h3 id="Reader.Read">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L180">Read</a>
+<h3 id="Reader.Read">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L180">Read</a>
     <a href="#Reader.Read">¶</a></h3>
 <pre>func (b *<a href="#Reader">Reader</a>) Read(p []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -216,14 +216,14 @@ Read reads data into p. It returns the number of bytes read into p. The bytes
 are taken from at most one Read on the underlying Reader, hence n may be less
 than len(p). At EOF, the count will be zero and err will be io.EOF.
 
-<h3 id="Reader.ReadByte">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L226">ReadByte</a>
+<h3 id="Reader.ReadByte">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L226">ReadByte</a>
     <a href="#Reader.ReadByte">¶</a></h3>
 <pre>func (b *<a href="#Reader">Reader</a>) ReadByte() (<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ReadByte reads and returns a single byte. If no byte is available, returns an
 error.
 
-<h3 id="Reader.ReadBytes">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L401">ReadBytes</a>
+<h3 id="Reader.ReadBytes">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L401">ReadBytes</a>
     <a href="#Reader.ReadBytes">¶</a></h3>
 <pre>func (b *<a href="#Reader">Reader</a>) ReadBytes(delim <a href="/builtin/#byte">byte</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -234,7 +234,7 @@ the error and the error itself (often io.EOF). ReadBytes returns err != nil if
 and only if the returned data does not end in delim. For simple uses, a Scanner
 may be more convenient.
 
-<h3 id="Reader.ReadLine">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L359">ReadLine</a>
+<h3 id="Reader.ReadLine">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L359">ReadLine</a>
     <a href="#Reader.ReadLine">¶</a></h3>
 <pre>func (b *<a href="#Reader">Reader</a>) ReadLine() (line []<a href="/builtin/#byte">byte</a>, isPrefix <a href="/builtin/#bool">bool</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -254,7 +254,7 @@ Calling UnreadByte after ReadLine will always unread the last byte read
 (possibly a character belonging to the line end) even if that byte is not part
 of the line returned by ReadLine.
 
-<h3 id="Reader.ReadRune">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L261">ReadRune</a>
+<h3 id="Reader.ReadRune">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L261">ReadRune</a>
     <a href="#Reader.ReadRune">¶</a></h3>
 <pre>func (b *<a href="#Reader">Reader</a>) ReadRune() (r <a href="/builtin/#rune">rune</a>, size <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -262,7 +262,7 @@ ReadRune reads a single UTF-8 encoded Unicode character and returns the rune and
 its size in bytes. If the encoded rune is invalid, it consumes one byte and
 returns unicode.ReplacementChar (U+FFFD) with a size of 1.
 
-<h3 id="Reader.ReadSlice">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L306">ReadSlice</a>
+<h3 id="Reader.ReadSlice">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L306">ReadSlice</a>
     <a href="#Reader.ReadSlice">¶</a></h3>
 <pre>func (b *<a href="#Reader">Reader</a>) ReadSlice(delim <a href="/builtin/#byte">byte</a>) (line []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -275,7 +275,7 @@ Because the data returned from ReadSlice will be overwritten by the next I/O
 operation, most clients should use ReadBytes or ReadString instead. ReadSlice
 returns err != nil if and only if line does not end in delim.
 
-<h3 id="Reader.ReadString">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L448">ReadString</a>
+<h3 id="Reader.ReadString">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L448">ReadString</a>
     <a href="#Reader.ReadString">¶</a></h3>
 <pre>func (b *<a href="#Reader">Reader</a>) ReadString(delim <a href="/builtin/#byte">byte</a>) (<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -286,27 +286,27 @@ the error and the error itself (often io.EOF). ReadString returns err != nil if
 and only if the returned data does not end in delim. For simple uses, a Scanner
 may be more convenient.
 
-<h3 id="Reader.Reset">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L60">Reset</a>
+<h3 id="Reader.Reset">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L60">Reset</a>
     <a href="#Reader.Reset">¶</a></h3>
 <pre>func (b *<a href="#Reader">Reader</a>) Reset(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>)</pre>
 
 Reset discards any buffered data, resets all state, and switches the buffered
 reader to read from r.
 
-<h3 id="Reader.Size">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L56">Size</a>
+<h3 id="Reader.Size">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L56">Size</a>
     <a href="#Reader.Size">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) Size() <a href="/builtin/#int">int</a></pre>
 
 Size returns the size of the underlying buffer in bytes.
 
-<h3 id="Reader.UnreadByte">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L241">UnreadByte</a>
+<h3 id="Reader.UnreadByte">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L241">UnreadByte</a>
     <a href="#Reader.UnreadByte">¶</a></h3>
 <pre>func (b *<a href="#Reader">Reader</a>) UnreadByte() <a href="/builtin/#error">error</a></pre>
 
 UnreadByte unreads the last byte. Only the most recently read byte can be
 unread.
 
-<h3 id="Reader.UnreadRune">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L283">UnreadRune</a>
+<h3 id="Reader.UnreadRune">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L283">UnreadRune</a>
     <a href="#Reader.UnreadRune">¶</a></h3>
 <pre>func (b *<a href="#Reader">Reader</a>) UnreadRune() <a href="/builtin/#error">error</a></pre>
 
@@ -315,14 +315,14 @@ buffer was not a ReadRune, UnreadRune returns an error. (In this regard it is
 stricter than UnreadByte, which will unread the last byte from any read
 operation.)
 
-<h3 id="Reader.WriteTo">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L455">WriteTo</a>
+<h3 id="Reader.WriteTo">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L455">WriteTo</a>
     <a href="#Reader.WriteTo">¶</a></h3>
 <pre>func (b *<a href="#Reader">Reader</a>) WriteTo(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) (n <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 WriteTo implements io.WriterTo. This may make multiple calls to the Read method
 of the underlying Reader.
 
-<h2 id="Scanner">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go#L20">Scanner</a>
+<h2 id="Scanner">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/scan.go#L20">Scanner</a>
     <a href="#Scanner">¶</a></h2>
 <pre>type Scanner struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -433,14 +433,14 @@ Example:
     fmt.Printf("%d\n", count)
     // Output: 15
 
-<h3 id="NewScanner">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go#L71">NewScanner</a>
+<h3 id="NewScanner">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/scan.go#L71">NewScanner</a>
     <a href="#NewScanner">¶</a></h3>
 <pre>func NewScanner(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) *<a href="#Scanner">Scanner</a></pre>
 
 NewScanner returns a new Scanner to read from r. The split function defaults to
 ScanLines.
 
-<h3 id="Scanner.Buffer">func (*Scanner) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go#L247">Buffer</a>
+<h3 id="Scanner.Buffer">func (*Scanner) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/scan.go#L247">Buffer</a>
     <a href="#Scanner.Buffer">¶</a></h3>
 <pre>func (s *<a href="#Scanner">Scanner</a>) Buffer(buf []<a href="/builtin/#byte">byte</a>, max <a href="/builtin/#int">int</a>)</pre>
 
@@ -454,7 +454,7 @@ MaxScanTokenSize.
 
 Buffer panics if it is called after scanning has started.
 
-<h3 id="Scanner.Bytes">func (*Scanner) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go#L90">Bytes</a>
+<h3 id="Scanner.Bytes">func (*Scanner) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/scan.go#L90">Bytes</a>
     <a href="#Scanner.Bytes">¶</a></h3>
 <pre>func (s *<a href="#Scanner">Scanner</a>) Bytes() []<a href="/builtin/#byte">byte</a></pre>
 
@@ -462,13 +462,13 @@ Bytes returns the most recent token generated by a call to Scan. The underlying
 array may point to data that will be overwritten by a subsequent call to Scan.
 It does no allocation.
 
-<h3 id="Scanner.Err">func (*Scanner) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go#L80">Err</a>
+<h3 id="Scanner.Err">func (*Scanner) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/scan.go#L80">Err</a>
     <a href="#Scanner.Err">¶</a></h3>
 <pre>func (s *<a href="#Scanner">Scanner</a>) Err() <a href="/builtin/#error">error</a></pre>
 
 Err returns the first non-EOF error that was encountered by the Scanner.
 
-<h3 id="Scanner.Scan">func (*Scanner) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go#L119">Scan</a>
+<h3 id="Scanner.Scan">func (*Scanner) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/scan.go#L119">Scan</a>
     <a href="#Scanner.Scan">¶</a></h3>
 <pre>func (s *<a href="#Scanner">Scanner</a>) Scan() <a href="/builtin/#bool">bool</a></pre>
 
@@ -480,7 +480,7 @@ was io.EOF, Err will return nil. Scan panics if the split function returns too
 many empty tokens without advancing the input. This is a common error mode for
 scanners.
 
-<h3 id="Scanner.Split">func (*Scanner) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go#L259">Split</a>
+<h3 id="Scanner.Split">func (*Scanner) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/scan.go#L259">Split</a>
     <a href="#Scanner.Split">¶</a></h3>
 <pre>func (s *<a href="#Scanner">Scanner</a>) Split(split <a href="#SplitFunc">SplitFunc</a>)</pre>
 
@@ -489,14 +489,14 @@ ScanLines.
 
 Split panics if it is called after scanning has started.
 
-<h3 id="Scanner.Text">func (*Scanner) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go#L96">Text</a>
+<h3 id="Scanner.Text">func (*Scanner) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/scan.go#L96">Text</a>
     <a href="#Scanner.Text">¶</a></h3>
 <pre>func (s *<a href="#Scanner">Scanner</a>) Text() <a href="/builtin/#string">string</a></pre>
 
 Text returns the most recent token generated by a call to Scan as a newly
 allocated string holding its bytes.
 
-<h2 id="SplitFunc">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/scan.go#L50">SplitFunc</a>
+<h2 id="SplitFunc">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/scan.go#L50">SplitFunc</a>
     <a href="#SplitFunc">¶</a></h2>
 <pre>type SplitFunc func(data []<a href="/builtin/#byte">byte</a>, atEOF <a href="/builtin/#bool">bool</a>) (advance <a href="/builtin/#int">int</a>, token []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -516,7 +516,7 @@ The function is never called with an empty data slice unless atEOF is true. If
 atEOF is true, however, data may be non-empty and, as always, holds unprocessed
 text.
 
-<h2 id="Writer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L514">Writer</a>
+<h2 id="Writer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L514">Writer</a>
     <a href="#Writer">¶</a></h2>
 <pre>type Writer struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -537,13 +537,13 @@ Example:
     w.Flush() // Don't forget to flush!
     // Output: Hello, world!
 
-<h3 id="NewWriter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L540">NewWriter</a>
+<h3 id="NewWriter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L540">NewWriter</a>
     <a href="#NewWriter">¶</a></h3>
 <pre>func NewWriter(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) *<a href="#Writer">Writer</a></pre>
 
 NewWriter returns a new Writer whose buffer has the default size.
 
-<h3 id="NewWriterSize">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L524">NewWriterSize</a>
+<h3 id="NewWriterSize">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L524">NewWriterSize</a>
     <a href="#NewWriterSize">¶</a></h3>
 <pre>func NewWriterSize(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, size <a href="/builtin/#int">int</a>) *<a href="#Writer">Writer</a></pre>
 
@@ -551,45 +551,45 @@ NewWriterSize returns a new Writer whose buffer has at least the specified size.
 If the argument io.Writer is already a Writer with large enough size, it returns
 the underlying Writer.
 
-<h3 id="Writer.Available">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L580">Available</a>
+<h3 id="Writer.Available">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L580">Available</a>
     <a href="#Writer.Available">¶</a></h3>
 <pre>func (b *<a href="#Writer">Writer</a>) Available() <a href="/builtin/#int">int</a></pre>
 
 Available returns how many bytes are unused in the buffer.
 
-<h3 id="Writer.Buffered">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L583">Buffered</a>
+<h3 id="Writer.Buffered">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L583">Buffered</a>
     <a href="#Writer.Buffered">¶</a></h3>
 <pre>func (b *<a href="#Writer">Writer</a>) Buffered() <a href="/builtin/#int">int</a></pre>
 
 Buffered returns the number of bytes that have been written into the current
 buffer.
 
-<h3 id="Writer.Flush">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L556">Flush</a>
+<h3 id="Writer.Flush">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L556">Flush</a>
     <a href="#Writer.Flush">¶</a></h3>
 <pre>func (b *<a href="#Writer">Writer</a>) Flush() <a href="/builtin/#error">error</a></pre>
 
 Flush writes any buffered data to the underlying io.Writer.
 
-<h3 id="Writer.ReadFrom">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L678">ReadFrom</a>
+<h3 id="Writer.ReadFrom">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L678">ReadFrom</a>
     <a href="#Writer.ReadFrom">¶</a></h3>
 <pre>func (b *<a href="#Writer">Writer</a>) ReadFrom(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (n <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 ReadFrom implements io.ReaderFrom.
 
-<h3 id="Writer.Reset">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L549">Reset</a>
+<h3 id="Writer.Reset">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L549">Reset</a>
     <a href="#Writer.Reset">¶</a></h3>
 <pre>func (b *<a href="#Writer">Writer</a>) Reset(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>)</pre>
 
 Reset discards any unflushed buffered data, clears any error, and resets b to
 write its output to w.
 
-<h3 id="Writer.Size">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L545">Size</a>
+<h3 id="Writer.Size">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L545">Size</a>
     <a href="#Writer.Size">¶</a></h3>
 <pre>func (b *<a href="#Writer">Writer</a>) Size() <a href="/builtin/#int">int</a></pre>
 
 Size returns the size of the underlying buffer in bytes.
 
-<h3 id="Writer.Write">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L589">Write</a>
+<h3 id="Writer.Write">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L589">Write</a>
     <a href="#Writer.Write">¶</a></h3>
 <pre>func (b *<a href="#Writer">Writer</a>) Write(p []<a href="/builtin/#byte">byte</a>) (nn <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -597,20 +597,20 @@ Write writes the contents of p into the buffer. It returns the number of bytes
 written. If nn < len(p), it also returns an error explaining why the write is
 short.
 
-<h3 id="Writer.WriteByte">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L614">WriteByte</a>
+<h3 id="Writer.WriteByte">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L614">WriteByte</a>
     <a href="#Writer.WriteByte">¶</a></h3>
 <pre>func (b *<a href="#Writer">Writer</a>) WriteByte(c <a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
 WriteByte writes a single byte.
 
-<h3 id="Writer.WriteRune">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L628">WriteRune</a>
+<h3 id="Writer.WriteRune">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L628">WriteRune</a>
     <a href="#Writer.WriteRune">¶</a></h3>
 <pre>func (b *<a href="#Writer">Writer</a>) WriteRune(r <a href="/builtin/#rune">rune</a>) (size <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 WriteRune writes a single Unicode code point, returning the number of bytes
 written and any error.
 
-<h3 id="Writer.WriteString">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/bufio/bufio.go#L659">WriteString</a>
+<h3 id="Writer.WriteString">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/bufio/bufio.go#L659">WriteString</a>
     <a href="#Writer.WriteString">¶</a></h3>
 <pre>func (b *<a href="#Writer">Writer</a>) WriteString(s <a href="/builtin/#string">string</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
 

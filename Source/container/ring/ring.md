@@ -30,9 +30,9 @@ Package ring implements operations on circular lists.
 - [Ring.Unlink](#exampleRing_Unlink)
 
 ### Package files
- [ring.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/ring/ring.go)
+ [ring.go](//github.com/golang/go/blob/release-branch.go1.10/src/container/ring/ring.go)
 
-<h2 id="Ring">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/ring/ring.go#L4">Ring</a>
+<h2 id="Ring">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/ring/ring.go#L4">Ring</a>
     <a href="#Ring">¶</a></h2>
 <pre>type Ring struct {
 <span id="Ring.Value"></span>    Value interface{} <span class="comment">// for use by client; untouched by this library</span>
@@ -44,13 +44,13 @@ or end; a pointer to any ring element serves as reference to the entire ring.
 Empty rings are represented as nil Ring pointers. The zero value for a Ring is a
 one-element ring with a nil Value.
 
-<h3 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/ring/ring.go#L52">New</a>
+<h3 id="New">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/ring/ring.go#L52">New</a>
     <a href="#New">¶</a></h3>
 <pre>func New(n <a href="/builtin/#int">int</a>) *<a href="#Ring">Ring</a></pre>
 
 New creates a ring of n elements.
 
-<h3 id="Ring.Do">func (*Ring) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/ring/ring.go#L124">Do</a>
+<h3 id="Ring.Do">func (*Ring) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/ring/ring.go#L124">Do</a>
     <a href="#Ring.Do">¶</a></h3>
 <pre>func (r *<a href="#Ring">Ring</a>) Do(f func(interface{}))</pre>
 
@@ -84,7 +84,7 @@ Example:
     // 3
     // 4
 
-<h3 id="Ring.Len">func (*Ring) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/ring/ring.go#L111">Len</a>
+<h3 id="Ring.Len">func (*Ring) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/ring/ring.go#L111">Len</a>
     <a href="#Ring.Len">¶</a></h3>
 <pre>func (r *<a href="#Ring">Ring</a>) Len() <a href="/builtin/#int">int</a></pre>
 
@@ -103,7 +103,7 @@ Example:
     // Output:
     // 4
 
-<h3 id="Ring.Link">func (*Ring) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/ring/ring.go#L83">Link</a>
+<h3 id="Ring.Link">func (*Ring) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/ring/ring.go#L83">Link</a>
     <a href="#Ring.Link">¶</a></h3>
 <pre>func (r *<a href="#Ring">Ring</a>) Link(s *<a href="#Ring">Ring</a>) *<a href="#Ring">Ring</a></pre>
 
@@ -156,7 +156,7 @@ Example:
     // 1
     // 1
 
-<h3 id="Ring.Move">func (*Ring) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/ring/ring.go#L34">Move</a>
+<h3 id="Ring.Move">func (*Ring) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/ring/ring.go#L34">Move</a>
     <a href="#Ring.Move">¶</a></h3>
 <pre>func (r *<a href="#Ring">Ring</a>) Move(n <a href="/builtin/#int">int</a>) *<a href="#Ring">Ring</a></pre>
 
@@ -193,7 +193,7 @@ Example:
     // 1
     // 2
 
-<h3 id="Ring.Next">func (*Ring) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/ring/ring.go#L16">Next</a>
+<h3 id="Ring.Next">func (*Ring) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/ring/ring.go#L16">Next</a>
     <a href="#Ring.Next">¶</a></h3>
 <pre>func (r *<a href="#Ring">Ring</a>) Next() *<a href="#Ring">Ring</a></pre>
 
@@ -227,7 +227,7 @@ Example:
     // 3
     // 4
 
-<h3 id="Ring.Prev">func (*Ring) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/ring/ring.go#L24">Prev</a>
+<h3 id="Ring.Prev">func (*Ring) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/ring/ring.go#L24">Prev</a>
     <a href="#Ring.Prev">¶</a></h3>
 <pre>func (r *<a href="#Ring">Ring</a>) Prev() *<a href="#Ring">Ring</a></pre>
 
@@ -261,7 +261,7 @@ Example:
     // 1
     // 0
 
-<h3 id="Ring.Unlink">func (*Ring) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/ring/ring.go#L101">Unlink</a>
+<h3 id="Ring.Unlink">func (*Ring) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/ring/ring.go#L101">Unlink</a>
     <a href="#Ring.Unlink">¶</a></h3>
 <pre>func (r *<a href="#Ring">Ring</a>) Unlink(n <a href="/builtin/#int">int</a>) *<a href="#Ring">Ring</a></pre>
 

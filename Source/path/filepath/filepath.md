@@ -46,7 +46,7 @@ slashes regardless of the operating system, see the path package.
 - [Walk](#exampleWalk)
 
 ### Package files
- [match.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/match.go) [path.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go) [path_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path_unix.go) [symlink.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/symlink.go) [symlink_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/symlink_unix.go)
+ [match.go](//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/match.go) [path.go](//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go) [path_unix.go](//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path_unix.go) [symlink.go](//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/symlink.go) [symlink_unix.go](//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/symlink_unix.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -68,7 +68,7 @@ SkipDir is used as a return value from WalkFuncs to indicate that the directory
 named in the call is to be skipped. It is not returned as an error by any
 function.
 
-<h2 id="Abs">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L230">Abs</a>
+<h2 id="Abs">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L230">Abs</a>
     <a href="#Abs">¶</a></h2>
 <pre>func Abs(path <a href="/builtin/#string">string</a>) (<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -77,7 +77,7 @@ will be joined with the current working directory to turn it into an absolute
 path. The absolute path name for a given file is not guaranteed to be unique.
 Abs calls Clean on the result.
 
-<h2 id="Base">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L421">Base</a>
+<h2 id="Base">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L421">Base</a>
     <a href="#Base">¶</a></h2>
 <pre>func Base(path <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -85,7 +85,7 @@ Base returns the last element of path. Trailing path separators are removed
 before extracting the last element. If the path is empty, Base returns ".". If
 the path consists entirely of separators, Base returns a single separator.
 
-<h2 id="Clean">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L78">Clean</a>
+<h2 id="Clean">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L78">Clean</a>
     <a href="#Clean">¶</a></h2>
 <pre>func Clean(path <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -111,7 +111,7 @@ If the result of this process is an empty string, Clean returns the string ".".
 See also Rob Pike, ``Lexical File Names in Plan 9 or Getting Dot-Dot Right,''
 https://9p.io/sys/doc/lexnames.html
 
-<h2 id="Dir">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L452">Dir</a>
+<h2 id="Dir">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L452">Dir</a>
     <a href="#Dir">¶</a></h2>
 <pre>func Dir(path <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -121,7 +121,7 @@ slashes are removed. If the path is empty, Dir returns ".". If the path consists
 entirely of separators, Dir returns a single separator. The returned path does
 not end in a separator unless it is the root directory.
 
-<h2 id="EvalSymlinks">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L221">EvalSymlinks</a>
+<h2 id="EvalSymlinks">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L221">EvalSymlinks</a>
     <a href="#EvalSymlinks">¶</a></h2>
 <pre>func EvalSymlinks(path <a href="/builtin/#string">string</a>) (<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -130,7 +130,7 @@ If path is relative the result will be relative to the current directory, unless
 one of the components is an absolute symbolic link. EvalSymlinks calls Clean on
 the result.
 
-<h2 id="Ext">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L207">Ext</a>
+<h2 id="Ext">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L207">Ext</a>
     <a href="#Ext">¶</a></h2>
 <pre>func Ext(path <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -149,7 +149,7 @@ Example:
     // One dot: ".js"
     // Two dots: ".js"
 
-<h2 id="FromSlash">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L165">FromSlash</a>
+<h2 id="FromSlash">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L165">FromSlash</a>
     <a href="#FromSlash">¶</a></h2>
 <pre>func FromSlash(path <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -157,7 +157,7 @@ FromSlash returns the result of replacing each slash ('/') character in path
 with a separator character. Multiple slashes are replaced by multiple
 separators.
 
-<h2 id="Glob">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/match.go#L224">Glob</a>
+<h2 id="Glob">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/match.go#L224">Glob</a>
     <a href="#Glob">¶</a></h2>
 <pre>func Glob(pattern <a href="/builtin/#string">string</a>) (matches []<a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -169,7 +169,7 @@ describe hierarchical names such as /usr/*/bin/ed (assuming the Separator is
 Glob ignores file system errors such as I/O errors reading directories. The only
 possible returned error is ErrBadPattern, when pattern is malformed.
 
-<h2 id="HasPrefix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path_unix.go#L16">HasPrefix</a>
+<h2 id="HasPrefix">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path_unix.go#L16">HasPrefix</a>
     <a href="#HasPrefix">¶</a></h2>
 <pre>func HasPrefix(p, prefix <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -178,13 +178,13 @@ HasPrefix exists for historical compatibility and should not be used.
 Deprecated: HasPrefix does not respect path boundaries and does not ignore case
 when required.
 
-<h2 id="IsAbs">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path_unix.go#L2">IsAbs</a>
+<h2 id="IsAbs">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path_unix.go#L2">IsAbs</a>
     <a href="#IsAbs">¶</a></h2>
 <pre>func IsAbs(path <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IsAbs reports whether the path is absolute.
 
-<h2 id="Join">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L199">Join</a>
+<h2 id="Join">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L199">Join</a>
     <a href="#Join">¶</a></h2>
 <pre>func Join(elem ...<a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -208,7 +208,7 @@ Example:
     // a/b/c
     // a/b/c
 
-<h2 id="Match">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/match.go#L34">Match</a>
+<h2 id="Match">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/match.go#L34">Match</a>
     <a href="#Match">¶</a></h2>
 <pre>func Match(pattern, name <a href="/builtin/#string">string</a>) (matched <a href="/builtin/#bool">bool</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -235,7 +235,7 @@ possible returned error is ErrBadPattern, when pattern is malformed.
 
 On Windows, escaping is disabled. Instead, '\\' is treated as path separator.
 
-<h2 id="Rel">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L253">Rel</a>
+<h2 id="Rel">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L253">Rel</a>
     <a href="#Rel">¶</a></h2>
 <pre>func Rel(basepath, targpath <a href="/builtin/#string">string</a>) (<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -269,7 +269,7 @@ Example:
     // "/b/c": "../b/c" <nil>
     // "./b/c": "" Rel: can't make ./b/c relative to /a
 
-<h2 id="Split">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L185">Split</a>
+<h2 id="Split">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L185">Split</a>
     <a href="#Split">¶</a></h2>
 <pre>func Split(path <a href="/builtin/#string">string</a>) (dir, file <a href="/builtin/#string">string</a>)</pre>
 
@@ -307,7 +307,7 @@ Example:
     // 	dir: "/usr/local//"
     // 	file: "go"
 
-<h2 id="SplitList">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L176">SplitList</a>
+<h2 id="SplitList">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L176">SplitList</a>
     <a href="#SplitList">¶</a></h2>
 <pre>func SplitList(path <a href="/builtin/#string">string</a>) []<a href="/builtin/#string">string</a></pre>
 
@@ -322,14 +322,14 @@ Example:
     // Output:
     // On Unix: [/a/b/c /usr/bin]
 
-<h2 id="ToSlash">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L155">ToSlash</a>
+<h2 id="ToSlash">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L155">ToSlash</a>
     <a href="#ToSlash">¶</a></h2>
 <pre>func ToSlash(path <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
 ToSlash returns the result of replacing each separator character in path with a
 slash ('/') character. Multiple separators are replaced by multiple slashes.
 
-<h2 id="VolumeName">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L470">VolumeName</a>
+<h2 id="VolumeName">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L470">VolumeName</a>
     <a href="#VolumeName">¶</a></h2>
 <pre>func VolumeName(path <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -337,7 +337,7 @@ VolumeName returns leading volume name. Given "C:\foo\bar" it returns "C:" on
 Windows. Given "\\host\share\foo" it returns "\\host\share". On other platforms
 it returns "".
 
-<h2 id="Walk">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L388">Walk</a>
+<h2 id="Walk">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L388">Walk</a>
     <a href="#Walk">¶</a></h2>
 <pre>func Walk(root <a href="/builtin/#string">string</a>, walkFn <a href="#WalkFunc">WalkFunc</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -370,7 +370,7 @@ Example:
         fmt.Printf("error walking the path %q: %v\n", dir, err)
     }
 
-<h2 id="WalkFunc">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/filepath/path.go#L340">WalkFunc</a>
+<h2 id="WalkFunc">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/filepath/path.go#L340">WalkFunc</a>
     <a href="#WalkFunc">¶</a></h2>
 <pre>type WalkFunc func(path <a href="/builtin/#string">string</a>, info <a href="/os/">os</a>.<a href="/os/#FileInfo">FileInfo</a>, err <a href="/builtin/#error">error</a>) <a href="/builtin/#error">error</a></pre>
 

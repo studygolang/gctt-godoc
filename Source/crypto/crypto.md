@@ -23,9 +23,9 @@ Package crypto collects common cryptographic constants.
 - [type SignerOpts](#SignerOpts)
 
 ### Package files
- [crypto.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/crypto.go)
+ [crypto.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/crypto.go)
 
-<h2 id="RegisterHash">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/crypto.go#L90">RegisterHash</a>
+<h2 id="RegisterHash">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/crypto.go#L90">RegisterHash</a>
     <a href="#RegisterHash">¶</a></h2>
 <pre>func RegisterHash(h <a href="#Hash">Hash</a>, f func() <a href="/hash/">hash</a>.<a href="/hash/#Hash">Hash</a>)</pre>
 
@@ -33,7 +33,7 @@ RegisterHash registers a function that returns a new instance of the given hash
 function. This is intended to be called from the init function in packages that
 implement hash functions.
 
-<h2 id="Decrypter">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/crypto.go#L137">Decrypter</a>
+<h2 id="Decrypter">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/crypto.go#L137">Decrypter</a>
     <a href="#Decrypter">¶</a></h2>
 <pre>type Decrypter interface {
     <span class="comment">// Public returns the public key corresponding to the opaque,</span>
@@ -50,12 +50,12 @@ Decrypter is an interface for an opaque private key that can be used for
 asymmetric decryption operations. An example would be an RSA key kept in a
 hardware module.
 
-<h2 id="DecrypterOpts">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/crypto.go#L148">DecrypterOpts</a>
+<h2 id="DecrypterOpts">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/crypto.go#L148">DecrypterOpts</a>
     <a href="#DecrypterOpts">¶</a></h2>
 <pre>type DecrypterOpts interface{}</pre>
 
 
-<h2 id="Hash">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/crypto.go#L6">Hash</a>
+<h2 id="Hash">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/crypto.go#L6">Hash</a>
     <a href="#Hash">¶</a></h2>
 <pre>type Hash <a href="/builtin/#uint">uint</a></pre>
 
@@ -86,26 +86,26 @@ package.
 )</pre>
 
 
-<h3 id="Hash.Available">func (Hash) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/crypto.go#L83">Available</a>
+<h3 id="Hash.Available">func (Hash) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/crypto.go#L83">Available</a>
     <a href="#Hash.Available">¶</a></h3>
 <pre>func (h <a href="#Hash">Hash</a>) Available() <a href="/builtin/#bool">bool</a></pre>
 
 Available reports whether the given hash function is linked into the binary.
 
-<h3 id="Hash.HashFunc">func (Hash) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/crypto.go#L9">HashFunc</a>
+<h3 id="Hash.HashFunc">func (Hash) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/crypto.go#L9">HashFunc</a>
     <a href="#Hash.HashFunc">¶</a></h3>
 <pre>func (h <a href="#Hash">Hash</a>) HashFunc() <a href="#Hash">Hash</a></pre>
 
 HashFunc simply returns the value of h so that Hash implements SignerOpts.
 
-<h3 id="Hash.New">func (Hash) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/crypto.go#L72">New</a>
+<h3 id="Hash.New">func (Hash) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/crypto.go#L72">New</a>
     <a href="#Hash.New">¶</a></h3>
 <pre>func (h <a href="#Hash">Hash</a>) New() <a href="/hash/">hash</a>.<a href="/hash/#Hash">Hash</a></pre>
 
 New returns a new hash.Hash calculating the given hash function. New panics if
 the hash function is not linked into the binary.
 
-<h3 id="Hash.Size">func (Hash) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/crypto.go#L61">Size</a>
+<h3 id="Hash.Size">func (Hash) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/crypto.go#L61">Size</a>
     <a href="#Hash.Size">¶</a></h3>
 <pre>func (h <a href="#Hash">Hash</a>) Size() <a href="/builtin/#int">int</a></pre>
 
@@ -113,19 +113,19 @@ Size returns the length, in bytes, of a digest resulting from the given hash
 function. It doesn't require that the hash function in question be linked into
 the program.
 
-<h2 id="PrivateKey">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/crypto.go#L101">PrivateKey</a>
+<h2 id="PrivateKey">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/crypto.go#L101">PrivateKey</a>
     <a href="#PrivateKey">¶</a></h2>
 <pre>type PrivateKey interface{}</pre>
 
 PrivateKey represents a private key using an unspecified algorithm.
 
-<h2 id="PublicKey">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/crypto.go#L98">PublicKey</a>
+<h2 id="PublicKey">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/crypto.go#L98">PublicKey</a>
     <a href="#PublicKey">¶</a></h2>
 <pre>type PublicKey interface{}</pre>
 
 PublicKey represents a public key using an unspecified algorithm.
 
-<h2 id="Signer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/crypto.go#L105">Signer</a>
+<h2 id="Signer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/crypto.go#L105">Signer</a>
     <a href="#Signer">¶</a></h2>
 <pre>type Signer interface {
     <span class="comment">// Public returns the public key corresponding to the opaque,</span>
@@ -151,7 +151,7 @@ PublicKey represents a public key using an unspecified algorithm.
 Signer is an interface for an opaque private key that can be used for signing
 operations. For example, an RSA key kept in a hardware module.
 
-<h2 id="SignerOpts">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/crypto.go#L127">SignerOpts</a>
+<h2 id="SignerOpts">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/crypto.go#L127">SignerOpts</a>
     <a href="#SignerOpts">¶</a></h2>
 <pre>type SignerOpts interface {
     <span class="comment">// HashFunc returns an identifier for the hash function used to produce</span>

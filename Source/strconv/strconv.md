@@ -129,7 +129,7 @@ Unquote and UnquoteChar unquote Go string and rune literals.
 - [UnquoteChar](#exampleUnquoteChar)
 
 ### Package files
- [atob.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atob.go) [atof.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atof.go) [atoi.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atoi.go) [decimal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/decimal.go) [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/doc.go) [extfloat.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/extfloat.go) [ftoa.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/ftoa.go) [isprint.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/isprint.go) [itoa.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/itoa.go) [quote.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go)
+ [atob.go](//github.com/golang/go/blob/release-branch.go1.10/src/strconv/atob.go) [atof.go](//github.com/golang/go/blob/release-branch.go1.10/src/strconv/atof.go) [atoi.go](//github.com/golang/go/blob/release-branch.go1.10/src/strconv/atoi.go) [decimal.go](//github.com/golang/go/blob/release-branch.go1.10/src/strconv/decimal.go) [doc.go](//github.com/golang/go/blob/release-branch.go1.10/src/strconv/doc.go) [extfloat.go](//github.com/golang/go/blob/release-branch.go1.10/src/strconv/extfloat.go) [ftoa.go](//github.com/golang/go/blob/release-branch.go1.10/src/strconv/ftoa.go) [isprint.go](//github.com/golang/go/blob/release-branch.go1.10/src/strconv/isprint.go) [itoa.go](//github.com/golang/go/blob/release-branch.go1.10/src/strconv/itoa.go) [quote.go](//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -148,7 +148,7 @@ ErrRange indicates that a value is out of range for the target type.
 ErrSyntax indicates that a value does not have the right syntax for the target
 type.
 
-<h2 id="AppendBool">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atob.go#L20">AppendBool</a>
+<h2 id="AppendBool">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/atob.go#L20">AppendBool</a>
     <a href="#AppendBool">¶</a></h2>
 <pre>func AppendBool(dst []<a href="/builtin/#byte">byte</a>, b <a href="/builtin/#bool">bool</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -165,7 +165,7 @@ Example:
     // Output:
     // bool:true
 
-<h2 id="AppendFloat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/ftoa.go#L40">AppendFloat</a>
+<h2 id="AppendFloat">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/ftoa.go#L40">AppendFloat</a>
     <a href="#AppendFloat">¶</a></h2>
 <pre>func AppendFloat(dst []<a href="/builtin/#byte">byte</a>, f <a href="/builtin/#float64">float64</a>, fmt <a href="/builtin/#byte">byte</a>, prec, bitSize <a href="/builtin/#int">int</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -187,7 +187,7 @@ Example:
     // float32:3.1415927E+00
     // float64:3.1415926535E+00
 
-<h2 id="AppendInt">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/itoa.go#L28">AppendInt</a>
+<h2 id="AppendInt">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/itoa.go#L28">AppendInt</a>
     <a href="#AppendInt">¶</a></h2>
 <pre>func AppendInt(dst []<a href="/builtin/#byte">byte</a>, i <a href="/builtin/#int64">int64</a>, base <a href="/builtin/#int">int</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -209,7 +209,7 @@ Example:
     // int (base 10):-42
     // int (base 16):-2a
 
-<h2 id="AppendQuote">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L107">AppendQuote</a>
+<h2 id="AppendQuote">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L107">AppendQuote</a>
     <a href="#AppendQuote">¶</a></h2>
 <pre>func AppendQuote(dst []<a href="/builtin/#byte">byte</a>, s <a href="/builtin/#string">string</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -226,7 +226,7 @@ Example:
     // Output:
     // quote:"\"Fran & Freddie's Diner\""
 
-<h2 id="AppendQuoteRune">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L146">AppendQuoteRune</a>
+<h2 id="AppendQuoteRune">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L146">AppendQuoteRune</a>
     <a href="#AppendQuoteRune">¶</a></h2>
 <pre>func AppendQuoteRune(dst []<a href="/builtin/#byte">byte</a>, r <a href="/builtin/#rune">rune</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -243,7 +243,7 @@ Example:
     // Output:
     // rune:'☺'
 
-<h2 id="AppendQuoteRuneToASCII">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L160">AppendQuoteRuneToASCII</a>
+<h2 id="AppendQuoteRuneToASCII">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L160">AppendQuoteRuneToASCII</a>
     <a href="#AppendQuoteRuneToASCII">¶</a></h2>
 <pre>func AppendQuoteRuneToASCII(dst []<a href="/builtin/#byte">byte</a>, r <a href="/builtin/#rune">rune</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -261,7 +261,7 @@ Example:
     // Output:
     // rune (ascii):'\u263a'
 
-<h2 id="AppendQuoteRuneToGraphic">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L174">AppendQuoteRuneToGraphic</a>
+<h2 id="AppendQuoteRuneToGraphic">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L174">AppendQuoteRuneToGraphic</a>
     <a href="#AppendQuoteRuneToGraphic">¶</a></h2>
 <pre>func AppendQuoteRuneToGraphic(dst []<a href="/builtin/#byte">byte</a>, r <a href="/builtin/#rune">rune</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -269,7 +269,7 @@ AppendQuoteRuneToGraphic appends a single-quoted Go character literal
 representing the rune, as generated by QuoteRuneToGraphic, to dst and returns
 the extended buffer.
 
-<h2 id="AppendQuoteToASCII">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L120">AppendQuoteToASCII</a>
+<h2 id="AppendQuoteToASCII">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L120">AppendQuoteToASCII</a>
     <a href="#AppendQuoteToASCII">¶</a></h2>
 <pre>func AppendQuoteToASCII(dst []<a href="/builtin/#byte">byte</a>, s <a href="/builtin/#string">string</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -286,14 +286,14 @@ Example:
     // Output:
     // quote (ascii):"\"Fran & Freddie's Diner\""
 
-<h2 id="AppendQuoteToGraphic">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L133">AppendQuoteToGraphic</a>
+<h2 id="AppendQuoteToGraphic">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L133">AppendQuoteToGraphic</a>
     <a href="#AppendQuoteToGraphic">¶</a></h2>
 <pre>func AppendQuoteToGraphic(dst []<a href="/builtin/#byte">byte</a>, s <a href="/builtin/#string">string</a>) []<a href="/builtin/#byte">byte</a></pre>
 
 AppendQuoteToGraphic appends a double-quoted Go string literal representing s,
 as generated by QuoteToGraphic, to dst and returns the extended buffer.
 
-<h2 id="AppendUint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/itoa.go#L38">AppendUint</a>
+<h2 id="AppendUint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/itoa.go#L38">AppendUint</a>
     <a href="#AppendUint">¶</a></h2>
 <pre>func AppendUint(dst []<a href="/builtin/#byte">byte</a>, i <a href="/builtin/#uint64">uint64</a>, base <a href="/builtin/#int">int</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -315,7 +315,7 @@ Example:
     // uint (base 10):42
     // uint (base 16):2a
 
-<h2 id="Atoi">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atoi.go#L192">Atoi</a>
+<h2 id="Atoi">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/atoi.go#L192">Atoi</a>
     <a href="#Atoi">¶</a></h2>
 <pre>func Atoi(s <a href="/builtin/#string">string</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -332,7 +332,7 @@ Example:
     // Output:
     // int, 10
 
-<h2 id="CanBackquote">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L181">CanBackquote</a>
+<h2 id="CanBackquote">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L181">CanBackquote</a>
     <a href="#CanBackquote">¶</a></h2>
 <pre>func CanBackquote(s <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -349,7 +349,7 @@ Example:
     // true
     // false
 
-<h2 id="FormatBool">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atob.go#L11">FormatBool</a>
+<h2 id="FormatBool">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/atob.go#L11">FormatBool</a>
     <a href="#FormatBool">¶</a></h2>
 <pre>func FormatBool(b <a href="/builtin/#bool">bool</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -365,7 +365,7 @@ Example:
     // Output:
     // string, true
 
-<h2 id="FormatFloat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/ftoa.go#L34">FormatFloat</a>
+<h2 id="FormatFloat">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/ftoa.go#L34">FormatFloat</a>
     <a href="#FormatFloat">¶</a></h2>
 <pre>func FormatFloat(f <a href="/builtin/#float64">float64</a>, fmt <a href="/builtin/#byte">byte</a>, prec, bitSize <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -400,7 +400,7 @@ Example:
     // string, 3.1415927E+00
     // string, 3.1415926535E+00
 
-<h2 id="FormatInt">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/itoa.go#L13">FormatInt</a>
+<h2 id="FormatInt">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/itoa.go#L13">FormatInt</a>
     <a href="#FormatInt">¶</a></h2>
 <pre>func FormatInt(i <a href="/builtin/#int64">int64</a>, base <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -423,7 +423,7 @@ Example:
     // string, -42
     // string, -2a
 
-<h2 id="FormatUint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/itoa.go#L2">FormatUint</a>
+<h2 id="FormatUint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/itoa.go#L2">FormatUint</a>
     <a href="#FormatUint">¶</a></h2>
 <pre>func FormatUint(i <a href="/builtin/#uint64">uint64</a>, base <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -446,7 +446,7 @@ Example:
     // string, 42
     // string, 2a
 
-<h2 id="IsGraphic">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L504">IsGraphic</a>
+<h2 id="IsGraphic">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L504">IsGraphic</a>
     <a href="#IsGraphic">¶</a></h2>
 <pre>func IsGraphic(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -454,7 +454,7 @@ IsGraphic reports whether the rune is defined as a Graphic by Unicode. Such
 characters include letters, marks, numbers, punctuation, symbols, and spaces,
 from categories L, M, N, P, S, and Zs.
 
-<h2 id="IsPrint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L458">IsPrint</a>
+<h2 id="IsPrint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L458">IsPrint</a>
     <a href="#IsPrint">¶</a></h2>
 <pre>func IsPrint(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -475,7 +475,7 @@ Example:
     // true
     // false
 
-<h2 id="Itoa">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/itoa.go#L22">Itoa</a>
+<h2 id="Itoa">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/itoa.go#L22">Itoa</a>
     <a href="#Itoa">¶</a></h2>
 <pre>func Itoa(i <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -491,7 +491,7 @@ Example:
     // Output:
     // string, 10
 
-<h2 id="ParseBool">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atob.go#L1">ParseBool</a>
+<h2 id="ParseBool">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/atob.go#L1">ParseBool</a>
     <a href="#ParseBool">¶</a></h2>
 <pre>func ParseBool(str <a href="/builtin/#string">string</a>) (<a href="/builtin/#bool">bool</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -510,7 +510,7 @@ Example:
     // Output:
     // bool, true
 
-<h2 id="ParseFloat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atof.go#L523">ParseFloat</a>
+<h2 id="ParseFloat">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/atof.go#L523">ParseFloat</a>
     <a href="#ParseFloat">¶</a></h2>
 <pre>func ParseFloat(s <a href="/builtin/#string">string</a>, bitSize <a href="/builtin/#int">int</a>) (<a href="/builtin/#float64">float64</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -546,7 +546,7 @@ Example:
     // float64, 3.1415927410125732
     // float64, 3.1415926535
 
-<h2 id="ParseInt">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atoi.go#L146">ParseInt</a>
+<h2 id="ParseInt">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/atoi.go#L146">ParseInt</a>
     <a href="#ParseInt">¶</a></h2>
 <pre>func ParseInt(s <a href="/builtin/#string">string</a>, base <a href="/builtin/#int">int</a>, bitSize <a href="/builtin/#int">int</a>) (i <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -590,7 +590,7 @@ Example:
     // int64, -354634382
     // int64, -3546343826724305832
 
-<h2 id="ParseUint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atoi.go#L40">ParseUint</a>
+<h2 id="ParseUint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/atoi.go#L40">ParseUint</a>
     <a href="#ParseUint">¶</a></h2>
 <pre>func ParseUint(s <a href="/builtin/#string">string</a>, base <a href="/builtin/#int">int</a>, bitSize <a href="/builtin/#int">int</a>) (<a href="/builtin/#uint64">uint64</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -611,7 +611,7 @@ Example:
     // uint64, 42
     // uint64, 42
 
-<h2 id="Quote">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L101">Quote</a>
+<h2 id="Quote">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L101">Quote</a>
     <a href="#Quote">¶</a></h2>
 <pre>func Quote(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -628,7 +628,7 @@ Example:
     // Output:
     // "\"Fran & Freddie's Diner\t☺\""
 
-<h2 id="QuoteRune">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L140">QuoteRune</a>
+<h2 id="QuoteRune">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L140">QuoteRune</a>
     <a href="#QuoteRune">¶</a></h2>
 <pre>func QuoteRune(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -645,7 +645,7 @@ Example:
     // Output:
     // '☺'
 
-<h2 id="QuoteRuneToASCII">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L154">QuoteRuneToASCII</a>
+<h2 id="QuoteRuneToASCII">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L154">QuoteRuneToASCII</a>
     <a href="#QuoteRuneToASCII">¶</a></h2>
 <pre>func QuoteRuneToASCII(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -662,7 +662,7 @@ Example:
     // Output:
     // '\u263a'
 
-<h2 id="QuoteRuneToGraphic">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L168">QuoteRuneToGraphic</a>
+<h2 id="QuoteRuneToGraphic">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L168">QuoteRuneToGraphic</a>
     <a href="#QuoteRuneToGraphic">¶</a></h2>
 <pre>func QuoteRuneToGraphic(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -670,7 +670,7 @@ QuoteRuneToGraphic returns a single-quoted Go character literal representing the
 rune. The returned string uses Go escape sequences (\t, \n, \xFF, \u0100) for
 non-ASCII characters and non-printable characters as defined by IsGraphic.
 
-<h2 id="QuoteToASCII">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L114">QuoteToASCII</a>
+<h2 id="QuoteToASCII">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L114">QuoteToASCII</a>
     <a href="#QuoteToASCII">¶</a></h2>
 <pre>func QuoteToASCII(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -687,7 +687,7 @@ Example:
     // Output:
     // "\"Fran & Freddie's Diner\t\u263a\""
 
-<h2 id="QuoteToGraphic">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L127">QuoteToGraphic</a>
+<h2 id="QuoteToGraphic">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L127">QuoteToGraphic</a>
     <a href="#QuoteToGraphic">¶</a></h2>
 <pre>func QuoteToGraphic(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -695,7 +695,7 @@ QuoteToGraphic returns a double-quoted Go string literal representing s. The
 returned string uses Go escape sequences (\t, \n, \xFF, \u0100) for non-ASCII
 characters and non-printable characters as defined by IsGraphic.
 
-<h2 id="Unquote">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L340">Unquote</a>
+<h2 id="Unquote">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L340">Unquote</a>
     <a href="#Unquote">¶</a></h2>
 <pre>func Unquote(s <a href="/builtin/#string">string</a>) (<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -729,7 +729,7 @@ Example:
     // Unquote("\"\\\"Fran & Freddie's Diner\\t\\u263a\\\"\\\"\"") = "Fran & Freddie's Diner	☺""
     // Unquote("'\\u263a'") = ☺
 
-<h2 id="UnquoteChar">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/quote.go#L228">UnquoteChar</a>
+<h2 id="UnquoteChar">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/quote.go#L228">UnquoteChar</a>
     <a href="#UnquoteChar">¶</a></h2>
 <pre>func UnquoteChar(s <a href="/builtin/#string">string</a>, quote <a href="/builtin/#byte">byte</a>) (value <a href="/builtin/#rune">rune</a>, multibyte <a href="/builtin/#bool">bool</a>, tail <a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -764,7 +764,7 @@ Example:
     // multibyte: false
     // tail: Fran & Freddie's Diner\"
 
-<h2 id="NumError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atoi.go#L6">NumError</a>
+<h2 id="NumError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/atoi.go#L6">NumError</a>
     <a href="#NumError">¶</a></h2>
 <pre>type NumError struct {
 <span id="NumError.Func"></span>    Func <a href="/builtin/#string">string</a> <span class="comment">// the failing function (ParseBool, ParseInt, ParseUint, ParseFloat)</span>
@@ -792,7 +792,7 @@ Example:
     // Err: invalid syntax
     // strconv.ParseFloat: parsing "Not a number": invalid syntax
 
-<h3 id="NumError.Error">func (*NumError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strconv/atoi.go#L12">Error</a>
+<h3 id="NumError.Error">func (*NumError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strconv/atoi.go#L12">Error</a>
     <a href="#NumError.Error">¶</a></h3>
 <pre>func (e *<a href="#NumError">NumError</a>) Error() <a href="/builtin/#string">string</a></pre>
 

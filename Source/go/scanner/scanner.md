@@ -34,9 +34,9 @@ source which can then be tokenized through repeated calls to the Scan method.
 - [Scanner.Scan](#exampleScanner_Scan)
 
 ### Package files
- [errors.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go) [scanner.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/scanner.go)
+ [errors.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/errors.go) [scanner.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/scanner.go)
 
-<h2 id="PrintError">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go#L106">PrintError</a>
+<h2 id="PrintError">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/errors.go#L106">PrintError</a>
     <a href="#PrintError">¶</a></h2>
 <pre>func PrintError(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -44,7 +44,7 @@ PrintError is a utility function that prints a list of errors to w, one error
 per line, if the err parameter is an ErrorList. Otherwise it prints the err
 string.
 
-<h2 id="Error">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go#L9">Error</a>
+<h2 id="Error">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/errors.go#L9">Error</a>
     <a href="#Error">¶</a></h2>
 <pre>type Error struct {
 <span id="Error.Pos"></span>    Pos <a href="/go/token/">token</a>.<a href="/go/token/#Position">Position</a>
@@ -55,13 +55,13 @@ In an ErrorList, an error is represented by an *Error. The position Pos, if
 valid, points to the beginning of the offending token, and the error condition
 is described by Msg.
 
-<h3 id="Error.Error">func (Error) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go#L15">Error</a>
+<h3 id="Error.Error">func (Error) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/errors.go#L15">Error</a>
     <a href="#Error.Error">¶</a></h3>
 <pre>func (e <a href="#Error">Error</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 Error implements the error interface.
 
-<h2 id="ErrorHandler">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/scanner.go#L16">ErrorHandler</a>
+<h2 id="ErrorHandler">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/scanner.go#L16">ErrorHandler</a>
     <a href="#ErrorHandler">¶</a></h2>
 <pre>type ErrorHandler func(pos <a href="/go/token/">token</a>.<a href="/go/token/#Position">Position</a>, msg <a href="/builtin/#string">string</a>)</pre>
 
@@ -70,68 +70,68 @@ encountered and a handler was installed, the handler is called with a position
 and an error message. The position points to the beginning of the offending
 token.
 
-<h2 id="ErrorList">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go#L27">ErrorList</a>
+<h2 id="ErrorList">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/errors.go#L27">ErrorList</a>
     <a href="#ErrorList">¶</a></h2>
 <pre>type ErrorList []*<a href="#Error">Error</a></pre>
 
 ErrorList is a list of *Errors. The zero value for an ErrorList is an empty
 ErrorList ready to use.
 
-<h3 id="ErrorList.Add">func (*ErrorList) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go#L30">Add</a>
+<h3 id="ErrorList.Add">func (*ErrorList) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/errors.go#L30">Add</a>
     <a href="#ErrorList.Add">¶</a></h3>
 <pre>func (p *<a href="#ErrorList">ErrorList</a>) Add(pos <a href="/go/token/">token</a>.<a href="/go/token/#Position">Position</a>, msg <a href="/builtin/#string">string</a>)</pre>
 
 Add adds an Error with given position and error message to an ErrorList.
 
-<h3 id="ErrorList.Err">func (ErrorList) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go#L95">Err</a>
+<h3 id="ErrorList.Err">func (ErrorList) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/errors.go#L95">Err</a>
     <a href="#ErrorList.Err">¶</a></h3>
 <pre>func (p <a href="#ErrorList">ErrorList</a>) Err() <a href="/builtin/#error">error</a></pre>
 
 Err returns an error equivalent to this error list. If the list is empty, Err
 returns nil.
 
-<h3 id="ErrorList.Error">func (ErrorList) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go#L83">Error</a>
+<h3 id="ErrorList.Error">func (ErrorList) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/errors.go#L83">Error</a>
     <a href="#ErrorList.Error">¶</a></h3>
 <pre>func (p <a href="#ErrorList">ErrorList</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 An ErrorList implements the error interface.
 
-<h3 id="ErrorList.Len">func (ErrorList) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go#L38">Len</a>
+<h3 id="ErrorList.Len">func (ErrorList) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/errors.go#L38">Len</a>
     <a href="#ErrorList.Len">¶</a></h3>
 <pre>func (p <a href="#ErrorList">ErrorList</a>) Len() <a href="/builtin/#int">int</a></pre>
 
 ErrorList implements the sort Interface.
 
-<h3 id="ErrorList.Less">func (ErrorList) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go#L41">Less</a>
+<h3 id="ErrorList.Less">func (ErrorList) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/errors.go#L41">Less</a>
     <a href="#ErrorList.Less">¶</a></h3>
 <pre>func (p <a href="#ErrorList">ErrorList</a>) Less(i, j <a href="/builtin/#int">int</a>) <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="ErrorList.RemoveMultiples">func (*ErrorList) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go#L68">RemoveMultiples</a>
+<h3 id="ErrorList.RemoveMultiples">func (*ErrorList) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/errors.go#L68">RemoveMultiples</a>
     <a href="#ErrorList.RemoveMultiples">¶</a></h3>
 <pre>func (p *<a href="#ErrorList">ErrorList</a>) RemoveMultiples()</pre>
 
 RemoveMultiples sorts an ErrorList and removes all but the first error per line.
 
-<h3 id="ErrorList.Reset">func (*ErrorList) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go#L35">Reset</a>
+<h3 id="ErrorList.Reset">func (*ErrorList) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/errors.go#L35">Reset</a>
     <a href="#ErrorList.Reset">¶</a></h3>
 <pre>func (p *<a href="#ErrorList">ErrorList</a>) Reset()</pre>
 
 Reset resets an ErrorList to no errors.
 
-<h3 id="ErrorList.Sort">func (ErrorList) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go#L63">Sort</a>
+<h3 id="ErrorList.Sort">func (ErrorList) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/errors.go#L63">Sort</a>
     <a href="#ErrorList.Sort">¶</a></h3>
 <pre>func (p <a href="#ErrorList">ErrorList</a>) Sort()</pre>
 
 Sort sorts an ErrorList. *Error entries are sorted by position, other errors are
 sorted by error message, and before any *Error entry.
 
-<h3 id="ErrorList.Swap">func (ErrorList) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/errors.go#L39">Swap</a>
+<h3 id="ErrorList.Swap">func (ErrorList) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/errors.go#L39">Swap</a>
     <a href="#ErrorList.Swap">¶</a></h3>
 <pre>func (p <a href="#ErrorList">ErrorList</a>) Swap(i, j <a href="/builtin/#int">int</a>)</pre>
 
 
-<h2 id="Mode">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/scanner.go#L81">Mode</a>
+<h2 id="Mode">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/scanner.go#L81">Mode</a>
     <a href="#Mode">¶</a></h2>
 <pre>type Mode <a href="/builtin/#uint">uint</a></pre>
 
@@ -143,7 +143,7 @@ A mode value is a set of flags (or 0). They control scanner behavior.
 )</pre>
 
 
-<h2 id="Scanner">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/scanner.go#L22">Scanner</a>
+<h2 id="Scanner">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/scanner.go#L22">Scanner</a>
     <a href="#Scanner">¶</a></h2>
 <pre>type Scanner struct {
 
@@ -156,7 +156,7 @@ A Scanner holds the scanner's internal state while processing a given text. It
 can be allocated as part of another data structure but must be initialized via
 Init before use.
 
-<h3 id="Scanner.Init">func (*Scanner) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/scanner.go#L103">Init</a>
+<h3 id="Scanner.Init">func (*Scanner) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/scanner.go#L103">Init</a>
     <a href="#Scanner.Init">¶</a></h3>
 <pre>func (s *<a href="#Scanner">Scanner</a>) Init(file *<a href="/go/token/">token</a>.<a href="/go/token/#File">File</a>, src []<a href="/builtin/#byte">byte</a>, err <a href="#ErrorHandler">ErrorHandler</a>, mode <a href="#Mode">Mode</a>)</pre>
 
@@ -175,7 +175,7 @@ handled.
 Note that Init may call err if there is an error in the first character of the
 file.
 
-<h3 id="Scanner.Scan">func (*Scanner) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/scanner/scanner.go#L592">Scan</a>
+<h3 id="Scanner.Scan">func (*Scanner) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/scanner/scanner.go#L592">Scan</a>
     <a href="#Scanner.Scan">¶</a></h3>
 <pre>func (s *<a href="#Scanner">Scanner</a>) Scan() (pos <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a>, tok <a href="/go/token/">token</a>.<a href="/go/token/#Token">Token</a>, lit <a href="/builtin/#string">string</a>)</pre>
 

@@ -501,9 +501,9 @@ Example:
 - [Package (Interface)](#example_interface)
 
 ### Package files
- [dec_helpers.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/dec_helpers.go) [decode.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/decode.go) [decoder.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/decoder.go) [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/doc.go) [enc_helpers.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/enc_helpers.go) [encode.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/encode.go) [encoder.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/encoder.go) [error.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/error.go) [type.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/type.go)
+ [dec_helpers.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/dec_helpers.go) [decode.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/decode.go) [decoder.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/decoder.go) [doc.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/doc.go) [enc_helpers.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/enc_helpers.go) [encode.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/encode.go) [encoder.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/encoder.go) [error.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/error.go) [type.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/type.go)
 
-<h2 id="Register">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/type.go#L826">Register</a>
+<h2 id="Register">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/type.go#L826">Register</a>
     <a href="#Register">¶</a></h2>
 <pre>func Register(value interface{})</pre>
 
@@ -514,14 +514,14 @@ of interface values need to be registered. Expecting to be used only during
 initialization, it panics if the mapping between types and names is not a
 bijection.
 
-<h2 id="RegisterName">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/type.go#L797">RegisterName</a>
+<h2 id="RegisterName">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/type.go#L797">RegisterName</a>
     <a href="#RegisterName">¶</a></h2>
 <pre>func RegisterName(name <a href="/builtin/#string">string</a>, value interface{})</pre>
 
 RegisterName is like Register but uses the provided name rather than the type's
 default.
 
-<h2 id="CommonType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/type.go#L206">CommonType</a>
+<h2 id="CommonType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/type.go#L206">CommonType</a>
     <a href="#CommonType">¶</a></h2>
 <pre>type CommonType struct {
 <span id="CommonType.Name"></span>    Name <a href="/builtin/#string">string</a>
@@ -532,7 +532,7 @@ CommonType holds elements of all types. It is a historical artifact, kept for
 binary compatibility and exported only for the benefit of the package's encoding
 of type descriptors. It is not intended for direct use by clients.
 
-<h2 id="Decoder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/decoder.go#L16">Decoder</a>
+<h2 id="Decoder">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/decoder.go#L16">Decoder</a>
     <a href="#Decoder">¶</a></h2>
 <pre>type Decoder struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -545,14 +545,14 @@ The Decoder does only basic sanity checking on decoded input sizes, and its
 limits are not configurable. Take caution when decoding gob data from untrusted
 sources.
 
-<h3 id="NewDecoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/decoder.go#L31">NewDecoder</a>
+<h3 id="NewDecoder">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/decoder.go#L31">NewDecoder</a>
     <a href="#NewDecoder">¶</a></h3>
 <pre>func NewDecoder(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) *<a href="#Decoder">Decoder</a></pre>
 
 NewDecoder returns a new decoder that reads from the io.Reader. If r does not
 also implement io.ByteReader, it will be wrapped in a bufio.Reader.
 
-<h3 id="Decoder.Decode">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/decoder.go#L166">Decode</a>
+<h3 id="Decoder.Decode">func (*Decoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/decoder.go#L166">Decode</a>
     <a href="#Decoder.Decode">¶</a></h3>
 <pre>func (dec *<a href="#Decoder">Decoder</a>) Decode(e interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -562,7 +562,7 @@ discarded. Otherwise, the value underlying e must be a pointer to the correct
 type for the next data item received. If the input is at EOF, Decode returns
 io.EOF and does not modify e.
 
-<h3 id="Decoder.DecodeValue">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/decoder.go#L186">DecodeValue</a>
+<h3 id="Decoder.DecodeValue">func (*Decoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/decoder.go#L186">DecodeValue</a>
     <a href="#Decoder.DecodeValue">¶</a></h3>
 <pre>func (dec *<a href="#Decoder">Decoder</a>) DecodeValue(v <a href="/reflect/">reflect</a>.<a href="/reflect/#Value">Value</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -572,7 +572,7 @@ it stores the value into v. In that case, v must represent a non-nil pointer to
 data or be an assignable reflect.Value (v.CanSet()) If the input is at EOF,
 DecodeValue returns io.EOF and does not modify v.
 
-<h2 id="Encoder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/encoder.go#L6">Encoder</a>
+<h2 id="Encoder">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/encoder.go#L6">Encoder</a>
     <a href="#Encoder">¶</a></h2>
 <pre>type Encoder struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -581,13 +581,13 @@ DecodeValue returns io.EOF and does not modify v.
 An Encoder manages the transmission of type and data information to the other
 side of a connection.
 
-<h3 id="NewEncoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/encoder.go#L23">NewEncoder</a>
+<h3 id="NewEncoder">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/encoder.go#L23">NewEncoder</a>
     <a href="#NewEncoder">¶</a></h3>
 <pre>func NewEncoder(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) *<a href="#Encoder">Encoder</a></pre>
 
 NewEncoder returns a new encoder that will transmit on the io.Writer.
 
-<h3 id="Encoder.Encode">func (*Encoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/encoder.go#L164">Encode</a>
+<h3 id="Encoder.Encode">func (*Encoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/encoder.go#L164">Encode</a>
     <a href="#Encoder.Encode">¶</a></h3>
 <pre>func (enc *<a href="#Encoder">Encoder</a>) Encode(e interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -596,7 +596,7 @@ guaranteeing that all necessary type information has been transmitted first.
 Passing a nil pointer to Encoder will panic, as they cannot be transmitted by
 gob.
 
-<h3 id="Encoder.EncodeValue">func (*Encoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/encoder.go#L207">EncodeValue</a>
+<h3 id="Encoder.EncodeValue">func (*Encoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/encoder.go#L207">EncodeValue</a>
     <a href="#Encoder.EncodeValue">¶</a></h3>
 <pre>func (enc *<a href="#Encoder">Encoder</a>) EncodeValue(value <a href="/reflect/">reflect</a>.<a href="/reflect/#Value">Value</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -605,7 +605,7 @@ guaranteeing that all necessary type information has been transmitted first.
 Passing a nil pointer to EncodeValue will panic, as they cannot be transmitted
 by gob.
 
-<h2 id="GobDecoder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/type.go#L783">GobDecoder</a>
+<h2 id="GobDecoder">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/type.go#L783">GobDecoder</a>
     <a href="#GobDecoder">¶</a></h2>
 <pre>type GobDecoder interface {
     <span class="comment">// GobDecode overwrites the receiver, which must be a pointer,</span>
@@ -617,7 +617,7 @@ by gob.
 GobDecoder is the interface describing data that provides its own routine for
 decoding transmitted values sent by a GobEncoder.
 
-<h2 id="GobEncoder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/gob/type.go#L774">GobEncoder</a>
+<h2 id="GobEncoder">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/gob/type.go#L774">GobEncoder</a>
     <a href="#GobEncoder">¶</a></h2>
 <pre>type GobEncoder interface {
     <span class="comment">// GobEncode returns a byte slice representing the encoding of the</span>

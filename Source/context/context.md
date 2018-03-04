@@ -66,7 +66,7 @@ Contexts.
 - [WithValue](#exampleWithValue)
 
 ### Package files
- [context.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/context/context.go)
+ [context.go](//github.com/golang/go/blob/release-branch.go1.10/src/context/context.go)
 
 <h2 id="pkg-variables">Variables</h2>
 
@@ -79,7 +79,7 @@ Canceled is the error returned by Context.Err when the context is canceled.
 DeadlineExceeded is the error returned by Context.Err when the context's
 deadline passes.
 
-<h2 id="CancelFunc">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/context/context.go#L212">CancelFunc</a>
+<h2 id="CancelFunc">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/context/context.go#L212">CancelFunc</a>
     <a href="#CancelFunc">¶</a></h2>
 <pre>type CancelFunc func()</pre>
 
@@ -87,7 +87,7 @@ A CancelFunc tells an operation to abandon its work. A CancelFunc does not wait
 for the work to stop. After the first call, subsequent calls to a CancelFunc do
 nothing.
 
-<h2 id="Context">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/context/context.go#L52">Context</a>
+<h2 id="Context">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/context/context.go#L52">Context</a>
     <a href="#Context">¶</a></h2>
 <pre>type Context interface {
     <span class="comment">// Deadline returns the time when work done on behalf of this context</span>
@@ -186,7 +186,7 @@ boundaries.
 
 Context's methods may be called by multiple goroutines simultaneously.
 
-<h3 id="Background">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/context/context.go#L196">Background</a>
+<h3 id="Background">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/context/context.go#L196">Background</a>
     <a href="#Background">¶</a></h3>
 <pre>func Background() <a href="#Context">Context</a></pre>
 
@@ -194,7 +194,7 @@ Background returns a non-nil, empty Context. It is never canceled, has no
 values, and has no deadline. It is typically used by the main function,
 initialization, and tests, and as the top-level Context for incoming requests.
 
-<h3 id="TODO">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/context/context.go#L205">TODO</a>
+<h3 id="TODO">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/context/context.go#L205">TODO</a>
     <a href="#TODO">¶</a></h3>
 <pre>func TODO() <a href="#Context">Context</a></pre>
 
@@ -204,7 +204,7 @@ function has not yet been extended to accept a Context parameter). TODO is
 recognized by static analysis tools that determine whether Contexts are
 propagated correctly in a program.
 
-<h3 id="WithCancel">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/context/context.go#L220">WithCancel</a>
+<h3 id="WithCancel">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/context/context.go#L220">WithCancel</a>
     <a href="#WithCancel">¶</a></h3>
 <pre>func WithCancel(parent <a href="#Context">Context</a>) (ctx <a href="#Context">Context</a>, cancel <a href="#CancelFunc">CancelFunc</a>)</pre>
 
@@ -255,7 +255,7 @@ Example:
     // 4
     // 5
 
-<h3 id="WithDeadline">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/context/context.go#L373">WithDeadline</a>
+<h3 id="WithDeadline">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/context/context.go#L373">WithDeadline</a>
     <a href="#WithDeadline">¶</a></h3>
 <pre>func WithDeadline(parent <a href="#Context">Context</a>, d <a href="/time/">time</a>.<a href="/time/#Time">Time</a>) (<a href="#Context">Context</a>, <a href="#CancelFunc">CancelFunc</a>)</pre>
 
@@ -290,7 +290,7 @@ Example:
     // Output:
     // context deadline exceeded
 
-<h3 id="WithTimeout">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/context/context.go#L440">WithTimeout</a>
+<h3 id="WithTimeout">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/context/context.go#L440">WithTimeout</a>
     <a href="#WithTimeout">¶</a></h3>
 <pre>func WithTimeout(parent <a href="#Context">Context</a>, timeout <a href="/time/">time</a>.<a href="/time/#Duration">Duration</a>) (<a href="#Context">Context</a>, <a href="#CancelFunc">CancelFunc</a>)</pre>
 
@@ -323,7 +323,7 @@ Example:
     // Output:
     // context deadline exceeded
 
-<h3 id="WithValue">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/context/context.go#L457">WithValue</a>
+<h3 id="WithValue">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/context/context.go#L457">WithValue</a>
     <a href="#WithValue">¶</a></h3>
 <pre>func WithValue(parent <a href="#Context">Context</a>, key, val interface{}) <a href="#Context">Context</a></pre>
 

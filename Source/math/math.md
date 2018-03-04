@@ -98,7 +98,7 @@ This package does not guarantee bit-identical results across architectures.
 - [Tanh](#exampleTanh)
 
 ### Package files
- [abs.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/abs.go) [acosh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/acosh.go) [asin.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/asin.go) [asinh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/asinh.go) [atan.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atan.go) [atan2.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atan2.go) [atanh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atanh.go) [bits.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go) [cbrt.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cbrt.go) [const.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/const.go) [copysign.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/copysign.go) [dim.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/dim.go) [erf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/erf.go) [erfinv.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/erfinv.go) [exp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/exp.go) [exp_asm.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/exp_asm.go) [expm1.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/expm1.go) [floor.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/floor.go) [floor_asm.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/floor_asm.go) [frexp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/frexp.go) [gamma.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/gamma.go) [hypot.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/hypot.go) [j0.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/j0.go) [j1.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/j1.go) [jn.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/jn.go) [ldexp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/ldexp.go) [lgamma.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/lgamma.go) [log.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/log.go) [log10.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/log10.go) [log1p.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/log1p.go) [logb.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/logb.go) [mod.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/mod.go) [modf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/modf.go) [nextafter.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/nextafter.go) [pow.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/pow.go) [pow10.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/pow10.go) [remainder.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/remainder.go) [signbit.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/signbit.go) [sin.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sin.go) [sincos.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sincos.go) [sinh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sinh.go) [sqrt.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sqrt.go) [tan.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/tan.go) [tanh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/tanh.go) [unsafe.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/unsafe.go)
+ [abs.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/abs.go) [acosh.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/acosh.go) [asin.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/asin.go) [asinh.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/asinh.go) [atan.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/atan.go) [atan2.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/atan2.go) [atanh.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/atanh.go) [bits.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/bits.go) [cbrt.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/cbrt.go) [const.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/const.go) [copysign.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/copysign.go) [dim.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/dim.go) [erf.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/erf.go) [erfinv.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/erfinv.go) [exp.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/exp.go) [exp_asm.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/exp_asm.go) [expm1.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/expm1.go) [floor.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/floor.go) [floor_asm.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/floor_asm.go) [frexp.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/frexp.go) [gamma.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/gamma.go) [hypot.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/hypot.go) [j0.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/j0.go) [j1.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/j1.go) [jn.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/jn.go) [ldexp.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/ldexp.go) [lgamma.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/lgamma.go) [log.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/log.go) [log10.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/log10.go) [log1p.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/log1p.go) [logb.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/logb.go) [mod.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/mod.go) [modf.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/modf.go) [nextafter.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/nextafter.go) [pow.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/pow.go) [pow10.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/pow10.go) [remainder.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/remainder.go) [signbit.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/signbit.go) [sin.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/sin.go) [sincos.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/sincos.go) [sinh.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/sinh.go) [sqrt.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/sqrt.go) [tan.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/tan.go) [tanh.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/tanh.go) [unsafe.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/unsafe.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -149,7 +149,7 @@ by the type.
 
 Integer limit values.
 
-<h2 id="Abs">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/abs.go#L2">Abs</a>
+<h2 id="Abs">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/abs.go#L2">Abs</a>
     <a href="#Abs">¶</a></h2>
 <pre>func Abs(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -160,7 +160,7 @@ Special cases are:
     Abs(±Inf) = +Inf
     Abs(NaN) = NaN
 
-<h2 id="Acos">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/asin.go#L41">Acos</a>
+<h2 id="Acos">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/asin.go#L41">Acos</a>
     <a href="#Acos">¶</a></h2>
 <pre>func Acos(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -176,7 +176,7 @@ Example:
     fmt.Printf("%.2f", math.Acos(1))
     // Output: 0.00
 
-<h2 id="Acosh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/acosh.go#L32">Acosh</a>
+<h2 id="Acosh">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/acosh.go#L32">Acosh</a>
     <a href="#Acosh">¶</a></h2>
 <pre>func Acosh(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -194,7 +194,7 @@ Example:
     fmt.Printf("%.2f", math.Acosh(1))
     // Output: 0.00
 
-<h2 id="Asin">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/asin.go#L9">Asin</a>
+<h2 id="Asin">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/asin.go#L9">Asin</a>
     <a href="#Asin">¶</a></h2>
 <pre>func Asin(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -211,7 +211,7 @@ Example:
     fmt.Printf("%.2f", math.Asin(0))
     // Output: 0.00
 
-<h2 id="Asinh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/asinh.go#L29">Asinh</a>
+<h2 id="Asinh">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/asinh.go#L29">Asinh</a>
     <a href="#Asinh">¶</a></h2>
 <pre>func Asinh(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -229,7 +229,7 @@ Example:
     fmt.Printf("%.2f", math.Asinh(0))
     // Output: 0.00
 
-<h2 id="Atan">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atan.go#L85">Atan</a>
+<h2 id="Atan">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/atan.go#L85">Atan</a>
     <a href="#Atan">¶</a></h2>
 <pre>func Atan(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -246,7 +246,7 @@ Example:
     fmt.Printf("%.2f", math.Atan(0))
     // Output: 0.00
 
-<h2 id="Atan2">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atan2.go#L19">Atan2</a>
+<h2 id="Atan2">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/atan2.go#L19">Atan2</a>
     <a href="#Atan2">¶</a></h2>
 <pre>func Atan2(y, x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -279,7 +279,7 @@ Example:
     fmt.Printf("%.2f", math.Atan2(0, 0))
     // Output: 0.00
 
-<h2 id="Atanh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/atanh.go#L37">Atanh</a>
+<h2 id="Atanh">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/atanh.go#L37">Atanh</a>
     <a href="#Atanh">¶</a></h2>
 <pre>func Atanh(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -299,7 +299,7 @@ Example:
     fmt.Printf("%.2f", math.Atanh(0))
     // Output: 0.00
 
-<h2 id="Cbrt">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/cbrt.go#L15">Cbrt</a>
+<h2 id="Cbrt">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/cbrt.go#L15">Cbrt</a>
     <a href="#Cbrt">¶</a></h2>
 <pre>func Cbrt(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -311,7 +311,7 @@ Special cases are:
     Cbrt(±Inf) = ±Inf
     Cbrt(NaN) = NaN
 
-<h2 id="Ceil">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/floor.go#L26">Ceil</a>
+<h2 id="Ceil">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/floor.go#L26">Ceil</a>
     <a href="#Ceil">¶</a></h2>
 <pre>func Ceil(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -323,13 +323,13 @@ Special cases are:
     Ceil(±Inf) = ±Inf
     Ceil(NaN) = NaN
 
-<h2 id="Copysign">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/copysign.go#L1">Copysign</a>
+<h2 id="Copysign">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/copysign.go#L1">Copysign</a>
     <a href="#Copysign">¶</a></h2>
 <pre>func Copysign(x, y <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
 Copysign returns a value with the magnitude of x and the sign of y.
 
-<h2 id="Cos">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sin.go#L107">Cos</a>
+<h2 id="Cos">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/sin.go#L107">Cos</a>
     <a href="#Cos">¶</a></h2>
 <pre>func Cos(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -346,7 +346,7 @@ Example:
     fmt.Printf("%.2f", math.Cos(math.Pi/2))
     // Output: 0.00
 
-<h2 id="Cosh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sinh.go#L61">Cosh</a>
+<h2 id="Cosh">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/sinh.go#L61">Cosh</a>
     <a href="#Cosh">¶</a></h2>
 <pre>func Cosh(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -364,7 +364,7 @@ Example:
     fmt.Printf("%.2f", math.Cosh(0))
     // Output: 1.00
 
-<h2 id="Dim">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/dim.go#L3">Dim</a>
+<h2 id="Dim">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/dim.go#L3">Dim</a>
     <a href="#Dim">¶</a></h2>
 <pre>func Dim(x, y <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -376,7 +376,7 @@ Special cases are:
     Dim(-Inf, -Inf) = NaN
     Dim(x, NaN) = Dim(NaN, x) = NaN
 
-<h2 id="Erf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/erf.go#L178">Erf</a>
+<h2 id="Erf">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/erf.go#L178">Erf</a>
     <a href="#Erf">¶</a></h2>
 <pre>func Erf(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -388,7 +388,7 @@ Special cases are:
     Erf(-Inf) = -1
     Erf(NaN) = NaN
 
-<h2 id="Erfc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/erf.go#L257">Erfc</a>
+<h2 id="Erfc">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/erf.go#L257">Erfc</a>
     <a href="#Erfc">¶</a></h2>
 <pre>func Erfc(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -400,7 +400,7 @@ Special cases are:
     Erfc(-Inf) = 2
     Erfc(NaN) = NaN
 
-<h2 id="Erfcinv">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/erfinv.go#L115">Erfcinv</a>
+<h2 id="Erfcinv">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/erfinv.go#L115">Erfcinv</a>
     <a href="#Erfcinv">¶</a></h2>
 <pre>func Erfcinv(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -413,7 +413,7 @@ Special cases are:
     Erfcinv(x) = NaN if x < 0 or x > 2
     Erfcinv(NaN) = NaN
 
-<h2 id="Erfinv">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/erfinv.go#L66">Erfinv</a>
+<h2 id="Erfinv">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/erfinv.go#L66">Erfinv</a>
     <a href="#Erfinv">¶</a></h2>
 <pre>func Erfinv(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -426,7 +426,7 @@ Special cases are:
     Erfinv(x) = NaN if x < -1 or x > 1
     Erfinv(NaN) = NaN
 
-<h2 id="Exp">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/exp.go#L4">Exp</a>
+<h2 id="Exp">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/exp.go#L4">Exp</a>
     <a href="#Exp">¶</a></h2>
 <pre>func Exp(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -439,7 +439,7 @@ Special cases are:
 
 Very large values overflow to 0 or +Inf. Very small values underflow to 1.
 
-<h2 id="Exp2">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/exp.go#L125">Exp2</a>
+<h2 id="Exp2">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/exp.go#L125">Exp2</a>
     <a href="#Exp2">¶</a></h2>
 <pre>func Exp2(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -447,7 +447,7 @@ Exp2 returns 2**x, the base-2 exponential of x.
 
 Special cases are the same as Exp.
 
-<h2 id="Expm1">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/expm1.go#L114">Expm1</a>
+<h2 id="Expm1">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/expm1.go#L114">Expm1</a>
     <a href="#Expm1">¶</a></h2>
 <pre>func Expm1(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -462,33 +462,33 @@ Special cases are:
 
 Very large values overflow to -1 or +Inf.
 
-<h2 id="Float32bits">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/unsafe.go#L1">Float32bits</a>
+<h2 id="Float32bits">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/unsafe.go#L1">Float32bits</a>
     <a href="#Float32bits">¶</a></h2>
 <pre>func Float32bits(f <a href="/builtin/#float32">float32</a>) <a href="/builtin/#uint32">uint32</a></pre>
 
 Float32bits returns the IEEE 754 binary representation of f.
 
-<h2 id="Float32frombits">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/unsafe.go#L4">Float32frombits</a>
+<h2 id="Float32frombits">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/unsafe.go#L4">Float32frombits</a>
     <a href="#Float32frombits">¶</a></h2>
 <pre>func Float32frombits(b <a href="/builtin/#uint32">uint32</a>) <a href="/builtin/#float32">float32</a></pre>
 
 Float32frombits returns the floating point number corresponding to the IEEE 754
 binary representation b.
 
-<h2 id="Float64bits">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/unsafe.go#L7">Float64bits</a>
+<h2 id="Float64bits">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/unsafe.go#L7">Float64bits</a>
     <a href="#Float64bits">¶</a></h2>
 <pre>func Float64bits(f <a href="/builtin/#float64">float64</a>) <a href="/builtin/#uint64">uint64</a></pre>
 
 Float64bits returns the IEEE 754 binary representation of f.
 
-<h2 id="Float64frombits">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/unsafe.go#L11">Float64frombits</a>
+<h2 id="Float64frombits">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/unsafe.go#L11">Float64frombits</a>
     <a href="#Float64frombits">¶</a></h2>
 <pre>func Float64frombits(b <a href="/builtin/#uint64">uint64</a>) <a href="/builtin/#float64">float64</a></pre>
 
 Float64frombits returns the floating point number corresponding the IEEE 754
 binary representation b.
 
-<h2 id="Floor">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/floor.go#L3">Floor</a>
+<h2 id="Floor">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/floor.go#L3">Floor</a>
     <a href="#Floor">¶</a></h2>
 <pre>func Floor(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -500,7 +500,7 @@ Special cases are:
     Floor(±Inf) = ±Inf
     Floor(NaN) = NaN
 
-<h2 id="Frexp">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/frexp.go#L6">Frexp</a>
+<h2 id="Frexp">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/frexp.go#L6">Frexp</a>
     <a href="#Frexp">¶</a></h2>
 <pre>func Frexp(f <a href="/builtin/#float64">float64</a>) (frac <a href="/builtin/#float64">float64</a>, exp <a href="/builtin/#int">int</a>)</pre>
 
@@ -514,7 +514,7 @@ Special cases are:
     Frexp(±Inf) = ±Inf, 0
     Frexp(NaN) = NaN, 0
 
-<h2 id="Gamma">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/gamma.go#L120">Gamma</a>
+<h2 id="Gamma">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/gamma.go#L120">Gamma</a>
     <a href="#Gamma">¶</a></h2>
 <pre>func Gamma(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -529,7 +529,7 @@ Special cases are:
     Gamma(-Inf) = NaN
     Gamma(NaN) = NaN
 
-<h2 id="Hypot">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/hypot.go#L9">Hypot</a>
+<h2 id="Hypot">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/hypot.go#L9">Hypot</a>
     <a href="#Hypot">¶</a></h2>
 <pre>func Hypot(p, q <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -543,7 +543,7 @@ Special cases are:
     Hypot(NaN, q) = NaN
     Hypot(p, NaN) = NaN
 
-<h2 id="Ilogb">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/logb.go#L22">Ilogb</a>
+<h2 id="Ilogb">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/logb.go#L22">Ilogb</a>
     <a href="#Ilogb">¶</a></h2>
 <pre>func Ilogb(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -555,13 +555,13 @@ Special cases are:
     Ilogb(0) = MinInt32
     Ilogb(NaN) = MaxInt32
 
-<h2 id="Inf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go#L10">Inf</a>
+<h2 id="Inf">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits.go#L10">Inf</a>
     <a href="#Inf">¶</a></h2>
 <pre>func Inf(sign <a href="/builtin/#int">int</a>) <a href="/builtin/#float64">float64</a></pre>
 
 Inf returns positive infinity if sign >= 0, negative infinity if sign < 0.
 
-<h2 id="IsInf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go#L36">IsInf</a>
+<h2 id="IsInf">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits.go#L36">IsInf</a>
     <a href="#IsInf">¶</a></h2>
 <pre>func IsInf(f <a href="/builtin/#float64">float64</a>, sign <a href="/builtin/#int">int</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -569,13 +569,13 @@ IsInf reports whether f is an infinity, according to sign. If sign > 0, IsInf
 reports whether f is positive infinity. If sign < 0, IsInf reports whether f is
 negative infinity. If sign == 0, IsInf reports whether f is either infinity.
 
-<h2 id="IsNaN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go#L24">IsNaN</a>
+<h2 id="IsNaN">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits.go#L24">IsNaN</a>
     <a href="#IsNaN">¶</a></h2>
 <pre>func IsNaN(f <a href="/builtin/#float64">float64</a>) (is <a href="/builtin/#bool">bool</a>)</pre>
 
 IsNaN reports whether f is an IEEE 754 ``not-a-number'' value.
 
-<h2 id="J0">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/j0.go#L66">J0</a>
+<h2 id="J0">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/j0.go#L66">J0</a>
     <a href="#J0">¶</a></h2>
 <pre>func J0(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -587,7 +587,7 @@ Special cases are:
     J0(0) = 1
     J0(NaN) = NaN
 
-<h2 id="J1">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/j1.go#L64">J1</a>
+<h2 id="J1">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/j1.go#L64">J1</a>
     <a href="#J1">¶</a></h2>
 <pre>func J1(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -598,7 +598,7 @@ Special cases are:
     J1(±Inf) = 0
     J1(NaN) = NaN
 
-<h2 id="Jn">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/jn.go#L43">Jn</a>
+<h2 id="Jn">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/jn.go#L43">Jn</a>
     <a href="#Jn">¶</a></h2>
 <pre>func Jn(n <a href="/builtin/#int">int</a>, x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -609,7 +609,7 @@ Special cases are:
     Jn(n, ±Inf) = 0
     Jn(n, NaN) = NaN
 
-<h2 id="Ldexp">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/ldexp.go#L4">Ldexp</a>
+<h2 id="Ldexp">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/ldexp.go#L4">Ldexp</a>
     <a href="#Ldexp">¶</a></h2>
 <pre>func Ldexp(frac <a href="/builtin/#float64">float64</a>, exp <a href="/builtin/#int">int</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -621,7 +621,7 @@ Special cases are:
     Ldexp(±Inf, exp) = ±Inf
     Ldexp(NaN, exp) = NaN
 
-<h2 id="Lgamma">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/lgamma.go#L164">Lgamma</a>
+<h2 id="Lgamma">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/lgamma.go#L164">Lgamma</a>
     <a href="#Lgamma">¶</a></h2>
 <pre>func Lgamma(x <a href="/builtin/#float64">float64</a>) (lgamma <a href="/builtin/#float64">float64</a>, sign <a href="/builtin/#int">int</a>)</pre>
 
@@ -635,7 +635,7 @@ Special cases are:
     Lgamma(-Inf) = -Inf
     Lgamma(NaN) = NaN
 
-<h2 id="Log">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/log.go#L70">Log</a>
+<h2 id="Log">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/log.go#L70">Log</a>
     <a href="#Log">¶</a></h2>
 <pre>func Log(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -648,14 +648,14 @@ Special cases are:
     Log(x < 0) = NaN
     Log(NaN) = NaN
 
-<h2 id="Log10">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/log10.go#L1">Log10</a>
+<h2 id="Log10">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/log10.go#L1">Log10</a>
     <a href="#Log10">¶</a></h2>
 <pre>func Log10(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
 Log10 returns the decimal logarithm of x. The special cases are the same as for
 Log.
 
-<h2 id="Log1p">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/log1p.go#L85">Log1p</a>
+<h2 id="Log1p">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/log1p.go#L85">Log1p</a>
     <a href="#Log1p">¶</a></h2>
 <pre>func Log1p(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -670,14 +670,14 @@ Special cases are:
     Log1p(x < -1) = NaN
     Log1p(NaN) = NaN
 
-<h2 id="Log2">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/log10.go#L7">Log2</a>
+<h2 id="Log2">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/log10.go#L7">Log2</a>
     <a href="#Log2">¶</a></h2>
 <pre>func Log2(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
 Log2 returns the binary logarithm of x. The special cases are the same as for
 Log.
 
-<h2 id="Logb">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/logb.go#L3">Logb</a>
+<h2 id="Logb">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/logb.go#L3">Logb</a>
     <a href="#Logb">¶</a></h2>
 <pre>func Logb(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -689,7 +689,7 @@ Special cases are:
     Logb(0) = -Inf
     Logb(NaN) = NaN
 
-<h2 id="Max">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/dim.go#L25">Max</a>
+<h2 id="Max">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/dim.go#L25">Max</a>
     <a href="#Max">¶</a></h2>
 <pre>func Max(x, y <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -702,7 +702,7 @@ Special cases are:
     Max(+0, ±0) = Max(±0, +0) = +0
     Max(-0, -0) = -0
 
-<h2 id="Min">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/dim.go#L52">Min</a>
+<h2 id="Min">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/dim.go#L52">Min</a>
     <a href="#Min">¶</a></h2>
 <pre>func Min(x, y <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -714,7 +714,7 @@ Special cases are:
     Min(x, NaN) = Min(NaN, x) = NaN
     Min(-0, ±0) = Min(±0, -0) = -0
 
-<h2 id="Mod">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/mod.go#L11">Mod</a>
+<h2 id="Mod">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/mod.go#L11">Mod</a>
     <a href="#Mod">¶</a></h2>
 <pre>func Mod(x, y <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -729,7 +729,7 @@ Special cases are:
     Mod(x, ±Inf) = x
     Mod(x, NaN) = NaN
 
-<h2 id="Modf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/modf.go#L3">Modf</a>
+<h2 id="Modf">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/modf.go#L3">Modf</a>
     <a href="#Modf">¶</a></h2>
 <pre>func Modf(f <a href="/builtin/#float64">float64</a>) (int <a href="/builtin/#float64">float64</a>, frac <a href="/builtin/#float64">float64</a>)</pre>
 
@@ -741,13 +741,13 @@ Special cases are:
     Modf(±Inf) = ±Inf, NaN
     Modf(NaN) = NaN, NaN
 
-<h2 id="NaN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/bits.go#L21">NaN</a>
+<h2 id="NaN">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/bits.go#L21">NaN</a>
     <a href="#NaN">¶</a></h2>
 <pre>func NaN() <a href="/builtin/#float64">float64</a></pre>
 
 NaN returns an IEEE 754 ``not-a-number'' value.
 
-<h2 id="Nextafter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/nextafter.go#L25">Nextafter</a>
+<h2 id="Nextafter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/nextafter.go#L25">Nextafter</a>
     <a href="#Nextafter">¶</a></h2>
 <pre>func Nextafter(x, y <a href="/builtin/#float64">float64</a>) (r <a href="/builtin/#float64">float64</a>)</pre>
 
@@ -759,7 +759,7 @@ Special cases are:
     Nextafter(NaN, y) = NaN
     Nextafter(x, NaN) = NaN
 
-<h2 id="Nextafter32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/nextafter.go#L3">Nextafter32</a>
+<h2 id="Nextafter32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/nextafter.go#L3">Nextafter32</a>
     <a href="#Nextafter32">¶</a></h2>
 <pre>func Nextafter32(x, y <a href="/builtin/#float32">float32</a>) (r <a href="/builtin/#float32">float32</a>)</pre>
 
@@ -771,7 +771,7 @@ Special cases are:
     Nextafter32(NaN, y) = NaN
     Nextafter32(x, NaN) = NaN
 
-<h2 id="Pow">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/pow.go#L28">Pow</a>
+<h2 id="Pow">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/pow.go#L28">Pow</a>
     <a href="#Pow">¶</a></h2>
 <pre>func Pow(x, y <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -800,7 +800,7 @@ Special cases are (in order):
     Pow(-Inf, y) = Pow(-0, -y)
     Pow(x, y) = NaN for finite x < 0 and finite non-integer y
 
-<h2 id="Pow10">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/pow10.go#L20">Pow10</a>
+<h2 id="Pow10">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/pow10.go#L20">Pow10</a>
     <a href="#Pow10">¶</a></h2>
 <pre>func Pow10(n <a href="/builtin/#int">int</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -811,7 +811,7 @@ Special cases are:
     Pow10(n) =    0 for n < -323
     Pow10(n) = +Inf for n > 308
 
-<h2 id="Remainder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/remainder.go#L27">Remainder</a>
+<h2 id="Remainder">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/remainder.go#L27">Remainder</a>
     <a href="#Remainder">¶</a></h2>
 <pre>func Remainder(x, y <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -825,7 +825,7 @@ Special cases are:
     Remainder(x, ±Inf) = x
     Remainder(x, NaN) = NaN
 
-<h2 id="Round">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/floor.go#L54">Round</a>
+<h2 id="Round">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/floor.go#L54">Round</a>
     <a href="#Round">¶</a></h2>
 <pre>func Round(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -837,7 +837,7 @@ Special cases are:
     Round(±Inf) = ±Inf
     Round(NaN) = NaN
 
-<h2 id="RoundToEven">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/floor.go#L91">RoundToEven</a>
+<h2 id="RoundToEven">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/floor.go#L91">RoundToEven</a>
     <a href="#RoundToEven">¶</a></h2>
 <pre>func RoundToEven(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -849,13 +849,13 @@ Special cases are:
     RoundToEven(±Inf) = ±Inf
     RoundToEven(NaN) = NaN
 
-<h2 id="Signbit">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/signbit.go#L1">Signbit</a>
+<h2 id="Signbit">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/signbit.go#L1">Signbit</a>
     <a href="#Signbit">¶</a></h2>
 <pre>func Signbit(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Signbit returns true if x is negative or negative zero.
 
-<h2 id="Sin">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sin.go#L164">Sin</a>
+<h2 id="Sin">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/sin.go#L164">Sin</a>
     <a href="#Sin">¶</a></h2>
 <pre>func Sin(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -873,7 +873,7 @@ Example:
     fmt.Printf("%.2f", math.Sin(math.Pi))
     // Output: 0.00
 
-<h2 id="Sincos">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sincos.go#L7">Sincos</a>
+<h2 id="Sincos">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/sincos.go#L7">Sincos</a>
     <a href="#Sincos">¶</a></h2>
 <pre>func Sincos(x <a href="/builtin/#float64">float64</a>) (sin, cos <a href="/builtin/#float64">float64</a>)</pre>
 
@@ -892,7 +892,7 @@ Example:
     fmt.Printf("%.2f, %.2f", sin, cos)
     // Output: 0.00, 1.00
 
-<h2 id="Sinh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sinh.go#L15">Sinh</a>
+<h2 id="Sinh">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/sinh.go#L15">Sinh</a>
     <a href="#Sinh">¶</a></h2>
 <pre>func Sinh(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -910,7 +910,7 @@ Example:
     fmt.Printf("%.2f", math.Sinh(0))
     // Output: 0.00
 
-<h2 id="Sqrt">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/sqrt.go#L82">Sqrt</a>
+<h2 id="Sqrt">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/sqrt.go#L82">Sqrt</a>
     <a href="#Sqrt">¶</a></h2>
 <pre>func Sqrt(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -934,7 +934,7 @@ Example:
     fmt.Printf("%.1f", c)
     // Output: 5.0
 
-<h2 id="Tan">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/tan.go#L72">Tan</a>
+<h2 id="Tan">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/tan.go#L72">Tan</a>
     <a href="#Tan">¶</a></h2>
 <pre>func Tan(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -952,7 +952,7 @@ Example:
     fmt.Printf("%.2f", math.Tan(0))
     // Output: 0.00
 
-<h2 id="Tanh">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/tanh.go#L64">Tanh</a>
+<h2 id="Tanh">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/tanh.go#L64">Tanh</a>
     <a href="#Tanh">¶</a></h2>
 <pre>func Tanh(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -970,7 +970,7 @@ Example:
     fmt.Printf("%.2f", math.Tanh(0))
     // Output: 0.00
 
-<h2 id="Trunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/floor.go#L38">Trunc</a>
+<h2 id="Trunc">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/floor.go#L38">Trunc</a>
     <a href="#Trunc">¶</a></h2>
 <pre>func Trunc(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -982,7 +982,7 @@ Special cases are:
     Trunc(±Inf) = ±Inf
     Trunc(NaN) = NaN
 
-<h2 id="Y0">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/j0.go#L146">Y0</a>
+<h2 id="Y0">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/j0.go#L146">Y0</a>
     <a href="#Y0">¶</a></h2>
 <pre>func Y0(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -995,7 +995,7 @@ Special cases are:
     Y0(x < 0) = NaN
     Y0(NaN) = NaN
 
-<h2 id="Y1">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/j1.go#L144">Y1</a>
+<h2 id="Y1">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/j1.go#L144">Y1</a>
     <a href="#Y1">¶</a></h2>
 <pre>func Y1(x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 
@@ -1008,7 +1008,7 @@ Special cases are:
     Y1(x < 0) = NaN
     Y1(NaN) = NaN
 
-<h2 id="Yn">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/jn.go#L223">Yn</a>
+<h2 id="Yn">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/jn.go#L223">Yn</a>
     <a href="#Yn">¶</a></h2>
 <pre>func Yn(n <a href="/builtin/#int">int</a>, x <a href="/builtin/#float64">float64</a>) <a href="/builtin/#float64">float64</a></pre>
 

@@ -177,9 +177,9 @@ Example:
 - [Package (PriorityQueue)](#example_priorityQueue)
 
 ### Package files
- [heap.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/heap/heap.go)
+ [heap.go](//github.com/golang/go/blob/release-branch.go1.10/src/container/heap/heap.go)
 
-<h2 id="Fix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/heap/heap.go#L76">Fix</a>
+<h2 id="Fix">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/heap/heap.go#L76">Fix</a>
     <a href="#Fix">¶</a></h2>
 <pre>func Fix(h <a href="#Interface">Interface</a>, i <a href="/builtin/#int">int</a>)</pre>
 
@@ -188,7 +188,7 @@ its value. Changing the value of the element at index i and then calling Fix is
 equivalent to, but less expensive than, calling Remove(h, i) followed by a Push
 of the new value. The complexity is O(log(n)) where n = h.Len().
 
-<h2 id="Init">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/heap/heap.go#L31">Init</a>
+<h2 id="Init">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/heap/heap.go#L31">Init</a>
     <a href="#Init">¶</a></h2>
 <pre>func Init(h <a href="#Interface">Interface</a>)</pre>
 
@@ -197,7 +197,7 @@ is idempotent with respect to the heap invariants and may be called whenever the
 heap invariants may have been invalidated. Its complexity is O(n) where n =
 h.Len().
 
-<h2 id="Pop">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/heap/heap.go#L51">Pop</a>
+<h2 id="Pop">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/heap/heap.go#L51">Pop</a>
     <a href="#Pop">¶</a></h2>
 <pre>func Pop(h <a href="#Interface">Interface</a>) interface{}</pre>
 
@@ -205,21 +205,21 @@ Pop removes the minimum element (according to Less) from the heap and returns
 it. The complexity is O(log(n)) where n = h.Len(). It is equivalent to Remove(h,
 0).
 
-<h2 id="Push">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/heap/heap.go#L42">Push</a>
+<h2 id="Push">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/heap/heap.go#L42">Push</a>
     <a href="#Push">¶</a></h2>
 <pre>func Push(h <a href="#Interface">Interface</a>, x interface{})</pre>
 
 Push pushes the element x onto the heap. The complexity is O(log(n)) where n =
 h.Len().
 
-<h2 id="Remove">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/heap/heap.go#L61">Remove</a>
+<h2 id="Remove">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/heap/heap.go#L61">Remove</a>
     <a href="#Remove">¶</a></h2>
 <pre>func Remove(h <a href="#Interface">Interface</a>, i <a href="/builtin/#int">int</a>) interface{}</pre>
 
 Remove removes the element at index i from the heap. The complexity is O(log(n))
 where n = h.Len().
 
-<h2 id="Interface">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/container/heap/heap.go#L20">Interface</a>
+<h2 id="Interface">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/heap/heap.go#L20">Interface</a>
     <a href="#Interface">¶</a></h2>
 <pre>type Interface interface {
     <a href="/sort/">sort</a>.<a href="/sort/#Interface">Interface</a>

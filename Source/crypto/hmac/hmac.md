@@ -27,15 +27,15 @@ timing side-channels:
 - [func New(h func() hash.Hash, key []byte) hash.Hash](#New)
 
 ### Package files
- [hmac.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/hmac/hmac.go)
+ [hmac.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/hmac/hmac.go)
 
-<h2 id="Equal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/hmac/hmac.go#L86">Equal</a>
+<h2 id="Equal">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/hmac/hmac.go#L86">Equal</a>
     <a href="#Equal">¶</a></h2>
 <pre>func Equal(mac1, mac2 []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Equal compares two MACs for equality without leaking timing information.
 
-<h2 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/hmac/hmac.go#L60">New</a>
+<h2 id="New">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/hmac/hmac.go#L60">New</a>
     <a href="#New">¶</a></h2>
 <pre>func New(h func() <a href="/hash/">hash</a>.<a href="/hash/#Hash">Hash</a>, key []<a href="/builtin/#byte">byte</a>) <a href="/hash/">hash</a>.<a href="/hash/#Hash">Hash</a></pre>
 

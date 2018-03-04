@@ -347,7 +347,7 @@ Example:
 - [Package](#example)
 
 ### Package files
- [format.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/format.go) [geom.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go) [image.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go) [names.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/names.go) [ycbcr.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go)
+ [format.go](//github.com/golang/go/blob/release-branch.go1.10/src/image/format.go) [geom.go](//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go) [image.go](//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go) [names.go](//github.com/golang/go/blob/release-branch.go1.10/src/image/names.go) [ycbcr.go](//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go)
 
 <h2 id="pkg-variables">Variables</h2>
 
@@ -367,7 +367,7 @@ Example:
 
 ErrFormat indicates that decoding encountered an unknown format.
 
-<h2 id="RegisterFormat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/format.go#L22">RegisterFormat</a>
+<h2 id="RegisterFormat">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/format.go#L22">RegisterFormat</a>
     <a href="#RegisterFormat">¶</a></h2>
 <pre>func RegisterFormat(name, magic <a href="/builtin/#string">string</a>, decode func(<a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (<a href="#Image">Image</a>, <a href="/builtin/#error">error</a>), decodeConfig func(<a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (<a href="#Config">Config</a>, <a href="/builtin/#error">error</a>))</pre>
 
@@ -377,7 +377,7 @@ format's encoding. The magic string can contain "?" wildcards that each match
 any one byte. Decode is the function that decodes the encoded image.
 DecodeConfig is the function that decodes just its configuration.
 
-<h2 id="Alpha">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L472">Alpha</a>
+<h2 id="Alpha">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L472">Alpha</a>
     <a href="#Alpha">¶</a></h2>
 <pre>type Alpha struct {
 <span id="Alpha.Pix"></span>    <span class="comment">// Pix holds the image&#39;s pixels, as alpha values. The pixel at</span>
@@ -391,63 +391,63 @@ DecodeConfig is the function that decodes just its configuration.
 
 Alpha is an in-memory image whose At method returns color.Alpha values.
 
-<h3 id="NewAlpha">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L557">NewAlpha</a>
+<h3 id="NewAlpha">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L557">NewAlpha</a>
     <a href="#NewAlpha">¶</a></h3>
 <pre>func NewAlpha(r <a href="#Rectangle">Rectangle</a>) *<a href="#Alpha">Alpha</a></pre>
 
 NewAlpha returns a new Alpha image with the given bounds.
 
-<h3 id="Alpha.AlphaAt">func (*Alpha) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L490">AlphaAt</a>
+<h3 id="Alpha.AlphaAt">func (*Alpha) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L490">AlphaAt</a>
     <a href="#Alpha.AlphaAt">¶</a></h3>
 <pre>func (p *<a href="#Alpha">Alpha</a>) AlphaAt(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Alpha">Alpha</a></pre>
 
 
-<h3 id="Alpha.At">func (*Alpha) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L486">At</a>
+<h3 id="Alpha.At">func (*Alpha) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L486">At</a>
     <a href="#Alpha.At">¶</a></h3>
 <pre>func (p *<a href="#Alpha">Alpha</a>) At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 
-<h3 id="Alpha.Bounds">func (*Alpha) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L484">Bounds</a>
+<h3 id="Alpha.Bounds">func (*Alpha) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L484">Bounds</a>
     <a href="#Alpha.Bounds">¶</a></h3>
 <pre>func (p *<a href="#Alpha">Alpha</a>) Bounds() <a href="#Rectangle">Rectangle</a></pre>
 
 
-<h3 id="Alpha.ColorModel">func (*Alpha) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L482">ColorModel</a>
+<h3 id="Alpha.ColorModel">func (*Alpha) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L482">ColorModel</a>
     <a href="#Alpha.ColorModel">¶</a></h3>
 <pre>func (p *<a href="#Alpha">Alpha</a>) ColorModel() <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a></pre>
 
 
-<h3 id="Alpha.Opaque">func (*Alpha) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L539">Opaque</a>
+<h3 id="Alpha.Opaque">func (*Alpha) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L539">Opaque</a>
     <a href="#Alpha.Opaque">¶</a></h3>
 <pre>func (p *<a href="#Alpha">Alpha</a>) Opaque() <a href="/builtin/#bool">bool</a></pre>
 
 Opaque scans the entire image and reports whether it is fully opaque.
 
-<h3 id="Alpha.PixOffset">func (*Alpha) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L500">PixOffset</a>
+<h3 id="Alpha.PixOffset">func (*Alpha) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L500">PixOffset</a>
     <a href="#Alpha.PixOffset">¶</a></h3>
 <pre>func (p *<a href="#Alpha">Alpha</a>) PixOffset(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 PixOffset returns the index of the first element of Pix that corresponds to the
 pixel at (x, y).
 
-<h3 id="Alpha.Set">func (*Alpha) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L504">Set</a>
+<h3 id="Alpha.Set">func (*Alpha) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L504">Set</a>
     <a href="#Alpha.Set">¶</a></h3>
 <pre>func (p *<a href="#Alpha">Alpha</a>) Set(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a>)</pre>
 
 
-<h3 id="Alpha.SetAlpha">func (*Alpha) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L512">SetAlpha</a>
+<h3 id="Alpha.SetAlpha">func (*Alpha) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L512">SetAlpha</a>
     <a href="#Alpha.SetAlpha">¶</a></h3>
 <pre>func (p *<a href="#Alpha">Alpha</a>) SetAlpha(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#Alpha">Alpha</a>)</pre>
 
 
-<h3 id="Alpha.SubImage">func (*Alpha) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L522">SubImage</a>
+<h3 id="Alpha.SubImage">func (*Alpha) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L522">SubImage</a>
     <a href="#Alpha.SubImage">¶</a></h3>
 <pre>func (p *<a href="#Alpha">Alpha</a>) SubImage(r <a href="#Rectangle">Rectangle</a>) <a href="#Image">Image</a></pre>
 
 SubImage returns an image representing the portion of the image p visible
 through r. The returned value shares pixels with the original image.
 
-<h2 id="Alpha16">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L564">Alpha16</a>
+<h2 id="Alpha16">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L564">Alpha16</a>
     <a href="#Alpha16">¶</a></h2>
 <pre>type Alpha16 struct {
 <span id="Alpha16.Pix"></span>    <span class="comment">// Pix holds the image&#39;s pixels, as alpha values in big-endian format. The pixel at</span>
@@ -461,63 +461,63 @@ through r. The returned value shares pixels with the original image.
 
 Alpha16 is an in-memory image whose At method returns color.Alpha16 values.
 
-<h3 id="NewAlpha16">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L652">NewAlpha16</a>
+<h3 id="NewAlpha16">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L652">NewAlpha16</a>
     <a href="#NewAlpha16">¶</a></h3>
 <pre>func NewAlpha16(r <a href="#Rectangle">Rectangle</a>) *<a href="#Alpha16">Alpha16</a></pre>
 
 NewAlpha16 returns a new Alpha16 image with the given bounds.
 
-<h3 id="Alpha16.Alpha16At">func (*Alpha16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L582">Alpha16At</a>
+<h3 id="Alpha16.Alpha16At">func (*Alpha16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L582">Alpha16At</a>
     <a href="#Alpha16.Alpha16At">¶</a></h3>
 <pre>func (p *<a href="#Alpha16">Alpha16</a>) Alpha16At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Alpha16">Alpha16</a></pre>
 
 
-<h3 id="Alpha16.At">func (*Alpha16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L578">At</a>
+<h3 id="Alpha16.At">func (*Alpha16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L578">At</a>
     <a href="#Alpha16.At">¶</a></h3>
 <pre>func (p *<a href="#Alpha16">Alpha16</a>) At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 
-<h3 id="Alpha16.Bounds">func (*Alpha16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L576">Bounds</a>
+<h3 id="Alpha16.Bounds">func (*Alpha16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L576">Bounds</a>
     <a href="#Alpha16.Bounds">¶</a></h3>
 <pre>func (p *<a href="#Alpha16">Alpha16</a>) Bounds() <a href="#Rectangle">Rectangle</a></pre>
 
 
-<h3 id="Alpha16.ColorModel">func (*Alpha16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L574">ColorModel</a>
+<h3 id="Alpha16.ColorModel">func (*Alpha16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L574">ColorModel</a>
     <a href="#Alpha16.ColorModel">¶</a></h3>
 <pre>func (p *<a href="#Alpha16">Alpha16</a>) ColorModel() <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a></pre>
 
 
-<h3 id="Alpha16.Opaque">func (*Alpha16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L634">Opaque</a>
+<h3 id="Alpha16.Opaque">func (*Alpha16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L634">Opaque</a>
     <a href="#Alpha16.Opaque">¶</a></h3>
 <pre>func (p *<a href="#Alpha16">Alpha16</a>) Opaque() <a href="/builtin/#bool">bool</a></pre>
 
 Opaque scans the entire image and reports whether it is fully opaque.
 
-<h3 id="Alpha16.PixOffset">func (*Alpha16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L592">PixOffset</a>
+<h3 id="Alpha16.PixOffset">func (*Alpha16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L592">PixOffset</a>
     <a href="#Alpha16.PixOffset">¶</a></h3>
 <pre>func (p *<a href="#Alpha16">Alpha16</a>) PixOffset(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 PixOffset returns the index of the first element of Pix that corresponds to the
 pixel at (x, y).
 
-<h3 id="Alpha16.Set">func (*Alpha16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L596">Set</a>
+<h3 id="Alpha16.Set">func (*Alpha16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L596">Set</a>
     <a href="#Alpha16.Set">¶</a></h3>
 <pre>func (p *<a href="#Alpha16">Alpha16</a>) Set(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a>)</pre>
 
 
-<h3 id="Alpha16.SetAlpha16">func (*Alpha16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L606">SetAlpha16</a>
+<h3 id="Alpha16.SetAlpha16">func (*Alpha16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L606">SetAlpha16</a>
     <a href="#Alpha16.SetAlpha16">¶</a></h3>
 <pre>func (p *<a href="#Alpha16">Alpha16</a>) SetAlpha16(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#Alpha16">Alpha16</a>)</pre>
 
 
-<h3 id="Alpha16.SubImage">func (*Alpha16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L617">SubImage</a>
+<h3 id="Alpha16.SubImage">func (*Alpha16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L617">SubImage</a>
     <a href="#Alpha16.SubImage">¶</a></h3>
 <pre>func (p *<a href="#Alpha16">Alpha16</a>) SubImage(r <a href="#Rectangle">Rectangle</a>) <a href="#Image">Image</a></pre>
 
 SubImage returns an image representing the portion of the image p visible
 through r. The returned value shares pixels with the original image.
 
-<h2 id="CMYK">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L820">CMYK</a>
+<h2 id="CMYK">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L820">CMYK</a>
     <a href="#CMYK">¶</a></h2>
 <pre>type CMYK struct {
 <span id="CMYK.Pix"></span>    <span class="comment">// Pix holds the image&#39;s pixels, in C, M, Y, K order. The pixel at</span>
@@ -531,63 +531,63 @@ through r. The returned value shares pixels with the original image.
 
 CMYK is an in-memory image whose At method returns color.CMYK values.
 
-<h3 id="NewCMYK">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L899">NewCMYK</a>
+<h3 id="NewCMYK">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L899">NewCMYK</a>
     <a href="#NewCMYK">¶</a></h3>
 <pre>func NewCMYK(r <a href="#Rectangle">Rectangle</a>) *<a href="#CMYK">CMYK</a></pre>
 
 NewCMYK returns a new CMYK image with the given bounds.
 
-<h3 id="CMYK.At">func (*CMYK) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L834">At</a>
+<h3 id="CMYK.At">func (*CMYK) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L834">At</a>
     <a href="#CMYK.At">¶</a></h3>
 <pre>func (p *<a href="#CMYK">CMYK</a>) At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 
-<h3 id="CMYK.Bounds">func (*CMYK) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L832">Bounds</a>
+<h3 id="CMYK.Bounds">func (*CMYK) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L832">Bounds</a>
     <a href="#CMYK.Bounds">¶</a></h3>
 <pre>func (p *<a href="#CMYK">CMYK</a>) Bounds() <a href="#Rectangle">Rectangle</a></pre>
 
 
-<h3 id="CMYK.CMYKAt">func (*CMYK) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L838">CMYKAt</a>
+<h3 id="CMYK.CMYKAt">func (*CMYK) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L838">CMYKAt</a>
     <a href="#CMYK.CMYKAt">¶</a></h3>
 <pre>func (p *<a href="#CMYK">CMYK</a>) CMYKAt(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#CMYK">CMYK</a></pre>
 
 
-<h3 id="CMYK.ColorModel">func (*CMYK) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L830">ColorModel</a>
+<h3 id="CMYK.ColorModel">func (*CMYK) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L830">ColorModel</a>
     <a href="#CMYK.ColorModel">¶</a></h3>
 <pre>func (p *<a href="#CMYK">CMYK</a>) ColorModel() <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a></pre>
 
 
-<h3 id="CMYK.Opaque">func (*CMYK) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L894">Opaque</a>
+<h3 id="CMYK.Opaque">func (*CMYK) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L894">Opaque</a>
     <a href="#CMYK.Opaque">¶</a></h3>
 <pre>func (p *<a href="#CMYK">CMYK</a>) Opaque() <a href="/builtin/#bool">bool</a></pre>
 
 Opaque scans the entire image and reports whether it is fully opaque.
 
-<h3 id="CMYK.PixOffset">func (*CMYK) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L848">PixOffset</a>
+<h3 id="CMYK.PixOffset">func (*CMYK) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L848">PixOffset</a>
     <a href="#CMYK.PixOffset">¶</a></h3>
 <pre>func (p *<a href="#CMYK">CMYK</a>) PixOffset(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 PixOffset returns the index of the first element of Pix that corresponds to the
 pixel at (x, y).
 
-<h3 id="CMYK.Set">func (*CMYK) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L852">Set</a>
+<h3 id="CMYK.Set">func (*CMYK) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L852">Set</a>
     <a href="#CMYK.Set">¶</a></h3>
 <pre>func (p *<a href="#CMYK">CMYK</a>) Set(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a>)</pre>
 
 
-<h3 id="CMYK.SetCMYK">func (*CMYK) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L864">SetCMYK</a>
+<h3 id="CMYK.SetCMYK">func (*CMYK) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L864">SetCMYK</a>
     <a href="#CMYK.SetCMYK">¶</a></h3>
 <pre>func (p *<a href="#CMYK">CMYK</a>) SetCMYK(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#CMYK">CMYK</a>)</pre>
 
 
-<h3 id="CMYK.SubImage">func (*CMYK) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L877">SubImage</a>
+<h3 id="CMYK.SubImage">func (*CMYK) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L877">SubImage</a>
     <a href="#CMYK.SubImage">¶</a></h3>
 <pre>func (p *<a href="#CMYK">CMYK</a>) SubImage(r <a href="#Rectangle">Rectangle</a>) <a href="#Image">Image</a></pre>
 
 SubImage returns an image representing the portion of the image p visible
 through r. The returned value shares pixels with the original image.
 
-<h2 id="Config">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L19">Config</a>
+<h2 id="Config">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L19">Config</a>
     <a href="#Config">¶</a></h2>
 <pre>type Config struct {
 <span id="Config.ColorModel"></span>    ColorModel    <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a>
@@ -596,7 +596,7 @@ through r. The returned value shares pixels with the original image.
 
 Config holds an image's color model and dimensions.
 
-<h3 id="DecodeConfig">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/format.go#L82">DecodeConfig</a>
+<h3 id="DecodeConfig">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/format.go#L82">DecodeConfig</a>
     <a href="#DecodeConfig">¶</a></h3>
 <pre>func DecodeConfig(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (<a href="#Config">Config</a>, <a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -605,7 +605,7 @@ encoded in a registered format. The string returned is the format name used
 during format registration. Format registration is typically done by an init
 function in the codec-specific package.
 
-<h2 id="Gray">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L659">Gray</a>
+<h2 id="Gray">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L659">Gray</a>
     <a href="#Gray">¶</a></h2>
 <pre>type Gray struct {
 <span id="Gray.Pix"></span>    <span class="comment">// Pix holds the image&#39;s pixels, as gray values. The pixel at</span>
@@ -619,63 +619,63 @@ function in the codec-specific package.
 
 Gray is an in-memory image whose At method returns color.Gray values.
 
-<h3 id="NewGray">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L731">NewGray</a>
+<h3 id="NewGray">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L731">NewGray</a>
     <a href="#NewGray">¶</a></h3>
 <pre>func NewGray(r <a href="#Rectangle">Rectangle</a>) *<a href="#Gray">Gray</a></pre>
 
 NewGray returns a new Gray image with the given bounds.
 
-<h3 id="Gray.At">func (*Gray) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L673">At</a>
+<h3 id="Gray.At">func (*Gray) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L673">At</a>
     <a href="#Gray.At">¶</a></h3>
 <pre>func (p *<a href="#Gray">Gray</a>) At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 
-<h3 id="Gray.Bounds">func (*Gray) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L671">Bounds</a>
+<h3 id="Gray.Bounds">func (*Gray) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L671">Bounds</a>
     <a href="#Gray.Bounds">¶</a></h3>
 <pre>func (p *<a href="#Gray">Gray</a>) Bounds() <a href="#Rectangle">Rectangle</a></pre>
 
 
-<h3 id="Gray.ColorModel">func (*Gray) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L669">ColorModel</a>
+<h3 id="Gray.ColorModel">func (*Gray) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L669">ColorModel</a>
     <a href="#Gray.ColorModel">¶</a></h3>
 <pre>func (p *<a href="#Gray">Gray</a>) ColorModel() <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a></pre>
 
 
-<h3 id="Gray.GrayAt">func (*Gray) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L677">GrayAt</a>
+<h3 id="Gray.GrayAt">func (*Gray) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L677">GrayAt</a>
     <a href="#Gray.GrayAt">¶</a></h3>
 <pre>func (p *<a href="#Gray">Gray</a>) GrayAt(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Gray">Gray</a></pre>
 
 
-<h3 id="Gray.Opaque">func (*Gray) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L726">Opaque</a>
+<h3 id="Gray.Opaque">func (*Gray) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L726">Opaque</a>
     <a href="#Gray.Opaque">¶</a></h3>
 <pre>func (p *<a href="#Gray">Gray</a>) Opaque() <a href="/builtin/#bool">bool</a></pre>
 
 Opaque scans the entire image and reports whether it is fully opaque.
 
-<h3 id="Gray.PixOffset">func (*Gray) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L687">PixOffset</a>
+<h3 id="Gray.PixOffset">func (*Gray) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L687">PixOffset</a>
     <a href="#Gray.PixOffset">¶</a></h3>
 <pre>func (p *<a href="#Gray">Gray</a>) PixOffset(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 PixOffset returns the index of the first element of Pix that corresponds to the
 pixel at (x, y).
 
-<h3 id="Gray.Set">func (*Gray) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L691">Set</a>
+<h3 id="Gray.Set">func (*Gray) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L691">Set</a>
     <a href="#Gray.Set">¶</a></h3>
 <pre>func (p *<a href="#Gray">Gray</a>) Set(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a>)</pre>
 
 
-<h3 id="Gray.SetGray">func (*Gray) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L699">SetGray</a>
+<h3 id="Gray.SetGray">func (*Gray) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L699">SetGray</a>
     <a href="#Gray.SetGray">¶</a></h3>
 <pre>func (p *<a href="#Gray">Gray</a>) SetGray(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#Gray">Gray</a>)</pre>
 
 
-<h3 id="Gray.SubImage">func (*Gray) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L709">SubImage</a>
+<h3 id="Gray.SubImage">func (*Gray) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L709">SubImage</a>
     <a href="#Gray.SubImage">¶</a></h3>
 <pre>func (p *<a href="#Gray">Gray</a>) SubImage(r <a href="#Rectangle">Rectangle</a>) <a href="#Image">Image</a></pre>
 
 SubImage returns an image representing the portion of the image p visible
 through r. The returned value shares pixels with the original image.
 
-<h2 id="Gray16">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L738">Gray16</a>
+<h2 id="Gray16">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L738">Gray16</a>
     <a href="#Gray16">¶</a></h2>
 <pre>type Gray16 struct {
 <span id="Gray16.Pix"></span>    <span class="comment">// Pix holds the image&#39;s pixels, as gray values in big-endian format. The pixel at</span>
@@ -689,63 +689,63 @@ through r. The returned value shares pixels with the original image.
 
 Gray16 is an in-memory image whose At method returns color.Gray16 values.
 
-<h3 id="NewGray16">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L813">NewGray16</a>
+<h3 id="NewGray16">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L813">NewGray16</a>
     <a href="#NewGray16">¶</a></h3>
 <pre>func NewGray16(r <a href="#Rectangle">Rectangle</a>) *<a href="#Gray16">Gray16</a></pre>
 
 NewGray16 returns a new Gray16 image with the given bounds.
 
-<h3 id="Gray16.At">func (*Gray16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L752">At</a>
+<h3 id="Gray16.At">func (*Gray16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L752">At</a>
     <a href="#Gray16.At">¶</a></h3>
 <pre>func (p *<a href="#Gray16">Gray16</a>) At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 
-<h3 id="Gray16.Bounds">func (*Gray16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L750">Bounds</a>
+<h3 id="Gray16.Bounds">func (*Gray16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L750">Bounds</a>
     <a href="#Gray16.Bounds">¶</a></h3>
 <pre>func (p *<a href="#Gray16">Gray16</a>) Bounds() <a href="#Rectangle">Rectangle</a></pre>
 
 
-<h3 id="Gray16.ColorModel">func (*Gray16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L748">ColorModel</a>
+<h3 id="Gray16.ColorModel">func (*Gray16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L748">ColorModel</a>
     <a href="#Gray16.ColorModel">¶</a></h3>
 <pre>func (p *<a href="#Gray16">Gray16</a>) ColorModel() <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a></pre>
 
 
-<h3 id="Gray16.Gray16At">func (*Gray16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L756">Gray16At</a>
+<h3 id="Gray16.Gray16At">func (*Gray16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L756">Gray16At</a>
     <a href="#Gray16.Gray16At">¶</a></h3>
 <pre>func (p *<a href="#Gray16">Gray16</a>) Gray16At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Gray16">Gray16</a></pre>
 
 
-<h3 id="Gray16.Opaque">func (*Gray16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L808">Opaque</a>
+<h3 id="Gray16.Opaque">func (*Gray16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L808">Opaque</a>
     <a href="#Gray16.Opaque">¶</a></h3>
 <pre>func (p *<a href="#Gray16">Gray16</a>) Opaque() <a href="/builtin/#bool">bool</a></pre>
 
 Opaque scans the entire image and reports whether it is fully opaque.
 
-<h3 id="Gray16.PixOffset">func (*Gray16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L766">PixOffset</a>
+<h3 id="Gray16.PixOffset">func (*Gray16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L766">PixOffset</a>
     <a href="#Gray16.PixOffset">¶</a></h3>
 <pre>func (p *<a href="#Gray16">Gray16</a>) PixOffset(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 PixOffset returns the index of the first element of Pix that corresponds to the
 pixel at (x, y).
 
-<h3 id="Gray16.Set">func (*Gray16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L770">Set</a>
+<h3 id="Gray16.Set">func (*Gray16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L770">Set</a>
     <a href="#Gray16.Set">¶</a></h3>
 <pre>func (p *<a href="#Gray16">Gray16</a>) Set(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a>)</pre>
 
 
-<h3 id="Gray16.SetGray16">func (*Gray16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L780">SetGray16</a>
+<h3 id="Gray16.SetGray16">func (*Gray16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L780">SetGray16</a>
     <a href="#Gray16.SetGray16">¶</a></h3>
 <pre>func (p *<a href="#Gray16">Gray16</a>) SetGray16(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#Gray16">Gray16</a>)</pre>
 
 
-<h3 id="Gray16.SubImage">func (*Gray16) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L791">SubImage</a>
+<h3 id="Gray16.SubImage">func (*Gray16) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L791">SubImage</a>
     <a href="#Gray16.SubImage">¶</a></h3>
 <pre>func (p *<a href="#Gray16">Gray16</a>) SubImage(r <a href="#Rectangle">Rectangle</a>) <a href="#Image">Image</a></pre>
 
 SubImage returns an image representing the portion of the image p visible
 through r. The returned value shares pixels with the original image.
 
-<h2 id="Image">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L26">Image</a>
+<h2 id="Image">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L26">Image</a>
     <a href="#Image">¶</a></h2>
 <pre>type Image interface {
     <span class="comment">// ColorModel returns the Image&#39;s color model.</span>
@@ -762,7 +762,7 @@ through r. The returned value shares pixels with the original image.
 Image is a finite rectangular grid of color.Color values taken from a color
 model.
 
-<h3 id="Decode">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/format.go#L68">Decode</a>
+<h3 id="Decode">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/format.go#L68">Decode</a>
     <a href="#Decode">¶</a></h3>
 <pre>func Decode(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (<a href="#Image">Image</a>, <a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -770,7 +770,7 @@ Decode decodes an image that has been encoded in a registered format. The string
 returned is the format name used during format registration. Format registration
 is typically done by an init function in the codec- specific package.
 
-<h2 id="NRGBA">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L261">NRGBA</a>
+<h2 id="NRGBA">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L261">NRGBA</a>
     <a href="#NRGBA">¶</a></h2>
 <pre>type NRGBA struct {
 <span id="NRGBA.Pix"></span>    <span class="comment">// Pix holds the image&#39;s pixels, in R, G, B, A order. The pixel at</span>
@@ -784,63 +784,63 @@ is typically done by an init function in the codec- specific package.
 
 NRGBA is an in-memory image whose At method returns color.NRGBA values.
 
-<h3 id="NewNRGBA">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L353">NewNRGBA</a>
+<h3 id="NewNRGBA">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L353">NewNRGBA</a>
     <a href="#NewNRGBA">¶</a></h3>
 <pre>func NewNRGBA(r <a href="#Rectangle">Rectangle</a>) *<a href="#NRGBA">NRGBA</a></pre>
 
 NewNRGBA returns a new NRGBA image with the given bounds.
 
-<h3 id="NRGBA.At">func (*NRGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L275">At</a>
+<h3 id="NRGBA.At">func (*NRGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L275">At</a>
     <a href="#NRGBA.At">¶</a></h3>
 <pre>func (p *<a href="#NRGBA">NRGBA</a>) At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 
-<h3 id="NRGBA.Bounds">func (*NRGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L273">Bounds</a>
+<h3 id="NRGBA.Bounds">func (*NRGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L273">Bounds</a>
     <a href="#NRGBA.Bounds">¶</a></h3>
 <pre>func (p *<a href="#NRGBA">NRGBA</a>) Bounds() <a href="#Rectangle">Rectangle</a></pre>
 
 
-<h3 id="NRGBA.ColorModel">func (*NRGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L271">ColorModel</a>
+<h3 id="NRGBA.ColorModel">func (*NRGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L271">ColorModel</a>
     <a href="#NRGBA.ColorModel">¶</a></h3>
 <pre>func (p *<a href="#NRGBA">NRGBA</a>) ColorModel() <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a></pre>
 
 
-<h3 id="NRGBA.NRGBAAt">func (*NRGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L279">NRGBAAt</a>
+<h3 id="NRGBA.NRGBAAt">func (*NRGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L279">NRGBAAt</a>
     <a href="#NRGBA.NRGBAAt">¶</a></h3>
 <pre>func (p *<a href="#NRGBA">NRGBA</a>) NRGBAAt(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#NRGBA">NRGBA</a></pre>
 
 
-<h3 id="NRGBA.Opaque">func (*NRGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L335">Opaque</a>
+<h3 id="NRGBA.Opaque">func (*NRGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L335">Opaque</a>
     <a href="#NRGBA.Opaque">¶</a></h3>
 <pre>func (p *<a href="#NRGBA">NRGBA</a>) Opaque() <a href="/builtin/#bool">bool</a></pre>
 
 Opaque scans the entire image and reports whether it is fully opaque.
 
-<h3 id="NRGBA.PixOffset">func (*NRGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L289">PixOffset</a>
+<h3 id="NRGBA.PixOffset">func (*NRGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L289">PixOffset</a>
     <a href="#NRGBA.PixOffset">¶</a></h3>
 <pre>func (p *<a href="#NRGBA">NRGBA</a>) PixOffset(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 PixOffset returns the index of the first element of Pix that corresponds to the
 pixel at (x, y).
 
-<h3 id="NRGBA.Set">func (*NRGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L293">Set</a>
+<h3 id="NRGBA.Set">func (*NRGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L293">Set</a>
     <a href="#NRGBA.Set">¶</a></h3>
 <pre>func (p *<a href="#NRGBA">NRGBA</a>) Set(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a>)</pre>
 
 
-<h3 id="NRGBA.SetNRGBA">func (*NRGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L305">SetNRGBA</a>
+<h3 id="NRGBA.SetNRGBA">func (*NRGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L305">SetNRGBA</a>
     <a href="#NRGBA.SetNRGBA">¶</a></h3>
 <pre>func (p *<a href="#NRGBA">NRGBA</a>) SetNRGBA(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#NRGBA">NRGBA</a>)</pre>
 
 
-<h3 id="NRGBA.SubImage">func (*NRGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L318">SubImage</a>
+<h3 id="NRGBA.SubImage">func (*NRGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L318">SubImage</a>
     <a href="#NRGBA.SubImage">¶</a></h3>
 <pre>func (p *<a href="#NRGBA">NRGBA</a>) SubImage(r <a href="#Rectangle">Rectangle</a>) <a href="#Image">Image</a></pre>
 
 SubImage returns an image representing the portion of the image p visible
 through r. The returned value shares pixels with the original image.
 
-<h2 id="NRGBA64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L360">NRGBA64</a>
+<h2 id="NRGBA64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L360">NRGBA64</a>
     <a href="#NRGBA64">¶</a></h2>
 <pre>type NRGBA64 struct {
 <span id="NRGBA64.Pix"></span>    <span class="comment">// Pix holds the image&#39;s pixels, in R, G, B, A order and big-endian format. The pixel at</span>
@@ -854,63 +854,63 @@ through r. The returned value shares pixels with the original image.
 
 NRGBA64 is an in-memory image whose At method returns color.NRGBA64 values.
 
-<h3 id="NewNRGBA64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L465">NewNRGBA64</a>
+<h3 id="NewNRGBA64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L465">NewNRGBA64</a>
     <a href="#NewNRGBA64">¶</a></h3>
 <pre>func NewNRGBA64(r <a href="#Rectangle">Rectangle</a>) *<a href="#NRGBA64">NRGBA64</a></pre>
 
 NewNRGBA64 returns a new NRGBA64 image with the given bounds.
 
-<h3 id="NRGBA64.At">func (*NRGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L374">At</a>
+<h3 id="NRGBA64.At">func (*NRGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L374">At</a>
     <a href="#NRGBA64.At">¶</a></h3>
 <pre>func (p *<a href="#NRGBA64">NRGBA64</a>) At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 
-<h3 id="NRGBA64.Bounds">func (*NRGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L372">Bounds</a>
+<h3 id="NRGBA64.Bounds">func (*NRGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L372">Bounds</a>
     <a href="#NRGBA64.Bounds">¶</a></h3>
 <pre>func (p *<a href="#NRGBA64">NRGBA64</a>) Bounds() <a href="#Rectangle">Rectangle</a></pre>
 
 
-<h3 id="NRGBA64.ColorModel">func (*NRGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L370">ColorModel</a>
+<h3 id="NRGBA64.ColorModel">func (*NRGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L370">ColorModel</a>
     <a href="#NRGBA64.ColorModel">¶</a></h3>
 <pre>func (p *<a href="#NRGBA64">NRGBA64</a>) ColorModel() <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a></pre>
 
 
-<h3 id="NRGBA64.NRGBA64At">func (*NRGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L378">NRGBA64At</a>
+<h3 id="NRGBA64.NRGBA64At">func (*NRGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L378">NRGBA64At</a>
     <a href="#NRGBA64.NRGBA64At">¶</a></h3>
 <pre>func (p *<a href="#NRGBA64">NRGBA64</a>) NRGBA64At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#NRGBA64">NRGBA64</a></pre>
 
 
-<h3 id="NRGBA64.Opaque">func (*NRGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L447">Opaque</a>
+<h3 id="NRGBA64.Opaque">func (*NRGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L447">Opaque</a>
     <a href="#NRGBA64.Opaque">¶</a></h3>
 <pre>func (p *<a href="#NRGBA64">NRGBA64</a>) Opaque() <a href="/builtin/#bool">bool</a></pre>
 
 Opaque scans the entire image and reports whether it is fully opaque.
 
-<h3 id="NRGBA64.PixOffset">func (*NRGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L393">PixOffset</a>
+<h3 id="NRGBA64.PixOffset">func (*NRGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L393">PixOffset</a>
     <a href="#NRGBA64.PixOffset">¶</a></h3>
 <pre>func (p *<a href="#NRGBA64">NRGBA64</a>) PixOffset(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 PixOffset returns the index of the first element of Pix that corresponds to the
 pixel at (x, y).
 
-<h3 id="NRGBA64.Set">func (*NRGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L397">Set</a>
+<h3 id="NRGBA64.Set">func (*NRGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L397">Set</a>
     <a href="#NRGBA64.Set">¶</a></h3>
 <pre>func (p *<a href="#NRGBA64">NRGBA64</a>) Set(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a>)</pre>
 
 
-<h3 id="NRGBA64.SetNRGBA64">func (*NRGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L413">SetNRGBA64</a>
+<h3 id="NRGBA64.SetNRGBA64">func (*NRGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L413">SetNRGBA64</a>
     <a href="#NRGBA64.SetNRGBA64">¶</a></h3>
 <pre>func (p *<a href="#NRGBA64">NRGBA64</a>) SetNRGBA64(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#NRGBA64">NRGBA64</a>)</pre>
 
 
-<h3 id="NRGBA64.SubImage">func (*NRGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L430">SubImage</a>
+<h3 id="NRGBA64.SubImage">func (*NRGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L430">SubImage</a>
     <a href="#NRGBA64.SubImage">¶</a></h3>
 <pre>func (p *<a href="#NRGBA64">NRGBA64</a>) SubImage(r <a href="#Rectangle">Rectangle</a>) <a href="#Image">Image</a></pre>
 
 SubImage returns an image representing the portion of the image p visible
 through r. The returned value shares pixels with the original image.
 
-<h2 id="NYCbCrA">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L179">NYCbCrA</a>
+<h2 id="NYCbCrA">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L179">NYCbCrA</a>
     <a href="#NYCbCrA">¶</a></h2>
 <pre>type NYCbCrA struct {
     <a href="#YCbCr">YCbCr</a>
@@ -922,49 +922,49 @@ NYCbCrA is an in-memory image of non-alpha-premultiplied Y'CbCr-with-alpha
 colors. A and AStride are analogous to the Y and YStride fields of the embedded
 YCbCr.
 
-<h3 id="NewNYCbCrA">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L268">NewNYCbCrA</a>
+<h3 id="NewNYCbCrA">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L268">NewNYCbCrA</a>
     <a href="#NewNYCbCrA">¶</a></h3>
 <pre>func NewNYCbCrA(r <a href="#Rectangle">Rectangle</a>, subsampleRatio <a href="#YCbCrSubsampleRatio">YCbCrSubsampleRatio</a>) *<a href="#NYCbCrA">NYCbCrA</a></pre>
 
 NewNYCbCrA returns a new NYCbCrA image with the given bounds and subsample
 ratio.
 
-<h3 id="NYCbCrA.AOffset">func (*NYCbCrA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L212">AOffset</a>
+<h3 id="NYCbCrA.AOffset">func (*NYCbCrA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L212">AOffset</a>
     <a href="#NYCbCrA.AOffset">¶</a></h3>
 <pre>func (p *<a href="#NYCbCrA">NYCbCrA</a>) AOffset(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 AOffset returns the index of the first element of A that corresponds to the
 pixel at (x, y).
 
-<h3 id="NYCbCrA.At">func (*NYCbCrA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L189">At</a>
+<h3 id="NYCbCrA.At">func (*NYCbCrA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L189">At</a>
     <a href="#NYCbCrA.At">¶</a></h3>
 <pre>func (p *<a href="#NYCbCrA">NYCbCrA</a>) At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 
-<h3 id="NYCbCrA.ColorModel">func (*NYCbCrA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L185">ColorModel</a>
+<h3 id="NYCbCrA.ColorModel">func (*NYCbCrA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L185">ColorModel</a>
     <a href="#NYCbCrA.ColorModel">¶</a></h3>
 <pre>func (p *<a href="#NYCbCrA">NYCbCrA</a>) ColorModel() <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a></pre>
 
 
-<h3 id="NYCbCrA.NYCbCrAAt">func (*NYCbCrA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L193">NYCbCrAAt</a>
+<h3 id="NYCbCrA.NYCbCrAAt">func (*NYCbCrA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L193">NYCbCrAAt</a>
     <a href="#NYCbCrA.NYCbCrAAt">¶</a></h3>
 <pre>func (p *<a href="#NYCbCrA">NYCbCrA</a>) NYCbCrAAt(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#NYCbCrA">NYCbCrA</a></pre>
 
 
-<h3 id="NYCbCrA.Opaque">func (*NYCbCrA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L249">Opaque</a>
+<h3 id="NYCbCrA.Opaque">func (*NYCbCrA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L249">Opaque</a>
     <a href="#NYCbCrA.Opaque">¶</a></h3>
 <pre>func (p *<a href="#NYCbCrA">NYCbCrA</a>) Opaque() <a href="/builtin/#bool">bool</a></pre>
 
 Opaque scans the entire image and reports whether it is fully opaque.
 
-<h3 id="NYCbCrA.SubImage">func (*NYCbCrA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L218">SubImage</a>
+<h3 id="NYCbCrA.SubImage">func (*NYCbCrA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L218">SubImage</a>
     <a href="#NYCbCrA.SubImage">¶</a></h3>
 <pre>func (p *<a href="#NYCbCrA">NYCbCrA</a>) SubImage(r <a href="#Rectangle">Rectangle</a>) <a href="#Image">Image</a></pre>
 
 SubImage returns an image representing the portion of the image p visible
 through r. The returned value shares pixels with the original image.
 
-<h2 id="Paletted">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L906">Paletted</a>
+<h2 id="Paletted">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L906">Paletted</a>
     <a href="#Paletted">¶</a></h2>
 <pre>type Paletted struct {
 <span id="Paletted.Pix"></span>    <span class="comment">// Pix holds the image&#39;s pixels, as palette indices. The pixel at</span>
@@ -980,64 +980,64 @@ through r. The returned value shares pixels with the original image.
 
 Paletted is an in-memory image of uint8 indices into a given palette.
 
-<h3 id="NewPaletted">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L1009">NewPaletted</a>
+<h3 id="NewPaletted">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L1009">NewPaletted</a>
     <a href="#NewPaletted">¶</a></h3>
 <pre>func NewPaletted(r <a href="#Rectangle">Rectangle</a>, p <a href="/image/color/">color</a>.<a href="/image/color/#Palette">Palette</a>) *<a href="#Paletted">Paletted</a></pre>
 
 NewPaletted returns a new Paletted image with the given width, height and
 palette.
 
-<h3 id="Paletted.At">func (*Paletted) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L922">At</a>
+<h3 id="Paletted.At">func (*Paletted) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L922">At</a>
     <a href="#Paletted.At">¶</a></h3>
 <pre>func (p *<a href="#Paletted">Paletted</a>) At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 
-<h3 id="Paletted.Bounds">func (*Paletted) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L920">Bounds</a>
+<h3 id="Paletted.Bounds">func (*Paletted) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L920">Bounds</a>
     <a href="#Paletted.Bounds">¶</a></h3>
 <pre>func (p *<a href="#Paletted">Paletted</a>) Bounds() <a href="#Rectangle">Rectangle</a></pre>
 
 
-<h3 id="Paletted.ColorIndexAt">func (*Paletted) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L947">ColorIndexAt</a>
+<h3 id="Paletted.ColorIndexAt">func (*Paletted) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L947">ColorIndexAt</a>
     <a href="#Paletted.ColorIndexAt">¶</a></h3>
 <pre>func (p *<a href="#Paletted">Paletted</a>) ColorIndexAt(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#uint8">uint8</a></pre>
 
 
-<h3 id="Paletted.ColorModel">func (*Paletted) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L918">ColorModel</a>
+<h3 id="Paletted.ColorModel">func (*Paletted) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L918">ColorModel</a>
     <a href="#Paletted.ColorModel">¶</a></h3>
 <pre>func (p *<a href="#Paletted">Paletted</a>) ColorModel() <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a></pre>
 
 
-<h3 id="Paletted.Opaque">func (*Paletted) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L985">Opaque</a>
+<h3 id="Paletted.Opaque">func (*Paletted) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L985">Opaque</a>
     <a href="#Paletted.Opaque">¶</a></h3>
 <pre>func (p *<a href="#Paletted">Paletted</a>) Opaque() <a href="/builtin/#bool">bool</a></pre>
 
 Opaque scans the entire image and reports whether it is fully opaque.
 
-<h3 id="Paletted.PixOffset">func (*Paletted) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L935">PixOffset</a>
+<h3 id="Paletted.PixOffset">func (*Paletted) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L935">PixOffset</a>
     <a href="#Paletted.PixOffset">¶</a></h3>
 <pre>func (p *<a href="#Paletted">Paletted</a>) PixOffset(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 PixOffset returns the index of the first element of Pix that corresponds to the
 pixel at (x, y).
 
-<h3 id="Paletted.Set">func (*Paletted) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L939">Set</a>
+<h3 id="Paletted.Set">func (*Paletted) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L939">Set</a>
     <a href="#Paletted.Set">¶</a></h3>
 <pre>func (p *<a href="#Paletted">Paletted</a>) Set(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a>)</pre>
 
 
-<h3 id="Paletted.SetColorIndex">func (*Paletted) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L955">SetColorIndex</a>
+<h3 id="Paletted.SetColorIndex">func (*Paletted) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L955">SetColorIndex</a>
     <a href="#Paletted.SetColorIndex">¶</a></h3>
 <pre>func (p *<a href="#Paletted">Paletted</a>) SetColorIndex(x, y <a href="/builtin/#int">int</a>, index <a href="/builtin/#uint8">uint8</a>)</pre>
 
 
-<h3 id="Paletted.SubImage">func (*Paletted) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L965">SubImage</a>
+<h3 id="Paletted.SubImage">func (*Paletted) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L965">SubImage</a>
     <a href="#Paletted.SubImage">¶</a></h3>
 <pre>func (p *<a href="#Paletted">Paletted</a>) SubImage(r <a href="#Rectangle">Rectangle</a>) <a href="#Image">Image</a></pre>
 
 SubImage returns an image representing the portion of the image p visible
 through r. The returned value shares pixels with the original image.
 
-<h2 id="PalettedImage">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L43">PalettedImage</a>
+<h2 id="PalettedImage">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L43">PalettedImage</a>
     <a href="#PalettedImage">¶</a></h2>
 <pre>type PalettedImage interface {
     <span class="comment">// ColorIndexAt returns the palette index of the pixel at (x, y).</span>
@@ -1050,7 +1050,7 @@ a PalettedImage and m.ColorModel() returns a color.Palette p, then m.At(x, y)
 should be equivalent to p[m.ColorIndexAt(x, y)]. If m's color model is not a
 color.Palette, then ColorIndexAt's behavior is undefined.
 
-<h2 id="Point">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L3">Point</a>
+<h2 id="Point">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L3">Point</a>
     <a href="#Point">¶</a></h2>
 <pre>type Point struct {
 <span id="Point.X"></span>    X, Y <a href="/builtin/#int">int</a>
@@ -1062,62 +1062,62 @@ A Point is an X, Y coordinate pair. The axes increase right and down.
 
 ZP is the zero Point.
 
-<h3 id="Pt">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L63">Pt</a>
+<h3 id="Pt">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L63">Pt</a>
     <a href="#Pt">¶</a></h3>
 <pre>func Pt(X, Y <a href="/builtin/#int">int</a>) <a href="#Point">Point</a></pre>
 
 Pt is shorthand for Point{X, Y}.
 
-<h3 id="Point.Add">func (Point) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L13">Add</a>
+<h3 id="Point.Add">func (Point) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L13">Add</a>
     <a href="#Point.Add">¶</a></h3>
 <pre>func (p <a href="#Point">Point</a>) Add(q <a href="#Point">Point</a>) <a href="#Point">Point</a></pre>
 
 Add returns the vector p+q.
 
-<h3 id="Point.Div">func (Point) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L28">Div</a>
+<h3 id="Point.Div">func (Point) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L28">Div</a>
     <a href="#Point.Div">¶</a></h3>
 <pre>func (p <a href="#Point">Point</a>) Div(k <a href="/builtin/#int">int</a>) <a href="#Point">Point</a></pre>
 
 Div returns the vector p/k.
 
-<h3 id="Point.Eq">func (Point) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L55">Eq</a>
+<h3 id="Point.Eq">func (Point) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L55">Eq</a>
     <a href="#Point.Eq">¶</a></h3>
 <pre>func (p <a href="#Point">Point</a>) Eq(q <a href="#Point">Point</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Eq reports whether p and q are equal.
 
-<h3 id="Point.In">func (Point) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L33">In</a>
+<h3 id="Point.In">func (Point) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L33">In</a>
     <a href="#Point.In">¶</a></h3>
 <pre>func (p <a href="#Point">Point</a>) In(r <a href="#Rectangle">Rectangle</a>) <a href="/builtin/#bool">bool</a></pre>
 
 In reports whether p is in r.
 
-<h3 id="Point.Mod">func (Point) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L40">Mod</a>
+<h3 id="Point.Mod">func (Point) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L40">Mod</a>
     <a href="#Point.Mod">¶</a></h3>
 <pre>func (p <a href="#Point">Point</a>) Mod(r <a href="#Rectangle">Rectangle</a>) <a href="#Point">Point</a></pre>
 
 Mod returns the point q in r such that p.X-q.X is a multiple of r's width and
 p.Y-q.Y is a multiple of r's height.
 
-<h3 id="Point.Mul">func (Point) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L23">Mul</a>
+<h3 id="Point.Mul">func (Point) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L23">Mul</a>
     <a href="#Point.Mul">¶</a></h3>
 <pre>func (p <a href="#Point">Point</a>) Mul(k <a href="/builtin/#int">int</a>) <a href="#Point">Point</a></pre>
 
 Mul returns the vector p*k.
 
-<h3 id="Point.String">func (Point) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L8">String</a>
+<h3 id="Point.String">func (Point) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L8">String</a>
     <a href="#Point.String">¶</a></h3>
 <pre>func (p <a href="#Point">Point</a>) String() <a href="/builtin/#string">string</a></pre>
 
 String returns a string representation of p like "(3,4)".
 
-<h3 id="Point.Sub">func (Point) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L18">Sub</a>
+<h3 id="Point.Sub">func (Point) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L18">Sub</a>
     <a href="#Point.Sub">¶</a></h3>
 <pre>func (p <a href="#Point">Point</a>) Sub(q <a href="#Point">Point</a>) <a href="#Point">Point</a></pre>
 
 Sub returns the vector p-q.
 
-<h2 id="RGBA">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L50">RGBA</a>
+<h2 id="RGBA">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L50">RGBA</a>
     <a href="#RGBA">¶</a></h2>
 <pre>type RGBA struct {
 <span id="RGBA.Pix"></span>    <span class="comment">// Pix holds the image&#39;s pixels, in R, G, B, A order. The pixel at</span>
@@ -1131,63 +1131,63 @@ Sub returns the vector p-q.
 
 RGBA is an in-memory image whose At method returns color.RGBA values.
 
-<h3 id="NewRGBA">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L142">NewRGBA</a>
+<h3 id="NewRGBA">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L142">NewRGBA</a>
     <a href="#NewRGBA">¶</a></h3>
 <pre>func NewRGBA(r <a href="#Rectangle">Rectangle</a>) *<a href="#RGBA">RGBA</a></pre>
 
 NewRGBA returns a new RGBA image with the given bounds.
 
-<h3 id="RGBA.At">func (*RGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L64">At</a>
+<h3 id="RGBA.At">func (*RGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L64">At</a>
     <a href="#RGBA.At">¶</a></h3>
 <pre>func (p *<a href="#RGBA">RGBA</a>) At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 
-<h3 id="RGBA.Bounds">func (*RGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L62">Bounds</a>
+<h3 id="RGBA.Bounds">func (*RGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L62">Bounds</a>
     <a href="#RGBA.Bounds">¶</a></h3>
 <pre>func (p *<a href="#RGBA">RGBA</a>) Bounds() <a href="#Rectangle">Rectangle</a></pre>
 
 
-<h3 id="RGBA.ColorModel">func (*RGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L60">ColorModel</a>
+<h3 id="RGBA.ColorModel">func (*RGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L60">ColorModel</a>
     <a href="#RGBA.ColorModel">¶</a></h3>
 <pre>func (p *<a href="#RGBA">RGBA</a>) ColorModel() <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a></pre>
 
 
-<h3 id="RGBA.Opaque">func (*RGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L124">Opaque</a>
+<h3 id="RGBA.Opaque">func (*RGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L124">Opaque</a>
     <a href="#RGBA.Opaque">¶</a></h3>
 <pre>func (p *<a href="#RGBA">RGBA</a>) Opaque() <a href="/builtin/#bool">bool</a></pre>
 
 Opaque scans the entire image and reports whether it is fully opaque.
 
-<h3 id="RGBA.PixOffset">func (*RGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L78">PixOffset</a>
+<h3 id="RGBA.PixOffset">func (*RGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L78">PixOffset</a>
     <a href="#RGBA.PixOffset">¶</a></h3>
 <pre>func (p *<a href="#RGBA">RGBA</a>) PixOffset(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 PixOffset returns the index of the first element of Pix that corresponds to the
 pixel at (x, y).
 
-<h3 id="RGBA.RGBAAt">func (*RGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L68">RGBAAt</a>
+<h3 id="RGBA.RGBAAt">func (*RGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L68">RGBAAt</a>
     <a href="#RGBA.RGBAAt">¶</a></h3>
 <pre>func (p *<a href="#RGBA">RGBA</a>) RGBAAt(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#RGBA">RGBA</a></pre>
 
 
-<h3 id="RGBA.Set">func (*RGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L82">Set</a>
+<h3 id="RGBA.Set">func (*RGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L82">Set</a>
     <a href="#RGBA.Set">¶</a></h3>
 <pre>func (p *<a href="#RGBA">RGBA</a>) Set(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a>)</pre>
 
 
-<h3 id="RGBA.SetRGBA">func (*RGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L94">SetRGBA</a>
+<h3 id="RGBA.SetRGBA">func (*RGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L94">SetRGBA</a>
     <a href="#RGBA.SetRGBA">¶</a></h3>
 <pre>func (p *<a href="#RGBA">RGBA</a>) SetRGBA(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#RGBA">RGBA</a>)</pre>
 
 
-<h3 id="RGBA.SubImage">func (*RGBA) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L107">SubImage</a>
+<h3 id="RGBA.SubImage">func (*RGBA) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L107">SubImage</a>
     <a href="#RGBA.SubImage">¶</a></h3>
 <pre>func (p *<a href="#RGBA">RGBA</a>) SubImage(r <a href="#Rectangle">Rectangle</a>) <a href="#Image">Image</a></pre>
 
 SubImage returns an image representing the portion of the image p visible
 through r. The returned value shares pixels with the original image.
 
-<h2 id="RGBA64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L149">RGBA64</a>
+<h2 id="RGBA64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L149">RGBA64</a>
     <a href="#RGBA64">¶</a></h2>
 <pre>type RGBA64 struct {
 <span id="RGBA64.Pix"></span>    <span class="comment">// Pix holds the image&#39;s pixels, in R, G, B, A order and big-endian format. The pixel at</span>
@@ -1201,63 +1201,63 @@ through r. The returned value shares pixels with the original image.
 
 RGBA64 is an in-memory image whose At method returns color.RGBA64 values.
 
-<h3 id="NewRGBA64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L254">NewRGBA64</a>
+<h3 id="NewRGBA64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L254">NewRGBA64</a>
     <a href="#NewRGBA64">¶</a></h3>
 <pre>func NewRGBA64(r <a href="#Rectangle">Rectangle</a>) *<a href="#RGBA64">RGBA64</a></pre>
 
 NewRGBA64 returns a new RGBA64 image with the given bounds.
 
-<h3 id="RGBA64.At">func (*RGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L163">At</a>
+<h3 id="RGBA64.At">func (*RGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L163">At</a>
     <a href="#RGBA64.At">¶</a></h3>
 <pre>func (p *<a href="#RGBA64">RGBA64</a>) At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 
-<h3 id="RGBA64.Bounds">func (*RGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L161">Bounds</a>
+<h3 id="RGBA64.Bounds">func (*RGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L161">Bounds</a>
     <a href="#RGBA64.Bounds">¶</a></h3>
 <pre>func (p *<a href="#RGBA64">RGBA64</a>) Bounds() <a href="#Rectangle">Rectangle</a></pre>
 
 
-<h3 id="RGBA64.ColorModel">func (*RGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L159">ColorModel</a>
+<h3 id="RGBA64.ColorModel">func (*RGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L159">ColorModel</a>
     <a href="#RGBA64.ColorModel">¶</a></h3>
 <pre>func (p *<a href="#RGBA64">RGBA64</a>) ColorModel() <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a></pre>
 
 
-<h3 id="RGBA64.Opaque">func (*RGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L236">Opaque</a>
+<h3 id="RGBA64.Opaque">func (*RGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L236">Opaque</a>
     <a href="#RGBA64.Opaque">¶</a></h3>
 <pre>func (p *<a href="#RGBA64">RGBA64</a>) Opaque() <a href="/builtin/#bool">bool</a></pre>
 
 Opaque scans the entire image and reports whether it is fully opaque.
 
-<h3 id="RGBA64.PixOffset">func (*RGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L182">PixOffset</a>
+<h3 id="RGBA64.PixOffset">func (*RGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L182">PixOffset</a>
     <a href="#RGBA64.PixOffset">¶</a></h3>
 <pre>func (p *<a href="#RGBA64">RGBA64</a>) PixOffset(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 PixOffset returns the index of the first element of Pix that corresponds to the
 pixel at (x, y).
 
-<h3 id="RGBA64.RGBA64At">func (*RGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L167">RGBA64At</a>
+<h3 id="RGBA64.RGBA64At">func (*RGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L167">RGBA64At</a>
     <a href="#RGBA64.RGBA64At">¶</a></h3>
 <pre>func (p *<a href="#RGBA64">RGBA64</a>) RGBA64At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#RGBA64">RGBA64</a></pre>
 
 
-<h3 id="RGBA64.Set">func (*RGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L186">Set</a>
+<h3 id="RGBA64.Set">func (*RGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L186">Set</a>
     <a href="#RGBA64.Set">¶</a></h3>
 <pre>func (p *<a href="#RGBA64">RGBA64</a>) Set(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a>)</pre>
 
 
-<h3 id="RGBA64.SetRGBA64">func (*RGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L202">SetRGBA64</a>
+<h3 id="RGBA64.SetRGBA64">func (*RGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L202">SetRGBA64</a>
     <a href="#RGBA64.SetRGBA64">¶</a></h3>
 <pre>func (p *<a href="#RGBA64">RGBA64</a>) SetRGBA64(x, y <a href="/builtin/#int">int</a>, c <a href="/image/color/">color</a>.<a href="/image/color/#RGBA64">RGBA64</a>)</pre>
 
 
-<h3 id="RGBA64.SubImage">func (*RGBA64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/image.go#L219">SubImage</a>
+<h3 id="RGBA64.SubImage">func (*RGBA64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/image.go#L219">SubImage</a>
     <a href="#RGBA64.SubImage">¶</a></h3>
 <pre>func (p *<a href="#RGBA64">RGBA64</a>) SubImage(r <a href="#Rectangle">Rectangle</a>) <a href="#Image">Image</a></pre>
 
 SubImage returns an image representing the portion of the image p visible
 through r. The returned value shares pixels with the original image.
 
-<h2 id="Rectangle">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L75">Rectangle</a>
+<h2 id="Rectangle">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L75">Rectangle</a>
     <a href="#Rectangle">¶</a></h2>
 <pre>type Rectangle struct {
 <span id="Rectangle.Min"></span>    Min, Max <a href="#Point">Point</a>
@@ -1275,7 +1275,7 @@ color.Opaque for points in the rectangle and color.Transparent otherwise.
 
 ZR is the zero Rectangle.
 
-<h3 id="Rect">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L252">Rect</a>
+<h3 id="Rect">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L252">Rect</a>
     <a href="#Rect">¶</a></h3>
 <pre>func Rect(x0, y0, x1, y1 <a href="/builtin/#int">int</a>) <a href="#Rectangle">Rectangle</a></pre>
 
@@ -1283,69 +1283,69 @@ Rect is shorthand for Rectangle{Pt(x0, y0), Pt(x1, y1)}. The returned rectangle
 has minimum and maximum coordinates swapped if necessary so that it is
 well-formed.
 
-<h3 id="Rectangle.Add">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L103">Add</a>
+<h3 id="Rectangle.Add">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L103">Add</a>
     <a href="#Rectangle.Add">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) Add(p <a href="#Point">Point</a>) <a href="#Rectangle">Rectangle</a></pre>
 
 Add returns the rectangle r translated by p.
 
-<h3 id="Rectangle.At">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L229">At</a>
+<h3 id="Rectangle.At">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L229">At</a>
     <a href="#Rectangle.At">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 At implements the Image interface.
 
-<h3 id="Rectangle.Bounds">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L237">Bounds</a>
+<h3 id="Rectangle.Bounds">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L237">Bounds</a>
     <a href="#Rectangle.Bounds">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) Bounds() <a href="#Rectangle">Rectangle</a></pre>
 
 Bounds implements the Image interface.
 
-<h3 id="Rectangle.Canon">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L218">Canon</a>
+<h3 id="Rectangle.Canon">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L218">Canon</a>
     <a href="#Rectangle.Canon">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) Canon() <a href="#Rectangle">Rectangle</a></pre>
 
 Canon returns the canonical version of r. The returned rectangle has minimum and
 maximum coordinates swapped if necessary so that it is well-formed.
 
-<h3 id="Rectangle.ColorModel">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L242">ColorModel</a>
+<h3 id="Rectangle.ColorModel">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L242">ColorModel</a>
     <a href="#Rectangle.ColorModel">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) ColorModel() <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a></pre>
 
 ColorModel implements the Image interface.
 
-<h3 id="Rectangle.Dx">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L85">Dx</a>
+<h3 id="Rectangle.Dx">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L85">Dx</a>
     <a href="#Rectangle.Dx">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) Dx() <a href="/builtin/#int">int</a></pre>
 
 Dx returns r's width.
 
-<h3 id="Rectangle.Dy">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L90">Dy</a>
+<h3 id="Rectangle.Dy">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L90">Dy</a>
     <a href="#Rectangle.Dy">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) Dy() <a href="/builtin/#int">int</a></pre>
 
 Dy returns r's height.
 
-<h3 id="Rectangle.Empty">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L188">Empty</a>
+<h3 id="Rectangle.Empty">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L188">Empty</a>
     <a href="#Rectangle.Empty">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) Empty() <a href="/builtin/#bool">bool</a></pre>
 
 Empty reports whether the rectangle contains no points.
 
-<h3 id="Rectangle.Eq">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L194">Eq</a>
+<h3 id="Rectangle.Eq">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L194">Eq</a>
     <a href="#Rectangle.Eq">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) Eq(s <a href="#Rectangle">Rectangle</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Eq reports whether r and s contain the same set of points. All empty rectangles
 are considered equal.
 
-<h3 id="Rectangle.In">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L206">In</a>
+<h3 id="Rectangle.In">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L206">In</a>
     <a href="#Rectangle.In">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) In(s <a href="#Rectangle">Rectangle</a>) <a href="/builtin/#bool">bool</a></pre>
 
 In reports whether every point in r is in s.
 
-<h3 id="Rectangle.Inset">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L121">Inset</a>
+<h3 id="Rectangle.Inset">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L121">Inset</a>
     <a href="#Rectangle.Inset">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) Inset(n <a href="/builtin/#int">int</a>) <a href="#Rectangle">Rectangle</a></pre>
 
@@ -1353,44 +1353,44 @@ Inset returns the rectangle r inset by n, which may be negative. If either of
 r's dimensions is less than 2*n then an empty rectangle near the center of r
 will be returned.
 
-<h3 id="Rectangle.Intersect">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L141">Intersect</a>
+<h3 id="Rectangle.Intersect">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L141">Intersect</a>
     <a href="#Rectangle.Intersect">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) Intersect(s <a href="#Rectangle">Rectangle</a>) <a href="#Rectangle">Rectangle</a></pre>
 
 Intersect returns the largest rectangle contained by both r and s. If the two
 rectangles do not overlap then the zero rectangle will be returned.
 
-<h3 id="Rectangle.Overlaps">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L199">Overlaps</a>
+<h3 id="Rectangle.Overlaps">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L199">Overlaps</a>
     <a href="#Rectangle.Overlaps">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) Overlaps(s <a href="#Rectangle">Rectangle</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Overlaps reports whether r and s have a non-empty intersection.
 
-<h3 id="Rectangle.Size">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L95">Size</a>
+<h3 id="Rectangle.Size">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L95">Size</a>
     <a href="#Rectangle.Size">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) Size() <a href="#Point">Point</a></pre>
 
 Size returns r's width and height.
 
-<h3 id="Rectangle.String">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L80">String</a>
+<h3 id="Rectangle.String">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L80">String</a>
     <a href="#Rectangle.String">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) String() <a href="/builtin/#string">string</a></pre>
 
 String returns a string representation of r like "(3,4)-(6,5)".
 
-<h3 id="Rectangle.Sub">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L111">Sub</a>
+<h3 id="Rectangle.Sub">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L111">Sub</a>
     <a href="#Rectangle.Sub">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) Sub(p <a href="#Point">Point</a>) <a href="#Rectangle">Rectangle</a></pre>
 
 Sub returns the rectangle r translated by -p.
 
-<h3 id="Rectangle.Union">func (Rectangle) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/geom.go#L165">Union</a>
+<h3 id="Rectangle.Union">func (Rectangle) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/geom.go#L165">Union</a>
     <a href="#Rectangle.Union">¶</a></h3>
 <pre>func (r <a href="#Rectangle">Rectangle</a>) Union(s <a href="#Rectangle">Rectangle</a>) <a href="#Rectangle">Rectangle</a></pre>
 
 Union returns the smallest rectangle that contains both r and s.
 
-<h2 id="Uniform">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/names.go#L14">Uniform</a>
+<h2 id="Uniform">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/names.go#L14">Uniform</a>
     <a href="#Uniform">¶</a></h2>
 <pre>type Uniform struct {
 <span id="Uniform.C"></span>    C <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a>
@@ -1399,43 +1399,43 @@ Union returns the smallest rectangle that contains both r and s.
 Uniform is an infinite-sized Image of uniform color. It implements the
 color.Color, color.Model, and Image interfaces.
 
-<h3 id="NewUniform">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/names.go#L40">NewUniform</a>
+<h3 id="NewUniform">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/names.go#L40">NewUniform</a>
     <a href="#NewUniform">¶</a></h3>
 <pre>func NewUniform(c <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a>) *<a href="#Uniform">Uniform</a></pre>
 
 
-<h3 id="Uniform.At">func (*Uniform) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/names.go#L32">At</a>
+<h3 id="Uniform.At">func (*Uniform) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/names.go#L32">At</a>
     <a href="#Uniform.At">¶</a></h3>
 <pre>func (c *<a href="#Uniform">Uniform</a>) At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 
-<h3 id="Uniform.Bounds">func (*Uniform) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/names.go#L30">Bounds</a>
+<h3 id="Uniform.Bounds">func (*Uniform) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/names.go#L30">Bounds</a>
     <a href="#Uniform.Bounds">¶</a></h3>
 <pre>func (c *<a href="#Uniform">Uniform</a>) Bounds() <a href="#Rectangle">Rectangle</a></pre>
 
 
-<h3 id="Uniform.ColorModel">func (*Uniform) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/names.go#L22">ColorModel</a>
+<h3 id="Uniform.ColorModel">func (*Uniform) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/names.go#L22">ColorModel</a>
     <a href="#Uniform.ColorModel">¶</a></h3>
 <pre>func (c *<a href="#Uniform">Uniform</a>) ColorModel() <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a></pre>
 
 
-<h3 id="Uniform.Convert">func (*Uniform) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/names.go#L26">Convert</a>
+<h3 id="Uniform.Convert">func (*Uniform) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/names.go#L26">Convert</a>
     <a href="#Uniform.Convert">¶</a></h3>
 <pre>func (c *<a href="#Uniform">Uniform</a>) Convert(<a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 
-<h3 id="Uniform.Opaque">func (*Uniform) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/names.go#L35">Opaque</a>
+<h3 id="Uniform.Opaque">func (*Uniform) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/names.go#L35">Opaque</a>
     <a href="#Uniform.Opaque">¶</a></h3>
 <pre>func (c *<a href="#Uniform">Uniform</a>) Opaque() <a href="/builtin/#bool">bool</a></pre>
 
 Opaque scans the entire image and reports whether it is fully opaque.
 
-<h3 id="Uniform.RGBA">func (*Uniform) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/names.go#L18">RGBA</a>
+<h3 id="Uniform.RGBA">func (*Uniform) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/names.go#L18">RGBA</a>
     <a href="#Uniform.RGBA">¶</a></h3>
 <pre>func (c *<a href="#Uniform">Uniform</a>) RGBA() (r, g, b, a <a href="/builtin/#uint32">uint32</a>)</pre>
 
 
-<h2 id="YCbCr">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L44">YCbCr</a>
+<h2 id="YCbCr">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L44">YCbCr</a>
     <a href="#YCbCr">¶</a></h2>
 <pre>type YCbCr struct {
 <span id="YCbCr.Y"></span>    Y, Cb, Cr      []<a href="/builtin/#uint8">uint8</a>
@@ -1459,59 +1459,59 @@ multiples of 8, and:
     For 4:1:1, CStride == YStride/4 && len(Cb) == len(Cr) == len(Y)/4.
     For 4:1:0, CStride == YStride/4 && len(Cb) == len(Cr) == len(Y)/8.
 
-<h3 id="NewYCbCr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L159">NewYCbCr</a>
+<h3 id="NewYCbCr">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L159">NewYCbCr</a>
     <a href="#NewYCbCr">¶</a></h3>
 <pre>func NewYCbCr(r <a href="#Rectangle">Rectangle</a>, subsampleRatio <a href="#YCbCrSubsampleRatio">YCbCrSubsampleRatio</a>) *<a href="#YCbCr">YCbCr</a></pre>
 
 NewYCbCr returns a new YCbCr image with the given bounds and subsample ratio.
 
-<h3 id="YCbCr.At">func (*YCbCr) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L60">At</a>
+<h3 id="YCbCr.At">func (*YCbCr) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L60">At</a>
     <a href="#YCbCr.At">¶</a></h3>
 <pre>func (p *<a href="#YCbCr">YCbCr</a>) At(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#Color">Color</a></pre>
 
 
-<h3 id="YCbCr.Bounds">func (*YCbCr) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L56">Bounds</a>
+<h3 id="YCbCr.Bounds">func (*YCbCr) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L56">Bounds</a>
     <a href="#YCbCr.Bounds">¶</a></h3>
 <pre>func (p *<a href="#YCbCr">YCbCr</a>) Bounds() <a href="#Rectangle">Rectangle</a></pre>
 
 
-<h3 id="YCbCr.COffset">func (*YCbCr) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L85">COffset</a>
+<h3 id="YCbCr.COffset">func (*YCbCr) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L85">COffset</a>
     <a href="#YCbCr.COffset">¶</a></h3>
 <pre>func (p *<a href="#YCbCr">YCbCr</a>) COffset(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 COffset returns the index of the first element of Cb or Cr that corresponds to
 the pixel at (x, y).
 
-<h3 id="YCbCr.ColorModel">func (*YCbCr) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L52">ColorModel</a>
+<h3 id="YCbCr.ColorModel">func (*YCbCr) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L52">ColorModel</a>
     <a href="#YCbCr.ColorModel">¶</a></h3>
 <pre>func (p *<a href="#YCbCr">YCbCr</a>) ColorModel() <a href="/image/color/">color</a>.<a href="/image/color/#Model">Model</a></pre>
 
 
-<h3 id="YCbCr.Opaque">func (*YCbCr) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L127">Opaque</a>
+<h3 id="YCbCr.Opaque">func (*YCbCr) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L127">Opaque</a>
     <a href="#YCbCr.Opaque">¶</a></h3>
 <pre>func (p *<a href="#YCbCr">YCbCr</a>) Opaque() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="YCbCr.SubImage">func (*YCbCr) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L104">SubImage</a>
+<h3 id="YCbCr.SubImage">func (*YCbCr) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L104">SubImage</a>
     <a href="#YCbCr.SubImage">¶</a></h3>
 <pre>func (p *<a href="#YCbCr">YCbCr</a>) SubImage(r <a href="#Rectangle">Rectangle</a>) <a href="#Image">Image</a></pre>
 
 SubImage returns an image representing the portion of the image p visible
 through r. The returned value shares pixels with the original image.
 
-<h3 id="YCbCr.YCbCrAt">func (*YCbCr) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L64">YCbCrAt</a>
+<h3 id="YCbCr.YCbCrAt">func (*YCbCr) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L64">YCbCrAt</a>
     <a href="#YCbCr.YCbCrAt">¶</a></h3>
 <pre>func (p *<a href="#YCbCr">YCbCr</a>) YCbCrAt(x, y <a href="/builtin/#int">int</a>) <a href="/image/color/">color</a>.<a href="/image/color/#YCbCr">YCbCr</a></pre>
 
 
-<h3 id="YCbCr.YOffset">func (*YCbCr) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L79">YOffset</a>
+<h3 id="YCbCr.YOffset">func (*YCbCr) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L79">YOffset</a>
     <a href="#YCbCr.YOffset">¶</a></h3>
 <pre>func (p *<a href="#YCbCr">YCbCr</a>) YOffset(x, y <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 YOffset returns the index of the first element of Y that corresponds to the
 pixel at (x, y).
 
-<h2 id="YCbCrSubsampleRatio">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L2">YCbCrSubsampleRatio</a>
+<h2 id="YCbCrSubsampleRatio">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L2">YCbCrSubsampleRatio</a>
     <a href="#YCbCrSubsampleRatio">¶</a></h2>
 <pre>type YCbCrSubsampleRatio <a href="/builtin/#int">int</a></pre>
 
@@ -1527,7 +1527,7 @@ YCbCrSubsampleRatio is the chroma subsample ratio used in a YCbCr image.
 )</pre>
 
 
-<h3 id="YCbCrSubsampleRatio.String">func (YCbCrSubsampleRatio) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/ycbcr.go#L13">String</a>
+<h3 id="YCbCrSubsampleRatio.String">func (YCbCrSubsampleRatio) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/ycbcr.go#L13">String</a>
     <a href="#YCbCrSubsampleRatio.String">¶</a></h3>
 <pre>func (s <a href="#YCbCrSubsampleRatio">YCbCrSubsampleRatio</a>) String() <a href="/builtin/#string">string</a></pre>
 

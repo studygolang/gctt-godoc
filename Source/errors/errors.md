@@ -52,9 +52,9 @@ Example:
 - [New (Errorf)](#exampleNew_errorf)
 
 ### Package files
- [errors.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/errors/errors.go)
+ [errors.go](//github.com/golang/go/blob/release-branch.go1.10/src/errors/errors.go)
 
-<h2 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/errors/errors.go#L1">New</a>
+<h2 id="New">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/errors/errors.go#L1">New</a>
     <a href="#New">¶</a></h2>
 <pre>func New(text <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 

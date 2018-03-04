@@ -92,7 +92,7 @@ http://dwarfstd.org/doc/dwarf-2.0.0.pdf
   - [func (t *VoidType) String() string](#VoidType.String)
 
 ### Package files
- [buf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/buf.go) [class_string.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/class_string.go) [const.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/const.go) [entry.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go) [line.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/line.go) [open.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/open.go) [type.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go) [typeunit.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/typeunit.go) [unit.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/unit.go)
+ [buf.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/buf.go) [class_string.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/class_string.go) [const.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/const.go) [entry.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go) [line.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/line.go) [open.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/open.go) [type.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go) [typeunit.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/typeunit.go) [unit.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/unit.go)
 
 <h2 id="pkg-variables">Variables</h2>
 
@@ -101,7 +101,7 @@ http://dwarfstd.org/doc/dwarf-2.0.0.pdf
 ErrUnknownPC is the error returned by LineReader.ScanPC when the seek PC is not
 covered by any entry in the line table.
 
-<h2 id="AddrType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L77">AddrType</a>
+<h2 id="AddrType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L77">AddrType</a>
     <a href="#AddrType">¶</a></h2>
 <pre>type AddrType struct {
     <a href="#BasicType">BasicType</a>
@@ -109,7 +109,7 @@ covered by any entry in the line table.
 
 An AddrType represents a machine address type.
 
-<h2 id="ArrayType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L100">ArrayType</a>
+<h2 id="ArrayType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L100">ArrayType</a>
     <a href="#ArrayType">¶</a></h2>
 <pre>type ArrayType struct {
     <a href="#CommonType">CommonType</a>
@@ -120,17 +120,17 @@ An AddrType represents a machine address type.
 
 An ArrayType represents a fixed size array type.
 
-<h3 id="ArrayType.Size">func (*ArrayType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L111">Size</a>
+<h3 id="ArrayType.Size">func (*ArrayType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L111">Size</a>
     <a href="#ArrayType.Size">¶</a></h3>
 <pre>func (t *<a href="#ArrayType">ArrayType</a>) Size() <a href="/builtin/#int64">int64</a></pre>
 
 
-<h3 id="ArrayType.String">func (*ArrayType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L107">String</a>
+<h3 id="ArrayType.String">func (*ArrayType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L107">String</a>
     <a href="#ArrayType.String">¶</a></h3>
 <pre>func (t *<a href="#ArrayType">ArrayType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Attr">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/const.go#L2">Attr</a>
+<h2 id="Attr">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/const.go#L2">Attr</a>
     <a href="#Attr">¶</a></h2>
 <pre>type Attr <a href="/builtin/#uint32">uint32</a></pre>
 
@@ -212,17 +212,17 @@ An Attr identifies the attribute type in a DWARF Entry's Field.
 )</pre>
 
 
-<h3 id="Attr.GoString">func (Attr) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/const.go#L164">GoString</a>
+<h3 id="Attr.GoString">func (Attr) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/const.go#L164">GoString</a>
     <a href="#Attr.GoString">¶</a></h3>
 <pre>func (a <a href="#Attr">Attr</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Attr.String">func (Attr) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/const.go#L154">String</a>
+<h3 id="Attr.String">func (Attr) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/const.go#L154">String</a>
     <a href="#Attr.String">¶</a></h3>
 <pre>func (a <a href="#Attr">Attr</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="BasicType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L26">BasicType</a>
+<h2 id="BasicType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L26">BasicType</a>
     <a href="#BasicType">¶</a></h2>
 <pre>type BasicType struct {
     <a href="#CommonType">CommonType</a>
@@ -232,17 +232,17 @@ An Attr identifies the attribute type in a DWARF Entry's Field.
 
 A BasicType holds fields common to all basic types.
 
-<h3 id="BasicType.Basic">func (*BasicType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L32">Basic</a>
+<h3 id="BasicType.Basic">func (*BasicType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L32">Basic</a>
     <a href="#BasicType.Basic">¶</a></h3>
 <pre>func (b *<a href="#BasicType">BasicType</a>) Basic() *<a href="#BasicType">BasicType</a></pre>
 
 
-<h3 id="BasicType.String">func (*BasicType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L34">String</a>
+<h3 id="BasicType.String">func (*BasicType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L34">String</a>
     <a href="#BasicType.String">¶</a></h3>
 <pre>func (t *<a href="#BasicType">BasicType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="BoolType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L72">BoolType</a>
+<h2 id="BoolType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L72">BoolType</a>
     <a href="#BoolType">¶</a></h2>
 <pre>type BoolType struct {
     <a href="#BasicType">BasicType</a>
@@ -250,7 +250,7 @@ A BasicType holds fields common to all basic types.
 
 A BoolType represents a boolean type.
 
-<h2 id="CharType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L42">CharType</a>
+<h2 id="CharType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L42">CharType</a>
     <a href="#CharType">¶</a></h2>
 <pre>type CharType struct {
     <a href="#BasicType">BasicType</a>
@@ -258,7 +258,7 @@ A BoolType represents a boolean type.
 
 A CharType represents a signed character type.
 
-<h2 id="Class">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L250">Class</a>
+<h2 id="Class">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L250">Class</a>
     <a href="#Class">¶</a></h2>
 <pre>type Class <a href="/builtin/#int">int</a></pre>
 
@@ -344,17 +344,17 @@ DWARF 3.
 )</pre>
 
 
-<h3 id="Class.GoString">func (Class) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L321">GoString</a>
+<h3 id="Class.GoString">func (Class) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L321">GoString</a>
     <a href="#Class.GoString">¶</a></h3>
 <pre>func (i <a href="#Class">Class</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Class.String">func (Class) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/class_string.go#L1">String</a>
+<h3 id="Class.String">func (Class) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/class_string.go#L1">String</a>
     <a href="#Class.String">¶</a></h3>
 <pre>func (i <a href="#Class">Class</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="CommonType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L14">CommonType</a>
+<h2 id="CommonType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L14">CommonType</a>
     <a href="#CommonType">¶</a></h2>
 <pre>type CommonType struct {
 <span id="CommonType.ByteSize"></span>    ByteSize <a href="/builtin/#int64">int64</a>  <span class="comment">// size of value of this type, in bytes</span>
@@ -364,17 +364,17 @@ DWARF 3.
 A CommonType holds fields common to multiple types. If a field is not known or
 not applicable for a given type, the zero value is used.
 
-<h3 id="CommonType.Common">func (*CommonType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L19">Common</a>
+<h3 id="CommonType.Common">func (*CommonType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L19">Common</a>
     <a href="#CommonType.Common">¶</a></h3>
 <pre>func (c *<a href="#CommonType">CommonType</a>) Common() *<a href="#CommonType">CommonType</a></pre>
 
 
-<h3 id="CommonType.Size">func (*CommonType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L21">Size</a>
+<h3 id="CommonType.Size">func (*CommonType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L21">Size</a>
     <a href="#CommonType.Size">¶</a></h3>
 <pre>func (c *<a href="#CommonType">CommonType</a>) Size() <a href="/builtin/#int64">int64</a></pre>
 
 
-<h2 id="ComplexType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L67">ComplexType</a>
+<h2 id="ComplexType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L67">ComplexType</a>
     <a href="#ComplexType">¶</a></h2>
 <pre>type ComplexType struct {
     <a href="#BasicType">BasicType</a>
@@ -382,7 +382,7 @@ not applicable for a given type, the zero value is used.
 
 A ComplexType represents a complex floating point type.
 
-<h2 id="Data">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/open.go#L4">Data</a>
+<h2 id="Data">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/open.go#L4">Data</a>
     <a href="#Data">¶</a></h2>
 <pre>type Data struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -391,7 +391,7 @@ A ComplexType represents a complex floating point type.
 Data represents the DWARF debugging information loaded from an executable file
 (for example, an ELF or Mach-O executable).
 
-<h3 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/open.go#L31">New</a>
+<h3 id="New">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/open.go#L31">New</a>
     <a href="#New">¶</a></h3>
 <pre>func New(abbrev, aranges, frame, info, line, pubnames, ranges, str []<a href="/builtin/#byte">byte</a>) (*<a href="#Data">Data</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -403,7 +403,7 @@ The []byte arguments are the data from the corresponding debug section in the
 object file; for example, for an ELF object, abbrev is the contents of the
 ".debug_abbrev" section.
 
-<h3 id="Data.AddTypes">func (*Data) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/open.go#L84">AddTypes</a>
+<h3 id="Data.AddTypes">func (*Data) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/open.go#L84">AddTypes</a>
     <a href="#Data.AddTypes">¶</a></h3>
 <pre>func (d *<a href="#Data">Data</a>) AddTypes(name <a href="/builtin/#string">string</a>, types []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -412,7 +412,7 @@ with DWARF version 4 debug info will have multiple .debug_types sections. The
 name is used for error reporting only, and serves to distinguish one
 .debug_types section from another.
 
-<h3 id="Data.LineReader">func (*Data) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/line.go#L128">LineReader</a>
+<h3 id="Data.LineReader">func (*Data) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/line.go#L128">LineReader</a>
     <a href="#Data.LineReader">¶</a></h3>
 <pre>func (d *<a href="#Data">Data</a>) LineReader(cu *<a href="#Entry">Entry</a>) (*<a href="#LineReader">LineReader</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -421,7 +421,7 @@ must be an Entry with tag TagCompileUnit.
 
 If this compilation unit has no line table, it returns nil, nil.
 
-<h3 id="Data.Ranges">func (*Data) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L674">Ranges</a>
+<h3 id="Data.Ranges">func (*Data) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L674">Ranges</a>
     <a href="#Data.Ranges">¶</a></h3>
 <pre>func (d *<a href="#Data">Data</a>) Ranges(e *<a href="#Entry">Entry</a>) ([][2]<a href="/builtin/#uint64">uint64</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -429,20 +429,20 @@ Ranges returns the PC ranges covered by e, a slice of [low,high) pairs. Only
 some entry types, such as TagCompileUnit or TagSubprogram, have PC ranges; for
 others, this will return nil with no error.
 
-<h3 id="Data.Reader">func (*Data) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L514">Reader</a>
+<h3 id="Data.Reader">func (*Data) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L514">Reader</a>
     <a href="#Data.Reader">¶</a></h3>
 <pre>func (d *<a href="#Data">Data</a>) Reader() *<a href="#Reader">Reader</a></pre>
 
 Reader returns a new Reader for Data. The reader is positioned at byte offset 0
 in the DWARF ``info'' section.
 
-<h3 id="Data.Type">func (*Data) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L267">Type</a>
+<h3 id="Data.Type">func (*Data) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L267">Type</a>
     <a href="#Data.Type">¶</a></h3>
 <pre>func (d *<a href="#Data">Data</a>) Type(off <a href="#Offset">Offset</a>) (<a href="#Type">Type</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Type reads the type at off in the DWARF ``info'' section.
 
-<h2 id="DecodeError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/buf.go#L174">DecodeError</a>
+<h2 id="DecodeError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/buf.go#L174">DecodeError</a>
     <a href="#DecodeError">¶</a></h2>
 <pre>type DecodeError struct {
 <span id="DecodeError.Name"></span>    Name   <a href="/builtin/#string">string</a>
@@ -451,12 +451,12 @@ Type reads the type at off in the DWARF ``info'' section.
 }</pre>
 
 
-<h3 id="DecodeError.Error">func (DecodeError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/buf.go#L180">Error</a>
+<h3 id="DecodeError.Error">func (DecodeError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/buf.go#L180">Error</a>
     <a href="#DecodeError.Error">¶</a></h3>
 <pre>func (e <a href="#DecodeError">DecodeError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="DotDotDotType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L238">DotDotDotType</a>
+<h2 id="DotDotDotType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L238">DotDotDotType</a>
     <a href="#DotDotDotType">¶</a></h2>
 <pre>type DotDotDotType struct {
     <a href="#CommonType">CommonType</a>
@@ -464,12 +464,12 @@ Type reads the type at off in the DWARF ``info'' section.
 
 A DotDotDotType represents the variadic ... function parameter.
 
-<h3 id="DotDotDotType.String">func (*DotDotDotType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L242">String</a>
+<h3 id="DotDotDotType.String">func (*DotDotDotType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L242">String</a>
     <a href="#DotDotDotType.String">¶</a></h3>
 <pre>func (t *<a href="#DotDotDotType">DotDotDotType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Entry">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L200">Entry</a>
+<h2 id="Entry">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L200">Entry</a>
     <a href="#Entry">¶</a></h2>
 <pre>type Entry struct {
 <span id="Entry.Offset"></span>    Offset   <a href="#Offset">Offset</a> <span class="comment">// offset of Entry in DWARF info</span>
@@ -480,14 +480,14 @@ A DotDotDotType represents the variadic ... function parameter.
 
 An entry is a sequence of attribute/value pairs.
 
-<h3 id="Entry.AttrField">func (*Entry) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L341">AttrField</a>
+<h3 id="Entry.AttrField">func (*Entry) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L341">AttrField</a>
     <a href="#Entry.AttrField">¶</a></h3>
 <pre>func (e *<a href="#Entry">Entry</a>) AttrField(a <a href="#Attr">Attr</a>) *<a href="#Field">Field</a></pre>
 
 AttrField returns the Field associated with attribute Attr in Entry, or nil if
 there is no such attribute.
 
-<h3 id="Entry.Val">func (*Entry) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L332">Val</a>
+<h3 id="Entry.Val">func (*Entry) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L332">Val</a>
     <a href="#Entry.Val">¶</a></h3>
 <pre>func (e *<a href="#Entry">Entry</a>) Val(a <a href="#Attr">Attr</a>) interface{}</pre>
 
@@ -499,7 +499,7 @@ value has the expected dynamic type, as in:
 
     v, ok := e.Val(AttrSibling).(int64)
 
-<h2 id="EnumType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L187">EnumType</a>
+<h2 id="EnumType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L187">EnumType</a>
     <a href="#EnumType">¶</a></h2>
 <pre>type EnumType struct {
     <a href="#CommonType">CommonType</a>
@@ -510,12 +510,12 @@ value has the expected dynamic type, as in:
 An EnumType represents an enumerated type. The only indication of its native
 integer type is its ByteSize (inside CommonType).
 
-<h3 id="EnumType.String">func (*EnumType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L199">String</a>
+<h3 id="EnumType.String">func (*EnumType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L199">String</a>
     <a href="#EnumType.String">¶</a></h3>
 <pre>func (t *<a href="#EnumType">EnumType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="EnumValue">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L194">EnumValue</a>
+<h2 id="EnumValue">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L194">EnumValue</a>
     <a href="#EnumValue">¶</a></h2>
 <pre>type EnumValue struct {
 <span id="EnumValue.Name"></span>    Name <a href="/builtin/#string">string</a>
@@ -524,7 +524,7 @@ integer type is its ByteSize (inside CommonType).
 
 An EnumValue represents a single enumeration value.
 
-<h2 id="Field">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L230">Field</a>
+<h2 id="Field">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L230">Field</a>
     <a href="#Field">¶</a></h2>
 <pre>type Field struct {
 <span id="Field.Attr"></span>    Attr  <a href="#Attr">Attr</a>
@@ -555,7 +555,7 @@ corresponding to each class are:
 
 For unrecognized or vendor-defined attributes, Class may be ClassUnknown.
 
-<h2 id="FloatType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L62">FloatType</a>
+<h2 id="FloatType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L62">FloatType</a>
     <a href="#FloatType">¶</a></h2>
 <pre>type FloatType struct {
     <a href="#BasicType">BasicType</a>
@@ -563,7 +563,7 @@ For unrecognized or vendor-defined attributes, Class may be ClassUnknown.
 
 A FloatType represents a floating point type.
 
-<h2 id="FuncType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L216">FuncType</a>
+<h2 id="FuncType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L216">FuncType</a>
     <a href="#FuncType">¶</a></h2>
 <pre>type FuncType struct {
     <a href="#CommonType">CommonType</a>
@@ -573,12 +573,12 @@ A FloatType represents a floating point type.
 
 A FuncType represents a function type.
 
-<h3 id="FuncType.String">func (*FuncType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L222">String</a>
+<h3 id="FuncType.String">func (*FuncType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L222">String</a>
     <a href="#FuncType.String">¶</a></h3>
 <pre>func (t *<a href="#FuncType">FuncType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="IntType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L52">IntType</a>
+<h2 id="IntType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L52">IntType</a>
     <a href="#IntType">¶</a></h2>
 <pre>type IntType struct {
     <a href="#BasicType">BasicType</a>
@@ -586,7 +586,7 @@ A FuncType represents a function type.
 
 An IntType represents a signed integer type.
 
-<h2 id="LineEntry">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/line.go#L39">LineEntry</a>
+<h2 id="LineEntry">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/line.go#L39">LineEntry</a>
     <a href="#LineEntry">¶</a></h2>
 <pre>type LineEntry struct {
 <span id="LineEntry.Address"></span>    <span class="comment">// Address is the program-counter value of a machine</span>
@@ -668,7 +668,7 @@ An IntType represents a signed integer type.
 
 A LineEntry is a row in a DWARF line table.
 
-<h2 id="LineFile">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/line.go#L118">LineFile</a>
+<h2 id="LineFile">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/line.go#L118">LineFile</a>
     <a href="#LineFile">¶</a></h2>
 <pre>type LineFile struct {
 <span id="LineFile.Name"></span>    Name   <a href="/builtin/#string">string</a>
@@ -678,7 +678,7 @@ A LineEntry is a row in a DWARF line table.
 
 A LineFile is a source file referenced by a DWARF line table entry.
 
-<h2 id="LineReader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/line.go#L10">LineReader</a>
+<h2 id="LineReader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/line.go#L10">LineReader</a>
     <a href="#LineReader">¶</a></h2>
 <pre>type LineReader struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -690,7 +690,7 @@ PC and each LineEntry gives metadata for the instructions from that LineEntry's
 PC to just before the next LineEntry's PC. The last entry will have its
 EndSequence field set.
 
-<h3 id="LineReader.Next">func (*LineReader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/line.go#L306">Next</a>
+<h3 id="LineReader.Next">func (*LineReader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/line.go#L306">Next</a>
     <a href="#LineReader.Next">¶</a></h3>
 <pre>func (r *<a href="#LineReader">LineReader</a>) Next(entry *<a href="#LineEntry">LineEntry</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -701,13 +701,13 @@ returns io.EOF.
 Rows are always in order of increasing entry.Address, but entry.Line may go
 forward or backward.
 
-<h3 id="LineReader.Reset">func (*LineReader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/line.go#L493">Reset</a>
+<h3 id="LineReader.Reset">func (*LineReader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/line.go#L493">Reset</a>
     <a href="#LineReader.Reset">¶</a></h3>
 <pre>func (r *<a href="#LineReader">LineReader</a>) Reset()</pre>
 
 Reset repositions the line table reader at the beginning of the line table.
 
-<h3 id="LineReader.Seek">func (*LineReader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/line.go#L483">Seek</a>
+<h3 id="LineReader.Seek">func (*LineReader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/line.go#L483">Seek</a>
     <a href="#LineReader.Seek">¶</a></h3>
 <pre>func (r *<a href="#LineReader">LineReader</a>) Seek(pos <a href="#LineReaderPos">LineReaderPos</a>)</pre>
 
@@ -715,7 +715,7 @@ Seek restores the line table reader to a position returned by Tell.
 
 The argument pos must have been returned by a call to Tell on this line table.
 
-<h3 id="LineReader.SeekPC">func (*LineReader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/line.go#L542">SeekPC</a>
+<h3 id="LineReader.SeekPC">func (*LineReader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/line.go#L542">SeekPC</a>
     <a href="#LineReader.SeekPC">¶</a></h3>
 <pre>func (r *<a href="#LineReader">LineReader</a>) SeekPC(pc <a href="/builtin/#uint64">uint64</a>, entry *<a href="#LineEntry">LineEntry</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -731,13 +731,13 @@ worst case, this takes time linear in the size of the line table. If the caller
 wishes to do repeated fast PC lookups, it should build an appropriate index of
 the line table.
 
-<h3 id="LineReader.Tell">func (*LineReader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/line.go#L475">Tell</a>
+<h3 id="LineReader.Tell">func (*LineReader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/line.go#L475">Tell</a>
     <a href="#LineReader.Tell">¶</a></h3>
 <pre>func (r *<a href="#LineReader">LineReader</a>) Tell() <a href="#LineReaderPos">LineReaderPos</a></pre>
 
 Tell returns the current position in the line table.
 
-<h2 id="LineReaderPos">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/line.go#L463">LineReaderPos</a>
+<h2 id="LineReaderPos">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/line.go#L463">LineReaderPos</a>
     <a href="#LineReaderPos">¶</a></h2>
 <pre>type LineReaderPos struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -745,14 +745,14 @@ Tell returns the current position in the line table.
 
 A LineReaderPos represents a position in a line table.
 
-<h2 id="Offset">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L352">Offset</a>
+<h2 id="Offset">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L352">Offset</a>
     <a href="#Offset">¶</a></h2>
 <pre>type Offset <a href="/builtin/#uint32">uint32</a></pre>
 
 An Offset represents the location of an Entry within the DWARF info. (See
 Reader.Seek.)
 
-<h2 id="PtrType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L126">PtrType</a>
+<h2 id="PtrType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L126">PtrType</a>
     <a href="#PtrType">¶</a></h2>
 <pre>type PtrType struct {
     <a href="#CommonType">CommonType</a>
@@ -761,12 +761,12 @@ Reader.Seek.)
 
 A PtrType represents a pointer type.
 
-<h3 id="PtrType.String">func (*PtrType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L131">String</a>
+<h3 id="PtrType.String">func (*PtrType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L131">String</a>
     <a href="#PtrType.String">¶</a></h3>
 <pre>func (t *<a href="#PtrType">PtrType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="QualType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L89">QualType</a>
+<h2 id="QualType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L89">QualType</a>
     <a href="#QualType">¶</a></h2>
 <pre>type QualType struct {
     <a href="#CommonType">CommonType</a>
@@ -777,17 +777,17 @@ A PtrType represents a pointer type.
 A QualType represents a type that has the C/C++ "const", "restrict", or
 "volatile" qualifier.
 
-<h3 id="QualType.Size">func (*QualType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L97">Size</a>
+<h3 id="QualType.Size">func (*QualType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L97">Size</a>
     <a href="#QualType.Size">¶</a></h3>
 <pre>func (t *<a href="#QualType">QualType</a>) Size() <a href="/builtin/#int64">int64</a></pre>
 
 
-<h3 id="QualType.String">func (*QualType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L95">String</a>
+<h3 id="QualType.String">func (*QualType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L95">String</a>
     <a href="#QualType.String">¶</a></h3>
 <pre>func (t *<a href="#QualType">QualType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Reader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L503">Reader</a>
+<h2 id="Reader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L503">Reader</a>
     <a href="#Reader">¶</a></h2>
 <pre>type Reader struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -799,14 +799,14 @@ successive entries from a pre-order traversal of the tree. If an entry has
 children, its Children field will be true, and the children follow, terminated
 by an Entry with Tag 0.
 
-<h3 id="Reader.AddressSize">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L522">AddressSize</a>
+<h3 id="Reader.AddressSize">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L522">AddressSize</a>
     <a href="#Reader.AddressSize">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) AddressSize() <a href="/builtin/#int">int</a></pre>
 
 AddressSize returns the size in bytes of addresses in the current compilation
 unit.
 
-<h3 id="Reader.Next">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L565">Next</a>
+<h3 id="Reader.Next">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L565">Next</a>
     <a href="#Reader.Next">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) Next() (*<a href="#Entry">Entry</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -814,14 +814,14 @@ Next reads the next entry from the encoded entry stream. It returns nil, nil
 when it reaches the end of the section. It returns an error if the current
 offset is invalid or the data at the offset cannot be decoded as a valid Entry.
 
-<h3 id="Reader.Seek">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L528">Seek</a>
+<h3 id="Reader.Seek">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L528">Seek</a>
     <a href="#Reader.Seek">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) Seek(off <a href="#Offset">Offset</a>)</pre>
 
 Seek positions the Reader at offset off in the encoded entry stream. Offset 0
 can be used to denote the first entry.
 
-<h3 id="Reader.SeekPC">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L642">SeekPC</a>
+<h3 id="Reader.SeekPC">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L642">SeekPC</a>
     <a href="#Reader.SeekPC">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) SeekPC(pc <a href="/builtin/#uint64">uint64</a>) (*<a href="#Entry">Entry</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -837,7 +837,7 @@ call, so in general looking up a series of PCs will be faster if they are
 sorted. If the caller wishes to do repeated fast PC lookups, it should build an
 appropriate index using the Ranges method.
 
-<h3 id="Reader.SkipChildren">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/entry.go#L593">SkipChildren</a>
+<h3 id="Reader.SkipChildren">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/entry.go#L593">SkipChildren</a>
     <a href="#Reader.SkipChildren">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) SkipChildren()</pre>
 
@@ -845,7 +845,7 @@ SkipChildren skips over the child entries associated with the last Entry
 returned by Next. If that Entry did not have children or Next has not been
 called, SkipChildren is a no-op.
 
-<h2 id="StructField">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L143">StructField</a>
+<h2 id="StructField">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L143">StructField</a>
     <a href="#StructField">¶</a></h2>
 <pre>type StructField struct {
 <span id="StructField.Name"></span>    Name       <a href="/builtin/#string">string</a>
@@ -858,7 +858,7 @@ called, SkipChildren is a no-op.
 
 A StructField represents a field in a struct, union, or C++ class type.
 
-<h2 id="StructType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L134">StructType</a>
+<h2 id="StructType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L134">StructType</a>
     <a href="#StructType">¶</a></h2>
 <pre>type StructType struct {
     <a href="#CommonType">CommonType</a>
@@ -870,17 +870,17 @@ A StructField represents a field in a struct, union, or C++ class type.
 
 A StructType represents a struct, union, or C++ class type.
 
-<h3 id="StructType.Defn">func (*StructType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L159">Defn</a>
+<h3 id="StructType.Defn">func (*StructType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L159">Defn</a>
     <a href="#StructType.Defn">¶</a></h3>
 <pre>func (t *<a href="#StructType">StructType</a>) Defn() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="StructType.String">func (*StructType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L152">String</a>
+<h3 id="StructType.String">func (*StructType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L152">String</a>
     <a href="#StructType.String">¶</a></h3>
 <pre>func (t *<a href="#StructType">StructType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Tag">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/const.go#L212">Tag</a>
+<h2 id="Tag">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/const.go#L212">Tag</a>
     <a href="#Tag">¶</a></h2>
 <pre>type Tag <a href="/builtin/#uint32">uint32</a></pre>
 
@@ -953,17 +953,17 @@ A Tag is the classification (the type) of an Entry.
 )</pre>
 
 
-<h3 id="Tag.GoString">func (Tag) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/const.go#L354">GoString</a>
+<h3 id="Tag.GoString">func (Tag) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/const.go#L354">GoString</a>
     <a href="#Tag.GoString">¶</a></h3>
 <pre>func (t <a href="#Tag">Tag</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Tag.String">func (Tag) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/const.go#L344">String</a>
+<h3 id="Tag.String">func (Tag) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/const.go#L344">String</a>
     <a href="#Tag.String">¶</a></h3>
 <pre>func (t <a href="#Tag">Tag</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Type">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L5">Type</a>
+<h2 id="Type">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L5">Type</a>
     <a href="#Type">¶</a></h2>
 <pre>type Type interface {
     Common() *<a href="#CommonType">CommonType</a>
@@ -974,7 +974,7 @@ A Tag is the classification (the type) of an Entry.
 A Type conventionally represents a pointer to any of the specific Type
 structures (CharType, StructType, etc.).
 
-<h2 id="TypedefType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L245">TypedefType</a>
+<h2 id="TypedefType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L245">TypedefType</a>
     <a href="#TypedefType">¶</a></h2>
 <pre>type TypedefType struct {
     <a href="#CommonType">CommonType</a>
@@ -983,17 +983,17 @@ structures (CharType, StructType, etc.).
 
 A TypedefType represents a named type.
 
-<h3 id="TypedefType.Size">func (*TypedefType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L252">Size</a>
+<h3 id="TypedefType.Size">func (*TypedefType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L252">Size</a>
     <a href="#TypedefType.Size">¶</a></h3>
 <pre>func (t *<a href="#TypedefType">TypedefType</a>) Size() <a href="/builtin/#int64">int64</a></pre>
 
 
-<h3 id="TypedefType.String">func (*TypedefType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L250">String</a>
+<h3 id="TypedefType.String">func (*TypedefType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L250">String</a>
     <a href="#TypedefType.String">¶</a></h3>
 <pre>func (t *<a href="#TypedefType">TypedefType</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="UcharType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L47">UcharType</a>
+<h2 id="UcharType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L47">UcharType</a>
     <a href="#UcharType">¶</a></h2>
 <pre>type UcharType struct {
     <a href="#BasicType">BasicType</a>
@@ -1001,7 +1001,7 @@ A TypedefType represents a named type.
 
 A UcharType represents an unsigned character type.
 
-<h2 id="UintType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L57">UintType</a>
+<h2 id="UintType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L57">UintType</a>
     <a href="#UintType">¶</a></h2>
 <pre>type UintType struct {
     <a href="#BasicType">BasicType</a>
@@ -1009,7 +1009,7 @@ A UcharType represents an unsigned character type.
 
 A UintType represents an unsigned integer type.
 
-<h2 id="UnspecifiedType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L82">UnspecifiedType</a>
+<h2 id="UnspecifiedType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L82">UnspecifiedType</a>
     <a href="#UnspecifiedType">¶</a></h2>
 <pre>type UnspecifiedType struct {
     <a href="#BasicType">BasicType</a>
@@ -1018,7 +1018,7 @@ A UintType represents an unsigned integer type.
 An UnspecifiedType represents an implicit, unknown, ambiguous or nonexistent
 type.
 
-<h2 id="VoidType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L119">VoidType</a>
+<h2 id="VoidType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L119">VoidType</a>
     <a href="#VoidType">¶</a></h2>
 <pre>type VoidType struct {
     <a href="#CommonType">CommonType</a>
@@ -1026,7 +1026,7 @@ type.
 
 A VoidType represents the C void type.
 
-<h3 id="VoidType.String">func (*VoidType) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/dwarf/type.go#L123">String</a>
+<h3 id="VoidType.String">func (*VoidType) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/dwarf/type.go#L123">String</a>
     <a href="#VoidType.String">¶</a></h3>
 <pre>func (t *<a href="#VoidType">VoidType</a>) String() <a href="/builtin/#string">string</a></pre>
 

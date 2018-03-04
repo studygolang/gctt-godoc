@@ -30,9 +30,9 @@ The PNG specification is at http://www.w3.org/TR/PNG/.
 - [Encode](#exampleEncode)
 
 ### Package files
- [paeth.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/paeth.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/reader.go) [writer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/writer.go)
+ [paeth.go](//github.com/golang/go/blob/release-branch.go1.10/src/image/png/paeth.go) [reader.go](//github.com/golang/go/blob/release-branch.go1.10/src/image/png/reader.go) [writer.go](//github.com/golang/go/blob/release-branch.go1.10/src/image/png/writer.go)
 
-<h2 id="Decode">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/reader.go#L942">Decode</a>
+<h2 id="Decode">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/png/reader.go#L942">Decode</a>
     <a href="#Decode">¶</a></h2>
 <pre>func Decode(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (<a href="/image/">image</a>.<a href="/image/#Image">Image</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -63,14 +63,14 @@ Example:
         fmt.Print("\n")
     }
 
-<h2 id="DecodeConfig">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/reader.go#L966">DecodeConfig</a>
+<h2 id="DecodeConfig">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/png/reader.go#L966">DecodeConfig</a>
     <a href="#DecodeConfig">¶</a></h2>
 <pre>func DecodeConfig(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) (<a href="/image/">image</a>.<a href="/image/#Config">Config</a>, <a href="/builtin/#error">error</a>)</pre>
 
 DecodeConfig returns the color model and dimensions of a PNG image without
 decoding the entire image.
 
-<h2 id="Encode">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/writer.go#L513">Encode</a>
+<h2 id="Encode">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/png/writer.go#L513">Encode</a>
     <a href="#Encode">¶</a></h2>
 <pre>func Encode(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, m <a href="/image/">image</a>.<a href="/image/#Image">Image</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -110,7 +110,7 @@ Example:
         log.Fatal(err)
     }
 
-<h2 id="CompressionLevel">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/writer.go#L43">CompressionLevel</a>
+<h2 id="CompressionLevel">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/png/writer.go#L43">CompressionLevel</a>
     <a href="#CompressionLevel">¶</a></h2>
 <pre>type CompressionLevel <a href="/builtin/#int">int</a></pre>
 
@@ -123,7 +123,7 @@ Example:
 )</pre>
 
 
-<h2 id="Encoder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/writer.go#L8">Encoder</a>
+<h2 id="Encoder">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/png/writer.go#L8">Encoder</a>
     <a href="#Encoder">¶</a></h2>
 <pre>type Encoder struct {
 <span id="Encoder.CompressionLevel"></span>    CompressionLevel <a href="#CompressionLevel">CompressionLevel</a>
@@ -135,19 +135,19 @@ Example:
 
 Encoder configures encoding PNG images.
 
-<h3 id="Encoder.Encode">func (*Encoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/writer.go#L519">Encode</a>
+<h3 id="Encoder.Encode">func (*Encoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/png/writer.go#L519">Encode</a>
     <a href="#Encoder.Encode">¶</a></h3>
 <pre>func (enc *<a href="#Encoder">Encoder</a>) Encode(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, m <a href="/image/">image</a>.<a href="/image/#Image">Image</a>) <a href="/builtin/#error">error</a></pre>
 
 Encode writes the Image m to w in PNG format.
 
-<h2 id="EncoderBuffer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/writer.go#L25">EncoderBuffer</a>
+<h2 id="EncoderBuffer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/png/writer.go#L25">EncoderBuffer</a>
     <a href="#EncoderBuffer">¶</a></h2>
 <pre>type EncoderBuffer encoder</pre>
 
 EncoderBuffer holds the buffers used for encoding PNG images.
 
-<h2 id="EncoderBufferPool">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/writer.go#L19">EncoderBufferPool</a>
+<h2 id="EncoderBufferPool">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/png/writer.go#L19">EncoderBufferPool</a>
     <a href="#EncoderBufferPool">¶</a></h2>
 <pre>type EncoderBufferPool interface {
     Get() *<a href="#EncoderBuffer">EncoderBuffer</a>
@@ -158,25 +158,25 @@ EncoderBufferPool is an interface for getting and returning temporary instances
 of the EncoderBuffer struct. This can be used to reuse buffers when encoding
 multiple images.
 
-<h2 id="FormatError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/reader.go#L114">FormatError</a>
+<h2 id="FormatError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/png/reader.go#L114">FormatError</a>
     <a href="#FormatError">¶</a></h2>
 <pre>type FormatError <a href="/builtin/#string">string</a></pre>
 
 A FormatError reports that the input is not a valid PNG.
 
-<h3 id="FormatError.Error">func (FormatError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/reader.go#L116">Error</a>
+<h3 id="FormatError.Error">func (FormatError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/png/reader.go#L116">Error</a>
     <a href="#FormatError.Error">¶</a></h3>
 <pre>func (e <a href="#FormatError">FormatError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="UnsupportedError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/reader.go#L121">UnsupportedError</a>
+<h2 id="UnsupportedError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/png/reader.go#L121">UnsupportedError</a>
     <a href="#UnsupportedError">¶</a></h2>
 <pre>type UnsupportedError <a href="/builtin/#string">string</a></pre>
 
 An UnsupportedError reports that the input uses a valid but unimplemented PNG
 feature.
 
-<h3 id="UnsupportedError.Error">func (UnsupportedError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/png/reader.go#L123">Error</a>
+<h3 id="UnsupportedError.Error">func (UnsupportedError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/png/reader.go#L123">Error</a>
     <a href="#UnsupportedError.Error">¶</a></h3>
 <pre>func (e <a href="#UnsupportedError">UnsupportedError</a>) Error() <a href="/builtin/#string">string</a></pre>
 

@@ -263,7 +263,7 @@ Example:
 - [Package (Synchronization)](#example_synchronization)
 
 ### Package files
- [deflate.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/deflate.go) [deflatefast.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/deflatefast.go) [dict_decoder.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/dict_decoder.go) [huffman_bit_writer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/huffman_bit_writer.go) [huffman_code.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/huffman_code.go) [inflate.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/inflate.go) [token.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/token.go)
+ [deflate.go](//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/deflate.go) [deflatefast.go](//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/deflatefast.go) [dict_decoder.go](//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/dict_decoder.go) [huffman_bit_writer.go](//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/huffman_bit_writer.go) [huffman_code.go](//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/huffman_code.go) [inflate.go](//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/inflate.go) [token.go](//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/token.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -286,7 +286,7 @@ Example:
 )</pre>
 
 
-<h2 id="NewReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/inflate.go#L775">NewReader</a>
+<h2 id="NewReader">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/inflate.go#L775">NewReader</a>
     <a href="#NewReader">¶</a></h2>
 <pre>func NewReader(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) <a href="/io/">io</a>.<a href="/io/#ReadCloser">ReadCloser</a></pre>
 
@@ -297,7 +297,7 @@ Close on the ReadCloser when finished reading.
 
 The ReadCloser returned by NewReader also implements Resetter.
 
-<h2 id="NewReaderDict">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/inflate.go#L794">NewReaderDict</a>
+<h2 id="NewReaderDict">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/inflate.go#L794">NewReaderDict</a>
     <a href="#NewReaderDict">¶</a></h2>
 <pre>func NewReaderDict(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, dict []<a href="/builtin/#byte">byte</a>) <a href="/io/">io</a>.<a href="/io/#ReadCloser">ReadCloser</a></pre>
 
@@ -308,29 +308,29 @@ typically used to read data compressed by NewWriterDict.
 
 The ReadCloser returned by NewReader also implements Resetter.
 
-<h2 id="CorruptInputError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/inflate.go#L23">CorruptInputError</a>
+<h2 id="CorruptInputError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/inflate.go#L23">CorruptInputError</a>
     <a href="#CorruptInputError">¶</a></h2>
 <pre>type CorruptInputError <a href="/builtin/#int64">int64</a></pre>
 
 A CorruptInputError reports the presence of corrupt input at a given offset.
 
-<h3 id="CorruptInputError.Error">func (CorruptInputError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/inflate.go#L25">Error</a>
+<h3 id="CorruptInputError.Error">func (CorruptInputError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/inflate.go#L25">Error</a>
     <a href="#CorruptInputError.Error">¶</a></h3>
 <pre>func (e <a href="#CorruptInputError">CorruptInputError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="InternalError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/inflate.go#L30">InternalError</a>
+<h2 id="InternalError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/inflate.go#L30">InternalError</a>
     <a href="#InternalError">¶</a></h2>
 <pre>type InternalError <a href="/builtin/#string">string</a></pre>
 
 An InternalError reports an error in the flate code itself.
 
-<h3 id="InternalError.Error">func (InternalError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/inflate.go#L32">Error</a>
+<h3 id="InternalError.Error">func (InternalError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/inflate.go#L32">Error</a>
     <a href="#InternalError.Error">¶</a></h3>
 <pre>func (e <a href="#InternalError">InternalError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="ReadError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/inflate.go#L37">ReadError</a>
+<h2 id="ReadError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/inflate.go#L37">ReadError</a>
     <a href="#ReadError">¶</a></h2>
 <pre>type ReadError struct {
 <span id="ReadError.Offset"></span>    Offset <a href="/builtin/#int64">int64</a> <span class="comment">// byte offset where error occurred</span>
@@ -341,12 +341,12 @@ A ReadError reports an error encountered while reading input.
 
 Deprecated: No longer returned.
 
-<h3 id="ReadError.Error">func (*ReadError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/inflate.go#L42">Error</a>
+<h3 id="ReadError.Error">func (*ReadError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/inflate.go#L42">Error</a>
     <a href="#ReadError.Error">¶</a></h3>
 <pre>func (e *<a href="#ReadError">ReadError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Reader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/inflate.go#L251">Reader</a>
+<h2 id="Reader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/inflate.go#L251">Reader</a>
     <a href="#Reader">¶</a></h2>
 <pre>type Reader interface {
     <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>
@@ -356,7 +356,7 @@ Deprecated: No longer returned.
 The actual read interface needed by NewReader. If the passed in io.Reader does
 not also have ReadByte, the NewReader will introduce its own buffering.
 
-<h2 id="Resetter">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/inflate.go#L61">Resetter</a>
+<h2 id="Resetter">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/inflate.go#L61">Resetter</a>
     <a href="#Resetter">¶</a></h2>
 <pre>type Resetter interface {
     <span class="comment">// Reset discards any buffered data and resets the Resetter as if it was</span>
@@ -368,7 +368,7 @@ Resetter resets a ReadCloser returned by NewReader or NewReaderDict to to switch
 to a new underlying Reader. This permits reusing a ReadCloser instead of
 allocating a new one.
 
-<h2 id="WriteError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/inflate.go#L49">WriteError</a>
+<h2 id="WriteError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/inflate.go#L49">WriteError</a>
     <a href="#WriteError">¶</a></h2>
 <pre>type WriteError struct {
 <span id="WriteError.Offset"></span>    Offset <a href="/builtin/#int64">int64</a> <span class="comment">// byte offset where error occurred</span>
@@ -379,12 +379,12 @@ A WriteError reports an error encountered while writing output.
 
 Deprecated: No longer returned.
 
-<h3 id="WriteError.Error">func (*WriteError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/inflate.go#L54">Error</a>
+<h3 id="WriteError.Error">func (*WriteError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/inflate.go#L54">Error</a>
     <a href="#WriteError.Error">¶</a></h3>
 <pre>func (e *<a href="#WriteError">WriteError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Writer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/deflate.go#L691">Writer</a>
+<h2 id="Writer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/deflate.go#L691">Writer</a>
     <a href="#Writer">¶</a></h2>
 <pre>type Writer struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -393,7 +393,7 @@ Deprecated: No longer returned.
 A Writer takes data written to it and writes the compressed form of that data to
 an underlying writer (see NewWriter).
 
-<h3 id="NewWriter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/deflate.go#L656">NewWriter</a>
+<h3 id="NewWriter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/deflate.go#L656">NewWriter</a>
     <a href="#NewWriter">¶</a></h3>
 <pre>func NewWriter(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, level <a href="/builtin/#int">int</a>) (*<a href="#Writer">Writer</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -408,7 +408,7 @@ of input, but sacrificing considerable compression efficiency.
 If level is in the range [-2, 9] then the error returned will be nil. Otherwise
 the error returned will be non-nil.
 
-<h3 id="NewWriterDict">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/deflate.go#L670">NewWriterDict</a>
+<h3 id="NewWriterDict">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/deflate.go#L670">NewWriterDict</a>
     <a href="#NewWriterDict">¶</a></h3>
 <pre>func NewWriterDict(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, level <a href="/builtin/#int">int</a>, dict []<a href="/builtin/#byte">byte</a>) (*<a href="#Writer">Writer</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -417,13 +417,13 @@ dictionary. The returned Writer behaves as if the dictionary had been written to
 it without producing any compressed output. The compressed data written to w can
 only be decompressed by a Reader initialized with the same dictionary.
 
-<h3 id="Writer.Close">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/deflate.go#L718">Close</a>
+<h3 id="Writer.Close">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/deflate.go#L718">Close</a>
     <a href="#Writer.Close">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close flushes and closes the writer.
 
-<h3 id="Writer.Flush">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/deflate.go#L711">Flush</a>
+<h3 id="Writer.Flush">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/deflate.go#L711">Flush</a>
     <a href="#Writer.Flush">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Flush() <a href="/builtin/#error">error</a></pre>
 
@@ -436,14 +436,14 @@ Flush returns that error.
 
 In the terminology of the zlib library, Flush is equivalent to Z_SYNC_FLUSH.
 
-<h3 id="Writer.Reset">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/deflate.go#L725">Reset</a>
+<h3 id="Writer.Reset">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/deflate.go#L725">Reset</a>
     <a href="#Writer.Reset">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Reset(dst <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>)</pre>
 
 Reset discards the writer's state and makes it equivalent to the result of
 NewWriter or NewWriterDict called with dst and w's level and dictionary.
 
-<h3 id="Writer.Write">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/flate/deflate.go#L698">Write</a>
+<h3 id="Writer.Write">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/flate/deflate.go#L698">Write</a>
     <a href="#Writer.Write">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Write(data []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 

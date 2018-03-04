@@ -82,7 +82,7 @@ Package macho implements access to Mach-O object files.
   - [func (t Type) String() string](#Type.String)
 
 ### Package files
- [fat.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/fat.go) [file.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go) [macho.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go) [reloctype.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/reloctype.go) [reloctype_string.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/reloctype_string.go)
+ [fat.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/fat.go) [file.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go) [macho.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go) [reloctype.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/reloctype.go) [reloctype_string.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/reloctype_string.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -130,7 +130,7 @@ Package macho implements access to Mach-O object files.
 ErrNotFat is returned from NewFatFile or OpenFat when the file is not a
 universal binary but may be a thin binary, based on its magic number.
 
-<h2 id="Cpu">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L45">Cpu</a>
+<h2 id="Cpu">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L45">Cpu</a>
     <a href="#Cpu">¶</a></h2>
 <pre>type Cpu <a href="/builtin/#uint32">uint32</a></pre>
 
@@ -145,17 +145,17 @@ A Cpu is a Mach-O cpu type.
 )</pre>
 
 
-<h3 id="Cpu.GoString">func (Cpu) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L66">GoString</a>
+<h3 id="Cpu.GoString">func (Cpu) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L66">GoString</a>
     <a href="#Cpu.GoString">¶</a></h3>
 <pre>func (i <a href="#Cpu">Cpu</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Cpu.String">func (Cpu) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L65">String</a>
+<h3 id="Cpu.String">func (Cpu) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L65">String</a>
     <a href="#Cpu.String">¶</a></h3>
 <pre>func (i <a href="#Cpu">Cpu</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Dylib">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L129">Dylib</a>
+<h2 id="Dylib">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L129">Dylib</a>
     <a href="#Dylib">¶</a></h2>
 <pre>type Dylib struct {
     <a href="#LoadBytes">LoadBytes</a>
@@ -167,7 +167,7 @@ A Cpu is a Mach-O cpu type.
 
 A Dylib represents a Mach-O load dynamic library command.
 
-<h2 id="DylibCmd">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L161">DylibCmd</a>
+<h2 id="DylibCmd">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L161">DylibCmd</a>
     <a href="#DylibCmd">¶</a></h2>
 <pre>type DylibCmd struct {
 <span id="DylibCmd.Cmd"></span>    Cmd            <a href="#LoadCmd">LoadCmd</a>
@@ -180,7 +180,7 @@ A Dylib represents a Mach-O load dynamic library command.
 
 A DylibCmd is a Mach-O load dynamic library command.
 
-<h2 id="Dysymtab">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L145">Dysymtab</a>
+<h2 id="Dysymtab">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L145">Dysymtab</a>
     <a href="#Dysymtab">¶</a></h2>
 <pre>type Dysymtab struct {
     <a href="#LoadBytes">LoadBytes</a>
@@ -190,7 +190,7 @@ A DylibCmd is a Mach-O load dynamic library command.
 
 A Dysymtab represents a Mach-O dynamic symbol table command.
 
-<h2 id="DysymtabCmd">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L137">DysymtabCmd</a>
+<h2 id="DysymtabCmd">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L137">DysymtabCmd</a>
     <a href="#DysymtabCmd">¶</a></h2>
 <pre>type DysymtabCmd struct {
 <span id="DysymtabCmd.Cmd"></span>    Cmd            <a href="#LoadCmd">LoadCmd</a>
@@ -217,7 +217,7 @@ A Dysymtab represents a Mach-O dynamic symbol table command.
 
 A DysymtabCmd is a Mach-O dynamic symbol table command.
 
-<h2 id="FatArch">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/fat.go#L23">FatArch</a>
+<h2 id="FatArch">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/fat.go#L23">FatArch</a>
     <a href="#FatArch">¶</a></h2>
 <pre>type FatArch struct {
     <a href="#FatArchHeader">FatArchHeader</a>
@@ -226,7 +226,7 @@ A DysymtabCmd is a Mach-O dynamic symbol table command.
 
 A FatArch is a Mach-O File inside a FatFile.
 
-<h2 id="FatArchHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/fat.go#L12">FatArchHeader</a>
+<h2 id="FatArchHeader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/fat.go#L12">FatArchHeader</a>
     <a href="#FatArchHeader">¶</a></h2>
 <pre>type FatArchHeader struct {
 <span id="FatArchHeader.Cpu"></span>    Cpu    <a href="#Cpu">Cpu</a>
@@ -238,7 +238,7 @@ A FatArch is a Mach-O File inside a FatFile.
 
 A FatArchHeader represents a fat header for a specific image architecture.
 
-<h2 id="FatFile">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/fat.go#L5">FatFile</a>
+<h2 id="FatFile">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/fat.go#L5">FatFile</a>
     <a href="#FatFile">¶</a></h2>
 <pre>type FatFile struct {
 <span id="FatFile.Magic"></span>    Magic  <a href="/builtin/#uint32">uint32</a>
@@ -248,7 +248,7 @@ A FatArchHeader represents a fat header for a specific image architecture.
 
 A FatFile is a Mach-O universal binary that contains at least one architecture.
 
-<h3 id="NewFatFile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/fat.go#L35">NewFatFile</a>
+<h3 id="NewFatFile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/fat.go#L35">NewFatFile</a>
     <a href="#NewFatFile">¶</a></h3>
 <pre>func NewFatFile(r <a href="/io/">io</a>.<a href="/io/#ReaderAt">ReaderAt</a>) (*<a href="#FatFile">FatFile</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -256,19 +256,19 @@ NewFatFile creates a new FatFile for accessing all the Mach-O images in a
 universal binary. The Mach-O binary is expected to start at position 0 in the
 ReaderAt.
 
-<h3 id="OpenFat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/fat.go#L115">OpenFat</a>
+<h3 id="OpenFat">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/fat.go#L115">OpenFat</a>
     <a href="#OpenFat">¶</a></h3>
 <pre>func OpenFat(name <a href="/builtin/#string">string</a>) (*<a href="#FatFile">FatFile</a>, <a href="/builtin/#error">error</a>)</pre>
 
 OpenFat opens the named file using os.Open and prepares it for use as a Mach-O
 universal binary.
 
-<h3 id="FatFile.Close">func (*FatFile) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/fat.go#L129">Close</a>
+<h3 id="FatFile.Close">func (*FatFile) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/fat.go#L129">Close</a>
     <a href="#FatFile.Close">¶</a></h3>
 <pre>func (ff *<a href="#FatFile">FatFile</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 
-<h2 id="File">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L10">File</a>
+<h2 id="File">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L10">File</a>
     <a href="#File">¶</a></h2>
 <pre>type File struct {
     <a href="#FileHeader">FileHeader</a>
@@ -283,62 +283,62 @@ universal binary.
 
 A File represents an open Mach-O file.
 
-<h3 id="NewFile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L216">NewFile</a>
+<h3 id="NewFile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L216">NewFile</a>
     <a href="#NewFile">¶</a></h3>
 <pre>func NewFile(r <a href="/io/">io</a>.<a href="/io/#ReaderAt">ReaderAt</a>) (*<a href="#File">File</a>, <a href="/builtin/#error">error</a>)</pre>
 
 NewFile creates a new File for accessing a Mach-O binary in an underlying
 reader. The Mach-O binary is expected to start at position 0 in the ReaderAt.
 
-<h3 id="Open">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L188">Open</a>
+<h3 id="Open">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L188">Open</a>
     <a href="#Open">¶</a></h3>
 <pre>func Open(name <a href="/builtin/#string">string</a>) (*<a href="#File">File</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Open opens the named file using os.Open and prepares it for use as a Mach-O
 binary.
 
-<h3 id="File.Close">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L205">Close</a>
+<h3 id="File.Close">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L205">Close</a>
     <a href="#File.Close">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close closes the File. If the File was created using NewFile directly instead of
 Open, Close has no effect.
 
-<h3 id="File.DWARF">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L566">DWARF</a>
+<h3 id="File.DWARF">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L566">DWARF</a>
     <a href="#File.DWARF">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) DWARF() (*<a href="/debug/dwarf/">dwarf</a>.<a href="/debug/dwarf/#Data">Data</a>, <a href="/builtin/#error">error</a>)</pre>
 
 DWARF returns the DWARF debug information for the Mach-O file.
 
-<h3 id="File.ImportedLibraries">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L609">ImportedLibraries</a>
+<h3 id="File.ImportedLibraries">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L609">ImportedLibraries</a>
     <a href="#File.ImportedLibraries">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) ImportedLibraries() ([]<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ImportedLibraries returns the paths of all libraries referred to by the binary f
 that are expected to be linked with the binary at dynamic link time.
 
-<h3 id="File.ImportedSymbols">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L592">ImportedSymbols</a>
+<h3 id="File.ImportedSymbols">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L592">ImportedSymbols</a>
     <a href="#File.ImportedSymbols">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) ImportedSymbols() ([]<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ImportedSymbols returns the names of all symbols referred to by the binary f
 that are expected to be satisfied by other libraries at dynamic load time.
 
-<h3 id="File.Section">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L556">Section</a>
+<h3 id="File.Section">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L556">Section</a>
     <a href="#File.Section">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Section(name <a href="/builtin/#string">string</a>) *<a href="#Section">Section</a></pre>
 
 Section returns the first section with the given name, or nil if no such section
 exists.
 
-<h3 id="File.Segment">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L545">Segment</a>
+<h3 id="File.Segment">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L545">Segment</a>
     <a href="#File.Segment">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Segment(name <a href="/builtin/#string">string</a>) *<a href="#Segment">Segment</a></pre>
 
 Segment returns the first Segment with the given name, or nil if no such segment
 exists.
 
-<h2 id="FileHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L3">FileHeader</a>
+<h2 id="FileHeader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L3">FileHeader</a>
     <a href="#FileHeader">¶</a></h2>
 <pre>type FileHeader struct {
 <span id="FileHeader.Magic"></span>    Magic  <a href="/builtin/#uint32">uint32</a>
@@ -352,7 +352,7 @@ exists.
 
 A FileHeader represents a Mach-O file header.
 
-<h2 id="FormatError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L172">FormatError</a>
+<h2 id="FormatError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L172">FormatError</a>
     <a href="#FormatError">¶</a></h2>
 <pre>type FormatError struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -361,12 +361,12 @@ A FileHeader represents a Mach-O file header.
 FormatError is returned by some operations if the data does not have the correct
 format for an object file.
 
-<h3 id="FormatError.Error">func (*FormatError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L178">Error</a>
+<h3 id="FormatError.Error">func (*FormatError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L178">Error</a>
     <a href="#FormatError.Error">¶</a></h3>
 <pre>func (e *<a href="#FormatError">FormatError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Load">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L23">Load</a>
+<h2 id="Load">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L23">Load</a>
     <a href="#Load">¶</a></h2>
 <pre>type Load interface {
     Raw() []<a href="/builtin/#byte">byte</a>
@@ -374,18 +374,18 @@ format for an object file.
 
 A Load represents any Mach-O load command.
 
-<h2 id="LoadBytes">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L28">LoadBytes</a>
+<h2 id="LoadBytes">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L28">LoadBytes</a>
     <a href="#LoadBytes">¶</a></h2>
 <pre>type LoadBytes []<a href="/builtin/#byte">byte</a></pre>
 
 A LoadBytes is the uninterpreted bytes of a Mach-O load command.
 
-<h3 id="LoadBytes.Raw">func (LoadBytes) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L30">Raw</a>
+<h3 id="LoadBytes.Raw">func (LoadBytes) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L30">Raw</a>
     <a href="#LoadBytes.Raw">¶</a></h3>
 <pre>func (b <a href="#LoadBytes">LoadBytes</a>) Raw() []<a href="/builtin/#byte">byte</a></pre>
 
 
-<h2 id="LoadCmd">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L69">LoadCmd</a>
+<h2 id="LoadCmd">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L69">LoadCmd</a>
     <a href="#LoadCmd">¶</a></h2>
 <pre>type LoadCmd <a href="/builtin/#uint32">uint32</a></pre>
 
@@ -404,17 +404,17 @@ A LoadCmd is a Mach-O load command.
 )</pre>
 
 
-<h3 id="LoadCmd.GoString">func (LoadCmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L93">GoString</a>
+<h3 id="LoadCmd.GoString">func (LoadCmd) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L93">GoString</a>
     <a href="#LoadCmd.GoString">¶</a></h3>
 <pre>func (i <a href="#LoadCmd">LoadCmd</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="LoadCmd.String">func (LoadCmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L92">String</a>
+<h3 id="LoadCmd.String">func (LoadCmd) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L92">String</a>
     <a href="#LoadCmd.String">¶</a></h3>
 <pre>func (i <a href="#LoadCmd">LoadCmd</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Nlist32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L247">Nlist32</a>
+<h2 id="Nlist32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L247">Nlist32</a>
     <a href="#Nlist32">¶</a></h2>
 <pre>type Nlist32 struct {
 <span id="Nlist32.Name"></span>    Name  <a href="/builtin/#uint32">uint32</a>
@@ -426,7 +426,7 @@ A LoadCmd is a Mach-O load command.
 
 An Nlist32 is a Mach-O 32-bit symbol table entry.
 
-<h2 id="Nlist64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L256">Nlist64</a>
+<h2 id="Nlist64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L256">Nlist64</a>
     <a href="#Nlist64">¶</a></h2>
 <pre>type Nlist64 struct {
 <span id="Nlist64.Name"></span>    Name  <a href="/builtin/#uint32">uint32</a>
@@ -438,7 +438,7 @@ An Nlist32 is a Mach-O 32-bit symbol table entry.
 
 An Nlist64 is a Mach-O 64-bit symbol table entry.
 
-<h2 id="Regs386">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L265">Regs386</a>
+<h2 id="Regs386">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L265">Regs386</a>
     <a href="#Regs386">¶</a></h2>
 <pre>type Regs386 struct {
 <span id="Regs386.AX"></span>    AX    <a href="/builtin/#uint32">uint32</a>
@@ -461,7 +461,7 @@ An Nlist64 is a Mach-O 64-bit symbol table entry.
 
 Regs386 is the Mach-O 386 register structure.
 
-<h2 id="RegsAMD64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L285">RegsAMD64</a>
+<h2 id="RegsAMD64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L285">RegsAMD64</a>
     <a href="#RegsAMD64">¶</a></h2>
 <pre>type RegsAMD64 struct {
 <span id="RegsAMD64.AX"></span>    AX    <a href="/builtin/#uint64">uint64</a>
@@ -489,7 +489,7 @@ Regs386 is the Mach-O 386 register structure.
 
 RegsAMD64 is the Mach-O AMD64 register structure.
 
-<h2 id="Reloc">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L88">Reloc</a>
+<h2 id="Reloc">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L88">Reloc</a>
     <a href="#Reloc">¶</a></h2>
 <pre>type Reloc struct {
 <span id="Reloc.Addr"></span>    Addr  <a href="/builtin/#uint32">uint32</a>
@@ -506,7 +506,7 @@ RegsAMD64 is the Mach-O AMD64 register structure.
 
 A Reloc represents a Mach-O relocation.
 
-<h2 id="RelocTypeARM">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/reloctype.go#L29">RelocTypeARM</a>
+<h2 id="RelocTypeARM">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/reloctype.go#L29">RelocTypeARM</a>
     <a href="#RelocTypeARM">¶</a></h2>
 <pre>type RelocTypeARM <a href="/builtin/#int">int</a></pre>
 
@@ -525,17 +525,17 @@ A Reloc represents a Mach-O relocation.
 )</pre>
 
 
-<h3 id="RelocTypeARM.GoString">func (RelocTypeARM) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/reloctype.go#L44">GoString</a>
+<h3 id="RelocTypeARM.GoString">func (RelocTypeARM) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/reloctype.go#L44">GoString</a>
     <a href="#RelocTypeARM.GoString">¶</a></h3>
 <pre>func (r <a href="#RelocTypeARM">RelocTypeARM</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="RelocTypeARM.String">func (RelocTypeARM) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/reloctype_string.go#L23">String</a>
+<h3 id="RelocTypeARM.String">func (RelocTypeARM) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/reloctype_string.go#L23">String</a>
     <a href="#RelocTypeARM.String">¶</a></h3>
 <pre>func (i <a href="#RelocTypeARM">RelocTypeARM</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="RelocTypeARM64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/reloctype.go#L46">RelocTypeARM64</a>
+<h2 id="RelocTypeARM64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/reloctype.go#L46">RelocTypeARM64</a>
     <a href="#RelocTypeARM64">¶</a></h2>
 <pre>type RelocTypeARM64 <a href="/builtin/#int">int</a></pre>
 
@@ -555,17 +555,17 @@ A Reloc represents a Mach-O relocation.
 )</pre>
 
 
-<h3 id="RelocTypeARM64.GoString">func (RelocTypeARM64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/reloctype.go#L62">GoString</a>
+<h3 id="RelocTypeARM64.GoString">func (RelocTypeARM64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/reloctype.go#L62">GoString</a>
     <a href="#RelocTypeARM64.GoString">¶</a></h3>
 <pre>func (r <a href="#RelocTypeARM64">RelocTypeARM64</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="RelocTypeARM64.String">func (RelocTypeARM64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/reloctype_string.go#L34">String</a>
+<h3 id="RelocTypeARM64.String">func (RelocTypeARM64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/reloctype_string.go#L34">String</a>
     <a href="#RelocTypeARM64.String">¶</a></h3>
 <pre>func (i <a href="#RelocTypeARM64">RelocTypeARM64</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="RelocTypeGeneric">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/reloctype.go#L1">RelocTypeGeneric</a>
+<h2 id="RelocTypeGeneric">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/reloctype.go#L1">RelocTypeGeneric</a>
     <a href="#RelocTypeGeneric">¶</a></h2>
 <pre>type RelocTypeGeneric <a href="/builtin/#int">int</a></pre>
 
@@ -580,17 +580,17 @@ A Reloc represents a Mach-O relocation.
 )</pre>
 
 
-<h3 id="RelocTypeGeneric.GoString">func (RelocTypeGeneric) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/reloctype.go#L10">GoString</a>
+<h3 id="RelocTypeGeneric.GoString">func (RelocTypeGeneric) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/reloctype.go#L10">GoString</a>
     <a href="#RelocTypeGeneric.GoString">¶</a></h3>
 <pre>func (r <a href="#RelocTypeGeneric">RelocTypeGeneric</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="RelocTypeGeneric.String">func (RelocTypeGeneric) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/reloctype_string.go#L1">String</a>
+<h3 id="RelocTypeGeneric.String">func (RelocTypeGeneric) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/reloctype_string.go#L1">String</a>
     <a href="#RelocTypeGeneric.String">¶</a></h3>
 <pre>func (i <a href="#RelocTypeGeneric">RelocTypeGeneric</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="RelocTypeX86_64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/reloctype.go#L12">RelocTypeX86_64</a>
+<h2 id="RelocTypeX86_64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/reloctype.go#L12">RelocTypeX86_64</a>
     <a href="#RelocTypeX86_64">¶</a></h2>
 <pre>type RelocTypeX86_64 <a href="/builtin/#int">int</a></pre>
 
@@ -609,17 +609,17 @@ A Reloc represents a Mach-O relocation.
 )</pre>
 
 
-<h3 id="RelocTypeX86_64.GoString">func (RelocTypeX86_64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/reloctype.go#L27">GoString</a>
+<h3 id="RelocTypeX86_64.GoString">func (RelocTypeX86_64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/reloctype.go#L27">GoString</a>
     <a href="#RelocTypeX86_64.GoString">¶</a></h3>
 <pre>func (r <a href="#RelocTypeX86_64">RelocTypeX86_64</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="RelocTypeX86_64.String">func (RelocTypeX86_64) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/reloctype_string.go#L12">String</a>
+<h3 id="RelocTypeX86_64.String">func (RelocTypeX86_64) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/reloctype_string.go#L12">String</a>
     <a href="#RelocTypeX86_64.String">¶</a></h3>
 <pre>func (i <a href="#RelocTypeX86_64">RelocTypeX86_64</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Rpath">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L152">Rpath</a>
+<h2 id="Rpath">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L152">Rpath</a>
     <a href="#Rpath">¶</a></h2>
 <pre>type Rpath struct {
     <a href="#LoadBytes">LoadBytes</a>
@@ -628,7 +628,7 @@ A Reloc represents a Mach-O relocation.
 
 A Rpath represents a Mach-O rpath command.
 
-<h2 id="RpathCmd">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L171">RpathCmd</a>
+<h2 id="RpathCmd">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L171">RpathCmd</a>
     <a href="#RpathCmd">¶</a></h2>
 <pre>type RpathCmd struct {
 <span id="RpathCmd.Cmd"></span>    Cmd  <a href="#LoadCmd">LoadCmd</a>
@@ -638,7 +638,7 @@ A Rpath represents a Mach-O rpath command.
 
 A RpathCmd is a Mach-O rpath command.
 
-<h2 id="Section">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L101">Section</a>
+<h2 id="Section">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L101">Section</a>
     <a href="#Section">¶</a></h2>
 <pre>type Section struct {
     <a href="#SectionHeader">SectionHeader</a>
@@ -655,19 +655,19 @@ A RpathCmd is a Mach-O rpath command.
 }</pre>
 
 
-<h3 id="Section.Data">func (*Section) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L116">Data</a>
+<h3 id="Section.Data">func (*Section) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L116">Data</a>
     <a href="#Section.Data">¶</a></h3>
 <pre>func (s *<a href="#Section">Section</a>) Data() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Data reads and returns the contents of the Mach-O section.
 
-<h3 id="Section.Open">func (*Section) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L126">Open</a>
+<h3 id="Section.Open">func (*Section) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L126">Open</a>
     <a href="#Section.Open">¶</a></h3>
 <pre>func (s *<a href="#Section">Section</a>) Open() <a href="/io/">io</a>.<a href="/io/#ReadSeeker">ReadSeeker</a></pre>
 
 Open returns a new ReadSeeker reading the Mach-O section.
 
-<h2 id="Section32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L216">Section32</a>
+<h2 id="Section32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L216">Section32</a>
     <a href="#Section32">¶</a></h2>
 <pre>type Section32 struct {
 <span id="Section32.Name"></span>    Name     [16]<a href="/builtin/#byte">byte</a>
@@ -685,7 +685,7 @@ Open returns a new ReadSeeker reading the Mach-O section.
 
 A Section32 is a 32-bit Mach-O section header.
 
-<h2 id="Section64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L231">Section64</a>
+<h2 id="Section64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L231">Section64</a>
     <a href="#Section64">¶</a></h2>
 <pre>type Section64 struct {
 <span id="Section64.Name"></span>    Name     [16]<a href="/builtin/#byte">byte</a>
@@ -704,7 +704,7 @@ A Section32 is a 32-bit Mach-O section header.
 
 A Section64 is a 64-bit Mach-O section header.
 
-<h2 id="SectionHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L75">SectionHeader</a>
+<h2 id="SectionHeader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L75">SectionHeader</a>
     <a href="#SectionHeader">¶</a></h2>
 <pre>type SectionHeader struct {
 <span id="SectionHeader.Name"></span>    Name   <a href="/builtin/#string">string</a>
@@ -719,7 +719,7 @@ A Section64 is a 64-bit Mach-O section header.
 }</pre>
 
 
-<h2 id="Segment">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L48">Segment</a>
+<h2 id="Segment">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L48">Segment</a>
     <a href="#Segment">¶</a></h2>
 <pre>type Segment struct {
     <a href="#LoadBytes">LoadBytes</a>
@@ -737,19 +737,19 @@ A Section64 is a 64-bit Mach-O section header.
 
 A Segment represents a Mach-O 32-bit or 64-bit load segment command.
 
-<h3 id="Segment.Data">func (*Segment) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L63">Data</a>
+<h3 id="Segment.Data">func (*Segment) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L63">Data</a>
     <a href="#Segment.Data">¶</a></h3>
 <pre>func (s *<a href="#Segment">Segment</a>) Data() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Data reads and returns the contents of the segment.
 
-<h3 id="Segment.Open">func (*Segment) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L73">Open</a>
+<h3 id="Segment.Open">func (*Segment) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L73">Open</a>
     <a href="#Segment.Open">¶</a></h3>
 <pre>func (s *<a href="#Segment">Segment</a>) Open() <a href="/io/">io</a>.<a href="/io/#ReadSeeker">ReadSeeker</a></pre>
 
 Open returns a new ReadSeeker reading the segment.
 
-<h2 id="Segment32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L97">Segment32</a>
+<h2 id="Segment32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L97">Segment32</a>
     <a href="#Segment32">¶</a></h2>
 <pre>type Segment32 struct {
 <span id="Segment32.Cmd"></span>    Cmd     <a href="#LoadCmd">LoadCmd</a>
@@ -767,7 +767,7 @@ Open returns a new ReadSeeker reading the segment.
 
 A Segment32 is a 32-bit Mach-O segment load command.
 
-<h2 id="Segment64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L112">Segment64</a>
+<h2 id="Segment64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L112">Segment64</a>
     <a href="#Segment64">¶</a></h2>
 <pre>type Segment64 struct {
 <span id="Segment64.Cmd"></span>    Cmd     <a href="#LoadCmd">LoadCmd</a>
@@ -785,7 +785,7 @@ A Segment32 is a 32-bit Mach-O segment load command.
 
 A Segment64 is a 64-bit Mach-O segment load command.
 
-<h2 id="SegmentHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L33">SegmentHeader</a>
+<h2 id="SegmentHeader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L33">SegmentHeader</a>
     <a href="#SegmentHeader">¶</a></h2>
 <pre>type SegmentHeader struct {
 <span id="SegmentHeader.Cmd"></span>    Cmd     <a href="#LoadCmd">LoadCmd</a>
@@ -804,7 +804,7 @@ A Segment64 is a 64-bit Mach-O segment load command.
 A SegmentHeader is the header for a Mach-O 32-bit or 64-bit load segment
 command.
 
-<h2 id="Symbol">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L158">Symbol</a>
+<h2 id="Symbol">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L158">Symbol</a>
     <a href="#Symbol">¶</a></h2>
 <pre>type Symbol struct {
 <span id="Symbol.Name"></span>    Name  <a href="/builtin/#string">string</a>
@@ -816,7 +816,7 @@ command.
 
 A Symbol is a Mach-O 32-bit or 64-bit symbol table entry.
 
-<h2 id="Symtab">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/file.go#L138">Symtab</a>
+<h2 id="Symtab">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/file.go#L138">Symtab</a>
     <a href="#Symtab">¶</a></h2>
 <pre>type Symtab struct {
     <a href="#LoadBytes">LoadBytes</a>
@@ -826,7 +826,7 @@ A Symbol is a Mach-O 32-bit or 64-bit symbol table entry.
 
 A Symtab represents a Mach-O symbol table command.
 
-<h2 id="SymtabCmd">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L127">SymtabCmd</a>
+<h2 id="SymtabCmd">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L127">SymtabCmd</a>
     <a href="#SymtabCmd">¶</a></h2>
 <pre>type SymtabCmd struct {
 <span id="SymtabCmd.Cmd"></span>    Cmd     <a href="#LoadCmd">LoadCmd</a>
@@ -839,7 +839,7 @@ A Symtab represents a Mach-O symbol table command.
 
 A SymtabCmd is a Mach-O symbol table command.
 
-<h2 id="Thread">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L178">Thread</a>
+<h2 id="Thread">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L178">Thread</a>
     <a href="#Thread">¶</a></h2>
 <pre>type Thread struct {
 <span id="Thread.Cmd"></span>    Cmd  <a href="#LoadCmd">LoadCmd</a>
@@ -850,7 +850,7 @@ A SymtabCmd is a Mach-O symbol table command.
 
 A Thread is a Mach-O thread state command.
 
-<h2 id="Type">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L25">Type</a>
+<h2 id="Type">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L25">Type</a>
     <a href="#Type">¶</a></h2>
 <pre>type Type <a href="/builtin/#uint32">uint32</a></pre>
 
@@ -865,12 +865,12 @@ library.
 )</pre>
 
 
-<h3 id="Type.GoString">func (Type) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L42">GoString</a>
+<h3 id="Type.GoString">func (Type) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L42">GoString</a>
     <a href="#Type.GoString">¶</a></h3>
 <pre>func (t <a href="#Type">Type</a>) GoString() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Type.String">func (Type) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/macho/macho.go#L41">String</a>
+<h3 id="Type.String">func (Type) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/macho/macho.go#L41">String</a>
     <a href="#Type.String">¶</a></h3>
 <pre>func (t <a href="#Type">Type</a>) String() <a href="/builtin/#string">string</a></pre>
 

@@ -152,9 +152,9 @@ Example:
 - [Package (Rand)](#example_rand)
 
 ### Package files
- [exp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/exp.go) [normal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/normal.go) [rand.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go) [rng.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rng.go) [zipf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/zipf.go)
+ [exp.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/exp.go) [normal.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/normal.go) [rand.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go) [rng.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rng.go) [zipf.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/zipf.go)
 
-<h2 id="ExpFloat64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L359">ExpFloat64</a>
+<h2 id="ExpFloat64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L359">ExpFloat64</a>
     <a href="#ExpFloat64">¶</a></h2>
 <pre>func ExpFloat64() <a href="/builtin/#float64">float64</a></pre>
 
@@ -166,62 +166,62 @@ using:
 
     sample = ExpFloat64() / desiredRateParameter
 
-<h2 id="Float32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L324">Float32</a>
+<h2 id="Float32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L324">Float32</a>
     <a href="#Float32">¶</a></h2>
 <pre>func Float32() <a href="/builtin/#float32">float32</a></pre>
 
 Float32 returns, as a float32, a pseudo-random number in [0.0,1.0) from the
 default Source.
 
-<h2 id="Float64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L320">Float64</a>
+<h2 id="Float64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L320">Float64</a>
     <a href="#Float64">¶</a></h2>
 <pre>func Float64() <a href="/builtin/#float64">float64</a></pre>
 
 Float64 returns, as a float64, a pseudo-random number in [0.0,1.0) from the
 default Source.
 
-<h2 id="Int">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L301">Int</a>
+<h2 id="Int">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L301">Int</a>
     <a href="#Int">¶</a></h2>
 <pre>func Int() <a href="/builtin/#int">int</a></pre>
 
 Int returns a non-negative pseudo-random int from the default Source.
 
-<h2 id="Int31">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L298">Int31</a>
+<h2 id="Int31">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L298">Int31</a>
     <a href="#Int31">¶</a></h2>
 <pre>func Int31() <a href="/builtin/#int32">int32</a></pre>
 
 Int31 returns a non-negative pseudo-random 31-bit integer as an int32 from the
 default Source.
 
-<h2 id="Int31n">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L311">Int31n</a>
+<h2 id="Int31n">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L311">Int31n</a>
     <a href="#Int31n">¶</a></h2>
 <pre>func Int31n(n <a href="/builtin/#int32">int32</a>) <a href="/builtin/#int32">int32</a></pre>
 
 Int31n returns, as an int32, a non-negative pseudo-random number in [0,n) from
 the default Source. It panics if n <= 0.
 
-<h2 id="Int63">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L286">Int63</a>
+<h2 id="Int63">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L286">Int63</a>
     <a href="#Int63">¶</a></h2>
 <pre>func Int63() <a href="/builtin/#int64">int64</a></pre>
 
 Int63 returns a non-negative pseudo-random 63-bit integer as an int64 from the
 default Source.
 
-<h2 id="Int63n">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L306">Int63n</a>
+<h2 id="Int63n">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L306">Int63n</a>
     <a href="#Int63n">¶</a></h2>
 <pre>func Int63n(n <a href="/builtin/#int64">int64</a>) <a href="/builtin/#int64">int64</a></pre>
 
 Int63n returns, as an int64, a non-negative pseudo-random number in [0,n) from
 the default Source. It panics if n <= 0.
 
-<h2 id="Intn">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L316">Intn</a>
+<h2 id="Intn">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L316">Intn</a>
     <a href="#Intn">¶</a></h2>
 <pre>func Intn(n <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 Intn returns, as an int, a non-negative pseudo-random number in [0,n) from the
 default Source. It panics if n <= 0.
 
-<h2 id="NormFloat64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L349">NormFloat64</a>
+<h2 id="NormFloat64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L349">NormFloat64</a>
     <a href="#NormFloat64">¶</a></h2>
 <pre>func NormFloat64() <a href="/builtin/#float64">float64</a></pre>
 
@@ -232,7 +232,7 @@ distribution, callers can adjust the output using:
 
     sample = NormFloat64() * desiredStdDev + desiredMean
 
-<h2 id="Perm">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L328">Perm</a>
+<h2 id="Perm">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L328">Perm</a>
     <a href="#Perm">¶</a></h2>
 <pre>func Perm(n <a href="/builtin/#int">int</a>) []<a href="/builtin/#int">int</a></pre>
 
@@ -250,7 +250,7 @@ Example:
     // 2
     // 0
 
-<h2 id="Read">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L338">Read</a>
+<h2 id="Read">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L338">Read</a>
     <a href="#Read">¶</a></h2>
 <pre>func Read(p []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -258,7 +258,7 @@ Read generates len(p) random bytes from the default Source and writes them into
 p. It always returns len(p) and a nil error. Read, unlike the Rand.Read method,
 is safe for concurrent use.
 
-<h2 id="Seed">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L282">Seed</a>
+<h2 id="Seed">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L282">Seed</a>
     <a href="#Seed">¶</a></h2>
 <pre>func Seed(seed <a href="/builtin/#int64">int64</a>)</pre>
 
@@ -268,7 +268,7 @@ by Seed(1). Seed values that have the same remainder when divided by 2^31-1
 generate the same pseudo-random sequence. Seed, unlike the Rand.Seed method, is
 safe for concurrent use.
 
-<h2 id="Shuffle">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L333">Shuffle</a>
+<h2 id="Shuffle">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L333">Shuffle</a>
     <a href="#Shuffle">¶</a></h2>
 <pre>func Shuffle(n <a href="/builtin/#int">int</a>, swap func(i, j <a href="/builtin/#int">int</a>))</pre>
 
@@ -310,19 +310,19 @@ Example:
     // E: 5
     // B: 2
 
-<h2 id="Uint32">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L290">Uint32</a>
+<h2 id="Uint32">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L290">Uint32</a>
     <a href="#Uint32">¶</a></h2>
 <pre>func Uint32() <a href="/builtin/#uint32">uint32</a></pre>
 
 Uint32 returns a pseudo-random 32-bit value as a uint32 from the default Source.
 
-<h2 id="Uint64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L294">Uint64</a>
+<h2 id="Uint64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L294">Uint64</a>
     <a href="#Uint64">¶</a></h2>
 <pre>func Uint64() <a href="/builtin/#uint64">uint64</a></pre>
 
 Uint64 returns a pseudo-random 64-bit value as a uint64 from the default Source.
 
-<h2 id="Rand">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L38">Rand</a>
+<h2 id="Rand">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L38">Rand</a>
     <a href="#Rand">¶</a></h2>
 <pre>type Rand struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -330,14 +330,14 @@ Uint64 returns a pseudo-random 64-bit value as a uint64 from the default Source.
 
 A Rand is a source of random numbers.
 
-<h3 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L54">New</a>
+<h3 id="New">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L54">New</a>
     <a href="#New">¶</a></h3>
 <pre>func New(src <a href="#Source">Source</a>) *<a href="#Rand">Rand</a></pre>
 
 New returns a new Rand that uses random values from src to generate other random
 values.
 
-<h3 id="Rand.ExpFloat64">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/exp.go#L21">ExpFloat64</a>
+<h3 id="Rand.ExpFloat64">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/exp.go#L21">ExpFloat64</a>
     <a href="#Rand.ExpFloat64">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) ExpFloat64() <a href="/builtin/#float64">float64</a></pre>
 
@@ -348,58 +348,58 @@ rate parameter, callers can adjust the output using:
 
     sample = ExpFloat64() / desiredRateParameter
 
-<h3 id="Rand.Float32">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L191">Float32</a>
+<h3 id="Rand.Float32">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L191">Float32</a>
     <a href="#Rand.Float32">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) Float32() <a href="/builtin/#float32">float32</a></pre>
 
 Float32 returns, as a float32, a pseudo-random number in [0.0,1.0).
 
-<h3 id="Rand.Float64">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L165">Float64</a>
+<h3 id="Rand.Float64">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L165">Float64</a>
     <a href="#Rand.Float64">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) Float64() <a href="/builtin/#float64">float64</a></pre>
 
 Float64 returns, as a float64, a pseudo-random number in [0.0,1.0).
 
-<h3 id="Rand.Int">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L89">Int</a>
+<h3 id="Rand.Int">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L89">Int</a>
     <a href="#Rand.Int">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) Int() <a href="/builtin/#int">int</a></pre>
 
 Int returns a non-negative pseudo-random int.
 
-<h3 id="Rand.Int31">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L86">Int31</a>
+<h3 id="Rand.Int31">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L86">Int31</a>
     <a href="#Rand.Int31">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) Int31() <a href="/builtin/#int32">int32</a></pre>
 
 Int31 returns a non-negative pseudo-random 31-bit integer as an int32.
 
-<h3 id="Rand.Int31n">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L113">Int31n</a>
+<h3 id="Rand.Int31n">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L113">Int31n</a>
     <a href="#Rand.Int31n">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) Int31n(n <a href="/builtin/#int32">int32</a>) <a href="/builtin/#int32">int32</a></pre>
 
 Int31n returns, as an int32, a non-negative pseudo-random number in [0,n). It
 panics if n <= 0.
 
-<h3 id="Rand.Int63">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L72">Int63</a>
+<h3 id="Rand.Int63">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L72">Int63</a>
     <a href="#Rand.Int63">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) Int63() <a href="/builtin/#int64">int64</a></pre>
 
 Int63 returns a non-negative pseudo-random 63-bit integer as an int64.
 
-<h3 id="Rand.Int63n">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L96">Int63n</a>
+<h3 id="Rand.Int63n">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L96">Int63n</a>
     <a href="#Rand.Int63n">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) Int63n(n <a href="/builtin/#int64">int64</a>) <a href="/builtin/#int64">int64</a></pre>
 
 Int63n returns, as an int64, a non-negative pseudo-random number in [0,n). It
 panics if n <= 0.
 
-<h3 id="Rand.Intn">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L154">Intn</a>
+<h3 id="Rand.Intn">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L154">Intn</a>
     <a href="#Rand.Intn">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) Intn(n <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
 Intn returns, as an int, a non-negative pseudo-random number in [0,n). It panics
 if n <= 0.
 
-<h3 id="Rand.NormFloat64">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/normal.go#L28">NormFloat64</a>
+<h3 id="Rand.NormFloat64">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/normal.go#L28">NormFloat64</a>
     <a href="#Rand.NormFloat64">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) NormFloat64() <a href="/builtin/#float64">float64</a></pre>
 
@@ -410,14 +410,14 @@ the output using:
 
     sample = NormFloat64() * desiredStdDev + desiredMean
 
-<h3 id="Rand.Perm">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L204">Perm</a>
+<h3 id="Rand.Perm">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L204">Perm</a>
     <a href="#Rand.Perm">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) Perm(n <a href="/builtin/#int">int</a>) []<a href="/builtin/#int">int</a></pre>
 
 Perm returns, as a slice of n ints, a pseudo-random permutation of the integers
 [0,n).
 
-<h3 id="Rand.Read">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L247">Read</a>
+<h3 id="Rand.Read">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L247">Read</a>
     <a href="#Rand.Read">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) Read(p []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -425,33 +425,33 @@ Read generates len(p) random bytes and writes them into p. It always returns
 len(p) and a nil error. Read should not be called concurrently with any other
 Rand method.
 
-<h3 id="Rand.Seed">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L61">Seed</a>
+<h3 id="Rand.Seed">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L61">Seed</a>
     <a href="#Rand.Seed">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) Seed(seed <a href="/builtin/#int64">int64</a>)</pre>
 
 Seed uses the provided seed value to initialize the generator to a deterministic
 state. Seed should not be called concurrently with any other Rand method.
 
-<h3 id="Rand.Shuffle">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L222">Shuffle</a>
+<h3 id="Rand.Shuffle">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L222">Shuffle</a>
     <a href="#Rand.Shuffle">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) Shuffle(n <a href="/builtin/#int">int</a>, swap func(i, j <a href="/builtin/#int">int</a>))</pre>
 
 Shuffle pseudo-randomizes the order of elements. n is the number of elements.
 Shuffle panics if n < 0. swap swaps the elements with indexes i and j.
 
-<h3 id="Rand.Uint32">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L75">Uint32</a>
+<h3 id="Rand.Uint32">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L75">Uint32</a>
     <a href="#Rand.Uint32">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) Uint32() <a href="/builtin/#uint32">uint32</a></pre>
 
 Uint32 returns a pseudo-random 32-bit value as a uint32.
 
-<h3 id="Rand.Uint64">func (*Rand) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L78">Uint64</a>
+<h3 id="Rand.Uint64">func (*Rand) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L78">Uint64</a>
     <a href="#Rand.Uint64">¶</a></h3>
 <pre>func (r *<a href="#Rand">Rand</a>) Uint64() <a href="/builtin/#uint64">uint64</a></pre>
 
 Uint64 returns a pseudo-random 64-bit value as a uint64.
 
-<h2 id="Source">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L12">Source</a>
+<h2 id="Source">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L12">Source</a>
     <a href="#Source">¶</a></h2>
 <pre>type Source interface {
     Int63() <a href="/builtin/#int64">int64</a>
@@ -461,7 +461,7 @@ Uint64 returns a pseudo-random 64-bit value as a uint64.
 A Source represents a source of uniformly-distributed pseudo-random int64 values
 in the range [0, 1<<63).
 
-<h3 id="NewSource">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L31">NewSource</a>
+<h3 id="NewSource">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L31">NewSource</a>
     <a href="#NewSource">¶</a></h3>
 <pre>func NewSource(seed <a href="/builtin/#int64">int64</a>) <a href="#Source">Source</a></pre>
 
@@ -469,7 +469,7 @@ NewSource returns a new pseudo-random Source seeded with the given value. Unlike
 the default Source used by top-level functions, this source is not safe for
 concurrent use by multiple goroutines.
 
-<h2 id="Source64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/rand.go#L23">Source64</a>
+<h2 id="Source64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/rand.go#L23">Source64</a>
     <a href="#Source64">¶</a></h2>
 <pre>type Source64 interface {
     <a href="#Source">Source</a>
@@ -481,7 +481,7 @@ pseudo-random uint64 values in the range [0, 1<<64) directly. If a Rand r's
 underlying Source s implements Source64, then r.Uint64 returns the result of one
 call to s.Uint64 instead of making two calls to s.Int63.
 
-<h2 id="Zipf">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/zipf.go#L5">Zipf</a>
+<h2 id="Zipf">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/zipf.go#L5">Zipf</a>
     <a href="#Zipf">¶</a></h2>
 <pre>type Zipf struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -489,7 +489,7 @@ call to s.Uint64 instead of making two calls to s.Int63.
 
 A Zipf generates Zipf distributed variates.
 
-<h3 id="NewZipf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/zipf.go#L29">NewZipf</a>
+<h3 id="NewZipf">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/zipf.go#L29">NewZipf</a>
     <a href="#NewZipf">¶</a></h3>
 <pre>func NewZipf(r *<a href="#Rand">Rand</a>, s <a href="/builtin/#float64">float64</a>, v <a href="/builtin/#float64">float64</a>, imax <a href="/builtin/#uint64">uint64</a>) *<a href="#Zipf">Zipf</a></pre>
 
@@ -497,7 +497,7 @@ NewZipf returns a Zipf variate generator. The generator generates values k ∈ [
 imax] such that P(k) is proportional to (v + k) ** (-s). Requirements: s > 1 and
 v >= 1.
 
-<h3 id="Zipf.Uint64">func (*Zipf) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/rand/zipf.go#L48">Uint64</a>
+<h3 id="Zipf.Uint64">func (*Zipf) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/rand/zipf.go#L48">Uint64</a>
     <a href="#Zipf.Uint64">¶</a></h3>
 <pre>func (z *<a href="#Zipf">Zipf</a>) Uint64() <a href="/builtin/#uint64">uint64</a></pre>
 

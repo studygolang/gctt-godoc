@@ -39,7 +39,7 @@ files.
 - [type Symbol](#Symbol)
 
 ### Package files
- [file.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/file.go) [pe.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/pe.go) [section.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/section.go) [string.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/string.go) [symbol.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/symbol.go)
+ [file.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/file.go) [pe.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/pe.go) [section.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/section.go) [string.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/string.go) [symbol.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/symbol.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -70,7 +70,7 @@ files.
 <pre>const <span id="COFFSymbolSize">COFFSymbolSize</span> = 18</pre>
 
 
-<h2 id="COFFSymbol">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/symbol.go#L6">COFFSymbol</a>
+<h2 id="COFFSymbol">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/symbol.go#L6">COFFSymbol</a>
     <a href="#COFFSymbol">¶</a></h2>
 <pre>type COFFSymbol struct {
 <span id="COFFSymbol.Name"></span>    Name               [8]<a href="/builtin/#uint8">uint8</a>
@@ -83,14 +83,14 @@ files.
 
 COFFSymbol represents single COFF symbol table record.
 
-<h3 id="COFFSymbol.FullName">func (*COFFSymbol) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/symbol.go#L45">FullName</a>
+<h3 id="COFFSymbol.FullName">func (*COFFSymbol) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/symbol.go#L45">FullName</a>
     <a href="#COFFSymbol.FullName">¶</a></h3>
 <pre>func (sym *<a href="#COFFSymbol">COFFSymbol</a>) FullName(st <a href="#StringTable">StringTable</a>) (<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
 FullName finds real name of symbol sym. Normally name is stored in sym.Name, but
 if it is longer then 8 characters, it is stored in COFF string table st instead.
 
-<h2 id="DataDirectory">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/pe.go#L7">DataDirectory</a>
+<h2 id="DataDirectory">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/pe.go#L7">DataDirectory</a>
     <a href="#DataDirectory">¶</a></h2>
 <pre>type DataDirectory struct {
 <span id="DataDirectory.VirtualAddress"></span>    VirtualAddress <a href="/builtin/#uint32">uint32</a>
@@ -98,7 +98,7 @@ if it is longer then 8 characters, it is stored in COFF string table st instead.
 }</pre>
 
 
-<h2 id="File">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/file.go#L10">File</a>
+<h2 id="File">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/file.go#L10">File</a>
     <a href="#File">¶</a></h2>
 <pre>type File struct {
     <a href="#FileHeader">FileHeader</a>
@@ -112,38 +112,38 @@ if it is longer then 8 characters, it is stored in COFF string table st instead.
 
 A File represents an open PE file.
 
-<h3 id="NewFile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/file.go#L56">NewFile</a>
+<h3 id="NewFile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/file.go#L56">NewFile</a>
     <a href="#NewFile">¶</a></h3>
 <pre>func NewFile(r <a href="/io/">io</a>.<a href="/io/#ReaderAt">ReaderAt</a>) (*<a href="#File">File</a>, <a href="/builtin/#error">error</a>)</pre>
 
 NewFile creates a new File for accessing a PE binary in an underlying reader.
 
-<h3 id="Open">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/file.go#L22">Open</a>
+<h3 id="Open">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/file.go#L22">Open</a>
     <a href="#Open">¶</a></h3>
 <pre>func Open(name <a href="/builtin/#string">string</a>) (*<a href="#File">File</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Open opens the named file using os.Open and prepares it for use as a PE binary.
 
-<h3 id="File.Close">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/file.go#L39">Close</a>
+<h3 id="File.Close">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/file.go#L39">Close</a>
     <a href="#File.Close">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close closes the File. If the File was created using NewFile directly instead of
 Open, Close has no effect.
 
-<h3 id="File.DWARF">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/file.go#L209">DWARF</a>
+<h3 id="File.DWARF">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/file.go#L209">DWARF</a>
     <a href="#File.DWARF">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) DWARF() (*<a href="/debug/dwarf/">dwarf</a>.<a href="/debug/dwarf/#Data">Data</a>, <a href="/builtin/#error">error</a>)</pre>
 
 
-<h3 id="File.ImportedLibraries">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/file.go#L323">ImportedLibraries</a>
+<h3 id="File.ImportedLibraries">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/file.go#L323">ImportedLibraries</a>
     <a href="#File.ImportedLibraries">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) ImportedLibraries() ([]<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
 ImportedLibraries returns the names of all libraries referred to by the binary f
 that are expected to be linked with the binary at dynamic link time.
 
-<h3 id="File.ImportedSymbols">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/file.go#L251">ImportedSymbols</a>
+<h3 id="File.ImportedSymbols">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/file.go#L251">ImportedSymbols</a>
     <a href="#File.ImportedSymbols">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) ImportedSymbols() ([]<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -151,14 +151,14 @@ ImportedSymbols returns the names of all symbols referred to by the binary f
 that are expected to be satisfied by other libraries at dynamic load time. It
 does not return weak symbols.
 
-<h3 id="File.Section">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/file.go#L200">Section</a>
+<h3 id="File.Section">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/file.go#L200">Section</a>
     <a href="#File.Section">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Section(name <a href="/builtin/#string">string</a>) *<a href="#Section">Section</a></pre>
 
 Section returns the first section with the given name, or nil if no such section
 exists.
 
-<h2 id="FileHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/pe.go#L1">FileHeader</a>
+<h2 id="FileHeader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/pe.go#L1">FileHeader</a>
     <a href="#FileHeader">¶</a></h2>
 <pre>type FileHeader struct {
 <span id="FileHeader.Machine"></span>    Machine              <a href="/builtin/#uint16">uint16</a>
@@ -171,19 +171,19 @@ exists.
 }</pre>
 
 
-<h2 id="FormatError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/file.go#L331">FormatError</a>
+<h2 id="FormatError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/file.go#L331">FormatError</a>
     <a href="#FormatError">¶</a></h2>
 <pre>type FormatError struct {
 }</pre>
 
 FormatError is unused. The type is retained for compatibility.
 
-<h3 id="FormatError.Error">func (*FormatError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/file.go#L334">Error</a>
+<h3 id="FormatError.Error">func (*FormatError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/file.go#L334">Error</a>
     <a href="#FormatError.Error">¶</a></h3>
 <pre>func (e *<a href="#FormatError">FormatError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="ImportDirectory">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/file.go#L237">ImportDirectory</a>
+<h2 id="ImportDirectory">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/file.go#L237">ImportDirectory</a>
     <a href="#ImportDirectory">¶</a></h2>
 <pre>type ImportDirectory struct {
 <span id="ImportDirectory.OriginalFirstThunk"></span>    OriginalFirstThunk <a href="/builtin/#uint32">uint32</a>
@@ -195,7 +195,7 @@ FormatError is unused. The type is retained for compatibility.
 }</pre>
 
 
-<h2 id="OptionalHeader32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/pe.go#L12">OptionalHeader32</a>
+<h2 id="OptionalHeader32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/pe.go#L12">OptionalHeader32</a>
     <a href="#OptionalHeader32">¶</a></h2>
 <pre>type OptionalHeader32 struct {
 <span id="OptionalHeader32.Magic"></span>    Magic                       <a href="/builtin/#uint16">uint16</a>
@@ -232,7 +232,7 @@ FormatError is unused. The type is retained for compatibility.
 }</pre>
 
 
-<h2 id="OptionalHeader64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/pe.go#L46">OptionalHeader64</a>
+<h2 id="OptionalHeader64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/pe.go#L46">OptionalHeader64</a>
     <a href="#OptionalHeader64">¶</a></h2>
 <pre>type OptionalHeader64 struct {
 <span id="OptionalHeader64.Magic"></span>    Magic                       <a href="/builtin/#uint16">uint16</a>
@@ -268,7 +268,7 @@ FormatError is unused. The type is retained for compatibility.
 }</pre>
 
 
-<h2 id="Reloc">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/section.go#L36">Reloc</a>
+<h2 id="Reloc">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/section.go#L36">Reloc</a>
     <a href="#Reloc">¶</a></h2>
 <pre>type Reloc struct {
 <span id="Reloc.VirtualAddress"></span>    VirtualAddress   <a href="/builtin/#uint32">uint32</a>
@@ -279,7 +279,7 @@ FormatError is unused. The type is retained for compatibility.
 Reloc represents a PE COFF relocation. Each section contains its own relocation
 list.
 
-<h2 id="Section">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/section.go#L74">Section</a>
+<h2 id="Section">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/section.go#L74">Section</a>
     <a href="#Section">¶</a></h2>
 <pre>type Section struct {
     <a href="#SectionHeader">SectionHeader</a>
@@ -297,19 +297,19 @@ list.
 
 Section provides access to PE COFF section.
 
-<h3 id="Section.Data">func (*Section) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/section.go#L89">Data</a>
+<h3 id="Section.Data">func (*Section) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/section.go#L89">Data</a>
     <a href="#Section.Data">¶</a></h3>
 <pre>func (s *<a href="#Section">Section</a>) Data() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Data reads and returns the contents of the PE section s.
 
-<h3 id="Section.Open">func (*Section) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/section.go#L99">Open</a>
+<h3 id="Section.Open">func (*Section) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/section.go#L99">Open</a>
     <a href="#Section.Open">¶</a></h3>
 <pre>func (s *<a href="#Section">Section</a>) Open() <a href="/io/">io</a>.<a href="/io/#ReadSeeker">ReadSeeker</a></pre>
 
 Open returns a new ReadSeeker reading the PE section s.
 
-<h2 id="SectionHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/section.go#L60">SectionHeader</a>
+<h2 id="SectionHeader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/section.go#L60">SectionHeader</a>
     <a href="#SectionHeader">¶</a></h2>
 <pre>type SectionHeader struct {
 <span id="SectionHeader.Name"></span>    Name                 <a href="/builtin/#string">string</a>
@@ -327,7 +327,7 @@ Open returns a new ReadSeeker reading the PE section s.
 SectionHeader is similar to SectionHeader32 with Name field replaced by Go
 string.
 
-<h2 id="SectionHeader32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/section.go#L5">SectionHeader32</a>
+<h2 id="SectionHeader32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/section.go#L5">SectionHeader32</a>
     <a href="#SectionHeader32">¶</a></h2>
 <pre>type SectionHeader32 struct {
 <span id="SectionHeader32.Name"></span>    Name                 [8]<a href="/builtin/#uint8">uint8</a>
@@ -344,19 +344,19 @@ string.
 
 SectionHeader32 represents real PE COFF section header.
 
-<h2 id="StringTable">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/string.go#L13">StringTable</a>
+<h2 id="StringTable">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/string.go#L13">StringTable</a>
     <a href="#StringTable">¶</a></h2>
 <pre>type StringTable []<a href="/builtin/#byte">byte</a></pre>
 
 StringTable is a COFF string table.
 
-<h3 id="StringTable.String">func (StringTable) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/string.go#L46">String</a>
+<h3 id="StringTable.String">func (StringTable) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/string.go#L46">String</a>
     <a href="#StringTable.String">¶</a></h3>
 <pre>func (st <a href="#StringTable">StringTable</a>) String(start <a href="/builtin/#uint32">uint32</a>) (<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
 String extracts string from COFF string table st at offset start.
 
-<h2 id="Symbol">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/pe/symbol.go#L82">Symbol</a>
+<h2 id="Symbol">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/pe/symbol.go#L82">Symbol</a>
     <a href="#Symbol">¶</a></h2>
 <pre>type Symbol struct {
 <span id="Symbol.Name"></span>    Name          <a href="/builtin/#string">string</a>

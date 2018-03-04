@@ -20,9 +20,9 @@ intended primarily for compatibility with existing systems.
   - [func (h *Handler) ServeHTTP(rw http.ResponseWriter, req *http.Request)](#Handler.ServeHTTP)
 
 ### Package files
- [child.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cgi/child.go) [host.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cgi/host.go)
+ [child.go](//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cgi/child.go) [host.go](//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cgi/host.go)
 
-<h2 id="Request">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cgi/child.go#L19">Request</a>
+<h2 id="Request">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cgi/child.go#L19">Request</a>
     <a href="#Request">¶</a></h2>
 <pre>func Request() (*<a href="/net/http/">http</a>.<a href="/net/http/#Request">Request</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -30,14 +30,14 @@ Request returns the HTTP request as represented in the current environment. This
 assumes the current program is being run by a web server in a CGI environment.
 The returned Request's Body is populated, if applicable.
 
-<h2 id="RequestFromMap">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cgi/child.go#L42">RequestFromMap</a>
+<h2 id="RequestFromMap">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cgi/child.go#L42">RequestFromMap</a>
     <a href="#RequestFromMap">¶</a></h2>
 <pre>func RequestFromMap(params map[<a href="/builtin/#string">string</a>]<a href="/builtin/#string">string</a>) (*<a href="/net/http/">http</a>.<a href="/net/http/#Request">Request</a>, <a href="/builtin/#error">error</a>)</pre>
 
 RequestFromMap creates an http.Request from CGI variables. The returned
 Request's Body field is not populated.
 
-<h2 id="Serve">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cgi/child.go#L136">Serve</a>
+<h2 id="Serve">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cgi/child.go#L136">Serve</a>
     <a href="#Serve">¶</a></h2>
 <pre>func Serve(handler <a href="/net/http/">http</a>.<a href="/net/http/#Handler">Handler</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -45,7 +45,7 @@ Serve executes the provided Handler on the currently active CGI request, if any.
 If there's no current CGI environment an error is returned. The provided handler
 may be nil to use http.DefaultServeMux.
 
-<h2 id="Handler">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cgi/host.go#L37">Handler</a>
+<h2 id="Handler">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cgi/host.go#L37">Handler</a>
     <a href="#Handler">¶</a></h2>
 <pre>type Handler struct {
 <span id="Handler.Path"></span>    Path <a href="/builtin/#string">string</a> <span class="comment">// path to the CGI executable</span>
@@ -76,7 +76,7 @@ may be nil to use http.DefaultServeMux.
 
 Handler runs an executable in a subprocess with a CGI environment.
 
-<h3 id="Handler.ServeHTTP">func (*Handler) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/cgi/host.go#L96">ServeHTTP</a>
+<h3 id="Handler.ServeHTTP">func (*Handler) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/cgi/host.go#L96">ServeHTTP</a>
     <a href="#Handler.ServeHTTP">¶</a></h3>
 <pre>func (h *<a href="#Handler">Handler</a>) ServeHTTP(rw <a href="/net/http/">http</a>.<a href="/net/http/#ResponseWriter">ResponseWriter</a>, req *<a href="/net/http/">http</a>.<a href="/net/http/#Request">Request</a>)</pre>
 

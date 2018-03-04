@@ -401,7 +401,7 @@ Example:
 - [Package (Sqrt2)](#example_sqrt2)
 
 ### Package files
- [accuracy_string.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/accuracy_string.go) [arith.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/arith.go) [arith_decl.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/arith_decl.go) [decimal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/decimal.go) [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/doc.go) [float.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go) [floatconv.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/floatconv.go) [floatmarsh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/floatmarsh.go) [ftoa.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ftoa.go) [int.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go) [intconv.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intconv.go) [intmarsh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intmarsh.go) [nat.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/nat.go) [natconv.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/natconv.go) [prime.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/prime.go) [rat.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go) [ratconv.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ratconv.go) [ratmarsh.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ratmarsh.go) [roundingmode_string.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/roundingmode_string.go) [sqrt.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/sqrt.go)
+ [accuracy_string.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/accuracy_string.go) [arith.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/arith.go) [arith_decl.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/arith_decl.go) [decimal.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/decimal.go) [doc.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/doc.go) [float.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go) [floatconv.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/floatconv.go) [floatmarsh.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/floatmarsh.go) [ftoa.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ftoa.go) [int.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go) [intconv.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/intconv.go) [intmarsh.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/intmarsh.go) [nat.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/nat.go) [natconv.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/natconv.go) [prime.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/prime.go) [rat.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go) [ratconv.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ratconv.go) [ratmarsh.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ratmarsh.go) [roundingmode_string.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/roundingmode_string.go) [sqrt.go](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/sqrt.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -417,14 +417,14 @@ Exponent and precision limits.
 
 MaxBase is the largest number base accepted for string conversions.
 
-<h2 id="Jacobi">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L672">Jacobi</a>
+<h2 id="Jacobi">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L672">Jacobi</a>
     <a href="#Jacobi">¶</a></h2>
 <pre>func Jacobi(x, y *<a href="#Int">Int</a>) <a href="/builtin/#int">int</a></pre>
 
 Jacobi returns the Jacobi symbol (x/y), either +1, -1, or 0. The y argument must
 be an odd integer.
 
-<h2 id="Accuracy">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L132">Accuracy</a>
+<h2 id="Accuracy">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L132">Accuracy</a>
     <a href="#Accuracy">¶</a></h2>
 <pre>type Accuracy <a href="/builtin/#int8">int8</a></pre>
 
@@ -439,12 +439,12 @@ generated a Float value, relative to the exact value.
 
 Constants describing the Accuracy of a Float.
 
-<h3 id="Accuracy.String">func (Accuracy) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/accuracy_string.go#L1">String</a>
+<h3 id="Accuracy.String">func (Accuracy) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/accuracy_string.go#L1">String</a>
     <a href="#Accuracy.String">¶</a></h3>
 <pre>func (i <a href="#Accuracy">Accuracy</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="ErrNaN">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L61">ErrNaN</a>
+<h2 id="ErrNaN">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L61">ErrNaN</a>
     <a href="#ErrNaN">¶</a></h2>
 <pre>type ErrNaN struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -453,12 +453,12 @@ Constants describing the Accuracy of a Float.
 An ErrNaN panic is raised by a Float operation that would lead to a NaN under
 IEEE-754 rules. An ErrNaN implements the error interface.
 
-<h3 id="ErrNaN.Error">func (ErrNaN) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L65">Error</a>
+<h3 id="ErrNaN.Error">func (ErrNaN) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L65">Error</a>
     <a href="#ErrNaN.Error">¶</a></h3>
 <pre>func (err <a href="#ErrNaN">ErrNaN</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Float">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L49">Float</a>
+<h2 id="Float">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L49">Float</a>
     <a href="#Float">¶</a></h2>
 <pre>type Float struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -522,34 +522,34 @@ Example:
     // 8
     // 16
 
-<h3 id="NewFloat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L72">NewFloat</a>
+<h3 id="NewFloat">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L72">NewFloat</a>
     <a href="#NewFloat">¶</a></h3>
 <pre>func NewFloat(x <a href="/builtin/#float64">float64</a>) *<a href="#Float">Float</a></pre>
 
 NewFloat allocates and returns a new Float set to x, with precision 53 and
 rounding mode ToNearestEven. NewFloat panics with ErrNaN if x is a NaN.
 
-<h3 id="ParseFloat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/floatconv.go#L268">ParseFloat</a>
+<h3 id="ParseFloat">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/floatconv.go#L268">ParseFloat</a>
     <a href="#ParseFloat">¶</a></h3>
 <pre>func ParseFloat(s <a href="/builtin/#string">string</a>, base <a href="/builtin/#int">int</a>, prec <a href="/builtin/#uint">uint</a>, mode <a href="#RoundingMode">RoundingMode</a>) (f *<a href="#Float">Float</a>, b <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 ParseFloat is like f.Parse(s, base) with f set to the given precision and
 rounding mode.
 
-<h3 id="Float.Abs">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L1155">Abs</a>
+<h3 id="Float.Abs">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L1155">Abs</a>
     <a href="#Float.Abs">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) Abs(x *<a href="#Float">Float</a>) *<a href="#Float">Float</a></pre>
 
 Abs sets z to the (possibly rounded) value |x| (the absolute value of x) and
 returns z.
 
-<h3 id="Float.Acc">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L212">Acc</a>
+<h3 id="Float.Acc">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L212">Acc</a>
     <a href="#Float.Acc">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Acc() <a href="#Accuracy">Accuracy</a></pre>
 
 Acc returns the accuracy of x produced by the most recent operation.
 
-<h3 id="Float.Add">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L1424">Add</a>
+<h3 id="Float.Add">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L1424">Add</a>
     <a href="#Float.Add">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) Add(x, y *<a href="#Float">Float</a>) *<a href="#Float">Float</a></pre>
 
@@ -580,14 +580,14 @@ Example:
     // y = 2.718281828 (0x.adf85458248cd8p+2, prec = 53, acc = Exact)
     // z = 1002.718282 (0x.faadf854p+10, prec = 32, acc = Below)
 
-<h3 id="Float.Append">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ftoa.go#L49">Append</a>
+<h3 id="Float.Append">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ftoa.go#L49">Append</a>
     <a href="#Float.Append">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Append(buf []<a href="/builtin/#byte">byte</a>, fmt <a href="/builtin/#byte">byte</a>, prec <a href="/builtin/#int">int</a>) []<a href="/builtin/#byte">byte</a></pre>
 
 Append appends to buf the string form of the floating-point number x, as
 generated by x.Text, and returns the extended buffer.
 
-<h3 id="Float.Cmp">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L1651">Cmp</a>
+<h3 id="Float.Cmp">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L1651">Cmp</a>
     <a href="#Float.Cmp">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Cmp(y *<a href="#Float">Float</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -661,14 +661,14 @@ Example:
     // +Inf   1.2    1
     // +Inf  +Inf    0
 
-<h3 id="Float.Copy">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L651">Copy</a>
+<h3 id="Float.Copy">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L651">Copy</a>
     <a href="#Float.Copy">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) Copy(x *<a href="#Float">Float</a>) *<a href="#Float">Float</a></pre>
 
 Copy sets z to x, with the same precision, rounding mode, and accuracy as x, and
 returns z. x is not changed even if z and x are the same.
 
-<h3 id="Float.Float32">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L814">Float32</a>
+<h3 id="Float.Float32">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L814">Float32</a>
     <a href="#Float.Float32">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Float32() (<a href="/builtin/#float32">float32</a>, <a href="#Accuracy">Accuracy</a>)</pre>
 
@@ -678,7 +678,7 @@ Below) or (-0, Above), respectively, depending on the sign of x. If x is too
 large to be represented by a float32 (|x| > math.MaxFloat32), the result is
 (+Inf, Above) or (-Inf, Below), depending on the sign of x.
 
-<h3 id="Float.Float64">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L934">Float64</a>
+<h3 id="Float.Float64">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L934">Float64</a>
     <a href="#Float.Float64">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Float64() (<a href="/builtin/#float64">float64</a>, <a href="#Accuracy">Accuracy</a>)</pre>
 
@@ -688,7 +688,7 @@ Below) or (-0, Above), respectively, depending on the sign of x. If x is too
 large to be represented by a float64 (|x| > math.MaxFloat64), the result is
 (+Inf, Above) or (-Inf, Below), depending on the sign of x.
 
-<h3 id="Float.Format">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ftoa.go#L380">Format</a>
+<h3 id="Float.Format">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ftoa.go#L380">Format</a>
     <a href="#Float.Format">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Format(s <a href="/fmt/">fmt</a>.<a href="/fmt/#State">State</a>, format <a href="/builtin/#rune">rune</a>)</pre>
 
@@ -700,7 +700,7 @@ the output field width, as well as the format flags '+' and ' ' for sign
 control, '0' for space or zero padding, and '-' for left or right justification.
 See the fmt package for details.
 
-<h3 id="Float.GobDecode">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/floatmarsh.go#L54">GobDecode</a>
+<h3 id="Float.GobDecode">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/floatmarsh.go#L54">GobDecode</a>
     <a href="#Float.GobDecode">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) GobDecode(buf []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -708,14 +708,14 @@ GobDecode implements the gob.GobDecoder interface. The result is rounded per the
 precision and rounding mode of z unless z's precision is 0, in which case z is
 set exactly to the decoded value.
 
-<h3 id="Float.GobEncode">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/floatmarsh.go#L10">GobEncode</a>
+<h3 id="Float.GobEncode">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/floatmarsh.go#L10">GobEncode</a>
     <a href="#Float.GobEncode">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) GobEncode() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 GobEncode implements the gob.GobEncoder interface. The Float value and all its
 attributes (precision, rounding mode, accuracy) are marshaled.
 
-<h3 id="Float.Int">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L1055">Int</a>
+<h3 id="Float.Int">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L1055">Int</a>
     <a href="#Float.Int">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Int(z *<a href="#Int">Int</a>) (*<a href="#Int">Int</a>, <a href="#Accuracy">Accuracy</a>)</pre>
 
@@ -724,7 +724,7 @@ The result is Exact if x.IsInt(); otherwise it is Below for x > 0, and Above for
 x < 0. If a non-nil *Int argument z is provided, Int stores the result in z
 instead of allocating a new Int.
 
-<h3 id="Float.Int64">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L759">Int64</a>
+<h3 id="Float.Int64">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L759">Int64</a>
     <a href="#Float.Int64">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Int64() (<a href="/builtin/#int64">int64</a>, <a href="#Accuracy">Accuracy</a>)</pre>
 
@@ -733,19 +733,19 @@ math.MinInt64 <= x <= math.MaxInt64, the result is Exact if x is an integer, and
 Above (x < 0) or Below (x > 0) otherwise. The result is (math.MinInt64, Above)
 for x < math.MinInt64, and (math.MaxInt64, Below) for x > math.MaxInt64.
 
-<h3 id="Float.IsInf">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L320">IsInf</a>
+<h3 id="Float.IsInf">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L320">IsInf</a>
     <a href="#Float.IsInf">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) IsInf() <a href="/builtin/#bool">bool</a></pre>
 
 IsInf reports whether x is +Inf or -Inf.
 
-<h3 id="Float.IsInt">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L326">IsInt</a>
+<h3 id="Float.IsInt">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L326">IsInt</a>
     <a href="#Float.IsInt">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) IsInt() <a href="/builtin/#bool">bool</a></pre>
 
 IsInt reports whether x is an integer. ±Inf values are not integers.
 
-<h3 id="Float.MantExp">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L250">MantExp</a>
+<h3 id="Float.MantExp">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L250">MantExp</a>
     <a href="#Float.MantExp">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) MantExp(mant *<a href="#Float">Float</a>) (exp <a href="/builtin/#int">int</a>)</pre>
 
@@ -762,7 +762,7 @@ Special cases are:
 
 x and mant may be the same in which case x is set to its mantissa value.
 
-<h3 id="Float.MarshalText">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/floatmarsh.go#L91">MarshalText</a>
+<h3 id="Float.MarshalText">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/floatmarsh.go#L91">MarshalText</a>
     <a href="#Float.MarshalText">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) MarshalText() (text []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -770,7 +770,7 @@ MarshalText implements the encoding.TextMarshaler interface. Only the Float
 value is marshaled (in full precision), other attributes such as precision or
 accuracy are ignored.
 
-<h3 id="Float.MinPrec">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L199">MinPrec</a>
+<h3 id="Float.MinPrec">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L199">MinPrec</a>
     <a href="#Float.MinPrec">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) MinPrec() <a href="/builtin/#uint">uint</a></pre>
 
@@ -778,13 +778,13 @@ MinPrec returns the minimum precision required to represent x exactly (i.e., the
 smallest prec before x.SetPrec(prec) would start rounding x). The result is 0
 for |x| == 0 and |x| == Inf.
 
-<h3 id="Float.Mode">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L207">Mode</a>
+<h3 id="Float.Mode">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L207">Mode</a>
     <a href="#Float.Mode">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Mode() <a href="#RoundingMode">RoundingMode</a></pre>
 
 Mode returns the rounding mode of x.
 
-<h3 id="Float.Mul">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L1559">Mul</a>
+<h3 id="Float.Mul">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L1559">Mul</a>
     <a href="#Float.Mul">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) Mul(x, y *<a href="#Float">Float</a>) *<a href="#Float">Float</a></pre>
 
@@ -792,14 +792,14 @@ Mul sets z to the rounded product x*y and returns z. Precision, rounding, and
 accuracy reporting are as for Add. Mul panics with ErrNaN if one operand is zero
 and the other operand an infinity. The value of z is undefined in that case.
 
-<h3 id="Float.Neg">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L1163">Neg</a>
+<h3 id="Float.Neg">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L1163">Neg</a>
     <a href="#Float.Neg">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) Neg(x *<a href="#Float">Float</a>) *<a href="#Float">Float</a></pre>
 
 Neg sets z to the (possibly rounded) value of x with its sign negated, and
 returns z.
 
-<h3 id="Float.Parse">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/floatconv.go#L240">Parse</a>
+<h3 id="Float.Parse">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/floatconv.go#L240">Parse</a>
     <a href="#Float.Parse">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) Parse(s <a href="/builtin/#string">string</a>, base <a href="/builtin/#int">int</a>) (f *<a href="#Float">Float</a>, b <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -838,14 +838,14 @@ For hexadecimal mantissae, the exponent must be binary, if present (an "e" or
 The returned *Float f is nil and the value of z is valid but not defined if an
 error is reported.
 
-<h3 id="Float.Prec">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L192">Prec</a>
+<h3 id="Float.Prec">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L192">Prec</a>
     <a href="#Float.Prec">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Prec() <a href="/builtin/#uint">uint</a></pre>
 
 Prec returns the mantissa precision of x in bits. The result may be 0 for |x| ==
 0 and |x| == Inf.
 
-<h3 id="Float.Quo">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L1604">Quo</a>
+<h3 id="Float.Quo">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L1604">Quo</a>
     <a href="#Float.Quo">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) Quo(x, y *<a href="#Float">Float</a>) *<a href="#Float">Float</a></pre>
 
@@ -853,7 +853,7 @@ Quo sets z to the rounded quotient x/y and returns z. Precision, rounding, and
 accuracy reporting are as for Add. Quo panics with ErrNaN if both operands are
 zero or infinities. The value of z is undefined in that case.
 
-<h3 id="Float.Rat">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L1111">Rat</a>
+<h3 id="Float.Rat">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L1111">Rat</a>
     <a href="#Float.Rat">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Rat(z *<a href="#Rat">Rat</a>) (*<a href="#Rat">Rat</a>, <a href="#Accuracy">Accuracy</a>)</pre>
 
@@ -861,7 +861,7 @@ Rat returns the rational number corresponding to x; or nil if x is an infinity.
 The result is Exact if x is not an Inf. If a non-nil *Rat argument z is
 provided, Rat stores the result in z instead of allocating a new Rat.
 
-<h3 id="Float.Scan">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/floatconv.go#L279">Scan</a>
+<h3 id="Float.Scan">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/floatconv.go#L279">Scan</a>
     <a href="#Float.Scan">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) Scan(s <a href="/fmt/">fmt</a>.<a href="/fmt/#ScanState">ScanState</a>, ch <a href="/builtin/#rune">rune</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -884,7 +884,7 @@ Example:
     }
     // Output: 1.19282e+99
 
-<h3 id="Float.Set">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L627">Set</a>
+<h3 id="Float.Set">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L627">Set</a>
     <a href="#Float.Set">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) Set(x *<a href="#Float">Float</a>) *<a href="#Float">Float</a></pre>
 
@@ -894,7 +894,7 @@ have no effect). Rounding is performed according to z's precision and rounding
 mode; and z's accuracy reports the result error relative to the exact (not
 rounded) result.
 
-<h3 id="Float.SetFloat64">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L525">SetFloat64</a>
+<h3 id="Float.SetFloat64">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L525">SetFloat64</a>
     <a href="#Float.SetFloat64">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) SetFloat64(x <a href="/builtin/#float64">float64</a>) *<a href="#Float">Float</a></pre>
 
@@ -902,7 +902,7 @@ SetFloat64 sets z to the (possibly rounded) value of x and returns z. If z's
 precision is 0, it is changed to 53 (and rounding will have no effect).
 SetFloat64 panics with ErrNaN if x is a NaN.
 
-<h3 id="Float.SetInf">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L614">SetInf</a>
+<h3 id="Float.SetInf">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L614">SetInf</a>
     <a href="#Float.SetInf">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) SetInf(signbit <a href="/builtin/#bool">bool</a>) *<a href="#Float">Float</a></pre>
 
@@ -910,7 +910,7 @@ SetInf sets z to the infinite Float -Inf if signbit is set, or +Inf if signbit
 is not set, and returns z. The precision of z is unchanged and the result is
 always Exact.
 
-<h3 id="Float.SetInt">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L573">SetInt</a>
+<h3 id="Float.SetInt">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L573">SetInt</a>
     <a href="#Float.SetInt">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) SetInt(x *<a href="#Int">Int</a>) *<a href="#Float">Float</a></pre>
 
@@ -918,14 +918,14 @@ SetInt sets z to the (possibly rounded) value of x and returns z. If z's
 precision is 0, it is changed to the larger of x.BitLen() or 64 (and rounding
 will have no effect).
 
-<h3 id="Float.SetInt64">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L512">SetInt64</a>
+<h3 id="Float.SetInt64">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L512">SetInt64</a>
     <a href="#Float.SetInt64">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) SetInt64(x <a href="/builtin/#int64">int64</a>) *<a href="#Float">Float</a></pre>
 
 SetInt64 sets z to the (possibly rounded) value of x and returns z. If z's
 precision is 0, it is changed to 64 (and rounding will have no effect).
 
-<h3 id="Float.SetMantExp">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L301">SetMantExp</a>
+<h3 id="Float.SetMantExp">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L301">SetMantExp</a>
     <a href="#Float.SetMantExp">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) SetMantExp(mant *<a href="#Float">Float</a>, exp <a href="/builtin/#int">int</a>) *<a href="#Float">Float</a></pre>
 
@@ -943,7 +943,7 @@ Special cases are:
 
 z and mant may be the same in which case z's exponent is set to exp.
 
-<h3 id="Float.SetMode">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L184">SetMode</a>
+<h3 id="Float.SetMode">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L184">SetMode</a>
     <a href="#Float.SetMode">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) SetMode(mode <a href="#RoundingMode">RoundingMode</a>) *<a href="#Float">Float</a></pre>
 
@@ -951,7 +951,7 @@ SetMode sets z's rounding mode to mode and returns an exact z. z remains
 unchanged otherwise. z.SetMode(z.Mode()) is a cheap way to set z's accuracy to
 Exact.
 
-<h3 id="Float.SetPrec">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L148">SetPrec</a>
+<h3 id="Float.SetPrec">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L148">SetPrec</a>
     <a href="#Float.SetPrec">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) SetPrec(prec <a href="/builtin/#uint">uint</a>) *<a href="#Float">Float</a></pre>
 
@@ -961,7 +961,7 @@ represented in prec bits without loss of precision. SetPrec(0) maps all finite
 values to ±0; infinite values remain unchanged. If prec > MaxPrec, it is set to
 MaxPrec.
 
-<h3 id="Float.SetRat">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L597">SetRat</a>
+<h3 id="Float.SetRat">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L597">SetRat</a>
     <a href="#Float.SetRat">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) SetRat(x *<a href="#Rat">Rat</a>) *<a href="#Float">Float</a></pre>
 
@@ -969,7 +969,7 @@ SetRat sets z to the (possibly rounded) value of x and returns z. If z's
 precision is 0, it is changed to the largest of a.BitLen(), b.BitLen(), or 64;
 with x = a/b.
 
-<h3 id="Float.SetString">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/floatconv.go#L12">SetString</a>
+<h3 id="Float.SetString">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/floatconv.go#L12">SetString</a>
     <a href="#Float.SetString">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) SetString(s <a href="/builtin/#string">string</a>) (*<a href="#Float">Float</a>, <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -979,14 +979,14 @@ Parse, with base argument 0. The entire string (not just a prefix) must be valid
 for success. If the operation failed, the value of z is undefined but the
 returned value is nil.
 
-<h3 id="Float.SetUint64">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L505">SetUint64</a>
+<h3 id="Float.SetUint64">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L505">SetUint64</a>
     <a href="#Float.SetUint64">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) SetUint64(x <a href="/builtin/#uint64">uint64</a>) *<a href="#Float">Float</a></pre>
 
 SetUint64 sets z to the (possibly rounded) value of x and returns z. If z's
 precision is 0, it is changed to 64 (and rounding will have no effect).
 
-<h3 id="Float.Sign">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L222">Sign</a>
+<h3 id="Float.Sign">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L222">Sign</a>
     <a href="#Float.Sign">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Sign() <a href="/builtin/#int">int</a></pre>
 
@@ -996,13 +996,13 @@ Sign returns:
      0 if x is ±0
     +1 if x >   0
 
-<h3 id="Float.Signbit">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L315">Signbit</a>
+<h3 id="Float.Signbit">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L315">Signbit</a>
     <a href="#Float.Signbit">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Signbit() <a href="/builtin/#bool">bool</a></pre>
 
 Signbit returns true if x is negative or negative zero.
 
-<h3 id="Float.Sqrt">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/sqrt.go#L13">Sqrt</a>
+<h3 id="Float.Sqrt">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/sqrt.go#L13">Sqrt</a>
     <a href="#Float.Sqrt">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) Sqrt(x *<a href="#Float">Float</a>) *<a href="#Float">Float</a></pre>
 
@@ -1013,14 +1013,14 @@ Rounding is performed according to z's precision and rounding mode.
 
 The function panics if z < 0. The value of z is undefined in that case.
 
-<h3 id="Float.String">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ftoa.go#L43">String</a>
+<h3 id="Float.String">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ftoa.go#L43">String</a>
     <a href="#Float.String">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) String() <a href="/builtin/#string">string</a></pre>
 
 String formats x like x.Text('g', 10). (String must be called explicitly,
 Float.Format does not support %s verb.)
 
-<h3 id="Float.Sub">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L1495">Sub</a>
+<h3 id="Float.Sub">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L1495">Sub</a>
     <a href="#Float.Sub">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) Sub(x, y *<a href="#Float">Float</a>) *<a href="#Float">Float</a></pre>
 
@@ -1028,7 +1028,7 @@ Sub sets z to the rounded difference x-y and returns z. Precision, rounding, and
 accuracy reporting are as for Add. Sub panics with ErrNaN if x and y are
 infinities with equal signs. The value of z is undefined in that case.
 
-<h3 id="Float.Text">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ftoa.go#L33">Text</a>
+<h3 id="Float.Text">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ftoa.go#L33">Text</a>
     <a href="#Float.Text">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Text(format <a href="/builtin/#byte">byte</a>, prec <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -1058,7 +1058,7 @@ number of digits. A negative precision selects the smallest number of decimal
 digits necessary to identify the value x uniquely using x.Prec() mantissa bits.
 The prec value is ignored for the 'b' or 'p' format.
 
-<h3 id="Float.Uint64">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L714">Uint64</a>
+<h3 id="Float.Uint64">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L714">Uint64</a>
     <a href="#Float.Uint64">¶</a></h3>
 <pre>func (x *<a href="#Float">Float</a>) Uint64() (<a href="/builtin/#uint64">uint64</a>, <a href="#Accuracy">Accuracy</a>)</pre>
 
@@ -1067,7 +1067,7 @@ Uint64 returns the unsigned integer resulting from truncating x towards zero. If
 otherwise. The result is (0, Above) for x < 0, and (math.MaxUint64, Below) for x
 > math.MaxUint64.
 
-<h3 id="Float.UnmarshalText">func (*Float) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/floatmarsh.go#L103">UnmarshalText</a>
+<h3 id="Float.UnmarshalText">func (*Float) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/floatmarsh.go#L103">UnmarshalText</a>
     <a href="#Float.UnmarshalText">¶</a></h3>
 <pre>func (z *<a href="#Float">Float</a>) UnmarshalText(text []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -1075,7 +1075,7 @@ UnmarshalText implements the encoding.TextUnmarshaler interface. The result is
 rounded per the precision and rounding mode of z. If z's precision is 0, it is
 changed to 64 before rounding takes effect.
 
-<h2 id="Int">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L8">Int</a>
+<h2 id="Int">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L8">Int</a>
     <a href="#Int">¶</a></h2>
 <pre>type Int struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1084,64 +1084,64 @@ changed to 64 before rounding takes effect.
 An Int represents a signed multi-precision integer. The zero value for an Int
 represents the value 0.
 
-<h3 id="NewInt">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L51">NewInt</a>
+<h3 id="NewInt">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L51">NewInt</a>
     <a href="#NewInt">¶</a></h3>
 <pre>func NewInt(x <a href="/builtin/#int64">int64</a>) *<a href="#Int">Int</a></pre>
 
 NewInt allocates and returns a new Int set to x.
 
-<h3 id="Int.Abs">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L85">Abs</a>
+<h3 id="Int.Abs">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L85">Abs</a>
     <a href="#Int.Abs">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Abs(x *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
 Abs sets z to |x| (the absolute value of x) and returns z.
 
-<h3 id="Int.Add">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L99">Add</a>
+<h3 id="Int.Add">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L99">Add</a>
     <a href="#Int.Add">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Add(x, y *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
 Add sets z to the sum x+y and returns z.
 
-<h3 id="Int.And">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L877">And</a>
+<h3 id="Int.And">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L877">And</a>
     <a href="#Int.And">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) And(x, y *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
 And sets z = x & y and returns z.
 
-<h3 id="Int.AndNot">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L907">AndNot</a>
+<h3 id="Int.AndNot">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L907">AndNot</a>
     <a href="#Int.AndNot">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) AndNot(x, y *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
 AndNot sets z = x &^ y and returns z.
 
-<h3 id="Int.Append">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intconv.go#L19">Append</a>
+<h3 id="Int.Append">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/intconv.go#L19">Append</a>
     <a href="#Int.Append">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) Append(buf []<a href="/builtin/#byte">byte</a>, base <a href="/builtin/#int">int</a>) []<a href="/builtin/#byte">byte</a></pre>
 
 Append appends the string representation of x, as generated by x.Text(base), to
 buf and returns the extended buffer.
 
-<h3 id="Int.Binomial">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L180">Binomial</a>
+<h3 id="Int.Binomial">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L180">Binomial</a>
     <a href="#Int.Binomial">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Binomial(n, k <a href="/builtin/#int64">int64</a>) *<a href="#Int">Int</a></pre>
 
 Binomial sets z to the binomial coefficient of (n, k) and returns z.
 
-<h3 id="Int.Bit">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L837">Bit</a>
+<h3 id="Int.Bit">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L837">Bit</a>
     <a href="#Int.Bit">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) Bit(i <a href="/builtin/#int">int</a>) <a href="/builtin/#uint">uint</a></pre>
 
 Bit returns the value of the i'th bit of x. That is, it returns (x>>i)&1. The
 bit index i must be >= 0.
 
-<h3 id="Int.BitLen">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L430">BitLen</a>
+<h3 id="Int.BitLen">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L430">BitLen</a>
     <a href="#Int.BitLen">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) BitLen() <a href="/builtin/#int">int</a></pre>
 
 BitLen returns the length of the absolute value of x in bits. The bit length of
 0 is 0.
 
-<h3 id="Int.Bits">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L69">Bits</a>
+<h3 id="Int.Bits">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L69">Bits</a>
     <a href="#Int.Bits">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) Bits() []<a href="#Word">Word</a></pre>
 
@@ -1150,13 +1150,13 @@ value as a little-endian Word slice. The result and x share the same underlying
 array. Bits is intended to support implementation of missing low-level Int
 functionality outside this package; it should be avoided otherwise.
 
-<h3 id="Int.Bytes">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L423">Bytes</a>
+<h3 id="Int.Bytes">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L423">Bytes</a>
     <a href="#Int.Bytes">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) Bytes() []<a href="/builtin/#byte">byte</a></pre>
 
 Bytes returns the absolute value of x as a big-endian byte slice.
 
-<h3 id="Int.Cmp">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L303">Cmp</a>
+<h3 id="Int.Cmp">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L303">Cmp</a>
     <a href="#Int.Cmp">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) Cmp(y *<a href="#Int">Int</a>) (r <a href="/builtin/#int">int</a>)</pre>
 
@@ -1166,7 +1166,7 @@ Cmp compares x and y and returns:
      0 if x == y
     +1 if x >  y
 
-<h3 id="Int.CmpAbs">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L328">CmpAbs</a>
+<h3 id="Int.CmpAbs">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L328">CmpAbs</a>
     <a href="#Int.CmpAbs">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) CmpAbs(y *<a href="#Int">Int</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -1176,7 +1176,7 @@ CmpAbs compares the absolute values of x and y and returns:
      0 if |x| == |y|
     +1 if |x| >  |y|
 
-<h3 id="Int.Div">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L230">Div</a>
+<h3 id="Int.Div">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L230">Div</a>
     <a href="#Int.Div">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Div(x, y *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
@@ -1184,7 +1184,7 @@ Div sets z to the quotient x/y for y != 0 and returns z. If y == 0, a
 division-by-zero run-time panic occurs. Div implements Euclidean division
 (unlike Go); see DivMod for more details.
 
-<h3 id="Int.DivMod">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L279">DivMod</a>
+<h3 id="Int.DivMod">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L279">DivMod</a>
     <a href="#Int.DivMod">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) DivMod(x, y, m *<a href="#Int">Int</a>) (*<a href="#Int">Int</a>, *<a href="#Int">Int</a>)</pre>
 
@@ -1201,7 +1201,7 @@ mod''. ACM Transactions on Programming Languages and Systems (TOPLAS),
 14(2):127-144, New York, NY, USA, 4/1992. ACM press.) See QuoRem for T-division
 and modulus (like Go).
 
-<h3 id="Int.Exp">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L439">Exp</a>
+<h3 id="Int.Exp">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L439">Exp</a>
     <a href="#Int.Exp">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Exp(x, y, m *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
@@ -1211,7 +1211,7 @@ Exp sets z = x**y mod |m| (i.e. the sign of m is ignored), and returns z. If y
 Modular exponentation of inputs of a particular size is not a cryptographically
 constant-time operation.
 
-<h3 id="Int.Format">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intconv.go#L53">Format</a>
+<h3 id="Int.Format">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/intconv.go#L53">Format</a>
     <a href="#Int.Format">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) Format(s <a href="/fmt/">fmt</a>.<a href="/fmt/#State">State</a>, ch <a href="/builtin/#rune">rune</a>)</pre>
 
@@ -1223,7 +1223,7 @@ in octal and for hexadecimal, a leading "0x" or "0X" for "%#x" and "%#X"
 respectively, specification of minimum digits precision, output field width,
 space or zero padding, and '-' for left or right justification.
 
-<h3 id="Int.GCD">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L467">GCD</a>
+<h3 id="Int.GCD">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L467">GCD</a>
     <a href="#Int.GCD">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) GCD(x, y, a, b *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
@@ -1231,56 +1231,56 @@ GCD sets z to the greatest common divisor of a and b, which both must be > 0,
 and returns z. If x or y are not nil, GCD sets their value such that z = a*x +
 b*y. If either a or b is <= 0, GCD sets z = x = y = 0.
 
-<h3 id="Int.GobDecode">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intmarsh.go#L23">GobDecode</a>
+<h3 id="Int.GobDecode">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/intmarsh.go#L23">GobDecode</a>
     <a href="#Int.GobDecode">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) GobDecode(buf []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
 GobDecode implements the gob.GobDecoder interface.
 
-<h3 id="Int.GobEncode">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intmarsh.go#L8">GobEncode</a>
+<h3 id="Int.GobEncode">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/intmarsh.go#L8">GobEncode</a>
     <a href="#Int.GobEncode">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) GobEncode() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 GobEncode implements the gob.GobEncoder interface.
 
-<h3 id="Int.Int64">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L354">Int64</a>
+<h3 id="Int.Int64">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L354">Int64</a>
     <a href="#Int.Int64">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) Int64() <a href="/builtin/#int64">int64</a></pre>
 
 Int64 returns the int64 representation of x. If x cannot be represented in an
 int64, the result is undefined.
 
-<h3 id="Int.IsInt64">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L369">IsInt64</a>
+<h3 id="Int.IsInt64">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L369">IsInt64</a>
     <a href="#Int.IsInt64">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) IsInt64() <a href="/builtin/#bool">bool</a></pre>
 
 IsInt64 reports whether x can be represented as an int64.
 
-<h3 id="Int.IsUint64">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L378">IsUint64</a>
+<h3 id="Int.IsUint64">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L378">IsUint64</a>
     <a href="#Int.IsUint64">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) IsUint64() <a href="/builtin/#bool">bool</a></pre>
 
 IsUint64 reports whether x can be represented as a uint64.
 
-<h3 id="Int.Lsh">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L813">Lsh</a>
+<h3 id="Int.Lsh">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L813">Lsh</a>
     <a href="#Int.Lsh">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Lsh(x *<a href="#Int">Int</a>, n <a href="/builtin/#uint">uint</a>) *<a href="#Int">Int</a></pre>
 
 Lsh sets z = x << n and returns z.
 
-<h3 id="Int.MarshalJSON">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intmarsh.go#L59">MarshalJSON</a>
+<h3 id="Int.MarshalJSON">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/intmarsh.go#L59">MarshalJSON</a>
     <a href="#Int.MarshalJSON">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) MarshalJSON() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 MarshalJSON implements the json.Marshaler interface.
 
-<h3 id="Int.MarshalText">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intmarsh.go#L39">MarshalText</a>
+<h3 id="Int.MarshalText">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/intmarsh.go#L39">MarshalText</a>
     <a href="#Int.MarshalText">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) MarshalText() (text []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 MarshalText implements the encoding.TextMarshaler interface.
 
-<h3 id="Int.Mod">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L247">Mod</a>
+<h3 id="Int.Mod">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L247">Mod</a>
     <a href="#Int.Mod">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Mod(x, y *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
@@ -1288,14 +1288,14 @@ Mod sets z to the modulus x%y for y != 0 and returns z. If y == 0, a
 division-by-zero run-time panic occurs. Mod implements Euclidean modulus (unlike
 Go); see DivMod for more details.
 
-<h3 id="Int.ModInverse">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L653">ModInverse</a>
+<h3 id="Int.ModInverse">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L653">ModInverse</a>
     <a href="#Int.ModInverse">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) ModInverse(g, n *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
 ModInverse sets z to the multiplicative inverse of g in the ring ℤ/nℤ and
 returns z. If g and n are not relatively prime, the result is undefined.
 
-<h3 id="Int.ModSqrt">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L791">ModSqrt</a>
+<h3 id="Int.ModSqrt">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L791">ModSqrt</a>
     <a href="#Int.ModSqrt">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) ModSqrt(x, p *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
@@ -1304,38 +1304,38 @@ returns z. The modulus p must be an odd prime. If x is not a square mod p,
 ModSqrt leaves z unchanged and returns nil. This function panics if p is not an
 odd integer.
 
-<h3 id="Int.Mul">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L141">Mul</a>
+<h3 id="Int.Mul">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L141">Mul</a>
     <a href="#Int.Mul">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Mul(x, y *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
 Mul sets z to the product x*y and returns z.
 
-<h3 id="Int.MulRange">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L159">MulRange</a>
+<h3 id="Int.MulRange">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L159">MulRange</a>
     <a href="#Int.MulRange">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) MulRange(a, b <a href="/builtin/#int64">int64</a>) *<a href="#Int">Int</a></pre>
 
 MulRange sets z to the product of all integers in the range [a, b] inclusively
 and returns z. If a > b (empty range), the result is 1.
 
-<h3 id="Int.Neg">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L92">Neg</a>
+<h3 id="Int.Neg">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L92">Neg</a>
     <a href="#Int.Neg">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Neg(x *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
 Neg sets z to -x and returns z.
 
-<h3 id="Int.Not">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L1000">Not</a>
+<h3 id="Int.Not">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L1000">Not</a>
     <a href="#Int.Not">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Not(x *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
 Not sets z = ^x and returns z.
 
-<h3 id="Int.Or">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L940">Or</a>
+<h3 id="Int.Or">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L940">Or</a>
     <a href="#Int.Or">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Or(x, y *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
 Or sets z = x | y and returns z.
 
-<h3 id="Int.ProbablyPrime">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/prime.go#L16">ProbablyPrime</a>
+<h3 id="Int.ProbablyPrime">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/prime.go#L16">ProbablyPrime</a>
     <a href="#Int.ProbablyPrime">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) ProbablyPrime(n <a href="/builtin/#int">int</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -1357,7 +1357,7 @@ As of Go 1.8, ProbablyPrime(0) is allowed and applies only a Baillie-PSW test.
 Before Go 1.8, ProbablyPrime applied only the Miller-Rabin tests, and
 ProbablyPrime(0) panicked.
 
-<h3 id="Int.Quo">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L194">Quo</a>
+<h3 id="Int.Quo">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L194">Quo</a>
     <a href="#Int.Quo">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Quo(x, y *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
@@ -1365,7 +1365,7 @@ Quo sets z to the quotient x/y for y != 0 and returns z. If y == 0, a
 division-by-zero run-time panic occurs. Quo implements truncated division (like
 Go); see QuoRem for more details.
 
-<h3 id="Int.QuoRem">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L221">QuoRem</a>
+<h3 id="Int.QuoRem">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L221">QuoRem</a>
     <a href="#Int.QuoRem">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) QuoRem(x, y, r *<a href="#Int">Int</a>) (*<a href="#Int">Int</a>, *<a href="#Int">Int</a>)</pre>
 
@@ -1380,7 +1380,7 @@ QuoRem implements T-division and modulus (like Go):
 (See Daan Leijen, ``Division and Modulus for Computer Scientists''.) See DivMod
 for Euclidean division and modulus (unlike Go).
 
-<h3 id="Int.Rand">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L641">Rand</a>
+<h3 id="Int.Rand">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L641">Rand</a>
     <a href="#Int.Rand">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Rand(rnd *<a href="/math/rand/">rand</a>.<a href="/math/rand/#Rand">Rand</a>, n *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
@@ -1389,7 +1389,7 @@ Rand sets z to a pseudo-random number in [0, n) and returns z.
 As this uses the math/rand package, it must not be used for security-sensitive
 work. Use crypto/rand.Int instead.
 
-<h3 id="Int.Rem">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L203">Rem</a>
+<h3 id="Int.Rem">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L203">Rem</a>
     <a href="#Int.Rem">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Rem(x, y *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
@@ -1397,13 +1397,13 @@ Rem sets z to the remainder x%y for y != 0 and returns z. If y == 0, a
 division-by-zero run-time panic occurs. Rem implements truncated modulus (like
 Go); see QuoRem for more details.
 
-<h3 id="Int.Rsh">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L820">Rsh</a>
+<h3 id="Int.Rsh">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L820">Rsh</a>
     <a href="#Int.Rsh">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Rsh(x *<a href="#Int">Int</a>, n <a href="/builtin/#uint">uint</a>) *<a href="#Int">Int</a></pre>
 
 Rsh sets z = x >> n and returns z.
 
-<h3 id="Int.Scan">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intconv.go#L218">Scan</a>
+<h3 id="Int.Scan">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/intconv.go#L218">Scan</a>
     <a href="#Int.Scan">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Scan(s <a href="/fmt/">fmt</a>.<a href="/fmt/#ScanState">ScanState</a>, ch <a href="/builtin/#rune">rune</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -1425,13 +1425,13 @@ Example:
     }
     // Output: 18446744073709551617
 
-<h3 id="Int.Set">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L56">Set</a>
+<h3 id="Int.Set">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L56">Set</a>
     <a href="#Int.Set">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Set(x *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
 Set sets z to x and returns z.
 
-<h3 id="Int.SetBit">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L860">SetBit</a>
+<h3 id="Int.SetBit">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L860">SetBit</a>
     <a href="#Int.SetBit">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) SetBit(x *<a href="#Int">Int</a>, i <a href="/builtin/#int">int</a>, b <a href="/builtin/#uint">uint</a>) *<a href="#Int">Int</a></pre>
 
@@ -1439,7 +1439,7 @@ SetBit sets z to x, with x's i'th bit set to b (0 or 1). That is, if b is 1
 SetBit sets z = x | (1 << i); if b is 0 SetBit sets z = x &^ (1 << i). If b is
 not 0 or 1, SetBit will panic.
 
-<h3 id="Int.SetBits">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L78">SetBits</a>
+<h3 id="Int.SetBits">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L78">SetBits</a>
     <a href="#Int.SetBits">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) SetBits(abs []<a href="#Word">Word</a>) *<a href="#Int">Int</a></pre>
 
@@ -1449,20 +1449,20 @@ abs share the same underlying array. SetBits is intended to support
 implementation of missing low-level Int functionality outside this package; it
 should be avoided otherwise.
 
-<h3 id="Int.SetBytes">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L416">SetBytes</a>
+<h3 id="Int.SetBytes">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L416">SetBytes</a>
     <a href="#Int.SetBytes">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) SetBytes(buf []<a href="/builtin/#byte">byte</a>) *<a href="#Int">Int</a></pre>
 
 SetBytes interprets buf as the bytes of a big-endian unsigned integer, sets z to
 that value, and returns z.
 
-<h3 id="Int.SetInt64">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L32">SetInt64</a>
+<h3 id="Int.SetInt64">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L32">SetInt64</a>
     <a href="#Int.SetInt64">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) SetInt64(x <a href="/builtin/#int64">int64</a>) *<a href="#Int">Int</a></pre>
 
 SetInt64 sets z to x and returns z.
 
-<h3 id="Int.SetString">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L397">SetString</a>
+<h3 id="Int.SetString">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L397">SetString</a>
     <a href="#Int.SetString">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) SetString(s <a href="/builtin/#string">string</a>, base <a href="/builtin/#int">int</a>) (*<a href="#Int">Int</a>, <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -1488,13 +1488,13 @@ Example:
     fmt.Println(i)
     // Output: 420
 
-<h3 id="Int.SetUint64">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L44">SetUint64</a>
+<h3 id="Int.SetUint64">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L44">SetUint64</a>
     <a href="#Int.SetUint64">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) SetUint64(x <a href="/builtin/#uint64">uint64</a>) *<a href="#Int">Int</a></pre>
 
 SetUint64 sets z to x and returns z.
 
-<h3 id="Int.Sign">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L21">Sign</a>
+<h3 id="Int.Sign">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L21">Sign</a>
     <a href="#Int.Sign">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) Sign() <a href="/builtin/#int">int</a></pre>
 
@@ -1504,25 +1504,25 @@ Sign returns:
      0 if x == 0
     +1 if x >  0
 
-<h3 id="Int.Sqrt">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L1016">Sqrt</a>
+<h3 id="Int.Sqrt">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L1016">Sqrt</a>
     <a href="#Int.Sqrt">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Sqrt(x *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
 Sqrt sets z to ⌊√x⌋, the largest integer such that z² ≤ x, and returns z. It
 panics if x is negative.
 
-<h3 id="Int.String">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intconv.go#L26">String</a>
+<h3 id="Int.String">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/intconv.go#L26">String</a>
     <a href="#Int.String">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Int.Sub">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L120">Sub</a>
+<h3 id="Int.Sub">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L120">Sub</a>
     <a href="#Int.Sub">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Sub(x, y *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
 Sub sets z to the difference x-y and returns z.
 
-<h3 id="Int.Text">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intconv.go#L10">Text</a>
+<h3 id="Int.Text">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/intconv.go#L10">Text</a>
     <a href="#Int.Text">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) Text(base <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -1531,32 +1531,32 @@ between 2 and 62, inclusive. The result uses the lower-case letters 'a' to 'z'
 for digit values 10 to 35, and the upper-case letters 'A' to 'Z' for digit
 values 36 to 61. No prefix (such as "0x") is added to the string.
 
-<h3 id="Int.Uint64">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L364">Uint64</a>
+<h3 id="Int.Uint64">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L364">Uint64</a>
     <a href="#Int.Uint64">¶</a></h3>
 <pre>func (x *<a href="#Int">Int</a>) Uint64() <a href="/builtin/#uint64">uint64</a></pre>
 
 Uint64 returns the uint64 representation of x. If x cannot be represented in a
 uint64, the result is undefined.
 
-<h3 id="Int.UnmarshalJSON">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intmarsh.go#L64">UnmarshalJSON</a>
+<h3 id="Int.UnmarshalJSON">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/intmarsh.go#L64">UnmarshalJSON</a>
     <a href="#Int.UnmarshalJSON">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) UnmarshalJSON(text []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
 UnmarshalJSON implements the json.Unmarshaler interface.
 
-<h3 id="Int.UnmarshalText">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/intmarsh.go#L47">UnmarshalText</a>
+<h3 id="Int.UnmarshalText">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/intmarsh.go#L47">UnmarshalText</a>
     <a href="#Int.UnmarshalText">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) UnmarshalText(text []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
 UnmarshalText implements the encoding.TextUnmarshaler interface.
 
-<h3 id="Int.Xor">func (*Int) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/int.go#L970">Xor</a>
+<h3 id="Int.Xor">func (*Int) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/int.go#L970">Xor</a>
     <a href="#Int.Xor">¶</a></h3>
 <pre>func (z *<a href="#Int">Int</a>) Xor(x, y *<a href="#Int">Int</a>) *<a href="#Int">Int</a></pre>
 
 Xor sets z = x ^ y and returns z.
 
-<h2 id="Rat">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L6">Rat</a>
+<h2 id="Rat">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L6">Rat</a>
     <a href="#Rat">¶</a></h2>
 <pre>type Rat struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1565,25 +1565,25 @@ Xor sets z = x ^ y and returns z.
 A Rat represents a quotient a/b of arbitrary precision. The zero value for a Rat
 represents the value 0.
 
-<h3 id="NewRat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L14">NewRat</a>
+<h3 id="NewRat">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L14">NewRat</a>
     <a href="#NewRat">¶</a></h3>
 <pre>func NewRat(a, b <a href="/builtin/#int64">int64</a>) *<a href="#Rat">Rat</a></pre>
 
 NewRat creates a new Rat with numerator a and denominator b.
 
-<h3 id="Rat.Abs">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L335">Abs</a>
+<h3 id="Rat.Abs">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L335">Abs</a>
     <a href="#Rat.Abs">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) Abs(x *<a href="#Rat">Rat</a>) *<a href="#Rat">Rat</a></pre>
 
 Abs sets z to |x| (the absolute value of x) and returns z.
 
-<h3 id="Rat.Add">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L464">Add</a>
+<h3 id="Rat.Add">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L464">Add</a>
     <a href="#Rat.Add">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) Add(x, y *<a href="#Rat">Rat</a>) *<a href="#Rat">Rat</a></pre>
 
 Add sets z to the sum x+y and returns z.
 
-<h3 id="Rat.Cmp">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L459">Cmp</a>
+<h3 id="Rat.Cmp">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L459">Cmp</a>
     <a href="#Rat.Cmp">¶</a></h3>
 <pre>func (x *<a href="#Rat">Rat</a>) Cmp(y *<a href="#Rat">Rat</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -1593,7 +1593,7 @@ Cmp compares x and y and returns:
      0 if x == y
     +1 if x >  y
 
-<h3 id="Rat.Denom">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L392">Denom</a>
+<h3 id="Rat.Denom">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L392">Denom</a>
     <a href="#Rat.Denom">¶</a></h3>
 <pre>func (x *<a href="#Rat">Rat</a>) Denom() *<a href="#Int">Int</a></pre>
 
@@ -1601,7 +1601,7 @@ Denom returns the denominator of x; it is always > 0. The result is a reference
 to x's denominator; it may change if a new value is assigned to x, and vice
 versa.
 
-<h3 id="Rat.Float32">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L254">Float32</a>
+<h3 id="Rat.Float32">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L254">Float32</a>
     <a href="#Rat.Float32">¶</a></h3>
 <pre>func (x *<a href="#Rat">Rat</a>) Float32() (f <a href="/builtin/#float32">float32</a>, exact <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -1610,7 +1610,7 @@ represents x exactly. If the magnitude of x is too large to be represented by a
 float32, f is an infinity and exact is false. The sign of f always matches the
 sign of x, even if f == 0.
 
-<h3 id="Rat.Float64">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L270">Float64</a>
+<h3 id="Rat.Float64">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L270">Float64</a>
     <a href="#Rat.Float64">¶</a></h3>
 <pre>func (x *<a href="#Rat">Rat</a>) Float64() (f <a href="/builtin/#float64">float64</a>, exact <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -1619,7 +1619,7 @@ represents x exactly. If the magnitude of x is too large to be represented by a
 float64, f is an infinity and exact is false. The sign of f always matches the
 sign of x, even if f == 0.
 
-<h3 id="Rat.FloatString">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ratconv.go#L223">FloatString</a>
+<h3 id="Rat.FloatString">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ratconv.go#L223">FloatString</a>
     <a href="#Rat.FloatString">¶</a></h3>
 <pre>func (x *<a href="#Rat">Rat</a>) FloatString(prec <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -1627,49 +1627,49 @@ FloatString returns a string representation of x in decimal form with prec
 digits of precision after the decimal point. The last digit is rounded to
 nearest, with halves rounded away from zero.
 
-<h3 id="Rat.GobDecode">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ratmarsh.go#L32">GobDecode</a>
+<h3 id="Rat.GobDecode">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ratmarsh.go#L32">GobDecode</a>
     <a href="#Rat.GobDecode">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) GobDecode(buf []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
 GobDecode implements the gob.GobDecoder interface.
 
-<h3 id="Rat.GobEncode">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ratmarsh.go#L9">GobEncode</a>
+<h3 id="Rat.GobEncode">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ratmarsh.go#L9">GobEncode</a>
     <a href="#Rat.GobEncode">¶</a></h3>
 <pre>func (x *<a href="#Rat">Rat</a>) GobEncode() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 GobEncode implements the gob.GobEncoder interface.
 
-<h3 id="Rat.Inv">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L349">Inv</a>
+<h3 id="Rat.Inv">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L349">Inv</a>
     <a href="#Rat.Inv">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) Inv(x *<a href="#Rat">Rat</a>) *<a href="#Rat">Rat</a></pre>
 
 Inv sets z to 1/x and returns z.
 
-<h3 id="Rat.IsInt">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L377">IsInt</a>
+<h3 id="Rat.IsInt">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L377">IsInt</a>
     <a href="#Rat.IsInt">¶</a></h3>
 <pre>func (x *<a href="#Rat">Rat</a>) IsInt() <a href="/builtin/#bool">bool</a></pre>
 
 IsInt reports whether the denominator of x is 1.
 
-<h3 id="Rat.MarshalText">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ratmarsh.go#L51">MarshalText</a>
+<h3 id="Rat.MarshalText">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ratmarsh.go#L51">MarshalText</a>
     <a href="#Rat.MarshalText">¶</a></h3>
 <pre>func (x *<a href="#Rat">Rat</a>) MarshalText() (text []<a href="/builtin/#byte">byte</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 MarshalText implements the encoding.TextMarshaler interface.
 
-<h3 id="Rat.Mul">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L482">Mul</a>
+<h3 id="Rat.Mul">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L482">Mul</a>
     <a href="#Rat.Mul">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) Mul(x, y *<a href="#Rat">Rat</a>) *<a href="#Rat">Rat</a></pre>
 
 Mul sets z to the product x*y and returns z.
 
-<h3 id="Rat.Neg">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L342">Neg</a>
+<h3 id="Rat.Neg">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L342">Neg</a>
     <a href="#Rat.Neg">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) Neg(x *<a href="#Rat">Rat</a>) *<a href="#Rat">Rat</a></pre>
 
 Neg sets z to -x and returns z.
 
-<h3 id="Rat.Num">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L385">Num</a>
+<h3 id="Rat.Num">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L385">Num</a>
     <a href="#Rat.Num">¶</a></h3>
 <pre>func (x *<a href="#Rat">Rat</a>) Num() *<a href="#Int">Int</a></pre>
 
@@ -1677,21 +1677,21 @@ Num returns the numerator of x; it may be <= 0. The result is a reference to x's
 numerator; it may change if a new value is assigned to x, and vice versa. The
 sign of the numerator corresponds to the sign of x.
 
-<h3 id="Rat.Quo">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L497">Quo</a>
+<h3 id="Rat.Quo">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L497">Quo</a>
     <a href="#Rat.Quo">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) Quo(x, y *<a href="#Rat">Rat</a>) *<a href="#Rat">Rat</a></pre>
 
 Quo sets z to the quotient x/y and returns z. If y == 0, a division-by-zero
 run-time panic occurs.
 
-<h3 id="Rat.RatString">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ratconv.go#L213">RatString</a>
+<h3 id="Rat.RatString">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ratconv.go#L213">RatString</a>
     <a href="#Rat.RatString">¶</a></h3>
 <pre>func (x *<a href="#Rat">Rat</a>) RatString() <a href="/builtin/#string">string</a></pre>
 
 RatString returns a string representation of x in the form "a/b" if b != 1, and
 in the form "a" if b == 1.
 
-<h3 id="Rat.Scan">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ratconv.go#L16">Scan</a>
+<h3 id="Rat.Scan">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ratconv.go#L16">Scan</a>
     <a href="#Rat.Scan">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) Scan(s <a href="/fmt/">fmt</a>.<a href="/fmt/#ScanState">ScanState</a>, ch <a href="/builtin/#rune">rune</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -1712,44 +1712,44 @@ Example:
     }
     // Output: 3/2
 
-<h3 id="Rat.Set">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L326">Set</a>
+<h3 id="Rat.Set">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L326">Set</a>
     <a href="#Rat.Set">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) Set(x *<a href="#Rat">Rat</a>) *<a href="#Rat">Rat</a></pre>
 
 Set sets z to x (by making a copy of x) and returns z.
 
-<h3 id="Rat.SetFloat64">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L20">SetFloat64</a>
+<h3 id="Rat.SetFloat64">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L20">SetFloat64</a>
     <a href="#Rat.SetFloat64">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) SetFloat64(f <a href="/builtin/#float64">float64</a>) *<a href="#Rat">Rat</a></pre>
 
 SetFloat64 sets z to exactly f and returns z. If f is not finite, SetFloat
 returns nil.
 
-<h3 id="Rat.SetFrac">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L283">SetFrac</a>
+<h3 id="Rat.SetFrac">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L283">SetFrac</a>
     <a href="#Rat.SetFrac">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) SetFrac(a, b *<a href="#Int">Int</a>) *<a href="#Rat">Rat</a></pre>
 
 SetFrac sets z to a/b and returns z.
 
-<h3 id="Rat.SetFrac64">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L298">SetFrac64</a>
+<h3 id="Rat.SetFrac64">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L298">SetFrac64</a>
     <a href="#Rat.SetFrac64">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) SetFrac64(a, b <a href="/builtin/#int64">int64</a>) *<a href="#Rat">Rat</a></pre>
 
 SetFrac64 sets z to a/b and returns z.
 
-<h3 id="Rat.SetInt">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L312">SetInt</a>
+<h3 id="Rat.SetInt">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L312">SetInt</a>
     <a href="#Rat.SetInt">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) SetInt(x *<a href="#Int">Int</a>) *<a href="#Rat">Rat</a></pre>
 
 SetInt sets z to x (by making a copy of x) and returns z.
 
-<h3 id="Rat.SetInt64">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L319">SetInt64</a>
+<h3 id="Rat.SetInt64">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L319">SetInt64</a>
     <a href="#Rat.SetInt64">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) SetInt64(x <a href="/builtin/#int64">int64</a>) *<a href="#Rat">Rat</a></pre>
 
 SetInt64 sets z to x and returns z.
 
-<h3 id="Rat.SetString">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ratconv.go#L35">SetString</a>
+<h3 id="Rat.SetString">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ratconv.go#L35">SetString</a>
     <a href="#Rat.SetString">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) SetString(s <a href="/builtin/#string">string</a>) (*<a href="#Rat">Rat</a>, <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -1767,7 +1767,7 @@ Example:
     fmt.Println(r.FloatString(3))
     // Output: 3.142
 
-<h3 id="Rat.Sign">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L372">Sign</a>
+<h3 id="Rat.Sign">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L372">Sign</a>
     <a href="#Rat.Sign">¶</a></h3>
 <pre>func (x *<a href="#Rat">Rat</a>) Sign() <a href="/builtin/#int">int</a></pre>
 
@@ -1777,25 +1777,25 @@ Sign returns:
      0 if x == 0
     +1 if x >  0
 
-<h3 id="Rat.String">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ratconv.go#L194">String</a>
+<h3 id="Rat.String">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ratconv.go#L194">String</a>
     <a href="#Rat.String">¶</a></h3>
 <pre>func (x *<a href="#Rat">Rat</a>) String() <a href="/builtin/#string">string</a></pre>
 
 String returns a string representation of x in the form "a/b" (even if b == 1).
 
-<h3 id="Rat.Sub">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/rat.go#L473">Sub</a>
+<h3 id="Rat.Sub">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/rat.go#L473">Sub</a>
     <a href="#Rat.Sub">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) Sub(x, y *<a href="#Rat">Rat</a>) *<a href="#Rat">Rat</a></pre>
 
 Sub sets z to the difference x-y and returns z.
 
-<h3 id="Rat.UnmarshalText">func (*Rat) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/ratmarsh.go#L59">UnmarshalText</a>
+<h3 id="Rat.UnmarshalText">func (*Rat) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/ratmarsh.go#L59">UnmarshalText</a>
     <a href="#Rat.UnmarshalText">¶</a></h3>
 <pre>func (z *<a href="#Rat">Rat</a>) UnmarshalText(text []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
 UnmarshalText implements the encoding.TextUnmarshaler interface.
 
-<h2 id="RoundingMode">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L116">RoundingMode</a>
+<h2 id="RoundingMode">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L116">RoundingMode</a>
     <a href="#RoundingMode">¶</a></h2>
 <pre>type RoundingMode <a href="/builtin/#byte">byte</a></pre>
 
@@ -1845,12 +1845,12 @@ Example:
     // -2.5             -2             -3      -2            -3             -3             -2
     // -2.6             -3             -3      -2            -3             -3             -2
 
-<h3 id="RoundingMode.String">func (RoundingMode) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/roundingmode_string.go#L1">String</a>
+<h3 id="RoundingMode.String">func (RoundingMode) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/roundingmode_string.go#L1">String</a>
     <a href="#RoundingMode.String">¶</a></h3>
 <pre>func (i <a href="#RoundingMode">RoundingMode</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Word">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/arith.go#L4">Word</a>
+<h2 id="Word">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/math/big/arith.go#L4">Word</a>
     <a href="#Word">¶</a></h2>
 <pre>type Word <a href="/builtin/#uint">uint</a></pre>
 
@@ -1858,7 +1858,7 @@ A Word represents a single digit of a multi-precision unsigned integer.
 
 <h2 id="pkg-note-BUG">Bugs</h2>
 
-- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/math/big/float.go#L1423)  When rounding ToNegativeInf, the sign of Float values rounded to 0 is
+- [☞](//github.com/golang/go/blob/release-branch.go1.10/src/math/big/float.go#L1423)  When rounding ToNegativeInf, the sign of Float values rounded to 0 is
   incorrect.
 
 

@@ -20,7 +20,7 @@ generator.
 - [Read](#exampleRead)
 
 ### Package files
- [eagain.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rand/eagain.go) [rand.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rand/rand.go) [rand_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rand/rand_linux.go) [rand_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rand/rand_unix.go) [util.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rand/util.go)
+ [eagain.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/rand/eagain.go) [rand.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/rand/rand.go) [rand_linux.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/rand/rand_linux.go) [rand_unix.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/rand/rand_unix.go) [util.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/rand/util.go)
 
 <h2 id="pkg-variables">Variables</h2>
 
@@ -33,13 +33,13 @@ On Linux, Reader uses getrandom(2) if available, /dev/urandom otherwise. On
 OpenBSD, Reader uses getentropy(2). On other Unix-like systems, Reader reads
 from /dev/urandom. On Windows systems, Reader uses the CryptGenRandom API.
 
-<h2 id="Int">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rand/util.go#L96">Int</a>
+<h2 id="Int">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/rand/util.go#L96">Int</a>
     <a href="#Int">¶</a></h2>
 <pre>func Int(rand <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, max *<a href="/math/big/">big</a>.<a href="/math/big/#Int">Int</a>) (n *<a href="/math/big/">big</a>.<a href="/math/big/#Int">Int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 Int returns a uniform random value in [0, max). It panics if max <= 0.
 
-<h2 id="Prime">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rand/util.go#L21">Prime</a>
+<h2 id="Prime">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/rand/util.go#L21">Prime</a>
     <a href="#Prime">¶</a></h2>
 <pre>func Prime(rand <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, bits <a href="/builtin/#int">int</a>) (p *<a href="/math/big/">big</a>.<a href="/math/big/#Int">Int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -47,7 +47,7 @@ Prime returns a number, p, of the given size, such that p is prime with high
 probability. Prime will return error for any error returned by rand.Read or if
 bits < 2.
 
-<h2 id="Read">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/rand/rand.go#L12">Read</a>
+<h2 id="Read">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/rand/rand.go#L12">Read</a>
     <a href="#Read">¶</a></h2>
 <pre>func Read(b []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 

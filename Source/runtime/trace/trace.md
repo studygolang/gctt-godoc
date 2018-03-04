@@ -84,16 +84,16 @@ Example:
 - [Package](#example)
 
 ### Package files
- [trace.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/trace/trace.go)
+ [trace.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/trace/trace.go)
 
-<h2 id="Start">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/trace/trace.go#L35">Start</a>
+<h2 id="Start">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/trace/trace.go#L35">Start</a>
     <a href="#Start">¶</a></h2>
 <pre>func Start(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) <a href="/builtin/#error">error</a></pre>
 
 Start enables tracing for the current program. While tracing, the trace will be
 buffered and written to w. Start returns an error if tracing is already enabled.
 
-<h2 id="Stop">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/trace/trace.go#L53">Stop</a>
+<h2 id="Stop">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/trace/trace.go#L53">Stop</a>
     <a href="#Stop">¶</a></h2>
 <pre>func Stop()</pre>
 

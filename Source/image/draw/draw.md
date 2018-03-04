@@ -25,15 +25,15 @@ https://golang.org/doc/articles/image_draw.html
 - [Drawer (FloydSteinberg)](#exampleDrawer_floydSteinberg)
 
 ### Package files
- [draw.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/draw/draw.go)
+ [draw.go](//github.com/golang/go/blob/release-branch.go1.10/src/image/draw/draw.go)
 
-<h2 id="Draw">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/draw/draw.go#L90">Draw</a>
+<h2 id="Draw">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/draw/draw.go#L90">Draw</a>
     <a href="#Draw">¶</a></h2>
 <pre>func Draw(dst <a href="#Image">Image</a>, r <a href="/image/">image</a>.<a href="/image/#Rectangle">Rectangle</a>, src <a href="/image/">image</a>.<a href="/image/#Image">Image</a>, sp <a href="/image/">image</a>.<a href="/image/#Point">Point</a>, op <a href="#Op">Op</a>)</pre>
 
 Draw calls DrawMask with a nil mask.
 
-<h2 id="DrawMask">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/draw/draw.go#L96">DrawMask</a>
+<h2 id="DrawMask">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/draw/draw.go#L96">DrawMask</a>
     <a href="#DrawMask">¶</a></h2>
 <pre>func DrawMask(dst <a href="#Image">Image</a>, r <a href="/image/">image</a>.<a href="/image/#Rectangle">Rectangle</a>, src <a href="/image/">image</a>.<a href="/image/#Image">Image</a>, sp <a href="/image/">image</a>.<a href="/image/#Point">Point</a>, mask <a href="/image/">image</a>.<a href="/image/#Image">Image</a>, mp <a href="/image/">image</a>.<a href="/image/#Point">Point</a>, op <a href="#Op">Op</a>)</pre>
 
@@ -41,7 +41,7 @@ DrawMask aligns r.Min in dst with sp in src and mp in mask and then replaces the
 rectangle r in dst with the result of a Porter-Duff composition. A nil mask is
 treated as opaque.
 
-<h2 id="Drawer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/draw/draw.go#L40">Drawer</a>
+<h2 id="Drawer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/draw/draw.go#L40">Drawer</a>
     <a href="#Drawer">¶</a></h2>
 <pre>type Drawer interface {
     <span class="comment">// Draw aligns r.Min in dst with sp in src and then replaces the</span>
@@ -92,7 +92,7 @@ Example:
         }
     }
 
-<h2 id="Image">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/draw/draw.go#L11">Image</a>
+<h2 id="Image">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/draw/draw.go#L11">Image</a>
     <a href="#Image">¶</a></h2>
 <pre>type Image interface {
     <a href="/image/">image</a>.<a href="/image/#Image">Image</a>
@@ -101,7 +101,7 @@ Example:
 
 Image is an image.Image with a Set method to change a single pixel.
 
-<h2 id="Op">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/draw/draw.go#L24">Op</a>
+<h2 id="Op">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/draw/draw.go#L24">Op</a>
     <a href="#Op">¶</a></h2>
 <pre>type Op <a href="/builtin/#int">int</a></pre>
 
@@ -115,13 +115,13 @@ Op is a Porter-Duff compositing operator.
 )</pre>
 
 
-<h3 id="Op.Draw">func (Op) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/draw/draw.go#L35">Draw</a>
+<h3 id="Op.Draw">func (Op) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/draw/draw.go#L35">Draw</a>
     <a href="#Op.Draw">¶</a></h3>
 <pre>func (op <a href="#Op">Op</a>) Draw(dst <a href="#Image">Image</a>, r <a href="/image/">image</a>.<a href="/image/#Rectangle">Rectangle</a>, src <a href="/image/">image</a>.<a href="/image/#Image">Image</a>, sp <a href="/image/">image</a>.<a href="/image/#Point">Point</a>)</pre>
 
 Draw implements the Drawer interface by calling the Draw function with this Op.
 
-<h2 id="Quantizer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/draw/draw.go#L17">Quantizer</a>
+<h2 id="Quantizer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/image/draw/draw.go#L17">Quantizer</a>
     <a href="#Quantizer">¶</a></h2>
 <pre>type Quantizer interface {
     <span class="comment">// Quantize appends up to cap(p) - len(p) colors to p and returns the</span>

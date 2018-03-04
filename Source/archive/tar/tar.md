@@ -94,7 +94,7 @@ Example:
 - [Package (Minimal)](#example_minimal)
 
 ### Package files
- [common.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/common.go) [format.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/format.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/reader.go) [stat_actime1.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/stat_actime1.go) [stat_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/stat_unix.go) [strconv.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/strconv.go) [writer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/writer.go)
+ [common.go](//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/common.go) [format.go](//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/format.go) [reader.go](//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/reader.go) [stat_actime1.go](//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/stat_actime1.go) [stat_unix.go](//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/stat_unix.go) [strconv.go](//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/strconv.go) [writer.go](//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/writer.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -147,7 +147,7 @@ Type flags for Header.Typeflag.
 )</pre>
 
 
-<h2 id="Format">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/format.go#L36">Format</a>
+<h2 id="Format">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/format.go#L36">Format</a>
     <a href="#Format">¶</a></h2>
 <pre>type Format <a href="/builtin/#int">int</a></pre>
 
@@ -237,12 +237,12 @@ The Writer currently provides no support for sparse files.
 
 Constants to identify various tar formats.
 
-<h3 id="Format.String">func (Format) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/format.go#L107">String</a>
+<h3 id="Format.String">func (Format) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/format.go#L107">String</a>
     <a href="#Format.String">¶</a></h3>
 <pre>func (f <a href="#Format">Format</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Header">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/common.go#L130">Header</a>
+<h2 id="Header">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/common.go#L130">Header</a>
     <a href="#Header">¶</a></h2>
 <pre>type Header struct {
 <span id="Header.Typeflag"></span>    Typeflag <a href="/builtin/#byte">byte</a> <span class="comment">// Type of header entry (should be TypeReg for most files)</span>
@@ -314,7 +314,7 @@ it in some ways, and then pass it back to Writer.WriteHeader should do so by
 creating a new Header and copying the fields that they are interested in
 preserving.
 
-<h3 id="FileInfoHeader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/common.go#L616">FileInfoHeader</a>
+<h3 id="FileInfoHeader">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/common.go#L616">FileInfoHeader</a>
     <a href="#FileInfoHeader">¶</a></h3>
 <pre>func FileInfoHeader(fi <a href="/os/">os</a>.<a href="/os/#FileInfo">FileInfo</a>, link <a href="/builtin/#string">string</a>) (*<a href="#Header">Header</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -326,13 +326,13 @@ Since os.FileInfo's Name method only returns the base name of the file it
 describes, it may be necessary to modify Header.Name to provide the full path
 name of the file.
 
-<h3 id="Header.FileInfo">func (*Header) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/common.go#L516">FileInfo</a>
+<h3 id="Header.FileInfo">func (*Header) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/common.go#L516">FileInfo</a>
     <a href="#Header.FileInfo">¶</a></h3>
 <pre>func (h *<a href="#Header">Header</a>) FileInfo() <a href="/os/">os</a>.<a href="/os/#FileInfo">FileInfo</a></pre>
 
 FileInfo returns an os.FileInfo for the Header.
 
-<h2 id="Reader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/reader.go#L9">Reader</a>
+<h2 id="Reader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/reader.go#L9">Reader</a>
     <a href="#Reader">¶</a></h2>
 <pre>type Reader struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -342,13 +342,13 @@ Reader provides sequential access to the contents of a tar archive. Reader.Next
 advances to the next file in the archive (including the first), and then Reader
 can be treated as an io.Reader to access the file's data.
 
-<h3 id="NewReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/reader.go#L29">NewReader</a>
+<h3 id="NewReader">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/reader.go#L29">NewReader</a>
     <a href="#NewReader">¶</a></h3>
 <pre>func NewReader(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) *<a href="#Reader">Reader</a></pre>
 
 NewReader creates a new Reader reading from r.
 
-<h3 id="Reader.Next">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/reader.go#L38">Next</a>
+<h3 id="Reader.Next">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/reader.go#L38">Next</a>
     <a href="#Reader.Next">¶</a></h3>
 <pre>func (tr *<a href="#Reader">Reader</a>) Next() (*<a href="#Header">Header</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -358,7 +358,7 @@ file is automatically discarded.
 
 io.EOF is returned at the end of the input.
 
-<h3 id="Reader.Read">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/reader.go#L609">Read</a>
+<h3 id="Reader.Read">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/reader.go#L609">Read</a>
     <a href="#Reader.Read">¶</a></h3>
 <pre>func (tr *<a href="#Reader">Reader</a>) Read(b []<a href="/builtin/#byte">byte</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -373,7 +373,7 @@ Calling Read on special types like TypeLink, TypeSymlink, TypeChar, TypeBlock,
 TypeDir, and TypeFifo returns (0, io.EOF) regardless of what the Header.Size
 claims.
 
-<h2 id="Writer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/writer.go#L10">Writer</a>
+<h2 id="Writer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/writer.go#L10">Writer</a>
     <a href="#Writer">¶</a></h2>
 <pre>type Writer struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -383,13 +383,13 @@ Writer provides sequential writing of a tar archive. Write.WriteHeader begins a
 new file with the provided Header, and then Writer can be treated as an
 io.Writer to supply that file's data.
 
-<h3 id="NewWriter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/writer.go#L24">NewWriter</a>
+<h3 id="NewWriter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/writer.go#L24">NewWriter</a>
     <a href="#NewWriter">¶</a></h3>
 <pre>func NewWriter(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) *<a href="#Writer">Writer</a></pre>
 
 NewWriter creates a new Writer writing to w.
 
-<h3 id="Writer.Close">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/writer.go#L447">Close</a>
+<h3 id="Writer.Close">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/writer.go#L447">Close</a>
     <a href="#Writer.Close">¶</a></h3>
 <pre>func (tw *<a href="#Writer">Writer</a>) Close() <a href="/builtin/#error">error</a></pre>
 
@@ -397,7 +397,7 @@ Close closes the tar archive by flushing the padding, and writing the footer. If
 the current file (from a prior call to WriteHeader) is not fully written, then
 this returns an error.
 
-<h3 id="Writer.Flush">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/writer.go#L40">Flush</a>
+<h3 id="Writer.Flush">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/writer.go#L40">Flush</a>
     <a href="#Writer.Flush">¶</a></h3>
 <pre>func (tw *<a href="#Writer">Writer</a>) Flush() <a href="/builtin/#error">error</a></pre>
 
@@ -407,7 +407,7 @@ be fully written before Flush can be called.
 This is unnecessary as the next call to WriteHeader or Close will implicitly
 flush out the file's padding.
 
-<h3 id="Writer.Write">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/writer.go#L412">Write</a>
+<h3 id="Writer.Write">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/writer.go#L412">Write</a>
     <a href="#Writer.Write">¶</a></h3>
 <pre>func (tw *<a href="#Writer">Writer</a>) Write(b []<a href="/builtin/#byte">byte</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -418,7 +418,7 @@ Calling Write on special types like TypeLink, TypeSymlink, TypeChar, TypeBlock,
 TypeDir, and TypeFifo returns (0, ErrWriteTooLong) regardless of what the
 Header.Size claims.
 
-<h3 id="Writer.WriteHeader">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/archive/tar/writer.go#L58">WriteHeader</a>
+<h3 id="Writer.WriteHeader">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/archive/tar/writer.go#L58">WriteHeader</a>
     <a href="#Writer.WriteHeader">¶</a></h3>
 <pre>func (tw *<a href="#Writer">Writer</a>) WriteHeader(hdr *<a href="#Header">Header</a>) <a href="/builtin/#error">error</a></pre>
 

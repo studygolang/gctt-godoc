@@ -170,9 +170,9 @@ ASCII character classes:
   - [func (re *Regexp) String() string](#Regexp.String)
 
 ### Package files
- [compile.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/compile.go) [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/doc.go) [parse.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/parse.go) [perl_groups.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/perl_groups.go) [prog.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go) [regexp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/regexp.go) [simplify.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/simplify.go)
+ [compile.go](//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/compile.go) [doc.go](//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/doc.go) [parse.go](//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/parse.go) [perl_groups.go](//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/perl_groups.go) [prog.go](//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go) [regexp.go](//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/regexp.go) [simplify.go](//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/simplify.go)
 
-<h2 id="IsWordChar">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L97">IsWordChar</a>
+<h2 id="IsWordChar">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go#L97">IsWordChar</a>
     <a href="#IsWordChar">¶</a></h2>
 <pre>func IsWordChar(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -180,7 +180,7 @@ IsWordChar reports whether r is consider a ``word character'' during the
 evaluation of the \b and \B zero-width assertions. These assertions are
 ASCII-only: the word characters are [A-Za-z0-9_].
 
-<h2 id="EmptyOp">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L52">EmptyOp</a>
+<h2 id="EmptyOp">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go#L52">EmptyOp</a>
     <a href="#EmptyOp">¶</a></h2>
 <pre>type EmptyOp <a href="/builtin/#uint8">uint8</a></pre>
 
@@ -196,7 +196,7 @@ An EmptyOp specifies a kind or mixture of zero-width assertions.
 )</pre>
 
 
-<h3 id="EmptyOpContext">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L69">EmptyOpContext</a>
+<h3 id="EmptyOpContext">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go#L69">EmptyOpContext</a>
     <a href="#EmptyOpContext">¶</a></h3>
 <pre>func EmptyOpContext(r1, r2 <a href="/builtin/#rune">rune</a>) <a href="#EmptyOp">EmptyOp</a></pre>
 
@@ -205,7 +205,7 @@ between the runes r1 and r2. Passing r1 == -1 indicates that the position is at
 the beginning of the text. Passing r2 == -1 indicates that the position is at
 the end of the text.
 
-<h2 id="Error">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/parse.go#L6">Error</a>
+<h2 id="Error">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/parse.go#L6">Error</a>
     <a href="#Error">¶</a></h2>
 <pre>type Error struct {
 <span id="Error.Code"></span>    Code <a href="#ErrorCode">ErrorCode</a>
@@ -215,12 +215,12 @@ the end of the text.
 An Error describes a failure to parse a regular expression and gives the
 offending expression.
 
-<h3 id="Error.Error">func (*Error) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/parse.go#L11">Error</a>
+<h3 id="Error.Error">func (*Error) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/parse.go#L11">Error</a>
     <a href="#Error.Error">¶</a></h3>
 <pre>func (e *<a href="#Error">Error</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="ErrorCode">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/parse.go#L16">ErrorCode</a>
+<h2 id="ErrorCode">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/parse.go#L16">ErrorCode</a>
     <a href="#ErrorCode">¶</a></h2>
 <pre>type ErrorCode <a href="/builtin/#string">string</a></pre>
 
@@ -247,12 +247,12 @@ An ErrorCode describes a failure to parse a regular expression.
 )</pre>
 
 
-<h3 id="ErrorCode.String">func (ErrorCode) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/parse.go#L38">String</a>
+<h3 id="ErrorCode.String">func (ErrorCode) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/parse.go#L38">String</a>
     <a href="#ErrorCode.String">¶</a></h3>
 <pre>func (e <a href="#ErrorCode">ErrorCode</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Flags">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/parse.go#L43">Flags</a>
+<h2 id="Flags">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/parse.go#L43">Flags</a>
     <a href="#Flags">¶</a></h2>
 <pre>type Flags <a href="/builtin/#uint16">uint16</a></pre>
 
@@ -278,7 +278,7 @@ context.
 )</pre>
 
 
-<h2 id="Inst">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L102">Inst</a>
+<h2 id="Inst">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go#L102">Inst</a>
     <a href="#Inst">¶</a></h2>
 <pre>type Inst struct {
 <span id="Inst.Op"></span>    Op   <a href="#InstOp">InstOp</a>
@@ -289,7 +289,7 @@ context.
 
 An Inst is a single instruction in a regular expression program.
 
-<h3 id="Inst.MatchEmptyWidth">func (*Inst) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L243">MatchEmptyWidth</a>
+<h3 id="Inst.MatchEmptyWidth">func (*Inst) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go#L243">MatchEmptyWidth</a>
     <a href="#Inst.MatchEmptyWidth">¶</a></h3>
 <pre>func (i *<a href="#Inst">Inst</a>) MatchEmptyWidth(before <a href="/builtin/#rune">rune</a>, after <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -297,14 +297,14 @@ MatchEmptyWidth reports whether the instruction matches an empty string between
 the runes before and after. It should only be called when i.Op ==
 InstEmptyWidth.
 
-<h3 id="Inst.MatchRune">func (*Inst) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L184">MatchRune</a>
+<h3 id="Inst.MatchRune">func (*Inst) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go#L184">MatchRune</a>
     <a href="#Inst.MatchRune">¶</a></h3>
 <pre>func (i *<a href="#Inst">Inst</a>) MatchRune(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
 MatchRune reports whether the instruction matches (and consumes) r. It should
 only be called when i.Op == InstRune.
 
-<h3 id="Inst.MatchRunePos">func (*Inst) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L193">MatchRunePos</a>
+<h3 id="Inst.MatchRunePos">func (*Inst) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go#L193">MatchRunePos</a>
     <a href="#Inst.MatchRunePos">¶</a></h3>
 <pre>func (i *<a href="#Inst">Inst</a>) MatchRunePos(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -313,12 +313,12 @@ MatchRunePos returns the index of the matching rune pair (or, when len(i.Rune)
 == 1, rune singleton). If not, MatchRunePos returns -1. MatchRunePos should only
 be called when i.Op == InstRune.
 
-<h3 id="Inst.String">func (*Inst) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L261">String</a>
+<h3 id="Inst.String">func (*Inst) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go#L261">String</a>
     <a href="#Inst.String">¶</a></h3>
 <pre>func (i *<a href="#Inst">Inst</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="InstOp">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L14">InstOp</a>
+<h2 id="InstOp">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go#L14">InstOp</a>
     <a href="#InstOp">¶</a></h2>
 <pre>type InstOp <a href="/builtin/#uint8">uint8</a></pre>
 
@@ -339,12 +339,12 @@ An InstOp is an instruction opcode.
 )</pre>
 
 
-<h3 id="InstOp.String">func (InstOp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L44">String</a>
+<h3 id="InstOp.String">func (InstOp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go#L44">String</a>
     <a href="#InstOp.String">¶</a></h3>
 <pre>func (i <a href="#InstOp">InstOp</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Op">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/regexp.go#L21">Op</a>
+<h2 id="Op">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/regexp.go#L21">Op</a>
     <a href="#Op">¶</a></h2>
 <pre>type Op <a href="/builtin/#uint8">uint8</a></pre>
 
@@ -373,7 +373,7 @@ An Op is a single regular expression operator.
 )</pre>
 
 
-<h2 id="Prog">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L7">Prog</a>
+<h2 id="Prog">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go#L7">Prog</a>
     <a href="#Prog">¶</a></h2>
 <pre>type Prog struct {
 <span id="Prog.Inst"></span>    Inst   []<a href="#Inst">Inst</a>
@@ -383,33 +383,33 @@ An Op is a single regular expression operator.
 
 A Prog is a compiled regular expression program.
 
-<h3 id="Compile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/compile.go#L70">Compile</a>
+<h3 id="Compile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/compile.go#L70">Compile</a>
     <a href="#Compile">¶</a></h3>
 <pre>func Compile(re *<a href="#Regexp">Regexp</a>) (*<a href="#Prog">Prog</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Compile compiles the regexp into a program to be executed. The regexp should
 have been simplified already (returned from re.Simplify).
 
-<h3 id="Prog.Prefix">func (*Prog) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L139">Prefix</a>
+<h3 id="Prog.Prefix">func (*Prog) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go#L139">Prefix</a>
     <a href="#Prog.Prefix">¶</a></h3>
 <pre>func (p *<a href="#Prog">Prog</a>) Prefix() (prefix <a href="/builtin/#string">string</a>, complete <a href="/builtin/#bool">bool</a>)</pre>
 
 Prefix returns a literal string that all matches for the regexp must start with.
 Complete is true if the prefix is the entire match.
 
-<h3 id="Prog.StartCond">func (*Prog) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L158">StartCond</a>
+<h3 id="Prog.StartCond">func (*Prog) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go#L158">StartCond</a>
     <a href="#Prog.StartCond">¶</a></h3>
 <pre>func (p *<a href="#Prog">Prog</a>) StartCond() <a href="#EmptyOp">EmptyOp</a></pre>
 
 StartCond returns the leading empty-width conditions that must be true in any
 match. It returns ^EmptyOp(0) if no matches are possible.
 
-<h3 id="Prog.String">func (*Prog) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/prog.go#L109">String</a>
+<h3 id="Prog.String">func (*Prog) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/prog.go#L109">String</a>
     <a href="#Prog.String">¶</a></h3>
 <pre>func (p *<a href="#Prog">Prog</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Regexp">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/regexp.go#L8">Regexp</a>
+<h2 id="Regexp">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/regexp.go#L8">Regexp</a>
     <a href="#Regexp">¶</a></h2>
 <pre>type Regexp struct {
 <span id="Regexp.Op"></span>    Op       <a href="#Op">Op</a> <span class="comment">// operator</span>
@@ -425,7 +425,7 @@ match. It returns ^EmptyOp(0) if no matches are possible.
 
 A Regexp is a node in a regular expression syntax tree.
 
-<h3 id="Parse">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/parse.go#L691">Parse</a>
+<h3 id="Parse">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/parse.go#L691">Parse</a>
     <a href="#Parse">¶</a></h3>
 <pre>func Parse(s <a href="/builtin/#string">string</a>, flags <a href="#Flags">Flags</a>) (*<a href="#Regexp">Regexp</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -433,25 +433,25 @@ Parse parses a regular expression string s, controlled by the specified Flags,
 and returns a regular expression parse tree. The syntax is described in the
 top-level comment.
 
-<h3 id="Regexp.CapNames">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/regexp.go#L296">CapNames</a>
+<h3 id="Regexp.CapNames">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/regexp.go#L296">CapNames</a>
     <a href="#Regexp.CapNames">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) CapNames() []<a href="/builtin/#string">string</a></pre>
 
 CapNames walks the regexp to find the names of capturing groups.
 
-<h3 id="Regexp.Equal">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/regexp.go#L52">Equal</a>
+<h3 id="Regexp.Equal">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/regexp.go#L52">Equal</a>
     <a href="#Regexp.Equal">¶</a></h3>
 <pre>func (x *<a href="#Regexp">Regexp</a>) Equal(y *<a href="#Regexp">Regexp</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Equal returns true if x and y have identical structure.
 
-<h3 id="Regexp.MaxCap">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/regexp.go#L282">MaxCap</a>
+<h3 id="Regexp.MaxCap">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/regexp.go#L282">MaxCap</a>
     <a href="#Regexp.MaxCap">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) MaxCap() <a href="/builtin/#int">int</a></pre>
 
 MaxCap walks the regexp to find the maximum capture index.
 
-<h3 id="Regexp.Simplify">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/simplify.go#L4">Simplify</a>
+<h3 id="Regexp.Simplify">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/simplify.go#L4">Simplify</a>
     <a href="#Regexp.Simplify">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) Simplify() *<a href="#Regexp">Regexp</a></pre>
 
@@ -463,7 +463,7 @@ duplicated or removed. For example, the simplified form for /(x){1,2}/ is
 /(x)(x)?/ but both parentheses capture as $1. The returned regexp may share
 structure with or be the original.
 
-<h3 id="Regexp.String">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/syntax/regexp.go#L235">String</a>
+<h3 id="Regexp.String">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/syntax/regexp.go#L235">String</a>
     <a href="#Regexp.String">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) String() <a href="/builtin/#string">string</a></pre>
 

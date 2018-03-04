@@ -29,7 +29,7 @@ Package mime implements parts of the MIME spec.
 - [WordEncoder.Encode](#exampleWordEncoder_Encode)
 
 ### Package files
- [encodedword.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/encodedword.go) [grammar.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/grammar.go) [mediatype.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/mediatype.go) [type.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/type.go) [type_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/type_unix.go)
+ [encodedword.go](//github.com/golang/go/blob/release-branch.go1.10/src/mime/encodedword.go) [grammar.go](//github.com/golang/go/blob/release-branch.go1.10/src/mime/grammar.go) [mediatype.go](//github.com/golang/go/blob/release-branch.go1.10/src/mime/mediatype.go) [type.go](//github.com/golang/go/blob/release-branch.go1.10/src/mime/type.go) [type_unix.go](//github.com/golang/go/blob/release-branch.go1.10/src/mime/type_unix.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -48,14 +48,14 @@ Package mime implements parts of the MIME spec.
 ErrInvalidMediaParameter is returned by ParseMediaType if the media type value
 was found but there was an error parsing the optional parameters
 
-<h2 id="AddExtensionType">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/type.go#L146">AddExtensionType</a>
+<h2 id="AddExtensionType">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/type.go#L146">AddExtensionType</a>
     <a href="#AddExtensionType">¶</a></h2>
 <pre>func AddExtensionType(ext, typ <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 AddExtensionType sets the MIME type associated with the extension ext to typ.
 The extension should begin with a leading dot, as in ".html".
 
-<h2 id="ExtensionsByType">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/type.go#L129">ExtensionsByType</a>
+<h2 id="ExtensionsByType">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/type.go#L129">ExtensionsByType</a>
     <a href="#ExtensionsByType">¶</a></h2>
 <pre>func ExtensionsByType(typ <a href="/builtin/#string">string</a>) ([]<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -64,7 +64,7 @@ type typ. The returned extensions will each begin with a leading dot, as in
 ".html". When typ has no associated extensions, ExtensionsByType returns an nil
 slice.
 
-<h2 id="FormatMediaType">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/mediatype.go#L11">FormatMediaType</a>
+<h2 id="FormatMediaType">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/mediatype.go#L11">FormatMediaType</a>
     <a href="#FormatMediaType">¶</a></h2>
 <pre>func FormatMediaType(t <a href="/builtin/#string">string</a>, param map[<a href="/builtin/#string">string</a>]<a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -73,7 +73,7 @@ conforming to RFC 2045 and RFC 2616. The type and parameter names are written in
 lower-case. When any of the arguments result in a standard violation then
 FormatMediaType returns the empty string.
 
-<h2 id="ParseMediaType">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/mediatype.go#L102">ParseMediaType</a>
+<h2 id="ParseMediaType">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/mediatype.go#L102">ParseMediaType</a>
     <a href="#ParseMediaType">¶</a></h2>
 <pre>func ParseMediaType(v <a href="/builtin/#string">string</a>) (mediatype <a href="/builtin/#string">string</a>, params map[<a href="/builtin/#string">string</a>]<a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -85,7 +85,7 @@ parsing the optional parameter, the media type will be returned along with the
 error ErrInvalidMediaParameter. The returned map, params, maps from the
 lowercase attribute to the attribute value with its case preserved.
 
-<h2 id="TypeByExtension">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/type.go#L92">TypeByExtension</a>
+<h2 id="TypeByExtension">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/type.go#L92">TypeByExtension</a>
     <a href="#TypeByExtension">¶</a></h2>
 <pre>func TypeByExtension(ext <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -106,7 +106,7 @@ On Windows, MIME types are extracted from the registry.
 
 Text types have the charset parameter set to "utf-8" by default.
 
-<h2 id="WordDecoder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/encodedword.go#L175">WordDecoder</a>
+<h2 id="WordDecoder">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/encodedword.go#L175">WordDecoder</a>
     <a href="#WordDecoder">¶</a></h2>
 <pre>type WordDecoder struct {
 <span id="WordDecoder.CharsetReader"></span>    <span class="comment">// CharsetReader, if non-nil, defines a function to generate</span>
@@ -120,7 +120,7 @@ Text types have the charset parameter set to "utf-8" by default.
 
 A WordDecoder decodes MIME headers containing RFC 2047 encoded-words.
 
-<h3 id="WordDecoder.Decode">func (*WordDecoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/encodedword.go#L186">Decode</a>
+<h3 id="WordDecoder.Decode">func (*WordDecoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/encodedword.go#L186">Decode</a>
     <a href="#WordDecoder.Decode">¶</a></h3>
 <pre>func (d *<a href="#WordDecoder">WordDecoder</a>) Decode(word <a href="/builtin/#string">string</a>) (<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -160,7 +160,7 @@ Example:
     // ¡Hola, señor!
     // HELLO!
 
-<h3 id="WordDecoder.DecodeHeader">func (*WordDecoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/encodedword.go#L229">DecodeHeader</a>
+<h3 id="WordDecoder.DecodeHeader">func (*WordDecoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/encodedword.go#L229">DecodeHeader</a>
     <a href="#WordDecoder.DecodeHeader">¶</a></h3>
 <pre>func (d *<a href="#WordDecoder">WordDecoder</a>) DecodeHeader(header <a href="/builtin/#string">string</a>) (<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -208,13 +208,13 @@ Example:
     // ¡Hola, señor!
     // HELLO WORLD!
 
-<h2 id="WordEncoder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/encodedword.go#L10">WordEncoder</a>
+<h2 id="WordEncoder">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/encodedword.go#L10">WordEncoder</a>
     <a href="#WordEncoder">¶</a></h2>
 <pre>type WordEncoder <a href="/builtin/#byte">byte</a></pre>
 
 A WordEncoder is an RFC 2047 encoded-word encoder.
 
-<h3 id="WordEncoder.Encode">func (WordEncoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/encodedword.go#L26">Encode</a>
+<h3 id="WordEncoder.Encode">func (WordEncoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/encodedword.go#L26">Encode</a>
     <a href="#WordEncoder.Encode">¶</a></h3>
 <pre>func (e <a href="#WordEncoder">WordEncoder</a>) Encode(charset, s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 

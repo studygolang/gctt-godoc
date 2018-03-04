@@ -12,7 +12,7 @@ Package palette provides standard color palettes.
 - [Variables](#pkg-variables)
 
 ### Package files
- [generate.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/color/palette/generate.go) [palette.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/image/color/palette/palette.go)
+ [generate.go](//github.com/golang/go/blob/release-branch.go1.10/src/image/color/palette/generate.go) [palette.go](//github.com/golang/go/blob/release-branch.go1.10/src/image/color/palette/palette.go)
 
 <h2 id="pkg-variables">Variables</h2>
 

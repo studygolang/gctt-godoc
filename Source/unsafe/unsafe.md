@@ -20,9 +20,9 @@ Packages that import unsafe may be non-portable and are not protected by the Go
 - [type Pointer](#Pointer)
 
 ### Package files
- [unsafe.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unsafe/unsafe.go)
+ [unsafe.go](//github.com/golang/go/blob/release-branch.go1.10/src/unsafe/unsafe.go)
 
-<h2 id="Alignof">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unsafe/unsafe.go#L186">Alignof</a>
+<h2 id="Alignof">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unsafe/unsafe.go#L186">Alignof</a>
     <a href="#Alignof">¶</a></h2>
 <pre>func Alignof(x <a href="#ArbitraryType">ArbitraryType</a>) <a href="/builtin/#uintptr">uintptr</a></pre>
 
@@ -34,7 +34,7 @@ is of struct type and f is a field within that struct, then Alignof(s.f) will
 return the required alignment of a field of that type within a struct. This case
 is the same as the value returned by reflect.TypeOf(s.f).FieldAlign().
 
-<h2 id="Offsetof">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unsafe/unsafe.go#L176">Offsetof</a>
+<h2 id="Offsetof">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unsafe/unsafe.go#L176">Offsetof</a>
     <a href="#Offsetof">¶</a></h2>
 <pre>func Offsetof(x <a href="#ArbitraryType">ArbitraryType</a>) <a href="/builtin/#uintptr">uintptr</a></pre>
 
@@ -42,7 +42,7 @@ Offsetof returns the offset within the struct of the field represented by x,
 which must be of the form structValue.field. In other words, it returns the
 number of bytes between the start of the struct and the start of the field.
 
-<h2 id="Sizeof">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unsafe/unsafe.go#L171">Sizeof</a>
+<h2 id="Sizeof">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unsafe/unsafe.go#L171">Sizeof</a>
     <a href="#Sizeof">¶</a></h2>
 <pre>func Sizeof(x <a href="#ArbitraryType">ArbitraryType</a>) <a href="/builtin/#uintptr">uintptr</a></pre>
 
@@ -52,7 +52,7 @@ include any memory possibly referenced by x. For instance, if x is a slice,
 Sizeof returns the size of the slice descriptor, not the size of the memory
 referenced by the slice.
 
-<h2 id="ArbitraryType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unsafe/unsafe.go#L5">ArbitraryType</a>
+<h2 id="ArbitraryType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unsafe/unsafe.go#L5">ArbitraryType</a>
     <a href="#ArbitraryType">¶</a></h2>
 <pre>type ArbitraryType <a href="/builtin/#int">int</a></pre>
 
@@ -60,7 +60,7 @@ ArbitraryType is here for the purposes of documentation only and is not actually
 part of the unsafe package. It represents the type of an arbitrary Go
 expression.
 
-<h2 id="Pointer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unsafe/unsafe.go#L164">Pointer</a>
+<h2 id="Pointer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unsafe/unsafe.go#L164">Pointer</a>
     <a href="#Pointer">¶</a></h2>
 <pre>type Pointer *<a href="#ArbitraryType">ArbitraryType</a></pre>
 
