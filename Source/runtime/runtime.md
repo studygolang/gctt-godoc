@@ -217,7 +217,7 @@ run-time system.
 - [Frames](#exampleFrames)
 
 ### Package files
- [alg.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/alg.go) [atomic_pointer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/atomic_pointer.go) [cgo.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/cgo.go) [cgo_mmap.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/cgo_mmap.go) [cgo_sigaction.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/cgo_sigaction.go) [cgocall.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/cgocall.go) [cgocallback.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/cgocallback.go) [cgocheck.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/cgocheck.go) [chan.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/chan.go) [compiler.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/compiler.go) [complex.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/complex.go) [cpuflags_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/cpuflags_amd64.go) [cpuprof.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/cpuprof.go) [cputicks.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/cputicks.go) [debug.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/debug.go) [defs_linux_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/defs_linux_amd64.go) [env_posix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/env_posix.go) [error.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/error.go) [extern.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/extern.go) [fastlog2.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/fastlog2.go) [fastlog2table.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/fastlog2table.go) [float.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/float.go) [hash64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/hash64.go) [hashmap.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/hashmap.go) [hashmap_fast.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/hashmap_fast.go) [heapdump.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/heapdump.go) [iface.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/iface.go) [lfstack.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/lfstack.go) [lfstack_64bit.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/lfstack_64bit.go) [lock_futex.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/lock_futex.go) [malloc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/malloc.go) [mbarrier.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mbarrier.go) [mbitmap.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mbitmap.go) [mcache.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mcache.go) [mcentral.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mcentral.go) [mem_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mem_linux.go) [mfinal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mfinal.go) [mfixalloc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mfixalloc.go) [mgc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mgc.go) [mgclarge.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mgclarge.go) [mgcmark.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mgcmark.go) [mgcsweep.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mgcsweep.go) [mgcsweepbuf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mgcsweepbuf.go) [mgcwork.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mgcwork.go) [mheap.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mheap.go) [mprof.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go) [msan0.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/msan0.go) [msize.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/msize.go) [mstats.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mstats.go) [mwbbuf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mwbbuf.go) [netpoll.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/netpoll.go) [netpoll_epoll.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/netpoll_epoll.go) [os_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/os_linux.go) [os_linux_generic.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/os_linux_generic.go) [panic.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/panic.go) [plugin.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/plugin.go) [print.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/print.go) [proc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/proc.go) [profbuf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/profbuf.go) [proflabel.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/proflabel.go) [race0.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/race0.go) [rdebug.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/rdebug.go) [relax_stub.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/relax_stub.go) [runtime.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/runtime.go) [runtime1.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/runtime1.go) [runtime2.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/runtime2.go) [rwmutex.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/rwmutex.go) [select.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/select.go) [sema.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/sema.go) [signal_amd64x.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/signal_amd64x.go) [signal_linux_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/signal_linux_amd64.go) [signal_sighandler.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/signal_sighandler.go) [signal_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/signal_unix.go) [sigqueue.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/sigqueue.go) [sigtab_linux_generic.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/sigtab_linux_generic.go) [sizeclasses.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/sizeclasses.go) [slice.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/slice.go) [softfloat64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/softfloat64.go) [sqrt.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/sqrt.go) [stack.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/stack.go) [string.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/string.go) [stubs.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/stubs.go) [stubs2.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/stubs2.go) [stubs_asm.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/stubs_asm.go) [stubs_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/stubs_linux.go) [symtab.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/symtab.go) [sys_nonppc64x.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/sys_nonppc64x.go) [sys_x86.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/sys_x86.go) [time.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/time.go) [timestub.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/timestub.go) [trace.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/trace.go) [traceback.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/traceback.go) [type.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/type.go) [typekind.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/typekind.go) [unaligned1.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/unaligned1.go) [utf8.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/utf8.go) [vdso_linux.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/vdso_linux.go) [vdso_linux_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/vdso_linux_amd64.go) [write_err.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/write_err.go)
+ [alg.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/alg.go) [atomic_pointer.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/atomic_pointer.go) [cgo.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/cgo.go) [cgo_mmap.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/cgo_mmap.go) [cgo_sigaction.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/cgo_sigaction.go) [cgocall.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/cgocall.go) [cgocallback.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/cgocallback.go) [cgocheck.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/cgocheck.go) [chan.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/chan.go) [compiler.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/compiler.go) [complex.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/complex.go) [cpuflags_amd64.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/cpuflags_amd64.go) [cpuprof.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/cpuprof.go) [cputicks.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/cputicks.go) [debug.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/debug.go) [defs_linux_amd64.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/defs_linux_amd64.go) [env_posix.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/env_posix.go) [error.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/error.go) [extern.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/extern.go) [fastlog2.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/fastlog2.go) [fastlog2table.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/fastlog2table.go) [float.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/float.go) [hash64.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/hash64.go) [hashmap.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/hashmap.go) [hashmap_fast.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/hashmap_fast.go) [heapdump.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/heapdump.go) [iface.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/iface.go) [lfstack.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/lfstack.go) [lfstack_64bit.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/lfstack_64bit.go) [lock_futex.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/lock_futex.go) [malloc.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/malloc.go) [mbarrier.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mbarrier.go) [mbitmap.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mbitmap.go) [mcache.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mcache.go) [mcentral.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mcentral.go) [mem_linux.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mem_linux.go) [mfinal.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mfinal.go) [mfixalloc.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mfixalloc.go) [mgc.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mgc.go) [mgclarge.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mgclarge.go) [mgcmark.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mgcmark.go) [mgcsweep.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mgcsweep.go) [mgcsweepbuf.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mgcsweepbuf.go) [mgcwork.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mgcwork.go) [mheap.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mheap.go) [mprof.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go) [msan0.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/msan0.go) [msize.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/msize.go) [mstats.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mstats.go) [mwbbuf.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mwbbuf.go) [netpoll.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/netpoll.go) [netpoll_epoll.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/netpoll_epoll.go) [os_linux.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/os_linux.go) [os_linux_generic.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/os_linux_generic.go) [panic.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/panic.go) [plugin.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/plugin.go) [print.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/print.go) [proc.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/proc.go) [profbuf.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/profbuf.go) [proflabel.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/proflabel.go) [race0.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/race0.go) [rdebug.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/rdebug.go) [relax_stub.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/relax_stub.go) [runtime.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/runtime.go) [runtime1.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/runtime1.go) [runtime2.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/runtime2.go) [rwmutex.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/rwmutex.go) [select.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/select.go) [sema.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/sema.go) [signal_amd64x.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/signal_amd64x.go) [signal_linux_amd64.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/signal_linux_amd64.go) [signal_sighandler.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/signal_sighandler.go) [signal_unix.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/signal_unix.go) [sigqueue.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/sigqueue.go) [sigtab_linux_generic.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/sigtab_linux_generic.go) [sizeclasses.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/sizeclasses.go) [slice.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/slice.go) [softfloat64.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/softfloat64.go) [sqrt.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/sqrt.go) [stack.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/stack.go) [string.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/string.go) [stubs.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/stubs.go) [stubs2.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/stubs2.go) [stubs_asm.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/stubs_asm.go) [stubs_linux.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/stubs_linux.go) [symtab.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/symtab.go) [sys_nonppc64x.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/sys_nonppc64x.go) [sys_x86.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/sys_x86.go) [time.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/time.go) [timestub.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/timestub.go) [trace.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/trace.go) [traceback.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/traceback.go) [type.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/type.go) [typekind.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/typekind.go) [unaligned1.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/unaligned1.go) [utf8.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/utf8.go) [vdso_linux.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/vdso_linux.go) [vdso_linux_amd64.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/vdso_linux_amd64.go) [write_err.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/write_err.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -256,7 +256,7 @@ Programs that change the memory profiling rate should do so just once, as early
 as possible in the execution of the program (for example, at the beginning of
 main).
 
-<h2 id="BlockProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L624">BlockProfile</a>
+<h2 id="BlockProfile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L624">BlockProfile</a>
     <a href="#BlockProfile">¶</a></h2>
 <pre>func BlockProfile(p []<a href="#BlockProfileRecord">BlockProfileRecord</a>) (n <a href="/builtin/#int">int</a>, ok <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -267,13 +267,13 @@ len(p) < n, BlockProfile does not change p and returns n, false.
 Most clients should use the runtime/pprof package or the testing package's
 -test.blockprofile flag instead of calling BlockProfile directly.
 
-<h2 id="Breakpoint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/proc.go#L3447">Breakpoint</a>
+<h2 id="Breakpoint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/proc.go#L3447">Breakpoint</a>
     <a href="#Breakpoint">¶</a></h2>
 <pre>func Breakpoint()</pre>
 
 Breakpoint executes a breakpoint trap.
 
-<h2 id="CPUProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/cpuprof.go#L175">CPUProfile</a>
+<h2 id="CPUProfile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/cpuprof.go#L175">CPUProfile</a>
     <a href="#CPUProfile">¶</a></h2>
 <pre>func CPUProfile() []<a href="/builtin/#byte">byte</a></pre>
 
@@ -284,7 +284,7 @@ changed, so this functionality has been removed.
 Deprecated: use the runtime/pprof package, or the handlers in the net/http/pprof
 package, or the testing package's -test.cpuprofile flag instead.
 
-<h2 id="Caller">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/extern.go#L158">Caller</a>
+<h2 id="Caller">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/extern.go#L158">Caller</a>
     <a href="#Caller">¶</a></h2>
 <pre>func Caller(skip <a href="/builtin/#int">int</a>) (pc <a href="/builtin/#uintptr">uintptr</a>, file <a href="/builtin/#string">string</a>, line <a href="/builtin/#int">int</a>, ok <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -296,7 +296,7 @@ the program counter, file name, and line number within the file of the
 corresponding call. The boolean ok is false if it was not possible to recover
 the information.
 
-<h2 id="Callers">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/extern.go#L195">Callers</a>
+<h2 id="Callers">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/extern.go#L195">Callers</a>
     <a href="#Callers">¶</a></h2>
 <pre>func Callers(skip <a href="/builtin/#int">int</a>, pc []<a href="/builtin/#uintptr">uintptr</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -313,14 +313,14 @@ the returned slice of PCs directly is discouraged, as is using FuncForPC on any
 of the returned PCs, since these cannot account for inlining or return program
 counter adjustment.
 
-<h2 id="GC">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mgc.go#L1058">GC</a>
+<h2 id="GC">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mgc.go#L1058">GC</a>
     <a href="#GC">¶</a></h2>
 <pre>func GC()</pre>
 
 GC runs a garbage collection and blocks the caller until the garbage collection
 is complete. It may also block the entire program.
 
-<h2 id="GOMAXPROCS">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/debug.go#L7">GOMAXPROCS</a>
+<h2 id="GOMAXPROCS">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/debug.go#L7">GOMAXPROCS</a>
     <a href="#GOMAXPROCS">¶</a></h2>
 <pre>func GOMAXPROCS(n <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -329,14 +329,14 @@ and returns the previous setting. If n < 1, it does not change the current
 setting. The number of logical CPUs on the local machine can be queried with
 NumCPU. This call will go away when the scheduler improves.
 
-<h2 id="GOROOT">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/extern.go#L208">GOROOT</a>
+<h2 id="GOROOT">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/extern.go#L208">GOROOT</a>
     <a href="#GOROOT">¶</a></h2>
 <pre>func GOROOT() <a href="/builtin/#string">string</a></pre>
 
 GOROOT returns the root of the Go tree. It uses the GOROOT environment variable,
 if set at process start, or else the root used during the Go build.
 
-<h2 id="Goexit">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/panic.go#L346">Goexit</a>
+<h2 id="Goexit">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/panic.go#L346">Goexit</a>
     <a href="#Goexit">¶</a></h2>
 <pre>func Goexit()</pre>
 
@@ -349,7 +349,7 @@ main returning. Since func main has not returned, the program continues
 execution of other goroutines. If all other goroutines exit, the program
 crashes.
 
-<h2 id="GoroutineProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L710">GoroutineProfile</a>
+<h2 id="GoroutineProfile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L710">GoroutineProfile</a>
     <a href="#GoroutineProfile">¶</a></h2>
 <pre>func GoroutineProfile(p []<a href="#StackRecord">StackRecord</a>) (n <a href="/builtin/#int">int</a>, ok <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -360,14 +360,14 @@ n, true. If len(p) < n, GoroutineProfile does not change p and returns n, false.
 Most clients should use the runtime/pprof package instead of calling
 GoroutineProfile directly.
 
-<h2 id="Gosched">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/proc.go#L252">Gosched</a>
+<h2 id="Gosched">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/proc.go#L252">Gosched</a>
     <a href="#Gosched">¶</a></h2>
 <pre>func Gosched()</pre>
 
 Gosched yields the processor, allowing other goroutines to run. It does not
 suspend the current goroutine, so execution resumes automatically.
 
-<h2 id="KeepAlive">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mfinal.go#L476">KeepAlive</a>
+<h2 id="KeepAlive">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mfinal.go#L476">KeepAlive</a>
     <a href="#KeepAlive">¶</a></h2>
 <pre>func KeepAlive(x interface{})</pre>
 
@@ -392,7 +392,7 @@ Without the KeepAlive call, the finalizer could run at the start of
 syscall.Read, closing the file descriptor before syscall.Read makes the actual
 system call.
 
-<h2 id="LockOSThread">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/proc.go#L3473">LockOSThread</a>
+<h2 id="LockOSThread">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/proc.go#L3473">LockOSThread</a>
     <a href="#LockOSThread">¶</a></h2>
 <pre>func LockOSThread()</pre>
 
@@ -405,7 +405,7 @@ unlocking the thread, the thread will be terminated.
 A goroutine should call LockOSThread before calling OS services or non-Go
 library functions that depend on per-thread state.
 
-<h2 id="MemProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L533">MemProfile</a>
+<h2 id="MemProfile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L533">MemProfile</a>
     <a href="#MemProfile">¶</a></h2>
 <pre>func MemProfile(p []<a href="#MemProfileRecord">MemProfileRecord</a>, inuseZero <a href="/builtin/#bool">bool</a>) (n <a href="/builtin/#int">int</a>, ok <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -428,7 +428,7 @@ garbage collector.
 Most clients should use the runtime/pprof package or the testing package's
 -test.memprofile flag instead of calling MemProfile directly.
 
-<h2 id="MutexProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L659">MutexProfile</a>
+<h2 id="MutexProfile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L659">MutexProfile</a>
     <a href="#MutexProfile">¶</a></h2>
 <pre>func MutexProfile(p []<a href="#BlockProfileRecord">BlockProfileRecord</a>) (n <a href="/builtin/#int">int</a>, ok <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -439,7 +439,7 @@ Otherwise, MutexProfile does not change p, and returns n, false.
 Most clients should use the runtime/pprof package instead of calling
 MutexProfile directly.
 
-<h2 id="NumCPU">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/debug.go#L29">NumCPU</a>
+<h2 id="NumCPU">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/debug.go#L29">NumCPU</a>
     <a href="#NumCPU">¶</a></h2>
 <pre>func NumCPU() <a href="/builtin/#int">int</a></pre>
 
@@ -449,19 +449,19 @@ The set of available CPUs is checked by querying the operating system at process
 startup. Changes to operating system CPU allocation after process startup are
 not reflected.
 
-<h2 id="NumCgoCall">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/debug.go#L34">NumCgoCall</a>
+<h2 id="NumCgoCall">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/debug.go#L34">NumCgoCall</a>
     <a href="#NumCgoCall">¶</a></h2>
 <pre>func NumCgoCall() <a href="/builtin/#int64">int64</a></pre>
 
 NumCgoCall returns the number of cgo calls made by the current process.
 
-<h2 id="NumGoroutine">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/debug.go#L43">NumGoroutine</a>
+<h2 id="NumGoroutine">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/debug.go#L43">NumGoroutine</a>
     <a href="#NumGoroutine">¶</a></h2>
 <pre>func NumGoroutine() <a href="/builtin/#int">int</a></pre>
 
 NumGoroutine returns the number of goroutines that currently exist.
 
-<h2 id="ReadMemStats">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mstats.go#L447">ReadMemStats</a>
+<h2 id="ReadMemStats">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mstats.go#L447">ReadMemStats</a>
     <a href="#ReadMemStats">¶</a></h2>
 <pre>func ReadMemStats(m *<a href="#MemStats">MemStats</a>)</pre>
 
@@ -471,7 +471,7 @@ The returned memory allocator statistics are up to date as of the call to
 ReadMemStats. This is in contrast with a heap profile, which is a snapshot as of
 the most recently completed garbage collection cycle.
 
-<h2 id="ReadTrace">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/trace.go#L341">ReadTrace</a>
+<h2 id="ReadTrace">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/trace.go#L341">ReadTrace</a>
     <a href="#ReadTrace">¶</a></h2>
 <pre>func ReadTrace() []<a href="/builtin/#byte">byte</a></pre>
 
@@ -481,7 +481,7 @@ has been returned, ReadTrace returns nil. The caller must copy the returned data
 before calling ReadTrace again. ReadTrace must be called from one goroutine at a
 time.
 
-<h2 id="SetBlockProfileRate">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L370">SetBlockProfileRate</a>
+<h2 id="SetBlockProfileRate">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L370">SetBlockProfileRate</a>
     <a href="#SetBlockProfileRate">¶</a></h2>
 <pre>func SetBlockProfileRate(rate <a href="/builtin/#int">int</a>)</pre>
 
@@ -492,7 +492,7 @@ blocking event per rate nanoseconds spent blocked.
 To include every blocking event in the profile, pass rate = 1. To turn off
 profiling entirely, pass rate <= 0.
 
-<h2 id="SetCPUProfileRate">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/cpuprof.go#L43">SetCPUProfileRate</a>
+<h2 id="SetCPUProfileRate">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/cpuprof.go#L43">SetCPUProfileRate</a>
     <a href="#SetCPUProfileRate">¶</a></h2>
 <pre>func SetCPUProfileRate(hz <a href="/builtin/#int">int</a>)</pre>
 
@@ -503,7 +503,7 @@ be changed without first turning it off.
 Most clients should use the runtime/pprof package or the testing package's
 -test.cpuprofile flag instead of calling SetCPUProfileRate directly.
 
-<h2 id="SetCgoTraceback">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/traceback.go#L1104">SetCgoTraceback</a>
+<h2 id="SetCgoTraceback">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/traceback.go#L1104">SetCgoTraceback</a>
     <a href="#SetCgoTraceback">¶</a></h2>
 <pre>func SetCgoTraceback(version <a href="/builtin/#int">int</a>, traceback, context, symbolizer <a href="/unsafe/">unsafe</a>.<a href="/unsafe/#Pointer">Pointer</a>)</pre>
 
@@ -648,7 +648,7 @@ show a traceback for the C portion of the call stack.
 
 SetCgoTraceback should be called only once, ideally from an init function.
 
-<h2 id="SetFinalizer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mfinal.go#L299">SetFinalizer</a>
+<h2 id="SetFinalizer">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mfinal.go#L299">SetFinalizer</a>
     <a href="#SetFinalizer">¶</a></h2>
 <pre>func SetFinalizer(obj interface{}, finalizer interface{})</pre>
 
@@ -709,7 +709,7 @@ runtime.KeepAlive(p) after the call to syscall.Write.
 A single goroutine runs all finalizers for a program, sequentially. If a
 finalizer must run for a long time, it should do so by starting a new goroutine.
 
-<h2 id="SetMutexProfileFraction">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L429">SetMutexProfileFraction</a>
+<h2 id="SetMutexProfileFraction">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L429">SetMutexProfileFraction</a>
     <a href="#SetMutexProfileFraction">¶</a></h2>
 <pre>func SetMutexProfileFraction(rate <a href="/builtin/#int">int</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -720,7 +720,7 @@ previous rate is returned.
 To turn off profiling entirely, pass rate 0. To just read the current rate, pass
 rate -1. (For n>1 the details of sampling may change.)
 
-<h2 id="Stack">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L770">Stack</a>
+<h2 id="Stack">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L770">Stack</a>
     <a href="#Stack">¶</a></h2>
 <pre>func Stack(buf []<a href="/builtin/#byte">byte</a>, all <a href="/builtin/#bool">bool</a>) <a href="/builtin/#int">int</a></pre>
 
@@ -728,7 +728,7 @@ Stack formats a stack trace of the calling goroutine into buf and returns the
 number of bytes written to buf. If all is true, Stack formats stack traces of
 all other goroutines into buf after the trace for the current goroutine.
 
-<h2 id="StartTrace">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/trace.go#L163">StartTrace</a>
+<h2 id="StartTrace">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/trace.go#L163">StartTrace</a>
     <a href="#StartTrace">¶</a></h2>
 <pre>func StartTrace() <a href="/builtin/#error">error</a></pre>
 
@@ -737,14 +737,14 @@ be buffered and available via ReadTrace. StartTrace returns an error if tracing
 is already enabled. Most clients should use the runtime/trace package or the
 testing package's -test.trace flag instead of calling StartTrace directly.
 
-<h2 id="StopTrace">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/trace.go#L254">StopTrace</a>
+<h2 id="StopTrace">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/trace.go#L254">StopTrace</a>
     <a href="#StopTrace">¶</a></h2>
 <pre>func StopTrace()</pre>
 
 StopTrace stops tracing, if it was previously enabled. StopTrace only returns
 after all the reads for the trace have completed.
 
-<h2 id="ThreadCreateProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L688">ThreadCreateProfile</a>
+<h2 id="ThreadCreateProfile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L688">ThreadCreateProfile</a>
     <a href="#ThreadCreateProfile">¶</a></h2>
 <pre>func ThreadCreateProfile(p []<a href="#StackRecord">StackRecord</a>) (n <a href="/builtin/#int">int</a>, ok <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -756,7 +756,7 @@ returns n, false.
 Most clients should use the runtime/pprof package instead of calling
 ThreadCreateProfile directly.
 
-<h2 id="UnlockOSThread">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/proc.go#L3522">UnlockOSThread</a>
+<h2 id="UnlockOSThread">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/proc.go#L3522">UnlockOSThread</a>
     <a href="#UnlockOSThread">¶</a></h2>
 <pre>func UnlockOSThread()</pre>
 
@@ -771,14 +771,14 @@ to the state of the thread that would affect other goroutines, it should not
 call this function and thus leave the goroutine locked to the OS thread until
 the goroutine (and hence the thread) exits.
 
-<h2 id="Version">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/extern.go#L219">Version</a>
+<h2 id="Version">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/extern.go#L219">Version</a>
     <a href="#Version">¶</a></h2>
 <pre>func Version() <a href="/builtin/#string">string</a></pre>
 
 Version returns the Go tree's version string. It is either the commit hash and
 date at the time of the build or, when possible, a release tag like "go1.3".
 
-<h2 id="BlockProfileRecord">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L611">BlockProfileRecord</a>
+<h2 id="BlockProfileRecord">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L611">BlockProfileRecord</a>
     <a href="#BlockProfileRecord">¶</a></h2>
 <pre>type BlockProfileRecord struct {
 <span id="BlockProfileRecord.Count"></span>    Count  <a href="/builtin/#int64">int64</a>
@@ -789,7 +789,7 @@ date at the time of the build or, when possible, a release tag like "go1.3".
 BlockProfileRecord describes blocking events originated at a particular call
 sequence (stack trace).
 
-<h2 id="Error">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/error.go#L1">Error</a>
+<h2 id="Error">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/error.go#L1">Error</a>
     <a href="#Error">¶</a></h2>
 <pre>type Error interface {
     <a href="/builtin/#error">error</a>
@@ -803,7 +803,7 @@ sequence (stack trace).
 
 The Error interface identifies a run time error.
 
-<h2 id="Frame">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/symtab.go#L20">Frame</a>
+<h2 id="Frame">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/symtab.go#L20">Frame</a>
     <a href="#Frame">¶</a></h2>
 <pre>type Frame struct {
 <span id="Frame.PC"></span>    <span class="comment">// PC is the program counter for the location in this frame.</span>
@@ -839,7 +839,7 @@ The Error interface identifies a run time error.
 
 Frame is the information returned by Frames for each call frame.
 
-<h2 id="Frames">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/symtab.go#L5">Frames</a>
+<h2 id="Frames">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/symtab.go#L5">Frames</a>
     <a href="#Frames">¶</a></h2>
 <pre>type Frames struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -892,7 +892,7 @@ Example:
     // - more:true | runtime_test.ExampleFrames.func3
     // - more:true | runtime_test.ExampleFrames
 
-<h3 id="CallersFrames">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/symtab.go#L81">CallersFrames</a>
+<h3 id="CallersFrames">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/symtab.go#L81">CallersFrames</a>
     <a href="#CallersFrames">¶</a></h3>
 <pre>func CallersFrames(callers []<a href="/builtin/#uintptr">uintptr</a>) *<a href="#Frames">Frames</a></pre>
 
@@ -900,14 +900,14 @@ CallersFrames takes a slice of PC values returned by Callers and prepares to
 return function/file/line information. Do not change the slice until you are
 done with the Frames.
 
-<h3 id="Frames.Next">func (*Frames) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/symtab.go#L109">Next</a>
+<h3 id="Frames.Next">func (*Frames) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/symtab.go#L109">Next</a>
     <a href="#Frames.Next">¶</a></h3>
 <pre>func (ci *<a href="#Frames">Frames</a>) Next() (frame <a href="#Frame">Frame</a>, more <a href="/builtin/#bool">bool</a>)</pre>
 
 Next returns frame information for the next caller. If more is false, there are
 no more callers (the Frame value is valid).
 
-<h2 id="Func">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/symtab.go#L317">Func</a>
+<h2 id="Func">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/symtab.go#L317">Func</a>
     <a href="#Func">¶</a></h2>
 <pre>type Func struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -915,7 +915,7 @@ no more callers (the Frame value is valid).
 
 A Func represents a Go function in the running binary.
 
-<h3 id="FuncForPC">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/symtab.go#L569">FuncForPC</a>
+<h3 id="FuncForPC">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/symtab.go#L569">FuncForPC</a>
     <a href="#FuncForPC">¶</a></h3>
 <pre>func FuncForPC(pc <a href="/builtin/#uintptr">uintptr</a>) *<a href="#Func">Func</a></pre>
 
@@ -925,13 +925,13 @@ program counter address, or else nil.
 If pc represents multiple functions because of inlining, it returns the *Func
 describing the outermost function.
 
-<h3 id="Func.Entry">func (*Func) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/symtab.go#L582">Entry</a>
+<h3 id="Func.Entry">func (*Func) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/symtab.go#L582">Entry</a>
     <a href="#Func.Entry">¶</a></h3>
 <pre>func (f *<a href="#Func">Func</a>) Entry() <a href="/builtin/#uintptr">uintptr</a></pre>
 
 Entry returns the entry address of the function.
 
-<h3 id="Func.FileLine">func (*Func) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/symtab.go#L590">FileLine</a>
+<h3 id="Func.FileLine">func (*Func) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/symtab.go#L590">FileLine</a>
     <a href="#Func.FileLine">¶</a></h3>
 <pre>func (f *<a href="#Func">Func</a>) FileLine(pc <a href="/builtin/#uintptr">uintptr</a>) (file <a href="/builtin/#string">string</a>, line <a href="/builtin/#int">int</a>)</pre>
 
@@ -939,13 +939,13 @@ FileLine returns the file name and line number of the source code corresponding
 to the program counter pc. The result will not be accurate if pc is not a
 program counter within f.
 
-<h3 id="Func.Name">func (*Func) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/symtab.go#L574">Name</a>
+<h3 id="Func.Name">func (*Func) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/symtab.go#L574">Name</a>
     <a href="#Func.Name">¶</a></h3>
 <pre>func (f *<a href="#Func">Func</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 Name returns the name of the function.
 
-<h2 id="MemProfileRecord">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L487">MemProfileRecord</a>
+<h2 id="MemProfileRecord">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L487">MemProfileRecord</a>
     <a href="#MemProfileRecord">¶</a></h2>
 <pre>type MemProfileRecord struct {
 <span id="MemProfileRecord.AllocBytes"></span>    AllocBytes, FreeBytes     <a href="/builtin/#int64">int64</a>       <span class="comment">// number of bytes allocated, freed</span>
@@ -956,25 +956,25 @@ Name returns the name of the function.
 A MemProfileRecord describes the live objects allocated by a particular call
 sequence (stack trace).
 
-<h3 id="MemProfileRecord.InUseBytes">func (*MemProfileRecord) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L494">InUseBytes</a>
+<h3 id="MemProfileRecord.InUseBytes">func (*MemProfileRecord) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L494">InUseBytes</a>
     <a href="#MemProfileRecord.InUseBytes">¶</a></h3>
 <pre>func (r *<a href="#MemProfileRecord">MemProfileRecord</a>) InUseBytes() <a href="/builtin/#int64">int64</a></pre>
 
 InUseBytes returns the number of bytes in use (AllocBytes - FreeBytes).
 
-<h3 id="MemProfileRecord.InUseObjects">func (*MemProfileRecord) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L497">InUseObjects</a>
+<h3 id="MemProfileRecord.InUseObjects">func (*MemProfileRecord) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L497">InUseObjects</a>
     <a href="#MemProfileRecord.InUseObjects">¶</a></h3>
 <pre>func (r *<a href="#MemProfileRecord">MemProfileRecord</a>) InUseObjects() <a href="/builtin/#int64">int64</a></pre>
 
 InUseObjects returns the number of objects in use (AllocObjects - FreeObjects).
 
-<h3 id="MemProfileRecord.Stack">func (*MemProfileRecord) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L503">Stack</a>
+<h3 id="MemProfileRecord.Stack">func (*MemProfileRecord) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L503">Stack</a>
     <a href="#MemProfileRecord.Stack">¶</a></h3>
 <pre>func (r *<a href="#MemProfileRecord">MemProfileRecord</a>) Stack() []<a href="/builtin/#uintptr">uintptr</a></pre>
 
 Stack returns the stack trace associated with the record, a prefix of r.Stack0.
 
-<h2 id="MemStats">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mstats.go#L149">MemStats</a>
+<h2 id="MemStats">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mstats.go#L149">MemStats</a>
     <a href="#MemStats">¶</a></h2>
 <pre>type MemStats struct {
 
@@ -1209,7 +1209,7 @@ Stack returns the stack trace associated with the record, a prefix of r.Stack0.
 
 A MemStats records statistics about the memory allocator.
 
-<h2 id="StackRecord">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L454">StackRecord</a>
+<h2 id="StackRecord">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L454">StackRecord</a>
     <a href="#StackRecord">¶</a></h2>
 <pre>type StackRecord struct {
 <span id="StackRecord.Stack0"></span>    Stack0 [32]<a href="/builtin/#uintptr">uintptr</a> <span class="comment">// stack trace for this record; ends at first 0 entry</span>
@@ -1217,13 +1217,13 @@ A MemStats records statistics about the memory allocator.
 
 A StackRecord describes a single execution stack.
 
-<h3 id="StackRecord.Stack">func (*StackRecord) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/mprof.go#L460">Stack</a>
+<h3 id="StackRecord.Stack">func (*StackRecord) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/mprof.go#L460">Stack</a>
     <a href="#StackRecord.Stack">¶</a></h3>
 <pre>func (r *<a href="#StackRecord">StackRecord</a>) Stack() []<a href="/builtin/#uintptr">uintptr</a></pre>
 
 Stack returns the stack trace associated with the record, a prefix of r.Stack0.
 
-<h2 id="TypeAssertionError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/error.go#L11">TypeAssertionError</a>
+<h2 id="TypeAssertionError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/error.go#L11">TypeAssertionError</a>
     <a href="#TypeAssertionError">¶</a></h2>
 <pre>type TypeAssertionError struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1231,12 +1231,12 @@ Stack returns the stack trace associated with the record, a prefix of r.Stack0.
 
 A TypeAssertionError explains a failed type assertion.
 
-<h3 id="TypeAssertionError.Error">func (*TypeAssertionError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/error.go#L20">Error</a>
+<h3 id="TypeAssertionError.Error">func (*TypeAssertionError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/error.go#L20">Error</a>
     <a href="#TypeAssertionError.Error">¶</a></h3>
 <pre>func (e *<a href="#TypeAssertionError">TypeAssertionError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="TypeAssertionError.RuntimeError">func (*TypeAssertionError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/error.go#L18">RuntimeError</a>
+<h3 id="TypeAssertionError.RuntimeError">func (*TypeAssertionError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/error.go#L18">RuntimeError</a>
     <a href="#TypeAssertionError.RuntimeError">¶</a></h3>
 <pre>func (*<a href="#TypeAssertionError">TypeAssertionError</a>) RuntimeError()</pre>
 

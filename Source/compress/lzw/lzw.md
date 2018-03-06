@@ -23,9 +23,9 @@ algorithm. See the golang.org/x/image/tiff/lzw package for an implementation.
 - [type Order](#Order)
 
 ### Package files
- [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/lzw/reader.go) [writer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/lzw/writer.go)
+ [reader.go](//github.com/golang/go/blob/release-branch.go1.10/src/compress/lzw/reader.go) [writer.go](//github.com/golang/go/blob/release-branch.go1.10/src/compress/lzw/writer.go)
 
-<h2 id="NewReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/lzw/reader.go#L229">NewReader</a>
+<h2 id="NewReader">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/lzw/reader.go#L229">NewReader</a>
     <a href="#NewReader">¶</a></h2>
 <pre>func NewReader(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>, order <a href="#Order">Order</a>, litWidth <a href="/builtin/#int">int</a>) <a href="/io/">io</a>.<a href="/io/#ReadCloser">ReadCloser</a></pre>
 
@@ -36,7 +36,7 @@ responsibility to call Close on the ReadCloser when finished reading. The number
 of bits to use for literal codes, litWidth, must be in the range [2,8] and is
 typically 8. It must equal the litWidth used during compression.
 
-<h2 id="NewWriter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/lzw/writer.go#L231">NewWriter</a>
+<h2 id="NewWriter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/lzw/writer.go#L231">NewWriter</a>
     <a href="#NewWriter">¶</a></h2>
 <pre>func NewWriter(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, order <a href="#Order">Order</a>, litWidth <a href="/builtin/#int">int</a>) <a href="/io/">io</a>.<a href="/io/#WriteCloser">WriteCloser</a></pre>
 
@@ -46,7 +46,7 @@ on the WriteCloser when finished writing. The number of bits to use for literal
 codes, litWidth, must be in the range [2,8] and is typically 8. Input bytes must
 be less than 1<<litWidth.
 
-<h2 id="Order">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/compress/lzw/reader.go#L19">Order</a>
+<h2 id="Order">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/compress/lzw/reader.go#L19">Order</a>
     <a href="#Order">¶</a></h2>
 <pre>type Order <a href="/builtin/#int">int</a></pre>
 

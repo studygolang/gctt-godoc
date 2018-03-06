@@ -300,7 +300,7 @@ For a tutorial, see https://golang.org/s/types-tutorial.
 - [Scope](#exampleScope)
 
 ### Package files
- [api.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go) [assignments.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/assignments.go) [builtins.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/builtins.go) [call.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/call.go) [check.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/check.go) [conversions.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/conversions.go) [decl.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/decl.go) [errors.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/errors.go) [eval.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/eval.go) [expr.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/expr.go) [exprstring.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/exprstring.go) [initorder.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/initorder.go) [labels.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/labels.go) [lookup.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/lookup.go) [methodset.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/methodset.go) [object.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go) [objset.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/objset.go) [operand.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/operand.go) [ordering.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/ordering.go) [package.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/package.go) [predicates.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/predicates.go) [resolver.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/resolver.go) [return.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/return.go) [scope.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go) [selection.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/selection.go) [sizes.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/sizes.go) [stmt.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/stmt.go) [type.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go) [typestring.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/typestring.go) [typexpr.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/typexpr.go) [universe.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/universe.go)
+ [api.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go) [assignments.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/assignments.go) [builtins.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/builtins.go) [call.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/call.go) [check.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/check.go) [conversions.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/conversions.go) [decl.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/decl.go) [errors.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/errors.go) [eval.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/eval.go) [expr.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/expr.go) [exprstring.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/exprstring.go) [initorder.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/initorder.go) [labels.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/labels.go) [lookup.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/lookup.go) [methodset.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/methodset.go) [object.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go) [objset.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/objset.go) [operand.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/operand.go) [ordering.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/ordering.go) [package.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/package.go) [predicates.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/predicates.go) [resolver.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/resolver.go) [return.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/return.go) [scope.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go) [selection.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/selection.go) [sizes.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/sizes.go) [stmt.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/stmt.go) [type.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go) [typestring.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/typestring.go) [typexpr.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/typexpr.go) [universe.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/types/universe.go)
 
 <h2 id="pkg-variables">Variables</h2>
 
@@ -348,40 +348,40 @@ The *Basic type for Typ[Byte] will have the name "uint8". Use
 Universe.Lookup("byte").Type() to obtain the specific alias basic type named
 "byte" (and analogous for "rune").
 
-<h2 id="AssertableTo">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L345">AssertableTo</a>
+<h2 id="AssertableTo">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L345">AssertableTo</a>
     <a href="#AssertableTo">¶</a></h2>
 <pre>func AssertableTo(V *<a href="#Interface">Interface</a>, T <a href="#Type">Type</a>) <a href="/builtin/#bool">bool</a></pre>
 
 AssertableTo reports whether a value of type V can be asserted to have type T.
 
-<h2 id="AssignableTo">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L351">AssignableTo</a>
+<h2 id="AssignableTo">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L351">AssignableTo</a>
     <a href="#AssignableTo">¶</a></h2>
 <pre>func AssignableTo(V, T <a href="#Type">Type</a>) <a href="/builtin/#bool">bool</a></pre>
 
 AssignableTo reports whether a value of type V is assignable to a variable of
 type T.
 
-<h2 id="Comparable">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/predicates.go#L71">Comparable</a>
+<h2 id="Comparable">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/predicates.go#L71">Comparable</a>
     <a href="#Comparable">¶</a></h2>
 <pre>func Comparable(T <a href="#Type">Type</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Comparable reports whether values of type T are comparable.
 
-<h2 id="ConvertibleTo">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L357">ConvertibleTo</a>
+<h2 id="ConvertibleTo">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L357">ConvertibleTo</a>
     <a href="#ConvertibleTo">¶</a></h2>
 <pre>func ConvertibleTo(V, T <a href="#Type">Type</a>) <a href="/builtin/#bool">bool</a></pre>
 
 ConvertibleTo reports whether a value of type V is convertible to a value of
 type T.
 
-<h2 id="DefPredeclaredTestFuncs">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/universe.go#L166">DefPredeclaredTestFuncs</a>
+<h2 id="DefPredeclaredTestFuncs">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/universe.go#L166">DefPredeclaredTestFuncs</a>
     <a href="#DefPredeclaredTestFuncs">¶</a></h2>
 <pre>func DefPredeclaredTestFuncs()</pre>
 
 DefPredeclaredTestFuncs defines the assert and trace built-ins. These built-ins
 are intended for debugging and testing of this package only.
 
-<h2 id="ExprString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/exprstring.go#L7">ExprString</a>
+<h2 id="ExprString">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/exprstring.go#L7">ExprString</a>
     <a href="#ExprString">¶</a></h2>
 <pre>func ExprString(x <a href="/go/ast/">ast</a>.<a href="/go/ast/#Expr">Expr</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -389,47 +389,47 @@ ExprString returns the (possibly shortened) string representation for x.
 Shortened representations are suitable for user interfaces but may not
 necessarily follow Go syntax.
 
-<h2 id="Id">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L45">Id</a>
+<h2 id="Id">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L45">Id</a>
     <a href="#Id">¶</a></h2>
 <pre>func Id(pkg *<a href="#Package">Package</a>, name <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
 Id returns name if it is exported, otherwise it returns the name qualified with
 the package path.
 
-<h2 id="Identical">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/predicates.go#L105">Identical</a>
+<h2 id="Identical">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/predicates.go#L105">Identical</a>
     <a href="#Identical">¶</a></h2>
 <pre>func Identical(x, y <a href="#Type">Type</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Identical reports whether x and y are identical types. Receivers of Signature
 types are ignored.
 
-<h2 id="IdenticalIgnoreTags">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/predicates.go#L111">IdenticalIgnoreTags</a>
+<h2 id="IdenticalIgnoreTags">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/predicates.go#L111">IdenticalIgnoreTags</a>
     <a href="#IdenticalIgnoreTags">¶</a></h2>
 <pre>func IdenticalIgnoreTags(x, y <a href="#Type">Type</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IdenticalIgnoreTags reports whether x and y are identical types if tags are
 ignored. Receivers of Signature types are ignored.
 
-<h2 id="Implements">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L363">Implements</a>
+<h2 id="Implements">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L363">Implements</a>
     <a href="#Implements">¶</a></h2>
 <pre>func Implements(V <a href="#Type">Type</a>, T *<a href="#Interface">Interface</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Implements reports whether type V implements interface T.
 
-<h2 id="IsInterface">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/predicates.go#L65">IsInterface</a>
+<h2 id="IsInterface">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/predicates.go#L65">IsInterface</a>
     <a href="#IsInterface">¶</a></h2>
 <pre>func IsInterface(typ <a href="#Type">Type</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IsInterface reports whether typ is an interface type.
 
-<h2 id="ObjectString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L378">ObjectString</a>
+<h2 id="ObjectString">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L378">ObjectString</a>
     <a href="#ObjectString">¶</a></h2>
 <pre>func ObjectString(obj <a href="#Object">Object</a>, qf <a href="#Qualifier">Qualifier</a>) <a href="/builtin/#string">string</a></pre>
 
 ObjectString returns the string form of obj. The Qualifier controls the printing
 of package-level objects, and may be nil.
 
-<h2 id="SelectionString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/selection.go#L109">SelectionString</a>
+<h2 id="SelectionString">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/selection.go#L109">SelectionString</a>
     <a href="#SelectionString">¶</a></h2>
 <pre>func SelectionString(s *<a href="#Selection">Selection</a>, qf <a href="#Qualifier">Qualifier</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -442,14 +442,14 @@ Examples:
     "method (T) f(X) Y"
     "method expr (T) f(X) Y"
 
-<h2 id="TypeString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/typestring.go#L55">TypeString</a>
+<h2 id="TypeString">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/typestring.go#L55">TypeString</a>
     <a href="#TypeString">¶</a></h2>
 <pre>func TypeString(typ <a href="#Type">Type</a>, qf <a href="#Qualifier">Qualifier</a>) <a href="/builtin/#string">string</a></pre>
 
 TypeString returns the string representation of typ. The Qualifier controls the
 printing of package-level objects, and may be nil.
 
-<h2 id="WriteExpr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/exprstring.go#L16">WriteExpr</a>
+<h2 id="WriteExpr">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/exprstring.go#L16">WriteExpr</a>
     <a href="#WriteExpr">¶</a></h2>
 <pre>func WriteExpr(buf *<a href="/bytes/">bytes</a>.<a href="/bytes/#Buffer">Buffer</a>, x <a href="/go/ast/">ast</a>.<a href="/go/ast/#Expr">Expr</a>)</pre>
 
@@ -457,7 +457,7 @@ WriteExpr writes the (possibly shortened) string representation for x to buf.
 Shortened representations are suitable for user interfaces but may not
 necessarily follow Go syntax.
 
-<h2 id="WriteSignature">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/typestring.go#L275">WriteSignature</a>
+<h2 id="WriteSignature">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/typestring.go#L275">WriteSignature</a>
     <a href="#WriteSignature">¶</a></h2>
 <pre>func WriteSignature(buf *<a href="/bytes/">bytes</a>.<a href="/bytes/#Buffer">Buffer</a>, sig *<a href="#Signature">Signature</a>, qf <a href="#Qualifier">Qualifier</a>)</pre>
 
@@ -465,14 +465,14 @@ WriteSignature writes the representation of the signature sig to buf, without a
 leading "func" keyword. The Qualifier controls the printing of package-level
 objects, and may be nil.
 
-<h2 id="WriteType">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/typestring.go#L64">WriteType</a>
+<h2 id="WriteType">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/typestring.go#L64">WriteType</a>
     <a href="#WriteType">¶</a></h2>
 <pre>func WriteType(buf *<a href="/bytes/">bytes</a>.<a href="/bytes/#Buffer">Buffer</a>, typ <a href="#Type">Type</a>, qf <a href="#Qualifier">Qualifier</a>)</pre>
 
 WriteType writes the string representation of typ to buf. The Qualifier controls
 the printing of package-level objects, and may be nil.
 
-<h2 id="Array">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L84">Array</a>
+<h2 id="Array">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L84">Array</a>
     <a href="#Array">¶</a></h2>
 <pre>type Array struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -480,35 +480,35 @@ the printing of package-level objects, and may be nil.
 
 An Array represents an array type.
 
-<h3 id="NewArray">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L90">NewArray</a>
+<h3 id="NewArray">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L90">NewArray</a>
     <a href="#NewArray">¶</a></h3>
 <pre>func NewArray(elem <a href="#Type">Type</a>, len <a href="/builtin/#int64">int64</a>) *<a href="#Array">Array</a></pre>
 
 NewArray returns a new array type for the given element type and length.
 
-<h3 id="Array.Elem">func (*Array) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L96">Elem</a>
+<h3 id="Array.Elem">func (*Array) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L96">Elem</a>
     <a href="#Array.Elem">¶</a></h3>
 <pre>func (a *<a href="#Array">Array</a>) Elem() <a href="#Type">Type</a></pre>
 
 Elem returns element type of array a.
 
-<h3 id="Array.Len">func (*Array) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L93">Len</a>
+<h3 id="Array.Len">func (*Array) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L93">Len</a>
     <a href="#Array.Len">¶</a></h3>
 <pre>func (a *<a href="#Array">Array</a>) Len() <a href="/builtin/#int64">int64</a></pre>
 
 Len returns the length of array a.
 
-<h3 id="Array.String">func (*Array) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L443">String</a>
+<h3 id="Array.String">func (*Array) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L443">String</a>
     <a href="#Array.String">¶</a></h3>
 <pre>func (t *<a href="#Array">Array</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Array.Underlying">func (*Array) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L431">Underlying</a>
+<h3 id="Array.Underlying">func (*Array) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L431">Underlying</a>
     <a href="#Array.Underlying">¶</a></h3>
 <pre>func (t *<a href="#Array">Array</a>) Underlying() <a href="#Type">Type</a></pre>
 
 
-<h2 id="Basic">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L68">Basic</a>
+<h2 id="Basic">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L68">Basic</a>
     <a href="#Basic">¶</a></h2>
 <pre>type Basic struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -516,35 +516,35 @@ Len returns the length of array a.
 
 A Basic represents a basic type.
 
-<h3 id="Basic.Info">func (*Basic) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L78">Info</a>
+<h3 id="Basic.Info">func (*Basic) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L78">Info</a>
     <a href="#Basic.Info">¶</a></h3>
 <pre>func (b *<a href="#Basic">Basic</a>) Info() <a href="#BasicInfo">BasicInfo</a></pre>
 
 Info returns information about properties of basic type b.
 
-<h3 id="Basic.Kind">func (*Basic) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L75">Kind</a>
+<h3 id="Basic.Kind">func (*Basic) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L75">Kind</a>
     <a href="#Basic.Kind">¶</a></h3>
 <pre>func (b *<a href="#Basic">Basic</a>) Kind() <a href="#BasicKind">BasicKind</a></pre>
 
 Kind returns the kind of basic type b.
 
-<h3 id="Basic.Name">func (*Basic) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L81">Name</a>
+<h3 id="Basic.Name">func (*Basic) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L81">Name</a>
     <a href="#Basic.Name">¶</a></h3>
 <pre>func (b *<a href="#Basic">Basic</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 Name returns the name of basic type b.
 
-<h3 id="Basic.String">func (*Basic) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L442">String</a>
+<h3 id="Basic.String">func (*Basic) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L442">String</a>
     <a href="#Basic.String">¶</a></h3>
 <pre>func (t *<a href="#Basic">Basic</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Basic.Underlying">func (*Basic) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L430">Underlying</a>
+<h3 id="Basic.Underlying">func (*Basic) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L430">Underlying</a>
     <a href="#Basic.Underlying">¶</a></h3>
 <pre>func (t *<a href="#Basic">Basic</a>) Underlying() <a href="#Type">Type</a></pre>
 
 
-<h2 id="BasicInfo">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L50">BasicInfo</a>
+<h2 id="BasicInfo">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L50">BasicInfo</a>
     <a href="#BasicInfo">¶</a></h2>
 <pre>type BasicInfo <a href="/builtin/#int">int</a></pre>
 
@@ -566,7 +566,7 @@ BasicInfo is a set of flags describing properties of a basic type.
 
 Properties of basic types.
 
-<h2 id="BasicKind">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L10">BasicKind</a>
+<h2 id="BasicKind">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L10">BasicKind</a>
     <a href="#BasicKind">¶</a></h2>
 <pre>type BasicKind <a href="/builtin/#int">int</a></pre>
 
@@ -610,7 +610,7 @@ BasicKind describes the kind of basic type.
 )</pre>
 
 
-<h2 id="Builtin">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L265">Builtin</a>
+<h2 id="Builtin">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L265">Builtin</a>
     <a href="#Builtin">¶</a></h2>
 <pre>type Builtin struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -618,47 +618,47 @@ BasicKind describes the kind of basic type.
 
 A Builtin represents a built-in function. Builtins don't have a valid type.
 
-<h3 id="Builtin.Exported">func (*Builtin) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L79">Exported</a>
+<h3 id="Builtin.Exported">func (*Builtin) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L79">Exported</a>
     <a href="#Builtin.Exported">¶</a></h3>
 <pre>func (obj *<a href="#Builtin">Builtin</a>) Exported() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="Builtin.Id">func (*Builtin) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L80">Id</a>
+<h3 id="Builtin.Id">func (*Builtin) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L80">Id</a>
     <a href="#Builtin.Id">¶</a></h3>
 <pre>func (obj *<a href="#Builtin">Builtin</a>) Id() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Builtin.Name">func (*Builtin) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L77">Name</a>
+<h3 id="Builtin.Name">func (*Builtin) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L77">Name</a>
     <a href="#Builtin.Name">¶</a></h3>
 <pre>func (obj *<a href="#Builtin">Builtin</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Builtin.Parent">func (*Builtin) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L74">Parent</a>
+<h3 id="Builtin.Parent">func (*Builtin) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L74">Parent</a>
     <a href="#Builtin.Parent">¶</a></h3>
 <pre>func (obj *<a href="#Builtin">Builtin</a>) Parent() *<a href="#Scope">Scope</a></pre>
 
 
-<h3 id="Builtin.Pkg">func (*Builtin) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L76">Pkg</a>
+<h3 id="Builtin.Pkg">func (*Builtin) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L76">Pkg</a>
     <a href="#Builtin.Pkg">¶</a></h3>
 <pre>func (obj *<a href="#Builtin">Builtin</a>) Pkg() *<a href="#Package">Package</a></pre>
 
 
-<h3 id="Builtin.Pos">func (*Builtin) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L75">Pos</a>
+<h3 id="Builtin.Pos">func (*Builtin) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L75">Pos</a>
     <a href="#Builtin.Pos">¶</a></h3>
 <pre>func (obj *<a href="#Builtin">Builtin</a>) Pos() <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a></pre>
 
 
-<h3 id="Builtin.String">func (*Builtin) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L390">String</a>
+<h3 id="Builtin.String">func (*Builtin) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L390">String</a>
     <a href="#Builtin.String">¶</a></h3>
 <pre>func (obj *<a href="#Builtin">Builtin</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Builtin.Type">func (*Builtin) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L78">Type</a>
+<h3 id="Builtin.Type">func (*Builtin) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L78">Type</a>
     <a href="#Builtin.Type">¶</a></h3>
 <pre>func (obj *<a href="#Builtin">Builtin</a>) Type() <a href="#Type">Type</a></pre>
 
 
-<h2 id="Chan">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L354">Chan</a>
+<h2 id="Chan">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L354">Chan</a>
     <a href="#Chan">¶</a></h2>
 <pre>type Chan struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -666,35 +666,35 @@ A Builtin represents a built-in function. Builtins don't have a valid type.
 
 A Chan represents a channel type.
 
-<h3 id="NewChan">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L370">NewChan</a>
+<h3 id="NewChan">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L370">NewChan</a>
     <a href="#NewChan">¶</a></h3>
 <pre>func NewChan(dir <a href="#ChanDir">ChanDir</a>, elem <a href="#Type">Type</a>) *<a href="#Chan">Chan</a></pre>
 
 NewChan returns a new channel type for the given direction and element type.
 
-<h3 id="Chan.Dir">func (*Chan) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L375">Dir</a>
+<h3 id="Chan.Dir">func (*Chan) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L375">Dir</a>
     <a href="#Chan.Dir">¶</a></h3>
 <pre>func (c *<a href="#Chan">Chan</a>) Dir() <a href="#ChanDir">ChanDir</a></pre>
 
 Dir returns the direction of channel c.
 
-<h3 id="Chan.Elem">func (*Chan) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L378">Elem</a>
+<h3 id="Chan.Elem">func (*Chan) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L378">Elem</a>
     <a href="#Chan.Elem">¶</a></h3>
 <pre>func (c *<a href="#Chan">Chan</a>) Elem() <a href="#Type">Type</a></pre>
 
 Elem returns the element type of channel c.
 
-<h3 id="Chan.String">func (*Chan) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L451">String</a>
+<h3 id="Chan.String">func (*Chan) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L451">String</a>
     <a href="#Chan.String">¶</a></h3>
 <pre>func (t *<a href="#Chan">Chan</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Chan.Underlying">func (*Chan) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L439">Underlying</a>
+<h3 id="Chan.Underlying">func (*Chan) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L439">Underlying</a>
     <a href="#Chan.Underlying">¶</a></h3>
 <pre>func (t *<a href="#Chan">Chan</a>) Underlying() <a href="#Type">Type</a></pre>
 
 
-<h2 id="ChanDir">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L360">ChanDir</a>
+<h2 id="ChanDir">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L360">ChanDir</a>
     <a href="#ChanDir">¶</a></h2>
 <pre>type ChanDir <a href="/builtin/#int">int</a></pre>
 
@@ -708,7 +708,7 @@ A ChanDir value indicates a channel direction.
 
 The direction of a channel is indicated by one of these constants.
 
-<h2 id="Checker">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/check.go#L62">Checker</a>
+<h2 id="Checker">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/check.go#L62">Checker</a>
     <a href="#Checker">¶</a></h2>
 <pre>type Checker struct {
     *<a href="#Info">Info</a>
@@ -718,20 +718,20 @@ The direction of a channel is indicated by one of these constants.
 A Checker maintains the state of the type checker. It must be created with
 NewChecker.
 
-<h3 id="NewChecker">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/check.go#L149">NewChecker</a>
+<h3 id="NewChecker">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/check.go#L149">NewChecker</a>
     <a href="#NewChecker">¶</a></h3>
 <pre>func NewChecker(conf *<a href="#Config">Config</a>, fset *<a href="/go/token/">token</a>.<a href="/go/token/#FileSet">FileSet</a>, pkg *<a href="#Package">Package</a>, info *<a href="#Info">Info</a>) *<a href="#Checker">Checker</a></pre>
 
 NewChecker returns a new Checker instance for a given package. Package files may
 be added incrementally via checker.Files.
 
-<h3 id="Checker.Files">func (*Checker) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/check.go#L220">Files</a>
+<h3 id="Checker.Files">func (*Checker) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/check.go#L220">Files</a>
     <a href="#Checker.Files">¶</a></h3>
 <pre>func (check *<a href="#Checker">Checker</a>) Files(files []*<a href="/go/ast/">ast</a>.<a href="/go/ast/#File">File</a>) <a href="/builtin/#error">error</a></pre>
 
 Files checks the provided files as part of the checker's package.
 
-<h2 id="Config">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L84">Config</a>
+<h2 id="Config">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L84">Config</a>
     <a href="#Config">¶</a></h2>
 <pre>type Config struct {
     <span class="comment">// If IgnoreFuncBodies is set, function bodies are not</span>
@@ -776,7 +776,7 @@ Files checks the provided files as part of the checker's package.
 A Config specifies the configuration for type checking. The zero value for
 Config is a ready-to-use default configuration.
 
-<h3 id="Config.Check">func (*Config) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L339">Check</a>
+<h3 id="Config.Check">func (*Config) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L339">Check</a>
     <a href="#Config.Check">¶</a></h3>
 <pre>func (conf *<a href="#Config">Config</a>) Check(path <a href="/builtin/#string">string</a>, fset *<a href="/go/token/">token</a>.<a href="/go/token/#FileSet">FileSet</a>, files []*<a href="/go/ast/">ast</a>.<a href="/go/ast/#File">File</a>, info *<a href="#Info">Info</a>) (*<a href="#Package">Package</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -791,7 +791,7 @@ The package is specified by a list of *ast.Files and corresponding file set, and
 the package path the package is identified with. The clean path must not be
 empty or dot (".").
 
-<h2 id="Const">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L130">Const</a>
+<h2 id="Const">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L130">Const</a>
     <a href="#Const">¶</a></h2>
 <pre>type Const struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -799,59 +799,59 @@ empty or dot (".").
 
 A Const represents a declared constant.
 
-<h3 id="NewConst">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L138">NewConst</a>
+<h3 id="NewConst">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L138">NewConst</a>
     <a href="#NewConst">¶</a></h3>
 <pre>func NewConst(pos <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a>, pkg *<a href="#Package">Package</a>, name <a href="/builtin/#string">string</a>, typ <a href="#Type">Type</a>, val <a href="/go/constant/">constant</a>.<a href="/go/constant/#Value">Value</a>) *<a href="#Const">Const</a></pre>
 
 NewConst returns a new constant with value val. The remaining arguments set the
 attributes found with all Objects.
 
-<h3 id="Const.Exported">func (*Const) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L79">Exported</a>
+<h3 id="Const.Exported">func (*Const) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L79">Exported</a>
     <a href="#Const.Exported">¶</a></h3>
 <pre>func (obj *<a href="#Const">Const</a>) Exported() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="Const.Id">func (*Const) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L80">Id</a>
+<h3 id="Const.Id">func (*Const) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L80">Id</a>
     <a href="#Const.Id">¶</a></h3>
 <pre>func (obj *<a href="#Const">Const</a>) Id() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Const.Name">func (*Const) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L77">Name</a>
+<h3 id="Const.Name">func (*Const) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L77">Name</a>
     <a href="#Const.Name">¶</a></h3>
 <pre>func (obj *<a href="#Const">Const</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Const.Parent">func (*Const) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L74">Parent</a>
+<h3 id="Const.Parent">func (*Const) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L74">Parent</a>
     <a href="#Const.Parent">¶</a></h3>
 <pre>func (obj *<a href="#Const">Const</a>) Parent() *<a href="#Scope">Scope</a></pre>
 
 
-<h3 id="Const.Pkg">func (*Const) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L76">Pkg</a>
+<h3 id="Const.Pkg">func (*Const) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L76">Pkg</a>
     <a href="#Const.Pkg">¶</a></h3>
 <pre>func (obj *<a href="#Const">Const</a>) Pkg() *<a href="#Package">Package</a></pre>
 
 
-<h3 id="Const.Pos">func (*Const) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L75">Pos</a>
+<h3 id="Const.Pos">func (*Const) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L75">Pos</a>
     <a href="#Const.Pos">¶</a></h3>
 <pre>func (obj *<a href="#Const">Const</a>) Pos() <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a></pre>
 
 
-<h3 id="Const.String">func (*Const) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L385">String</a>
+<h3 id="Const.String">func (*Const) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L385">String</a>
     <a href="#Const.String">¶</a></h3>
 <pre>func (obj *<a href="#Const">Const</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Const.Type">func (*Const) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L78">Type</a>
+<h3 id="Const.Type">func (*Const) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L78">Type</a>
     <a href="#Const.Type">¶</a></h3>
 <pre>func (obj *<a href="#Const">Const</a>) Type() <a href="#Type">Type</a></pre>
 
 
-<h3 id="Const.Val">func (*Const) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L142">Val</a>
+<h3 id="Const.Val">func (*Const) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L142">Val</a>
     <a href="#Const.Val">¶</a></h3>
 <pre>func (obj *<a href="#Const">Const</a>) Val() <a href="/go/constant/">constant</a>.<a href="/go/constant/#Value">Value</a></pre>
 
 
-<h2 id="Error">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L31">Error</a>
+<h2 id="Error">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L31">Error</a>
     <a href="#Error">¶</a></h2>
 <pre>type Error struct {
 <span id="Error.Fset"></span>    Fset *<a href="/go/token/">token</a>.<a href="/go/token/#FileSet">FileSet</a> <span class="comment">// file set for interpretation of Pos</span>
@@ -865,14 +865,14 @@ An Error describes a type-checking error; it implements the error interface. A
 (such as "unused variable"); "hard" errors may lead to unpredictable behavior if
 ignored.
 
-<h3 id="Error.Error">func (Error) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L40">Error</a>
+<h3 id="Error.Error">func (Error) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L40">Error</a>
     <a href="#Error.Error">¶</a></h3>
 <pre>func (err <a href="#Error">Error</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 Error returns an error string formatted as follows: filename:line:column:
 message
 
-<h2 id="Func">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L223">Func</a>
+<h2 id="Func">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L223">Func</a>
     <a href="#Func">¶</a></h2>
 <pre>type Func struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -882,7 +882,7 @@ A Func represents a declared function, concrete method, or abstract (interface)
 method. Its Type() is always a *Signature. An abstract method may belong to many
 interfaces due to embedding.
 
-<h3 id="MissingMethod">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/lookup.go#L240">MissingMethod</a>
+<h3 id="MissingMethod">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/lookup.go#L240">MissingMethod</a>
     <a href="#MissingMethod">¶</a></h3>
 <pre>func MissingMethod(V <a href="#Type">Type</a>, T *<a href="#Interface">Interface</a>, static <a href="/builtin/#bool">bool</a>) (method *<a href="#Func">Func</a>, wrongType <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -896,73 +896,73 @@ MissingMethod only checks that methods of T which are also present in V have
 matching types (e.g., for a type assertion x.(T) where x is of interface type
 V).
 
-<h3 id="NewFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L229">NewFunc</a>
+<h3 id="NewFunc">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L229">NewFunc</a>
     <a href="#NewFunc">¶</a></h3>
 <pre>func NewFunc(pos <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a>, pkg *<a href="#Package">Package</a>, name <a href="/builtin/#string">string</a>, sig *<a href="#Signature">Signature</a>) *<a href="#Func">Func</a></pre>
 
 NewFunc returns a new function with the given signature, representing the
 function's type.
 
-<h3 id="Func.Exported">func (*Func) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L79">Exported</a>
+<h3 id="Func.Exported">func (*Func) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L79">Exported</a>
     <a href="#Func.Exported">¶</a></h3>
 <pre>func (obj *<a href="#Func">Func</a>) Exported() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="Func.FullName">func (*Func) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L240">FullName</a>
+<h3 id="Func.FullName">func (*Func) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L240">FullName</a>
     <a href="#Func.FullName">¶</a></h3>
 <pre>func (obj *<a href="#Func">Func</a>) FullName() <a href="/builtin/#string">string</a></pre>
 
 FullName returns the package- or receiver-type-qualified name of function or
 method obj.
 
-<h3 id="Func.Id">func (*Func) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L80">Id</a>
+<h3 id="Func.Id">func (*Func) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L80">Id</a>
     <a href="#Func.Id">¶</a></h3>
 <pre>func (obj *<a href="#Func">Func</a>) Id() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Func.Name">func (*Func) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L77">Name</a>
+<h3 id="Func.Name">func (*Func) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L77">Name</a>
     <a href="#Func.Name">¶</a></h3>
 <pre>func (obj *<a href="#Func">Func</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Func.Parent">func (*Func) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L74">Parent</a>
+<h3 id="Func.Parent">func (*Func) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L74">Parent</a>
     <a href="#Func.Parent">¶</a></h3>
 <pre>func (obj *<a href="#Func">Func</a>) Parent() *<a href="#Scope">Scope</a></pre>
 
 
-<h3 id="Func.Pkg">func (*Func) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L76">Pkg</a>
+<h3 id="Func.Pkg">func (*Func) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L76">Pkg</a>
     <a href="#Func.Pkg">¶</a></h3>
 <pre>func (obj *<a href="#Func">Func</a>) Pkg() *<a href="#Package">Package</a></pre>
 
 
-<h3 id="Func.Pos">func (*Func) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L75">Pos</a>
+<h3 id="Func.Pos">func (*Func) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L75">Pos</a>
     <a href="#Func.Pos">¶</a></h3>
 <pre>func (obj *<a href="#Func">Func</a>) Pos() <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a></pre>
 
 
-<h3 id="Func.Scope">func (*Func) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L247">Scope</a>
+<h3 id="Func.Scope">func (*Func) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L247">Scope</a>
     <a href="#Func.Scope">¶</a></h3>
 <pre>func (obj *<a href="#Func">Func</a>) Scope() *<a href="#Scope">Scope</a></pre>
 
 Scope returns the scope of the function's body block.
 
-<h3 id="Func.String">func (*Func) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L388">String</a>
+<h3 id="Func.String">func (*Func) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L388">String</a>
     <a href="#Func.String">¶</a></h3>
 <pre>func (obj *<a href="#Func">Func</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Func.Type">func (*Func) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L78">Type</a>
+<h3 id="Func.Type">func (*Func) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L78">Type</a>
     <a href="#Func.Type">¶</a></h3>
 <pre>func (obj *<a href="#Func">Func</a>) Type() <a href="#Type">Type</a></pre>
 
 
-<h2 id="ImportMode">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L57">ImportMode</a>
+<h2 id="ImportMode">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L57">ImportMode</a>
     <a href="#ImportMode">¶</a></h2>
 <pre>type ImportMode <a href="/builtin/#int">int</a></pre>
 
 ImportMode is reserved for future use.
 
-<h2 id="Importer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L49">Importer</a>
+<h2 id="Importer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L49">Importer</a>
     <a href="#Importer">¶</a></h2>
 <pre>type Importer interface {
     <span class="comment">// Import returns the imported package for the given import path.</span>
@@ -977,7 +977,7 @@ CAUTION: This interface does not support the import of locally vendored
 packages. See https://golang.org/s/go15vendor. If possible, external
 implementations should implement ImporterFrom.
 
-<h2 id="ImporterFrom">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L62">ImporterFrom</a>
+<h2 id="ImporterFrom">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L62">ImporterFrom</a>
     <a href="#ImporterFrom">¶</a></h2>
 <pre>type ImporterFrom interface {
     <span class="comment">// Importer is present for backward-compatibility. Calling</span>
@@ -1003,7 +1003,7 @@ An ImporterFrom resolves import paths to packages; it supports vendoring per
 https://golang.org/s/go15vendor. Use go/importer to obtain an ImporterFrom
 implementation.
 
-<h2 id="Info">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L128">Info</a>
+<h2 id="Info">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L128">Info</a>
     <a href="#Info">¶</a></h2>
 <pre>type Info struct {
 <span id="Info.Types"></span>    <span class="comment">// Types maps expressions to their types, and for constant</span>
@@ -1231,7 +1231,7 @@ Example:
     // 12:24 | x - 2               | value   : int
     // 12:26 | 2                   | value   : int = 2
 
-<h3 id="Info.ObjectOf">func (*Info) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L237">ObjectOf</a>
+<h3 id="Info.ObjectOf">func (*Info) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L237">ObjectOf</a>
     <a href="#Info.ObjectOf">¶</a></h3>
 <pre>func (info *<a href="#Info">Info</a>) ObjectOf(id *<a href="/go/ast/">ast</a>.<a href="/go/ast/#Ident">Ident</a>) <a href="#Object">Object</a></pre>
 
@@ -1242,14 +1242,14 @@ not the type (*TypeName) it defines.
 
 Precondition: the Uses and Defs maps are populated.
 
-<h3 id="Info.TypeOf">func (*Info) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L217">TypeOf</a>
+<h3 id="Info.TypeOf">func (*Info) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L217">TypeOf</a>
     <a href="#Info.TypeOf">¶</a></h3>
 <pre>func (info *<a href="#Info">Info</a>) TypeOf(e <a href="/go/ast/">ast</a>.<a href="/go/ast/#Expr">Expr</a>) <a href="#Type">Type</a></pre>
 
 TypeOf returns the type of expression e, or nil if not found. Precondition: the
 Types, Uses and Defs maps are populated.
 
-<h2 id="Initializer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L310">Initializer</a>
+<h2 id="Initializer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L310">Initializer</a>
     <a href="#Initializer">¶</a></h2>
 <pre>type Initializer struct {
 <span id="Initializer.Lhs"></span>    Lhs []*<a href="#Var">Var</a> <span class="comment">// var Lhs = Rhs</span>
@@ -1260,12 +1260,12 @@ An Initializer describes a package-level variable, or a list of variables in
 case of a multi-valued initialization expression, and the corresponding
 initialization expression.
 
-<h3 id="Initializer.String">func (*Initializer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L315">String</a>
+<h3 id="Initializer.String">func (*Initializer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L315">String</a>
     <a href="#Initializer.String">¶</a></h3>
 <pre>func (init *<a href="#Initializer">Initializer</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Interface">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L232">Interface</a>
+<h2 id="Interface">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L232">Interface</a>
     <a href="#Interface">¶</a></h2>
 <pre>type Interface struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1273,7 +1273,7 @@ initialization expression.
 
 An Interface represents an interface type.
 
-<h3 id="NewInterface">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L248">NewInterface</a>
+<h3 id="NewInterface">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L248">NewInterface</a>
     <a href="#NewInterface">¶</a></h3>
 <pre>func NewInterface(methods []*<a href="#Func">Func</a>, embeddeds []*<a href="#Named">Named</a>) *<a href="#Interface">Interface</a></pre>
 
@@ -1281,7 +1281,7 @@ NewInterface returns a new (incomplete) interface for the given methods and
 embedded types. To compute the method set of the interface, Complete must be
 called.
 
-<h3 id="Interface.Complete">func (*Interface) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L304">Complete</a>
+<h3 id="Interface.Complete">func (*Interface) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L304">Complete</a>
     <a href="#Interface.Complete">¶</a></h3>
 <pre>func (t *<a href="#Interface">Interface</a>) Complete() *<a href="#Interface">Interface</a></pre>
 
@@ -1290,7 +1290,7 @@ NewInterface after the interface's embedded types are fully defined and before
 using the interface type in any way other than to form other types. Complete
 returns the receiver.
 
-<h3 id="Interface.Embedded">func (*Interface) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L288">Embedded</a>
+<h3 id="Interface.Embedded">func (*Interface) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L288">Embedded</a>
     <a href="#Interface.Embedded">¶</a></h3>
 <pre>func (t *<a href="#Interface">Interface</a>) Embedded(i <a href="/builtin/#int">int</a>) *<a href="#Named">Named</a></pre>
 
@@ -1298,56 +1298,56 @@ Embedded returns the i'th embedded type of interface t for 0 <= i <
 t.NumEmbeddeds(). The types are ordered by the corresponding TypeName's unique
 Id.
 
-<h3 id="Interface.Empty">func (*Interface) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L298">Empty</a>
+<h3 id="Interface.Empty">func (*Interface) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L298">Empty</a>
     <a href="#Interface.Empty">¶</a></h3>
 <pre>func (t *<a href="#Interface">Interface</a>) Empty() <a href="/builtin/#bool">bool</a></pre>
 
 Empty returns true if t is the empty interface.
 
-<h3 id="Interface.ExplicitMethod">func (*Interface) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L281">ExplicitMethod</a>
+<h3 id="Interface.ExplicitMethod">func (*Interface) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L281">ExplicitMethod</a>
     <a href="#Interface.ExplicitMethod">¶</a></h3>
 <pre>func (t *<a href="#Interface">Interface</a>) ExplicitMethod(i <a href="/builtin/#int">int</a>) *<a href="#Func">Func</a></pre>
 
 ExplicitMethod returns the i'th explicitly declared method of interface t for 0
 <= i < t.NumExplicitMethods(). The methods are ordered by their unique Id.
 
-<h3 id="Interface.Method">func (*Interface) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L295">Method</a>
+<h3 id="Interface.Method">func (*Interface) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L295">Method</a>
     <a href="#Interface.Method">¶</a></h3>
 <pre>func (t *<a href="#Interface">Interface</a>) Method(i <a href="/builtin/#int">int</a>) *<a href="#Func">Func</a></pre>
 
 Method returns the i'th method of interface t for 0 <= i < t.NumMethods(). The
 methods are ordered by their unique Id.
 
-<h3 id="Interface.NumEmbeddeds">func (*Interface) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L284">NumEmbeddeds</a>
+<h3 id="Interface.NumEmbeddeds">func (*Interface) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L284">NumEmbeddeds</a>
     <a href="#Interface.NumEmbeddeds">¶</a></h3>
 <pre>func (t *<a href="#Interface">Interface</a>) NumEmbeddeds() <a href="/builtin/#int">int</a></pre>
 
 NumEmbeddeds returns the number of embedded types in interface t.
 
-<h3 id="Interface.NumExplicitMethods">func (*Interface) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L277">NumExplicitMethods</a>
+<h3 id="Interface.NumExplicitMethods">func (*Interface) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L277">NumExplicitMethods</a>
     <a href="#Interface.NumExplicitMethods">¶</a></h3>
 <pre>func (t *<a href="#Interface">Interface</a>) NumExplicitMethods() <a href="/builtin/#int">int</a></pre>
 
 NumExplicitMethods returns the number of explicitly declared methods of
 interface t.
 
-<h3 id="Interface.NumMethods">func (*Interface) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L291">NumMethods</a>
+<h3 id="Interface.NumMethods">func (*Interface) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L291">NumMethods</a>
     <a href="#Interface.NumMethods">¶</a></h3>
 <pre>func (t *<a href="#Interface">Interface</a>) NumMethods() <a href="/builtin/#int">int</a></pre>
 
 NumMethods returns the total number of methods of interface t.
 
-<h3 id="Interface.String">func (*Interface) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L449">String</a>
+<h3 id="Interface.String">func (*Interface) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L449">String</a>
     <a href="#Interface.String">¶</a></h3>
 <pre>func (t *<a href="#Interface">Interface</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Interface.Underlying">func (*Interface) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L437">Underlying</a>
+<h3 id="Interface.Underlying">func (*Interface) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L437">Underlying</a>
     <a href="#Interface.Underlying">¶</a></h3>
 <pre>func (t *<a href="#Interface">Interface</a>) Underlying() <a href="#Type">Type</a></pre>
 
 
-<h2 id="Label">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L253">Label</a>
+<h2 id="Label">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L253">Label</a>
     <a href="#Label">¶</a></h2>
 <pre>type Label struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1355,53 +1355,53 @@ NumMethods returns the total number of methods of interface t.
 
 A Label represents a declared label. Labels don't have a type.
 
-<h3 id="NewLabel">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L259">NewLabel</a>
+<h3 id="NewLabel">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L259">NewLabel</a>
     <a href="#NewLabel">¶</a></h3>
 <pre>func NewLabel(pos <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a>, pkg *<a href="#Package">Package</a>, name <a href="/builtin/#string">string</a>) *<a href="#Label">Label</a></pre>
 
 NewLabel returns a new label.
 
-<h3 id="Label.Exported">func (*Label) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L79">Exported</a>
+<h3 id="Label.Exported">func (*Label) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L79">Exported</a>
     <a href="#Label.Exported">¶</a></h3>
 <pre>func (obj *<a href="#Label">Label</a>) Exported() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="Label.Id">func (*Label) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L80">Id</a>
+<h3 id="Label.Id">func (*Label) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L80">Id</a>
     <a href="#Label.Id">¶</a></h3>
 <pre>func (obj *<a href="#Label">Label</a>) Id() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Label.Name">func (*Label) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L77">Name</a>
+<h3 id="Label.Name">func (*Label) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L77">Name</a>
     <a href="#Label.Name">¶</a></h3>
 <pre>func (obj *<a href="#Label">Label</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Label.Parent">func (*Label) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L74">Parent</a>
+<h3 id="Label.Parent">func (*Label) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L74">Parent</a>
     <a href="#Label.Parent">¶</a></h3>
 <pre>func (obj *<a href="#Label">Label</a>) Parent() *<a href="#Scope">Scope</a></pre>
 
 
-<h3 id="Label.Pkg">func (*Label) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L76">Pkg</a>
+<h3 id="Label.Pkg">func (*Label) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L76">Pkg</a>
     <a href="#Label.Pkg">¶</a></h3>
 <pre>func (obj *<a href="#Label">Label</a>) Pkg() *<a href="#Package">Package</a></pre>
 
 
-<h3 id="Label.Pos">func (*Label) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L75">Pos</a>
+<h3 id="Label.Pos">func (*Label) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L75">Pos</a>
     <a href="#Label.Pos">¶</a></h3>
 <pre>func (obj *<a href="#Label">Label</a>) Pos() <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a></pre>
 
 
-<h3 id="Label.String">func (*Label) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L389">String</a>
+<h3 id="Label.String">func (*Label) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L389">String</a>
     <a href="#Label.String">¶</a></h3>
 <pre>func (obj *<a href="#Label">Label</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Label.Type">func (*Label) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L78">Type</a>
+<h3 id="Label.Type">func (*Label) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L78">Type</a>
     <a href="#Label.Type">¶</a></h3>
 <pre>func (obj *<a href="#Label">Label</a>) Type() <a href="#Type">Type</a></pre>
 
 
-<h2 id="Map">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L338">Map</a>
+<h2 id="Map">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L338">Map</a>
     <a href="#Map">¶</a></h2>
 <pre>type Map struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1409,35 +1409,35 @@ NewLabel returns a new label.
 
 A Map represents a map type.
 
-<h3 id="NewMap">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L343">NewMap</a>
+<h3 id="NewMap">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L343">NewMap</a>
     <a href="#NewMap">¶</a></h3>
 <pre>func NewMap(key, elem <a href="#Type">Type</a>) *<a href="#Map">Map</a></pre>
 
 NewMap returns a new map for the given key and element types.
 
-<h3 id="Map.Elem">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L351">Elem</a>
+<h3 id="Map.Elem">func (*Map) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L351">Elem</a>
     <a href="#Map.Elem">¶</a></h3>
 <pre>func (m *<a href="#Map">Map</a>) Elem() <a href="#Type">Type</a></pre>
 
 Elem returns the element type of map m.
 
-<h3 id="Map.Key">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L348">Key</a>
+<h3 id="Map.Key">func (*Map) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L348">Key</a>
     <a href="#Map.Key">¶</a></h3>
 <pre>func (m *<a href="#Map">Map</a>) Key() <a href="#Type">Type</a></pre>
 
 Key returns the key type of map m.
 
-<h3 id="Map.String">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L450">String</a>
+<h3 id="Map.String">func (*Map) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L450">String</a>
     <a href="#Map.String">¶</a></h3>
 <pre>func (t *<a href="#Map">Map</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Map.Underlying">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L438">Underlying</a>
+<h3 id="Map.Underlying">func (*Map) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L438">Underlying</a>
     <a href="#Map.Underlying">¶</a></h3>
 <pre>func (t *<a href="#Map">Map</a>) Underlying() <a href="#Type">Type</a></pre>
 
 
-<h2 id="MethodSet">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/methodset.go#L8">MethodSet</a>
+<h2 id="MethodSet">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/methodset.go#L8">MethodSet</a>
     <a href="#MethodSet">¶</a></h2>
 <pre>type MethodSet struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1492,37 +1492,37 @@ Example:
     // method (*temperature.Celsius) SetF(f float64)
     // method (*temperature.Celsius) String() string
 
-<h3 id="NewMethodSet">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/methodset.go#L57">NewMethodSet</a>
+<h3 id="NewMethodSet">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/methodset.go#L57">NewMethodSet</a>
     <a href="#NewMethodSet">¶</a></h3>
 <pre>func NewMethodSet(T <a href="#Type">Type</a>) *<a href="#MethodSet">MethodSet</a></pre>
 
 NewMethodSet returns the method set for the given type T. It always returns a
 non-nil method set, even if it is empty.
 
-<h3 id="MethodSet.At">func (*MethodSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/methodset.go#L30">At</a>
+<h3 id="MethodSet.At">func (*MethodSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/methodset.go#L30">At</a>
     <a href="#MethodSet.At">¶</a></h3>
 <pre>func (s *<a href="#MethodSet">MethodSet</a>) At(i <a href="/builtin/#int">int</a>) *<a href="#Selection">Selection</a></pre>
 
 At returns the i'th method in s for 0 <= i < s.Len().
 
-<h3 id="MethodSet.Len">func (*MethodSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/methodset.go#L27">Len</a>
+<h3 id="MethodSet.Len">func (*MethodSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/methodset.go#L27">Len</a>
     <a href="#MethodSet.Len">¶</a></h3>
 <pre>func (s *<a href="#MethodSet">MethodSet</a>) Len() <a href="/builtin/#int">int</a></pre>
 
 Len returns the number of methods in s.
 
-<h3 id="MethodSet.Lookup">func (*MethodSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/methodset.go#L33">Lookup</a>
+<h3 id="MethodSet.Lookup">func (*MethodSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/methodset.go#L33">Lookup</a>
     <a href="#MethodSet.Lookup">¶</a></h3>
 <pre>func (s *<a href="#MethodSet">MethodSet</a>) Lookup(pkg *<a href="#Package">Package</a>, name <a href="/builtin/#string">string</a>) *<a href="#Selection">Selection</a></pre>
 
 Lookup returns the method with matching package and name, or nil if not found.
 
-<h3 id="MethodSet.String">func (*MethodSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/methodset.go#L12">String</a>
+<h3 id="MethodSet.String">func (*MethodSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/methodset.go#L12">String</a>
     <a href="#MethodSet.String">¶</a></h3>
 <pre>func (s *<a href="#MethodSet">MethodSet</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Named">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L381">Named</a>
+<h2 id="Named">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L381">Named</a>
     <a href="#Named">¶</a></h2>
 <pre>type Named struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1530,7 +1530,7 @@ Lookup returns the method with matching package and name, or nil if not found.
 
 A Named represents a named type.
 
-<h3 id="NewNamed">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L390">NewNamed</a>
+<h3 id="NewNamed">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L390">NewNamed</a>
     <a href="#NewNamed">¶</a></h3>
 <pre>func NewNamed(obj *<a href="#TypeName">TypeName</a>, underlying <a href="#Type">Type</a>, methods []*<a href="#Func">Func</a>) *<a href="#Named">Named</a></pre>
 
@@ -1538,48 +1538,48 @@ NewNamed returns a new named type for the given type name, underlying type, and
 associated methods. If the given type name obj doesn't have a type yet, its type
 is set to the returned named type. The underlying type must not be a *Named.
 
-<h3 id="Named.AddMethod">func (*Named) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L422">AddMethod</a>
+<h3 id="Named.AddMethod">func (*Named) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L422">AddMethod</a>
     <a href="#Named.AddMethod">¶</a></h3>
 <pre>func (t *<a href="#Named">Named</a>) AddMethod(m *<a href="#Func">Func</a>)</pre>
 
 AddMethod adds method m unless it is already in the method list.
 
-<h3 id="Named.Method">func (*Named) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L408">Method</a>
+<h3 id="Named.Method">func (*Named) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L408">Method</a>
     <a href="#Named.Method">¶</a></h3>
 <pre>func (t *<a href="#Named">Named</a>) Method(i <a href="/builtin/#int">int</a>) *<a href="#Func">Func</a></pre>
 
 Method returns the i'th method of named type t for 0 <= i < t.NumMethods().
 
-<h3 id="Named.NumMethods">func (*Named) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L405">NumMethods</a>
+<h3 id="Named.NumMethods">func (*Named) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L405">NumMethods</a>
     <a href="#Named.NumMethods">¶</a></h3>
 <pre>func (t *<a href="#Named">Named</a>) NumMethods() <a href="/builtin/#int">int</a></pre>
 
 NumMethods returns the number of explicit methods whose receiver is named type
 t.
 
-<h3 id="Named.Obj">func (*Named) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L402">Obj</a>
+<h3 id="Named.Obj">func (*Named) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L402">Obj</a>
     <a href="#Named.Obj">¶</a></h3>
 <pre>func (t *<a href="#Named">Named</a>) Obj() *<a href="#TypeName">TypeName</a></pre>
 
 Obj returns the type name for the named type t.
 
-<h3 id="Named.SetUnderlying">func (*Named) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L411">SetUnderlying</a>
+<h3 id="Named.SetUnderlying">func (*Named) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L411">SetUnderlying</a>
     <a href="#Named.SetUnderlying">¶</a></h3>
 <pre>func (t *<a href="#Named">Named</a>) SetUnderlying(underlying <a href="#Type">Type</a>)</pre>
 
 SetUnderlying sets the underlying type and marks t as complete.
 
-<h3 id="Named.String">func (*Named) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L452">String</a>
+<h3 id="Named.String">func (*Named) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L452">String</a>
     <a href="#Named.String">¶</a></h3>
 <pre>func (t *<a href="#Named">Named</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Named.Underlying">func (*Named) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L440">Underlying</a>
+<h3 id="Named.Underlying">func (*Named) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L440">Underlying</a>
     <a href="#Named.Underlying">¶</a></h3>
 <pre>func (t *<a href="#Named">Named</a>) Underlying() <a href="#Type">Type</a></pre>
 
 
-<h2 id="Nil">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L275">Nil</a>
+<h2 id="Nil">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L275">Nil</a>
     <a href="#Nil">¶</a></h2>
 <pre>type Nil struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1587,47 +1587,47 @@ SetUnderlying sets the underlying type and marks t as complete.
 
 Nil represents the predeclared value nil.
 
-<h3 id="Nil.Exported">func (*Nil) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L79">Exported</a>
+<h3 id="Nil.Exported">func (*Nil) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L79">Exported</a>
     <a href="#Nil.Exported">¶</a></h3>
 <pre>func (obj *<a href="#Nil">Nil</a>) Exported() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="Nil.Id">func (*Nil) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L80">Id</a>
+<h3 id="Nil.Id">func (*Nil) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L80">Id</a>
     <a href="#Nil.Id">¶</a></h3>
 <pre>func (obj *<a href="#Nil">Nil</a>) Id() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Nil.Name">func (*Nil) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L77">Name</a>
+<h3 id="Nil.Name">func (*Nil) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L77">Name</a>
     <a href="#Nil.Name">¶</a></h3>
 <pre>func (obj *<a href="#Nil">Nil</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Nil.Parent">func (*Nil) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L74">Parent</a>
+<h3 id="Nil.Parent">func (*Nil) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L74">Parent</a>
     <a href="#Nil.Parent">¶</a></h3>
 <pre>func (obj *<a href="#Nil">Nil</a>) Parent() *<a href="#Scope">Scope</a></pre>
 
 
-<h3 id="Nil.Pkg">func (*Nil) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L76">Pkg</a>
+<h3 id="Nil.Pkg">func (*Nil) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L76">Pkg</a>
     <a href="#Nil.Pkg">¶</a></h3>
 <pre>func (obj *<a href="#Nil">Nil</a>) Pkg() *<a href="#Package">Package</a></pre>
 
 
-<h3 id="Nil.Pos">func (*Nil) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L75">Pos</a>
+<h3 id="Nil.Pos">func (*Nil) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L75">Pos</a>
     <a href="#Nil.Pos">¶</a></h3>
 <pre>func (obj *<a href="#Nil">Nil</a>) Pos() <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a></pre>
 
 
-<h3 id="Nil.String">func (*Nil) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L391">String</a>
+<h3 id="Nil.String">func (*Nil) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L391">String</a>
     <a href="#Nil.String">¶</a></h3>
 <pre>func (obj *<a href="#Nil">Nil</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Nil.Type">func (*Nil) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L78">Type</a>
+<h3 id="Nil.Type">func (*Nil) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L78">Type</a>
     <a href="#Nil.Type">¶</a></h3>
 <pre>func (obj *<a href="#Nil">Nil</a>) Type() <a href="#Type">Type</a></pre>
 
 
-<h2 id="Object">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L9">Object</a>
+<h2 id="Object">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L9">Object</a>
     <a href="#Object">¶</a></h2>
 <pre>type Object interface {
     Parent() *<a href="#Scope">Scope</a> <span class="comment">// scope in which this object is declared; nil for methods and struct fields</span>
@@ -1647,7 +1647,7 @@ An Object describes a named language entity such as a package, constant, type,
 variable, function (incl. methods), or label. All objects implement the Object
 interface.
 
-<h3 id="LookupFieldOrMethod">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/lookup.go#L25">LookupFieldOrMethod</a>
+<h3 id="LookupFieldOrMethod">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/lookup.go#L25">LookupFieldOrMethod</a>
     <a href="#LookupFieldOrMethod">¶</a></h3>
 <pre>func LookupFieldOrMethod(T <a href="#Type">Type</a>, addressable <a href="/builtin/#bool">bool</a>, pkg *<a href="#Package">Package</a>, name <a href="/builtin/#string">string</a>) (obj <a href="#Object">Object</a>, index []<a href="/builtin/#int">int</a>, indirect <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -1677,7 +1677,7 @@ and indirect values have the following meaning:
          but there was no pointer on the path from the actual receiver type to
     	the method's formal receiver base type, nor was the receiver addressable.
 
-<h2 id="Package">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/package.go#L3">Package</a>
+<h2 id="Package">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/package.go#L3">Package</a>
     <a href="#Package">¶</a></h2>
 <pre>type Package struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1685,21 +1685,21 @@ and indirect values have the following meaning:
 
 A Package describes a Go package.
 
-<h3 id="NewPackage">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/package.go#L14">NewPackage</a>
+<h3 id="NewPackage">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/package.go#L14">NewPackage</a>
     <a href="#NewPackage">¶</a></h3>
 <pre>func NewPackage(path, name <a href="/builtin/#string">string</a>) *<a href="#Package">Package</a></pre>
 
 NewPackage returns a new Package for the given package path and name. The
 package is not complete and contains no explicit imports.
 
-<h3 id="Package.Complete">func (*Package) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/package.go#L35">Complete</a>
+<h3 id="Package.Complete">func (*Package) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/package.go#L35">Complete</a>
     <a href="#Package.Complete">¶</a></h3>
 <pre>func (pkg *<a href="#Package">Package</a>) Complete() <a href="/builtin/#bool">bool</a></pre>
 
 A package is complete if its scope contains (at least) all exported objects;
 otherwise it is incomplete.
 
-<h3 id="Package.Imports">func (*Package) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/package.go#L46">Imports</a>
+<h3 id="Package.Imports">func (*Package) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/package.go#L46">Imports</a>
     <a href="#Package.Imports">¶</a></h3>
 <pre>func (pkg *<a href="#Package">Package</a>) Imports() []*<a href="#Package">Package</a></pre>
 
@@ -1710,50 +1710,50 @@ If pkg was loaded from export data, Imports includes packages that provide
 package-level objects referenced by pkg. This may be more or less than the set
 of packages directly imported by pkg's source code.
 
-<h3 id="Package.MarkComplete">func (*Package) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/package.go#L38">MarkComplete</a>
+<h3 id="Package.MarkComplete">func (*Package) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/package.go#L38">MarkComplete</a>
     <a href="#Package.MarkComplete">¶</a></h3>
 <pre>func (pkg *<a href="#Package">Package</a>) MarkComplete()</pre>
 
 MarkComplete marks a package as complete.
 
-<h3 id="Package.Name">func (*Package) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/package.go#L23">Name</a>
+<h3 id="Package.Name">func (*Package) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/package.go#L23">Name</a>
     <a href="#Package.Name">¶</a></h3>
 <pre>func (pkg *<a href="#Package">Package</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 Name returns the package name.
 
-<h3 id="Package.Path">func (*Package) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/package.go#L20">Path</a>
+<h3 id="Package.Path">func (*Package) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/package.go#L20">Path</a>
     <a href="#Package.Path">¶</a></h3>
 <pre>func (pkg *<a href="#Package">Package</a>) Path() <a href="/builtin/#string">string</a></pre>
 
 Path returns the package path.
 
-<h3 id="Package.Scope">func (*Package) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/package.go#L31">Scope</a>
+<h3 id="Package.Scope">func (*Package) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/package.go#L31">Scope</a>
     <a href="#Package.Scope">¶</a></h3>
 <pre>func (pkg *<a href="#Package">Package</a>) Scope() *<a href="#Scope">Scope</a></pre>
 
 Scope returns the (complete or incomplete) package scope holding the objects
 declared at package level (TypeNames, Consts, Vars, and Funcs).
 
-<h3 id="Package.SetImports">func (*Package) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/package.go#L50">SetImports</a>
+<h3 id="Package.SetImports">func (*Package) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/package.go#L50">SetImports</a>
     <a href="#Package.SetImports">¶</a></h3>
 <pre>func (pkg *<a href="#Package">Package</a>) SetImports(list []*<a href="#Package">Package</a>)</pre>
 
 SetImports sets the list of explicitly imported packages to list. It is the
 caller's responsibility to make sure list elements are unique.
 
-<h3 id="Package.SetName">func (*Package) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/package.go#L26">SetName</a>
+<h3 id="Package.SetName">func (*Package) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/package.go#L26">SetName</a>
     <a href="#Package.SetName">¶</a></h3>
 <pre>func (pkg *<a href="#Package">Package</a>) SetName(name <a href="/builtin/#string">string</a>)</pre>
 
 SetName sets the package name.
 
-<h3 id="Package.String">func (*Package) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/package.go#L52">String</a>
+<h3 id="Package.String">func (*Package) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/package.go#L52">String</a>
     <a href="#Package.String">¶</a></h3>
 <pre>func (pkg *<a href="#Package">Package</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="PkgName">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L113">PkgName</a>
+<h2 id="PkgName">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L113">PkgName</a>
     <a href="#PkgName">¶</a></h2>
 <pre>type PkgName struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1761,61 +1761,61 @@ SetName sets the package name.
 
 A PkgName represents an imported Go package. PkgNames don't have a type.
 
-<h3 id="NewPkgName">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L121">NewPkgName</a>
+<h3 id="NewPkgName">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L121">NewPkgName</a>
     <a href="#NewPkgName">¶</a></h3>
 <pre>func NewPkgName(pos <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a>, pkg *<a href="#Package">Package</a>, name <a href="/builtin/#string">string</a>, imported *<a href="#Package">Package</a>) *<a href="#PkgName">PkgName</a></pre>
 
 NewPkgName returns a new PkgName object representing an imported package. The
 remaining arguments set the attributes found with all Objects.
 
-<h3 id="PkgName.Exported">func (*PkgName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L79">Exported</a>
+<h3 id="PkgName.Exported">func (*PkgName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L79">Exported</a>
     <a href="#PkgName.Exported">¶</a></h3>
 <pre>func (obj *<a href="#PkgName">PkgName</a>) Exported() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="PkgName.Id">func (*PkgName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L80">Id</a>
+<h3 id="PkgName.Id">func (*PkgName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L80">Id</a>
     <a href="#PkgName.Id">¶</a></h3>
 <pre>func (obj *<a href="#PkgName">PkgName</a>) Id() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="PkgName.Imported">func (*PkgName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L127">Imported</a>
+<h3 id="PkgName.Imported">func (*PkgName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L127">Imported</a>
     <a href="#PkgName.Imported">¶</a></h3>
 <pre>func (obj *<a href="#PkgName">PkgName</a>) Imported() *<a href="#Package">Package</a></pre>
 
 Imported returns the package that was imported. It is distinct from Pkg(), which
 is the package containing the import statement.
 
-<h3 id="PkgName.Name">func (*PkgName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L77">Name</a>
+<h3 id="PkgName.Name">func (*PkgName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L77">Name</a>
     <a href="#PkgName.Name">¶</a></h3>
 <pre>func (obj *<a href="#PkgName">PkgName</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="PkgName.Parent">func (*PkgName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L74">Parent</a>
+<h3 id="PkgName.Parent">func (*PkgName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L74">Parent</a>
     <a href="#PkgName.Parent">¶</a></h3>
 <pre>func (obj *<a href="#PkgName">PkgName</a>) Parent() *<a href="#Scope">Scope</a></pre>
 
 
-<h3 id="PkgName.Pkg">func (*PkgName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L76">Pkg</a>
+<h3 id="PkgName.Pkg">func (*PkgName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L76">Pkg</a>
     <a href="#PkgName.Pkg">¶</a></h3>
 <pre>func (obj *<a href="#PkgName">PkgName</a>) Pkg() *<a href="#Package">Package</a></pre>
 
 
-<h3 id="PkgName.Pos">func (*PkgName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L75">Pos</a>
+<h3 id="PkgName.Pos">func (*PkgName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L75">Pos</a>
     <a href="#PkgName.Pos">¶</a></h3>
 <pre>func (obj *<a href="#PkgName">PkgName</a>) Pos() <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a></pre>
 
 
-<h3 id="PkgName.String">func (*PkgName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L384">String</a>
+<h3 id="PkgName.String">func (*PkgName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L384">String</a>
     <a href="#PkgName.String">¶</a></h3>
 <pre>func (obj *<a href="#PkgName">PkgName</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="PkgName.Type">func (*PkgName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L78">Type</a>
+<h3 id="PkgName.Type">func (*PkgName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L78">Type</a>
     <a href="#PkgName.Type">¶</a></h3>
 <pre>func (obj *<a href="#PkgName">PkgName</a>) Type() <a href="#Type">Type</a></pre>
 
 
-<h2 id="Pointer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L147">Pointer</a>
+<h2 id="Pointer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L147">Pointer</a>
     <a href="#Pointer">¶</a></h2>
 <pre>type Pointer struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1823,29 +1823,29 @@ is the package containing the import statement.
 
 A Pointer represents a pointer type.
 
-<h3 id="NewPointer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L152">NewPointer</a>
+<h3 id="NewPointer">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L152">NewPointer</a>
     <a href="#NewPointer">¶</a></h3>
 <pre>func NewPointer(elem <a href="#Type">Type</a>) *<a href="#Pointer">Pointer</a></pre>
 
 NewPointer returns a new pointer type for the given element (base) type.
 
-<h3 id="Pointer.Elem">func (*Pointer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L155">Elem</a>
+<h3 id="Pointer.Elem">func (*Pointer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L155">Elem</a>
     <a href="#Pointer.Elem">¶</a></h3>
 <pre>func (p *<a href="#Pointer">Pointer</a>) Elem() <a href="#Type">Type</a></pre>
 
 Elem returns the element type for the given pointer p.
 
-<h3 id="Pointer.String">func (*Pointer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L446">String</a>
+<h3 id="Pointer.String">func (*Pointer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L446">String</a>
     <a href="#Pointer.String">¶</a></h3>
 <pre>func (t *<a href="#Pointer">Pointer</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Pointer.Underlying">func (*Pointer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L434">Underlying</a>
+<h3 id="Pointer.Underlying">func (*Pointer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L434">Underlying</a>
     <a href="#Pointer.Underlying">¶</a></h3>
 <pre>func (t *<a href="#Pointer">Pointer</a>) Underlying() <a href="#Type">Type</a></pre>
 
 
-<h2 id="Qualifier">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/typestring.go#L15">Qualifier</a>
+<h2 id="Qualifier">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/typestring.go#L15">Qualifier</a>
     <a href="#Qualifier">¶</a></h2>
 <pre>type Qualifier func(*<a href="#Package">Package</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -1859,14 +1859,14 @@ the form p.O. If it returns an empty string, only the object name O is printed.
 Using a nil Qualifier is equivalent to using (*Package).Path: the object is
 qualified by the import path, e.g., "encoding/json.Marshal".
 
-<h3 id="RelativeTo">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/typestring.go#L19">RelativeTo</a>
+<h3 id="RelativeTo">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/typestring.go#L19">RelativeTo</a>
     <a href="#RelativeTo">¶</a></h3>
 <pre>func RelativeTo(pkg *<a href="#Package">Package</a>) <a href="#Qualifier">Qualifier</a></pre>
 
 RelativeTo(pkg) returns a Qualifier that fully qualifies members of all packages
 other than pkg.
 
-<h2 id="Scope">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L15">Scope</a>
+<h2 id="Scope">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L15">Scope</a>
     <a href="#Scope">¶</a></h2>
 <pre>type Scope struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -1945,20 +1945,20 @@ Example:
     // .  .  .  var f float64
     // .  .  }.  }}
 
-<h3 id="NewScope">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L26">NewScope</a>
+<h3 id="NewScope">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L26">NewScope</a>
     <a href="#NewScope">¶</a></h3>
 <pre>func NewScope(parent *<a href="#Scope">Scope</a>, pos, end <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a>, comment <a href="/builtin/#string">string</a>) *<a href="#Scope">Scope</a></pre>
 
 NewScope returns a new, empty scope contained in the given parent scope, if any.
 The comment is for debugging only.
 
-<h3 id="Scope.Child">func (*Scope) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L57">Child</a>
+<h3 id="Scope.Child">func (*Scope) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L57">Child</a>
     <a href="#Scope.Child">¶</a></h3>
 <pre>func (s *<a href="#Scope">Scope</a>) Child(i <a href="/builtin/#int">int</a>) *<a href="#Scope">Scope</a></pre>
 
 Child returns the i'th child scope for 0 <= i < NumChildren().
 
-<h3 id="Scope.Contains">func (*Scope) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L114">Contains</a>
+<h3 id="Scope.Contains">func (*Scope) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L114">Contains</a>
     <a href="#Scope.Contains">¶</a></h3>
 <pre>func (s *<a href="#Scope">Scope</a>) Contains(pos <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -1966,12 +1966,12 @@ Contains returns true if pos is within the scope's extent. The result is
 guaranteed to be valid only if the type-checked AST has complete position
 information.
 
-<h3 id="Scope.End">func (*Scope) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L109">End</a>
+<h3 id="Scope.End">func (*Scope) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L109">End</a>
     <a href="#Scope.End">¶</a></h3>
 <pre>func (s *<a href="#Scope">Scope</a>) End() <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a></pre>
 
 
-<h3 id="Scope.Innermost">func (*Scope) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L123">Innermost</a>
+<h3 id="Scope.Innermost">func (*Scope) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L123">Innermost</a>
     <a href="#Scope.Innermost">¶</a></h3>
 <pre>func (s *<a href="#Scope">Scope</a>) Innermost(pos <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a>) *<a href="#Scope">Scope</a></pre>
 
@@ -1980,7 +1980,7 @@ within any scope, the result is nil. The result is also nil for the Universe
 scope. The result is guaranteed to be valid only if the type-checked AST has
 complete position information.
 
-<h3 id="Scope.Insert">func (*Scope) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L89">Insert</a>
+<h3 id="Scope.Insert">func (*Scope) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L89">Insert</a>
     <a href="#Scope.Insert">¶</a></h3>
 <pre>func (s *<a href="#Scope">Scope</a>) Insert(obj <a href="#Object">Object</a>) <a href="#Object">Object</a></pre>
 
@@ -1989,20 +1989,20 @@ alternative object alt with the same name, Insert leaves s unchanged and returns
 alt. Otherwise it inserts obj, sets the object's parent scope if not already
 set, and returns nil.
 
-<h3 id="Scope.Len">func (*Scope) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L39">Len</a>
+<h3 id="Scope.Len">func (*Scope) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L39">Len</a>
     <a href="#Scope.Len">¶</a></h3>
 <pre>func (s *<a href="#Scope">Scope</a>) Len() <a href="/builtin/#int">int</a></pre>
 
 Len() returns the number of scope elements.
 
-<h3 id="Scope.Lookup">func (*Scope) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L61">Lookup</a>
+<h3 id="Scope.Lookup">func (*Scope) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L61">Lookup</a>
     <a href="#Scope.Lookup">¶</a></h3>
 <pre>func (s *<a href="#Scope">Scope</a>) Lookup(name <a href="/builtin/#string">string</a>) <a href="#Object">Object</a></pre>
 
 Lookup returns the object in scope s with the given name if such an object
 exists; otherwise the result is nil.
 
-<h3 id="Scope.LookupParent">func (*Scope) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L75">LookupParent</a>
+<h3 id="Scope.LookupParent">func (*Scope) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L75">LookupParent</a>
     <a href="#Scope.LookupParent">¶</a></h3>
 <pre>func (s *<a href="#Scope">Scope</a>) LookupParent(name <a href="/builtin/#string">string</a>, pos <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a>) (*<a href="#Scope">Scope</a>, <a href="#Object">Object</a>)</pre>
 
@@ -2017,25 +2017,25 @@ was inserted into the scope and already had a parent at that time (see Insert,
 below). This can only happen for dot-imported objects whose scope is the scope
 of the package that exported them.
 
-<h3 id="Scope.Names">func (*Scope) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L42">Names</a>
+<h3 id="Scope.Names">func (*Scope) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L42">Names</a>
     <a href="#Scope.Names">¶</a></h3>
 <pre>func (s *<a href="#Scope">Scope</a>) Names() []<a href="/builtin/#string">string</a></pre>
 
 Names returns the scope's element names in sorted order.
 
-<h3 id="Scope.NumChildren">func (*Scope) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L54">NumChildren</a>
+<h3 id="Scope.NumChildren">func (*Scope) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L54">NumChildren</a>
     <a href="#Scope.NumChildren">¶</a></h3>
 <pre>func (s *<a href="#Scope">Scope</a>) NumChildren() <a href="/builtin/#int">int</a></pre>
 
 NumChildren() returns the number of scopes nested in s.
 
-<h3 id="Scope.Parent">func (*Scope) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L36">Parent</a>
+<h3 id="Scope.Parent">func (*Scope) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L36">Parent</a>
     <a href="#Scope.Parent">¶</a></h3>
 <pre>func (s *<a href="#Scope">Scope</a>) Parent() *<a href="#Scope">Scope</a></pre>
 
 Parent returns the scope's containing (parent) scope.
 
-<h3 id="Scope.Pos">func (*Scope) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L108">Pos</a>
+<h3 id="Scope.Pos">func (*Scope) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L108">Pos</a>
     <a href="#Scope.Pos">¶</a></h3>
 <pre>func (s *<a href="#Scope">Scope</a>) Pos() <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a></pre>
 
@@ -2043,13 +2043,13 @@ Pos and End describe the scope's source code extent [pos, end). The results are
 guaranteed to be valid only if the type-checked AST has complete position
 information. The extent is undefined for Universe and package scopes.
 
-<h3 id="Scope.String">func (*Scope) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L177">String</a>
+<h3 id="Scope.String">func (*Scope) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L177">String</a>
     <a href="#Scope.String">¶</a></h3>
 <pre>func (s *<a href="#Scope">Scope</a>) String() <a href="/builtin/#string">string</a></pre>
 
 String returns a string representation of the scope, for debugging.
 
-<h3 id="Scope.WriteTo">func (*Scope) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/scope.go#L150">WriteTo</a>
+<h3 id="Scope.WriteTo">func (*Scope) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/scope.go#L150">WriteTo</a>
     <a href="#Scope.WriteTo">¶</a></h3>
 <pre>func (s *<a href="#Scope">Scope</a>) WriteTo(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, n <a href="/builtin/#int">int</a>, recurse <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -2058,7 +2058,7 @@ elements sorted by name. The level of indentation is controlled by n >= 0, with
 n == 0 for no indentation. If recurse is set, it also writes nested (children)
 scopes.
 
-<h2 id="Selection">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/selection.go#L30">Selection</a>
+<h2 id="Selection">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/selection.go#L30">Selection</a>
     <a href="#Selection">¶</a></h2>
 <pre>type Selection struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -2079,7 +2079,7 @@ the following relations exist:
     p.m         MethodVal     *T      m      func (e *T) m()    {1, 0}    true
     T.m         MethodExpr    T       m      func m(_ T)        {1, 0}    false
 
-<h3 id="Selection.Index">func (*Selection) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/selection.go#L92">Index</a>
+<h3 id="Selection.Index">func (*Selection) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/selection.go#L92">Index</a>
     <a href="#Selection.Index">¶</a></h3>
 <pre>func (s *<a href="#Selection">Selection</a>) Index() []<a href="/builtin/#int">int</a></pre>
 
@@ -2093,45 +2093,45 @@ or method index of the type declaring f; either:
 The earlier index entries are the indices of the embedded fields implicitly
 traversed to get from (the type of) x to f, starting at embedding depth 0.
 
-<h3 id="Selection.Indirect">func (*Selection) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/selection.go#L96">Indirect</a>
+<h3 id="Selection.Indirect">func (*Selection) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/selection.go#L96">Indirect</a>
     <a href="#Selection.Indirect">¶</a></h3>
 <pre>func (s *<a href="#Selection">Selection</a>) Indirect() <a href="/builtin/#bool">bool</a></pre>
 
 Indirect reports whether any pointer indirection was required to get from x to f
 in x.f.
 
-<h3 id="Selection.Kind">func (*Selection) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/selection.go#L39">Kind</a>
+<h3 id="Selection.Kind">func (*Selection) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/selection.go#L39">Kind</a>
     <a href="#Selection.Kind">¶</a></h3>
 <pre>func (s *<a href="#Selection">Selection</a>) Kind() <a href="#SelectionKind">SelectionKind</a></pre>
 
 Kind returns the selection kind.
 
-<h3 id="Selection.Obj">func (*Selection) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/selection.go#L46">Obj</a>
+<h3 id="Selection.Obj">func (*Selection) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/selection.go#L46">Obj</a>
     <a href="#Selection.Obj">¶</a></h3>
 <pre>func (s *<a href="#Selection">Selection</a>) Obj() <a href="#Object">Object</a></pre>
 
 Obj returns the object denoted by x.f; a *Var for a field selection, and a *Func
 in all other cases.
 
-<h3 id="Selection.Recv">func (*Selection) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/selection.go#L42">Recv</a>
+<h3 id="Selection.Recv">func (*Selection) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/selection.go#L42">Recv</a>
     <a href="#Selection.Recv">¶</a></h3>
 <pre>func (s *<a href="#Selection">Selection</a>) Recv() <a href="#Type">Type</a></pre>
 
 Recv returns the type of x in x.f.
 
-<h3 id="Selection.String">func (*Selection) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/selection.go#L98">String</a>
+<h3 id="Selection.String">func (*Selection) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/selection.go#L98">String</a>
     <a href="#Selection.String">¶</a></h3>
 <pre>func (s *<a href="#Selection">Selection</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Selection.Type">func (*Selection) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/selection.go#L50">Type</a>
+<h3 id="Selection.Type">func (*Selection) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/selection.go#L50">Type</a>
     <a href="#Selection.Type">¶</a></h3>
 <pre>func (s *<a href="#Selection">Selection</a>) Type() <a href="#Type">Type</a></pre>
 
 Type returns the type of x.f, which may be different from the type of f. See
 Selection for more information.
 
-<h2 id="SelectionKind">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/selection.go#L6">SelectionKind</a>
+<h2 id="SelectionKind">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/selection.go#L6">SelectionKind</a>
     <a href="#SelectionKind">¶</a></h2>
 <pre>type SelectionKind <a href="/builtin/#int">int</a></pre>
 
@@ -2145,7 +2145,7 @@ qualified identifiers).
 )</pre>
 
 
-<h2 id="Signature">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L185">Signature</a>
+<h2 id="Signature">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L185">Signature</a>
     <a href="#Signature">¶</a></h2>
 <pre>type Signature struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -2154,7 +2154,7 @@ qualified identifiers).
 A Signature represents a (non-builtin) function or method type. The receiver is
 ignored when comparing signatures for identity.
 
-<h3 id="NewSignature">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L201">NewSignature</a>
+<h3 id="NewSignature">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L201">NewSignature</a>
     <a href="#NewSignature">¶</a></h3>
 <pre>func NewSignature(recv *<a href="#Var">Var</a>, params, results *<a href="#Tuple">Tuple</a>, variadic <a href="/builtin/#bool">bool</a>) *<a href="#Signature">Signature</a></pre>
 
@@ -2163,13 +2163,13 @@ results, either of which may be nil. If variadic is set, the function is
 variadic, it must have at least one parameter, and the last parameter must be of
 unnamed slice type.
 
-<h3 id="Signature.Params">func (*Signature) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L223">Params</a>
+<h3 id="Signature.Params">func (*Signature) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L223">Params</a>
     <a href="#Signature.Params">¶</a></h3>
 <pre>func (s *<a href="#Signature">Signature</a>) Params() *<a href="#Tuple">Tuple</a></pre>
 
 Params returns the parameters of signature s, or nil.
 
-<h3 id="Signature.Recv">func (*Signature) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L220">Recv</a>
+<h3 id="Signature.Recv">func (*Signature) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L220">Recv</a>
     <a href="#Signature.Recv">¶</a></h3>
 <pre>func (s *<a href="#Signature">Signature</a>) Recv() *<a href="#Var">Var</a></pre>
 
@@ -2180,29 +2180,29 @@ For an abstract method, Recv returns the enclosing interface either as a *Named
 or an *Interface. Due to embedding, an interface may contain methods whose
 receiver type is a different interface.
 
-<h3 id="Signature.Results">func (*Signature) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L226">Results</a>
+<h3 id="Signature.Results">func (*Signature) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L226">Results</a>
     <a href="#Signature.Results">¶</a></h3>
 <pre>func (s *<a href="#Signature">Signature</a>) Results() *<a href="#Tuple">Tuple</a></pre>
 
 Results returns the results of signature s, or nil.
 
-<h3 id="Signature.String">func (*Signature) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L448">String</a>
+<h3 id="Signature.String">func (*Signature) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L448">String</a>
     <a href="#Signature.String">¶</a></h3>
 <pre>func (t *<a href="#Signature">Signature</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Signature.Underlying">func (*Signature) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L436">Underlying</a>
+<h3 id="Signature.Underlying">func (*Signature) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L436">Underlying</a>
     <a href="#Signature.Underlying">¶</a></h3>
 <pre>func (t *<a href="#Signature">Signature</a>) Underlying() <a href="#Type">Type</a></pre>
 
 
-<h3 id="Signature.Variadic">func (*Signature) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L229">Variadic</a>
+<h3 id="Signature.Variadic">func (*Signature) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L229">Variadic</a>
     <a href="#Signature.Variadic">¶</a></h3>
 <pre>func (s *<a href="#Signature">Signature</a>) Variadic() <a href="/builtin/#bool">bool</a></pre>
 
 Variadic reports whether the signature s is variadic.
 
-<h2 id="Sizes">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/sizes.go#L1">Sizes</a>
+<h2 id="Sizes">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/sizes.go#L1">Sizes</a>
     <a href="#Sizes">¶</a></h2>
 <pre>type Sizes interface {
     <span class="comment">// Alignof returns the alignment of a variable of type T.</span>
@@ -2220,7 +2220,7 @@ Variadic reports whether the signature s is variadic.
 
 Sizes defines the sizing functions for package unsafe.
 
-<h3 id="SizesFor">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/sizes.go#L170">SizesFor</a>
+<h3 id="SizesFor">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/sizes.go#L170">SizesFor</a>
     <a href="#SizesFor">¶</a></h3>
 <pre>func SizesFor(compiler, arch <a href="/builtin/#string">string</a>) <a href="#Sizes">Sizes</a></pre>
 
@@ -2230,7 +2230,7 @@ nil if a compiler/architecture pair is not known.
 Supported architectures for compiler "gc": "386", "arm", "arm64", "amd64",
 "amd64p32", "mips", "mipsle", "mips64", "mips64le", "ppc64", "ppc64le", "s390x".
 
-<h2 id="Slice">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L99">Slice</a>
+<h2 id="Slice">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L99">Slice</a>
     <a href="#Slice">¶</a></h2>
 <pre>type Slice struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -2238,29 +2238,29 @@ Supported architectures for compiler "gc": "386", "arm", "arm64", "amd64",
 
 A Slice represents a slice type.
 
-<h3 id="NewSlice">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L104">NewSlice</a>
+<h3 id="NewSlice">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L104">NewSlice</a>
     <a href="#NewSlice">¶</a></h3>
 <pre>func NewSlice(elem <a href="#Type">Type</a>) *<a href="#Slice">Slice</a></pre>
 
 NewSlice returns a new slice type for the given element type.
 
-<h3 id="Slice.Elem">func (*Slice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L107">Elem</a>
+<h3 id="Slice.Elem">func (*Slice) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L107">Elem</a>
     <a href="#Slice.Elem">¶</a></h3>
 <pre>func (s *<a href="#Slice">Slice</a>) Elem() <a href="#Type">Type</a></pre>
 
 Elem returns the element type of slice s.
 
-<h3 id="Slice.String">func (*Slice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L444">String</a>
+<h3 id="Slice.String">func (*Slice) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L444">String</a>
     <a href="#Slice.String">¶</a></h3>
 <pre>func (t *<a href="#Slice">Slice</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Slice.Underlying">func (*Slice) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L432">Underlying</a>
+<h3 id="Slice.Underlying">func (*Slice) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L432">Underlying</a>
     <a href="#Slice.Underlying">¶</a></h3>
 <pre>func (t *<a href="#Slice">Slice</a>) Underlying() <a href="#Type">Type</a></pre>
 
 
-<h2 id="StdSizes">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/sizes.go#L33">StdSizes</a>
+<h2 id="StdSizes">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/sizes.go#L33">StdSizes</a>
     <a href="#StdSizes">¶</a></h2>
 <pre>type StdSizes struct {
 <span id="StdSizes.WordSize"></span>    WordSize <a href="/builtin/#int64">int64</a> <span class="comment">// word size in bytes - must be &gt;= 4 (32bits)</span>
@@ -2286,22 +2286,22 @@ following simplifying assumptions:
 
 *StdSizes implements Sizes.
 
-<h3 id="StdSizes.Alignof">func (*StdSizes) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/sizes.go#L38">Alignof</a>
+<h3 id="StdSizes.Alignof">func (*StdSizes) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/sizes.go#L38">Alignof</a>
     <a href="#StdSizes.Alignof">¶</a></h3>
 <pre>func (s *<a href="#StdSizes">StdSizes</a>) Alignof(T <a href="#Type">Type</a>) <a href="/builtin/#int64">int64</a></pre>
 
 
-<h3 id="StdSizes.Offsetsof">func (*StdSizes) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/sizes.go#L82">Offsetsof</a>
+<h3 id="StdSizes.Offsetsof">func (*StdSizes) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/sizes.go#L82">Offsetsof</a>
     <a href="#StdSizes.Offsetsof">¶</a></h3>
 <pre>func (s *<a href="#StdSizes">StdSizes</a>) Offsetsof(fields []*<a href="#Var">Var</a>) []<a href="/builtin/#int64">int64</a></pre>
 
 
-<h3 id="StdSizes.Sizeof">func (*StdSizes) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/sizes.go#L110">Sizeof</a>
+<h3 id="StdSizes.Sizeof">func (*StdSizes) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/sizes.go#L110">Sizeof</a>
     <a href="#StdSizes.Sizeof">¶</a></h3>
 <pre>func (s *<a href="#StdSizes">StdSizes</a>) Sizeof(T <a href="#Type">Type</a>) <a href="/builtin/#int64">int64</a></pre>
 
 
-<h2 id="Struct">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L110">Struct</a>
+<h2 id="Struct">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L110">Struct</a>
     <a href="#Struct">¶</a></h2>
 <pre>type Struct struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -2309,7 +2309,7 @@ following simplifying assumptions:
 
 A Struct represents a struct type.
 
-<h3 id="NewStruct">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L119">NewStruct</a>
+<h3 id="NewStruct">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L119">NewStruct</a>
     <a href="#NewStruct">¶</a></h3>
 <pre>func NewStruct(fields []*<a href="#Var">Var</a>, tags []<a href="/builtin/#string">string</a>) *<a href="#Struct">Struct</a></pre>
 
@@ -2318,36 +2318,36 @@ tags. If a field with index i has a tag, tags[i] must be that tag, but len(tags)
 may be only as long as required to hold the tag with the largest index i.
 Consequently, if no field has a tag, tags may be nil.
 
-<h3 id="Struct.Field">func (*Struct) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L136">Field</a>
+<h3 id="Struct.Field">func (*Struct) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L136">Field</a>
     <a href="#Struct.Field">¶</a></h3>
 <pre>func (s *<a href="#Struct">Struct</a>) Field(i <a href="/builtin/#int">int</a>) *<a href="#Var">Var</a></pre>
 
 Field returns the i'th field for 0 <= i < NumFields().
 
-<h3 id="Struct.NumFields">func (*Struct) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L133">NumFields</a>
+<h3 id="Struct.NumFields">func (*Struct) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L133">NumFields</a>
     <a href="#Struct.NumFields">¶</a></h3>
 <pre>func (s *<a href="#Struct">Struct</a>) NumFields() <a href="/builtin/#int">int</a></pre>
 
 NumFields returns the number of fields in the struct (including blank and
 anonymous fields).
 
-<h3 id="Struct.String">func (*Struct) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L445">String</a>
+<h3 id="Struct.String">func (*Struct) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L445">String</a>
     <a href="#Struct.String">¶</a></h3>
 <pre>func (t *<a href="#Struct">Struct</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Struct.Tag">func (*Struct) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L139">Tag</a>
+<h3 id="Struct.Tag">func (*Struct) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L139">Tag</a>
     <a href="#Struct.Tag">¶</a></h3>
 <pre>func (s *<a href="#Struct">Struct</a>) Tag(i <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
 Tag returns the i'th field tag for 0 <= i < NumFields().
 
-<h3 id="Struct.Underlying">func (*Struct) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L433">Underlying</a>
+<h3 id="Struct.Underlying">func (*Struct) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L433">Underlying</a>
     <a href="#Struct.Underlying">¶</a></h3>
 <pre>func (t *<a href="#Struct">Struct</a>) Underlying() <a href="#Type">Type</a></pre>
 
 
-<h2 id="Tuple">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L160">Tuple</a>
+<h2 id="Tuple">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L160">Tuple</a>
     <a href="#Tuple">¶</a></h2>
 <pre>type Tuple struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -2357,35 +2357,35 @@ A Tuple represents an ordered list of variables; a nil *Tuple is a valid (empty)
 tuple. Tuples are used as components of signatures and to represent the type of
 multiple assignments; they are not first class types of Go.
 
-<h3 id="NewTuple">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L165">NewTuple</a>
+<h3 id="NewTuple">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L165">NewTuple</a>
     <a href="#NewTuple">¶</a></h3>
 <pre>func NewTuple(x ...*<a href="#Var">Var</a>) *<a href="#Tuple">Tuple</a></pre>
 
 NewTuple returns a new tuple for the given variables.
 
-<h3 id="Tuple.At">func (*Tuple) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L181">At</a>
+<h3 id="Tuple.At">func (*Tuple) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L181">At</a>
     <a href="#Tuple.At">¶</a></h3>
 <pre>func (t *<a href="#Tuple">Tuple</a>) At(i <a href="/builtin/#int">int</a>) *<a href="#Var">Var</a></pre>
 
 At returns the i'th variable of tuple t.
 
-<h3 id="Tuple.Len">func (*Tuple) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L173">Len</a>
+<h3 id="Tuple.Len">func (*Tuple) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L173">Len</a>
     <a href="#Tuple.Len">¶</a></h3>
 <pre>func (t *<a href="#Tuple">Tuple</a>) Len() <a href="/builtin/#int">int</a></pre>
 
 Len returns the number variables of tuple t.
 
-<h3 id="Tuple.String">func (*Tuple) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L447">String</a>
+<h3 id="Tuple.String">func (*Tuple) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L447">String</a>
     <a href="#Tuple.String">¶</a></h3>
 <pre>func (t *<a href="#Tuple">Tuple</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Tuple.Underlying">func (*Tuple) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L435">Underlying</a>
+<h3 id="Tuple.Underlying">func (*Tuple) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L435">Underlying</a>
     <a href="#Tuple.Underlying">¶</a></h3>
 <pre>func (t *<a href="#Tuple">Tuple</a>) Underlying() <a href="#Type">Type</a></pre>
 
 
-<h2 id="Type">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/type.go#L1">Type</a>
+<h2 id="Type">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/type.go#L1">Type</a>
     <a href="#Type">¶</a></h2>
 <pre>type Type interface {
     <span class="comment">// Underlying returns the underlying type of a type.</span>
@@ -2397,7 +2397,7 @@ Len returns the number variables of tuple t.
 
 A Type represents a type of Go. All types implement the Type interface.
 
-<h3 id="Default">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/predicates.go#L290">Default</a>
+<h3 id="Default">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/predicates.go#L290">Default</a>
     <a href="#Default">¶</a></h3>
 <pre>func Default(typ <a href="#Type">Type</a>) <a href="#Type">Type</a></pre>
 
@@ -2405,7 +2405,7 @@ Default returns the default "typed" type for an "untyped" type; it returns the
 incoming type for all other types. The default type for untyped nil is untyped
 nil.
 
-<h2 id="TypeAndValue">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L246">TypeAndValue</a>
+<h2 id="TypeAndValue">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L246">TypeAndValue</a>
     <a href="#TypeAndValue">¶</a></h2>
 <pre>type TypeAndValue struct {
 <span id="TypeAndValue.Type"></span>    Type  <a href="#Type">Type</a>
@@ -2416,7 +2416,7 @@ nil.
 TypeAndValue reports the type and value (for constants) of the corresponding
 expression.
 
-<h3 id="Eval">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/eval.go#L27">Eval</a>
+<h3 id="Eval">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/eval.go#L27">Eval</a>
     <a href="#Eval">¶</a></h3>
 <pre>func Eval(fset *<a href="/go/token/">token</a>.<a href="/go/token/#FileSet">FileSet</a>, pkg *<a href="#Package">Package</a>, pos <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a>, expr <a href="/builtin/#string">string</a>) (<a href="#TypeAndValue">TypeAndValue</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -2441,62 +2441,62 @@ and it also does not know about the context in which an expression is used
 (e.g., an assignment). Thus, top- level untyped constants will return an untyped
 type rather then the respective context-specific type.
 
-<h3 id="TypeAndValue.Addressable">func (TypeAndValue) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L291">Addressable</a>
+<h3 id="TypeAndValue.Addressable">func (TypeAndValue) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L291">Addressable</a>
     <a href="#TypeAndValue.Addressable">¶</a></h3>
 <pre>func (tv <a href="#TypeAndValue">TypeAndValue</a>) Addressable() <a href="/builtin/#bool">bool</a></pre>
 
 Addressable reports whether the corresponding expression is addressable
 (https://golang.org/ref/spec#Address_operators).
 
-<h3 id="TypeAndValue.Assignable">func (TypeAndValue) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L297">Assignable</a>
+<h3 id="TypeAndValue.Assignable">func (TypeAndValue) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L297">Assignable</a>
     <a href="#TypeAndValue.Assignable">¶</a></h3>
 <pre>func (tv <a href="#TypeAndValue">TypeAndValue</a>) Assignable() <a href="/builtin/#bool">bool</a></pre>
 
 Assignable reports whether the corresponding expression is assignable to
 (provided a value of the right type).
 
-<h3 id="TypeAndValue.HasOk">func (TypeAndValue) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L303">HasOk</a>
+<h3 id="TypeAndValue.HasOk">func (TypeAndValue) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L303">HasOk</a>
     <a href="#TypeAndValue.HasOk">¶</a></h3>
 <pre>func (tv <a href="#TypeAndValue">TypeAndValue</a>) HasOk() <a href="/builtin/#bool">bool</a></pre>
 
 HasOk reports whether the corresponding expression may be used on the lhs of a
 comma-ok assignment.
 
-<h3 id="TypeAndValue.IsBuiltin">func (TypeAndValue) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L268">IsBuiltin</a>
+<h3 id="TypeAndValue.IsBuiltin">func (TypeAndValue) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L268">IsBuiltin</a>
     <a href="#TypeAndValue.IsBuiltin">¶</a></h3>
 <pre>func (tv <a href="#TypeAndValue">TypeAndValue</a>) IsBuiltin() <a href="/builtin/#bool">bool</a></pre>
 
 IsBuiltin reports whether the corresponding expression denotes a (possibly
 parenthesized) built-in function.
 
-<h3 id="TypeAndValue.IsNil">func (TypeAndValue) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L285">IsNil</a>
+<h3 id="TypeAndValue.IsNil">func (TypeAndValue) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L285">IsNil</a>
     <a href="#TypeAndValue.IsNil">¶</a></h3>
 <pre>func (tv <a href="#TypeAndValue">TypeAndValue</a>) IsNil() <a href="/builtin/#bool">bool</a></pre>
 
 IsNil reports whether the corresponding expression denotes the predeclared value
 nil.
 
-<h3 id="TypeAndValue.IsType">func (TypeAndValue) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L262">IsType</a>
+<h3 id="TypeAndValue.IsType">func (TypeAndValue) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L262">IsType</a>
     <a href="#TypeAndValue.IsType">¶</a></h3>
 <pre>func (tv <a href="#TypeAndValue">TypeAndValue</a>) IsType() <a href="/builtin/#bool">bool</a></pre>
 
 IsType reports whether the corresponding expression specifies a type.
 
-<h3 id="TypeAndValue.IsValue">func (TypeAndValue) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L275">IsValue</a>
+<h3 id="TypeAndValue.IsValue">func (TypeAndValue) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L275">IsValue</a>
     <a href="#TypeAndValue.IsValue">¶</a></h3>
 <pre>func (tv <a href="#TypeAndValue">TypeAndValue</a>) IsValue() <a href="/builtin/#bool">bool</a></pre>
 
 IsValue reports whether the corresponding expression is a value. Builtins are
 not considered values. Constant values have a non- nil Value.
 
-<h3 id="TypeAndValue.IsVoid">func (TypeAndValue) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/api.go#L257">IsVoid</a>
+<h3 id="TypeAndValue.IsVoid">func (TypeAndValue) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/api.go#L257">IsVoid</a>
     <a href="#TypeAndValue.IsVoid">¶</a></h3>
 <pre>func (tv <a href="#TypeAndValue">TypeAndValue</a>) IsVoid() <a href="/builtin/#bool">bool</a></pre>
 
 IsVoid reports whether the corresponding expression is a function call without
 results.
 
-<h2 id="TypeName">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L146">TypeName</a>
+<h2 id="TypeName">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L146">TypeName</a>
     <a href="#TypeName">¶</a></h2>
 <pre>type TypeName struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -2504,7 +2504,7 @@ results.
 
 A TypeName represents a name for a (named or alias) type.
 
-<h3 id="NewTypeName">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L157">NewTypeName</a>
+<h3 id="NewTypeName">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L157">NewTypeName</a>
     <a href="#NewTypeName">¶</a></h3>
 <pre>func NewTypeName(pos <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a>, pkg *<a href="#Package">Package</a>, name <a href="/builtin/#string">string</a>, typ <a href="#Type">Type</a>) *<a href="#TypeName">TypeName</a></pre>
 
@@ -2515,53 +2515,53 @@ The typ argument may be a defined (Named) type or an alias type. It may also be
 nil such that the returned TypeName can be used as argument for NewNamed, which
 will set the TypeName's type as a side- effect.
 
-<h3 id="TypeName.Exported">func (*TypeName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L79">Exported</a>
+<h3 id="TypeName.Exported">func (*TypeName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L79">Exported</a>
     <a href="#TypeName.Exported">¶</a></h3>
 <pre>func (obj *<a href="#TypeName">TypeName</a>) Exported() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="TypeName.Id">func (*TypeName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L80">Id</a>
+<h3 id="TypeName.Id">func (*TypeName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L80">Id</a>
     <a href="#TypeName.Id">¶</a></h3>
 <pre>func (obj *<a href="#TypeName">TypeName</a>) Id() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="TypeName.IsAlias">func (*TypeName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L162">IsAlias</a>
+<h3 id="TypeName.IsAlias">func (*TypeName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L162">IsAlias</a>
     <a href="#TypeName.IsAlias">¶</a></h3>
 <pre>func (obj *<a href="#TypeName">TypeName</a>) IsAlias() <a href="/builtin/#bool">bool</a></pre>
 
 IsAlias reports whether obj is an alias name for a type.
 
-<h3 id="TypeName.Name">func (*TypeName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L77">Name</a>
+<h3 id="TypeName.Name">func (*TypeName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L77">Name</a>
     <a href="#TypeName.Name">¶</a></h3>
 <pre>func (obj *<a href="#TypeName">TypeName</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="TypeName.Parent">func (*TypeName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L74">Parent</a>
+<h3 id="TypeName.Parent">func (*TypeName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L74">Parent</a>
     <a href="#TypeName.Parent">¶</a></h3>
 <pre>func (obj *<a href="#TypeName">TypeName</a>) Parent() *<a href="#Scope">Scope</a></pre>
 
 
-<h3 id="TypeName.Pkg">func (*TypeName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L76">Pkg</a>
+<h3 id="TypeName.Pkg">func (*TypeName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L76">Pkg</a>
     <a href="#TypeName.Pkg">¶</a></h3>
 <pre>func (obj *<a href="#TypeName">TypeName</a>) Pkg() *<a href="#Package">Package</a></pre>
 
 
-<h3 id="TypeName.Pos">func (*TypeName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L75">Pos</a>
+<h3 id="TypeName.Pos">func (*TypeName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L75">Pos</a>
     <a href="#TypeName.Pos">¶</a></h3>
 <pre>func (obj *<a href="#TypeName">TypeName</a>) Pos() <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a></pre>
 
 
-<h3 id="TypeName.String">func (*TypeName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L386">String</a>
+<h3 id="TypeName.String">func (*TypeName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L386">String</a>
     <a href="#TypeName.String">¶</a></h3>
 <pre>func (obj *<a href="#TypeName">TypeName</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="TypeName.Type">func (*TypeName) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L78">Type</a>
+<h3 id="TypeName.Type">func (*TypeName) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L78">Type</a>
     <a href="#TypeName.Type">¶</a></h3>
 <pre>func (obj *<a href="#TypeName">TypeName</a>) Type() <a href="#Type">Type</a></pre>
 
 
-<h2 id="Var">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L186">Var</a>
+<h2 id="Var">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L186">Var</a>
     <a href="#Var">¶</a></h2>
 <pre>type Var struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -2570,7 +2570,7 @@ IsAlias reports whether obj is an alias name for a type.
 A Variable represents a declared variable (including function parameters and
 results, and struct fields).
 
-<h3 id="NewField">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L208">NewField</a>
+<h3 id="NewField">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L208">NewField</a>
     <a href="#NewField">¶</a></h3>
 <pre>func NewField(pos <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a>, pkg *<a href="#Package">Package</a>, name <a href="/builtin/#string">string</a>, typ <a href="#Type">Type</a>, anonymous <a href="/builtin/#bool">bool</a>) *<a href="#Var">Var</a></pre>
 
@@ -2578,67 +2578,67 @@ NewField returns a new variable representing a struct field. For anonymous
 (embedded) fields, the name is the unqualified type name under which the field
 is accessible.
 
-<h3 id="NewParam">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L201">NewParam</a>
+<h3 id="NewParam">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L201">NewParam</a>
     <a href="#NewParam">¶</a></h3>
 <pre>func NewParam(pos <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a>, pkg *<a href="#Package">Package</a>, name <a href="/builtin/#string">string</a>, typ <a href="#Type">Type</a>) *<a href="#Var">Var</a></pre>
 
 NewParam returns a new variable representing a function parameter.
 
-<h3 id="NewVar">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L196">NewVar</a>
+<h3 id="NewVar">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L196">NewVar</a>
     <a href="#NewVar">¶</a></h3>
 <pre>func NewVar(pos <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a>, pkg *<a href="#Package">Package</a>, name <a href="/builtin/#string">string</a>, typ <a href="#Type">Type</a>) *<a href="#Var">Var</a></pre>
 
 NewVar returns a new variable. The arguments set the attributes found with all
 Objects.
 
-<h3 id="Var.Anonymous">func (*Var) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L213">Anonymous</a>
+<h3 id="Var.Anonymous">func (*Var) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L213">Anonymous</a>
     <a href="#Var.Anonymous">¶</a></h3>
 <pre>func (obj *<a href="#Var">Var</a>) Anonymous() <a href="/builtin/#bool">bool</a></pre>
 
 Anonymous reports whether the variable is an anonymous field.
 
-<h3 id="Var.Exported">func (*Var) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L79">Exported</a>
+<h3 id="Var.Exported">func (*Var) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L79">Exported</a>
     <a href="#Var.Exported">¶</a></h3>
 <pre>func (obj *<a href="#Var">Var</a>) Exported() <a href="/builtin/#bool">bool</a></pre>
 
 
-<h3 id="Var.Id">func (*Var) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L80">Id</a>
+<h3 id="Var.Id">func (*Var) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L80">Id</a>
     <a href="#Var.Id">¶</a></h3>
 <pre>func (obj *<a href="#Var">Var</a>) Id() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Var.IsField">func (*Var) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L216">IsField</a>
+<h3 id="Var.IsField">func (*Var) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L216">IsField</a>
     <a href="#Var.IsField">¶</a></h3>
 <pre>func (obj *<a href="#Var">Var</a>) IsField() <a href="/builtin/#bool">bool</a></pre>
 
 IsField reports whether the variable is a struct field.
 
-<h3 id="Var.Name">func (*Var) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L77">Name</a>
+<h3 id="Var.Name">func (*Var) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L77">Name</a>
     <a href="#Var.Name">¶</a></h3>
 <pre>func (obj *<a href="#Var">Var</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Var.Parent">func (*Var) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L74">Parent</a>
+<h3 id="Var.Parent">func (*Var) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L74">Parent</a>
     <a href="#Var.Parent">¶</a></h3>
 <pre>func (obj *<a href="#Var">Var</a>) Parent() *<a href="#Scope">Scope</a></pre>
 
 
-<h3 id="Var.Pkg">func (*Var) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L76">Pkg</a>
+<h3 id="Var.Pkg">func (*Var) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L76">Pkg</a>
     <a href="#Var.Pkg">¶</a></h3>
 <pre>func (obj *<a href="#Var">Var</a>) Pkg() *<a href="#Package">Package</a></pre>
 
 
-<h3 id="Var.Pos">func (*Var) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L75">Pos</a>
+<h3 id="Var.Pos">func (*Var) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L75">Pos</a>
     <a href="#Var.Pos">¶</a></h3>
 <pre>func (obj *<a href="#Var">Var</a>) Pos() <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a></pre>
 
 
-<h3 id="Var.String">func (*Var) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L387">String</a>
+<h3 id="Var.String">func (*Var) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L387">String</a>
     <a href="#Var.String">¶</a></h3>
 <pre>func (obj *<a href="#Var">Var</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h3 id="Var.Type">func (*Var) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/types/object.go#L78">Type</a>
+<h3 id="Var.Type">func (*Var) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/types/object.go#L78">Type</a>
     <a href="#Var.Type">¶</a></h3>
 <pre>func (obj *<a href="#Var">Var</a>) Type() <a href="#Type">Type</a></pre>
 

@@ -236,7 +236,7 @@ Example:
 - [Package](#example)
 
 ### Package files
- [flag.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go)
+ [flag.go](//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go)
 
 <h2 id="pkg-variables">Variables</h2>
 
@@ -265,7 +265,7 @@ see the documentation for PrintDefaults. Custom usage functions may choose to
 exit the program; by default exiting happens anyway as the command line's error
 handling strategy is set to ExitOnError.
 
-<h2 id="Arg">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L554">Arg</a>
+<h2 id="Arg">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L554">Arg</a>
     <a href="#Arg">¶</a></h2>
 <pre>func Arg(i <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -273,13 +273,13 @@ Arg returns the i'th command-line argument. Arg(0) is the first remaining
 argument after flags have been processed. Arg returns an empty string if the
 requested element does not exist.
 
-<h2 id="Args">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L568">Args</a>
+<h2 id="Args">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L568">Args</a>
     <a href="#Args">¶</a></h2>
 <pre>func Args() []<a href="/builtin/#string">string</a></pre>
 
 Args returns the non-flag command-line arguments.
 
-<h2 id="Bool">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L592">Bool</a>
+<h2 id="Bool">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L592">Bool</a>
     <a href="#Bool">¶</a></h2>
 <pre>func Bool(name <a href="/builtin/#string">string</a>, value <a href="/builtin/#bool">bool</a>, usage <a href="/builtin/#string">string</a>) *<a href="/builtin/#bool">bool</a></pre>
 
@@ -287,7 +287,7 @@ Bool defines a bool flag with specified name, default value, and usage string.
 The return value is the address of a bool variable that stores the value of the
 flag.
 
-<h2 id="BoolVar">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L578">BoolVar</a>
+<h2 id="BoolVar">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L578">BoolVar</a>
     <a href="#BoolVar">¶</a></h2>
 <pre>func BoolVar(p *<a href="/builtin/#bool">bool</a>, name <a href="/builtin/#string">string</a>, value <a href="/builtin/#bool">bool</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -295,7 +295,7 @@ BoolVar defines a bool flag with specified name, default value, and usage
 string. The argument p points to a bool variable in which to store the value of
 the flag.
 
-<h2 id="Duration">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L778">Duration</a>
+<h2 id="Duration">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L778">Duration</a>
     <a href="#Duration">¶</a></h2>
 <pre>func Duration(name <a href="/builtin/#string">string</a>, value <a href="/time/">time</a>.<a href="/time/#Duration">Duration</a>, usage <a href="/builtin/#string">string</a>) *<a href="/time/">time</a>.<a href="/time/#Duration">Duration</a></pre>
 
@@ -304,7 +304,7 @@ usage string. The return value is the address of a time.Duration variable that
 stores the value of the flag. The flag accepts a value acceptable to
 time.ParseDuration.
 
-<h2 id="DurationVar">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L762">DurationVar</a>
+<h2 id="DurationVar">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L762">DurationVar</a>
     <a href="#DurationVar">¶</a></h2>
 <pre>func DurationVar(p *<a href="/time/">time</a>.<a href="/time/#Duration">Duration</a>, name <a href="/builtin/#string">string</a>, value <a href="/time/">time</a>.<a href="/time/#Duration">Duration</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -313,7 +313,7 @@ usage string. The argument p points to a time.Duration variable in which to
 store the value of the flag. The flag accepts a value acceptable to
 time.ParseDuration.
 
-<h2 id="Float64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L748">Float64</a>
+<h2 id="Float64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L748">Float64</a>
     <a href="#Float64">¶</a></h2>
 <pre>func Float64(name <a href="/builtin/#string">string</a>, value <a href="/builtin/#float64">float64</a>, usage <a href="/builtin/#string">string</a>) *<a href="/builtin/#float64">float64</a></pre>
 
@@ -321,7 +321,7 @@ Float64 defines a float64 flag with specified name, default value, and usage
 string. The return value is the address of a float64 variable that stores the
 value of the flag.
 
-<h2 id="Float64Var">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L734">Float64Var</a>
+<h2 id="Float64Var">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L734">Float64Var</a>
     <a href="#Float64Var">¶</a></h2>
 <pre>func Float64Var(p *<a href="/builtin/#float64">float64</a>, name <a href="/builtin/#string">string</a>, value <a href="/builtin/#float64">float64</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -329,7 +329,7 @@ Float64Var defines a float64 flag with specified name, default value, and usage
 string. The argument p points to a float64 variable in which to store the value
 of the flag.
 
-<h2 id="Int">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L618">Int</a>
+<h2 id="Int">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L618">Int</a>
     <a href="#Int">¶</a></h2>
 <pre>func Int(name <a href="/builtin/#string">string</a>, value <a href="/builtin/#int">int</a>, usage <a href="/builtin/#string">string</a>) *<a href="/builtin/#int">int</a></pre>
 
@@ -337,7 +337,7 @@ Int defines an int flag with specified name, default value, and usage string.
 The return value is the address of an int variable that stores the value of the
 flag.
 
-<h2 id="Int64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L644">Int64</a>
+<h2 id="Int64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L644">Int64</a>
     <a href="#Int64">¶</a></h2>
 <pre>func Int64(name <a href="/builtin/#string">string</a>, value <a href="/builtin/#int64">int64</a>, usage <a href="/builtin/#string">string</a>) *<a href="/builtin/#int64">int64</a></pre>
 
@@ -345,7 +345,7 @@ Int64 defines an int64 flag with specified name, default value, and usage
 string. The return value is the address of an int64 variable that stores the
 value of the flag.
 
-<h2 id="Int64Var">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L630">Int64Var</a>
+<h2 id="Int64Var">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L630">Int64Var</a>
     <a href="#Int64Var">¶</a></h2>
 <pre>func Int64Var(p *<a href="/builtin/#int64">int64</a>, name <a href="/builtin/#string">string</a>, value <a href="/builtin/#int64">int64</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -353,7 +353,7 @@ Int64Var defines an int64 flag with specified name, default value, and usage
 string. The argument p points to an int64 variable in which to store the value
 of the flag.
 
-<h2 id="IntVar">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L604">IntVar</a>
+<h2 id="IntVar">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L604">IntVar</a>
     <a href="#IntVar">¶</a></h2>
 <pre>func IntVar(p *<a href="/builtin/#int">int</a>, name <a href="/builtin/#string">string</a>, value <a href="/builtin/#int">int</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -361,32 +361,32 @@ IntVar defines an int flag with specified name, default value, and usage string.
 The argument p points to an int variable in which to store the value of the
 flag.
 
-<h2 id="NArg">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L562">NArg</a>
+<h2 id="NArg">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L562">NArg</a>
     <a href="#NArg">¶</a></h2>
 <pre>func NArg() <a href="/builtin/#int">int</a></pre>
 
 NArg is the number of arguments remaining after flags have been processed.
 
-<h2 id="NFlag">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L539">NFlag</a>
+<h2 id="NFlag">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L539">NFlag</a>
     <a href="#NFlag">¶</a></h2>
 <pre>func NFlag() <a href="/builtin/#int">int</a></pre>
 
 NFlag returns the number of command-line flags that have been set.
 
-<h2 id="Parse">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L946">Parse</a>
+<h2 id="Parse">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L946">Parse</a>
     <a href="#Parse">¶</a></h2>
 <pre>func Parse()</pre>
 
 Parse parses the command-line flags from os.Args[1:]. Must be called after all
 flags are defined and before flags are accessed by the program.
 
-<h2 id="Parsed">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L952">Parsed</a>
+<h2 id="Parsed">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L952">Parsed</a>
     <a href="#Parsed">¶</a></h2>
 <pre>func Parsed() <a href="/builtin/#bool">bool</a></pre>
 
 Parsed reports whether the command-line flags have been parsed.
 
-<h2 id="PrintDefaults">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L503">PrintDefaults</a>
+<h2 id="PrintDefaults">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L503">PrintDefaults</a>
     <a href="#PrintDefaults">¶</a></h2>
 <pre>func PrintDefaults()</pre>
 
@@ -413,13 +413,13 @@ the output will be
     -I directory
     	search directory for include files.
 
-<h2 id="Set">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L384">Set</a>
+<h2 id="Set">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L384">Set</a>
     <a href="#Set">¶</a></h2>
 <pre>func Set(name, value <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 Set sets the value of the named command-line flag.
 
-<h2 id="String">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L722">String</a>
+<h2 id="String">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L722">String</a>
     <a href="#String">¶</a></h2>
 <pre>func String(name <a href="/builtin/#string">string</a>, value <a href="/builtin/#string">string</a>, usage <a href="/builtin/#string">string</a>) *<a href="/builtin/#string">string</a></pre>
 
@@ -427,7 +427,7 @@ String defines a string flag with specified name, default value, and usage
 string. The return value is the address of a string variable that stores the
 value of the flag.
 
-<h2 id="StringVar">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L708">StringVar</a>
+<h2 id="StringVar">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L708">StringVar</a>
     <a href="#StringVar">¶</a></h2>
 <pre>func StringVar(p *<a href="/builtin/#string">string</a>, name <a href="/builtin/#string">string</a>, value <a href="/builtin/#string">string</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -435,7 +435,7 @@ StringVar defines a string flag with specified name, default value, and usage
 string. The argument p points to a string variable in which to store the value
 of the flag.
 
-<h2 id="Uint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L670">Uint</a>
+<h2 id="Uint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L670">Uint</a>
     <a href="#Uint">¶</a></h2>
 <pre>func Uint(name <a href="/builtin/#string">string</a>, value <a href="/builtin/#uint">uint</a>, usage <a href="/builtin/#string">string</a>) *<a href="/builtin/#uint">uint</a></pre>
 
@@ -443,7 +443,7 @@ Uint defines a uint flag with specified name, default value, and usage string.
 The return value is the address of a uint variable that stores the value of the
 flag.
 
-<h2 id="Uint64">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L696">Uint64</a>
+<h2 id="Uint64">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L696">Uint64</a>
     <a href="#Uint64">¶</a></h2>
 <pre>func Uint64(name <a href="/builtin/#string">string</a>, value <a href="/builtin/#uint64">uint64</a>, usage <a href="/builtin/#string">string</a>) *<a href="/builtin/#uint64">uint64</a></pre>
 
@@ -451,7 +451,7 @@ Uint64 defines a uint64 flag with specified name, default value, and usage
 string. The return value is the address of a uint64 variable that stores the
 value of the flag.
 
-<h2 id="Uint64Var">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L682">Uint64Var</a>
+<h2 id="Uint64Var">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L682">Uint64Var</a>
     <a href="#Uint64Var">¶</a></h2>
 <pre>func Uint64Var(p *<a href="/builtin/#uint64">uint64</a>, name <a href="/builtin/#string">string</a>, value <a href="/builtin/#uint64">uint64</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -459,7 +459,7 @@ Uint64Var defines a uint64 flag with specified name, default value, and usage
 string. The argument p points to a uint64 variable in which to store the value
 of the flag.
 
-<h2 id="UintVar">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L656">UintVar</a>
+<h2 id="UintVar">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L656">UintVar</a>
     <a href="#UintVar">¶</a></h2>
 <pre>func UintVar(p *<a href="/builtin/#uint">uint</a>, name <a href="/builtin/#string">string</a>, value <a href="/builtin/#uint">uint</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -467,7 +467,7 @@ UintVar defines a uint flag with specified name, default value, and usage
 string. The argument p points to a uint variable in which to store the value of
 the flag.
 
-<h2 id="UnquoteUsage">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L417">UnquoteUsage</a>
+<h2 id="UnquoteUsage">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L417">UnquoteUsage</a>
     <a href="#UnquoteUsage">¶</a></h2>
 <pre>func UnquoteUsage(flag *<a href="#Flag">Flag</a>) (name <a href="/builtin/#string">string</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -476,7 +476,7 @@ returns it and the un-quoted usage. Given "a `name` to show" it returns ("name",
 "a name to show"). If there are no back quotes, the name is an educated guess of
 the type of the flag's value, or the empty string if the flag is boolean.
 
-<h2 id="Var">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L814">Var</a>
+<h2 id="Var">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L814">Var</a>
     <a href="#Var">¶</a></h2>
 <pre>func Var(value <a href="#Value">Value</a>, name <a href="/builtin/#string">string</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -487,21 +487,21 @@ could create a flag that turns a comma-separated string into a slice of strings
 by giving the slice the methods of Value; in particular, Set would decompose the
 comma-separated string into the slice.
 
-<h2 id="Visit">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L351">Visit</a>
+<h2 id="Visit">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L351">Visit</a>
     <a href="#Visit">¶</a></h2>
 <pre>func Visit(fn func(*<a href="#Flag">Flag</a>))</pre>
 
 Visit visits the command-line flags in lexicographical order, calling fn for
 each. It visits only those flags that have been set.
 
-<h2 id="VisitAll">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L337">VisitAll</a>
+<h2 id="VisitAll">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L337">VisitAll</a>
     <a href="#VisitAll">¶</a></h2>
 <pre>func VisitAll(fn func(*<a href="#Flag">Flag</a>))</pre>
 
 VisitAll visits the command-line flags in lexicographical order, calling fn for
 each. It visits all flags, even those not set.
 
-<h2 id="ErrorHandling">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L250">ErrorHandling</a>
+<h2 id="ErrorHandling">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L250">ErrorHandling</a>
     <a href="#ErrorHandling">¶</a></h2>
 <pre>type ErrorHandling <a href="/builtin/#int">int</a></pre>
 
@@ -515,7 +515,7 @@ ErrorHandling defines how FlagSet.Parse behaves if the parse fails.
 
 These constants cause FlagSet.Parse to behave as described if the parse fails.
 
-<h2 id="Flag">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L279">Flag</a>
+<h2 id="Flag">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L279">Flag</a>
     <a href="#Flag">¶</a></h2>
 <pre>type Flag struct {
 <span id="Flag.Name"></span>    Name     <a href="/builtin/#string">string</a> <span class="comment">// name as it appears on command line</span>
@@ -526,14 +526,14 @@ These constants cause FlagSet.Parse to behave as described if the parse fails.
 
 A Flag represents the state of a flag.
 
-<h3 id="Lookup">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L362">Lookup</a>
+<h3 id="Lookup">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L362">Lookup</a>
     <a href="#Lookup">¶</a></h3>
 <pre>func Lookup(name <a href="/builtin/#string">string</a>) *<a href="#Flag">Flag</a></pre>
 
 Lookup returns the Flag structure of the named command-line flag, returning nil
 if none exists.
 
-<h2 id="FlagSet">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L261">FlagSet</a>
+<h2 id="FlagSet">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L261">FlagSet</a>
     <a href="#FlagSet">¶</a></h2>
 <pre>type FlagSet struct {
 <span id="FlagSet.Usage"></span>    <span class="comment">// Usage is the function called when an error occurs while parsing flags.</span>
@@ -548,14 +548,14 @@ if none exists.
 A FlagSet represents a set of defined flags. The zero value of a FlagSet has no
 name and has ContinueOnError error handling.
 
-<h3 id="NewFlagSet">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L975">NewFlagSet</a>
+<h3 id="NewFlagSet">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L975">NewFlagSet</a>
     <a href="#NewFlagSet">¶</a></h3>
 <pre>func NewFlagSet(name <a href="/builtin/#string">string</a>, errorHandling <a href="#ErrorHandling">ErrorHandling</a>) *<a href="#FlagSet">FlagSet</a></pre>
 
 NewFlagSet returns a new, empty flag set with the specified name and error
 handling property.
 
-<h3 id="FlagSet.Arg">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L544">Arg</a>
+<h3 id="FlagSet.Arg">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L544">Arg</a>
     <a href="#FlagSet.Arg">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Arg(i <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -563,13 +563,13 @@ Arg returns the i'th argument. Arg(0) is the first remaining argument after
 flags have been processed. Arg returns an empty string if the requested element
 does not exist.
 
-<h3 id="FlagSet.Args">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L565">Args</a>
+<h3 id="FlagSet.Args">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L565">Args</a>
     <a href="#FlagSet.Args">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Args() []<a href="/builtin/#string">string</a></pre>
 
 Args returns the non-flag arguments.
 
-<h3 id="FlagSet.Bool">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L584">Bool</a>
+<h3 id="FlagSet.Bool">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L584">Bool</a>
     <a href="#FlagSet.Bool">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Bool(name <a href="/builtin/#string">string</a>, value <a href="/builtin/#bool">bool</a>, usage <a href="/builtin/#string">string</a>) *<a href="/builtin/#bool">bool</a></pre>
 
@@ -577,7 +577,7 @@ Bool defines a bool flag with specified name, default value, and usage string.
 The return value is the address of a bool variable that stores the value of the
 flag.
 
-<h3 id="FlagSet.BoolVar">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L572">BoolVar</a>
+<h3 id="FlagSet.BoolVar">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L572">BoolVar</a>
     <a href="#FlagSet.BoolVar">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) BoolVar(p *<a href="/builtin/#bool">bool</a>, name <a href="/builtin/#string">string</a>, value <a href="/builtin/#bool">bool</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -585,7 +585,7 @@ BoolVar defines a bool flag with specified name, default value, and usage
 string. The argument p points to a bool variable in which to store the value of
 the flag.
 
-<h3 id="FlagSet.Duration">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L769">Duration</a>
+<h3 id="FlagSet.Duration">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L769">Duration</a>
     <a href="#FlagSet.Duration">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Duration(name <a href="/builtin/#string">string</a>, value <a href="/time/">time</a>.<a href="/time/#Duration">Duration</a>, usage <a href="/builtin/#string">string</a>) *<a href="/time/">time</a>.<a href="/time/#Duration">Duration</a></pre>
 
@@ -594,7 +594,7 @@ usage string. The return value is the address of a time.Duration variable that
 stores the value of the flag. The flag accepts a value acceptable to
 time.ParseDuration.
 
-<h3 id="FlagSet.DurationVar">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L755">DurationVar</a>
+<h3 id="FlagSet.DurationVar">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L755">DurationVar</a>
     <a href="#FlagSet.DurationVar">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) DurationVar(p *<a href="/time/">time</a>.<a href="/time/#Duration">Duration</a>, name <a href="/builtin/#string">string</a>, value <a href="/time/">time</a>.<a href="/time/#Duration">Duration</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -603,13 +603,13 @@ usage string. The argument p points to a time.Duration variable in which to
 store the value of the flag. The flag accepts a value acceptable to
 time.ParseDuration.
 
-<h3 id="FlagSet.ErrorHandling">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L317">ErrorHandling</a>
+<h3 id="FlagSet.ErrorHandling">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L317">ErrorHandling</a>
     <a href="#FlagSet.ErrorHandling">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) ErrorHandling() <a href="#ErrorHandling">ErrorHandling</a></pre>
 
 ErrorHandling returns the error handling behavior of the flag set.
 
-<h3 id="FlagSet.Float64">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L740">Float64</a>
+<h3 id="FlagSet.Float64">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L740">Float64</a>
     <a href="#FlagSet.Float64">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Float64(name <a href="/builtin/#string">string</a>, value <a href="/builtin/#float64">float64</a>, usage <a href="/builtin/#string">string</a>) *<a href="/builtin/#float64">float64</a></pre>
 
@@ -617,7 +617,7 @@ Float64 defines a float64 flag with specified name, default value, and usage
 string. The return value is the address of a float64 variable that stores the
 value of the flag.
 
-<h3 id="FlagSet.Float64Var">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L728">Float64Var</a>
+<h3 id="FlagSet.Float64Var">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L728">Float64Var</a>
     <a href="#FlagSet.Float64Var">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Float64Var(p *<a href="/builtin/#float64">float64</a>, name <a href="/builtin/#string">string</a>, value <a href="/builtin/#float64">float64</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -625,14 +625,14 @@ Float64Var defines a float64 flag with specified name, default value, and usage
 string. The argument p points to a float64 variable in which to store the value
 of the flag.
 
-<h3 id="FlagSet.Init">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L987">Init</a>
+<h3 id="FlagSet.Init">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L987">Init</a>
     <a href="#FlagSet.Init">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Init(name <a href="/builtin/#string">string</a>, errorHandling <a href="#ErrorHandling">ErrorHandling</a>)</pre>
 
 Init sets the name and error handling property for a flag set. By default, the
 zero FlagSet uses an empty name and the ContinueOnError error handling policy.
 
-<h3 id="FlagSet.Int">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L610">Int</a>
+<h3 id="FlagSet.Int">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L610">Int</a>
     <a href="#FlagSet.Int">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Int(name <a href="/builtin/#string">string</a>, value <a href="/builtin/#int">int</a>, usage <a href="/builtin/#string">string</a>) *<a href="/builtin/#int">int</a></pre>
 
@@ -640,7 +640,7 @@ Int defines an int flag with specified name, default value, and usage string.
 The return value is the address of an int variable that stores the value of the
 flag.
 
-<h3 id="FlagSet.Int64">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L636">Int64</a>
+<h3 id="FlagSet.Int64">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L636">Int64</a>
     <a href="#FlagSet.Int64">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Int64(name <a href="/builtin/#string">string</a>, value <a href="/builtin/#int64">int64</a>, usage <a href="/builtin/#string">string</a>) *<a href="/builtin/#int64">int64</a></pre>
 
@@ -648,7 +648,7 @@ Int64 defines an int64 flag with specified name, default value, and usage
 string. The return value is the address of an int64 variable that stores the
 value of the flag.
 
-<h3 id="FlagSet.Int64Var">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L624">Int64Var</a>
+<h3 id="FlagSet.Int64Var">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L624">Int64Var</a>
     <a href="#FlagSet.Int64Var">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Int64Var(p *<a href="/builtin/#int64">int64</a>, name <a href="/builtin/#string">string</a>, value <a href="/builtin/#int64">int64</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -656,7 +656,7 @@ Int64Var defines an int64 flag with specified name, default value, and usage
 string. The argument p points to an int64 variable in which to store the value
 of the flag.
 
-<h3 id="FlagSet.IntVar">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L598">IntVar</a>
+<h3 id="FlagSet.IntVar">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L598">IntVar</a>
     <a href="#FlagSet.IntVar">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) IntVar(p *<a href="/builtin/#int">int</a>, name <a href="/builtin/#string">string</a>, value <a href="/builtin/#int">int</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -664,39 +664,39 @@ IntVar defines an int flag with specified name, default value, and usage string.
 The argument p points to an int variable in which to store the value of the
 flag.
 
-<h3 id="FlagSet.Lookup">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L356">Lookup</a>
+<h3 id="FlagSet.Lookup">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L356">Lookup</a>
     <a href="#FlagSet.Lookup">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Lookup(name <a href="/builtin/#string">string</a>) *<a href="#Flag">Flag</a></pre>
 
 Lookup returns the Flag structure of the named flag, returning nil if none
 exists.
 
-<h3 id="FlagSet.NArg">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L559">NArg</a>
+<h3 id="FlagSet.NArg">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L559">NArg</a>
     <a href="#FlagSet.NArg">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) NArg() <a href="/builtin/#int">int</a></pre>
 
 NArg is the number of arguments remaining after flags have been processed.
 
-<h3 id="FlagSet.NFlag">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L536">NFlag</a>
+<h3 id="FlagSet.NFlag">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L536">NFlag</a>
     <a href="#FlagSet.NFlag">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) NFlag() <a href="/builtin/#int">int</a></pre>
 
 NFlag returns the number of flags that have been set.
 
-<h3 id="FlagSet.Name">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L312">Name</a>
+<h3 id="FlagSet.Name">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L312">Name</a>
     <a href="#FlagSet.Name">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 Name returns the name of the flag set.
 
-<h3 id="FlagSet.Output">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L304">Output</a>
+<h3 id="FlagSet.Output">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L304">Output</a>
     <a href="#FlagSet.Output">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Output() <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a></pre>
 
 Output returns the destination for usage and error messages. os.Stderr is
 returned if output was not set or was set to nil.
 
-<h3 id="FlagSet.Parse">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L916">Parse</a>
+<h3 id="FlagSet.Parse">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L916">Parse</a>
     <a href="#FlagSet.Parse">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Parse(arguments []<a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -705,13 +705,13 @@ the command name. Must be called after all flags in the FlagSet are defined and
 before flags are accessed by the program. The return value will be ErrHelp if
 -help or -h were set but not defined.
 
-<h3 id="FlagSet.Parsed">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L940">Parsed</a>
+<h3 id="FlagSet.Parsed">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L940">Parsed</a>
     <a href="#FlagSet.Parsed">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Parsed() <a href="/builtin/#bool">bool</a></pre>
 
 Parsed reports whether f.Parse has been called.
 
-<h3 id="FlagSet.PrintDefaults">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L454">PrintDefaults</a>
+<h3 id="FlagSet.PrintDefaults">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L454">PrintDefaults</a>
     <a href="#FlagSet.PrintDefaults">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) PrintDefaults()</pre>
 
@@ -719,20 +719,20 @@ PrintDefaults prints, to standard error unless configured otherwise, the default
 values of all defined command-line flags in the set. See the documentation for
 the global function PrintDefaults for more information.
 
-<h3 id="FlagSet.Set">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L367">Set</a>
+<h3 id="FlagSet.Set">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L367">Set</a>
     <a href="#FlagSet.Set">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Set(name, value <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 Set sets the value of the named flag.
 
-<h3 id="FlagSet.SetOutput">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L323">SetOutput</a>
+<h3 id="FlagSet.SetOutput">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L323">SetOutput</a>
     <a href="#FlagSet.SetOutput">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) SetOutput(output <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>)</pre>
 
 SetOutput sets the destination for usage and error messages. If output is nil,
 os.Stderr is used.
 
-<h3 id="FlagSet.String">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L714">String</a>
+<h3 id="FlagSet.String">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L714">String</a>
     <a href="#FlagSet.String">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) String(name <a href="/builtin/#string">string</a>, value <a href="/builtin/#string">string</a>, usage <a href="/builtin/#string">string</a>) *<a href="/builtin/#string">string</a></pre>
 
@@ -740,7 +740,7 @@ String defines a string flag with specified name, default value, and usage
 string. The return value is the address of a string variable that stores the
 value of the flag.
 
-<h3 id="FlagSet.StringVar">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L702">StringVar</a>
+<h3 id="FlagSet.StringVar">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L702">StringVar</a>
     <a href="#FlagSet.StringVar">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) StringVar(p *<a href="/builtin/#string">string</a>, name <a href="/builtin/#string">string</a>, value <a href="/builtin/#string">string</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -748,7 +748,7 @@ StringVar defines a string flag with specified name, default value, and usage
 string. The argument p points to a string variable in which to store the value
 of the flag.
 
-<h3 id="FlagSet.Uint">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L662">Uint</a>
+<h3 id="FlagSet.Uint">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L662">Uint</a>
     <a href="#FlagSet.Uint">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Uint(name <a href="/builtin/#string">string</a>, value <a href="/builtin/#uint">uint</a>, usage <a href="/builtin/#string">string</a>) *<a href="/builtin/#uint">uint</a></pre>
 
@@ -756,7 +756,7 @@ Uint defines a uint flag with specified name, default value, and usage string.
 The return value is the address of a uint variable that stores the value of the
 flag.
 
-<h3 id="FlagSet.Uint64">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L688">Uint64</a>
+<h3 id="FlagSet.Uint64">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L688">Uint64</a>
     <a href="#FlagSet.Uint64">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Uint64(name <a href="/builtin/#string">string</a>, value <a href="/builtin/#uint64">uint64</a>, usage <a href="/builtin/#string">string</a>) *<a href="/builtin/#uint64">uint64</a></pre>
 
@@ -764,7 +764,7 @@ Uint64 defines a uint64 flag with specified name, default value, and usage
 string. The return value is the address of a uint64 variable that stores the
 value of the flag.
 
-<h3 id="FlagSet.Uint64Var">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L676">Uint64Var</a>
+<h3 id="FlagSet.Uint64Var">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L676">Uint64Var</a>
     <a href="#FlagSet.Uint64Var">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Uint64Var(p *<a href="/builtin/#uint64">uint64</a>, name <a href="/builtin/#string">string</a>, value <a href="/builtin/#uint64">uint64</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -772,7 +772,7 @@ Uint64Var defines a uint64 flag with specified name, default value, and usage
 string. The argument p points to a uint64 variable in which to store the value
 of the flag.
 
-<h3 id="FlagSet.UintVar">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L650">UintVar</a>
+<h3 id="FlagSet.UintVar">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L650">UintVar</a>
     <a href="#FlagSet.UintVar">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) UintVar(p *<a href="/builtin/#uint">uint</a>, name <a href="/builtin/#string">string</a>, value <a href="/builtin/#uint">uint</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -780,7 +780,7 @@ UintVar defines a uint flag with specified name, default value, and usage
 string. The argument p points to a uint variable in which to store the value of
 the flag.
 
-<h3 id="FlagSet.Var">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L788">Var</a>
+<h3 id="FlagSet.Var">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L788">Var</a>
     <a href="#FlagSet.Var">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Var(value <a href="#Value">Value</a>, name <a href="/builtin/#string">string</a>, usage <a href="/builtin/#string">string</a>)</pre>
 
@@ -791,21 +791,21 @@ could create a flag that turns a comma-separated string into a slice of strings
 by giving the slice the methods of Value; in particular, Set would decompose the
 comma-separated string into the slice.
 
-<h3 id="FlagSet.Visit">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L343">Visit</a>
+<h3 id="FlagSet.Visit">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L343">Visit</a>
     <a href="#FlagSet.Visit">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) Visit(fn func(*<a href="#Flag">Flag</a>))</pre>
 
 Visit visits the flags in lexicographical order, calling fn for each. It visits
 only those flags that have been set.
 
-<h3 id="FlagSet.VisitAll">func (*FlagSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L329">VisitAll</a>
+<h3 id="FlagSet.VisitAll">func (*FlagSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L329">VisitAll</a>
     <a href="#FlagSet.VisitAll">¶</a></h3>
 <pre>func (f *<a href="#FlagSet">FlagSet</a>) VisitAll(fn func(*<a href="#Flag">Flag</a>))</pre>
 
 VisitAll visits the flags in lexicographical order, calling fn for each. It
 visits all flags, even those not set.
 
-<h2 id="Getter">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L244">Getter</a>
+<h2 id="Getter">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L244">Getter</a>
     <a href="#Getter">¶</a></h2>
 <pre>type Getter interface {
     <a href="#Value">Value</a>
@@ -817,7 +817,7 @@ wraps the Value interface, rather than being part of it, because it appeared
 after Go 1 and its compatibility rules. All Value types provided by this package
 satisfy the Getter interface.
 
-<h2 id="Value">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/flag/flag.go#L235">Value</a>
+<h2 id="Value">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/flag/flag.go#L235">Value</a>
     <a href="#Value">¶</a></h2>
 <pre>type Value interface {
     String() <a href="/builtin/#string">string</a>

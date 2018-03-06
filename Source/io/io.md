@@ -84,7 +84,7 @@ safe for parallel execution.
 - [WriteString](#exampleWriteString)
 
 ### Package files
- [io.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go) [multi.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/multi.go) [pipe.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/pipe.go)
+ [io.go](//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go) [multi.go](//github.com/golang/go/blob/release-branch.go1.10/src/io/multi.go) [pipe.go](//github.com/golang/go/blob/release-branch.go1.10/src/io/pipe.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -129,7 +129,7 @@ to return an explicit error.
 ErrUnexpectedEOF means that EOF was encountered in the middle of reading a
 fixed-size block or data structure.
 
-<h2 id="Copy">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L351">Copy</a>
+<h2 id="Copy">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L351">Copy</a>
     <a href="#Copy">¶</a></h2>
 <pre>func Copy(dst <a href="#Writer">Writer</a>, src <a href="#Reader">Reader</a>) (written <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -157,7 +157,7 @@ Example:
     // Output:
     // some io.Reader stream to be read
 
-<h2 id="CopyBuffer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L359">CopyBuffer</a>
+<h2 id="CopyBuffer">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L359">CopyBuffer</a>
     <a href="#CopyBuffer">¶</a></h2>
 <pre>func CopyBuffer(dst <a href="#Writer">Writer</a>, src <a href="#Reader">Reader</a>, buf []<a href="/builtin/#byte">byte</a>) (written <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -186,7 +186,7 @@ Example:
     // first reader
     // second reader
 
-<h2 id="CopyN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L327">CopyN</a>
+<h2 id="CopyN">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L327">CopyN</a>
     <a href="#CopyN">¶</a></h2>
 <pre>func CopyN(dst <a href="#Writer">Writer</a>, src <a href="#Reader">Reader</a>, n <a href="/builtin/#int64">int64</a>) (written <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -208,7 +208,7 @@ Example:
     // Output:
     // some
 
-<h2 id="ReadAtLeast">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L293">ReadAtLeast</a>
+<h2 id="ReadAtLeast">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L293">ReadAtLeast</a>
     <a href="#ReadAtLeast">¶</a></h2>
 <pre>func ReadAtLeast(r <a href="#Reader">Reader</a>, buf []<a href="/builtin/#byte">byte</a>, min <a href="/builtin/#int">int</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -248,7 +248,7 @@ Example:
     // error: short buffer
     // error: EOF
 
-<h2 id="ReadFull">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L316">ReadFull</a>
+<h2 id="ReadFull">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L316">ReadFull</a>
     <a href="#ReadFull">¶</a></h2>
 <pre>func ReadFull(r <a href="#Reader">Reader</a>, buf []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -279,7 +279,7 @@ Example:
     // some
     // error: unexpected EOF
 
-<h2 id="WriteString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L279">WriteString</a>
+<h2 id="WriteString">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L279">WriteString</a>
     <a href="#WriteString">¶</a></h2>
 <pre>func WriteString(w <a href="#Writer">Writer</a>, s <a href="/builtin/#string">string</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -294,7 +294,7 @@ Example:
 
     // Output: Hello World
 
-<h2 id="ByteReader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L229">ByteReader</a>
+<h2 id="ByteReader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L229">ByteReader</a>
     <a href="#ByteReader">¶</a></h2>
 <pre>type ByteReader interface {
     ReadByte() (<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)
@@ -306,7 +306,7 @@ ReadByte reads and returns the next byte from the input or any error
 encountered. If ReadByte returns an error, no input byte was consumed, and the
 returned byte value is undefined.
 
-<h2 id="ByteScanner">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L240">ByteScanner</a>
+<h2 id="ByteScanner">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L240">ByteScanner</a>
     <a href="#ByteScanner">¶</a></h2>
 <pre>type ByteScanner interface {
     <a href="#ByteReader">ByteReader</a>
@@ -320,7 +320,7 @@ UnreadByte causes the next call to ReadByte to return the same byte as the
 previous call to ReadByte. It may be an error to call UnreadByte twice without
 an intervening call to ReadByte.
 
-<h2 id="ByteWriter">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L246">ByteWriter</a>
+<h2 id="ByteWriter">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L246">ByteWriter</a>
     <a href="#ByteWriter">¶</a></h2>
 <pre>type ByteWriter interface {
     WriteByte(c <a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a>
@@ -328,7 +328,7 @@ an intervening call to ReadByte.
 
 ByteWriter is the interface that wraps the WriteByte method.
 
-<h2 id="Closer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L88">Closer</a>
+<h2 id="Closer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L88">Closer</a>
     <a href="#Closer">¶</a></h2>
 <pre>type Closer interface {
     Close() <a href="/builtin/#error">error</a>
@@ -339,7 +339,7 @@ Closer is the interface that wraps the basic Close method.
 The behavior of Close after the first call is undefined. Specific
 implementations may document their own behavior.
 
-<h2 id="LimitedReader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L424">LimitedReader</a>
+<h2 id="LimitedReader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L424">LimitedReader</a>
     <a href="#LimitedReader">¶</a></h2>
 <pre>type LimitedReader struct {
 <span id="LimitedReader.R"></span>    R <a href="#Reader">Reader</a> <span class="comment">// underlying reader</span>
@@ -350,12 +350,12 @@ A LimitedReader reads from R but limits the amount of data returned to just N
 bytes. Each call to Read updates N to reflect the new amount remaining. Read
 returns EOF when N <= 0 or when the underlying R returns EOF.
 
-<h3 id="LimitedReader.Read">func (*LimitedReader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L429">Read</a>
+<h3 id="LimitedReader.Read">func (*LimitedReader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L429">Read</a>
     <a href="#LimitedReader.Read">¶</a></h3>
 <pre>func (l *<a href="#LimitedReader">LimitedReader</a>) Read(p []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h2 id="PipeReader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/pipe.go#L107">PipeReader</a>
+<h2 id="PipeReader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/pipe.go#L107">PipeReader</a>
     <a href="#PipeReader">¶</a></h2>
 <pre>type PipeReader struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -363,7 +363,7 @@ returns EOF when N <= 0 or when the underlying R returns EOF.
 
 A PipeReader is the read half of a pipe.
 
-<h3 id="Pipe">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/pipe.go#L176">Pipe</a>
+<h3 id="Pipe">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/pipe.go#L176">Pipe</a>
     <a href="#Pipe">¶</a></h3>
 <pre>func Pipe() (*<a href="#PipeReader">PipeReader</a>, *<a href="#PipeWriter">PipeWriter</a>)</pre>
 
@@ -397,21 +397,21 @@ Example:
     // Output:
     // some text to be read
 
-<h3 id="PipeReader.Close">func (*PipeReader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/pipe.go#L122">Close</a>
+<h3 id="PipeReader.Close">func (*PipeReader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/pipe.go#L122">Close</a>
     <a href="#PipeReader.Close">¶</a></h3>
 <pre>func (r *<a href="#PipeReader">PipeReader</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close closes the reader; subsequent writes to the write half of the pipe will
 return the error ErrClosedPipe.
 
-<h3 id="PipeReader.CloseWithError">func (*PipeReader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/pipe.go#L128">CloseWithError</a>
+<h3 id="PipeReader.CloseWithError">func (*PipeReader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/pipe.go#L128">CloseWithError</a>
     <a href="#PipeReader.CloseWithError">¶</a></h3>
 <pre>func (r *<a href="#PipeReader">PipeReader</a>) CloseWithError(err <a href="/builtin/#error">error</a>) <a href="/builtin/#error">error</a></pre>
 
 CloseWithError closes the reader; subsequent writes to the write half of the
 pipe will return the error err.
 
-<h3 id="PipeReader.Read">func (*PipeReader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/pipe.go#L116">Read</a>
+<h3 id="PipeReader.Read">func (*PipeReader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/pipe.go#L116">Read</a>
     <a href="#PipeReader.Read">¶</a></h3>
 <pre>func (r *<a href="#PipeReader">PipeReader</a>) Read(data []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -419,7 +419,7 @@ Read implements the standard Read interface: it reads data from the pipe,
 blocking until a writer arrives or the write end is closed. If the write end is
 closed with an error, that error is returned as err; otherwise err is EOF.
 
-<h2 id="PipeWriter">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/pipe.go#L133">PipeWriter</a>
+<h2 id="PipeWriter">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/pipe.go#L133">PipeWriter</a>
     <a href="#PipeWriter">¶</a></h2>
 <pre>type PipeWriter struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -427,14 +427,14 @@ closed with an error, that error is returned as err; otherwise err is EOF.
 
 A PipeWriter is the write half of a pipe.
 
-<h3 id="PipeWriter.Close">func (*PipeWriter) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/pipe.go#L148">Close</a>
+<h3 id="PipeWriter.Close">func (*PipeWriter) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/pipe.go#L148">Close</a>
     <a href="#PipeWriter.Close">¶</a></h3>
 <pre>func (w *<a href="#PipeWriter">PipeWriter</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close closes the writer; subsequent reads from the read half of the pipe will
 return no bytes and EOF.
 
-<h3 id="PipeWriter.CloseWithError">func (*PipeWriter) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/pipe.go#L157">CloseWithError</a>
+<h3 id="PipeWriter.CloseWithError">func (*PipeWriter) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/pipe.go#L157">CloseWithError</a>
     <a href="#PipeWriter.CloseWithError">¶</a></h3>
 <pre>func (w *<a href="#PipeWriter">PipeWriter</a>) CloseWithError(err <a href="/builtin/#error">error</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -443,7 +443,7 @@ pipe will return no bytes and the error err, or EOF if err is nil.
 
 CloseWithError always returns nil.
 
-<h3 id="PipeWriter.Write">func (*PipeWriter) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/pipe.go#L142">Write</a>
+<h3 id="PipeWriter.Write">func (*PipeWriter) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/pipe.go#L142">Write</a>
     <a href="#PipeWriter.Write">¶</a></h3>
 <pre>func (w *<a href="#PipeWriter">PipeWriter</a>) Write(data []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -452,7 +452,7 @@ blocking until one or more readers have consumed all the data or the read end is
 closed. If the read end is closed with an error, that err is returned as err;
 otherwise err is ErrClosedPipe.
 
-<h2 id="ReadCloser">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L116">ReadCloser</a>
+<h2 id="ReadCloser">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L116">ReadCloser</a>
     <a href="#ReadCloser">¶</a></h2>
 <pre>type ReadCloser interface {
     <a href="#Reader">Reader</a>
@@ -461,7 +461,7 @@ otherwise err is ErrClosedPipe.
 
 ReadCloser is the interface that groups the basic Read and Close methods.
 
-<h2 id="ReadSeeker">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L135">ReadSeeker</a>
+<h2 id="ReadSeeker">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L135">ReadSeeker</a>
     <a href="#ReadSeeker">¶</a></h2>
 <pre>type ReadSeeker interface {
     <a href="#Reader">Reader</a>
@@ -470,7 +470,7 @@ ReadCloser is the interface that groups the basic Read and Close methods.
 
 ReadSeeker is the interface that groups the basic Read and Seek methods.
 
-<h2 id="ReadWriteCloser">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L128">ReadWriteCloser</a>
+<h2 id="ReadWriteCloser">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L128">ReadWriteCloser</a>
     <a href="#ReadWriteCloser">¶</a></h2>
 <pre>type ReadWriteCloser interface {
     <a href="#Reader">Reader</a>
@@ -481,7 +481,7 @@ ReadSeeker is the interface that groups the basic Read and Seek methods.
 ReadWriteCloser is the interface that groups the basic Read, Write and Close
 methods.
 
-<h2 id="ReadWriteSeeker">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L147">ReadWriteSeeker</a>
+<h2 id="ReadWriteSeeker">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L147">ReadWriteSeeker</a>
     <a href="#ReadWriteSeeker">¶</a></h2>
 <pre>type ReadWriteSeeker interface {
     <a href="#Reader">Reader</a>
@@ -492,7 +492,7 @@ methods.
 ReadWriteSeeker is the interface that groups the basic Read, Write and Seek
 methods.
 
-<h2 id="ReadWriter">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L110">ReadWriter</a>
+<h2 id="ReadWriter">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L110">ReadWriter</a>
     <a href="#ReadWriter">¶</a></h2>
 <pre>type ReadWriter interface {
     <a href="#Reader">Reader</a>
@@ -501,7 +501,7 @@ methods.
 
 ReadWriter is the interface that groups the basic Read and Write methods.
 
-<h2 id="Reader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L67">Reader</a>
+<h2 id="Reader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L67">Reader</a>
     <a href="#Reader">¶</a></h2>
 <pre>type Reader interface {
     Read(p []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)
@@ -532,7 +532,7 @@ as indicating that nothing happened; in particular it does not indicate EOF.
 
 Implementations must not retain p.
 
-<h3 id="LimitReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L418">LimitReader</a>
+<h3 id="LimitReader">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L418">LimitReader</a>
     <a href="#LimitReader">¶</a></h3>
 <pre>func LimitReader(r <a href="#Reader">Reader</a>, n <a href="/builtin/#int64">int64</a>) <a href="#Reader">Reader</a></pre>
 
@@ -552,7 +552,7 @@ Example:
     // Output:
     // some
 
-<h3 id="MultiReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/multi.go#L38">MultiReader</a>
+<h3 id="MultiReader">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/multi.go#L38">MultiReader</a>
     <a href="#MultiReader">¶</a></h3>
 <pre>func MultiReader(readers ...<a href="#Reader">Reader</a>) <a href="#Reader">Reader</a></pre>
 
@@ -576,7 +576,7 @@ Example:
     // Output:
     // first reader second reader third reader
 
-<h3 id="TeeReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L513">TeeReader</a>
+<h3 id="TeeReader">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L513">TeeReader</a>
     <a href="#TeeReader">¶</a></h3>
 <pre>func TeeReader(r <a href="#Reader">Reader</a>, w <a href="#Writer">Writer</a>) <a href="#Reader">Reader</a></pre>
 
@@ -608,7 +608,7 @@ Example:
     // some io.Reader stream to be read
     // some io.Reader stream to be read
 
-<h2 id="ReaderAt">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L201">ReaderAt</a>
+<h2 id="ReaderAt">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L201">ReaderAt</a>
     <a href="#ReaderAt">¶</a></h2>
 <pre>type ReaderAt interface {
     ReadAt(p []<a href="/builtin/#byte">byte</a>, off <a href="/builtin/#int64">int64</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)
@@ -638,7 +638,7 @@ Clients of ReadAt can execute parallel ReadAt calls on the same input source.
 
 Implementations must not retain p.
 
-<h2 id="ReaderFrom">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L160">ReaderFrom</a>
+<h2 id="ReaderFrom">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L160">ReaderFrom</a>
     <a href="#ReaderFrom">¶</a></h2>
 <pre>type ReaderFrom interface {
     ReadFrom(r <a href="#Reader">Reader</a>) (n <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)
@@ -652,7 +652,7 @@ returned.
 
 The Copy function uses ReaderFrom if available.
 
-<h2 id="RuneReader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L255">RuneReader</a>
+<h2 id="RuneReader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L255">RuneReader</a>
     <a href="#RuneReader">¶</a></h2>
 <pre>type RuneReader interface {
     ReadRune() (r <a href="/builtin/#rune">rune</a>, size <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)
@@ -663,7 +663,7 @@ RuneReader is the interface that wraps the ReadRune method.
 ReadRune reads a single UTF-8 encoded Unicode character and returns the rune and
 its size in bytes. If no character is available, err will be set.
 
-<h2 id="RuneScanner">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L266">RuneScanner</a>
+<h2 id="RuneScanner">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L266">RuneScanner</a>
     <a href="#RuneScanner">¶</a></h2>
 <pre>type RuneScanner interface {
     <a href="#RuneReader">RuneReader</a>
@@ -677,7 +677,7 @@ UnreadRune causes the next call to ReadRune to return the same rune as the
 previous call to ReadRune. It may be an error to call UnreadRune twice without
 an intervening call to ReadRune.
 
-<h2 id="SectionReader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L449">SectionReader</a>
+<h2 id="SectionReader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L449">SectionReader</a>
     <a href="#SectionReader">¶</a></h2>
 <pre>type SectionReader struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -699,19 +699,19 @@ Example:
     // Output:
     // io.Reader stream
 
-<h3 id="NewSectionReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L443">NewSectionReader</a>
+<h3 id="NewSectionReader">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L443">NewSectionReader</a>
     <a href="#NewSectionReader">¶</a></h3>
 <pre>func NewSectionReader(r <a href="#ReaderAt">ReaderAt</a>, off <a href="/builtin/#int64">int64</a>, n <a href="/builtin/#int64">int64</a>) *<a href="#SectionReader">SectionReader</a></pre>
 
 NewSectionReader returns a SectionReader that reads from r starting at offset
 off and stops with EOF after n bytes.
 
-<h3 id="SectionReader.Read">func (*SectionReader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L456">Read</a>
+<h3 id="SectionReader.Read">func (*SectionReader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L456">Read</a>
     <a href="#SectionReader.Read">¶</a></h3>
 <pre>func (s *<a href="#SectionReader">SectionReader</a>) Read(p []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h3 id="SectionReader.ReadAt">func (*SectionReader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L489">ReadAt</a>
+<h3 id="SectionReader.ReadAt">func (*SectionReader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L489">ReadAt</a>
     <a href="#SectionReader.ReadAt">¶</a></h3>
 <pre>func (s *<a href="#SectionReader">SectionReader</a>) ReadAt(p []<a href="/builtin/#byte">byte</a>, off <a href="/builtin/#int64">int64</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -732,7 +732,7 @@ Example:
     // Output:
     // stream
 
-<h3 id="SectionReader.Seek">func (*SectionReader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L471">Seek</a>
+<h3 id="SectionReader.Seek">func (*SectionReader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L471">Seek</a>
     <a href="#SectionReader.Seek">¶</a></h3>
 <pre>func (s *<a href="#SectionReader">SectionReader</a>) Seek(offset <a href="/builtin/#int64">int64</a>, whence <a href="/builtin/#int">int</a>) (<a href="/builtin/#int64">int64</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -757,13 +757,13 @@ Example:
     // Output:
     // stream
 
-<h3 id="SectionReader.Size">func (*SectionReader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L506">Size</a>
+<h3 id="SectionReader.Size">func (*SectionReader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L506">Size</a>
     <a href="#SectionReader.Size">¶</a></h3>
 <pre>func (s *<a href="#SectionReader">SectionReader</a>) Size() <a href="/builtin/#int64">int64</a></pre>
 
 Size returns the size of the section in bytes.
 
-<h2 id="Seeker">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L105">Seeker</a>
+<h2 id="Seeker">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L105">Seeker</a>
     <a href="#Seeker">¶</a></h2>
 <pre>type Seeker interface {
     Seek(offset <a href="/builtin/#int64">int64</a>, whence <a href="/builtin/#int">int</a>) (<a href="/builtin/#int64">int64</a>, <a href="/builtin/#error">error</a>)
@@ -780,7 +780,7 @@ Seeking to an offset before the start of the file is an error. Seeking to any
 positive offset is legal, but the behavior of subsequent I/O operations on the
 underlying object is implementation-dependent.
 
-<h2 id="WriteCloser">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L122">WriteCloser</a>
+<h2 id="WriteCloser">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L122">WriteCloser</a>
     <a href="#WriteCloser">¶</a></h2>
 <pre>type WriteCloser interface {
     <a href="#Writer">Writer</a>
@@ -789,7 +789,7 @@ underlying object is implementation-dependent.
 
 WriteCloser is the interface that groups the basic Write and Close methods.
 
-<h2 id="WriteSeeker">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L141">WriteSeeker</a>
+<h2 id="WriteSeeker">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L141">WriteSeeker</a>
     <a href="#WriteSeeker">¶</a></h2>
 <pre>type WriteSeeker interface {
     <a href="#Writer">Writer</a>
@@ -798,7 +798,7 @@ WriteCloser is the interface that groups the basic Write and Close methods.
 
 WriteSeeker is the interface that groups the basic Write and Seek methods.
 
-<h2 id="Writer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L80">Writer</a>
+<h2 id="Writer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L80">Writer</a>
     <a href="#Writer">¶</a></h2>
 <pre>type Writer interface {
     Write(p []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)
@@ -813,7 +813,7 @@ n < len(p). Write must not modify the slice data, even temporarily.
 
 Implementations must not retain p.
 
-<h3 id="MultiWriter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/multi.go#L92">MultiWriter</a>
+<h3 id="MultiWriter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/multi.go#L92">MultiWriter</a>
     <a href="#MultiWriter">¶</a></h3>
 <pre>func MultiWriter(writers ...<a href="#Writer">Writer</a>) <a href="#Writer">Writer</a></pre>
 
@@ -843,7 +843,7 @@ Example:
     // some io.Reader stream to be read
     // some io.Reader stream to be read
 
-<h2 id="WriterAt">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L220">WriterAt</a>
+<h2 id="WriterAt">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L220">WriterAt</a>
     <a href="#WriterAt">¶</a></h2>
 <pre>type WriterAt interface {
     WriteAt(p []<a href="/builtin/#byte">byte</a>, off <a href="/builtin/#int64">int64</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)
@@ -864,7 +864,7 @@ the ranges do not overlap.
 
 Implementations must not retain p.
 
-<h2 id="WriterTo">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/io.go#L171">WriterTo</a>
+<h2 id="WriterTo">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/io.go#L171">WriterTo</a>
     <a href="#WriterTo">¶</a></h2>
 <pre>type WriterTo interface {
     WriteTo(w <a href="#Writer">Writer</a>) (n <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)

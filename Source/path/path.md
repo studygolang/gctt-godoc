@@ -35,7 +35,7 @@ path/filepath package.
 - [Split](#exampleSplit)
 
 ### Package files
- [match.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/match.go) [path.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/path.go)
+ [match.go](//github.com/golang/go/blob/release-branch.go1.10/src/path/match.go) [path.go](//github.com/golang/go/blob/release-branch.go1.10/src/path/path.go)
 
 <h2 id="pkg-variables">Variables</h2>
 
@@ -43,7 +43,7 @@ path/filepath package.
 
 ErrBadPattern indicates a globbing pattern was malformed.
 
-<h2 id="Base">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/path.go#L171">Base</a>
+<h2 id="Base">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/path.go#L171">Base</a>
     <a href="#Base">¶</a></h2>
 <pre>func Base(path <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -62,7 +62,7 @@ Example:
     // /
     // .
 
-<h2 id="Clean">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/path.go#L64">Clean</a>
+<h2 id="Clean">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/path.go#L64">Clean</a>
     <a href="#Clean">¶</a></h2>
 <pre>func Clean(path <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -110,7 +110,7 @@ Example:
     // Clean("/../a/b/../././/c") = "/a/c"
     // Clean("") = "."
 
-<h2 id="Dir">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/path.go#L202">Dir</a>
+<h2 id="Dir">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/path.go#L202">Dir</a>
     <a href="#Dir">¶</a></h2>
 <pre>func Dir(path <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -137,7 +137,7 @@ Example:
     // /
     // .
 
-<h2 id="Ext">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/path.go#L158">Ext</a>
+<h2 id="Ext">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/path.go#L158">Ext</a>
     <a href="#Ext">¶</a></h2>
 <pre>func Ext(path <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -156,7 +156,7 @@ Example:
     //
     //
 
-<h2 id="IsAbs">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/path.go#L191">IsAbs</a>
+<h2 id="IsAbs">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/path.go#L191">IsAbs</a>
     <a href="#IsAbs">¶</a></h2>
 <pre>func IsAbs(path <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -168,7 +168,7 @@ Example:
     fmt.Println(path.IsAbs("/dev/null"))
     // Output: true
 
-<h2 id="Join">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/path.go#L145">Join</a>
+<h2 id="Join">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/path.go#L145">Join</a>
     <a href="#Join">¶</a></h2>
 <pre>func Join(elem ...<a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -193,7 +193,7 @@ Example:
     // a
     // a
 
-<h2 id="Match">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/match.go#L28">Match</a>
+<h2 id="Match">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/match.go#L28">Match</a>
     <a href="#Match">¶</a></h2>
 <pre>func Match(pattern, name <a href="/builtin/#string">string</a>) (matched <a href="/builtin/#bool">bool</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -218,7 +218,7 @@ syntax is:
 Match requires pattern to match all of name, not just a substring. The only
 possible returned error is ErrBadPattern, when pattern is malformed.
 
-<h2 id="Split">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/path/path.go#L137">Split</a>
+<h2 id="Split">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/path/path.go#L137">Split</a>
     <a href="#Split">¶</a></h2>
 <pre>func Split(path <a href="/builtin/#string">string</a>) (dir, file <a href="/builtin/#string">string</a>)</pre>
 

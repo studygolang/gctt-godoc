@@ -156,7 +156,7 @@ Example:
 - [Package (Is)](#example_is)
 
 ### Package files
- [casetables.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/casetables.go) [digit.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/digit.go) [graphic.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/graphic.go) [letter.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go) [tables.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/tables.go)
+ [casetables.go](//github.com/golang/go/blob/release-branch.go1.10/src/unicode/casetables.go) [digit.go](//github.com/golang/go/blob/release-branch.go1.10/src/unicode/digit.go) [graphic.go](//github.com/golang/go/blob/release-branch.go1.10/src/unicode/graphic.go) [letter.go](//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go) [tables.go](//github.com/golang/go/blob/release-branch.go1.10/src/unicode/tables.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -696,19 +696,19 @@ Properties is the set of Unicode property tables.
 
 Scripts is the set of Unicode script tables.
 
-<h2 id="In">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/graphic.go#L59">In</a>
+<h2 id="In">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/graphic.go#L59">In</a>
     <a href="#In">¶</a></h2>
 <pre>func In(r <a href="/builtin/#rune">rune</a>, ranges ...*<a href="#RangeTable">RangeTable</a>) <a href="/builtin/#bool">bool</a></pre>
 
 In reports whether the rune is a member of one of the ranges.
 
-<h2 id="Is">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L148">Is</a>
+<h2 id="Is">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L148">Is</a>
     <a href="#Is">¶</a></h2>
 <pre>func Is(rangeTab *<a href="#RangeTable">RangeTable</a>, r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Is reports whether the rune is in the specified table of ranges.
 
-<h2 id="IsControl">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/graphic.go#L71">IsControl</a>
+<h2 id="IsControl">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/graphic.go#L71">IsControl</a>
     <a href="#IsControl">¶</a></h2>
 <pre>func IsControl(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -716,13 +716,13 @@ IsControl reports whether the rune is a control character. The C (Other) Unicode
 category includes more code points such as surrogates; use Is(C, r) to test for
 them.
 
-<h2 id="IsDigit">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/digit.go#L1">IsDigit</a>
+<h2 id="IsDigit">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/digit.go#L1">IsDigit</a>
     <a href="#IsDigit">¶</a></h2>
 <pre>func IsDigit(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IsDigit reports whether the rune is a decimal digit.
 
-<h2 id="IsGraphic">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/graphic.go#L26">IsGraphic</a>
+<h2 id="IsGraphic">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/graphic.go#L26">IsGraphic</a>
     <a href="#IsGraphic">¶</a></h2>
 <pre>func IsGraphic(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -730,38 +730,38 @@ IsGraphic reports whether the rune is defined as a Graphic by Unicode. Such
 characters include letters, marks, numbers, punctuation, symbols, and spaces,
 from categories L, M, N, P, S, Zs.
 
-<h2 id="IsLetter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/graphic.go#L80">IsLetter</a>
+<h2 id="IsLetter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/graphic.go#L80">IsLetter</a>
     <a href="#IsLetter">¶</a></h2>
 <pre>func IsLetter(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IsLetter reports whether the rune is a letter (category L).
 
-<h2 id="IsLower">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L182">IsLower</a>
+<h2 id="IsLower">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L182">IsLower</a>
     <a href="#IsLower">¶</a></h2>
 <pre>func IsLower(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IsLower reports whether the rune is a lower case letter.
 
-<h2 id="IsMark">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/graphic.go#L88">IsMark</a>
+<h2 id="IsMark">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/graphic.go#L88">IsMark</a>
     <a href="#IsMark">¶</a></h2>
 <pre>func IsMark(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IsMark reports whether the rune is a mark character (category M).
 
-<h2 id="IsNumber">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/graphic.go#L94">IsNumber</a>
+<h2 id="IsNumber">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/graphic.go#L94">IsNumber</a>
     <a href="#IsNumber">¶</a></h2>
 <pre>func IsNumber(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IsNumber reports whether the rune is a number (category N).
 
-<h2 id="IsOneOf">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/graphic.go#L49">IsOneOf</a>
+<h2 id="IsOneOf">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/graphic.go#L49">IsOneOf</a>
     <a href="#IsOneOf">¶</a></h2>
 <pre>func IsOneOf(ranges []*<a href="#RangeTable">RangeTable</a>, r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IsOneOf reports whether the rune is a member of one of the ranges. The function
 "In" provides a nicer signature and should be used in preference to IsOneOf.
 
-<h2 id="IsPrint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/graphic.go#L40">IsPrint</a>
+<h2 id="IsPrint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/graphic.go#L40">IsPrint</a>
     <a href="#IsPrint">¶</a></h2>
 <pre>func IsPrint(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -771,14 +771,14 @@ character, from categories L, M, N, P, S and the ASCII space character. This
 categorization is the same as IsGraphic except that the only spacing character
 is ASCII space, U+0020.
 
-<h2 id="IsPunct">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/graphic.go#L103">IsPunct</a>
+<h2 id="IsPunct">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/graphic.go#L103">IsPunct</a>
     <a href="#IsPunct">¶</a></h2>
 <pre>func IsPunct(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IsPunct reports whether the rune is a Unicode punctuation character (category
 P).
 
-<h2 id="IsSpace">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/graphic.go#L116">IsSpace</a>
+<h2 id="IsSpace">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/graphic.go#L116">IsSpace</a>
     <a href="#IsSpace">¶</a></h2>
 <pre>func IsSpace(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -790,25 +790,25 @@ White Space property; in the Latin-1 space this is
 Other definitions of spacing characters are set by category Z and property
 Pattern_White_Space.
 
-<h2 id="IsSymbol">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/graphic.go#L129">IsSymbol</a>
+<h2 id="IsSymbol">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/graphic.go#L129">IsSymbol</a>
     <a href="#IsSymbol">¶</a></h2>
 <pre>func IsSymbol(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IsSymbol reports whether the rune is a symbolic character.
 
-<h2 id="IsTitle">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L191">IsTitle</a>
+<h2 id="IsTitle">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L191">IsTitle</a>
     <a href="#IsTitle">¶</a></h2>
 <pre>func IsTitle(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IsTitle reports whether the rune is a title case letter.
 
-<h2 id="IsUpper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L173">IsUpper</a>
+<h2 id="IsUpper">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L173">IsUpper</a>
     <a href="#IsUpper">¶</a></h2>
 <pre>func IsUpper(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IsUpper reports whether the rune is an upper case letter.
 
-<h2 id="SimpleFold">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L327">SimpleFold</a>
+<h2 id="SimpleFold">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L327">SimpleFold</a>
     <a href="#SimpleFold">¶</a></h2>
 <pre>func SimpleFold(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#rune">rune</a></pre>
 
@@ -849,7 +849,7 @@ Example:
     // U+004B 'K'
     // U+0031 '1'
 
-<h2 id="To">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L236">To</a>
+<h2 id="To">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L236">To</a>
     <a href="#To">¶</a></h2>
 <pre>func To(_case <a href="/builtin/#int">int</a>, r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#rune">rune</a></pre>
 
@@ -876,7 +876,7 @@ Example:
     // U+0067 'g'
     // U+0047 'G'
 
-<h2 id="ToLower">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L252">ToLower</a>
+<h2 id="ToLower">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L252">ToLower</a>
     <a href="#ToLower">¶</a></h2>
 <pre>func ToLower(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#rune">rune</a></pre>
 
@@ -891,7 +891,7 @@ Example:
     // Output:
     // U+0067 'g'
 
-<h2 id="ToTitle">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L263">ToTitle</a>
+<h2 id="ToTitle">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L263">ToTitle</a>
     <a href="#ToTitle">¶</a></h2>
 <pre>func ToTitle(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#rune">rune</a></pre>
 
@@ -906,7 +906,7 @@ Example:
     // Output:
     // U+0047 'G'
 
-<h2 id="ToUpper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L241">ToUpper</a>
+<h2 id="ToUpper">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L241">ToUpper</a>
     <a href="#ToUpper">¶</a></h2>
 <pre>func ToUpper(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#rune">rune</a></pre>
 
@@ -921,7 +921,7 @@ Example:
     // Output:
     // U+0047 'G'
 
-<h2 id="CaseRange">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L47">CaseRange</a>
+<h2 id="CaseRange">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L47">CaseRange</a>
     <a href="#CaseRange">¶</a></h2>
 <pre>type CaseRange struct {
 <span id="CaseRange.Lo"></span>    Lo    <a href="/builtin/#uint32">uint32</a>
@@ -941,7 +941,7 @@ It appears with a fixed Delta of
 
 The constant UpperLower has an otherwise impossible delta value.
 
-<h2 id="Range16">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L22">Range16</a>
+<h2 id="Range16">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L22">Range16</a>
     <a href="#Range16">¶</a></h2>
 <pre>type Range16 struct {
 <span id="Range16.Lo"></span>    Lo     <a href="/builtin/#uint16">uint16</a>
@@ -952,7 +952,7 @@ The constant UpperLower has an otherwise impossible delta value.
 Range16 represents of a range of 16-bit Unicode code points. The range runs from
 Lo to Hi inclusive and has the specified stride.
 
-<h2 id="Range32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L31">Range32</a>
+<h2 id="Range32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L31">Range32</a>
     <a href="#Range32">¶</a></h2>
 <pre>type Range32 struct {
 <span id="Range32.Lo"></span>    Lo     <a href="/builtin/#uint32">uint32</a>
@@ -964,7 +964,7 @@ Range32 represents of a range of Unicode code points and is used when one or
 more of the values will not fit in 16 bits. The range runs from Lo to Hi
 inclusive and has the specified stride. Lo and Hi must always be >= 1<<16.
 
-<h2 id="RangeTable">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L14">RangeTable</a>
+<h2 id="RangeTable">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L14">RangeTable</a>
     <a href="#RangeTable">¶</a></h2>
 <pre>type RangeTable struct {
 <span id="RangeTable.R16"></span>    R16         []<a href="#Range16">Range16</a>
@@ -978,7 +978,7 @@ slice of 16-bit ranges and a slice of 32-bit ranges. The two slices must be in
 sorted order and non-overlapping. Also, R32 should contain only values >=
 0x10000 (1<<16).
 
-<h2 id="SpecialCase">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L55">SpecialCase</a>
+<h2 id="SpecialCase">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L55">SpecialCase</a>
     <a href="#SpecialCase">¶</a></h2>
 <pre>type SpecialCase []<a href="#CaseRange">CaseRange</a></pre>
 
@@ -1014,19 +1014,19 @@ Example:
     // U+0130 'İ'
     // U+0130 'İ'
 
-<h3 id="SpecialCase.ToLower">func (SpecialCase) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L292">ToLower</a>
+<h3 id="SpecialCase.ToLower">func (SpecialCase) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L292">ToLower</a>
     <a href="#SpecialCase.ToLower">¶</a></h3>
 <pre>func (special <a href="#SpecialCase">SpecialCase</a>) ToLower(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#rune">rune</a></pre>
 
 ToLower maps the rune to lower case giving priority to the special mapping.
 
-<h3 id="SpecialCase.ToTitle">func (SpecialCase) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L283">ToTitle</a>
+<h3 id="SpecialCase.ToTitle">func (SpecialCase) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L283">ToTitle</a>
     <a href="#SpecialCase.ToTitle">¶</a></h3>
 <pre>func (special <a href="#SpecialCase">SpecialCase</a>) ToTitle(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#rune">rune</a></pre>
 
 ToTitle maps the rune to title case giving priority to the special mapping.
 
-<h3 id="SpecialCase.ToUpper">func (SpecialCase) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L274">ToUpper</a>
+<h3 id="SpecialCase.ToUpper">func (SpecialCase) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L274">ToUpper</a>
     <a href="#SpecialCase.ToUpper">¶</a></h3>
 <pre>func (special <a href="#SpecialCase">SpecialCase</a>) ToUpper(r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#rune">rune</a></pre>
 
@@ -1034,7 +1034,7 @@ ToUpper maps the rune to upper case giving priority to the special mapping.
 
 <h2 id="pkg-note-BUG">Bugs</h2>
 
-- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/unicode/letter.go#L57)  There is no mechanism for full case folding, that is, for characters that
+- [☞](//github.com/golang/go/blob/release-branch.go1.10/src/unicode/letter.go#L57)  There is no mechanism for full case folding, that is, for characters that
   involve multiple runes in the input or output.
 
 ## Subdirectories

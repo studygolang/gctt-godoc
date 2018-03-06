@@ -40,9 +40,9 @@ packages provide more functionality. See:
 - [Dial](#exampleDial)
 
 ### Package files
- [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/doc.go) [syslog.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go) [syslog_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog_unix.go)
+ [doc.go](//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/doc.go) [syslog.go](//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go) [syslog_unix.go](//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog_unix.go)
 
-<h2 id="NewLogger">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L299">NewLogger</a>
+<h2 id="NewLogger">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L299">NewLogger</a>
     <a href="#NewLogger">¶</a></h2>
 <pre>func NewLogger(p <a href="#Priority">Priority</a>, logFlag <a href="/builtin/#int">int</a>) (*<a href="/log/">log</a>.<a href="/log/#Logger">Logger</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -51,7 +51,7 @@ with the specified priority, a combination of the syslog facility and severity.
 The logFlag argument is the flag set passed through to log.New to create the
 Logger.
 
-<h2 id="Priority">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L14">Priority</a>
+<h2 id="Priority">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L14">Priority</a>
     <a href="#Priority">¶</a></h2>
 <pre>type Priority <a href="/builtin/#int">int</a></pre>
 
@@ -102,7 +102,7 @@ default severity is LOG_EMERG; the default facility is LOG_KERN.
 )</pre>
 
 
-<h2 id="Writer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L66">Writer</a>
+<h2 id="Writer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L66">Writer</a>
     <a href="#Writer">¶</a></h2>
 <pre>type Writer struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -110,7 +110,7 @@ default severity is LOG_EMERG; the default facility is LOG_KERN.
 
 A Writer is a connection to a syslog server.
 
-<h3 id="Dial">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L108">Dial</a>
+<h3 id="Dial">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L108">Dial</a>
     <a href="#Dial">¶</a></h3>
 <pre>func Dial(network, raddr <a href="/builtin/#string">string</a>, priority <a href="#Priority">Priority</a>, tag <a href="/builtin/#string">string</a>) (*<a href="#Writer">Writer</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -132,7 +132,7 @@ Example:
     fmt.Fprintf(sysLog, "This is a daemon warning with demotag.")
     sysLog.Emerg("And this is a daemon emergency with demotag.")
 
-<h3 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L97">New</a>
+<h3 id="New">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L97">New</a>
     <a href="#New">¶</a></h3>
 <pre>func New(priority <a href="#Priority">Priority</a>, tag <a href="/builtin/#string">string</a>) (*<a href="#Writer">Writer</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -141,66 +141,66 @@ returned writer sends a log message with the given priority (a combination of
 the syslog facility and severity) and prefix tag. If tag is empty, the
 os.Args[0] is used.
 
-<h3 id="Writer.Alert">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L190">Alert</a>
+<h3 id="Writer.Alert">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L190">Alert</a>
     <a href="#Writer.Alert">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Alert(m <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 Alert logs a message with severity LOG_ALERT, ignoring the severity passed to
 New.
 
-<h3 id="Writer.Close">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L169">Close</a>
+<h3 id="Writer.Close">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L169">Close</a>
     <a href="#Writer.Close">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close closes a connection to the syslog daemon.
 
-<h3 id="Writer.Crit">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L197">Crit</a>
+<h3 id="Writer.Crit">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L197">Crit</a>
     <a href="#Writer.Crit">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Crit(m <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 Crit logs a message with severity LOG_CRIT, ignoring the severity passed to New.
 
-<h3 id="Writer.Debug">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L232">Debug</a>
+<h3 id="Writer.Debug">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L232">Debug</a>
     <a href="#Writer.Debug">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Debug(m <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 Debug logs a message with severity LOG_DEBUG, ignoring the severity passed to
 New.
 
-<h3 id="Writer.Emerg">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L183">Emerg</a>
+<h3 id="Writer.Emerg">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L183">Emerg</a>
     <a href="#Writer.Emerg">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Emerg(m <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 Emerg logs a message with severity LOG_EMERG, ignoring the severity passed to
 New.
 
-<h3 id="Writer.Err">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L204">Err</a>
+<h3 id="Writer.Err">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L204">Err</a>
     <a href="#Writer.Err">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Err(m <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 Err logs a message with severity LOG_ERR, ignoring the severity passed to New.
 
-<h3 id="Writer.Info">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L225">Info</a>
+<h3 id="Writer.Info">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L225">Info</a>
     <a href="#Writer.Info">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Info(m <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 Info logs a message with severity LOG_INFO, ignoring the severity passed to New.
 
-<h3 id="Writer.Notice">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L218">Notice</a>
+<h3 id="Writer.Notice">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L218">Notice</a>
     <a href="#Writer.Notice">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Notice(m <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 Notice logs a message with severity LOG_NOTICE, ignoring the severity passed to
 New.
 
-<h3 id="Writer.Warning">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L211">Warning</a>
+<h3 id="Writer.Warning">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L211">Warning</a>
     <a href="#Writer.Warning">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Warning(m <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 Warning logs a message with severity LOG_WARNING, ignoring the severity passed
 to New.
 
-<h3 id="Writer.Write">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/syslog.go#L164">Write</a>
+<h3 id="Writer.Write">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/syslog.go#L164">Write</a>
     <a href="#Writer.Write">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Write(b []<a href="/builtin/#byte">byte</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -208,10 +208,10 @@ Write sends a log message to the syslog daemon.
 
 <h2 id="pkg-note-BUG">Bugs</h2>
 
-- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/doc.go#L9)  This package is not implemented on Windows. As the syslog package is frozen,
+- [☞](//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/doc.go#L9)  This package is not implemented on Windows. As the syslog package is frozen,
   Windows users are encouraged to use a package outside of the standard
   library. For background, see https://golang.org/issue/1108.
-- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/doc.go#L14)  This package is not implemented on Plan 9.
-- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/log/syslog/doc.go#L16)  This package is not implemented on NaCl (Native Client).
+- [☞](//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/doc.go#L14)  This package is not implemented on Plan 9.
+- [☞](//github.com/golang/go/blob/release-branch.go1.10/src/log/syslog/doc.go#L16)  This package is not implemented on NaCl (Native Client).
 
 

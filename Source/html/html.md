@@ -18,9 +18,9 @@ Package html provides functions for escaping and unescaping HTML text.
 - [UnescapeString](#exampleUnescapeString)
 
 ### Package files
- [entity.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/entity.go) [escape.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/escape.go)
+ [entity.go](//github.com/golang/go/blob/release-branch.go1.10/src/html/entity.go) [escape.go](//github.com/golang/go/blob/release-branch.go1.10/src/html/escape.go)
 
-<h2 id="EscapeString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/escape.go#L168">EscapeString</a>
+<h2 id="EscapeString">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/html/escape.go#L168">EscapeString</a>
     <a href="#EscapeString">¶</a></h2>
 <pre>func EscapeString(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -35,7 +35,7 @@ Example:
     fmt.Println(html.EscapeString(s))
     // Output: &#34;Fran &amp; Freddie&#39;s Diner&#34; &lt;tasty@example.com&gt;
 
-<h2 id="UnescapeString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/html/escape.go#L177">UnescapeString</a>
+<h2 id="UnescapeString">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/html/escape.go#L177">UnescapeString</a>
     <a href="#UnescapeString">¶</a></h2>
 <pre>func UnescapeString(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 

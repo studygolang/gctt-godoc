@@ -32,9 +32,9 @@ Example use:
 - [Index.Lookup](#exampleIndex_Lookup)
 
 ### Package files
- [qsufsort.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/index/suffixarray/qsufsort.go) [suffixarray.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/index/suffixarray/suffixarray.go)
+ [qsufsort.go](//github.com/golang/go/blob/release-branch.go1.10/src/index/suffixarray/qsufsort.go) [suffixarray.go](//github.com/golang/go/blob/release-branch.go1.10/src/index/suffixarray/suffixarray.go)
 
-<h2 id="Index">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/index/suffixarray/suffixarray.go#L18">Index</a>
+<h2 id="Index">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/index/suffixarray/suffixarray.go#L18">Index</a>
     <a href="#Index">¶</a></h2>
 <pre>type Index struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -42,21 +42,21 @@ Example use:
 
 Index implements a suffix array for fast substring search.
 
-<h3 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/index/suffixarray/suffixarray.go#L25">New</a>
+<h3 id="New">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/index/suffixarray/suffixarray.go#L25">New</a>
     <a href="#New">¶</a></h3>
 <pre>func New(data []<a href="/builtin/#byte">byte</a>) *<a href="#Index">Index</a></pre>
 
 New creates a new Index for data. Index creation time is O(N*log(N)) for N =
 len(data).
 
-<h3 id="Index.Bytes">func (*Index) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/index/suffixarray/suffixarray.go#L155">Bytes</a>
+<h3 id="Index.Bytes">func (*Index) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/index/suffixarray/suffixarray.go#L155">Bytes</a>
     <a href="#Index.Bytes">¶</a></h3>
 <pre>func (x *<a href="#Index">Index</a>) Bytes() []<a href="/builtin/#byte">byte</a></pre>
 
 Bytes returns the data over which the index was created. It must not be
 modified.
 
-<h3 id="Index.FindAllIndex">func (*Index) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/index/suffixarray/suffixarray.go#L202">FindAllIndex</a>
+<h3 id="Index.FindAllIndex">func (*Index) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/index/suffixarray/suffixarray.go#L202">FindAllIndex</a>
     <a href="#Index.FindAllIndex">¶</a></h3>
 <pre>func (x *<a href="#Index">Index</a>) FindAllIndex(r *<a href="/regexp/">regexp</a>.<a href="/regexp/#Regexp">Regexp</a>, n <a href="/builtin/#int">int</a>) (result [][]<a href="/builtin/#int">int</a>)</pre>
 
@@ -66,7 +66,7 @@ x.Bytes(). If n < 0, all matches are returned in successive order. Otherwise, at
 most n matches are returned and they may not be successive. The result is nil if
 there are no matches, or if n == 0.
 
-<h3 id="Index.Lookup">func (*Index) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/index/suffixarray/suffixarray.go#L180">Lookup</a>
+<h3 id="Index.Lookup">func (*Index) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/index/suffixarray/suffixarray.go#L180">Lookup</a>
     <a href="#Index.Lookup">¶</a></h3>
 <pre>func (x *<a href="#Index">Index</a>) Lookup(s []<a href="/builtin/#byte">byte</a>, n <a href="/builtin/#int">int</a>) (result []<a href="/builtin/#int">int</a>)</pre>
 
@@ -88,13 +88,13 @@ Example:
     // 1
     // 3
 
-<h3 id="Index.Read">func (*Index) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/index/suffixarray/suffixarray.go#L88">Read</a>
+<h3 id="Index.Read">func (*Index) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/index/suffixarray/suffixarray.go#L88">Read</a>
     <a href="#Index.Read">¶</a></h3>
 <pre>func (x *<a href="#Index">Index</a>) Read(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) <a href="/builtin/#error">error</a></pre>
 
 Read reads the index from r into x; x must not be nil.
 
-<h3 id="Index.Write">func (*Index) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/index/suffixarray/suffixarray.go#L127">Write</a>
+<h3 id="Index.Write">func (*Index) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/index/suffixarray/suffixarray.go#L127">Write</a>
     <a href="#Index.Write">¶</a></h3>
 <pre>func (x *<a href="#Index">Index</a>) Write(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) <a href="/builtin/#error">error</a></pre>
 

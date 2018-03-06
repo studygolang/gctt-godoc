@@ -27,7 +27,7 @@ Package doc extracts source code documentation from a Go AST.
 - [type Value](#Value)
 
 ### Package files
- [comment.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/comment.go) [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/doc.go) [example.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/example.go) [exports.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/exports.go) [filter.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/filter.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/reader.go) [synopsis.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/synopsis.go)
+ [comment.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/comment.go) [doc.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/doc.go) [example.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/example.go) [exports.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/exports.go) [filter.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/filter.go) [reader.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/reader.go) [synopsis.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/synopsis.go)
 
 <h2 id="pkg-variables">Variables</h2>
 
@@ -38,7 +38,7 @@ Package doc extracts source code documentation from a Go AST.
 }</pre>
 
 
-<h2 id="Examples">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/example.go#L37">Examples</a>
+<h2 id="Examples">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/example.go#L37">Examples</a>
     <a href="#Examples">¶</a></h2>
 <pre>func Examples(files ...*<a href="/go/ast/">ast</a>.<a href="/go/ast/#File">File</a>) []*<a href="#Example">Example</a></pre>
 
@@ -56,13 +56,13 @@ Playable Examples must be in a package whose name ends in "_test". An Example is
       top-level function, type, variable, or constant declaration other
       than the example function.
 
-<h2 id="IsPredeclared">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/reader.go#L823">IsPredeclared</a>
+<h2 id="IsPredeclared">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/reader.go#L823">IsPredeclared</a>
     <a href="#IsPredeclared">¶</a></h2>
 <pre>func IsPredeclared(s <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
 IsPredeclared reports whether s is a predeclared identifier.
 
-<h2 id="Synopsis">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/synopsis.go#L58">Synopsis</a>
+<h2 id="Synopsis">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/synopsis.go#L58">Synopsis</a>
     <a href="#Synopsis">¶</a></h2>
 <pre>func Synopsis(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -72,7 +72,7 @@ uppercase letter. The result string has no \n, \r, or \t characters and uses
 only single spaces between words. If s starts with any of the IllegalPrefixes,
 the result is the empty string.
 
-<h2 id="ToHTML">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/comment.go#L286">ToHTML</a>
+<h2 id="ToHTML">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/comment.go#L286">ToHTML</a>
     <a href="#ToHTML">¶</a></h2>
 <pre>func ToHTML(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, text <a href="/builtin/#string">string</a>, words map[<a href="/builtin/#string">string</a>]<a href="/builtin/#string">string</a>)</pre>
 
@@ -97,7 +97,7 @@ Go identifiers that appear in the words map are italicized; if the corresponding
 map value is not the empty string, it is considered a URL and the word is
 converted into a link.
 
-<h2 id="ToText">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/comment.go#L400">ToText</a>
+<h2 id="ToText">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/comment.go#L400">ToText</a>
     <a href="#ToText">¶</a></h2>
 <pre>func ToText(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, text <a href="/builtin/#string">string</a>, indent, preIndent <a href="/builtin/#string">string</a>, width <a href="/builtin/#int">int</a>)</pre>
 
@@ -106,7 +106,7 @@ paragraphs of text to width or fewer Unicode code points and then prefixes each
 line with the indent. In preformatted sections (such as program text), it
 prefixes each non-blank line with preIndent.
 
-<h2 id="Example">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/example.go#L12">Example</a>
+<h2 id="Example">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/example.go#L12">Example</a>
     <a href="#Example">¶</a></h2>
 <pre>type Example struct {
 <span id="Example.Name"></span>    Name        <a href="/builtin/#string">string</a> <span class="comment">// name of the item being exemplified</span>
@@ -122,12 +122,12 @@ prefixes each non-blank line with preIndent.
 
 An Example represents an example function found in a source files.
 
-<h2 id="Filter">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/filter.go#L1">Filter</a>
+<h2 id="Filter">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/filter.go#L1">Filter</a>
     <a href="#Filter">¶</a></h2>
 <pre>type Filter func(<a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
 
-<h2 id="Func">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/doc.go#L46">Func</a>
+<h2 id="Func">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/doc.go#L46">Func</a>
     <a href="#Func">¶</a></h2>
 <pre>type Func struct {
 <span id="Func.Doc"></span>    Doc  <a href="/builtin/#string">string</a>
@@ -143,7 +143,7 @@ An Example represents an example function found in a source files.
 
 Func is the documentation for a func declaration.
 
-<h2 id="Mode">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/doc.go#L69">Mode</a>
+<h2 id="Mode">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/doc.go#L69">Mode</a>
     <a href="#Mode">¶</a></h2>
 <pre>type Mode <a href="/builtin/#int">int</a></pre>
 
@@ -160,7 +160,7 @@ Mode values control the operation of New.
 )</pre>
 
 
-<h2 id="Note">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/doc.go#L62">Note</a>
+<h2 id="Note">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/doc.go#L62">Note</a>
     <a href="#Note">¶</a></h2>
 <pre>type Note struct {
 <span id="Note.Pos"></span>    Pos, End <a href="/go/token/">token</a>.<a href="/go/token/#Pos">Pos</a> <span class="comment">// position range of the comment containing the marker</span>
@@ -173,7 +173,7 @@ note with a marker of 2 or more upper case [A-Z] letters and a uid of at least
 one character is recognized. The ":" following the uid is optional. Notes are
 collected in the Package.Notes map indexed by the notes marker.
 
-<h2 id="Package">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/doc.go#L4">Package</a>
+<h2 id="Package">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/doc.go#L4">Package</a>
     <a href="#Package">¶</a></h2>
 <pre>type Package struct {
 <span id="Package.Doc"></span>    Doc        <a href="/builtin/#string">string</a>
@@ -196,21 +196,21 @@ collected in the Package.Notes map indexed by the notes marker.
 
 Package is the documentation for an entire package.
 
-<h3 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/doc.go#L84">New</a>
+<h3 id="New">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/doc.go#L84">New</a>
     <a href="#New">¶</a></h3>
 <pre>func New(pkg *<a href="/go/ast/">ast</a>.<a href="/go/ast/#Package">Package</a>, importPath <a href="/builtin/#string">string</a>, mode <a href="#Mode">Mode</a>) *<a href="#Package">Package</a></pre>
 
 New computes the package documentation for the given package AST. New takes
 ownership of the AST pkg and may edit or overwrite it.
 
-<h3 id="Package.Filter">func (*Package) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/filter.go#L89">Filter</a>
+<h3 id="Package.Filter">func (*Package) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/filter.go#L89">Filter</a>
     <a href="#Package.Filter">¶</a></h3>
 <pre>func (p *<a href="#Package">Package</a>) Filter(f <a href="#Filter">Filter</a>)</pre>
 
 Filter eliminates documentation for names that don't pass through the filter f.
 TODO(gri): Recognize "Type.Method" as a name.
 
-<h2 id="Type">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/doc.go#L33">Type</a>
+<h2 id="Type">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/doc.go#L33">Type</a>
     <a href="#Type">¶</a></h2>
 <pre>type Type struct {
 <span id="Type.Doc"></span>    Doc  <a href="/builtin/#string">string</a>
@@ -226,7 +226,7 @@ TODO(gri): Recognize "Type.Method" as a name.
 
 Type is the documentation for a type declaration.
 
-<h2 id="Value">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/doc/doc.go#L24">Value</a>
+<h2 id="Value">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/doc/doc.go#L24">Value</a>
     <a href="#Value">¶</a></h2>
 <pre>type Value struct {
 <span id="Value.Doc"></span>    Doc   <a href="/builtin/#string">string</a>

@@ -45,7 +45,7 @@ ones in the net/http package.
 - [ReverseProxy](#exampleReverseProxy)
 
 ### Package files
- [dump.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/dump.go) [httputil.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/httputil.go) [persist.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go) [reverseproxy.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/reverseproxy.go)
+ [dump.go](//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/dump.go) [httputil.go](//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/httputil.go) [persist.go](//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go) [reverseproxy.go](//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/reverseproxy.go)
 
 <h2 id="pkg-variables">Variables</h2>
 
@@ -66,7 +66,7 @@ ones in the net/http package.
 ErrLineTooLong is returned when reading malformed chunked data with lines that
 are too long.
 
-<h2 id="DumpRequest">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/dump.go#L181">DumpRequest</a>
+<h2 id="DumpRequest">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/dump.go#L181">DumpRequest</a>
     <a href="#DumpRequest">¶</a></h2>
 <pre>func DumpRequest(req *<a href="/net/http/">http</a>.<a href="/net/http/#Request">Request</a>, body <a href="/builtin/#bool">bool</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -121,7 +121,7 @@ Example:
     // Output:
     // "POST / HTTP/1.1\r\nHost: www.example.org\r\nAccept-Encoding: gzip\r\nContent-Length: 75\r\nUser-Agent: Go-http-client/1.1\r\n\r\nGo is a general-purpose language designed with systems programming in mind."
 
-<h2 id="DumpRequestOut">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/dump.go#L56">DumpRequestOut</a>
+<h2 id="DumpRequestOut">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/dump.go#L56">DumpRequestOut</a>
     <a href="#DumpRequestOut">¶</a></h2>
 <pre>func DumpRequestOut(req *<a href="/net/http/">http</a>.<a href="/net/http/#Request">Request</a>, body <a href="/builtin/#bool">bool</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -147,7 +147,7 @@ Example:
     // Output:
     // "PUT / HTTP/1.1\r\nHost: www.example.org\r\nUser-Agent: Go-http-client/1.1\r\nContent-Length: 75\r\nAccept-Encoding: gzip\r\n\r\nGo is a general-purpose language designed with systems programming in mind."
 
-<h2 id="DumpResponse">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/dump.go#L271">DumpResponse</a>
+<h2 id="DumpResponse">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/dump.go#L271">DumpResponse</a>
     <a href="#DumpResponse">¶</a></h2>
 <pre>func DumpResponse(resp *<a href="/net/http/">http</a>.<a href="/net/http/#Response">Response</a>, body <a href="/builtin/#bool">bool</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -179,7 +179,7 @@ Example:
     // Output:
     // "HTTP/1.1 200 OK\r\nContent-Length: 76\r\nContent-Type: text/plain; charset=utf-8\r\nDate: Wed, 19 Jul 1972 19:00:00 GMT\r\n\r\nGo is a general-purpose language designed with systems programming in mind.\n"
 
-<h2 id="NewChunkedReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/httputil.go#L10">NewChunkedReader</a>
+<h2 id="NewChunkedReader">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/httputil.go#L10">NewChunkedReader</a>
     <a href="#NewChunkedReader">¶</a></h2>
 <pre>func NewChunkedReader(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a></pre>
 
@@ -190,7 +190,7 @@ io.EOF when the final 0-length chunk is read.
 NewChunkedReader is not needed by normal applications. The http package
 automatically decodes chunking when reading response bodies.
 
-<h2 id="NewChunkedWriter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/httputil.go#L23">NewChunkedWriter</a>
+<h2 id="NewChunkedWriter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/httputil.go#L23">NewChunkedWriter</a>
     <a href="#NewChunkedWriter">¶</a></h2>
 <pre>func NewChunkedWriter(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) <a href="/io/">io</a>.<a href="/io/#WriteCloser">WriteCloser</a></pre>
 
@@ -203,7 +203,7 @@ chunking automatically if handlers don't set a Content-Length header. Using
 NewChunkedWriter inside a handler would result in double chunking or chunking
 with a Content-Length length, both of which are wrong.
 
-<h2 id="BufferPool">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/reverseproxy.go#L56">BufferPool</a>
+<h2 id="BufferPool">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/reverseproxy.go#L56">BufferPool</a>
     <a href="#BufferPool">¶</a></h2>
 <pre>type BufferPool interface {
     Get() []<a href="/builtin/#byte">byte</a>
@@ -213,7 +213,7 @@ with a Content-Length length, both of which are wrong.
 A BufferPool is an interface for getting and returning temporary byte slices for
 use by io.CopyBuffer.
 
-<h2 id="ClientConn">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L220">ClientConn</a>
+<h2 id="ClientConn">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L220">ClientConn</a>
     <a href="#ClientConn">¶</a></h2>
 <pre>type ClientConn struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -225,7 +225,7 @@ old, and unused by Go's current HTTP stack. We should have deleted it before Go
 
 Deprecated: Use Client or Transport in package net/http instead.
 
-<h3 id="NewClientConn">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L238">NewClientConn</a>
+<h3 id="NewClientConn">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L238">NewClientConn</a>
     <a href="#NewClientConn">¶</a></h3>
 <pre>func NewClientConn(c <a href="/net/">net</a>.<a href="/net/#Conn">Conn</a>, r *<a href="/bufio/">bufio</a>.<a href="/bufio/#Reader">Reader</a>) *<a href="#ClientConn">ClientConn</a></pre>
 
@@ -235,7 +235,7 @@ old, and unused by Go's current HTTP stack. We should have deleted it before Go
 
 Deprecated: Use the Client or Transport in package net/http instead.
 
-<h3 id="NewProxyClientConn">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L255">NewProxyClientConn</a>
+<h3 id="NewProxyClientConn">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L255">NewProxyClientConn</a>
     <a href="#NewProxyClientConn">¶</a></h3>
 <pre>func NewProxyClientConn(c <a href="/net/">net</a>.<a href="/net/#Conn">Conn</a>, r *<a href="/bufio/">bufio</a>.<a href="/bufio/#Reader">Reader</a>) *<a href="#ClientConn">ClientConn</a></pre>
 
@@ -245,19 +245,19 @@ before Go 1.
 
 Deprecated: Use the Client or Transport in package net/http instead.
 
-<h3 id="ClientConn.Close">func (*ClientConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L276">Close</a>
+<h3 id="ClientConn.Close">func (*ClientConn) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L276">Close</a>
     <a href="#ClientConn.Close">¶</a></h3>
 <pre>func (cc *<a href="#ClientConn">ClientConn</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close calls Hijack and then also closes the underlying connection.
 
-<h3 id="ClientConn.Do">func (*ClientConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L415">Do</a>
+<h3 id="ClientConn.Do">func (*ClientConn) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L415">Do</a>
     <a href="#ClientConn.Do">¶</a></h3>
 <pre>func (cc *<a href="#ClientConn">ClientConn</a>) Do(req *<a href="/net/http/">http</a>.<a href="/net/http/#Request">Request</a>) (*<a href="/net/http/">http</a>.<a href="/net/http/#Response">Response</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Do is convenience method that writes a request and reads a response.
 
-<h3 id="ClientConn.Hijack">func (*ClientConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L265">Hijack</a>
+<h3 id="ClientConn.Hijack">func (*ClientConn) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L265">Hijack</a>
     <a href="#ClientConn.Hijack">¶</a></h3>
 <pre>func (cc *<a href="#ClientConn">ClientConn</a>) Hijack() (c <a href="/net/">net</a>.<a href="/net/#Conn">Conn</a>, r *<a href="/bufio/">bufio</a>.<a href="/bufio/#Reader">Reader</a>)</pre>
 
@@ -266,14 +266,14 @@ the read-side bufio which may have some left over data. Hijack may be called
 before the user or Read have signaled the end of the keep-alive logic. The user
 should not call Hijack while Read or Write is in progress.
 
-<h3 id="ClientConn.Pending">func (*ClientConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L343">Pending</a>
+<h3 id="ClientConn.Pending">func (*ClientConn) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L343">Pending</a>
     <a href="#ClientConn.Pending">¶</a></h3>
 <pre>func (cc *<a href="#ClientConn">ClientConn</a>) Pending() <a href="/builtin/#int">int</a></pre>
 
 Pending returns the number of unanswered requests that have been sent on the
 connection.
 
-<h3 id="ClientConn.Read">func (*ClientConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L353">Read</a>
+<h3 id="ClientConn.Read">func (*ClientConn) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L353">Read</a>
     <a href="#ClientConn.Read">¶</a></h3>
 <pre>func (cc *<a href="#ClientConn">ClientConn</a>) Read(req *<a href="/net/http/">http</a>.<a href="/net/http/#Request">Request</a>) (resp *<a href="/net/http/">http</a>.<a href="/net/http/#Response">Response</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -282,7 +282,7 @@ together with an ErrPersistEOF, which means that the remote requested that this
 be the last request serviced. Read can be called concurrently with Write, but
 not with another Read.
 
-<h3 id="ClientConn.Write">func (*ClientConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L289">Write</a>
+<h3 id="ClientConn.Write">func (*ClientConn) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L289">Write</a>
     <a href="#ClientConn.Write">¶</a></h3>
 <pre>func (cc *<a href="#ClientConn">ClientConn</a>) Write(req *<a href="/net/http/">http</a>.<a href="/net/http/#Request">Request</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -292,7 +292,7 @@ connection is logically closed after this request and the opposing server is
 informed. An ErrUnexpectedEOF indicates the remote closed the underlying TCP
 connection, which is usually considered as graceful close.
 
-<h2 id="ReverseProxy">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/reverseproxy.go#L18">ReverseProxy</a>
+<h2 id="ReverseProxy">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/reverseproxy.go#L18">ReverseProxy</a>
     <a href="#ReverseProxy">¶</a></h2>
 <pre>type ReverseProxy struct {
 <span id="ReverseProxy.Director"></span>    <span class="comment">// Director must be a function which modifies</span>
@@ -363,7 +363,7 @@ Example:
     // Output:
     // this call was relayed by the reverse proxy
 
-<h3 id="NewSingleHostReverseProxy">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/reverseproxy.go#L80">NewSingleHostReverseProxy</a>
+<h3 id="NewSingleHostReverseProxy">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/reverseproxy.go#L80">NewSingleHostReverseProxy</a>
     <a href="#NewSingleHostReverseProxy">¶</a></h3>
 <pre>func NewSingleHostReverseProxy(target *<a href="/net/url/">url</a>.<a href="/net/url/#URL">URL</a>) *<a href="#ReverseProxy">ReverseProxy</a></pre>
 
@@ -373,12 +373,12 @@ and the incoming request was for "/dir", the target request will be for
 /base/dir. NewSingleHostReverseProxy does not rewrite the Host header. To
 rewrite Host headers, use ReverseProxy directly with a custom Director policy.
 
-<h3 id="ReverseProxy.ServeHTTP">func (*ReverseProxy) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/reverseproxy.go#L131">ServeHTTP</a>
+<h3 id="ReverseProxy.ServeHTTP">func (*ReverseProxy) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/reverseproxy.go#L131">ServeHTTP</a>
     <a href="#ReverseProxy.ServeHTTP">¶</a></h3>
 <pre>func (p *<a href="#ReverseProxy">ReverseProxy</a>) ServeHTTP(rw <a href="/net/http/">http</a>.<a href="/net/http/#ResponseWriter">ResponseWriter</a>, req *<a href="/net/http/">http</a>.<a href="/net/http/#Request">Request</a>)</pre>
 
 
-<h2 id="ServerConn">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L27">ServerConn</a>
+<h2 id="ServerConn">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L27">ServerConn</a>
     <a href="#ServerConn">¶</a></h2>
 <pre>type ServerConn struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -390,7 +390,7 @@ old, and unused by Go's current HTTP stack. We should have deleted it before Go
 
 Deprecated: Use the Server in package net/http instead.
 
-<h3 id="NewServerConn">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L44">NewServerConn</a>
+<h3 id="NewServerConn">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L44">NewServerConn</a>
     <a href="#NewServerConn">¶</a></h3>
 <pre>func NewServerConn(c <a href="/net/">net</a>.<a href="/net/#Conn">Conn</a>, r *<a href="/bufio/">bufio</a>.<a href="/bufio/#Reader">Reader</a>) *<a href="#ServerConn">ServerConn</a></pre>
 
@@ -400,13 +400,13 @@ old, and unused by Go's current HTTP stack. We should have deleted it before Go
 
 Deprecated: Use the Server in package net/http instead.
 
-<h3 id="ServerConn.Close">func (*ServerConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L66">Close</a>
+<h3 id="ServerConn.Close">func (*ServerConn) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L66">Close</a>
     <a href="#ServerConn.Close">¶</a></h3>
 <pre>func (sc *<a href="#ServerConn">ServerConn</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close calls Hijack and then also closes the underlying connection.
 
-<h3 id="ServerConn.Hijack">func (*ServerConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L55">Hijack</a>
+<h3 id="ServerConn.Hijack">func (*ServerConn) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L55">Hijack</a>
     <a href="#ServerConn.Hijack">¶</a></h3>
 <pre>func (sc *<a href="#ServerConn">ServerConn</a>) Hijack() (<a href="/net/">net</a>.<a href="/net/#Conn">Conn</a>, *<a href="/bufio/">bufio</a>.<a href="/bufio/#Reader">Reader</a>)</pre>
 
@@ -415,14 +415,14 @@ the read-side bufio which may have some left over data. Hijack may be called
 before Read has signaled the end of the keep-alive logic. The user should not
 call Hijack while Read or Write is in progress.
 
-<h3 id="ServerConn.Pending">func (*ServerConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L156">Pending</a>
+<h3 id="ServerConn.Pending">func (*ServerConn) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L156">Pending</a>
     <a href="#ServerConn.Pending">¶</a></h3>
 <pre>func (sc *<a href="#ServerConn">ServerConn</a>) Pending() <a href="/builtin/#int">int</a></pre>
 
 Pending returns the number of unanswered requests that have been received on the
 connection.
 
-<h3 id="ServerConn.Read">func (*ServerConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L78">Read</a>
+<h3 id="ServerConn.Read">func (*ServerConn) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L78">Read</a>
     <a href="#ServerConn.Read">¶</a></h3>
 <pre>func (sc *<a href="#ServerConn">ServerConn</a>) Read() (*<a href="/net/http/">http</a>.<a href="/net/http/#Request">Request</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -431,7 +431,7 @@ gracefully determined that there are no more requests (e.g. after the first
 request on an HTTP/1.0 connection, or after a Connection:close on a HTTP/1.1
 connection).
 
-<h3 id="ServerConn.Write">func (*ServerConn) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httputil/persist.go#L165">Write</a>
+<h3 id="ServerConn.Write">func (*ServerConn) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httputil/persist.go#L165">Write</a>
     <a href="#ServerConn.Write">¶</a></h3>
 <pre>func (sc *<a href="#ServerConn">ServerConn</a>) Write(req *<a href="/net/http/">http</a>.<a href="/net/http/#Request">Request</a>, resp *<a href="/net/http/">http</a>.<a href="/net/http/#Response">Response</a>) <a href="/builtin/#error">error</a></pre>
 

@@ -30,9 +30,9 @@ permits exactly one. Consequently, the corresponding field in the AST
 - [ParseFile](#exampleParseFile)
 
 ### Package files
- [interface.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/parser/interface.go) [parser.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/parser/parser.go)
+ [interface.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/parser/interface.go) [parser.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/parser/parser.go)
 
-<h2 id="ParseDir">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/parser/interface.go#L129">ParseDir</a>
+<h2 id="ParseDir">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/parser/interface.go#L129">ParseDir</a>
     <a href="#ParseDir">¶</a></h2>
 <pre>func ParseDir(fset *<a href="/go/token/">token</a>.<a href="/go/token/#FileSet">FileSet</a>, path <a href="/builtin/#string">string</a>, filter func(<a href="/os/">os</a>.<a href="/os/#FileInfo">FileInfo</a>) <a href="/builtin/#bool">bool</a>, mode <a href="#Mode">Mode</a>) (pkgs map[<a href="/builtin/#string">string</a>]*<a href="/go/ast/">ast</a>.<a href="/go/ast/#Package">Package</a>, first <a href="/builtin/#error">error</a>)</pre>
 
@@ -49,7 +49,7 @@ If the directory couldn't be read, a nil map and the respective error are
 returned. If a parse error occurred, a non-nil but incomplete map and the first
 error encountered are returned.
 
-<h2 id="ParseExpr">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/parser/interface.go#L224">ParseExpr</a>
+<h2 id="ParseExpr">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/parser/interface.go#L224">ParseExpr</a>
     <a href="#ParseExpr">¶</a></h2>
 <pre>func ParseExpr(x <a href="/builtin/#string">string</a>) (<a href="/go/ast/">ast</a>.<a href="/go/ast/#Expr">Expr</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -57,7 +57,7 @@ ParseExpr is a convenience function for obtaining the AST of an expression x.
 The position information recorded in the AST is undefined. The filename used in
 error messages is the empty string.
 
-<h2 id="ParseExprFrom">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/parser/interface.go#L170">ParseExprFrom</a>
+<h2 id="ParseExprFrom">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/parser/interface.go#L170">ParseExprFrom</a>
     <a href="#ParseExprFrom">¶</a></h2>
 <pre>func ParseExprFrom(fset *<a href="/go/token/">token</a>.<a href="/go/token/#FileSet">FileSet</a>, filename <a href="/builtin/#string">string</a>, src interface{}, mode <a href="#Mode">Mode</a>) (<a href="/go/ast/">ast</a>.<a href="/go/ast/#Expr">Expr</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -65,7 +65,7 @@ ParseExprFrom is a convenience function for parsing an expression. The arguments
 have the same meaning as for ParseFile, but the source must be a valid Go (type
 or value) expression. Specifically, fset must not be nil.
 
-<h2 id="ParseFile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/parser/interface.go#L74">ParseFile</a>
+<h2 id="ParseFile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/parser/interface.go#L74">ParseFile</a>
     <a href="#ParseFile">¶</a></h2>
 <pre>func ParseFile(fset *<a href="/go/token/">token</a>.<a href="/go/token/#FileSet">FileSet</a>, filename <a href="/builtin/#string">string</a>, src interface{}, mode <a href="#Mode">Mode</a>) (f *<a href="/go/ast/">ast</a>.<a href="/go/ast/#File">File</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -121,7 +121,7 @@ Example:
     // "fmt"
     // "time"
 
-<h2 id="Mode">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/parser/interface.go#L43">Mode</a>
+<h2 id="Mode">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/parser/interface.go#L43">Mode</a>
     <a href="#Mode">¶</a></h2>
 <pre>type Mode <a href="/builtin/#uint">uint</a></pre>
 

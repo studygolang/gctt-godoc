@@ -52,9 +52,9 @@ Values containing the types defined in this package should not be copied.
 - [WaitGroup](#exampleWaitGroup)
 
 ### Package files
- [cond.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/cond.go) [map.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go) [mutex.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/mutex.go) [once.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/once.go) [pool.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/pool.go) [runtime.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/runtime.go) [rwmutex.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/rwmutex.go) [waitgroup.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/waitgroup.go)
+ [cond.go](//github.com/golang/go/blob/release-branch.go1.10/src/sync/cond.go) [map.go](//github.com/golang/go/blob/release-branch.go1.10/src/sync/map.go) [mutex.go](//github.com/golang/go/blob/release-branch.go1.10/src/sync/mutex.go) [once.go](//github.com/golang/go/blob/release-branch.go1.10/src/sync/once.go) [pool.go](//github.com/golang/go/blob/release-branch.go1.10/src/sync/pool.go) [runtime.go](//github.com/golang/go/blob/release-branch.go1.10/src/sync/runtime.go) [rwmutex.go](//github.com/golang/go/blob/release-branch.go1.10/src/sync/rwmutex.go) [waitgroup.go](//github.com/golang/go/blob/release-branch.go1.10/src/sync/waitgroup.go)
 
-<h2 id="Cond">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/cond.go#L11">Cond</a>
+<h2 id="Cond">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/cond.go#L11">Cond</a>
     <a href="#Cond">¶</a></h2>
 <pre>type Cond struct {
 
@@ -71,13 +71,13 @@ held when changing the condition and when calling the Wait method.
 
 A Cond must not be copied after first use.
 
-<h3 id="NewCond">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/cond.go#L22">NewCond</a>
+<h3 id="NewCond">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/cond.go#L22">NewCond</a>
     <a href="#NewCond">¶</a></h3>
 <pre>func NewCond(l <a href="#Locker">Locker</a>) *<a href="#Cond">Cond</a></pre>
 
 NewCond returns a new Cond with Locker l.
 
-<h3 id="Cond.Broadcast">func (*Cond) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/cond.go#L63">Broadcast</a>
+<h3 id="Cond.Broadcast">func (*Cond) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/cond.go#L63">Broadcast</a>
     <a href="#Cond.Broadcast">¶</a></h3>
 <pre>func (c *<a href="#Cond">Cond</a>) Broadcast()</pre>
 
@@ -85,7 +85,7 @@ Broadcast wakes all goroutines waiting on c.
 
 It is allowed but not required for the caller to hold c.L during the call.
 
-<h3 id="Cond.Signal">func (*Cond) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/cond.go#L54">Signal</a>
+<h3 id="Cond.Signal">func (*Cond) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/cond.go#L54">Signal</a>
     <a href="#Cond.Signal">¶</a></h3>
 <pre>func (c *<a href="#Cond">Cond</a>) Signal()</pre>
 
@@ -93,7 +93,7 @@ Signal wakes one goroutine waiting on c, if there is any.
 
 It is allowed but not required for the caller to hold c.L during the call.
 
-<h3 id="Cond.Wait">func (*Cond) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/cond.go#L42">Wait</a>
+<h3 id="Cond.Wait">func (*Cond) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/cond.go#L42">Wait</a>
     <a href="#Cond.Wait">¶</a></h3>
 <pre>func (c *<a href="#Cond">Cond</a>) Wait()</pre>
 
@@ -112,7 +112,7 @@ Wait in a loop:
     ... make use of condition ...
     c.L.Unlock()
 
-<h2 id="Locker">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/mutex.go#L21">Locker</a>
+<h2 id="Locker">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/mutex.go#L21">Locker</a>
     <a href="#Locker">¶</a></h2>
 <pre>type Locker interface {
     Lock()
@@ -121,7 +121,7 @@ Wait in a loop:
 
 A Locker represents an object that can be locked and unlocked.
 
-<h2 id="Map">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L17">Map</a>
+<h2 id="Map">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/map.go#L17">Map</a>
     <a href="#Map">¶</a></h2>
 <pre>type Map struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -144,20 +144,20 @@ lock contention compared to a Go map paired with a separate Mutex or RWMutex.
 The zero Map is empty and ready for use. A Map must not be copied after first
 use.
 
-<h3 id="Map.Delete">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L261">Delete</a>
+<h3 id="Map.Delete">func (*Map) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/map.go#L261">Delete</a>
     <a href="#Map.Delete">¶</a></h3>
 <pre>func (m *<a href="#Map">Map</a>) Delete(key interface{})</pre>
 
 Delete deletes the value for a key.
 
-<h3 id="Map.Load">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L92">Load</a>
+<h3 id="Map.Load">func (*Map) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/map.go#L92">Load</a>
     <a href="#Map.Load">¶</a></h3>
 <pre>func (m *<a href="#Map">Map</a>) Load(key interface{}) (value interface{}, ok <a href="/builtin/#bool">bool</a>)</pre>
 
 Load returns the value stored in the map for a key, or nil if no value is
 present. The ok result indicates whether value was found in the map.
 
-<h3 id="Map.LoadOrStore">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L193">LoadOrStore</a>
+<h3 id="Map.LoadOrStore">func (*Map) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/map.go#L193">LoadOrStore</a>
     <a href="#Map.LoadOrStore">¶</a></h3>
 <pre>func (m *<a href="#Map">Map</a>) LoadOrStore(key, value interface{}) (actual interface{}, loaded <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -165,7 +165,7 @@ LoadOrStore returns the existing value for the key if present. Otherwise, it
 stores and returns the given value. The loaded result is true if the value was
 loaded, false if stored.
 
-<h3 id="Map.Range">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L300">Range</a>
+<h3 id="Map.Range">func (*Map) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/map.go#L300">Range</a>
     <a href="#Map.Range">¶</a></h3>
 <pre>func (m *<a href="#Map">Map</a>) Range(f func(key, value interface{}) <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -180,13 +180,13 @@ any point during the Range call.
 Range may be O(N) with the number of elements in the map even if f returns false
 after a constant number of calls.
 
-<h3 id="Map.Store">func (*Map) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/map.go#L126">Store</a>
+<h3 id="Map.Store">func (*Map) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/map.go#L126">Store</a>
     <a href="#Map.Store">¶</a></h3>
 <pre>func (m *<a href="#Map">Map</a>) Store(key, value interface{})</pre>
 
 Store sets the value for a key.
 
-<h2 id="Mutex">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/mutex.go#L15">Mutex</a>
+<h2 id="Mutex">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/mutex.go#L15">Mutex</a>
     <a href="#Mutex">¶</a></h2>
 <pre>type Mutex struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -197,14 +197,14 @@ mutex.
 
 A Mutex must not be copied after first use.
 
-<h3 id="Mutex.Lock">func (*Mutex) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/mutex.go#L62">Lock</a>
+<h3 id="Mutex.Lock">func (*Mutex) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/mutex.go#L62">Lock</a>
     <a href="#Mutex.Lock">¶</a></h3>
 <pre>func (m *<a href="#Mutex">Mutex</a>) Lock()</pre>
 
 Lock locks m. If the lock is already in use, the calling goroutine blocks until
 the mutex is available.
 
-<h3 id="Mutex.Unlock">func (*Mutex) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/mutex.go#L165">Unlock</a>
+<h3 id="Mutex.Unlock">func (*Mutex) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/mutex.go#L165">Unlock</a>
     <a href="#Mutex.Unlock">¶</a></h3>
 <pre>func (m *<a href="#Mutex">Mutex</a>) Unlock()</pre>
 
@@ -214,7 +214,7 @@ A locked Mutex is not associated with a particular goroutine. It is allowed for
 one goroutine to lock a Mutex and then arrange for another goroutine to unlock
 it.
 
-<h2 id="Once">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/once.go#L2">Once</a>
+<h2 id="Once">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/once.go#L2">Once</a>
     <a href="#Once">¶</a></h2>
 <pre>type Once struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -242,7 +242,7 @@ Example:
     // Output:
     // Only once
 
-<h3 id="Once.Do">func (*Once) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/once.go#L25">Do</a>
+<h3 id="Once.Do">func (*Once) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/once.go#L25">Do</a>
     <a href="#Once.Do">¶</a></h3>
 <pre>func (o *<a href="#Once">Once</a>) Do(f func())</pre>
 
@@ -267,7 +267,7 @@ be called, it will deadlock.
 If f panics, Do considers it to have returned; future calls of Do return without
 calling f.
 
-<h2 id="Pool">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/pool.go#L34">Pool</a>
+<h2 id="Pool">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/pool.go#L34">Pool</a>
     <a href="#Pool">¶</a></h2>
 <pre>type Pool struct {
 
@@ -352,7 +352,7 @@ Example:
         // Output: 2006-01-02T15:04:05Z path=/search?q=flowers
     }
 
-<h3 id="Pool.Get">func (*Pool) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/pool.go#L114">Get</a>
+<h3 id="Pool.Get">func (*Pool) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/pool.go#L114">Get</a>
     <a href="#Pool.Get">¶</a></h3>
 <pre>func (p *<a href="#Pool">Pool</a>) Get() interface{}</pre>
 
@@ -364,13 +364,13 @@ the values returned by Get.
 If Get would otherwise return nil and p.New is non-nil, Get returns the result
 of calling p.New.
 
-<h3 id="Pool.Put">func (*Pool) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/pool.go#L78">Put</a>
+<h3 id="Pool.Put">func (*Pool) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/pool.go#L78">Put</a>
     <a href="#Pool.Put">¶</a></h3>
 <pre>func (p *<a href="#Pool">Pool</a>) Put(x interface{})</pre>
 
 Put adds x to the pool.
 
-<h2 id="RWMutex">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/rwmutex.go#L18">RWMutex</a>
+<h2 id="RWMutex">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/rwmutex.go#L18">RWMutex</a>
     <a href="#RWMutex">¶</a></h2>
 <pre>type RWMutex struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -388,14 +388,14 @@ initial read lock is released. In particular, this prohibits recursive read
 locking. This is to ensure that the lock eventually becomes available; a blocked
 Lock call excludes new readers from acquiring the lock.
 
-<h3 id="RWMutex.Lock">func (*RWMutex) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/rwmutex.go#L77">Lock</a>
+<h3 id="RWMutex.Lock">func (*RWMutex) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/rwmutex.go#L77">Lock</a>
     <a href="#RWMutex.Lock">¶</a></h3>
 <pre>func (rw *<a href="#RWMutex">RWMutex</a>) Lock()</pre>
 
 Lock locks rw for writing. If the lock is already locked for reading or writing,
 Lock blocks until the lock is available.
 
-<h3 id="RWMutex.RLock">func (*RWMutex) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/rwmutex.go#L33">RLock</a>
+<h3 id="RWMutex.RLock">func (*RWMutex) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/rwmutex.go#L33">RLock</a>
     <a href="#RWMutex.RLock">¶</a></h3>
 <pre>func (rw *<a href="#RWMutex">RWMutex</a>) RLock()</pre>
 
@@ -404,14 +404,14 @@ RLock locks rw for reading.
 It should not be used for recursive read locking; a blocked Lock call excludes
 new readers from acquiring the lock. See the documentation on the RWMutex type.
 
-<h3 id="RWMutex.RLocker">func (*RWMutex) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/rwmutex.go#L130">RLocker</a>
+<h3 id="RWMutex.RLocker">func (*RWMutex) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/rwmutex.go#L130">RLocker</a>
     <a href="#RWMutex.RLocker">¶</a></h3>
 <pre>func (rw *<a href="#RWMutex">RWMutex</a>) RLocker() <a href="#Locker">Locker</a></pre>
 
 RLocker returns a Locker interface that implements the Lock and Unlock methods
 by calling rw.RLock and rw.RUnlock.
 
-<h3 id="RWMutex.RUnlock">func (*RWMutex) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/rwmutex.go#L52">RUnlock</a>
+<h3 id="RWMutex.RUnlock">func (*RWMutex) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/rwmutex.go#L52">RUnlock</a>
     <a href="#RWMutex.RUnlock">¶</a></h3>
 <pre>func (rw *<a href="#RWMutex">RWMutex</a>) RUnlock()</pre>
 
@@ -419,7 +419,7 @@ RUnlock undoes a single RLock call; it does not affect other simultaneous
 readers. It is a run-time error if rw is not locked for reading on entry to
 RUnlock.
 
-<h3 id="RWMutex.Unlock">func (*RWMutex) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/rwmutex.go#L103">Unlock</a>
+<h3 id="RWMutex.Unlock">func (*RWMutex) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/rwmutex.go#L103">Unlock</a>
     <a href="#RWMutex.Unlock">¶</a></h3>
 <pre>func (rw *<a href="#RWMutex">RWMutex</a>) Unlock()</pre>
 
@@ -430,7 +430,7 @@ As with Mutexes, a locked RWMutex is not associated with a particular goroutine.
 One goroutine may RLock (Lock) a RWMutex and then arrange for another goroutine
 to RUnlock (Unlock) it.
 
-<h2 id="WaitGroup">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/waitgroup.go#L10">WaitGroup</a>
+<h2 id="WaitGroup">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/waitgroup.go#L10">WaitGroup</a>
     <a href="#WaitGroup">¶</a></h2>
 <pre>type WaitGroup struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -466,7 +466,7 @@ Example:
     // Wait for all HTTP fetches to complete.
     wg.Wait()
 
-<h3 id="WaitGroup.Add">func (*WaitGroup) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/waitgroup.go#L42">Add</a>
+<h3 id="WaitGroup.Add">func (*WaitGroup) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/waitgroup.go#L42">Add</a>
     <a href="#WaitGroup.Add">¶</a></h3>
 <pre>func (wg *<a href="#WaitGroup">WaitGroup</a>) Add(delta <a href="/builtin/#int">int</a>)</pre>
 
@@ -482,13 +482,13 @@ creating the goroutine or other event to be waited for. If a WaitGroup is reused
 to wait for several independent sets of events, new Add calls must happen after
 all previous Wait calls have returned. See the WaitGroup example.
 
-<h3 id="WaitGroup.Done">func (*WaitGroup) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/waitgroup.go#L87">Done</a>
+<h3 id="WaitGroup.Done">func (*WaitGroup) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/waitgroup.go#L87">Done</a>
     <a href="#WaitGroup.Done">¶</a></h3>
 <pre>func (wg *<a href="#WaitGroup">WaitGroup</a>) Done()</pre>
 
 Done decrements the WaitGroup counter by one.
 
-<h3 id="WaitGroup.Wait">func (*WaitGroup) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/sync/waitgroup.go#L92">Wait</a>
+<h3 id="WaitGroup.Wait">func (*WaitGroup) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/sync/waitgroup.go#L92">Wait</a>
     <a href="#WaitGroup.Wait">¶</a></h3>
 <pre>func (wg *<a href="#WaitGroup">WaitGroup</a>) Wait()</pre>
 

@@ -37,7 +37,7 @@ Package httptest provides utilities for HTTP testing.
 - [Server](#exampleServer)
 
 ### Package files
- [httptest.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/httptest.go) [recorder.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/recorder.go) [server.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/server.go)
+ [httptest.go](//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/httptest.go) [recorder.go](//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/recorder.go) [server.go](//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/server.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -46,7 +46,7 @@ Package httptest provides utilities for HTTP testing.
 DefaultRemoteAddr is the default remote address to return in RemoteAddr if an
 explicit DefaultRemoteAddr isn't set on ResponseRecorder.
 
-<h2 id="NewRequest">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/httptest.go#L31">NewRequest</a>
+<h2 id="NewRequest">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/httptest.go#L31">NewRequest</a>
     <a href="#NewRequest">¶</a></h2>
 <pre>func NewRequest(method, target <a href="/builtin/#string">string</a>, body <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) *<a href="/net/http/">http</a>.<a href="/net/http/#Request">Request</a></pre>
 
@@ -72,7 +72,7 @@ acceptable.
 To generate a client HTTP request instead of a server request, see the
 NewRequest function in the net/http package.
 
-<h2 id="ResponseRecorder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/recorder.go#L8">ResponseRecorder</a>
+<h2 id="ResponseRecorder">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/recorder.go#L8">ResponseRecorder</a>
     <a href="#ResponseRecorder">¶</a></h2>
 <pre>type ResponseRecorder struct {
 <span id="ResponseRecorder.Code"></span>    <span class="comment">// Code is the HTTP response code set by WriteHeader.</span>
@@ -124,25 +124,25 @@ Example:
     // text/html; charset=utf-8
     // <html><body>Hello World!</body></html>
 
-<h3 id="NewRecorder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/recorder.go#L36">NewRecorder</a>
+<h3 id="NewRecorder">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/recorder.go#L36">NewRecorder</a>
     <a href="#NewRecorder">¶</a></h3>
 <pre>func NewRecorder() *<a href="#ResponseRecorder">ResponseRecorder</a></pre>
 
 NewRecorder returns an initialized ResponseRecorder.
 
-<h3 id="ResponseRecorder.Flush">func (*ResponseRecorder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/recorder.go#L130">Flush</a>
+<h3 id="ResponseRecorder.Flush">func (*ResponseRecorder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/recorder.go#L130">Flush</a>
     <a href="#ResponseRecorder.Flush">¶</a></h3>
 <pre>func (rw *<a href="#ResponseRecorder">ResponseRecorder</a>) Flush()</pre>
 
 Flush sets rw.Flushed to true.
 
-<h3 id="ResponseRecorder.Header">func (*ResponseRecorder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/recorder.go#L49">Header</a>
+<h3 id="ResponseRecorder.Header">func (*ResponseRecorder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/recorder.go#L49">Header</a>
     <a href="#ResponseRecorder.Header">¶</a></h3>
 <pre>func (rw *<a href="#ResponseRecorder">ResponseRecorder</a>) Header() <a href="/net/http/">http</a>.<a href="/net/http/#Header">Header</a></pre>
 
 Header returns the response headers.
 
-<h3 id="ResponseRecorder.Result">func (*ResponseRecorder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/recorder.go#L152">Result</a>
+<h3 id="ResponseRecorder.Result">func (*ResponseRecorder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/recorder.go#L152">Result</a>
     <a href="#ResponseRecorder.Result">¶</a></h3>
 <pre>func (rw *<a href="#ResponseRecorder">ResponseRecorder</a>) Result() *<a href="/net/http/">http</a>.<a href="/net/http/#Response">Response</a></pre>
 
@@ -160,26 +160,26 @@ to not return any error other than io.EOF.
 
 Result must only be called after the handler has finished running.
 
-<h3 id="ResponseRecorder.Write">func (*ResponseRecorder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/recorder.go#L88">Write</a>
+<h3 id="ResponseRecorder.Write">func (*ResponseRecorder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/recorder.go#L88">Write</a>
     <a href="#ResponseRecorder.Write">¶</a></h3>
 <pre>func (rw *<a href="#ResponseRecorder">ResponseRecorder</a>) Write(buf []<a href="/builtin/#byte">byte</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Write always succeeds and writes to rw.Body, if not nil.
 
-<h3 id="ResponseRecorder.WriteHeader">func (*ResponseRecorder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/recorder.go#L107">WriteHeader</a>
+<h3 id="ResponseRecorder.WriteHeader">func (*ResponseRecorder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/recorder.go#L107">WriteHeader</a>
     <a href="#ResponseRecorder.WriteHeader">¶</a></h3>
 <pre>func (rw *<a href="#ResponseRecorder">ResponseRecorder</a>) WriteHeader(code <a href="/builtin/#int">int</a>)</pre>
 
 WriteHeader sets rw.Code. After it is called, changing rw.Header will not affect
 rw.HeaderMap.
 
-<h3 id="ResponseRecorder.WriteString">func (*ResponseRecorder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/recorder.go#L97">WriteString</a>
+<h3 id="ResponseRecorder.WriteString">func (*ResponseRecorder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/recorder.go#L97">WriteString</a>
     <a href="#ResponseRecorder.WriteString">¶</a></h3>
 <pre>func (rw *<a href="#ResponseRecorder">ResponseRecorder</a>) WriteString(str <a href="/builtin/#string">string</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
 
 WriteString always succeeds and writes to rw.Body, if not nil.
 
-<h2 id="Server">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/server.go#L16">Server</a>
+<h2 id="Server">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/server.go#L16">Server</a>
     <a href="#Server">¶</a></h2>
 <pre>type Server struct {
 <span id="Server.URL"></span>    URL      <a href="/builtin/#string">string</a> <span class="comment">// base URL of form http://ipaddr:port with no trailing slash</span>
@@ -220,14 +220,14 @@ Example:
     fmt.Printf("%s", greeting)
     // Output: Hello, client
 
-<h3 id="NewServer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/server.go#L70">NewServer</a>
+<h3 id="NewServer">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/server.go#L70">NewServer</a>
     <a href="#NewServer">¶</a></h3>
 <pre>func NewServer(handler <a href="/net/http/">http</a>.<a href="/net/http/#Handler">Handler</a>) *<a href="#Server">Server</a></pre>
 
 NewServer starts and returns a new Server. The caller should call Close when
 finished, to shut it down.
 
-<h3 id="NewTLSServer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/server.go#L150">NewTLSServer</a>
+<h3 id="NewTLSServer">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/server.go#L150">NewTLSServer</a>
     <a href="#NewTLSServer">¶</a></h3>
 <pre>func NewTLSServer(handler <a href="/net/http/">http</a>.<a href="/net/http/#Handler">Handler</a>) *<a href="#Server">Server</a></pre>
 
@@ -257,7 +257,7 @@ Example:
     fmt.Printf("%s", greeting)
     // Output: Hello, client
 
-<h3 id="NewUnstartedServer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/server.go#L82">NewUnstartedServer</a>
+<h3 id="NewUnstartedServer">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/server.go#L82">NewUnstartedServer</a>
     <a href="#NewUnstartedServer">¶</a></h3>
 <pre>func NewUnstartedServer(handler <a href="/net/http/">http</a>.<a href="/net/http/#Handler">Handler</a>) *<a href="#Server">Server</a></pre>
 
@@ -267,14 +267,14 @@ After changing its configuration, the caller should call Start or StartTLS.
 
 The caller should call Close when finished, to shut it down.
 
-<h3 id="Server.Certificate">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/server.go#L255">Certificate</a>
+<h3 id="Server.Certificate">func (*Server) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/server.go#L255">Certificate</a>
     <a href="#Server.Certificate">¶</a></h3>
 <pre>func (s *<a href="#Server">Server</a>) Certificate() *<a href="/crypto/x509/">x509</a>.<a href="/crypto/x509/#Certificate">Certificate</a></pre>
 
 Certificate returns the certificate used by the server, or nil if the server
 doesn't use TLS.
 
-<h3 id="Server.Client">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/server.go#L262">Client</a>
+<h3 id="Server.Client">func (*Server) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/server.go#L262">Client</a>
     <a href="#Server.Client">¶</a></h3>
 <pre>func (s *<a href="#Server">Server</a>) Client() *<a href="/net/http/">http</a>.<a href="/net/http/#Client">Client</a></pre>
 
@@ -282,26 +282,26 @@ Client returns an HTTP client configured for making requests to the server. It
 is configured to trust the server's TLS test certificate and will close its idle
 connections on Server.Close.
 
-<h3 id="Server.Close">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/server.go#L162">Close</a>
+<h3 id="Server.Close">func (*Server) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/server.go#L162">Close</a>
     <a href="#Server.Close">¶</a></h3>
 <pre>func (s *<a href="#Server">Server</a>) Close()</pre>
 
 Close shuts down the server and blocks until all outstanding requests on this
 server have completed.
 
-<h3 id="Server.CloseClientConnections">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/server.go#L226">CloseClientConnections</a>
+<h3 id="Server.CloseClientConnections">func (*Server) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/server.go#L226">CloseClientConnections</a>
     <a href="#Server.CloseClientConnections">¶</a></h3>
 <pre>func (s *<a href="#Server">Server</a>) CloseClientConnections()</pre>
 
 CloseClientConnections closes any open HTTP connections to the test Server.
 
-<h3 id="Server.Start">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/server.go#L90">Start</a>
+<h3 id="Server.Start">func (*Server) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/server.go#L90">Start</a>
     <a href="#Server.Start">¶</a></h3>
 <pre>func (s *<a href="#Server">Server</a>) Start()</pre>
 
 Start starts a server from NewUnstartedServer.
 
-<h3 id="Server.StartTLS">func (*Server) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptest/server.go#L107">StartTLS</a>
+<h3 id="Server.StartTLS">func (*Server) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptest/server.go#L107">StartTLS</a>
     <a href="#Server.StartTLS">¶</a></h3>
 <pre>func (s *<a href="#Server">Server</a>) StartTLS()</pre>
 

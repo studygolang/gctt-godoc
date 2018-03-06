@@ -67,7 +67,7 @@ Example:
 - [Package (TrailingTab)](#example_trailingTab)
 
 ### Package files
- [tabwriter.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/tabwriter/tabwriter.go)
+ [tabwriter.go](//github.com/golang/go/blob/release-branch.go1.10/src/text/tabwriter/tabwriter.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -107,7 +107,7 @@ constitutes a single character of width one for formatting purposes.
 
 The value 0xff was chosen because it cannot appear in a valid UTF-8 sequence.
 
-<h2 id="Writer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/tabwriter/tabwriter.go#L82">Writer</a>
+<h2 id="Writer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/tabwriter/tabwriter.go#L82">Writer</a>
     <a href="#Writer">¶</a></h2>
 <pre>type Writer struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -164,14 +164,14 @@ The Writer must buffer input internally, because proper spacing of one line may
 depend on the cells in future lines. Clients must call Flush when done calling
 Write.
 
-<h3 id="NewWriter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/tabwriter/tabwriter.go#L563">NewWriter</a>
+<h3 id="NewWriter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/tabwriter/tabwriter.go#L563">NewWriter</a>
     <a href="#NewWriter">¶</a></h3>
 <pre>func NewWriter(output <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, minwidth, tabwidth, padding <a href="/builtin/#int">int</a>, padchar <a href="/builtin/#byte">byte</a>, flags <a href="/builtin/#uint">uint</a>) *<a href="#Writer">Writer</a></pre>
 
 NewWriter allocates and initializes a new tabwriter.Writer. The parameters are
 the same as for the Init function.
 
-<h3 id="Writer.Flush">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/tabwriter/tabwriter.go#L456">Flush</a>
+<h3 id="Writer.Flush">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/tabwriter/tabwriter.go#L456">Flush</a>
     <a href="#Writer.Flush">¶</a></h3>
 <pre>func (b *<a href="#Writer">Writer</a>) Flush() <a href="/builtin/#error">error</a></pre>
 
@@ -179,7 +179,7 @@ Flush should be called after the last call to Write to ensure that any data
 buffered in the Writer is written to output. Any incomplete escape sequence at
 the end is considered complete for formatting purposes.
 
-<h3 id="Writer.Init">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/tabwriter/tabwriter.go#L177">Init</a>
+<h3 id="Writer.Init">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/tabwriter/tabwriter.go#L177">Init</a>
     <a href="#Writer.Init">¶</a></h3>
 <pre>func (b *<a href="#Writer">Writer</a>) Init(output <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, minwidth, tabwidth, padding <a href="/builtin/#int">int</a>, padchar <a href="/builtin/#byte">byte</a>, flags <a href="/builtin/#uint">uint</a>) *<a href="#Writer">Writer</a></pre>
 
@@ -225,7 +225,7 @@ Example:
     //     a     b       c         d.
     //   123 12345 1234567 123456789.
 
-<h3 id="Writer.Write">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/tabwriter/tabwriter.go#L484">Write</a>
+<h3 id="Writer.Write">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/tabwriter/tabwriter.go#L484">Write</a>
     <a href="#Writer.Write">¶</a></h3>
 <pre>func (b *<a href="#Writer">Writer</a>) Write(buf []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 

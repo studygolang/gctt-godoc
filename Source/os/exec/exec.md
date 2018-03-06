@@ -55,7 +55,7 @@ godoc.org.
 - [LookPath](#exampleLookPath)
 
 ### Package files
- [exec.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go) [exec_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec_unix.go) [lp_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/lp_unix.go)
+ [exec.go](//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go) [exec_unix.go](//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec_unix.go) [lp_unix.go](//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/lp_unix.go)
 
 <h2 id="pkg-variables">Variables</h2>
 
@@ -64,7 +64,7 @@ godoc.org.
 ErrNotFound is the error resulting if a path search failed to find an executable
 file.
 
-<h2 id="LookPath">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/lp_unix.go#L24">LookPath</a>
+<h2 id="LookPath">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/lp_unix.go#L24">LookPath</a>
     <a href="#LookPath">¶</a></h2>
 <pre>func LookPath(file <a href="/builtin/#string">string</a>) (<a href="/builtin/#string">string</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -82,7 +82,7 @@ Example:
     }
     fmt.Printf("fortune is available at %s\n", path)
 
-<h2 id="Cmd">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L42">Cmd</a>
+<h2 id="Cmd">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L42">Cmd</a>
     <a href="#Cmd">¶</a></h2>
 <pre>type Cmd struct {
 <span id="Cmd.Path"></span>    <span class="comment">// Path is the path of the command to run.</span>
@@ -165,7 +165,7 @@ Cmd represents an external command being prepared or run.
 
 A Cmd cannot be reused after calling its Run, Output or CombinedOutput methods.
 
-<h3 id="Command">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L141">Command</a>
+<h3 id="Command">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L141">Command</a>
     <a href="#Command">¶</a></h3>
 <pre>func Command(name <a href="/builtin/#string">string</a>, arg ...<a href="/builtin/#string">string</a>) *<a href="#Cmd">Cmd</a></pre>
 
@@ -208,7 +208,7 @@ Example:
         log.Fatal(err)
     }
 
-<h3 id="CommandContext">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L161">CommandContext</a>
+<h3 id="CommandContext">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L161">CommandContext</a>
     <a href="#CommandContext">¶</a></h3>
 <pre>func CommandContext(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, name <a href="/builtin/#string">string</a>, arg ...<a href="/builtin/#string">string</a>) *<a href="#Cmd">Cmd</a></pre>
 
@@ -228,7 +228,7 @@ Example:
         // will be interrupted.
     }
 
-<h3 id="Cmd.CombinedOutput">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L501">CombinedOutput</a>
+<h3 id="Cmd.CombinedOutput">func (*Cmd) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L501">CombinedOutput</a>
     <a href="#Cmd.CombinedOutput">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) CombinedOutput() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -245,7 +245,7 @@ Example:
     }
     fmt.Printf("%s\n", stdoutStderr)
 
-<h3 id="Cmd.Output">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L478">Output</a>
+<h3 id="Cmd.Output">func (*Cmd) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L478">Output</a>
     <a href="#Cmd.Output">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) Output() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -262,7 +262,7 @@ Example:
     }
     fmt.Printf("The date is %s\n", out)
 
-<h3 id="Cmd.Run">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L291">Run</a>
+<h3 id="Cmd.Run">func (*Cmd) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L291">Run</a>
     <a href="#Cmd.Run">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) Run() <a href="/builtin/#error">error</a></pre>
 
@@ -287,7 +287,7 @@ Example:
     err := cmd.Run()
     log.Printf("Command finished with error: %v", err)
 
-<h3 id="Cmd.Start">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L328">Start</a>
+<h3 id="Cmd.Start">func (*Cmd) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L328">Start</a>
     <a href="#Cmd.Start">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) Start() <a href="/builtin/#error">error</a></pre>
 
@@ -308,7 +308,7 @@ Example:
     err = cmd.Wait()
     log.Printf("Command finished with error: %v", err)
 
-<h3 id="Cmd.StderrPipe">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L588">StderrPipe</a>
+<h3 id="Cmd.StderrPipe">func (*Cmd) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L588">StderrPipe</a>
     <a href="#Cmd.StderrPipe">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) StderrPipe() (<a href="/io/">io</a>.<a href="/io/#ReadCloser">ReadCloser</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -341,7 +341,7 @@ Example:
         log.Fatal(err)
     }
 
-<h3 id="Cmd.StdinPipe">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L521">StdinPipe</a>
+<h3 id="Cmd.StdinPipe">func (*Cmd) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L521">StdinPipe</a>
     <a href="#Cmd.StdinPipe">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) StdinPipe() (<a href="/io/">io</a>.<a href="/io/#WriteCloser">WriteCloser</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -372,7 +372,7 @@ Example:
 
     fmt.Printf("%s\n", out)
 
-<h3 id="Cmd.StdoutPipe">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L563">StdoutPipe</a>
+<h3 id="Cmd.StdoutPipe">func (*Cmd) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L563">StdoutPipe</a>
     <a href="#Cmd.StdoutPipe">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) StdoutPipe() (<a href="/io/">io</a>.<a href="/io/#ReadCloser">ReadCloser</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -408,7 +408,7 @@ Example:
     }
     fmt.Printf("%s is %d years old\n", person.Name, person.Age)
 
-<h3 id="Cmd.Wait">func (*Cmd) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L442">Wait</a>
+<h3 id="Cmd.Wait">func (*Cmd) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L442">Wait</a>
     <a href="#Cmd.Wait">¶</a></h3>
 <pre>func (c *<a href="#Cmd">Cmd</a>) Wait() <a href="/builtin/#error">error</a></pre>
 
@@ -428,7 +428,7 @@ the respective I/O loop copying to or from the process to complete.
 
 Wait releases any resources associated with the Cmd.
 
-<h2 id="Error">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L29">Error</a>
+<h2 id="Error">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L29">Error</a>
     <a href="#Error">¶</a></h2>
 <pre>type Error struct {
 <span id="Error.Name"></span>    Name <a href="/builtin/#string">string</a>
@@ -438,12 +438,12 @@ Wait releases any resources associated with the Cmd.
 Error records the name of a binary that failed to be executed and the reason it
 failed.
 
-<h3 id="Error.Error">func (*Error) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L34">Error</a>
+<h3 id="Error.Error">func (*Error) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L34">Error</a>
     <a href="#Error.Error">¶</a></h3>
 <pre>func (e *<a href="#Error">Error</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="ExitError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L405">ExitError</a>
+<h2 id="ExitError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L405">ExitError</a>
     <a href="#ExitError">¶</a></h2>
 <pre>type ExitError struct {
     *<a href="/os/">os</a>.<a href="/os/#ProcessState">ProcessState</a>
@@ -463,7 +463,7 @@ failed.
 
 An ExitError reports an unsuccessful exit by a command.
 
-<h3 id="ExitError.Error">func (*ExitError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/exec/exec.go#L421">Error</a>
+<h3 id="ExitError.Error">func (*ExitError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/exec/exec.go#L421">Error</a>
     <a href="#ExitError.Error">¶</a></h3>
 <pre>func (e *<a href="#ExitError">ExitError</a>) Error() <a href="/builtin/#string">string</a></pre>
 

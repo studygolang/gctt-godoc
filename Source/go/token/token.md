@@ -50,7 +50,7 @@ programming language and basic operations on tokens (printing, predicates).
   - [func (tok Token) String() string](#Token.String)
 
 ### Package files
- [position.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go) [serialize.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/serialize.go) [token.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/token.go)
+ [position.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go) [serialize.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/token/serialize.go) [token.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/token/token.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -65,7 +65,7 @@ lowest precedence, followed by operators starting with precedence 1 up to unary
 operators. The highest precedence serves as "catch-all" precedence for selector,
 indexing, and other operator and delimiter tokens.
 
-<h2 id="File">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L81">File</a>
+<h2 id="File">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L81">File</a>
     <a href="#File">¶</a></h2>
 <pre>type File struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -74,7 +74,7 @@ indexing, and other operator and delimiter tokens.
 A File is a handle for a file belonging to a FileSet. A File has a name, size,
 and line offset table.
 
-<h3 id="File.AddLine">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L120">AddLine</a>
+<h3 id="File.AddLine">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L120">AddLine</a>
     <a href="#File.AddLine">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) AddLine(offset <a href="/builtin/#int">int</a>)</pre>
 
@@ -82,7 +82,7 @@ AddLine adds the line offset for a new line. The line offset must be larger than
 the offset for the previous line and smaller than the file size; otherwise the
 line offset is ignored.
 
-<h3 id="File.AddLineInfo">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L215">AddLineInfo</a>
+<h3 id="File.AddLineInfo">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L215">AddLineInfo</a>
     <a href="#File.AddLineInfo">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) AddLineInfo(offset <a href="/builtin/#int">int</a>, filename <a href="/builtin/#string">string</a>, line <a href="/builtin/#int">int</a>)</pre>
 
@@ -94,26 +94,26 @@ is ignored.
 AddLineInfo is typically used to register alternative position information for
 //line filename:line comments in source files.
 
-<h3 id="File.Base">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L99">Base</a>
+<h3 id="File.Base">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L99">Base</a>
     <a href="#File.Base">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Base() <a href="/builtin/#int">int</a></pre>
 
 Base returns the base offset of file f as registered with AddFile.
 
-<h3 id="File.Line">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L248">Line</a>
+<h3 id="File.Line">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L248">Line</a>
     <a href="#File.Line">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Line(p <a href="#Pos">Pos</a>) <a href="/builtin/#int">int</a></pre>
 
 Line returns the line number for the given file position p; p must be a Pos
 value in that file or NoPos.
 
-<h3 id="File.LineCount">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L109">LineCount</a>
+<h3 id="File.LineCount">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L109">LineCount</a>
     <a href="#File.LineCount">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) LineCount() <a href="/builtin/#int">int</a></pre>
 
 LineCount returns the number of lines in file f.
 
-<h3 id="File.MergeLine">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L133">MergeLine</a>
+<h3 id="File.MergeLine">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L133">MergeLine</a>
     <a href="#File.MergeLine">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) MergeLine(line <a href="/builtin/#int">int</a>)</pre>
 
@@ -122,34 +122,34 @@ newline character at the end of the line with a space (to not change the
 remaining offsets). To obtain the line number, consult e.g. Position.Line.
 MergeLine will panic if given an invalid line number.
 
-<h3 id="File.Name">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L94">Name</a>
+<h3 id="File.Name">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L94">Name</a>
     <a href="#File.Name">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 Name returns the file name of file f as registered with AddFile.
 
-<h3 id="File.Offset">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L238">Offset</a>
+<h3 id="File.Offset">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L238">Offset</a>
     <a href="#File.Offset">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Offset(p <a href="#Pos">Pos</a>) <a href="/builtin/#int">int</a></pre>
 
 Offset returns the offset for the given file position p; p must be a valid Pos
 value in that file. f.Offset(f.Pos(offset)) == offset.
 
-<h3 id="File.Pos">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L227">Pos</a>
+<h3 id="File.Pos">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L227">Pos</a>
     <a href="#File.Pos">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Pos(offset <a href="/builtin/#int">int</a>) <a href="#Pos">Pos</a></pre>
 
 Pos returns the Pos value for the given file offset; the offset must be <=
 f.Size(). f.Pos(f.Offset(p)) == p.
 
-<h3 id="File.Position">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L305">Position</a>
+<h3 id="File.Position">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L305">Position</a>
     <a href="#File.Position">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Position(p <a href="#Pos">Pos</a>) (pos <a href="#Position">Position</a>)</pre>
 
 Position returns the Position value for the given file position p. Calling
 f.Position(p) is equivalent to calling f.PositionFor(p, true).
 
-<h3 id="File.PositionFor">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L292">PositionFor</a>
+<h3 id="File.PositionFor">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L292">PositionFor</a>
     <a href="#File.PositionFor">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) PositionFor(p <a href="#Pos">Pos</a>, adjusted <a href="/builtin/#bool">bool</a>) (pos <a href="#Position">Position</a>)</pre>
 
@@ -158,7 +158,7 @@ adjusted is set, the position may be adjusted by position-altering //line
 comments; otherwise those comments are ignored. p must be a Pos value in f or
 NoPos.
 
-<h3 id="File.SetLines">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L160">SetLines</a>
+<h3 id="File.SetLines">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L160">SetLines</a>
     <a href="#File.SetLines">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) SetLines(lines []<a href="/builtin/#int">int</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -170,20 +170,20 @@ previous line and smaller than the file size; otherwise SetLines fails and
 returns false. Callers must not mutate the provided slice after SetLines
 returns.
 
-<h3 id="File.SetLinesForContent">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L178">SetLinesForContent</a>
+<h3 id="File.SetLinesForContent">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L178">SetLinesForContent</a>
     <a href="#File.SetLinesForContent">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) SetLinesForContent(content []<a href="/builtin/#byte">byte</a>)</pre>
 
 SetLinesForContent sets the line offsets for the given file content. It ignores
 position-altering //line comments.
 
-<h3 id="File.Size">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L104">Size</a>
+<h3 id="File.Size">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L104">Size</a>
     <a href="#File.Size">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Size() <a href="/builtin/#int">int</a></pre>
 
 Size returns the size of file f as registered with AddFile.
 
-<h2 id="FileSet">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L316">FileSet</a>
+<h2 id="FileSet">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L316">FileSet</a>
     <a href="#FileSet">¶</a></h2>
 <pre>type FileSet struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -192,13 +192,13 @@ Size returns the size of file f as registered with AddFile.
 A FileSet represents a set of source files. Methods of file sets are
 synchronized; multiple goroutines may invoke them concurrently.
 
-<h3 id="NewFileSet">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L324">NewFileSet</a>
+<h3 id="NewFileSet">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L324">NewFileSet</a>
     <a href="#NewFileSet">¶</a></h3>
 <pre>func NewFileSet() *<a href="#FileSet">FileSet</a></pre>
 
 NewFileSet creates a new file set.
 
-<h3 id="FileSet.AddFile">func (*FileSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L357">AddFile</a>
+<h3 id="FileSet.AddFile">func (*FileSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L357">AddFile</a>
     <a href="#FileSet.AddFile">¶</a></h3>
 <pre>func (s *<a href="#FileSet">FileSet</a>) AddFile(filename <a href="/builtin/#string">string</a>, base, size <a href="/builtin/#int">int</a>) *<a href="#File">File</a></pre>
 
@@ -218,35 +218,35 @@ with offs in the range [0, size] and thus p in the range [base, base+size]. For
 convenience, File.Pos may be used to create file-specific position values from a
 file offset.
 
-<h3 id="FileSet.Base">func (*FileSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L333">Base</a>
+<h3 id="FileSet.Base">func (*FileSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L333">Base</a>
     <a href="#FileSet.Base">¶</a></h3>
 <pre>func (s *<a href="#FileSet">FileSet</a>) Base() <a href="/builtin/#int">int</a></pre>
 
 Base returns the minimum base offset that must be provided to AddFile when
 adding the next file.
 
-<h3 id="FileSet.File">func (*FileSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L427">File</a>
+<h3 id="FileSet.File">func (*FileSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L427">File</a>
     <a href="#FileSet.File">¶</a></h3>
 <pre>func (s *<a href="#FileSet">FileSet</a>) File(p <a href="#Pos">Pos</a>) (f *<a href="#File">File</a>)</pre>
 
 File returns the file that contains the position p. If no such file is found
 (for instance for p == NoPos), the result is nil.
 
-<h3 id="FileSet.Iterate">func (*FileSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L382">Iterate</a>
+<h3 id="FileSet.Iterate">func (*FileSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L382">Iterate</a>
     <a href="#FileSet.Iterate">¶</a></h3>
 <pre>func (s *<a href="#FileSet">FileSet</a>) Iterate(f func(*<a href="#File">File</a>) <a href="/builtin/#bool">bool</a>)</pre>
 
 Iterate calls f for the files in the file set in the order they were added until
 f returns false.
 
-<h3 id="FileSet.Position">func (*FileSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L451">Position</a>
+<h3 id="FileSet.Position">func (*FileSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L451">Position</a>
     <a href="#FileSet.Position">¶</a></h3>
 <pre>func (s *<a href="#FileSet">FileSet</a>) Position(p <a href="#Pos">Pos</a>) (pos <a href="#Position">Position</a>)</pre>
 
 Position converts a Pos p in the fileset into a Position value. Calling
 s.Position(p) is equivalent to calling s.PositionFor(p, true).
 
-<h3 id="FileSet.PositionFor">func (*FileSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L439">PositionFor</a>
+<h3 id="FileSet.PositionFor">func (*FileSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L439">PositionFor</a>
     <a href="#FileSet.PositionFor">¶</a></h3>
 <pre>func (s *<a href="#FileSet">FileSet</a>) PositionFor(p <a href="#Pos">Pos</a>, adjusted <a href="/builtin/#bool">bool</a>) (pos <a href="#Position">Position</a>)</pre>
 
@@ -254,19 +254,19 @@ PositionFor converts a Pos p in the fileset into a Position value. If adjusted
 is set, the position may be adjusted by position-altering //line comments;
 otherwise those comments are ignored. p must be a Pos value in s or NoPos.
 
-<h3 id="FileSet.Read">func (*FileSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/serialize.go#L12">Read</a>
+<h3 id="FileSet.Read">func (*FileSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/serialize.go#L12">Read</a>
     <a href="#FileSet.Read">¶</a></h3>
 <pre>func (s *<a href="#FileSet">FileSet</a>) Read(decode func(interface{}) <a href="/builtin/#error">error</a>) <a href="/builtin/#error">error</a></pre>
 
 Read calls decode to deserialize a file set into s; s must not be nil.
 
-<h3 id="FileSet.Write">func (*FileSet) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/serialize.go#L40">Write</a>
+<h3 id="FileSet.Write">func (*FileSet) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/serialize.go#L40">Write</a>
     <a href="#FileSet.Write">¶</a></h3>
 <pre>func (s *<a href="#FileSet">FileSet</a>) Write(encode func(interface{}) <a href="/builtin/#error">error</a>) <a href="/builtin/#error">error</a></pre>
 
 Write calls encode to serialize the file set s.
 
-<h2 id="Pos">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L61">Pos</a>
+<h2 id="Pos">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L61">Pos</a>
     <a href="#Pos">¶</a></h2>
 <pre>type Pos <a href="/builtin/#int">int</a></pre>
 
@@ -295,13 +295,13 @@ associated with it, and NoPos.IsValid() is false. NoPos is always smaller than
 any other Pos value. The corresponding Position value for NoPos is the zero
 value for Position.
 
-<h3 id="Pos.IsValid">func (Pos) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L71">IsValid</a>
+<h3 id="Pos.IsValid">func (Pos) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L71">IsValid</a>
     <a href="#Pos.IsValid">¶</a></h3>
 <pre>func (p <a href="#Pos">Pos</a>) IsValid() <a href="/builtin/#bool">bool</a></pre>
 
 IsValid reports whether the position is valid.
 
-<h2 id="Position">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L10">Position</a>
+<h2 id="Position">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L10">Position</a>
     <a href="#Position">¶</a></h2>
 <pre>type Position struct {
 <span id="Position.Filename"></span>    Filename <a href="/builtin/#string">string</a> <span class="comment">// filename, if any</span>
@@ -313,13 +313,13 @@ IsValid reports whether the position is valid.
 Position describes an arbitrary source position including the file, line, and
 column location. A Position is valid if the line number is > 0.
 
-<h3 id="Position.IsValid">func (*Position) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L18">IsValid</a>
+<h3 id="Position.IsValid">func (*Position) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L18">IsValid</a>
     <a href="#Position.IsValid">¶</a></h3>
 <pre>func (pos *<a href="#Position">Position</a>) IsValid() <a href="/builtin/#bool">bool</a></pre>
 
 IsValid reports whether the position is valid.
 
-<h3 id="Position.String">func (Position) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/position.go#L27">String</a>
+<h3 id="Position.String">func (Position) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/position.go#L27">String</a>
     <a href="#Position.String">¶</a></h3>
 <pre>func (pos <a href="#Position">Position</a>) String() <a href="/builtin/#string">string</a></pre>
 
@@ -330,7 +330,7 @@ String returns a string in one of several forms:
     file                invalid position with file name
     -                   invalid position without file name
 
-<h2 id="Token">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/token.go#L3">Token</a>
+<h2 id="Token">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/token.go#L3">Token</a>
     <a href="#Token">¶</a></h2>
 <pre>type Token <a href="/builtin/#int">int</a></pre>
 
@@ -442,41 +442,41 @@ Token is the set of lexical tokens of the Go programming language.
 
 The list of tokens.
 
-<h3 id="Lookup">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/token.go#L276">Lookup</a>
+<h3 id="Lookup">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/token.go#L276">Lookup</a>
     <a href="#Lookup">¶</a></h3>
 <pre>func Lookup(ident <a href="/builtin/#string">string</a>) <a href="#Token">Token</a></pre>
 
 Lookup maps an identifier to its keyword token or IDENT (if not a keyword).
 
-<h3 id="Token.IsKeyword">func (Token) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/token.go#L298">IsKeyword</a>
+<h3 id="Token.IsKeyword">func (Token) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/token.go#L298">IsKeyword</a>
     <a href="#Token.IsKeyword">¶</a></h3>
 <pre>func (tok <a href="#Token">Token</a>) IsKeyword() <a href="/builtin/#bool">bool</a></pre>
 
 IsKeyword returns true for tokens corresponding to keywords; it returns false
 otherwise.
 
-<h3 id="Token.IsLiteral">func (Token) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/token.go#L288">IsLiteral</a>
+<h3 id="Token.IsLiteral">func (Token) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/token.go#L288">IsLiteral</a>
     <a href="#Token.IsLiteral">¶</a></h3>
 <pre>func (tok <a href="#Token">Token</a>) IsLiteral() <a href="/builtin/#bool">bool</a></pre>
 
 IsLiteral returns true for tokens corresponding to identifiers and basic type
 literals; it returns false otherwise.
 
-<h3 id="Token.IsOperator">func (Token) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/token.go#L293">IsOperator</a>
+<h3 id="Token.IsOperator">func (Token) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/token.go#L293">IsOperator</a>
     <a href="#Token.IsOperator">¶</a></h3>
 <pre>func (tok <a href="#Token">Token</a>) IsOperator() <a href="/builtin/#bool">bool</a></pre>
 
 IsOperator returns true for tokens corresponding to operators and delimiters; it
 returns false otherwise.
 
-<h3 id="Token.Precedence">func (Token) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/token.go#L249">Precedence</a>
+<h3 id="Token.Precedence">func (Token) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/token.go#L249">Precedence</a>
     <a href="#Token.Precedence">¶</a></h3>
 <pre>func (op <a href="#Token">Token</a>) Precedence() <a href="/builtin/#int">int</a></pre>
 
 Precedence returns the operator precedence of the binary operator op. If op is
 not a binary operator, the result is LowestPrecedence.
 
-<h3 id="Token.String">func (Token) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/token/token.go#L222">String</a>
+<h3 id="Token.String">func (Token) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/token/token.go#L222">String</a>
     <a href="#Token.String">¶</a></h3>
 <pre>func (tok <a href="#Token">Token</a>) String() <a href="/builtin/#string">string</a></pre>
 

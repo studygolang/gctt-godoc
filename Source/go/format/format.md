@@ -17,9 +17,9 @@ Package format implements standard formatting of Go source.
 - [Node](#exampleNode)
 
 ### Package files
- [format.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/format/format.go) [internal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/format/internal.go)
+ [format.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/format/format.go) [internal.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/format/internal.go)
 
-<h2 id="Node">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/format/format.go#L23">Node</a>
+<h2 id="Node">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/format/format.go#L23">Node</a>
     <a href="#Node">¶</a></h2>
 <pre>func Node(dst <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, fset *<a href="/go/token/">token</a>.<a href="/go/token/#FileSet">FileSet</a>, node interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -60,7 +60,7 @@ Example:
 
     // Output: (6 + 2*3) / 4
 
-<h2 id="Source">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/format/format.go#L76">Source</a>
+<h2 id="Source">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/format/format.go#L76">Source</a>
     <a href="#Source">¶</a></h2>
 <pre>func Source(src []<a href="/builtin/#byte">byte</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 

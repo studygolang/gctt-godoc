@@ -148,16 +148,16 @@ Example:
 - [Regexp.SubexpNames](#exampleRegexp_SubexpNames)
 
 ### Package files
- [backtrack.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/backtrack.go) [exec.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/exec.go) [onepass.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/onepass.go) [regexp.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go)
+ [backtrack.go](//github.com/golang/go/blob/release-branch.go1.10/src/regexp/backtrack.go) [exec.go](//github.com/golang/go/blob/release-branch.go1.10/src/regexp/exec.go) [onepass.go](//github.com/golang/go/blob/release-branch.go1.10/src/regexp/onepass.go) [regexp.go](//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go)
 
-<h2 id="Match">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L458">Match</a>
+<h2 id="Match">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L458">Match</a>
     <a href="#Match">¶</a></h2>
 <pre>func Match(pattern <a href="/builtin/#string">string</a>, b []<a href="/builtin/#byte">byte</a>) (matched <a href="/builtin/#bool">bool</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 Match checks whether a textual regular expression matches a byte slice. More
 complicated queries need to use Compile and the full Regexp interface.
 
-<h2 id="MatchReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L436">MatchReader</a>
+<h2 id="MatchReader">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L436">MatchReader</a>
     <a href="#MatchReader">¶</a></h2>
 <pre>func MatchReader(pattern <a href="/builtin/#string">string</a>, r <a href="/io/">io</a>.<a href="/io/#RuneReader">RuneReader</a>) (matched <a href="/builtin/#bool">bool</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -165,7 +165,7 @@ MatchReader checks whether a textual regular expression matches the text read by
 the RuneReader. More complicated queries need to use Compile and the full Regexp
 interface.
 
-<h2 id="MatchString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L447">MatchString</a>
+<h2 id="MatchString">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L447">MatchString</a>
     <a href="#MatchString">¶</a></h2>
 <pre>func MatchString(pattern <a href="/builtin/#string">string</a>, s <a href="/builtin/#string">string</a>) (matched <a href="/builtin/#bool">bool</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -186,7 +186,7 @@ Example:
     // false <nil>
     // false error parsing regexp: missing closing ): `a(b`
 
-<h2 id="QuoteMeta">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L619">QuoteMeta</a>
+<h2 id="QuoteMeta">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L619">QuoteMeta</a>
     <a href="#QuoteMeta">¶</a></h2>
 <pre>func QuoteMeta(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -194,7 +194,7 @@ QuoteMeta returns a string that quotes all regular expression metacharacters
 inside the argument text; the returned string is a regular expression matching
 the literal text. For example, QuoteMeta(`[foo]`) returns `\[foo\]`.
 
-<h2 id="Regexp">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L71">Regexp</a>
+<h2 id="Regexp">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L71">Regexp</a>
     <a href="#Regexp">¶</a></h2>
 <pre>type Regexp struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -204,7 +204,7 @@ Regexp is the representation of a compiled regular expression. A Regexp is safe
 for concurrent use by multiple goroutines, except for configuration methods,
 such as Longest.
 
-<h3 id="Compile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L122">Compile</a>
+<h3 id="Compile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L122">Compile</a>
     <a href="#Compile">¶</a></h3>
 <pre>func Compile(expr <a href="/builtin/#string">string</a>) (*<a href="#Regexp">Regexp</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -218,7 +218,7 @@ matching is the same semantics that Perl, Python, and other implementations use,
 although this package implements it without the expense of backtracking. For
 POSIX leftmost-longest matching, see CompilePOSIX.
 
-<h3 id="CompilePOSIX">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L145">CompilePOSIX</a>
+<h3 id="CompilePOSIX">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L145">CompilePOSIX</a>
     <a href="#CompilePOSIX">¶</a></h3>
 <pre>func CompilePOSIX(expr <a href="/builtin/#string">string</a>) (*<a href="#Regexp">Regexp</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -239,7 +239,7 @@ maximize the length of the first subexpression, then the second, and so on from
 left to right. The POSIX rule is computationally prohibitive and not even
 well-defined. See http://swtch.com/~rsc/regexp/regexp2.html#posix for details.
 
-<h3 id="MustCompile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L227">MustCompile</a>
+<h3 id="MustCompile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L227">MustCompile</a>
     <a href="#MustCompile">¶</a></h3>
 <pre>func MustCompile(str <a href="/builtin/#string">string</a>) *<a href="#Regexp">Regexp</a></pre>
 
@@ -247,7 +247,7 @@ MustCompile is like Compile but panics if the expression cannot be parsed. It
 simplifies safe initialization of global variables holding compiled regular
 expressions.
 
-<h3 id="MustCompilePOSIX">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L238">MustCompilePOSIX</a>
+<h3 id="MustCompilePOSIX">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L238">MustCompilePOSIX</a>
     <a href="#MustCompilePOSIX">¶</a></h3>
 <pre>func MustCompilePOSIX(str <a href="/builtin/#string">string</a>) *<a href="#Regexp">Regexp</a></pre>
 
@@ -255,7 +255,7 @@ MustCompilePOSIX is like CompilePOSIX but panics if the expression cannot be
 parsed. It simplifies safe initialization of global variables holding compiled
 regular expressions.
 
-<h3 id="Regexp.Copy">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L104">Copy</a>
+<h3 id="Regexp.Copy">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L104">Copy</a>
     <a href="#Regexp.Copy">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) Copy() *<a href="#Regexp">Regexp</a></pre>
 
@@ -264,7 +264,7 @@ Copy returns a new Regexp object copied from re.
 When using a Regexp in multiple goroutines, giving each goroutine its own copy
 helps to avoid lock contention.
 
-<h3 id="Regexp.Expand">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L809">Expand</a>
+<h3 id="Regexp.Expand">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L809">Expand</a>
     <a href="#Regexp.Expand">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) Expand(dst []<a href="/builtin/#byte">byte</a>, template []<a href="/builtin/#byte">byte</a>, src []<a href="/builtin/#byte">byte</a>, match []<a href="/builtin/#int">int</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -317,7 +317,7 @@ Example:
     // option2=value2
     // option3=value3
 
-<h3 id="Regexp.ExpandString">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L816">ExpandString</a>
+<h3 id="Regexp.ExpandString">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L816">ExpandString</a>
     <a href="#Regexp.ExpandString">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) ExpandString(dst []<a href="/builtin/#byte">byte</a>, template <a href="/builtin/#string">string</a>, src <a href="/builtin/#string">string</a>, match []<a href="/builtin/#int">int</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -358,14 +358,14 @@ Example:
     // option2=value2
     // option3=value3
 
-<h3 id="Regexp.Find">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L712">Find</a>
+<h3 id="Regexp.Find">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L712">Find</a>
     <a href="#Regexp.Find">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) Find(b []<a href="/builtin/#byte">byte</a>) []<a href="/builtin/#byte">byte</a></pre>
 
 Find returns a slice holding the text of the leftmost match in b of the regular
 expression. A return value of nil indicates no match.
 
-<h3 id="Regexp.FindAll">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L973">FindAll</a>
+<h3 id="Regexp.FindAll">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L973">FindAll</a>
     <a href="#Regexp.FindAll">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindAll(b []<a href="/builtin/#byte">byte</a>, n <a href="/builtin/#int">int</a>) [][]<a href="/builtin/#byte">byte</a></pre>
 
@@ -373,7 +373,7 @@ FindAll is the 'All' version of Find; it returns a slice of all successive
 matches of the expression, as defined by the 'All' description in the package
 comment. A return value of nil indicates no match.
 
-<h3 id="Regexp.FindAllIndex">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L991">FindAllIndex</a>
+<h3 id="Regexp.FindAllIndex">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L991">FindAllIndex</a>
     <a href="#Regexp.FindAllIndex">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindAllIndex(b []<a href="/builtin/#byte">byte</a>, n <a href="/builtin/#int">int</a>) [][]<a href="/builtin/#int">int</a></pre>
 
@@ -381,7 +381,7 @@ FindAllIndex is the 'All' version of FindIndex; it returns a slice of all
 successive matches of the expression, as defined by the 'All' description in the
 package comment. A return value of nil indicates no match.
 
-<h3 id="Regexp.FindAllString">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L1009">FindAllString</a>
+<h3 id="Regexp.FindAllString">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L1009">FindAllString</a>
     <a href="#Regexp.FindAllString">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindAllString(s <a href="/builtin/#string">string</a>, n <a href="/builtin/#int">int</a>) []<a href="/builtin/#string">string</a></pre>
 
@@ -403,7 +403,7 @@ Example:
     // [aa]
     // []
 
-<h3 id="Regexp.FindAllStringIndex">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L1027">FindAllStringIndex</a>
+<h3 id="Regexp.FindAllStringIndex">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L1027">FindAllStringIndex</a>
     <a href="#Regexp.FindAllStringIndex">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindAllStringIndex(s <a href="/builtin/#string">string</a>, n <a href="/builtin/#int">int</a>) [][]<a href="/builtin/#int">int</a></pre>
 
@@ -411,7 +411,7 @@ FindAllStringIndex is the 'All' version of FindStringIndex; it returns a slice
 of all successive matches of the expression, as defined by the 'All' description
 in the package comment. A return value of nil indicates no match.
 
-<h3 id="Regexp.FindAllStringSubmatch">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L1087">FindAllStringSubmatch</a>
+<h3 id="Regexp.FindAllStringSubmatch">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L1087">FindAllStringSubmatch</a>
     <a href="#Regexp.FindAllStringSubmatch">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindAllStringSubmatch(s <a href="/builtin/#string">string</a>, n <a href="/builtin/#int">int</a>) [][]<a href="/builtin/#string">string</a></pre>
 
@@ -433,7 +433,7 @@ Example:
     // [["ab" ""] ["axb" "x"]]
     // [["axxb" "xx"] ["ab" ""]]
 
-<h3 id="Regexp.FindAllStringSubmatchIndex">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L1112">FindAllStringSubmatchIndex</a>
+<h3 id="Regexp.FindAllStringSubmatchIndex">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L1112">FindAllStringSubmatchIndex</a>
     <a href="#Regexp.FindAllStringSubmatchIndex">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindAllStringSubmatchIndex(s <a href="/builtin/#string">string</a>, n <a href="/builtin/#int">int</a>) [][]<a href="/builtin/#int">int</a></pre>
 
@@ -461,7 +461,7 @@ Example:
     // [[1 5 2 4] [6 8 7 7]]
     // []
 
-<h3 id="Regexp.FindAllSubmatch">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L1045">FindAllSubmatch</a>
+<h3 id="Regexp.FindAllSubmatch">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L1045">FindAllSubmatch</a>
     <a href="#Regexp.FindAllSubmatch">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindAllSubmatch(b []<a href="/builtin/#byte">byte</a>, n <a href="/builtin/#int">int</a>) [][][]<a href="/builtin/#byte">byte</a></pre>
 
@@ -469,7 +469,7 @@ FindAllSubmatch is the 'All' version of FindSubmatch; it returns a slice of all
 successive matches of the expression, as defined by the 'All' description in the
 package comment. A return value of nil indicates no match.
 
-<h3 id="Regexp.FindAllSubmatchIndex">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L1069">FindAllSubmatchIndex</a>
+<h3 id="Regexp.FindAllSubmatchIndex">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L1069">FindAllSubmatchIndex</a>
     <a href="#Regexp.FindAllSubmatchIndex">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindAllSubmatchIndex(b []<a href="/builtin/#byte">byte</a>, n <a href="/builtin/#int">int</a>) [][]<a href="/builtin/#int">int</a></pre>
 
@@ -477,7 +477,7 @@ FindAllSubmatchIndex is the 'All' version of FindSubmatchIndex; it returns a
 slice of all successive matches of the expression, as defined by the 'All'
 description in the package comment. A return value of nil indicates no match.
 
-<h3 id="Regexp.FindIndex">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L725">FindIndex</a>
+<h3 id="Regexp.FindIndex">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L725">FindIndex</a>
     <a href="#Regexp.FindIndex">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindIndex(b []<a href="/builtin/#byte">byte</a>) (loc []<a href="/builtin/#int">int</a>)</pre>
 
@@ -485,7 +485,7 @@ FindIndex returns a two-element slice of integers defining the location of the
 leftmost match in b of the regular expression. The match itself is at
 b[loc[0]:loc[1]]. A return value of nil indicates no match.
 
-<h3 id="Regexp.FindReaderIndex">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L764">FindReaderIndex</a>
+<h3 id="Regexp.FindReaderIndex">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L764">FindReaderIndex</a>
     <a href="#Regexp.FindReaderIndex">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindReaderIndex(r <a href="/io/">io</a>.<a href="/io/#RuneReader">RuneReader</a>) (loc []<a href="/builtin/#int">int</a>)</pre>
 
@@ -494,7 +494,7 @@ the leftmost match of the regular expression in text read from the RuneReader.
 The match text was found in the input stream at byte offset loc[0] through
 loc[1]-1. A return value of nil indicates no match.
 
-<h3 id="Regexp.FindReaderSubmatchIndex">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L963">FindReaderSubmatchIndex</a>
+<h3 id="Regexp.FindReaderSubmatchIndex">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L963">FindReaderSubmatchIndex</a>
     <a href="#Regexp.FindReaderSubmatchIndex">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindReaderSubmatchIndex(r <a href="/io/">io</a>.<a href="/io/#RuneReader">RuneReader</a>) []<a href="/builtin/#int">int</a></pre>
 
@@ -503,7 +503,7 @@ leftmost match of the regular expression of text read by the RuneReader, and the
 matches, if any, of its subexpressions, as defined by the 'Submatch' and 'Index'
 descriptions in the package comment. A return value of nil indicates no match.
 
-<h3 id="Regexp.FindString">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L738">FindString</a>
+<h3 id="Regexp.FindString">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L738">FindString</a>
     <a href="#Regexp.FindString">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindString(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -523,7 +523,7 @@ Example:
     // "food"
     // ""
 
-<h3 id="Regexp.FindStringIndex">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L751">FindStringIndex</a>
+<h3 id="Regexp.FindStringIndex">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L751">FindStringIndex</a>
     <a href="#Regexp.FindStringIndex">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindStringIndex(s <a href="/builtin/#string">string</a>) (loc []<a href="/builtin/#int">int</a>)</pre>
 
@@ -541,7 +541,7 @@ Example:
     // [1 3]
     // true
 
-<h3 id="Regexp.FindStringSubmatch">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L934">FindStringSubmatch</a>
+<h3 id="Regexp.FindStringSubmatch">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L934">FindStringSubmatch</a>
     <a href="#Regexp.FindStringSubmatch">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindStringSubmatch(s <a href="/builtin/#string">string</a>) []<a href="/builtin/#string">string</a></pre>
 
@@ -560,7 +560,7 @@ Example:
     // ["axxxbyc" "xxx" "y"]
     // ["abzc" "" "z"]
 
-<h3 id="Regexp.FindStringSubmatchIndex">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L954">FindStringSubmatchIndex</a>
+<h3 id="Regexp.FindStringSubmatchIndex">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L954">FindStringSubmatchIndex</a>
     <a href="#Regexp.FindStringSubmatchIndex">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindStringSubmatchIndex(s <a href="/builtin/#string">string</a>) []<a href="/builtin/#int">int</a></pre>
 
@@ -569,7 +569,7 @@ leftmost match of the regular expression in s and the matches, if any, of its
 subexpressions, as defined by the 'Submatch' and 'Index' descriptions in the
 package comment. A return value of nil indicates no match.
 
-<h3 id="Regexp.FindSubmatch">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L777">FindSubmatch</a>
+<h3 id="Regexp.FindSubmatch">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L777">FindSubmatch</a>
     <a href="#Regexp.FindSubmatch">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindSubmatch(b []<a href="/builtin/#byte">byte</a>) [][]<a href="/builtin/#byte">byte</a></pre>
 
@@ -578,7 +578,7 @@ the regular expression in b and the matches, if any, of its subexpressions, as
 defined by the 'Submatch' descriptions in the package comment. A return value of
 nil indicates no match.
 
-<h3 id="Regexp.FindSubmatchIndex">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L925">FindSubmatchIndex</a>
+<h3 id="Regexp.FindSubmatchIndex">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L925">FindSubmatchIndex</a>
     <a href="#Regexp.FindSubmatchIndex">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) FindSubmatchIndex(b []<a href="/builtin/#byte">byte</a>) []<a href="/builtin/#int">int</a></pre>
 
@@ -587,7 +587,7 @@ leftmost match of the regular expression in b and the matches, if any, of its
 subexpressions, as defined by the 'Submatch' and 'Index' descriptions in the
 package comment. A return value of nil indicates no match.
 
-<h3 id="Regexp.LiteralPrefix">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L413">LiteralPrefix</a>
+<h3 id="Regexp.LiteralPrefix">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L413">LiteralPrefix</a>
     <a href="#Regexp.LiteralPrefix">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) LiteralPrefix() (prefix <a href="/builtin/#string">string</a>, complete <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -595,7 +595,7 @@ LiteralPrefix returns a literal string that must begin any match of the regular
 expression re. It returns the boolean true if the literal string comprises the
 entire regular expression.
 
-<h3 id="Regexp.Longest">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L155">Longest</a>
+<h3 id="Regexp.Longest">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L155">Longest</a>
     <a href="#Regexp.Longest">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) Longest()</pre>
 
@@ -605,19 +605,19 @@ possible in the input (leftmost), and among those it chooses a match that is as
 long as possible. This method modifies the Regexp and may not be called
 concurrently with any other methods.
 
-<h3 id="Regexp.Match">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L429">Match</a>
+<h3 id="Regexp.Match">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L429">Match</a>
     <a href="#Regexp.Match">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) Match(b []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Match reports whether the Regexp matches the byte slice b.
 
-<h3 id="Regexp.MatchReader">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L419">MatchReader</a>
+<h3 id="Regexp.MatchReader">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L419">MatchReader</a>
     <a href="#Regexp.MatchReader">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) MatchReader(r <a href="/io/">io</a>.<a href="/io/#RuneReader">RuneReader</a>) <a href="/builtin/#bool">bool</a></pre>
 
 MatchReader reports whether the Regexp matches the text read by the RuneReader.
 
-<h3 id="Regexp.MatchString">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L424">MatchString</a>
+<h3 id="Regexp.MatchString">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L424">MatchString</a>
     <a href="#Regexp.MatchString">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) MatchString(s <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
@@ -635,13 +635,13 @@ Example:
     // true
     // true
 
-<h3 id="Regexp.NumSubexp">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L254">NumSubexp</a>
+<h3 id="Regexp.NumSubexp">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L254">NumSubexp</a>
     <a href="#Regexp.NumSubexp">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) NumSubexp() <a href="/builtin/#int">int</a></pre>
 
 NumSubexp returns the number of parenthesized subexpressions in this Regexp.
 
-<h3 id="Regexp.ReplaceAll">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L568">ReplaceAll</a>
+<h3 id="Regexp.ReplaceAll">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L568">ReplaceAll</a>
     <a href="#Regexp.ReplaceAll">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) ReplaceAll(src, repl []<a href="/builtin/#byte">byte</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -649,7 +649,7 @@ ReplaceAll returns a copy of src, replacing matches of the Regexp with the
 replacement text repl. Inside repl, $ signs are interpreted as in Expand, so for
 instance $1 represents the text of the first submatch.
 
-<h3 id="Regexp.ReplaceAllFunc">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L596">ReplaceAllFunc</a>
+<h3 id="Regexp.ReplaceAllFunc">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L596">ReplaceAllFunc</a>
     <a href="#Regexp.ReplaceAllFunc">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) ReplaceAllFunc(src []<a href="/builtin/#byte">byte</a>, repl func([]<a href="/builtin/#byte">byte</a>) []<a href="/builtin/#byte">byte</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -658,7 +658,7 @@ been replaced by the return value of function repl applied to the matched byte
 slice. The replacement returned by repl is substituted directly, without using
 Expand.
 
-<h3 id="Regexp.ReplaceAllLiteral">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L586">ReplaceAllLiteral</a>
+<h3 id="Regexp.ReplaceAllLiteral">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L586">ReplaceAllLiteral</a>
     <a href="#Regexp.ReplaceAllLiteral">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) ReplaceAllLiteral(src, repl []<a href="/builtin/#byte">byte</a>) []<a href="/builtin/#byte">byte</a></pre>
 
@@ -666,7 +666,7 @@ ReplaceAllLiteral returns a copy of src, replacing matches of the Regexp with
 the replacement bytes repl. The replacement repl is substituted directly,
 without using Expand.
 
-<h3 id="Regexp.ReplaceAllLiteralString">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L483">ReplaceAllLiteralString</a>
+<h3 id="Regexp.ReplaceAllLiteralString">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L483">ReplaceAllLiteralString</a>
     <a href="#Regexp.ReplaceAllLiteralString">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) ReplaceAllLiteralString(src, repl <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -686,7 +686,7 @@ Example:
     // -$1-$1-
     // -${1}-${1}-
 
-<h3 id="Regexp.ReplaceAllString">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L469">ReplaceAllString</a>
+<h3 id="Regexp.ReplaceAllString">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L469">ReplaceAllString</a>
     <a href="#Regexp.ReplaceAllString">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) ReplaceAllString(src, repl <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -708,7 +708,7 @@ Example:
     // ---
     // -W-xxW-
 
-<h3 id="Regexp.ReplaceAllStringFunc">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L493">ReplaceAllStringFunc</a>
+<h3 id="Regexp.ReplaceAllStringFunc">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L493">ReplaceAllStringFunc</a>
     <a href="#Regexp.ReplaceAllStringFunc">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) ReplaceAllStringFunc(src <a href="/builtin/#string">string</a>, repl func(<a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
@@ -717,7 +717,7 @@ have been replaced by the return value of function repl applied to the matched
 substring. The replacement returned by repl is substituted directly, without
 using Expand.
 
-<h3 id="Regexp.Split">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L1141">Split</a>
+<h3 id="Regexp.Split">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L1141">Split</a>
     <a href="#Regexp.Split">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) Split(s <a href="/builtin/#string">string</a>, n <a href="/builtin/#int">int</a>) []<a href="/builtin/#string">string</a></pre>
 
@@ -762,13 +762,13 @@ Example:
     // [pizza]
     // [pi a]
 
-<h3 id="Regexp.String">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L96">String</a>
+<h3 id="Regexp.String">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L96">String</a>
     <a href="#Regexp.String">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) String() <a href="/builtin/#string">string</a></pre>
 
 String returns the source text used to compile the regular expression.
 
-<h3 id="Regexp.SubexpNames">func (*Regexp) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/regexp/regexp.go#L263">SubexpNames</a>
+<h3 id="Regexp.SubexpNames">func (*Regexp) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/regexp/regexp.go#L263">SubexpNames</a>
     <a href="#Regexp.SubexpNames">¶</a></h3>
 <pre>func (re *<a href="#Regexp">Regexp</a>) SubexpNames() []<a href="/builtin/#string">string</a></pre>
 

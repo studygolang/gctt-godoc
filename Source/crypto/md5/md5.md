@@ -22,7 +22,7 @@ MD5 is cryptographically broken and should not be used for secure applications.
 - [Sum](#exampleSum)
 
 ### Package files
- [md5.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/md5/md5.go) [md5block.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/md5/md5block.go) [md5block_decl.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/md5/md5block_decl.go)
+ [md5.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/md5/md5.go) [md5block.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/md5/md5block.go) [md5block_decl.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/md5/md5block_decl.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -34,7 +34,7 @@ The blocksize of MD5 in bytes.
 
 The size of an MD5 checksum in bytes.
 
-<h2 id="New">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/md5/md5.go#L120">New</a>
+<h2 id="New">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/md5/md5.go#L120">New</a>
     <a href="#New">¶</a></h2>
 <pre>func New() <a href="/hash/">hash</a>.<a href="/hash/#Hash">Hash</a></pre>
 
@@ -68,7 +68,7 @@ Example:
 
     fmt.Printf("%x", h.Sum(nil))
 
-<h2 id="Sum">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/md5/md5.go#L194">Sum</a>
+<h2 id="Sum">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/md5/md5.go#L194">Sum</a>
     <a href="#Sum">¶</a></h2>
 <pre>func Sum(data []<a href="/builtin/#byte">byte</a>) [<a href="#Size">Size</a>]<a href="/builtin/#byte">byte</a></pre>
 

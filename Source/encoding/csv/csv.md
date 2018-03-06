@@ -76,7 +76,7 @@ results in
 - [Writer.WriteAll](#exampleWriter_WriteAll)
 
 ### Package files
- [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go) [writer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/writer.go)
+ [reader.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/csv/reader.go) [writer.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/csv/writer.go)
 
 <h2 id="pkg-variables">Variables</h2>
 
@@ -89,7 +89,7 @@ results in
 
 These are the errors that can be returned in ParseError.Err.
 
-<h2 id="ParseError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L56">ParseError</a>
+<h2 id="ParseError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/csv/reader.go#L56">ParseError</a>
     <a href="#ParseError">¶</a></h2>
 <pre>type ParseError struct {
 <span id="ParseError.StartLine"></span>    StartLine <a href="/builtin/#int">int</a>   <span class="comment">// Line where the record starts</span>
@@ -101,12 +101,12 @@ These are the errors that can be returned in ParseError.Err.
 A ParseError is returned for parsing errors. Line numbers are 1-indexed and
 columns are 0-indexed.
 
-<h3 id="ParseError.Error">func (*ParseError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L63">Error</a>
+<h3 id="ParseError.Error">func (*ParseError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/csv/reader.go#L63">Error</a>
     <a href="#ParseError.Error">¶</a></h3>
 <pre>func (e *<a href="#ParseError">ParseError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Reader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L96">Reader</a>
+<h2 id="Reader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/csv/reader.go#L96">Reader</a>
     <a href="#Reader">¶</a></h2>
 <pre>type Reader struct {
 <span id="Reader.Comma"></span>    <span class="comment">// Comma is the field delimiter.</span>
@@ -209,13 +209,13 @@ Example:
     // Output:
     // [[first_name last_name username] [Rob Pike rob] [Ken Thompson ken] [Robert Griesemer gri]]
 
-<h3 id="NewReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L158">NewReader</a>
+<h3 id="NewReader">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/csv/reader.go#L158">NewReader</a>
     <a href="#NewReader">¶</a></h3>
 <pre>func NewReader(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) *<a href="#Reader">Reader</a></pre>
 
 NewReader returns a new Reader that reads from r.
 
-<h3 id="Reader.Read">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L173">Read</a>
+<h3 id="Reader.Read">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/csv/reader.go#L173">Read</a>
     <a href="#Reader.Read">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) Read() (record []<a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -226,7 +226,7 @@ or a non-nil error, but not both. If there is no data left to be read, Read
 returns nil, io.EOF. If ReuseRecord is true, the returned slice may be shared
 between multiple calls to Read.
 
-<h3 id="Reader.ReadAll">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/reader.go#L188">ReadAll</a>
+<h3 id="Reader.ReadAll">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/csv/reader.go#L188">ReadAll</a>
     <a href="#Reader.ReadAll">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) ReadAll() (records [][]<a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -254,7 +254,7 @@ Example:
     // Output:
     // [[first_name last_name username] [Rob Pike rob] [Ken Thompson ken] [Robert Griesemer gri]]
 
-<h2 id="Writer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/writer.go#L14">Writer</a>
+<h2 id="Writer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/csv/writer.go#L14">Writer</a>
     <a href="#Writer">¶</a></h2>
 <pre>type Writer struct {
 <span id="Writer.Comma"></span>    Comma   <a href="/builtin/#rune">rune</a> <span class="comment">// Field delimiter (set to &#39;,&#39; by NewWriter)</span>
@@ -302,33 +302,33 @@ Example:
     // Ken,Thompson,ken
     // Robert,Griesemer,gri
 
-<h3 id="NewWriter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/writer.go#L21">NewWriter</a>
+<h3 id="NewWriter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/csv/writer.go#L21">NewWriter</a>
     <a href="#NewWriter">¶</a></h3>
 <pre>func NewWriter(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) *<a href="#Writer">Writer</a></pre>
 
 NewWriter returns a new Writer that writes to w.
 
-<h3 id="Writer.Error">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/writer.go#L97">Error</a>
+<h3 id="Writer.Error">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/csv/writer.go#L97">Error</a>
     <a href="#Writer.Error">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Error() <a href="/builtin/#error">error</a></pre>
 
 Error reports any error that has occurred during a previous Write or Flush.
 
-<h3 id="Writer.Flush">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/writer.go#L92">Flush</a>
+<h3 id="Writer.Flush">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/csv/writer.go#L92">Flush</a>
     <a href="#Writer.Flush">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Flush()</pre>
 
 Flush writes any buffered data to the underlying io.Writer. To check if an error
 occurred during the Flush, call Error.
 
-<h3 id="Writer.Write">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/writer.go#L30">Write</a>
+<h3 id="Writer.Write">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/csv/writer.go#L30">Write</a>
     <a href="#Writer.Write">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Write(record []<a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
 Writer writes a single CSV record to w along with any necessary quoting. A
 record is a slice of strings with each string being one field.
 
-<h3 id="Writer.WriteAll">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/csv/writer.go#L103">WriteAll</a>
+<h3 id="Writer.WriteAll">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/csv/writer.go#L103">WriteAll</a>
     <a href="#Writer.WriteAll">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) WriteAll(records [][]<a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 

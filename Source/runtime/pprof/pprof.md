@@ -96,9 +96,9 @@ https://github.com/google/pprof/blob/master/doc/pprof.md.
 - [Bugs](#pkg-note-BUG)
 
 ### Package files
- [elf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/elf.go) [label.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/label.go) [map.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/map.go) [pprof.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go) [proto.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/proto.go) [protobuf.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/protobuf.go) [protomem.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/protomem.go) [runtime.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/runtime.go)
+ [elf.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/elf.go) [label.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/label.go) [map.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/map.go) [pprof.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/pprof.go) [proto.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/proto.go) [protobuf.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/protobuf.go) [protomem.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/protomem.go) [runtime.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/runtime.go)
 
-<h2 id="Do">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/runtime.go#L21">Do</a>
+<h2 id="Do">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/runtime.go#L21">Do</a>
     <a href="#Do">¶</a></h2>
 <pre>func Do(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, labels <a href="#LabelSet">LabelSet</a>, f func(<a href="/context/">context</a>.<a href="/context/#Context">Context</a>))</pre>
 
@@ -108,34 +108,34 @@ in the order provided, overriding any previous value for the same key. The
 augmented label map will be set for the duration of the call to f and restored
 once f returns.
 
-<h2 id="ForLabels">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/label.go#L68">ForLabels</a>
+<h2 id="ForLabels">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/label.go#L68">ForLabels</a>
     <a href="#ForLabels">¶</a></h2>
 <pre>func ForLabels(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, f func(key, value <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a>)</pre>
 
 ForLabels invokes f with each label set on the context. The function f should
 return true to continue iteration or false to stop iteration early.
 
-<h2 id="Label">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/label.go#L60">Label</a>
+<h2 id="Label">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/label.go#L60">Label</a>
     <a href="#Label">¶</a></h2>
 <pre>func Label(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, key <a href="/builtin/#string">string</a>) (<a href="/builtin/#string">string</a>, <a href="/builtin/#bool">bool</a>)</pre>
 
 Label returns the value of the label with the given key on ctx, and a boolean
 indicating whether that label exists.
 
-<h2 id="Profiles">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L204">Profiles</a>
+<h2 id="Profiles">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/pprof.go#L204">Profiles</a>
     <a href="#Profiles">¶</a></h2>
 <pre>func Profiles() []*<a href="#Profile">Profile</a></pre>
 
 Profiles returns a slice of all the known profiles, sorted by name.
 
-<h2 id="SetGoroutineLabels">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/runtime.go#L10">SetGoroutineLabels</a>
+<h2 id="SetGoroutineLabels">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/runtime.go#L10">SetGoroutineLabels</a>
     <a href="#SetGoroutineLabels">¶</a></h2>
 <pre>func SetGoroutineLabels(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>)</pre>
 
 SetGoroutineLabels sets the current goroutine's labels to match ctx. This is a
 lower-level API than Do, which should be used instead when possible.
 
-<h2 id="StartCPUProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L702">StartCPUProfile</a>
+<h2 id="StartCPUProfile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/pprof.go#L702">StartCPUProfile</a>
     <a href="#StartCPUProfile">¶</a></h2>
 <pre>func StartCPUProfile(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -150,28 +150,28 @@ signal handler (if any) not to the one used by Go. To make it work, call
 os/signal.Notify for syscall.SIGPROF, but note that doing so may break any
 profiling being done by the main program.
 
-<h2 id="StopCPUProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L761">StopCPUProfile</a>
+<h2 id="StopCPUProfile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/pprof.go#L761">StopCPUProfile</a>
     <a href="#StopCPUProfile">¶</a></h2>
 <pre>func StopCPUProfile()</pre>
 
 StopCPUProfile stops the current CPU profile, if any. StopCPUProfile only
 returns after all the writes for the profile have completed.
 
-<h2 id="WithLabels">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/label.go#L29">WithLabels</a>
+<h2 id="WithLabels">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/label.go#L29">WithLabels</a>
     <a href="#WithLabels">¶</a></h2>
 <pre>func WithLabels(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, labels <a href="#LabelSet">LabelSet</a>) <a href="/context/">context</a>.<a href="/context/#Context">Context</a></pre>
 
 WithLabels returns a new context.Context with the given labels added. A label
 overwrites a prior label with the same key.
 
-<h2 id="WriteHeapProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L492">WriteHeapProfile</a>
+<h2 id="WriteHeapProfile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/pprof.go#L492">WriteHeapProfile</a>
     <a href="#WriteHeapProfile">¶</a></h2>
 <pre>func WriteHeapProfile(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) <a href="/builtin/#error">error</a></pre>
 
 WriteHeapProfile is shorthand for Lookup("heap").WriteTo(w, 0). It is preserved
 for backwards compatibility.
 
-<h2 id="LabelSet">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/label.go#L7">LabelSet</a>
+<h2 id="LabelSet">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/label.go#L7">LabelSet</a>
     <a href="#LabelSet">¶</a></h2>
 <pre>type LabelSet struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -179,14 +179,14 @@ for backwards compatibility.
 
 LabelSet is a set of labels.
 
-<h3 id="Labels">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/label.go#L47">Labels</a>
+<h3 id="Labels">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/label.go#L47">Labels</a>
     <a href="#Labels">¶</a></h3>
 <pre>func Labels(args ...<a href="/builtin/#string">string</a>) <a href="#LabelSet">LabelSet</a></pre>
 
 Labels takes an even number of strings representing key-value pairs and makes a
 LabelSet containing them. A label overwrites a prior label with the same key.
 
-<h2 id="Profile">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L111">Profile</a>
+<h2 id="Profile">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/pprof.go#L111">Profile</a>
     <a href="#Profile">¶</a></h2>
 <pre>type Profile struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -221,14 +221,14 @@ The CPU profile is not available as a Profile. It has a special API, the
 StartCPUProfile and StopCPUProfile functions, because it streams output to a
 writer during profiling.
 
-<h3 id="Lookup">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L197">Lookup</a>
+<h3 id="Lookup">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/pprof.go#L197">Lookup</a>
     <a href="#Lookup">¶</a></h3>
 <pre>func Lookup(name <a href="/builtin/#string">string</a>) *<a href="#Profile">Profile</a></pre>
 
 Lookup returns the profile with the given name, or nil if no such profile
 exists.
 
-<h3 id="NewProfile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L179">NewProfile</a>
+<h3 id="NewProfile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/pprof.go#L179">NewProfile</a>
     <a href="#NewProfile">¶</a></h3>
 <pre>func NewProfile(name <a href="/builtin/#string">string</a>) *<a href="#Profile">Profile</a></pre>
 
@@ -238,7 +238,7 @@ name already exists, NewProfile panics. The convention is to use a
 compatibility with various tools that read pprof data, profile names should not
 contain spaces.
 
-<h3 id="Profile.Add">func (*Profile) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L250">Add</a>
+<h3 id="Profile.Add">func (*Profile) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/pprof.go#L250">Add</a>
     <a href="#Profile.Add">¶</a></h3>
 <pre>func (p *<a href="#Profile">Profile</a>) Add(value interface{}, skip <a href="/builtin/#int">int</a>)</pre>
 
@@ -259,27 +259,27 @@ calling Add. For example, given this execution stack:
 Passing skip=0 begins the stack trace at the call to Add inside rpc.NewClient.
 Passing skip=1 begins the stack trace at the call to NewClient inside mypkg.Run.
 
-<h3 id="Profile.Count">func (*Profile) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L223">Count</a>
+<h3 id="Profile.Count">func (*Profile) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/pprof.go#L223">Count</a>
     <a href="#Profile.Count">¶</a></h3>
 <pre>func (p *<a href="#Profile">Profile</a>) Count() <a href="/builtin/#int">int</a></pre>
 
 Count returns the number of execution stacks currently in the profile.
 
-<h3 id="Profile.Name">func (*Profile) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L218">Name</a>
+<h3 id="Profile.Name">func (*Profile) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/pprof.go#L218">Name</a>
     <a href="#Profile.Name">¶</a></h3>
 <pre>func (p *<a href="#Profile">Profile</a>) Name() <a href="/builtin/#string">string</a></pre>
 
 Name returns this profile's name, which can be passed to Lookup to reobtain the
 profile.
 
-<h3 id="Profile.Remove">func (*Profile) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L276">Remove</a>
+<h3 id="Profile.Remove">func (*Profile) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/pprof.go#L276">Remove</a>
     <a href="#Profile.Remove">¶</a></h3>
 <pre>func (p *<a href="#Profile">Profile</a>) Remove(value interface{})</pre>
 
 Remove removes the execution stack associated with value from the profile. It is
 a no-op if the value is not in the profile.
 
-<h3 id="Profile.WriteTo">func (*Profile) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L295">WriteTo</a>
+<h3 id="Profile.WriteTo">func (*Profile) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/pprof.go#L295">WriteTo</a>
     <a href="#Profile.WriteTo">¶</a></h3>
 <pre>func (p *<a href="#Profile">Profile</a>) WriteTo(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, debug <a href="/builtin/#int">int</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -298,7 +298,7 @@ panic.
 
 <h2 id="pkg-note-BUG">Bugs</h2>
 
-- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/pprof/pprof.go#L78)  Profiles are only as good as the kernel support used to generate them. See
+- [☞](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/pprof/pprof.go#L78)  Profiles are only as good as the kernel support used to generate them. See
   https://golang.org/issue/13841 for details about known problems.
 
 ## Subdirectories

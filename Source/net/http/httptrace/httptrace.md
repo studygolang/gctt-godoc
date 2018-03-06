@@ -41,9 +41,9 @@ Example:
 - [Package](#example)
 
 ### Package files
- [trace.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptrace/trace.go)
+ [trace.go](//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptrace/trace.go)
 
-<h2 id="WithClientTrace">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptrace/trace.go#L23">WithClientTrace</a>
+<h2 id="WithClientTrace">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptrace/trace.go#L23">WithClientTrace</a>
     <a href="#WithClientTrace">¶</a></h2>
 <pre>func WithClientTrace(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>, trace *<a href="#ClientTrace">ClientTrace</a>) <a href="/context/">context</a>.<a href="/context/#Context">Context</a></pre>
 
@@ -52,7 +52,7 @@ client requests made with the returned context will use the provided trace
 hooks, in addition to any previous hooks registered with ctx. Any hooks defined
 in the provided trace will be called first.
 
-<h2 id="ClientTrace">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptrace/trace.go#L69">ClientTrace</a>
+<h2 id="ClientTrace">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptrace/trace.go#L69">ClientTrace</a>
     <a href="#ClientTrace">¶</a></h2>
 <pre>type ClientTrace struct {
 <span id="ClientTrace.GetConn"></span>    <span class="comment">// GetConn is called before a connection is created or</span>
@@ -139,14 +139,14 @@ round trip and has no hooks that span a series of redirected requests.
 
 See https://blog.golang.org/http-tracing for more.
 
-<h3 id="ContextClientTrace">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptrace/trace.go#L13">ContextClientTrace</a>
+<h3 id="ContextClientTrace">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptrace/trace.go#L13">ContextClientTrace</a>
     <a href="#ContextClientTrace">¶</a></h3>
 <pre>func ContextClientTrace(ctx <a href="/context/">context</a>.<a href="/context/#Context">Context</a>) *<a href="#ClientTrace">ClientTrace</a></pre>
 
 ContextClientTrace returns the ClientTrace associated with the provided context.
 If none, it returns nil.
 
-<h2 id="DNSDoneInfo">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptrace/trace.go#L194">DNSDoneInfo</a>
+<h2 id="DNSDoneInfo">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptrace/trace.go#L194">DNSDoneInfo</a>
     <a href="#DNSDoneInfo">¶</a></h2>
 <pre>type DNSDoneInfo struct {
 <span id="DNSDoneInfo.Addrs"></span>    <span class="comment">// Addrs are the IPv4 and/or IPv6 addresses found in the DNS</span>
@@ -163,7 +163,7 @@ If none, it returns nil.
 
 DNSDoneInfo contains information about the results of a DNS lookup.
 
-<h2 id="DNSStartInfo">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptrace/trace.go#L189">DNSStartInfo</a>
+<h2 id="DNSStartInfo">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptrace/trace.go#L189">DNSStartInfo</a>
     <a href="#DNSStartInfo">¶</a></h2>
 <pre>type DNSStartInfo struct {
 <span id="DNSStartInfo.Host"></span>    Host <a href="/builtin/#string">string</a>
@@ -171,7 +171,7 @@ DNSDoneInfo contains information about the results of a DNS lookup.
 
 DNSStartInfo contains information about a DNS request.
 
-<h2 id="GotConnInfo">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptrace/trace.go#L216">GotConnInfo</a>
+<h2 id="GotConnInfo">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptrace/trace.go#L216">GotConnInfo</a>
     <a href="#GotConnInfo">¶</a></h2>
 <pre>type GotConnInfo struct {
 <span id="GotConnInfo.Conn"></span>    <span class="comment">// Conn is the connection that was obtained. It is owned by</span>
@@ -195,7 +195,7 @@ DNSStartInfo contains information about a DNS request.
 GotConnInfo is the argument to the ClientTrace.GotConn function and contains
 information about the obtained connection.
 
-<h2 id="WroteRequestInfo">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/net/http/httptrace/trace.go#L146">WroteRequestInfo</a>
+<h2 id="WroteRequestInfo">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/net/http/httptrace/trace.go#L146">WroteRequestInfo</a>
     <a href="#WroteRequestInfo">¶</a></h2>
 <pre>type WroteRequestInfo struct {
 <span id="WroteRequestInfo.Err"></span>    <span class="comment">// Err is any error encountered while writing the Request.</span>

@@ -70,7 +70,7 @@ Package xml implements a simple XML 1.0 parser that understands XML name spaces.
 - [Unmarshal](#exampleUnmarshal)
 
 ### Package files
- [marshal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go) [read.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/read.go) [typeinfo.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/typeinfo.go) [xml.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go)
+ [marshal.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/marshal.go) [read.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/read.go) [typeinfo.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/typeinfo.go) [xml.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -94,7 +94,7 @@ automatically.
 HTMLEntity is an entity map containing translations for the standard HTML entity
 characters.
 
-<h2 id="Escape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L1983">Escape</a>
+<h2 id="Escape">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L1983">Escape</a>
     <a href="#Escape">¶</a></h2>
 <pre>func Escape(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, s []<a href="/builtin/#byte">byte</a>)</pre>
 
@@ -102,14 +102,14 @@ Escape is like EscapeText but omits the error return value. It is provided for
 backwards compatibility with Go 1.0. Code targeting Go 1.1 or later should use
 EscapeText.
 
-<h2 id="EscapeText">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L1887">EscapeText</a>
+<h2 id="EscapeText">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L1887">EscapeText</a>
     <a href="#EscapeText">¶</a></h2>
 <pre>func EscapeText(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, s []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
 EscapeText writes to w the properly escaped XML equivalent of the plain text
 data s.
 
-<h2 id="Marshal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go#L65">Marshal</a>
+<h2 id="Marshal">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/marshal.go#L65">Marshal</a>
     <a href="#Marshal">¶</a></h2>
 <pre>func Marshal(v interface{}) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -165,7 +165,7 @@ See MarshalIndent for an example.
 
 Marshal will return an error if asked to marshal a channel, function, or map.
 
-<h2 id="MarshalIndent">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go#L111">MarshalIndent</a>
+<h2 id="MarshalIndent">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/marshal.go#L111">MarshalIndent</a>
     <a href="#MarshalIndent">¶</a></h2>
 <pre>func MarshalIndent(v interface{}, prefix, indent <a href="/builtin/#string">string</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -214,7 +214,7 @@ Example:
     //       <!-- Need more details. -->
     //   </person>
 
-<h2 id="Unmarshal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/read.go#L117">Unmarshal</a>
+<h2 id="Unmarshal">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/read.go#L117">Unmarshal</a>
     <a href="#Unmarshal">¶</a></h2>
 <pre>func Unmarshal(data []<a href="/builtin/#byte">byte</a>, v interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -374,7 +374,7 @@ Example:
     // Groups: [Friends Squash]
     // Address: {Hanga Roa Easter Island}
 
-<h2 id="Attr">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L38">Attr</a>
+<h2 id="Attr">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L38">Attr</a>
     <a href="#Attr">¶</a></h2>
 <pre>type Attr struct {
 <span id="Attr.Name"></span>    Name  <a href="#Name">Name</a>
@@ -383,33 +383,33 @@ Example:
 
 An Attr represents an attribute in an XML element (Name=Value).
 
-<h2 id="CharData">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L74">CharData</a>
+<h2 id="CharData">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L74">CharData</a>
     <a href="#CharData">¶</a></h2>
 <pre>type CharData []<a href="/builtin/#byte">byte</a></pre>
 
 A CharData represents XML character data (raw text), in which XML escape
 sequences have been replaced by the characters they represent.
 
-<h3 id="CharData.Copy">func (CharData) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L83">Copy</a>
+<h3 id="CharData.Copy">func (CharData) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L83">Copy</a>
     <a href="#CharData.Copy">¶</a></h3>
 <pre>func (c <a href="#CharData">CharData</a>) Copy() <a href="#CharData">CharData</a></pre>
 
 Copy creates a new copy of CharData.
 
-<h2 id="Comment">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L87">Comment</a>
+<h2 id="Comment">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L87">Comment</a>
     <a href="#Comment">¶</a></h2>
 <pre>type Comment []<a href="/builtin/#byte">byte</a></pre>
 
 A Comment represents an XML comment of the form <!--comment-->. The bytes do not
 include the <!-- and --> comment markers.
 
-<h3 id="Comment.Copy">func (Comment) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L90">Copy</a>
+<h3 id="Comment.Copy">func (Comment) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L90">Copy</a>
     <a href="#Comment.Copy">¶</a></h3>
 <pre>func (c <a href="#Comment">Comment</a>) Copy() <a href="#Comment">Comment</a></pre>
 
 Copy creates a new copy of Comment.
 
-<h2 id="Decoder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L147">Decoder</a>
+<h2 id="Decoder">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L147">Decoder</a>
     <a href="#Decoder">¶</a></h2>
 <pre>type Decoder struct {
 <span id="Decoder.Strict"></span>    <span class="comment">// Strict defaults to true, enforcing the requirements</span>
@@ -468,27 +468,27 @@ Copy creates a new copy of Comment.
 A Decoder represents an XML parser reading a particular input stream. The parser
 assumes that its input is encoded in UTF-8.
 
-<h3 id="NewDecoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L219">NewDecoder</a>
+<h3 id="NewDecoder">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L219">NewDecoder</a>
     <a href="#NewDecoder">¶</a></h3>
 <pre>func NewDecoder(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) *<a href="#Decoder">Decoder</a></pre>
 
 NewDecoder creates a new XML parser reading from r. If r does not implement
 io.ByteReader, NewDecoder will do its own buffering.
 
-<h3 id="NewTokenDecoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L231">NewTokenDecoder</a>
+<h3 id="NewTokenDecoder">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L231">NewTokenDecoder</a>
     <a href="#NewTokenDecoder">¶</a></h3>
 <pre>func NewTokenDecoder(t <a href="#TokenReader">TokenReader</a>) *<a href="#Decoder">Decoder</a></pre>
 
 NewTokenDecoder creates a new XML parser using an underlying token stream.
 
-<h3 id="Decoder.Decode">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/read.go#L123">Decode</a>
+<h3 id="Decoder.Decode">func (*Decoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/read.go#L123">Decode</a>
     <a href="#Decoder.Decode">¶</a></h3>
 <pre>func (d *<a href="#Decoder">Decoder</a>) Decode(v interface{}) <a href="/builtin/#error">error</a></pre>
 
 Decode works like Unmarshal, except it reads the decoder stream to find the
 start element.
 
-<h3 id="Decoder.DecodeElement">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/read.go#L131">DecodeElement</a>
+<h3 id="Decoder.DecodeElement">func (*Decoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/read.go#L131">DecodeElement</a>
     <a href="#Decoder.DecodeElement">¶</a></h3>
 <pre>func (d *<a href="#Decoder">Decoder</a>) DecodeElement(v interface{}, start *<a href="#StartElement">StartElement</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -496,7 +496,7 @@ DecodeElement works like Unmarshal except that it takes a pointer to the start
 XML element to decode into v. It is useful when a client reads some raw XML
 tokens itself but also wants to defer to Unmarshal for some elements.
 
-<h3 id="Decoder.InputOffset">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L924">InputOffset</a>
+<h3 id="Decoder.InputOffset">func (*Decoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L924">InputOffset</a>
     <a href="#Decoder.InputOffset">¶</a></h3>
 <pre>func (d *<a href="#Decoder">Decoder</a>) InputOffset() <a href="/builtin/#int64">int64</a></pre>
 
@@ -504,14 +504,14 @@ InputOffset returns the input stream byte offset of the current decoder
 position. The offset gives the location of the end of the most recently returned
 token and the beginning of the next token.
 
-<h3 id="Decoder.RawToken">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L531">RawToken</a>
+<h3 id="Decoder.RawToken">func (*Decoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L531">RawToken</a>
     <a href="#Decoder.RawToken">¶</a></h3>
 <pre>func (d *<a href="#Decoder">Decoder</a>) RawToken() (<a href="#Token">Token</a>, <a href="/builtin/#error">error</a>)</pre>
 
 RawToken is like Token but does not verify that start and end elements match and
 does not translate name space prefixes to their corresponding URLs.
 
-<h3 id="Decoder.Skip">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/read.go#L725">Skip</a>
+<h3 id="Decoder.Skip">func (*Decoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/read.go#L725">Skip</a>
     <a href="#Decoder.Skip">¶</a></h3>
 <pre>func (d *<a href="#Decoder">Decoder</a>) Skip() <a href="/builtin/#error">error</a></pre>
 
@@ -521,7 +521,7 @@ it can be used to skip nested structures. It returns nil if it finds an end
 element matching the start element; otherwise it returns an error describing the
 problem.
 
-<h3 id="Decoder.Token">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L269">Token</a>
+<h3 id="Decoder.Token">func (*Decoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L269">Token</a>
     <a href="#Decoder.Token">¶</a></h3>
 <pre>func (d *<a href="#Decoder">Decoder</a>) Token() (<a href="#Token">Token</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -545,20 +545,20 @@ the Token has the Space set to the URL identifying its name space when known. If
 Token encounters an unrecognized name space prefix, it uses the prefix as the
 Space rather than report an error.
 
-<h2 id="Directive">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L106">Directive</a>
+<h2 id="Directive">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L106">Directive</a>
     <a href="#Directive">¶</a></h2>
 <pre>type Directive []<a href="/builtin/#byte">byte</a></pre>
 
 A Directive represents an XML directive of the form <!text>. The bytes do not
 include the <! and > markers.
 
-<h3 id="Directive.Copy">func (Directive) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L109">Copy</a>
+<h3 id="Directive.Copy">func (Directive) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L109">Copy</a>
     <a href="#Directive.Copy">¶</a></h3>
 <pre>func (d <a href="#Directive">Directive</a>) Copy() <a href="#Directive">Directive</a></pre>
 
 Copy creates a new copy of Directive.
 
-<h2 id="Encoder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go#L122">Encoder</a>
+<h2 id="Encoder">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/marshal.go#L122">Encoder</a>
     <a href="#Encoder">¶</a></h2>
 <pre>type Encoder struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -607,13 +607,13 @@ Example:
     //       <!-- Need more details. -->
     //   </person>
 
-<h3 id="NewEncoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go#L127">NewEncoder</a>
+<h3 id="NewEncoder">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/marshal.go#L127">NewEncoder</a>
     <a href="#NewEncoder">¶</a></h3>
 <pre>func NewEncoder(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) *<a href="#Encoder">Encoder</a></pre>
 
 NewEncoder returns a new encoder that writes to w.
 
-<h3 id="Encoder.Encode">func (*Encoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go#L147">Encode</a>
+<h3 id="Encoder.Encode">func (*Encoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/marshal.go#L147">Encode</a>
     <a href="#Encoder.Encode">¶</a></h3>
 <pre>func (enc *<a href="#Encoder">Encoder</a>) Encode(v interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -624,7 +624,7 @@ to XML.
 
 Encode calls Flush before returning.
 
-<h3 id="Encoder.EncodeElement">func (*Encoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go#L162">EncodeElement</a>
+<h3 id="Encoder.EncodeElement">func (*Encoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/marshal.go#L162">EncodeElement</a>
     <a href="#Encoder.EncodeElement">¶</a></h3>
 <pre>func (enc *<a href="#Encoder">Encoder</a>) EncodeElement(v interface{}, start <a href="#StartElement">StartElement</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -636,7 +636,7 @@ to XML.
 
 EncodeElement calls Flush before returning.
 
-<h3 id="Encoder.EncodeToken">func (*Encoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go#L188">EncodeToken</a>
+<h3 id="Encoder.EncodeToken">func (*Encoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/marshal.go#L188">EncodeToken</a>
     <a href="#Encoder.EncodeToken">¶</a></h3>
 <pre>func (enc *<a href="#Encoder">Encoder</a>) EncodeToken(t <a href="#Token">Token</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -653,14 +653,14 @@ written to the underlying writer.
 EncodeToken allows writing a ProcInst with Target set to "xml" only as the first
 token in the stream.
 
-<h3 id="Encoder.Flush">func (*Encoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go#L285">Flush</a>
+<h3 id="Encoder.Flush">func (*Encoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/marshal.go#L285">Flush</a>
     <a href="#Encoder.Flush">¶</a></h3>
 <pre>func (enc *<a href="#Encoder">Encoder</a>) Flush() <a href="/builtin/#error">error</a></pre>
 
 Flush flushes any buffered XML to the underlying writer. See the EncodeToken
 documentation for details about when it is necessary.
 
-<h3 id="Encoder.Indent">func (*Encoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go#L136">Indent</a>
+<h3 id="Encoder.Indent">func (*Encoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/marshal.go#L136">Indent</a>
     <a href="#Encoder.Indent">¶</a></h3>
 <pre>func (enc *<a href="#Encoder">Encoder</a>) Indent(prefix, indent <a href="/builtin/#string">string</a>)</pre>
 
@@ -668,7 +668,7 @@ Indent sets the encoder to generate XML in which each element begins on a new
 indented line that starts with prefix and is followed by one or more copies of
 indent according to the nesting depth.
 
-<h2 id="EndElement">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L67">EndElement</a>
+<h2 id="EndElement">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L67">EndElement</a>
     <a href="#EndElement">¶</a></h2>
 <pre>type EndElement struct {
 <span id="EndElement.Name"></span>    Name <a href="#Name">Name</a>
@@ -676,7 +676,7 @@ indent according to the nesting depth.
 
 An EndElement represents an XML end element.
 
-<h2 id="Marshaler">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go#L89">Marshaler</a>
+<h2 id="Marshaler">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/marshal.go#L89">Marshaler</a>
     <a href="#Marshaler">¶</a></h2>
 <pre>type Marshaler interface {
     MarshalXML(e *<a href="#Encoder">Encoder</a>, start <a href="#StartElement">StartElement</a>) <a href="/builtin/#error">error</a>
@@ -695,7 +695,7 @@ Another common strategy is to use repeated calls to e.EncodeToken to generate
 the XML output one token at a time. The sequence of encoded tokens must make up
 zero or more valid XML elements.
 
-<h2 id="MarshalerAttr">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go#L104">MarshalerAttr</a>
+<h2 id="MarshalerAttr">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/marshal.go#L104">MarshalerAttr</a>
     <a href="#MarshalerAttr">¶</a></h2>
 <pre>type MarshalerAttr interface {
     MarshalXMLAttr(name <a href="#Name">Name</a>) (<a href="#Attr">Attr</a>, <a href="/builtin/#error">error</a>)
@@ -711,7 +711,7 @@ returns the zero attribute Attr{}, no attribute will be generated in the output.
 MarshalXMLAttr is used only for struct fields with the "attr" option in the
 field tag.
 
-<h2 id="Name">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L33">Name</a>
+<h2 id="Name">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L33">Name</a>
     <a href="#Name">¶</a></h2>
 <pre>type Name struct {
 <span id="Name.Space"></span>    Space, Local <a href="/builtin/#string">string</a>
@@ -721,7 +721,7 @@ A Name represents an XML name (Local) annotated with a name space identifier
 (Space). In tokens returned by Decoder.Token, the Space identifier is given as a
 canonical URL, not the short prefix used in the document being parsed.
 
-<h2 id="ProcInst">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L93">ProcInst</a>
+<h2 id="ProcInst">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L93">ProcInst</a>
     <a href="#ProcInst">¶</a></h2>
 <pre>type ProcInst struct {
 <span id="ProcInst.Target"></span>    Target <a href="/builtin/#string">string</a>
@@ -730,13 +730,13 @@ canonical URL, not the short prefix used in the document being parsed.
 
 A ProcInst represents an XML processing instruction of the form <?target inst?>
 
-<h3 id="ProcInst.Copy">func (ProcInst) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L99">Copy</a>
+<h3 id="ProcInst.Copy">func (ProcInst) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L99">Copy</a>
     <a href="#ProcInst.Copy">¶</a></h3>
 <pre>func (p <a href="#ProcInst">ProcInst</a>) Copy() <a href="#ProcInst">ProcInst</a></pre>
 
 Copy creates a new copy of ProcInst.
 
-<h2 id="StartElement">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L48">StartElement</a>
+<h2 id="StartElement">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L48">StartElement</a>
     <a href="#StartElement">¶</a></h2>
 <pre>type StartElement struct {
 <span id="StartElement.Name"></span>    Name <a href="#Name">Name</a>
@@ -745,19 +745,19 @@ Copy creates a new copy of ProcInst.
 
 A StartElement represents an XML start element.
 
-<h3 id="StartElement.Copy">func (StartElement) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L54">Copy</a>
+<h3 id="StartElement.Copy">func (StartElement) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L54">Copy</a>
     <a href="#StartElement.Copy">¶</a></h3>
 <pre>func (e <a href="#StartElement">StartElement</a>) Copy() <a href="#StartElement">StartElement</a></pre>
 
 Copy creates a new copy of StartElement.
 
-<h3 id="StartElement.End">func (StartElement) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L62">End</a>
+<h3 id="StartElement.End">func (StartElement) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L62">End</a>
     <a href="#StartElement.End">¶</a></h3>
 <pre>func (e <a href="#StartElement">StartElement</a>) End() <a href="#EndElement">EndElement</a></pre>
 
 End returns the corresponding XML end element.
 
-<h2 id="SyntaxError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L19">SyntaxError</a>
+<h2 id="SyntaxError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L19">SyntaxError</a>
     <a href="#SyntaxError">¶</a></h2>
 <pre>type SyntaxError struct {
 <span id="SyntaxError.Msg"></span>    Msg  <a href="/builtin/#string">string</a>
@@ -766,12 +766,12 @@ End returns the corresponding XML end element.
 
 A SyntaxError represents a syntax error in the XML input stream.
 
-<h3 id="SyntaxError.Error">func (*SyntaxError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L24">Error</a>
+<h3 id="SyntaxError.Error">func (*SyntaxError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L24">Error</a>
     <a href="#SyntaxError.Error">¶</a></h3>
 <pre>func (e *<a href="#SyntaxError">SyntaxError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="TagPathError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/typeinfo.go#L327">TagPathError</a>
+<h2 id="TagPathError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/typeinfo.go#L327">TagPathError</a>
     <a href="#TagPathError">¶</a></h2>
 <pre>type TagPathError struct {
 <span id="TagPathError.Struct"></span>    Struct       <a href="/reflect/">reflect</a>.<a href="/reflect/#Type">Type</a>
@@ -782,25 +782,25 @@ A SyntaxError represents a syntax error in the XML input stream.
 A TagPathError represents an error in the unmarshaling process caused by the use
 of field tags with conflicting paths.
 
-<h3 id="TagPathError.Error">func (*TagPathError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/typeinfo.go#L333">Error</a>
+<h3 id="TagPathError.Error">func (*TagPathError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/typeinfo.go#L333">Error</a>
     <a href="#TagPathError.Error">¶</a></h3>
 <pre>func (e *<a href="#TagPathError">TagPathError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Token">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L45">Token</a>
+<h2 id="Token">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L45">Token</a>
     <a href="#Token">¶</a></h2>
 <pre>type Token interface{}</pre>
 
 A Token is an interface holding one of the token types: StartElement,
 EndElement, CharData, Comment, ProcInst, or Directive.
 
-<h3 id="CopyToken">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L112">CopyToken</a>
+<h3 id="CopyToken">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L112">CopyToken</a>
     <a href="#CopyToken">¶</a></h3>
 <pre>func CopyToken(t <a href="#Token">Token</a>) <a href="#Token">Token</a></pre>
 
 CopyToken returns a copy of a Token.
 
-<h2 id="TokenReader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/xml.go#L141">TokenReader</a>
+<h2 id="TokenReader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/xml.go#L141">TokenReader</a>
     <a href="#TokenReader">¶</a></h2>
 <pre>type TokenReader interface {
     Token() (<a href="#Token">Token</a>, <a href="/builtin/#error">error</a>)
@@ -820,18 +820,18 @@ Implementations of Token are discouraged from returning a nil token with a nil
 error. Callers should treat a return of nil, nil as indicating that nothing
 happened; in particular it does not indicate EOF.
 
-<h2 id="UnmarshalError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/read.go#L140">UnmarshalError</a>
+<h2 id="UnmarshalError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/read.go#L140">UnmarshalError</a>
     <a href="#UnmarshalError">¶</a></h2>
 <pre>type UnmarshalError <a href="/builtin/#string">string</a></pre>
 
 An UnmarshalError represents an error in the unmarshaling process.
 
-<h3 id="UnmarshalError.Error">func (UnmarshalError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/read.go#L142">Error</a>
+<h3 id="UnmarshalError.Error">func (UnmarshalError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/read.go#L142">Error</a>
     <a href="#UnmarshalError.Error">¶</a></h3>
 <pre>func (e <a href="#UnmarshalError">UnmarshalError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Unmarshaler">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/read.go#L159">Unmarshaler</a>
+<h2 id="Unmarshaler">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/read.go#L159">Unmarshaler</a>
     <a href="#Unmarshaler">¶</a></h2>
 <pre>type Unmarshaler interface {
     UnmarshalXML(d *<a href="#Decoder">Decoder</a>, start <a href="#StartElement">StartElement</a>) <a href="/builtin/#error">error</a>
@@ -848,7 +848,7 @@ matching the expected XML using d.DecodeElement, and then to copy the data from
 that value into the receiver. Another common strategy is to use d.Token to
 process the XML object one token at a time. UnmarshalXML may not use d.RawToken.
 
-<h2 id="UnmarshalerAttr">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/read.go#L171">UnmarshalerAttr</a>
+<h2 id="UnmarshalerAttr">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/read.go#L171">UnmarshalerAttr</a>
     <a href="#UnmarshalerAttr">¶</a></h2>
 <pre>type UnmarshalerAttr interface {
     UnmarshalXMLAttr(attr <a href="#Attr">Attr</a>) <a href="/builtin/#error">error</a>
@@ -861,7 +861,7 @@ UnmarshalXMLAttr decodes a single XML attribute. If it returns an error, the
 outer call to Unmarshal stops and returns that error. UnmarshalXMLAttr is used
 only for struct fields with the "attr" option in the field tag.
 
-<h2 id="UnsupportedTypeError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go#L1009">UnsupportedTypeError</a>
+<h2 id="UnsupportedTypeError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/marshal.go#L1009">UnsupportedTypeError</a>
     <a href="#UnsupportedTypeError">¶</a></h2>
 <pre>type UnsupportedTypeError struct {
 <span id="UnsupportedTypeError.Type"></span>    Type <a href="/reflect/">reflect</a>.<a href="/reflect/#Type">Type</a>
@@ -870,14 +870,14 @@ only for struct fields with the "attr" option in the field tag.
 UnsupportedTypeError is returned when Marshal encounters a type that cannot be
 converted into XML.
 
-<h3 id="UnsupportedTypeError.Error">func (*UnsupportedTypeError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/marshal.go#L1013">Error</a>
+<h3 id="UnsupportedTypeError.Error">func (*UnsupportedTypeError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/marshal.go#L1013">Error</a>
     <a href="#UnsupportedTypeError.Error">¶</a></h3>
 <pre>func (e *<a href="#UnsupportedTypeError">UnsupportedTypeError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
 <h2 id="pkg-note-BUG">Bugs</h2>
 
-- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/xml/read.go#L7)  Mapping between XML elements and data structures is inherently flawed: an
+- [☞](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/xml/read.go#L7)  Mapping between XML elements and data structures is inherently flawed: an
   XML element is an order-dependent collection of anonymous values, while a
   data structure is an order-independent collection of named values. See
   package json for a textual representation more suitable to data structures.

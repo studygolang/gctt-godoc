@@ -24,9 +24,9 @@ Package quotedprintable implements quoted-printable encoding as specified by RFC
 - [NewWriter](#exampleNewWriter)
 
 ### Package files
- [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/quotedprintable/reader.go) [writer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/quotedprintable/writer.go)
+ [reader.go](//github.com/golang/go/blob/release-branch.go1.10/src/mime/quotedprintable/reader.go) [writer.go](//github.com/golang/go/blob/release-branch.go1.10/src/mime/quotedprintable/writer.go)
 
-<h2 id="Reader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/quotedprintable/reader.go#L7">Reader</a>
+<h2 id="Reader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/quotedprintable/reader.go#L7">Reader</a>
     <a href="#Reader">¶</a></h2>
 <pre>type Reader struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -34,7 +34,7 @@ Package quotedprintable implements quoted-printable encoding as specified by RFC
 
 Reader is a quoted-printable decoder.
 
-<h3 id="NewReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/quotedprintable/reader.go#L14">NewReader</a>
+<h3 id="NewReader">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/quotedprintable/reader.go#L14">NewReader</a>
     <a href="#NewReader">¶</a></h3>
 <pre>func NewReader(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) *<a href="#Reader">Reader</a></pre>
 
@@ -56,13 +56,13 @@ Example:
     // invalid escape: <b style="font-size: 200%">hello</b> <nil>
     // Hello, Gophers! This symbol will be unescaped: = and this will be written in one line. <nil>
 
-<h3 id="Reader.Read">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/quotedprintable/reader.go#L62">Read</a>
+<h3 id="Reader.Read">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/quotedprintable/reader.go#L62">Read</a>
     <a href="#Reader.Read">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) Read(p []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 Read reads and decodes quoted-printable data from the underlying reader.
 
-<h2 id="Writer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/quotedprintable/writer.go#L2">Writer</a>
+<h2 id="Writer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/quotedprintable/writer.go#L2">Writer</a>
     <a href="#Writer">¶</a></h2>
 <pre>type Writer struct {
 <span id="Writer.Binary"></span>    <span class="comment">// Binary mode treats the writer&#39;s input as pure binary and processes end of</span>
@@ -73,7 +73,7 @@ Read reads and decodes quoted-printable data from the underlying reader.
 
 A Writer is a quoted-printable writer that implements io.WriteCloser.
 
-<h3 id="NewWriter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/quotedprintable/writer.go#L14">NewWriter</a>
+<h3 id="NewWriter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/quotedprintable/writer.go#L14">NewWriter</a>
     <a href="#NewWriter">¶</a></h3>
 <pre>func NewWriter(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) *<a href="#Writer">Writer</a></pre>
 
@@ -89,14 +89,14 @@ Example:
     // Output:
     // These symbols will be escaped: =3D =09
 
-<h3 id="Writer.Close">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/quotedprintable/writer.go#L57">Close</a>
+<h3 id="Writer.Close">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/quotedprintable/writer.go#L57">Close</a>
     <a href="#Writer.Close">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close closes the Writer, flushing any unwritten data to the underlying
 io.Writer, but does not close the underlying io.Writer.
 
-<h3 id="Writer.Write">func (*Writer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/mime/quotedprintable/writer.go#L21">Write</a>
+<h3 id="Writer.Write">func (*Writer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/mime/quotedprintable/writer.go#L21">Write</a>
     <a href="#Writer.Write">¶</a></h3>
 <pre>func (w *<a href="#Writer">Writer</a>) Write(p []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 

@@ -57,9 +57,9 @@ Example:
 - [Package (BinaryMarshaler)](#example_binaryMarshaler)
 
 ### Package files
- [hash.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/hash.go)
+ [hash.go](//github.com/golang/go/blob/release-branch.go1.10/src/hash/hash.go)
 
-<h2 id="Hash">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/hash.go#L16">Hash</a>
+<h2 id="Hash">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/hash/hash.go#L16">Hash</a>
     <a href="#Hash">¶</a></h2>
 <pre>type Hash interface {
     <span class="comment">// Write (via the embedded io.Writer interface) adds more data to the running hash.</span>
@@ -99,7 +99,7 @@ released versions of the packages should be able to decode data written with any
 previously released version, subject to issues such as security fixes. See the
 Go compatibility document for background: https://golang.org/doc/go1compat
 
-<h2 id="Hash32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/hash.go#L39">Hash32</a>
+<h2 id="Hash32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/hash/hash.go#L39">Hash32</a>
     <a href="#Hash32">¶</a></h2>
 <pre>type Hash32 interface {
     <a href="#Hash">Hash</a>
@@ -108,7 +108,7 @@ Go compatibility document for background: https://golang.org/doc/go1compat
 
 Hash32 is the common interface implemented by all 32-bit hash functions.
 
-<h2 id="Hash64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/hash/hash.go#L45">Hash64</a>
+<h2 id="Hash64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/hash/hash.go#L45">Hash64</a>
     <a href="#Hash64">¶</a></h2>
 <pre>type Hash64 interface {
     <a href="#Hash">Hash</a>

@@ -3,13 +3,13 @@ version: 1.10
 
   `import "strings"`
 
-## Overview
+## 概述
 
-Package strings implements simple functions to manipulate UTF-8 encoded strings.
+strings 包实现了一些操作 UTF-8 字符串的函数。
 
-For information about UTF-8 strings in Go, see https://blog.golang.org/strings.
+关于更多 Go 中的 UTF-8 字符串的信息，可以访问 https://blog.golang.org/strings.
 
-## Index
+## 索引
 
 - [func Compare(a, b string) int](#Compare)
 - [func Contains(s, substr string) bool](#Contains)
@@ -82,7 +82,7 @@ For information about UTF-8 strings in Go, see https://blog.golang.org/strings.
   - [func (r *Replacer) WriteString(w io.Writer, s string) (n int, err error)](#Replacer.WriteString)
 - [Bugs](#pkg-note-BUG)
 
-### Examples
+### 例子
 
 - [Builder](#exampleBuilder)
 - [Compare](#exampleCompare)
@@ -130,22 +130,20 @@ For information about UTF-8 strings in Go, see https://blog.golang.org/strings.
 - [TrimSpace](#exampleTrimSpace)
 - [TrimSuffix](#exampleTrimSuffix)
 
-### Package files
- [builder.go](//github.com/golang/go/blob/release-branch.go1.10/src/strings/builder.go) [compare.go](//github.com/golang/go/blob/release-branch.go1.10/src/strings/compare.go) [reader.go](//github.com/golang/go/blob/release-branch.go1.10/src/strings/reader.go) [replace.go](//github.com/golang/go/blob/release-branch.go1.10/src/strings/replace.go) [search.go](//github.com/golang/go/blob/release-branch.go1.10/src/strings/search.go) [strings.go](//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go) [strings_amd64.go](//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings_amd64.go) [strings_decl.go](//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings_decl.go)
+### 文件
 
-<h2 id="Compare">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/compare.go#L3">Compare</a>
+ [builder.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go) [compare.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/compare.go) [reader.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go) [replace.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/replace.go) [search.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/search.go) [strings.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go) [strings_amd64.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_amd64.go) [strings_decl.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_decl.go)
+
+<h2 id="Compare">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/compare.go#L3">Compare</a>
     <a href="#Compare">¶</a></h2>
 <pre>func Compare(a, b <a href="/builtin/#string">string</a>) <a href="/builtin/#int">int</a></pre>
 
-Compare returns an integer comparing two strings lexicographically. The result
-will be 0 if a==b, -1 if a < b, and +1 if a > b.
+Compare 根据字典顺序比较字符串 a 和 b。a == b 时返回 0，a < b 时返回 -1，a > b 时返回 +1。
 
-Compare is included only for symmetry with package bytes. It is usually clearer
-and always faster to use the built-in string comparison operators ==, <, >, and
-so on.
+Compare 主要为了和 bytes 包对应，通常使用内置的比较运算符（==，<，>）效率更高。
 
 <a id="exampleCompare"></a>
-Example:
+例:
 
     fmt.Println(strings.Compare("a", "b"))
     fmt.Println(strings.Compare("a", "a"))
@@ -155,14 +153,14 @@ Example:
     // 0
     // 1
 
-<h2 id="Contains">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L83">Contains</a>
+<h2 id="Contains">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L83">Contains</a>
     <a href="#Contains">¶</a></h2>
 <pre>func Contains(s, substr <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
-Contains reports whether substr is within s.
+Contains 判断 s 是否包含子串 substr。
 
 <a id="exampleContains"></a>
-Example:
+例:
 
     fmt.Println(strings.Contains("seafood", "foo"))
     fmt.Println(strings.Contains("seafood", "bar"))
@@ -174,14 +172,14 @@ Example:
     // true
     // true
 
-<h2 id="ContainsAny">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L88">ContainsAny</a>
+<h2 id="ContainsAny">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L88">ContainsAny</a>
     <a href="#ContainsAny">¶</a></h2>
 <pre>func ContainsAny(s, chars <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
-ContainsAny reports whether any Unicode code points in chars are within s.
+ContainsAny 判断 s 是否包含 chars 中的任意 <ruby>Unicode 代码点<rt>Unicode code point</rt></ruby>。
 
 <a id="exampleContainsAny"></a>
-Example:
+例:
 
     fmt.Println(strings.ContainsAny("team", "i"))
     fmt.Println(strings.ContainsAny("failure", "u & i"))
@@ -193,14 +191,14 @@ Example:
     // false
     // false
 
-<h2 id="ContainsRune">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L93">ContainsRune</a>
+<h2 id="ContainsRune">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L93">ContainsRune</a>
     <a href="#ContainsRune">¶</a></h2>
 <pre>func ContainsRune(s <a href="/builtin/#string">string</a>, r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a></pre>
 
-ContainsRune reports whether the Unicode code point r is within s.
+ContainsRune 判断 s 是否包含 Unicode 代码点 r。
 
 <a id="exampleContainsRune"></a>
-Example:
+例:
 
     // Finds whether a string contains a particular Unicode code point.
     // The code point for the lowercase letter "a", for example, is 97.
@@ -210,15 +208,14 @@ Example:
     // true
     // false
 
-<h2 id="Count">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings_amd64.go#L73">Count</a>
+<h2 id="Count">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_amd64.go#L73">Count</a>
     <a href="#Count">¶</a></h2>
 <pre>func Count(s, substr <a href="/builtin/#string">string</a>) <a href="/builtin/#int">int</a></pre>
 
-Count counts the number of non-overlapping instances of substr in s. If substr
-is an empty string, Count returns 1 + the number of Unicode code points in s.
+Count 获取在 s 中非重叠出现 substr 的次数。如果 substr 为空，则返回 s 中的 Unicode 代码点数量加一。
 
 <a id="exampleCount"></a>
-Example:
+例:
 
     fmt.Println(strings.Count("cheese", "e"))
     fmt.Println(strings.Count("five", "")) // before & after each rune
@@ -226,45 +223,38 @@ Example:
     // 3
     // 5
 
-<h2 id="EqualFold">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L867">EqualFold</a>
+<h2 id="EqualFold">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L867">EqualFold</a>
     <a href="#EqualFold">¶</a></h2>
 <pre>func EqualFold(s, t <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
-EqualFold reports whether s and t, interpreted as UTF-8 strings, are equal under
-Unicode case-folding.
+EqualFold 判断 s 和 t 在忽略大小写的情况下是否相等。
 
 <a id="exampleEqualFold"></a>
-Example:
+例:
 
     fmt.Println(strings.EqualFold("Go", "go"))
     // Output: true
 
-<h2 id="Fields">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L309">Fields</a>
+<h2 id="Fields">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L309">Fields</a>
     <a href="#Fields">¶</a></h2>
 <pre>func Fields(s <a href="/builtin/#string">string</a>) []<a href="/builtin/#string">string</a></pre>
 
-Fields splits the string s around each instance of one or more consecutive white
-space characters, as defined by unicode.IsSpace, returning a slice of substrings
-of s or an empty slice if s contains only white space.
+Fields 根据空白字符（Go 中通过 unicode.IsSpace 判断是否为空白字符）分割字符串并将结果以切片形式返回。当 s 只包含空白字符时返回值为空。
 
 <a id="exampleFields"></a>
-Example:
+例:
 
     fmt.Printf("Fields are: %q", strings.Fields("  foo bar  baz   "))
     // Output: Fields are: ["foo" "bar" "baz"]
 
-<h2 id="FieldsFunc">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L363">FieldsFunc</a>
+<h2 id="FieldsFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L363">FieldsFunc</a>
     <a href="#FieldsFunc">¶</a></h2>
 <pre>func FieldsFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) []<a href="/builtin/#string">string</a></pre>
 
-FieldsFunc splits the string s at each run of Unicode code points c satisfying
-f(c) and returns an array of slices of s. If all code points in s satisfy f(c)
-or the string is empty, an empty slice is returned. FieldsFunc makes no
-guarantees about the order in which it calls f(c). If f does not return
-consistent results for a given c, FieldsFunc may crash.
+FieldsFunc 根据满足函数 f(c) 的 Unicode 代码点 c 分割字符串。当 s 中所有的字符都满足 f(c) 函数或 s 为空时返回空。FieldsFunc 不保证 f(c) 的调用顺序，如果指定的 c 调用 f 返回结果不一致函数会崩溃。
 
 <a id="exampleFieldsFunc"></a>
-Example:
+例:
 
     f := func(c rune) bool {
         return !unicode.IsLetter(c) && !unicode.IsNumber(c)
@@ -272,14 +262,14 @@ Example:
     fmt.Printf("Fields are: %q", strings.FieldsFunc("  foo1;bar2,baz3...", f))
     // Output: Fields are: ["foo1" "bar2" "baz3"]
 
-<h2 id="HasPrefix">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L435">HasPrefix</a>
+<h2 id="HasPrefix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L435">HasPrefix</a>
     <a href="#HasPrefix">¶</a></h2>
 <pre>func HasPrefix(s, prefix <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
-HasPrefix tests whether the string s begins with prefix.
+HasPrefix 判断 s 是否以 prefix 为前缀。
 
 <a id="exampleHasPrefix"></a>
-Example:
+例:
 
     fmt.Println(strings.HasPrefix("Gopher", "Go"))
     fmt.Println(strings.HasPrefix("Gopher", "C"))
@@ -289,14 +279,14 @@ Example:
     // false
     // true
 
-<h2 id="HasSuffix">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L440">HasSuffix</a>
+<h2 id="HasSuffix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L440">HasSuffix</a>
     <a href="#HasSuffix">¶</a></h2>
 <pre>func HasSuffix(s, suffix <a href="/builtin/#string">string</a>) <a href="/builtin/#bool">bool</a></pre>
 
-HasSuffix tests whether the string s ends with suffix.
+HasSuffix 判断 s 是否以 suffix 为后缀。
 
 <a id="exampleHasSuffix"></a>
-Example:
+例:
 
     fmt.Println(strings.HasSuffix("Amigo", "go"))
     fmt.Println(strings.HasSuffix("Amigo", "O"))
@@ -308,15 +298,14 @@ Example:
     // false
     // true
 
-<h2 id="Index">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings_amd64.go#L17">Index</a>
+<h2 id="Index">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_amd64.go#L17">Index</a>
     <a href="#Index">¶</a></h2>
 <pre>func Index(s, substr <a href="/builtin/#string">string</a>) <a href="/builtin/#int">int</a></pre>
 
-Index returns the index of the first instance of substr in s, or -1 if substr is
-not present in s.
+Index 返回 s 中 substr 第一次出现的位置，如果没有返回 -1。
 
 <a id="exampleIndex"></a>
-Example:
+例:
 
     fmt.Println(strings.Index("chicken", "ken"))
     fmt.Println(strings.Index("chicken", "dmr"))
@@ -324,15 +313,14 @@ Example:
     // 4
     // -1
 
-<h2 id="IndexAny">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L158">IndexAny</a>
+<h2 id="IndexAny">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L158">IndexAny</a>
     <a href="#IndexAny">¶</a></h2>
 <pre>func IndexAny(s, chars <a href="/builtin/#string">string</a>) <a href="/builtin/#int">int</a></pre>
 
-IndexAny returns the index of the first instance of any Unicode code point from
-chars in s, or -1 if no Unicode code point from chars is present in s.
+IndexAny 返回 s 中 chars 中任意 Unicode 代码点第一次出现的位置，如果没有返回 -1。
 
 <a id="exampleIndexAny"></a>
-Example:
+例:
 
     fmt.Println(strings.IndexAny("chicken", "aeiouy"))
     fmt.Println(strings.IndexAny("crwth", "aeiouy"))
@@ -340,15 +328,14 @@ Example:
     // 2
     // -1
 
-<h2 id="IndexByte">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings_decl.go#L1">IndexByte</a>
+<h2 id="IndexByte">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings_decl.go#L1">IndexByte</a>
     <a href="#IndexByte">¶</a></h2>
 <pre>func IndexByte(s <a href="/builtin/#string">string</a>, c <a href="/builtin/#byte">byte</a>) <a href="/builtin/#int">int</a></pre>
 
-IndexByte returns the index of the first instance of c in s, or -1 if c is not
-present in s.
+IndexByte 返回 s 中 c 字节第一次出现的位置，如果没有返回 -1。
 
 <a id="exampleIndexByte"></a>
-Example:
+例:
 
     fmt.Println(strings.IndexByte("golang", 'g'))
     fmt.Println(strings.IndexByte("gophers", 'h'))
@@ -358,15 +345,14 @@ Example:
     // 3
     // -1
 
-<h2 id="IndexFunc">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L698">IndexFunc</a>
+<h2 id="IndexFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L698">IndexFunc</a>
     <a href="#IndexFunc">¶</a></h2>
 <pre>func IndexFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#int">int</a></pre>
 
-IndexFunc returns the index into s of the first Unicode code point satisfying
-f(c), or -1 if none do.
+IndexFunc 返回 s 中满足 f(c) 函数的 Unicode 代码点第一次出现的位置，如果没有返回 -1。
 
 <a id="exampleIndexFunc"></a>
-Example:
+例:
 
     f := func(c rune) bool {
         return unicode.Is(unicode.Han, c)
@@ -377,16 +363,14 @@ Example:
     // 7
     // -1
 
-<h2 id="IndexRune">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L138">IndexRune</a>
+<h2 id="IndexRune">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L138">IndexRune</a>
     <a href="#IndexRune">¶</a></h2>
 <pre>func IndexRune(s <a href="/builtin/#string">string</a>, r <a href="/builtin/#rune">rune</a>) <a href="/builtin/#int">int</a></pre>
 
-IndexRune returns the index of the first instance of the Unicode code point r,
-or -1 if rune is not present in s. If r is utf8.RuneError, it returns the first
-instance of any invalid UTF-8 byte sequence.
+IndexRune 返回 s 中 r 第一次出现的位置。如果没有返回 -1。当 r 是 utf8.RuneError 时返回无效 UTF-8 字节序列第一次出现的位置。
 
 <a id="exampleIndexRune"></a>
-Example:
+例:
 
     fmt.Println(strings.IndexRune("chicken", 'k'))
     fmt.Println(strings.IndexRune("chicken", 'd'))
@@ -394,29 +378,27 @@ Example:
     // 4
     // -1
 
-<h2 id="Join">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L405">Join</a>
+<h2 id="Join">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L405">Join</a>
     <a href="#Join">¶</a></h2>
 <pre>func Join(a []<a href="/builtin/#string">string</a>, sep <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-Join concatenates the elements of a to create a single string. The separator
-string sep is placed between elements in the resulting string.
+Join 将 a 中所有元素用 sep 连接并返回。
 
 <a id="exampleJoin"></a>
-Example:
+例:
 
     s := []string{"foo", "bar", "baz"}
     fmt.Println(strings.Join(s, ", "))
     // Output: foo, bar, baz
 
-<h2 id="LastIndex">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L98">LastIndex</a>
+<h2 id="LastIndex">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L98">LastIndex</a>
     <a href="#LastIndex">¶</a></h2>
 <pre>func LastIndex(s, substr <a href="/builtin/#string">string</a>) <a href="/builtin/#int">int</a></pre>
 
-LastIndex returns the index of the last instance of substr in s, or -1 if substr
-is not present in s.
+LastIndex 返回 s 中最后一次出现 sustr 时的位置，如果没有返回 -1。
 
 <a id="exampleLastIndex"></a>
-Example:
+例:
 
     fmt.Println(strings.Index("go gopher", "go"))
     fmt.Println(strings.LastIndex("go gopher", "go"))
@@ -426,15 +408,14 @@ Example:
     // 3
     // -1
 
-<h2 id="LastIndexAny">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L186">LastIndexAny</a>
+<h2 id="LastIndexAny">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L186">LastIndexAny</a>
     <a href="#LastIndexAny">¶</a></h2>
 <pre>func LastIndexAny(s, chars <a href="/builtin/#string">string</a>) <a href="/builtin/#int">int</a></pre>
 
-LastIndexAny returns the index of the last instance of any Unicode code point
-from chars in s, or -1 if no Unicode code point from chars is present in s.
+LastIndexAny 返回 s 中最后一次出现 chars 中 Unicode 代码点时的位置，如果没有返回 -1。
 
 <a id="exampleLastIndexAny"></a>
-Example:
+例:
 
     fmt.Println(strings.LastIndexAny("go gopher", "go"))
     fmt.Println(strings.LastIndexAny("go gopher", "rodent"))
@@ -444,15 +425,14 @@ Example:
     // 8
     // -1
 
-<h2 id="LastIndexByte">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L214">LastIndexByte</a>
+<h2 id="LastIndexByte">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L214">LastIndexByte</a>
     <a href="#LastIndexByte">¶</a></h2>
 <pre>func LastIndexByte(s <a href="/builtin/#string">string</a>, c <a href="/builtin/#byte">byte</a>) <a href="/builtin/#int">int</a></pre>
 
-LastIndexByte returns the index of the last instance of c in s, or -1 if c is
-not present in s.
+LastIndexByte 返回 s 中最后一次出现 c 字节时的位置，如果没有返回 -1。
 
 <a id="exampleLastIndexByte"></a>
-Example:
+例:
 
     fmt.Println(strings.LastIndexByte("Hello, world", 'l'))
     fmt.Println(strings.LastIndexByte("Hello, world", 'o'))
@@ -462,15 +442,14 @@ Example:
     // 8
     // -1
 
-<h2 id="LastIndexFunc">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L704">LastIndexFunc</a>
+<h2 id="LastIndexFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L704">LastIndexFunc</a>
     <a href="#LastIndexFunc">¶</a></h2>
 <pre>func LastIndexFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#int">int</a></pre>
 
-LastIndexFunc returns the index into s of the last Unicode code point satisfying
-f(c), or -1 if none do.
+LastIndexFunc 返回 s 中最后一个满足 f(c) 函数的 Unicode 代码点的位置，如果没有返回 -1。
 
 <a id="exampleLastIndexFunc"></a>
-Example:
+例:
 
     fmt.Println(strings.LastIndexFunc("go 123", unicode.IsNumber))
     fmt.Println(strings.LastIndexFunc("123 go", unicode.IsNumber))
@@ -480,16 +459,14 @@ Example:
     // 2
     // -1
 
-<h2 id="Map">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L447">Map</a>
+<h2 id="Map">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L447">Map</a>
     <a href="#Map">¶</a></h2>
 <pre>func Map(mapping func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#rune">rune</a>, s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-Map returns a copy of the string s with all its characters modified according to
-the mapping function. If mapping returns a negative value, the character is
-dropped from the string with no replacement.
+Map 为 s 中的每个字符应用回调函数 mapping 并返回处理结果。如果 mapping 返回一个负值该字符将会被丢弃。
 
 <a id="exampleMap"></a>
-Example:
+例:
 
     rot13 := func(r rune) rune {
         switch {
@@ -503,31 +480,26 @@ Example:
     fmt.Println(strings.Map(rot13, "'Twas brillig and the slithy gopher..."))
     // Output: 'Gjnf oevyyvt naq gur fyvgul tbcure...
 
-<h2 id="Repeat">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L522">Repeat</a>
+<h2 id="Repeat">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L522">Repeat</a>
     <a href="#Repeat">¶</a></h2>
 <pre>func Repeat(s <a href="/builtin/#string">string</a>, count <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
-Repeat returns a new string consisting of count copies of the string s.
-
-It panics if count is negative or if the result of (len(s) * count) overflows.
+Repeat 把 s 重复 count 次并返回结果。当 count 是负数或者 len(s) * count 溢出函数会 panic。
 
 <a id="exampleRepeat"></a>
-Example:
+例:
 
     fmt.Println("ba" + strings.Repeat("na", 2))
     // Output: banana
 
-<h2 id="Replace">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L831">Replace</a>
+<h2 id="Replace">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L831">Replace</a>
     <a href="#Replace">¶</a></h2>
 <pre>func Replace(s, old, new <a href="/builtin/#string">string</a>, n <a href="/builtin/#int">int</a>) <a href="/builtin/#string">string</a></pre>
 
-Replace returns a copy of the string s with the first n non-overlapping
-instances of old replaced by new. If old is empty, it matches at the beginning
-of the string and after each UTF-8 sequence, yielding up to k+1 replacements for
-a k-rune string. If n < 0, there is no limit on the number of replacements.
+Replace 把 s 中的前 n 个非重叠的 old 替换为 new 并返回结果。如果 old 为空将会替换 UTF-8 代码点的前/后位置（例：长度为 k 的 UTF-8 字符串将被应用 k+1 次替换）。当 n < 0 时不会限制次数。
 
 <a id="exampleReplace"></a>
-Example:
+例:
 
     fmt.Println(strings.Replace("oink oink oink", "k", "ky", 2))
     fmt.Println(strings.Replace("oink oink oink", "oink", "moo", -1))
@@ -535,23 +507,20 @@ Example:
     // oinky oinky oink
     // moo moo moo
 
-<h2 id="Split">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L288">Split</a>
+<h2 id="Split">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L288">Split</a>
     <a href="#Split">¶</a></h2>
 <pre>func Split(s, sep <a href="/builtin/#string">string</a>) []<a href="/builtin/#string">string</a></pre>
 
-Split slices s into all substrings separated by sep and returns a slice of the
-substrings between those separators.
+Split 将 s 根据 sep 分割并以切片形式返回。
 
-If s does not contain sep and sep is not empty, Split returns a slice of length
-1 whose only element is s.
+如果 s 中不包含 sep 并且 sep 不为空 Split 会把 s 作为切片元素返回（长度为 1）。
 
-If sep is empty, Split splits after each UTF-8 sequence. If both s and sep are
-empty, Split returns an empty slice.
+如果 sep 为空，将分割每个 UTF-8 字符。如果 s 和 sep 都为空 Split 会返回空切片。
 
-It is equivalent to SplitN with a count of -1.
+Split 和 SplitN(-1) 是等价的。
 
 <a id="exampleSplit"></a>
-Example:
+例:
 
     fmt.Printf("%q\n", strings.Split("a,b,c", ","))
     fmt.Printf("%q\n", strings.Split("a man a plan a canal panama", "a "))
@@ -563,67 +532,60 @@ Example:
     // [" " "x" "y" "z" " "]
     // [""]
 
-<h2 id="SplitAfter">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L300">SplitAfter</a>
+<h2 id="SplitAfter">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L300">SplitAfter</a>
     <a href="#SplitAfter">¶</a></h2>
 <pre>func SplitAfter(s, sep <a href="/builtin/#string">string</a>) []<a href="/builtin/#string">string</a></pre>
 
-SplitAfter slices s into all substrings after each instance of sep and returns a
-slice of those substrings.
+SplitAfter 从每个 sep 后面分割 s 并以切片形式返回。
 
-If s does not contain sep and sep is not empty, SplitAfter returns a slice of
-length 1 whose only element is s.
+如果 s 中不包含 sep 并且 sep 不为空 SplitAfter 会把 s 作为切片元素返回（长度为 1）。
 
-If sep is empty, SplitAfter splits after each UTF-8 sequence. If both s and sep
-are empty, SplitAfter returns an empty slice.
+如果 sep 为空则分割每个 UTF-8 字符。如果 s 和 sep 都为空 SplitAfter 会返回空切片。
 
-It is equivalent to SplitAfterN with a count of -1.
+SplitAfter 和 SplitAfterN(-1) 是等价的。
 
 <a id="exampleSplitAfter"></a>
-Example:
+例:
 
     fmt.Printf("%q\n", strings.SplitAfter("a,b,c", ","))
     // Output: ["a," "b," "c"]
 
-<h2 id="SplitAfterN">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L274">SplitAfterN</a>
+<h2 id="SplitAfterN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L274">SplitAfterN</a>
     <a href="#SplitAfterN">¶</a></h2>
 <pre>func SplitAfterN(s, sep <a href="/builtin/#string">string</a>, n <a href="/builtin/#int">int</a>) []<a href="/builtin/#string">string</a></pre>
 
-SplitAfterN slices s into substrings after each instance of sep and returns a
-slice of those substrings.
+SplitAfterN 从每个 sep 后面分割 s 并以切片形式返回。
 
-The count determines the number of substrings to return:
+参数 n 决定函数的返回值:
 
-    n > 0: at most n substrings; the last substring will be the unsplit remainder.
-    n == 0: the result is nil (zero substrings)
-    n < 0: all substrings
+    n > 0: 最多分割出 n 个子串; 最后一个子串不会再被分割
+    n == 0: 返回值为 nil
+    n < 0: 不限制分割后的子串数量
 
-Edge cases for s and sep (for example, empty strings) are handled as described
-in the documentation for SplitAfter.
+对于 s 和 sep 的边缘情况处理与 SplitAfter 相同。
 
 <a id="exampleSplitAfterN"></a>
-Example:
+例:
 
     fmt.Printf("%q\n", strings.SplitAfterN("a,b,c", ",", 2))
     // Output: ["a," "b,c"]
 
-<h2 id="SplitN">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L262">SplitN</a>
+<h2 id="SplitN">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L262">SplitN</a>
     <a href="#SplitN">¶</a></h2>
 <pre>func SplitN(s, sep <a href="/builtin/#string">string</a>, n <a href="/builtin/#int">int</a>) []<a href="/builtin/#string">string</a></pre>
 
-SplitN slices s into substrings separated by sep and returns a slice of the
-substrings between those separators.
+Split 将 s 根据 sep 分割并返回。
 
-The count determines the number of substrings to return:
+参数 n 决定函数的返回值:
 
-    n > 0: at most n substrings; the last substring will be the unsplit remainder.
-    n == 0: the result is nil (zero substrings)
-    n < 0: all substrings
+    n > 0: 最多分割出 n 个子串; 最后一个子串不会再被分割
+    n == 0: 返回值为 nil
+    n < 0: 不限制分割后的子串数量
 
-Edge cases for s and sep (for example, empty strings) are handled as described
-in the documentation for Split.
+对于 s 和 sep 的边缘情况处理与 Split 相同。
 
 <a id="exampleSplitN"></a>
-Example:
+例:
 
     fmt.Printf("%q\n", strings.SplitN("a,b,c", ",", 2))
     z := strings.SplitN("a,b,c", ",", 0)
@@ -632,57 +594,52 @@ Example:
     // ["a" "b,c"]
     // [] (nil = true)
 
-<h2 id="Title">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L650">Title</a>
+<h2 id="Title">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L650">Title</a>
     <a href="#Title">¶</a></h2>
 <pre>func Title(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-Title returns a copy of the string s with all Unicode letters that begin words
-mapped to their title case.
+Title 把 s 中每个单词的首字母转换成 Title 形式并返回。
 
-BUG(rsc): The rule Title uses for word boundaries does not handle Unicode
-punctuation properly.
+BUG(rsc): Title 使用的判断字边界的规则会忽略 Unicode 标点符号。
 
 <a id="exampleTitle"></a>
-Example:
+例:
 
     fmt.Println(strings.Title("her royal highness"))
     // Output: Her Royal Highness
 
-<h2 id="ToLower">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L572">ToLower</a>
+<h2 id="ToLower">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L572">ToLower</a>
     <a href="#ToLower">¶</a></h2>
 <pre>func ToLower(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-ToLower returns a copy of the string s with all Unicode letters mapped to their
-lower case.
+ToLower 将 s 中的所有 Unicode 字符转换成小写。
 
 <a id="exampleToLower"></a>
-Example:
+例:
 
     fmt.Println(strings.ToLower("Gopher"))
     // Output: gopher
 
-<h2 id="ToLowerSpecial">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L611">ToLowerSpecial</a>
+<h2 id="ToLowerSpecial">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L611">ToLowerSpecial</a>
     <a href="#ToLowerSpecial">¶</a></h2>
 <pre>func ToLowerSpecial(c <a href="/unicode/">unicode</a>.<a href="/unicode/#SpecialCase">SpecialCase</a>, s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-ToLowerSpecial returns a copy of the string s with all Unicode letters mapped to
-their lower case, giving priority to the special casing rules.
+ToLowerSpecial 根据 c 指定的优先规则将 s 中的所有 Unicode 代码点转换为小写。
 
 <a id="exampleToLowerSpecial"></a>
-Example:
+例:
 
     fmt.Println(strings.ToLowerSpecial(unicode.TurkishCase, "Önnek İş"))
     // Output: önnek iş
 
-<h2 id="ToTitle">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L601">ToTitle</a>
+<h2 id="ToTitle">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L601">ToTitle</a>
     <a href="#ToTitle">¶</a></h2>
 <pre>func ToTitle(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-ToTitle returns a copy of the string s with all Unicode letters mapped to their
-title case.
+ToTile 将 s 中的所有 Unicode 字符转换成 Title 形式。
 
 <a id="exampleToTitle"></a>
-Example:
+例:
 
     fmt.Println(strings.ToTitle("loud noises"))
     fmt.Println(strings.ToTitle("хлеб"))
@@ -690,111 +647,103 @@ Example:
     // LOUD NOISES
     // ХЛЕБ
 
-<h2 id="ToTitleSpecial">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L617">ToTitleSpecial</a>
+<h2 id="ToTitleSpecial">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L617">ToTitleSpecial</a>
     <a href="#ToTitleSpecial">¶</a></h2>
 <pre>func ToTitleSpecial(c <a href="/unicode/">unicode</a>.<a href="/unicode/#SpecialCase">SpecialCase</a>, s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-ToTitleSpecial returns a copy of the string s with all Unicode letters mapped to
-their title case, giving priority to the special casing rules.
+ToTitleSpecial 根据 c 指定的优先规则将 s 中的所有 Unicode 代码点转换成 Title 形式。
 
 <a id="exampleToTitleSpecial"></a>
-Example:
+例:
 
     fmt.Println(strings.ToTitleSpecial(unicode.TurkishCase, "dünyanın ilk borsa yapısı Aizonai kabul edilir"))
     // Output:
     // DÜNYANIN İLK BORSA YAPISI AİZONAİ KABUL EDİLİR
 
-<h2 id="ToUpper">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L543">ToUpper</a>
+<h2 id="ToUpper">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L543">ToUpper</a>
     <a href="#ToUpper">¶</a></h2>
 <pre>func ToUpper(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-ToUpper returns a copy of the string s with all Unicode letters mapped to their
-upper case.
+ToUpper 将 s 中所有的 Unicode 字符转换成大写。
 
 <a id="exampleToUpper"></a>
-Example:
+例:
 
     fmt.Println(strings.ToUpper("Gopher"))
     // Output: GOPHER
 
-<h2 id="ToUpperSpecial">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L605">ToUpperSpecial</a>
+<h2 id="ToUpperSpecial">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L605">ToUpperSpecial</a>
     <a href="#ToUpperSpecial">¶</a></h2>
 <pre>func ToUpperSpecial(c <a href="/unicode/">unicode</a>.<a href="/unicode/#SpecialCase">SpecialCase</a>, s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-ToUpperSpecial returns a copy of the string s with all Unicode letters mapped to
-their upper case, giving priority to the special casing rules.
+ToUpperSpecial 根据 c 指定的优先规则将 s 中的所有字符转换成大写。
 
 <a id="exampleToUpperSpecial"></a>
-Example:
+例:
 
     fmt.Println(strings.ToUpperSpecial(unicode.TurkishCase, "örnek iş"))
     // Output: ÖRNEK İŞ
 
-<h2 id="Trim">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L776">Trim</a>
+<h2 id="Trim">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L776">Trim</a>
     <a href="#Trim">¶</a></h2>
 <pre>func Trim(s <a href="/builtin/#string">string</a>, cutset <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-Trim returns a slice of the string s with all leading and trailing Unicode code
-points contained in cutset removed.
+Trim 去掉 s 头部和尾部所有 cutset 中的 Unicode 代码点。
 
 <a id="exampleTrim"></a>
-Example:
+例:
 
     fmt.Print(strings.Trim("¡¡¡Hello, Gophers!!!", "!¡"))
     // Output: Hello, Gophers
 
-<h2 id="TrimFunc">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L692">TrimFunc</a>
+<h2 id="TrimFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L692">TrimFunc</a>
     <a href="#TrimFunc">¶</a></h2>
 <pre>func TrimFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#string">string</a></pre>
 
-TrimFunc returns a slice of the string s with all leading and trailing Unicode
-code points c satisfying f(c) removed.
+TrimFunc 去掉 s 头部和尾部所有满足 f(c) 的 Unicode 代码点。
 
 <a id="exampleTrimFunc"></a>
-Example:
+例:
 
     fmt.Print(strings.TrimFunc("¡¡¡Hello, Gophers!!!", func(r rune) bool {
         return !unicode.IsLetter(r) && !unicode.IsNumber(r)
     }))
     // Output: Hello, Gophers
 
-<h2 id="TrimLeft">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L785">TrimLeft</a>
+<h2 id="TrimLeft">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L785">TrimLeft</a>
     <a href="#TrimLeft">¶</a></h2>
 <pre>func TrimLeft(s <a href="/builtin/#string">string</a>, cutset <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-TrimLeft returns a slice of the string s with all leading Unicode code points
-contained in cutset removed.
+TrimLeft 去掉 s 头部所有 cutset 中的 Unicode 代码点。
 
 <a id="exampleTrimLeft"></a>
-Example:
+例:
 
     fmt.Print(strings.TrimLeft("¡¡¡Hello, Gophers!!!", "!¡"))
     // Output: Hello, Gophers!!!
 
-<h2 id="TrimLeftFunc">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L669">TrimLeftFunc</a>
+<h2 id="TrimLeftFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L669">TrimLeftFunc</a>
     <a href="#TrimLeftFunc">¶</a></h2>
 <pre>func TrimLeftFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#string">string</a></pre>
 
-TrimLeftFunc returns a slice of the string s with all leading Unicode code
-points c satisfying f(c) removed.
+TrimLeftFunc 去掉 s 头部所有满足 f(c) 的 Unicode 代码点。
 
 <a id="exampleTrimLeftFunc"></a>
-Example:
+例:
 
     fmt.Print(strings.TrimLeftFunc("¡¡¡Hello, Gophers!!!", func(r rune) bool {
         return !unicode.IsLetter(r) && !unicode.IsNumber(r)
     }))
     // Output: Hello, Gophers!!!
 
-<h2 id="TrimPrefix">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L809">TrimPrefix</a>
+<h2 id="TrimPrefix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L809">TrimPrefix</a>
     <a href="#TrimPrefix">¶</a></h2>
 <pre>func TrimPrefix(s, prefix <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-TrimPrefix returns s without the provided leading prefix string. If s doesn't
-start with prefix, s is returned unchanged.
+TrimPrefix 去掉 s 的 prefix 前缀。如果 s 不以 prefix 作为前缀则直接返回。
 
 <a id="exampleTrimPrefix"></a>
-Example:
+例:
 
     var s = "¡¡¡Hello, Gophers!!!"
     s = strings.TrimPrefix(s, "¡¡¡Hello, ")
@@ -802,56 +751,52 @@ Example:
     fmt.Print(s)
     // Output: Gophers!!!
 
-<h2 id="TrimRight">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L794">TrimRight</a>
+<h2 id="TrimRight">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L794">TrimRight</a>
     <a href="#TrimRight">¶</a></h2>
 <pre>func TrimRight(s <a href="/builtin/#string">string</a>, cutset <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-TrimRight returns a slice of the string s, with all trailing Unicode code points
-contained in cutset removed.
+TrimRignt 去掉 s 尾部所有 cutset 中的 Unicode 代码点。
 
 <a id="exampleTrimRight"></a>
-Example:
+例:
 
     fmt.Print(strings.TrimRight("¡¡¡Hello, Gophers!!!", "!¡"))
     // Output: ¡¡¡Hello, Gophers
 
-<h2 id="TrimRightFunc">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L679">TrimRightFunc</a>
+<h2 id="TrimRightFunc">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L679">TrimRightFunc</a>
     <a href="#TrimRightFunc">¶</a></h2>
 <pre>func TrimRightFunc(s <a href="/builtin/#string">string</a>, f func(<a href="/builtin/#rune">rune</a>) <a href="/builtin/#bool">bool</a>) <a href="/builtin/#string">string</a></pre>
 
-TrimRightFunc returns a slice of the string s with all trailing Unicode code
-points c satisfying f(c) removed.
+TrimRightFunc 去掉字符串 s 尾部满足 f(c) 函数的 Unicode 代码点。
 
 <a id="exampleTrimRightFunc"></a>
-Example:
+例:
 
     fmt.Print(strings.TrimRightFunc("¡¡¡Hello, Gophers!!!", func(r rune) bool {
         return !unicode.IsLetter(r) && !unicode.IsNumber(r)
     }))
     // Output: ¡¡¡Hello, Gophers
 
-<h2 id="TrimSpace">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L803">TrimSpace</a>
+<h2 id="TrimSpace">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L803">TrimSpace</a>
     <a href="#TrimSpace">¶</a></h2>
 <pre>func TrimSpace(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-TrimSpace returns a slice of the string s, with all leading and trailing white
-space removed, as defined by Unicode.
+TrimSpace 去掉字符串 s 两边的空格。
 
 <a id="exampleTrimSpace"></a>
-Example:
+例:
 
     fmt.Println(strings.TrimSpace(" \t\n Hello, Gophers \n\t\r\n"))
     // Output: Hello, Gophers
 
-<h2 id="TrimSuffix">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L818">TrimSuffix</a>
+<h2 id="TrimSuffix">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L818">TrimSuffix</a>
     <a href="#TrimSuffix">¶</a></h2>
 <pre>func TrimSuffix(s, suffix <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-TrimSuffix returns s without the provided trailing suffix string. If s doesn't
-end with suffix, s is returned unchanged.
+TrimSuffix 去掉字符串 s 中的指定后缀 suffix。如果 s 不是以 suffix 结尾返回原字符串。
 
 <a id="exampleTrimSuffix"></a>
-Example:
+例:
 
     var s = "¡¡¡Hello, Gophers!!!"
     s = strings.TrimSuffix(s, ", Gophers!!!")
@@ -859,18 +804,16 @@ Example:
     fmt.Print(s)
     // Output: ¡¡¡Hello
 
-<h2 id="Builder">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/builder.go#L5">Builder</a>
+<h2 id="Builder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L5">Builder</a>
     <a href="#Builder">¶</a></h2>
 <pre>type Builder struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 
-A Builder is used to efficiently build a string using Write methods. It
-minimizes memory copying. The zero value is ready to use. Do not copy a non-zero
-Builder.
+Builder 可以使用 Write 高效的创建字符串。他会把内存拷贝降到最低程度。可以直接使用 Builder 的零值。不要复制一个非零的 Builder。
 
 <a id="exampleBuilder"></a>
-Example:
+例:
 
     var b strings.Builder
     for i := 3; i >= 1; i-- {
@@ -878,177 +821,166 @@ Example:
     }
     b.WriteString("ignition")
     fmt.Println(b.String())
-
+    
     // Output: 3...2...1...ignition
 
-<h3 id="Builder.Grow">func (*Builder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/builder.go#L60">Grow</a>
+<h3 id="Builder.Grow">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L60">Grow</a>
     <a href="#Builder.Grow">¶</a></h3>
 <pre>func (b *<a href="#Builder">Builder</a>) Grow(n <a href="/builtin/#int">int</a>)</pre>
 
-Grow grows b's capacity, if necessary, to guarantee space for another n bytes.
-After Grow(n), at least n bytes can be written to b without another allocation.
-If n is negative, Grow panics.
+Grow 会增加 b 的容量确保他有足够的空间容纳 n 字节。在调用 Grow(n) 后，至少向 b 中写入 n 字节时不会重新分配内存。如果 n 为负数，Grow 会 panic。
 
-<h3 id="Builder.Len">func (*Builder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/builder.go#L41">Len</a>
+<h3 id="Builder.Len">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L41">Len</a>
     <a href="#Builder.Len">¶</a></h3>
 <pre>func (b *<a href="#Builder">Builder</a>) Len() <a href="/builtin/#int">int</a></pre>
 
-Len returns the number of accumulated bytes; b.Len() == len(b.String()).
+Len 返回已经写入的字节；b.Len() == len(b.String())。
 
-<h3 id="Builder.Reset">func (*Builder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/builder.go#L44">Reset</a>
+<h3 id="Builder.Reset">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L44">Reset</a>
     <a href="#Builder.Reset">¶</a></h3>
 <pre>func (b *<a href="#Builder">Builder</a>) Reset()</pre>
 
-Reset resets the Builder to be empty.
+Reset 将 Builder 重置为空。
 
-<h3 id="Builder.String">func (*Builder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/builder.go#L36">String</a>
+<h3 id="Builder.String">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L36">String</a>
     <a href="#Builder.String">¶</a></h3>
 <pre>func (b *<a href="#Builder">Builder</a>) String() <a href="/builtin/#string">string</a></pre>
 
-String returns the accumulated string.
+String 返回已经写入的字符串。
 
-<h3 id="Builder.Write">func (*Builder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/builder.go#L72">Write</a>
+<h3 id="Builder.Write">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L72">Write</a>
     <a href="#Builder.Write">¶</a></h3>
 <pre>func (b *<a href="#Builder">Builder</a>) Write(p []<a href="/builtin/#byte">byte</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
 
-Write appends the contents of p to b's buffer. Write always returns len(p), nil.
+Write 会把 p 的内容追加到 b 的缓存中。Write 总是返回 len(p), nil。
 
-<h3 id="Builder.WriteByte">func (*Builder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/builder.go#L80">WriteByte</a>
+<h3 id="Builder.WriteByte">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L80">WriteByte</a>
     <a href="#Builder.WriteByte">¶</a></h3>
 <pre>func (b *<a href="#Builder">Builder</a>) WriteByte(c <a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
-WriteByte appends the byte c to b's buffer. The returned error is always nil.
+WriteByte 将字节 c 追加到 b 的缓存中。返回的错误总是 nil。
 
-<h3 id="Builder.WriteRune">func (*Builder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/builder.go#L88">WriteRune</a>
+<h3 id="Builder.WriteRune">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L88">WriteRune</a>
     <a href="#Builder.WriteRune">¶</a></h3>
 <pre>func (b *<a href="#Builder">Builder</a>) WriteRune(r <a href="/builtin/#rune">rune</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
 
-WriteRune appends the UTF-8 encoding of Unicode code point r to b's buffer. It
-returns the length of r and a nil error.
+WriteRune 将 UTF-8 编码的 Unicode 代码点 r 追加到 b 的缓存中。它返回 r 的长度和 nil 错误。
 
-<h3 id="Builder.WriteString">func (*Builder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/builder.go#L105">WriteString</a>
+<h3 id="Builder.WriteString">func (*Builder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/builder.go#L105">WriteString</a>
     <a href="#Builder.WriteString">¶</a></h3>
 <pre>func (b *<a href="#Builder">Builder</a>) WriteString(s <a href="/builtin/#string">string</a>) (<a href="/builtin/#int">int</a>, <a href="/builtin/#error">error</a>)</pre>
 
-WriteString appends the contents of s to b's buffer. It returns the length of s
-and a nil error.
+WriteString 将 s 的内容追加到 b 的缓存中。它返回 s 的长度和 nil。
 
-<h2 id="Reader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/reader.go#L6">Reader</a>
+<h2 id="Reader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L6">Reader</a>
     <a href="#Reader">¶</a></h2>
 <pre>type Reader struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 
-A Reader implements the io.Reader, io.ReaderAt, io.Seeker, io.WriterTo,
-io.ByteScanner, and io.RuneScanner interfaces by reading from a string.
+Reader 实现对字符串读取的 io.Reader、io.ReaderAt、io.Seeker、io.WriterTo、io.ByteScanner 和 io.RuneScanner 接口。
 
-<h3 id="NewReader">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/reader.go#L140">NewReader</a>
+<h3 id="NewReader">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L140">NewReader</a>
     <a href="#NewReader">¶</a></h3>
 <pre>func NewReader(s <a href="/builtin/#string">string</a>) *<a href="#Reader">Reader</a></pre>
 
-NewReader returns a new Reader reading from s. It is similar to
-bytes.NewBufferString but more efficient and read-only.
+NewReader 返回一个读取 s 的 Reader。它与 bytes.NewBufferString 类似不过 Reader 是只读的并且效率更高。
 
-<h3 id="Reader.Len">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/reader.go#L14">Len</a>
+<h3 id="Reader.Len">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L14">Len</a>
     <a href="#Reader.Len">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) Len() <a href="/builtin/#int">int</a></pre>
 
-Len returns the number of bytes of the unread portion of the string.
+Len 返回字符串未读取部分的字节数。
 
-<h3 id="Reader.Read">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/reader.go#L27">Read</a>
+<h3 id="Reader.Read">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L27">Read</a>
     <a href="#Reader.Read">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) Read(b []<a href="/builtin/#byte">byte</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h3 id="Reader.ReadAt">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/reader.go#L37">ReadAt</a>
+<h3 id="Reader.ReadAt">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L37">ReadAt</a>
     <a href="#Reader.ReadAt">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) ReadAt(b []<a href="/builtin/#byte">byte</a>, off <a href="/builtin/#int64">int64</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h3 id="Reader.ReadByte">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/reader.go#L52">ReadByte</a>
+<h3 id="Reader.ReadByte">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L52">ReadByte</a>
     <a href="#Reader.ReadByte">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) ReadByte() (<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 
-<h3 id="Reader.ReadRune">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/reader.go#L71">ReadRune</a>
+<h3 id="Reader.ReadRune">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L71">ReadRune</a>
     <a href="#Reader.ReadRune">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) ReadRune() (ch <a href="/builtin/#rune">rune</a>, size <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
 
-<h3 id="Reader.Reset">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/reader.go#L136">Reset</a>
+<h3 id="Reader.Reset">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L136">Reset</a>
     <a href="#Reader.Reset">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) Reset(s <a href="/builtin/#string">string</a>)</pre>
 
-Reset resets the Reader to be reading from s.
+Reset 使 Reader 开始读取 s。
 
-<h3 id="Reader.Seek">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/reader.go#L96">Seek</a>
+<h3 id="Reader.Seek">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L96">Seek</a>
     <a href="#Reader.Seek">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) Seek(offset <a href="/builtin/#int64">int64</a>, whence <a href="/builtin/#int">int</a>) (<a href="/builtin/#int64">int64</a>, <a href="/builtin/#error">error</a>)</pre>
 
-Seek implements the io.Seeker interface.
+Seek 方法实现了 io.Seeker 接口。
 
-<h3 id="Reader.Size">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/reader.go#L25">Size</a>
+<h3 id="Reader.Size">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L25">Size</a>
     <a href="#Reader.Size">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) Size() <a href="/builtin/#int64">int64</a></pre>
 
-Size returns the original length of the underlying string. Size is the number of
-bytes available for reading via ReadAt. The returned value is always the same
-and is not affected by calls to any other method.
+Size 方法返回底层字符串的长度。它也是 ReadAt 能读取到的有效字节数。该返回值不受其他方法影响。
 
-<h3 id="Reader.UnreadByte">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/reader.go#L62">UnreadByte</a>
+<h3 id="Reader.UnreadByte">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L62">UnreadByte</a>
     <a href="#Reader.UnreadByte">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) UnreadByte() <a href="/builtin/#error">error</a></pre>
 
 
-<h3 id="Reader.UnreadRune">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/reader.go#L86">UnreadRune</a>
+<h3 id="Reader.UnreadRune">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L86">UnreadRune</a>
     <a href="#Reader.UnreadRune">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) UnreadRune() <a href="/builtin/#error">error</a></pre>
 
 
-<h3 id="Reader.WriteTo">func (*Reader) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/reader.go#L117">WriteTo</a>
+<h3 id="Reader.WriteTo">func (*Reader) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/reader.go#L117">WriteTo</a>
     <a href="#Reader.WriteTo">¶</a></h3>
 <pre>func (r *<a href="#Reader">Reader</a>) WriteTo(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) (n <a href="/builtin/#int64">int64</a>, err <a href="/builtin/#error">error</a>)</pre>
 
-WriteTo implements the io.WriterTo interface.
+WriteTo 方法实现了 io.WriterTo 接口。
 
-<h2 id="Replacer">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/replace.go#L1">Replacer</a>
+<h2 id="Replacer">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/replace.go#L1">Replacer</a>
     <a href="#Replacer">¶</a></h2>
 <pre>type Replacer struct {
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 
-Replacer replaces a list of strings with replacements. It is safe for concurrent
-use by multiple goroutines.
+Replacer 根据给定的替换列表来替换字符串。它可以安全的被多个 goroutine 同时使用。
 
-<h3 id="NewReplacer">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/replace.go#L13">NewReplacer</a>
+<h3 id="NewReplacer">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/replace.go#L13">NewReplacer</a>
     <a href="#NewReplacer">¶</a></h3>
 <pre>func NewReplacer(oldnew ...<a href="/builtin/#string">string</a>) *<a href="#Replacer">Replacer</a></pre>
 
-NewReplacer returns a new Replacer from a list of old, new string pairs.
-Replacements are performed in order, without overlapping matches.
+NewReplacer 会配置 Replacer 的替换列表（每项都包含一个替换目标和替换值）并返回 Replacer。替换操作会按顺序进行并且不会重叠。
 
 <a id="exampleNewReplacer"></a>
-Example:
+例:
 
     r := strings.NewReplacer("<", "&lt;", ">", "&gt;")
     fmt.Println(r.Replace("This is <b>HTML</b>!"))
     // Output: This is &lt;b&gt;HTML&lt;/b&gt;!
 
-<h3 id="Replacer.Replace">func (*Replacer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/replace.go#L59">Replace</a>
+<h3 id="Replacer.Replace">func (*Replacer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/replace.go#L59">Replace</a>
     <a href="#Replacer.Replace">¶</a></h3>
 <pre>func (r *<a href="#Replacer">Replacer</a>) Replace(s <a href="/builtin/#string">string</a>) <a href="/builtin/#string">string</a></pre>
 
-Replace returns a copy of s with all replacements performed.
+Repalce 对 s 应用替换并返回替换结果。
 
-<h3 id="Replacer.WriteString">func (*Replacer) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/strings/replace.go#L64">WriteString</a>
+<h3 id="Replacer.WriteString">func (*Replacer) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/replace.go#L64">WriteString</a>
     <a href="#Replacer.WriteString">¶</a></h3>
 <pre>func (r *<a href="#Replacer">Replacer</a>) WriteString(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, s <a href="/builtin/#string">string</a>) (n <a href="/builtin/#int">int</a>, err <a href="/builtin/#error">error</a>)</pre>
 
-WriteString writes s to w with all replacements performed.
+WriteString 方法对 s 应用替换后将结果写入 w 中。
 
 <h2 id="pkg-note-BUG">Bugs</h2>
 
-- [☞](//github.com/golang/go/blob/release-branch.go1.10/src/strings/strings.go#L649)  The rule Title uses for word boundaries does not handle Unicode punctuation
-  properly.
+- [☞](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/strings/strings.go#L649)  Title 使用的判断字边界的规则会忽略 Unicode 标点符号。
 
 

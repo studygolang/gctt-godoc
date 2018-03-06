@@ -20,9 +20,9 @@ Package printer implements printing of AST nodes.
 - [Fprint](#exampleFprint)
 
 ### Package files
- [nodes.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/printer/nodes.go) [printer.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/printer/printer.go)
+ [nodes.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/printer/nodes.go) [printer.go](//github.com/golang/go/blob/release-branch.go1.10/src/go/printer/printer.go)
 
-<h2 id="Fprint">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/printer/printer.go#L1344">Fprint</a>
+<h2 id="Fprint">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/printer/printer.go#L1344">Fprint</a>
     <a href="#Fprint">¶</a></h2>
 <pre>func Fprint(output <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, fset *<a href="/go/token/">token</a>.<a href="/go/token/#FileSet">FileSet</a>, node interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -66,7 +66,7 @@ Example:
     //
     // fmt.Println(s)
 
-<h2 id="CommentedNode">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/printer/printer.go#L1325">CommentedNode</a>
+<h2 id="CommentedNode">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/printer/printer.go#L1325">CommentedNode</a>
     <a href="#CommentedNode">¶</a></h2>
 <pre>type CommentedNode struct {
 <span id="CommentedNode.Node"></span>    Node     interface{} <span class="comment">// *ast.File, or ast.Expr, ast.Decl, ast.Spec, or ast.Stmt</span>
@@ -76,7 +76,7 @@ Example:
 A CommentedNode bundles an AST node and corresponding comments. It may be
 provided as argument to any of the Fprint functions.
 
-<h2 id="Config">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/printer/printer.go#L1267">Config</a>
+<h2 id="Config">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/printer/printer.go#L1267">Config</a>
     <a href="#Config">¶</a></h2>
 <pre>type Config struct {
 <span id="Config.Mode"></span>    Mode     <a href="#Mode">Mode</a> <span class="comment">// default: 0</span>
@@ -86,7 +86,7 @@ provided as argument to any of the Fprint functions.
 
 A Config node controls the output of Fprint.
 
-<h3 id="Config.Fprint">func (*Config) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/printer/printer.go#L1335">Fprint</a>
+<h3 id="Config.Fprint">func (*Config) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/printer/printer.go#L1335">Fprint</a>
     <a href="#Config.Fprint">¶</a></h3>
 <pre>func (cfg *<a href="#Config">Config</a>) Fprint(output <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>, fset *<a href="/go/token/">token</a>.<a href="/go/token/#FileSet">FileSet</a>, node interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -95,7 +95,7 @@ Position information is interpreted relative to the file set fset. The node type
 must be *ast.File, *CommentedNode, []ast.Decl, []ast.Stmt, or
 assignment-compatible to ast.Expr, ast.Decl, ast.Spec, or ast.Stmt.
 
-<h2 id="Mode">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/go/printer/printer.go#L1257">Mode</a>
+<h2 id="Mode">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/go/printer/printer.go#L1257">Mode</a>
     <a href="#Mode">¶</a></h2>
 <pre>type Mode <a href="/builtin/#uint">uint</a></pre>
 

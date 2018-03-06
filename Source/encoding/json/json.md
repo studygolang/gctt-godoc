@@ -150,16 +150,16 @@ Example:
 - [Package (CustomMarshalJSON)](#example_customMarshalJSON)
 
 ### Package files
- [decode.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/decode.go) [encode.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/encode.go) [fold.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/fold.go) [indent.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/indent.go) [scanner.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/scanner.go) [stream.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go) [tables.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/tables.go) [tags.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/tags.go)
+ [decode.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/decode.go) [encode.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/encode.go) [fold.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/fold.go) [indent.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/indent.go) [scanner.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/scanner.go) [stream.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go) [tables.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/tables.go) [tags.go](//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/tags.go)
 
-<h2 id="Compact">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/indent.go#L1">Compact</a>
+<h2 id="Compact">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/indent.go#L1">Compact</a>
     <a href="#Compact">¶</a></h2>
 <pre>func Compact(dst *<a href="/bytes/">bytes</a>.<a href="/bytes/#Buffer">Buffer</a>, src []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
 Compact appends to dst the JSON-encoded src with insignificant space characters
 elided.
 
-<h2 id="HTMLEscape">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/encode.go#L180">HTMLEscape</a>
+<h2 id="HTMLEscape">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/encode.go#L180">HTMLEscape</a>
     <a href="#HTMLEscape">¶</a></h2>
 <pre>func HTMLEscape(dst *<a href="/bytes/">bytes</a>.<a href="/bytes/#Buffer">Buffer</a>, src []<a href="/builtin/#byte">byte</a>)</pre>
 
@@ -169,7 +169,7 @@ characters inside string literals changed to \u003c, \u003e, \u0026, \u2028,
 historical reasons, web browsers don't honor standard HTML escaping within
 <script> tags, so an alternative JSON encoding must be used.
 
-<h2 id="Indent">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/indent.go#L69">Indent</a>
+<h2 id="Indent">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/indent.go#L69">Indent</a>
     <a href="#Indent">¶</a></h2>
 <pre>func Indent(dst *<a href="/bytes/">bytes</a>.<a href="/bytes/#Buffer">Buffer</a>, src []<a href="/builtin/#byte">byte</a>, prefix, indent <a href="/builtin/#string">string</a>) <a href="/builtin/#error">error</a></pre>
 
@@ -215,7 +215,7 @@ Example:
     // =	}
     // =]
 
-<h2 id="Marshal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/encode.go#L149">Marshal</a>
+<h2 id="Marshal">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/encode.go#L149">Marshal</a>
     <a href="#Marshal">¶</a></h2>
 <pre>func Marshal(v interface{}) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -360,7 +360,7 @@ Example:
     // Output:
     // {"ID":1,"Name":"Reds","Colors":["Crimson","Red","Ruby","Maroon"]}
 
-<h2 id="MarshalIndent">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/encode.go#L161">MarshalIndent</a>
+<h2 id="MarshalIndent">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/encode.go#L161">MarshalIndent</a>
     <a href="#MarshalIndent">¶</a></h2>
 <pre>func MarshalIndent(v interface{}, prefix, indent <a href="/builtin/#string">string</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -388,7 +388,7 @@ Example:
     // <prefix><indent>"b": 2
     // <prefix>}
 
-<h2 id="Unmarshal">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/decode.go#L87">Unmarshal</a>
+<h2 id="Unmarshal">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/decode.go#L87">Unmarshal</a>
     <a href="#Unmarshal">¶</a></h2>
 <pre>func Unmarshal(data []<a href="/builtin/#byte">byte</a>, v interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -480,13 +480,13 @@ Example:
     // Output:
     // [{Name:Platypus Order:Monotremata} {Name:Quoll Order:Dasyuromorphia}]
 
-<h2 id="Valid">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/scanner.go#L9">Valid</a>
+<h2 id="Valid">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/scanner.go#L9">Valid</a>
     <a href="#Valid">¶</a></h2>
 <pre>func Valid(data []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#bool">bool</a></pre>
 
 Valid reports whether data is a valid JSON encoding.
 
-<h2 id="Decoder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L4">Decoder</a>
+<h2 id="Decoder">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L4">Decoder</a>
     <a href="#Decoder">¶</a></h2>
 <pre>type Decoder struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -524,7 +524,7 @@ Example:
     // Sam: Go fmt who?
     // Ed: Go fmt yourself!
 
-<h3 id="NewDecoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L21">NewDecoder</a>
+<h3 id="NewDecoder">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L21">NewDecoder</a>
     <a href="#NewDecoder">¶</a></h3>
 <pre>func NewDecoder(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) *<a href="#Decoder">Decoder</a></pre>
 
@@ -533,14 +533,14 @@ NewDecoder returns a new decoder that reads from r.
 The decoder introduces its own buffering and may read data from r beyond the
 JSON values requested.
 
-<h3 id="Decoder.Buffered">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L73">Buffered</a>
+<h3 id="Decoder.Buffered">func (*Decoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L73">Buffered</a>
     <a href="#Decoder.Buffered">¶</a></h3>
 <pre>func (dec *<a href="#Decoder">Decoder</a>) Buffered() <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a></pre>
 
 Buffered returns a reader of the data remaining in the Decoder's buffer. The
 reader is valid until the next call to Decode.
 
-<h3 id="Decoder.Decode">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L39">Decode</a>
+<h3 id="Decoder.Decode">func (*Decoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L39">Decode</a>
     <a href="#Decoder.Decode">¶</a></h3>
 <pre>func (dec *<a href="#Decoder">Decoder</a>) Decode(v interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -602,7 +602,7 @@ Example:
     // Ed: Go fmt yourself!
     // json.Delim: ]
 
-<h3 id="Decoder.DisallowUnknownFields">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L32">DisallowUnknownFields</a>
+<h3 id="Decoder.DisallowUnknownFields">func (*Decoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L32">DisallowUnknownFields</a>
     <a href="#Decoder.DisallowUnknownFields">¶</a></h3>
 <pre>func (dec *<a href="#Decoder">Decoder</a>) DisallowUnknownFields()</pre>
 
@@ -610,14 +610,14 @@ DisallowUnknownFields causes the Decoder to return an error when the destination
 is a struct and the input contains object keys which do not match any
 non-ignored, exported fields in the destination.
 
-<h3 id="Decoder.More">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L469">More</a>
+<h3 id="Decoder.More">func (*Decoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L469">More</a>
     <a href="#Decoder.More">¶</a></h3>
 <pre>func (dec *<a href="#Decoder">Decoder</a>) More() <a href="/builtin/#bool">bool</a></pre>
 
 More reports whether there is another element in the current array or object
 being parsed.
 
-<h3 id="Decoder.Token">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L354">Token</a>
+<h3 id="Decoder.Token">func (*Decoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L354">Token</a>
     <a href="#Decoder.Token">¶</a></h3>
 <pre>func (dec *<a href="#Decoder">Decoder</a>) Token() (<a href="#Token">Token</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -669,25 +669,25 @@ Example:
     // float64: 1.234
     // json.Delim: }
 
-<h3 id="Decoder.UseNumber">func (*Decoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L27">UseNumber</a>
+<h3 id="Decoder.UseNumber">func (*Decoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L27">UseNumber</a>
     <a href="#Decoder.UseNumber">¶</a></h3>
 <pre>func (dec *<a href="#Decoder">Decoder</a>) UseNumber()</pre>
 
 UseNumber causes the Decoder to unmarshal a number into an interface{} as a
 Number instead of as a float64.
 
-<h2 id="Delim">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L337">Delim</a>
+<h2 id="Delim">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L337">Delim</a>
     <a href="#Delim">¶</a></h2>
 <pre>type Delim <a href="/builtin/#rune">rune</a></pre>
 
 A Delim is a JSON array or object delimiter, one of [ ] { or }.
 
-<h3 id="Delim.String">func (Delim) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L339">String</a>
+<h3 id="Delim.String">func (Delim) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L339">String</a>
     <a href="#Delim.String">¶</a></h3>
 <pre>func (d <a href="#Delim">Delim</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Encoder">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L165">Encoder</a>
+<h2 id="Encoder">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L165">Encoder</a>
     <a href="#Encoder">¶</a></h2>
 <pre>type Encoder struct {
     <span class="comment">// contains filtered or unexported fields</span>
@@ -695,13 +695,13 @@ A Delim is a JSON array or object delimiter, one of [ ] { or }.
 
 An Encoder writes JSON values to an output stream.
 
-<h3 id="NewEncoder">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L176">NewEncoder</a>
+<h3 id="NewEncoder">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L176">NewEncoder</a>
     <a href="#NewEncoder">¶</a></h3>
 <pre>func NewEncoder(w <a href="/io/">io</a>.<a href="/io/#Writer">Writer</a>) *<a href="#Encoder">Encoder</a></pre>
 
 NewEncoder returns a new encoder that writes to w.
 
-<h3 id="Encoder.Encode">func (*Encoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L185">Encode</a>
+<h3 id="Encoder.Encode">func (*Encoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L185">Encode</a>
     <a href="#Encoder.Encode">¶</a></h3>
 <pre>func (enc *<a href="#Encoder">Encoder</a>) Encode(v interface{}) <a href="/builtin/#error">error</a></pre>
 
@@ -711,7 +711,7 @@ character.
 See the documentation for Marshal for details about the conversion of Go values
 to JSON.
 
-<h3 id="Encoder.SetEscapeHTML">func (*Encoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L237">SetEscapeHTML</a>
+<h3 id="Encoder.SetEscapeHTML">func (*Encoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L237">SetEscapeHTML</a>
     <a href="#Encoder.SetEscapeHTML">¶</a></h3>
 <pre>func (enc *<a href="#Encoder">Encoder</a>) SetEscapeHTML(on <a href="/builtin/#bool">bool</a>)</pre>
 
@@ -723,7 +723,7 @@ embedding JSON in HTML.
 In non-HTML settings where the escaping interferes with the readability of the
 output, SetEscapeHTML(false) disables this behavior.
 
-<h3 id="Encoder.SetIndent">func (*Encoder) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L225">SetIndent</a>
+<h3 id="Encoder.SetIndent">func (*Encoder) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L225">SetIndent</a>
     <a href="#Encoder.SetIndent">¶</a></h3>
 <pre>func (enc *<a href="#Encoder">Encoder</a>) SetIndent(prefix, indent <a href="/builtin/#string">string</a>)</pre>
 
@@ -731,7 +731,7 @@ SetIndent instructs the encoder to format each subsequent encoded value as if
 indented by the package-level function Indent(dst, src, prefix, indent). Calling
 SetIndent("", "") disables indentation.
 
-<h2 id="InvalidUTF8Error">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/encode.go#L240">InvalidUTF8Error</a>
+<h2 id="InvalidUTF8Error">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/encode.go#L240">InvalidUTF8Error</a>
     <a href="#InvalidUTF8Error">¶</a></h2>
 <pre>type InvalidUTF8Error struct {
 <span id="InvalidUTF8Error.S"></span>    S <a href="/builtin/#string">string</a> <span class="comment">// the whole string value that caused the error</span>
@@ -744,12 +744,12 @@ Unicode replacement rune U+FFFD.
 
 Deprecated: No longer used; kept for compatibility.
 
-<h3 id="InvalidUTF8Error.Error">func (*InvalidUTF8Error) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/encode.go#L244">Error</a>
+<h3 id="InvalidUTF8Error.Error">func (*InvalidUTF8Error) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/encode.go#L244">Error</a>
     <a href="#InvalidUTF8Error.Error">¶</a></h3>
 <pre>func (e *<a href="#InvalidUTF8Error">InvalidUTF8Error</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="InvalidUnmarshalError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/decode.go#L146">InvalidUnmarshalError</a>
+<h2 id="InvalidUnmarshalError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/decode.go#L146">InvalidUnmarshalError</a>
     <a href="#InvalidUnmarshalError">¶</a></h2>
 <pre>type InvalidUnmarshalError struct {
 <span id="InvalidUnmarshalError.Type"></span>    Type <a href="/reflect/">reflect</a>.<a href="/reflect/#Type">Type</a>
@@ -758,12 +758,12 @@ Deprecated: No longer used; kept for compatibility.
 An InvalidUnmarshalError describes an invalid argument passed to Unmarshal. (The
 argument to Unmarshal must be a non-nil pointer.)
 
-<h3 id="InvalidUnmarshalError.Error">func (*InvalidUnmarshalError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/decode.go#L150">Error</a>
+<h3 id="InvalidUnmarshalError.Error">func (*InvalidUnmarshalError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/decode.go#L150">Error</a>
     <a href="#InvalidUnmarshalError.Error">¶</a></h3>
 <pre>func (e *<a href="#InvalidUnmarshalError">InvalidUnmarshalError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Marshaler">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/encode.go#L211">Marshaler</a>
+<h2 id="Marshaler">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/encode.go#L211">Marshaler</a>
     <a href="#Marshaler">¶</a></h2>
 <pre>type Marshaler interface {
     MarshalJSON() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)
@@ -772,7 +772,7 @@ argument to Unmarshal must be a non-nil pointer.)
 Marshaler is the interface implemented by types that can marshal themselves into
 valid JSON.
 
-<h2 id="MarshalerError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/encode.go#L248">MarshalerError</a>
+<h2 id="MarshalerError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/encode.go#L248">MarshalerError</a>
     <a href="#MarshalerError">¶</a></h2>
 <pre>type MarshalerError struct {
 <span id="MarshalerError.Type"></span>    Type <a href="/reflect/">reflect</a>.<a href="/reflect/#Type">Type</a>
@@ -780,36 +780,36 @@ valid JSON.
 }</pre>
 
 
-<h3 id="MarshalerError.Error">func (*MarshalerError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/encode.go#L253">Error</a>
+<h3 id="MarshalerError.Error">func (*MarshalerError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/encode.go#L253">Error</a>
     <a href="#MarshalerError.Error">¶</a></h3>
 <pre>func (e *<a href="#MarshalerError">MarshalerError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Number">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/decode.go#L184">Number</a>
+<h2 id="Number">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/decode.go#L184">Number</a>
     <a href="#Number">¶</a></h2>
 <pre>type Number <a href="/builtin/#string">string</a></pre>
 
 A Number represents a JSON number literal.
 
-<h3 id="Number.Float64">func (Number) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/decode.go#L190">Float64</a>
+<h3 id="Number.Float64">func (Number) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/decode.go#L190">Float64</a>
     <a href="#Number.Float64">¶</a></h3>
 <pre>func (n <a href="#Number">Number</a>) Float64() (<a href="/builtin/#float64">float64</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Float64 returns the number as a float64.
 
-<h3 id="Number.Int64">func (Number) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/decode.go#L195">Int64</a>
+<h3 id="Number.Int64">func (Number) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/decode.go#L195">Int64</a>
     <a href="#Number.Int64">¶</a></h3>
 <pre>func (n <a href="#Number">Number</a>) Int64() (<a href="/builtin/#int64">int64</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Int64 returns the number as an int64.
 
-<h3 id="Number.String">func (Number) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/decode.go#L187">String</a>
+<h3 id="Number.String">func (Number) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/decode.go#L187">String</a>
     <a href="#Number.String">¶</a></h3>
 <pre>func (n <a href="#Number">Number</a>) String() <a href="/builtin/#string">string</a></pre>
 
 String returns the literal text of the number.
 
-<h2 id="RawMessage">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L244">RawMessage</a>
+<h2 id="RawMessage">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L244">RawMessage</a>
     <a href="#RawMessage">¶</a></h2>
 <pre>type RawMessage []<a href="/builtin/#byte">byte</a></pre>
 
@@ -887,19 +887,19 @@ Example:
     // YCbCr &{255 0 -10}
     // RGB &{98 218 255}
 
-<h3 id="RawMessage.MarshalJSON">func (RawMessage) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L247">MarshalJSON</a>
+<h3 id="RawMessage.MarshalJSON">func (RawMessage) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L247">MarshalJSON</a>
     <a href="#RawMessage.MarshalJSON">¶</a></h3>
 <pre>func (m <a href="#RawMessage">RawMessage</a>) MarshalJSON() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 MarshalJSON returns m as the JSON encoding of m.
 
-<h3 id="RawMessage.UnmarshalJSON">func (*RawMessage) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L255">UnmarshalJSON</a>
+<h3 id="RawMessage.UnmarshalJSON">func (*RawMessage) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L255">UnmarshalJSON</a>
     <a href="#RawMessage.UnmarshalJSON">¶</a></h3>
 <pre>func (m *<a href="#RawMessage">RawMessage</a>) UnmarshalJSON(data []<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a></pre>
 
 UnmarshalJSON sets *m to a copy of data.
 
-<h2 id="SyntaxError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/scanner.go#L59">SyntaxError</a>
+<h2 id="SyntaxError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/scanner.go#L59">SyntaxError</a>
     <a href="#SyntaxError">¶</a></h2>
 <pre>type SyntaxError struct {
 <span id="SyntaxError.Offset"></span>    Offset <a href="/builtin/#int64">int64</a> <span class="comment">// error occurred after reading Offset bytes</span>
@@ -908,12 +908,12 @@ UnmarshalJSON sets *m to a copy of data.
 
 A SyntaxError is a description of a JSON syntax error.
 
-<h3 id="SyntaxError.Error">func (*SyntaxError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/scanner.go#L64">Error</a>
+<h3 id="SyntaxError.Error">func (*SyntaxError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/scanner.go#L64">Error</a>
     <a href="#SyntaxError.Error">¶</a></h3>
 <pre>func (e *<a href="#SyntaxError">SyntaxError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Token">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/stream.go#L275">Token</a>
+<h2 id="Token">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/stream.go#L275">Token</a>
     <a href="#Token">¶</a></h2>
 <pre>type Token interface{}</pre>
 
@@ -926,7 +926,7 @@ A Token holds a value of one of these types:
     string, for JSON string literals
     nil, for JSON null
 
-<h2 id="UnmarshalFieldError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/decode.go#L134">UnmarshalFieldError</a>
+<h2 id="UnmarshalFieldError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/decode.go#L134">UnmarshalFieldError</a>
     <a href="#UnmarshalFieldError">¶</a></h2>
 <pre>type UnmarshalFieldError struct {
 <span id="UnmarshalFieldError.Key"></span>    Key   <a href="/builtin/#string">string</a>
@@ -939,12 +939,12 @@ An UnmarshalFieldError describes a JSON object key that led to an unexported
 
 Deprecated: No longer used; kept for compatibility.
 
-<h3 id="UnmarshalFieldError.Error">func (*UnmarshalFieldError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/decode.go#L140">Error</a>
+<h3 id="UnmarshalFieldError.Error">func (*UnmarshalFieldError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/decode.go#L140">Error</a>
     <a href="#UnmarshalFieldError.Error">¶</a></h3>
 <pre>func (e *<a href="#UnmarshalFieldError">UnmarshalFieldError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="UnmarshalTypeError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/decode.go#L115">UnmarshalTypeError</a>
+<h2 id="UnmarshalTypeError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/decode.go#L115">UnmarshalTypeError</a>
     <a href="#UnmarshalTypeError">¶</a></h2>
 <pre>type UnmarshalTypeError struct {
 <span id="UnmarshalTypeError.Value"></span>    Value  <a href="/builtin/#string">string</a>       <span class="comment">// description of JSON value - &#34;bool&#34;, &#34;array&#34;, &#34;number -5&#34;</span>
@@ -957,12 +957,12 @@ Deprecated: No longer used; kept for compatibility.
 An UnmarshalTypeError describes a JSON value that was not appropriate for a
 value of a specific Go type.
 
-<h3 id="UnmarshalTypeError.Error">func (*UnmarshalTypeError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/decode.go#L123">Error</a>
+<h3 id="UnmarshalTypeError.Error">func (*UnmarshalTypeError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/decode.go#L123">Error</a>
     <a href="#UnmarshalTypeError.Error">¶</a></h3>
 <pre>func (e *<a href="#UnmarshalTypeError">UnmarshalTypeError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Unmarshaler">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/decode.go#L109">Unmarshaler</a>
+<h2 id="Unmarshaler">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/decode.go#L109">Unmarshaler</a>
     <a href="#Unmarshaler">¶</a></h2>
 <pre>type Unmarshaler interface {
     UnmarshalJSON([]<a href="/builtin/#byte">byte</a>) <a href="/builtin/#error">error</a>
@@ -976,7 +976,7 @@ data after returning.
 By convention, to approximate the behavior of Unmarshal itself, Unmarshalers
 implement UnmarshalJSON([]byte("null")) as a no-op.
 
-<h2 id="UnsupportedTypeError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/encode.go#L217">UnsupportedTypeError</a>
+<h2 id="UnsupportedTypeError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/encode.go#L217">UnsupportedTypeError</a>
     <a href="#UnsupportedTypeError">¶</a></h2>
 <pre>type UnsupportedTypeError struct {
 <span id="UnsupportedTypeError.Type"></span>    Type <a href="/reflect/">reflect</a>.<a href="/reflect/#Type">Type</a>
@@ -985,12 +985,12 @@ implement UnmarshalJSON([]byte("null")) as a no-op.
 An UnsupportedTypeError is returned by Marshal when attempting to encode an
 unsupported value type.
 
-<h3 id="UnsupportedTypeError.Error">func (*UnsupportedTypeError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/encode.go#L221">Error</a>
+<h3 id="UnsupportedTypeError.Error">func (*UnsupportedTypeError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/encode.go#L221">Error</a>
     <a href="#UnsupportedTypeError.Error">¶</a></h3>
 <pre>func (e *<a href="#UnsupportedTypeError">UnsupportedTypeError</a>) Error() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="UnsupportedValueError">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/encode.go#L225">UnsupportedValueError</a>
+<h2 id="UnsupportedValueError">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/encode.go#L225">UnsupportedValueError</a>
     <a href="#UnsupportedValueError">¶</a></h2>
 <pre>type UnsupportedValueError struct {
 <span id="UnsupportedValueError.Value"></span>    Value <a href="/reflect/">reflect</a>.<a href="/reflect/#Value">Value</a>
@@ -998,7 +998,7 @@ unsupported value type.
 }</pre>
 
 
-<h3 id="UnsupportedValueError.Error">func (*UnsupportedValueError) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/encoding/json/encode.go#L230">Error</a>
+<h3 id="UnsupportedValueError.Error">func (*UnsupportedValueError) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/encoding/json/encode.go#L230">Error</a>
     <a href="#UnsupportedValueError.Error">¶</a></h3>
 <pre>func (e *<a href="#UnsupportedValueError">UnsupportedValueError</a>) Error() <a href="/builtin/#string">string</a></pre>
 

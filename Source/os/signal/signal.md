@@ -219,9 +219,9 @@ string is posted as a note.
 - [Notify (AllSignals)](#exampleNotify_allSignals)
 
 ### Package files
- [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/signal/doc.go) [signal.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/signal/signal.go) [signal_unix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/signal/signal_unix.go)
+ [doc.go](//github.com/golang/go/blob/release-branch.go1.10/src/os/signal/doc.go) [signal.go](//github.com/golang/go/blob/release-branch.go1.10/src/os/signal/signal.go) [signal_unix.go](//github.com/golang/go/blob/release-branch.go1.10/src/os/signal/signal_unix.go)
 
-<h2 id="Ignore">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/signal/signal.go#L75">Ignore</a>
+<h2 id="Ignore">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/signal/signal.go#L75">Ignore</a>
     <a href="#Ignore">¶</a></h2>
 <pre>func Ignore(sig ...<a href="/os/">os</a>.<a href="/os/#Signal">Signal</a>)</pre>
 
@@ -230,7 +230,7 @@ program, nothing will happen. Ignore undoes the effect of any prior calls to
 Notify for the provided signals. If no signals are provided, all incoming
 signals will be ignored.
 
-<h2 id="Notify">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/signal/signal.go#L95">Notify</a>
+<h2 id="Notify">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/signal/signal.go#L95">Notify</a>
     <a href="#Notify">¶</a></h2>
 <pre>func Notify(c chan&lt;- <a href="/os/">os</a>.<a href="/os/#Signal">Signal</a>, sig ...<a href="/os/">os</a>.<a href="/os/#Signal">Signal</a>)</pre>
 
@@ -280,14 +280,14 @@ Example:
     s := <-c
     fmt.Println("Got signal:", s)
 
-<h2 id="Reset">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/signal/signal.go#L139">Reset</a>
+<h2 id="Reset">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/signal/signal.go#L139">Reset</a>
     <a href="#Reset">¶</a></h2>
 <pre>func Reset(sig ...<a href="/os/">os</a>.<a href="/os/#Signal">Signal</a>)</pre>
 
 Reset undoes the effect of any prior calls to Notify for the provided signals.
 If no signals are provided, all signal handlers will be reset.
 
-<h2 id="Stop">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/os/signal/signal.go#L146">Stop</a>
+<h2 id="Stop">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/os/signal/signal.go#L146">Stop</a>
     <a href="#Stop">¶</a></h2>
 <pre>func Stop(c chan&lt;- <a href="/os/">os</a>.<a href="/os/#Signal">Signal</a>)</pre>
 

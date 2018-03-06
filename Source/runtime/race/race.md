@@ -13,6 +13,6 @@ https://golang.org/doc/articles/race_detector.html
 
 
 ### Package files
- [doc.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/runtime/race/doc.go)
+ [doc.go](//github.com/golang/go/blob/release-branch.go1.10/src/runtime/race/doc.go)
 
 

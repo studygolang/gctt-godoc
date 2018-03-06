@@ -24,7 +24,7 @@ Package plan9obj implements access to Plan 9 a.out object files.
 - [type Sym](#Sym)
 
 ### Package files
- [file.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/plan9obj/file.go) [plan9obj.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/plan9obj/plan9obj.go)
+ [file.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/plan9obj/file.go) [plan9obj.go](//github.com/golang/go/blob/release-branch.go1.10/src/debug/plan9obj/plan9obj.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -37,7 +37,7 @@ Package plan9obj implements access to Plan 9 a.out object files.
 )</pre>
 
 
-<h2 id="File">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/plan9obj/file.go#L17">File</a>
+<h2 id="File">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/plan9obj/file.go#L17">File</a>
     <a href="#File">¶</a></h2>
 <pre>type File struct {
     <a href="#FileHeader">FileHeader</a>
@@ -47,40 +47,40 @@ Package plan9obj implements access to Plan 9 a.out object files.
 
 A File represents an open Plan 9 a.out file.
 
-<h3 id="NewFile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/plan9obj/file.go#L125">NewFile</a>
+<h3 id="NewFile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/plan9obj/file.go#L125">NewFile</a>
     <a href="#NewFile">¶</a></h3>
 <pre>func NewFile(r <a href="/io/">io</a>.<a href="/io/#ReaderAt">ReaderAt</a>) (*<a href="#File">File</a>, <a href="/builtin/#error">error</a>)</pre>
 
 NewFile creates a new File for accessing a Plan 9 binary in an underlying
 reader. The Plan 9 binary is expected to start at position 0 in the ReaderAt.
 
-<h3 id="Open">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/plan9obj/file.go#L88">Open</a>
+<h3 id="Open">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/plan9obj/file.go#L88">Open</a>
     <a href="#Open">¶</a></h3>
 <pre>func Open(name <a href="/builtin/#string">string</a>) (*<a href="#File">File</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Open opens the named file using os.Open and prepares it for use as a Plan 9
 a.out binary.
 
-<h3 id="File.Close">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/plan9obj/file.go#L105">Close</a>
+<h3 id="File.Close">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/plan9obj/file.go#L105">Close</a>
     <a href="#File.Close">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Close() <a href="/builtin/#error">error</a></pre>
 
 Close closes the File. If the File was created using NewFile directly instead of
 Open, Close has no effect.
 
-<h3 id="File.Section">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/plan9obj/file.go#L311">Section</a>
+<h3 id="File.Section">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/plan9obj/file.go#L311">Section</a>
     <a href="#File.Section">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Section(name <a href="/builtin/#string">string</a>) *<a href="#Section">Section</a></pre>
 
 Section returns a section with the given name, or nil if no such section exists.
 
-<h3 id="File.Symbols">func (*File) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/plan9obj/file.go#L295">Symbols</a>
+<h3 id="File.Symbols">func (*File) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/plan9obj/file.go#L295">Symbols</a>
     <a href="#File.Symbols">¶</a></h3>
 <pre>func (f *<a href="#File">File</a>) Symbols() ([]<a href="#Sym">Sym</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Symbols returns the symbol table for f.
 
-<h2 id="FileHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/plan9obj/file.go#L7">FileHeader</a>
+<h2 id="FileHeader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/plan9obj/file.go#L7">FileHeader</a>
     <a href="#FileHeader">¶</a></h2>
 <pre>type FileHeader struct {
 <span id="FileHeader.Magic"></span>    Magic       <a href="/builtin/#uint32">uint32</a>
@@ -93,7 +93,7 @@ Symbols returns the symbol table for f.
 
 A FileHeader represents a Plan 9 a.out file header.
 
-<h2 id="Section">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/plan9obj/file.go#L33">Section</a>
+<h2 id="Section">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/plan9obj/file.go#L33">Section</a>
     <a href="#Section">¶</a></h2>
 <pre>type Section struct {
     <a href="#SectionHeader">SectionHeader</a>
@@ -110,19 +110,19 @@ A FileHeader represents a Plan 9 a.out file header.
 
 A Section represents a single section in a Plan 9 a.out file.
 
-<h3 id="Section.Data">func (*Section) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/plan9obj/file.go#L47">Data</a>
+<h3 id="Section.Data">func (*Section) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/plan9obj/file.go#L47">Data</a>
     <a href="#Section.Data">¶</a></h3>
 <pre>func (s *<a href="#Section">Section</a>) Data() ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
 Data reads and returns the contents of the Plan 9 a.out section.
 
-<h3 id="Section.Open">func (*Section) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/plan9obj/file.go#L57">Open</a>
+<h3 id="Section.Open">func (*Section) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/plan9obj/file.go#L57">Open</a>
     <a href="#Section.Open">¶</a></h3>
 <pre>func (s *<a href="#Section">Section</a>) Open() <a href="/io/">io</a>.<a href="/io/#ReadSeeker">ReadSeeker</a></pre>
 
 Open returns a new ReadSeeker reading the Plan 9 a.out section.
 
-<h2 id="SectionHeader">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/plan9obj/file.go#L26">SectionHeader</a>
+<h2 id="SectionHeader">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/plan9obj/file.go#L26">SectionHeader</a>
     <a href="#SectionHeader">¶</a></h2>
 <pre>type SectionHeader struct {
 <span id="SectionHeader.Name"></span>    Name   <a href="/builtin/#string">string</a>
@@ -133,7 +133,7 @@ Open returns a new ReadSeeker reading the Plan 9 a.out section.
 A SectionHeader represents a single Plan 9 a.out section header. This structure
 doesn't exist on-disk, but eases navigation through the object file.
 
-<h2 id="Sym">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/debug/plan9obj/file.go#L60">Sym</a>
+<h2 id="Sym">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/debug/plan9obj/file.go#L60">Sym</a>
     <a href="#Sym">¶</a></h2>
 <pre>type Sym struct {
 <span id="Sym.Value"></span>    Value <a href="/builtin/#uint64">uint64</a>

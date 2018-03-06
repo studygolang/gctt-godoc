@@ -27,9 +27,9 @@ serialization of X.509 certificates, CRL and OCSP.
 - [type TBSCertificateList](#TBSCertificateList)
 
 ### Package files
- [pkix.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go)
+ [pkix.go](//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go)
 
-<h2 id="AlgorithmIdentifier">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L9">AlgorithmIdentifier</a>
+<h2 id="AlgorithmIdentifier">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L9">AlgorithmIdentifier</a>
     <a href="#AlgorithmIdentifier">¶</a></h2>
 <pre>type AlgorithmIdentifier struct {
 <span id="AlgorithmIdentifier.Algorithm"></span>    Algorithm  <a href="/encoding/asn1/">asn1</a>.<a href="/encoding/asn1/#ObjectIdentifier">ObjectIdentifier</a>
@@ -39,7 +39,7 @@ serialization of X.509 certificates, CRL and OCSP.
 AlgorithmIdentifier represents the ASN.1 structure of the same name. See RFC
 5280, section 4.1.1.2.
 
-<h2 id="AttributeTypeAndValue">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L89">AttributeTypeAndValue</a>
+<h2 id="AttributeTypeAndValue">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L89">AttributeTypeAndValue</a>
     <a href="#AttributeTypeAndValue">¶</a></h2>
 <pre>type AttributeTypeAndValue struct {
 <span id="AttributeTypeAndValue.Type"></span>    Type  <a href="/encoding/asn1/">asn1</a>.<a href="/encoding/asn1/#ObjectIdentifier">ObjectIdentifier</a>
@@ -49,7 +49,7 @@ AlgorithmIdentifier represents the ASN.1 structure of the same name. See RFC
 AttributeTypeAndValue mirrors the ASN.1 structure of the same name in
 http://tools.ietf.org/html/rfc5280#section-4.1.2.4
 
-<h2 id="AttributeTypeAndValueSET">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L96">AttributeTypeAndValueSET</a>
+<h2 id="AttributeTypeAndValueSET">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L96">AttributeTypeAndValueSET</a>
     <a href="#AttributeTypeAndValueSET">¶</a></h2>
 <pre>type AttributeTypeAndValueSET struct {
 <span id="AttributeTypeAndValueSET.Type"></span>    Type  <a href="/encoding/asn1/">asn1</a>.<a href="/encoding/asn1/#ObjectIdentifier">ObjectIdentifier</a>
@@ -59,7 +59,7 @@ http://tools.ietf.org/html/rfc5280#section-4.1.2.4
 AttributeTypeAndValueSET represents a set of ASN.1 sequences of
 AttributeTypeAndValue sequences from RFC 2986 (PKCS #10).
 
-<h2 id="CertificateList">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L234">CertificateList</a>
+<h2 id="CertificateList">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L234">CertificateList</a>
     <a href="#CertificateList">¶</a></h2>
 <pre>type CertificateList struct {
 <span id="CertificateList.TBSCertList"></span>    TBSCertList        <a href="#TBSCertificateList">TBSCertificateList</a>
@@ -70,13 +70,13 @@ AttributeTypeAndValue sequences from RFC 2986 (PKCS #10).
 CertificateList represents the ASN.1 structure of the same name. See RFC 5280,
 section 5.1. Use Certificate.CheckCRLSignature to verify the signature.
 
-<h3 id="CertificateList.HasExpired">func (*CertificateList) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L241">HasExpired</a>
+<h3 id="CertificateList.HasExpired">func (*CertificateList) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L241">HasExpired</a>
     <a href="#CertificateList.HasExpired">¶</a></h3>
 <pre>func (certList *<a href="#CertificateList">CertificateList</a>) HasExpired(now <a href="/time/">time</a>.<a href="/time/#Time">Time</a>) <a href="/builtin/#bool">bool</a></pre>
 
 HasExpired reports whether certList should have been updated by now.
 
-<h2 id="Extension">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L103">Extension</a>
+<h2 id="Extension">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L103">Extension</a>
     <a href="#Extension">¶</a></h2>
 <pre>type Extension struct {
 <span id="Extension.Id"></span>    Id       <a href="/encoding/asn1/">asn1</a>.<a href="/encoding/asn1/#ObjectIdentifier">ObjectIdentifier</a>
@@ -87,7 +87,7 @@ HasExpired reports whether certList should have been updated by now.
 Extension represents the ASN.1 structure of the same name. See RFC 5280, section
 4.2.
 
-<h2 id="Name">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L113">Name</a>
+<h2 id="Name">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L113">Name</a>
     <a href="#Name">¶</a></h2>
 <pre>type Name struct {
 <span id="Name.Country"></span>    Country, Organization, OrganizationalUnit []<a href="/builtin/#string">string</a>
@@ -104,41 +104,41 @@ elements of a DN. When parsing, all elements are stored in Names and
 non-standard elements can be extracted from there. When marshaling, elements in
 ExtraNames are appended and override other values with the same OID.
 
-<h3 id="Name.FillFromRDNSequence">func (*Name) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L123">FillFromRDNSequence</a>
+<h3 id="Name.FillFromRDNSequence">func (*Name) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L123">FillFromRDNSequence</a>
     <a href="#Name.FillFromRDNSequence">¶</a></h3>
 <pre>func (n *<a href="#Name">Name</a>) FillFromRDNSequence(rdns *<a href="#RDNSequence">RDNSequence</a>)</pre>
 
 
-<h3 id="Name.String">func (Name) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L216">String</a>
+<h3 id="Name.String">func (Name) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L216">String</a>
     <a href="#Name.String">¶</a></h3>
 <pre>func (n <a href="#Name">Name</a>) String() <a href="/builtin/#string">string</a></pre>
 
 String returns the string form of n, roughly following the RFC 2253
 Distinguished Names syntax.
 
-<h3 id="Name.ToRDNSequence">func (Name) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L193">ToRDNSequence</a>
+<h3 id="Name.ToRDNSequence">func (Name) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L193">ToRDNSequence</a>
     <a href="#Name.ToRDNSequence">¶</a></h3>
 <pre>func (n <a href="#Name">Name</a>) ToRDNSequence() (ret <a href="#RDNSequence">RDNSequence</a>)</pre>
 
 
-<h2 id="RDNSequence">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L14">RDNSequence</a>
+<h2 id="RDNSequence">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L14">RDNSequence</a>
     <a href="#RDNSequence">¶</a></h2>
 <pre>type RDNSequence []<a href="#RelativeDistinguishedNameSET">RelativeDistinguishedNameSET</a></pre>
 
 
-<h3 id="RDNSequence.String">func (RDNSequence) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L30">String</a>
+<h3 id="RDNSequence.String">func (RDNSequence) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L30">String</a>
     <a href="#RDNSequence.String">¶</a></h3>
 <pre>func (r <a href="#RDNSequence">RDNSequence</a>) String() <a href="/builtin/#string">string</a></pre>
 
 String returns a string representation of the sequence r, roughly following the
 RFC 2253 Distinguished Names syntax.
 
-<h2 id="RelativeDistinguishedNameSET">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L85">RelativeDistinguishedNameSET</a>
+<h2 id="RelativeDistinguishedNameSET">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L85">RelativeDistinguishedNameSET</a>
     <a href="#RelativeDistinguishedNameSET">¶</a></h2>
 <pre>type RelativeDistinguishedNameSET []<a href="#AttributeTypeAndValue">AttributeTypeAndValue</a></pre>
 
 
-<h2 id="RevokedCertificate">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L260">RevokedCertificate</a>
+<h2 id="RevokedCertificate">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L260">RevokedCertificate</a>
     <a href="#RevokedCertificate">¶</a></h2>
 <pre>type RevokedCertificate struct {
 <span id="RevokedCertificate.SerialNumber"></span>    SerialNumber   *<a href="/math/big/">big</a>.<a href="/math/big/#Int">Int</a>
@@ -149,7 +149,7 @@ RFC 2253 Distinguished Names syntax.
 RevokedCertificate represents the ASN.1 structure of the same name. See RFC
 5280, section 5.1.
 
-<h2 id="TBSCertificateList">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/crypto/x509/pkix/pkix.go#L247">TBSCertificateList</a>
+<h2 id="TBSCertificateList">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/crypto/x509/pkix/pkix.go#L247">TBSCertificateList</a>
     <a href="#TBSCertificateList">¶</a></h2>
 <pre>type TBSCertificateList struct {
 <span id="TBSCertificateList.Raw"></span>    Raw                 <a href="/encoding/asn1/">asn1</a>.<a href="/encoding/asn1/#RawContent">RawContent</a>

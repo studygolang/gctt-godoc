@@ -62,7 +62,7 @@ Example:
 - [Package](#example)
 
 ### Package files
- [scanner.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/scanner/scanner.go)
+ [scanner.go](//github.com/golang/go/blob/release-branch.go1.10/src/text/scanner/scanner.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -108,13 +108,13 @@ The result of Scan is one of these tokens or a Unicode character.
 GoWhitespace is the default value for the Scanner's Whitespace field. Its value
 selects Go's white space characters.
 
-<h2 id="TokenString">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/scanner/scanner.go#L88">TokenString</a>
+<h2 id="TokenString">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/scanner/scanner.go#L88">TokenString</a>
     <a href="#TokenString">¶</a></h2>
 <pre>func TokenString(tok <a href="/builtin/#rune">rune</a>) <a href="/builtin/#string">string</a></pre>
 
 TokenString returns a printable string for a token or Unicode character.
 
-<h2 id="Position">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/scanner/scanner.go#L18">Position</a>
+<h2 id="Position">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/scanner/scanner.go#L18">Position</a>
     <a href="#Position">¶</a></h2>
 <pre>type Position struct {
 <span id="Position.Filename"></span>    Filename <a href="/builtin/#string">string</a> <span class="comment">// filename, if any</span>
@@ -126,18 +126,18 @@ TokenString returns a printable string for a token or Unicode character.
 A source position is represented by a Position value. A position is valid if
 Line > 0.
 
-<h3 id="Position.IsValid">func (*Position) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/scanner/scanner.go#L26">IsValid</a>
+<h3 id="Position.IsValid">func (*Position) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/scanner/scanner.go#L26">IsValid</a>
     <a href="#Position.IsValid">¶</a></h3>
 <pre>func (pos *<a href="#Position">Position</a>) IsValid() <a href="/builtin/#bool">bool</a></pre>
 
 IsValid reports whether the position is valid.
 
-<h3 id="Position.String">func (Position) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/scanner/scanner.go#L28">String</a>
+<h3 id="Position.String">func (Position) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/scanner/scanner.go#L28">String</a>
     <a href="#Position.String">¶</a></h3>
 <pre>func (pos <a href="#Position">Position</a>) String() <a href="/builtin/#string">string</a></pre>
 
 
-<h2 id="Scanner">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/scanner/scanner.go#L102">Scanner</a>
+<h2 id="Scanner">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/scanner/scanner.go#L102">Scanner</a>
     <a href="#Scanner">¶</a></h2>
 <pre>type Scanner struct {
 
@@ -179,7 +179,7 @@ IsValid reports whether the position is valid.
 
 A Scanner implements reading of Unicode characters and tokens from an io.Reader.
 
-<h3 id="Scanner.Init">func (*Scanner) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/scanner/scanner.go#L167">Init</a>
+<h3 id="Scanner.Init">func (*Scanner) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/scanner/scanner.go#L167">Init</a>
     <a href="#Scanner.Init">¶</a></h3>
 <pre>func (s *<a href="#Scanner">Scanner</a>) Init(src <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) *<a href="#Scanner">Scanner</a></pre>
 
@@ -187,7 +187,7 @@ Init initializes a Scanner with a new source and returns s. Error is set to nil,
 ErrorCount is set to 0, Mode is set to GoTokens, and Whitespace is set to
 GoWhitespace.
 
-<h3 id="Scanner.Next">func (*Scanner) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/scanner/scanner.go#L290">Next</a>
+<h3 id="Scanner.Next">func (*Scanner) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/scanner/scanner.go#L290">Next</a>
     <a href="#Scanner.Next">¶</a></h3>
 <pre>func (s *<a href="#Scanner">Scanner</a>) Next() <a href="/builtin/#rune">rune</a></pre>
 
@@ -196,7 +196,7 @@ the source. It reports a read error by calling s.Error, if not nil; otherwise it
 prints an error message to os.Stderr. Next does not update the Scanner's
 Position field; use Pos() to get the current position.
 
-<h3 id="Scanner.Peek">func (*Scanner) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/scanner/scanner.go#L303">Peek</a>
+<h3 id="Scanner.Peek">func (*Scanner) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/scanner/scanner.go#L303">Peek</a>
     <a href="#Scanner.Peek">¶</a></h3>
 <pre>func (s *<a href="#Scanner">Scanner</a>) Peek() <a href="/builtin/#rune">rune</a></pre>
 
@@ -204,7 +204,7 @@ Peek returns the next Unicode character in the source without advancing the
 scanner. It returns EOF if the scanner's position is at the last character of
 the source.
 
-<h3 id="Scanner.Pos">func (*Scanner) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/scanner/scanner.go#L633">Pos</a>
+<h3 id="Scanner.Pos">func (*Scanner) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/scanner/scanner.go#L633">Pos</a>
     <a href="#Scanner.Pos">¶</a></h3>
 <pre>func (s *<a href="#Scanner">Scanner</a>) Pos() (pos <a href="#Position">Position</a>)</pre>
 
@@ -212,7 +212,7 @@ Pos returns the position of the character immediately after the character or
 token returned by the last call to Next or Scan. Use the Scanner's Position
 field for the start position of the most recently scanned token.
 
-<h3 id="Scanner.Scan">func (*Scanner) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/scanner/scanner.go#L529">Scan</a>
+<h3 id="Scanner.Scan">func (*Scanner) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/scanner/scanner.go#L529">Scan</a>
     <a href="#Scanner.Scan">¶</a></h3>
 <pre>func (s *<a href="#Scanner">Scanner</a>) Scan() <a href="/builtin/#rune">rune</a></pre>
 
@@ -222,7 +222,7 @@ returns EOF at the end of the source. It reports scanner errors (read and token
 errors) by calling s.Error, if not nil; otherwise it prints an error message to
 os.Stderr.
 
-<h3 id="Scanner.TokenText">func (*Scanner) <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/text/scanner/scanner.go#L655">TokenText</a>
+<h3 id="Scanner.TokenText">func (*Scanner) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/text/scanner/scanner.go#L655">TokenText</a>
     <a href="#Scanner.TokenText">¶</a></h3>
 <pre>func (s *<a href="#Scanner">Scanner</a>) TokenText() <a href="/builtin/#string">string</a></pre>
 

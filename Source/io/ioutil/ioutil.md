@@ -27,7 +27,7 @@ Package ioutil implements some I/O utility functions.
 - [TempFile](#exampleTempFile)
 
 ### Package files
- [ioutil.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/ioutil.go) [tempfile.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/tempfile.go)
+ [ioutil.go](//github.com/golang/go/blob/release-branch.go1.10/src/io/ioutil/ioutil.go) [tempfile.go](//github.com/golang/go/blob/release-branch.go1.10/src/io/ioutil/tempfile.go)
 
 <h2 id="pkg-variables">Variables</h2>
 
@@ -35,14 +35,14 @@ Package ioutil implements some I/O utility functions.
 
 Discard is an io.Writer on which all Write calls succeed without doing anything.
 
-<h2 id="NopCloser">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/ioutil.go#L108">NopCloser</a>
+<h2 id="NopCloser">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/ioutil/ioutil.go#L108">NopCloser</a>
     <a href="#NopCloser">¶</a></h2>
 <pre>func NopCloser(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) <a href="/io/">io</a>.<a href="/io/#ReadCloser">ReadCloser</a></pre>
 
 NopCloser returns a ReadCloser with a no-op Close method wrapping the provided
 Reader r.
 
-<h2 id="ReadAll">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/ioutil.go#L34">ReadAll</a>
+<h2 id="ReadAll">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/ioutil/ioutil.go#L34">ReadAll</a>
     <a href="#ReadAll">¶</a></h2>
 <pre>func ReadAll(r <a href="/io/">io</a>.<a href="/io/#Reader">Reader</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -66,7 +66,7 @@ Example:
     // Output:
     // Go is a general-purpose language designed with systems programming in mind.
 
-<h2 id="ReadDir">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/ioutil.go#L86">ReadDir</a>
+<h2 id="ReadDir">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/ioutil/ioutil.go#L86">ReadDir</a>
     <a href="#ReadDir">¶</a></h2>
 <pre>func ReadDir(dirname <a href="/builtin/#string">string</a>) ([]<a href="/os/">os</a>.<a href="/os/#FileInfo">FileInfo</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -85,7 +85,7 @@ Example:
         fmt.Println(file.Name())
     }
 
-<h2 id="ReadFile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/ioutil.go#L42">ReadFile</a>
+<h2 id="ReadFile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/ioutil/ioutil.go#L42">ReadFile</a>
     <a href="#ReadFile">¶</a></h2>
 <pre>func ReadFile(filename <a href="/builtin/#string">string</a>) ([]<a href="/builtin/#byte">byte</a>, <a href="/builtin/#error">error</a>)</pre>
 
@@ -106,7 +106,7 @@ Example:
     // Output:
     // File contents: Hello, Gophers!
 
-<h2 id="TempDir">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/tempfile.go#L66">TempDir</a>
+<h2 id="TempDir">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/ioutil/tempfile.go#L66">TempDir</a>
     <a href="#TempDir">¶</a></h2>
 <pre>func TempDir(dir, prefix <a href="/builtin/#string">string</a>) (name <a href="/builtin/#string">string</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -133,7 +133,7 @@ Example:
         log.Fatal(err)
     }
 
-<h2 id="TempFile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/tempfile.go#L37">TempFile</a>
+<h2 id="TempFile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/ioutil/tempfile.go#L37">TempFile</a>
     <a href="#TempFile">¶</a></h2>
 <pre>func TempFile(dir, prefix <a href="/builtin/#string">string</a>) (f *<a href="/os/">os</a>.<a href="/os/#File">File</a>, err <a href="/builtin/#error">error</a>)</pre>
 
@@ -163,7 +163,7 @@ Example:
         log.Fatal(err)
     }
 
-<h2 id="WriteFile">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/io/ioutil/ioutil.go#L69">WriteFile</a>
+<h2 id="WriteFile">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/io/ioutil/ioutil.go#L69">WriteFile</a>
     <a href="#WriteFile">¶</a></h2>
 <pre>func WriteFile(filename <a href="/builtin/#string">string</a>, data []<a href="/builtin/#byte">byte</a>, perm <a href="/os/">os</a>.<a href="/os/#FileMode">FileMode</a>) <a href="/builtin/#error">error</a></pre>
 

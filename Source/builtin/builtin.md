@@ -56,7 +56,7 @@ identifiers.
 - [type uintptr](#uintptr)
 
 ### Package files
- [builtin.go](//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go)
+ [builtin.go](//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go)
 
 <h2 id="pkg-constants">Constants</h2>
 
@@ -82,7 +82,7 @@ declaration. It is zero-indexed.
 nil is a predeclared identifier representing the zero value for a pointer,
 channel, func, interface, map, or slice type.
 
-<h2 id="append">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L124">append</a>
+<h2 id="append">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L124">append</a>
     <a href="#append">¶</a></h2>
 <pre>func append(slice []<a href="#Type">Type</a>, elems ...<a href="#Type">Type</a>) []<a href="#Type">Type</a></pre>
 
@@ -99,7 +99,7 @@ As a special case, it is legal to append a string to a byte slice, like this:
 
     slice = append([]byte("hello "), "world"...)
 
-<h2 id="cap">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L154">cap</a>
+<h2 id="cap">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L154">cap</a>
     <a href="#cap">¶</a></h2>
 <pre>func cap(v <a href="#Type">Type</a>) int</pre>
 
@@ -112,7 +112,7 @@ The cap built-in function returns the capacity of v, according to its type:
     Channel: the channel buffer capacity, in units of elements;
     if v is nil, cap(v) is zero.
 
-<h2 id="close">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L204">close</a>
+<h2 id="close">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L204">close</a>
     <a href="#close">¶</a></h2>
 <pre>func close(c chan&lt;- <a href="#Type">Type</a>)</pre>
 
@@ -127,7 +127,7 @@ channel element. The form
 
 will also set ok to false for a closed channel.
 
-<h2 id="complex">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L185">complex</a>
+<h2 id="complex">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L185">complex</a>
     <a href="#complex">¶</a></h2>
 <pre>func complex(r, i <a href="#FloatType">FloatType</a>) <a href="#ComplexType">ComplexType</a></pre>
 
@@ -136,7 +136,7 @@ values. The real and imaginary parts must be of the same size, either float32 or
 float64 (or assignable to them), and the return value will be the corresponding
 complex type (complex64 for float32, complex128 for float64).
 
-<h2 id="copy">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L131">copy</a>
+<h2 id="copy">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L131">copy</a>
     <a href="#copy">¶</a></h2>
 <pre>func copy(dst, src []<a href="#Type">Type</a>) int</pre>
 
@@ -145,21 +145,21 @@ destination slice. (As a special case, it also will copy bytes from a string to
 a slice of bytes.) The source and destination may overlap. Copy returns the
 number of elements copied, which will be the minimum of len(src) and len(dst).
 
-<h2 id="delete">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L136">delete</a>
+<h2 id="delete">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L136">delete</a>
     <a href="#delete">¶</a></h2>
 <pre>func delete(m map[<a href="#Type">Type</a>]<a href="#Type1">Type1</a>, key <a href="#Type">Type</a>)</pre>
 
 The delete built-in function deletes the element with the specified key (m[key])
 from the map. If m is nil or there is no such element, delete is a no-op.
 
-<h2 id="imag">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L194">imag</a>
+<h2 id="imag">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L194">imag</a>
     <a href="#imag">¶</a></h2>
 <pre>func imag(c <a href="#ComplexType">ComplexType</a>) <a href="#FloatType">FloatType</a></pre>
 
 The imag built-in function returns the imaginary part of the complex number c.
 The return value will be floating point type corresponding to the type of c.
 
-<h2 id="len">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L145">len</a>
+<h2 id="len">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L145">len</a>
     <a href="#len">¶</a></h2>
 <pre>func len(v <a href="#Type">Type</a>) int</pre>
 
@@ -172,7 +172,7 @@ The len built-in function returns the length of v, according to its type:
     Channel: the number of elements queued (unread) in the channel buffer;
     if v is nil, len(v) is zero.
 
-<h2 id="make">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L173">make</a>
+<h2 id="make">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L173">make</a>
     <a href="#make">¶</a></h2>
 <pre>func make(t <a href="#Type">Type</a>, size ...<a href="#IntegerType">IntegerType</a>) <a href="#Type">Type</a></pre>
 
@@ -194,7 +194,7 @@ to it. The specification of the result depends on the type:
     buffer capacity. If zero, or the size is omitted, the channel is
     unbuffered.
 
-<h2 id="new">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L178">new</a>
+<h2 id="new">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L178">new</a>
     <a href="#new">¶</a></h2>
 <pre>func new(<a href="#Type">Type</a>) *<a href="#Type">Type</a></pre>
 
@@ -202,7 +202,7 @@ The new built-in function allocates memory. The first argument is a type, not a
 value, and the value returned is a pointer to a newly allocated zero value of
 that type.
 
-<h2 id="panic">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L217">panic</a>
+<h2 id="panic">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L217">panic</a>
     <a href="#panic">¶</a></h2>
 <pre>func panic(v interface{})</pre>
 
@@ -217,7 +217,7 @@ is reported, including the value of the argument to panic. This termination
 sequence is called panicking and can be controlled by the built-in function
 recover.
 
-<h2 id="print">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L234">print</a>
+<h2 id="print">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L234">print</a>
     <a href="#print">¶</a></h2>
 <pre>func print(args ...<a href="#Type">Type</a>)</pre>
 
@@ -225,7 +225,7 @@ The print built-in function formats its arguments in an implementation-specific
 way and writes the result to standard error. Print is useful for bootstrapping
 and debugging; it is not guaranteed to stay in the language.
 
-<h2 id="println">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L241">println</a>
+<h2 id="println">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L241">println</a>
     <a href="#println">¶</a></h2>
 <pre>func println(args ...<a href="#Type">Type</a>)</pre>
 
@@ -234,14 +234,14 @@ implementation-specific way and writes the result to standard error. Spaces are
 always added between arguments and a newline is appended. Println is useful for
 bootstrapping and debugging; it is not guaranteed to stay in the language.
 
-<h2 id="real">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L189">real</a>
+<h2 id="real">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L189">real</a>
     <a href="#real">¶</a></h2>
 <pre>func real(c <a href="#ComplexType">ComplexType</a>) <a href="#FloatType">FloatType</a></pre>
 
 The real built-in function returns the real part of the complex number c. The
 return value will be floating point type corresponding to the type of c.
 
-<h2 id="recover">func <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L228">recover</a>
+<h2 id="recover">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L228">recover</a>
     <a href="#recover">¶</a></h2>
 <pre>func recover() interface{}</pre>
 
@@ -254,69 +254,69 @@ In this case, or when the goroutine is not panicking, or if the argument
 supplied to panic was nil, recover returns nil. Thus the return value from
 recover reports whether the goroutine is panicking.
 
-<h2 id="ComplexType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L113">ComplexType</a>
+<h2 id="ComplexType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L113">ComplexType</a>
     <a href="#ComplexType">¶</a></h2>
 <pre>type ComplexType complex64</pre>
 
 ComplexType is here for the purposes of documentation only. It is a stand-in for
 either complex type: complex64 or complex128.
 
-<h2 id="FloatType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L109">FloatType</a>
+<h2 id="FloatType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L109">FloatType</a>
     <a href="#FloatType">¶</a></h2>
 <pre>type FloatType float32</pre>
 
 FloatType is here for the purposes of documentation only. It is a stand-in for
 either float type: float32 or float64.
 
-<h2 id="IntegerType">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L105">IntegerType</a>
+<h2 id="IntegerType">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L105">IntegerType</a>
     <a href="#IntegerType">¶</a></h2>
 <pre>type IntegerType int</pre>
 
 IntegerType is here for the purposes of documentation only. It is a stand-in for
 any integer type: int, uint, int8 etc.
 
-<h2 id="Type">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L96">Type</a>
+<h2 id="Type">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L96">Type</a>
     <a href="#Type">¶</a></h2>
 <pre>type Type int</pre>
 
 Type is here for the purposes of documentation only. It is a stand-in for any Go
 type, but represents the same type for any given function invocation.
 
-<h2 id="Type1">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L101">Type1</a>
+<h2 id="Type1">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L101">Type1</a>
     <a href="#Type1">¶</a></h2>
 <pre>type Type1 int</pre>
 
 Type1 is here for the purposes of documentation only. It is a stand-in for any
 Go type, but represents the same type for any given function invocation.
 
-<h2 id="bool">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L4">bool</a>
+<h2 id="bool">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L4">bool</a>
     <a href="#bool">¶</a></h2>
 <pre>type bool bool</pre>
 
 bool is the set of boolean values, true and false.
 
-<h2 id="byte">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L78">byte</a>
+<h2 id="byte">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L78">byte</a>
     <a href="#byte">¶</a></h2>
 <pre>type byte = uint8</pre>
 
 byte is an alias for uint8 and is equivalent to uint8 in all ways. It is used,
 by convention, to distinguish byte values from 8-bit unsigned integer values.
 
-<h2 id="complex128">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L56">complex128</a>
+<h2 id="complex128">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L56">complex128</a>
     <a href="#complex128">¶</a></h2>
 <pre>type complex128 complex128</pre>
 
 complex128 is the set of all complex numbers with float64 real and imaginary
 parts.
 
-<h2 id="complex64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L52">complex64</a>
+<h2 id="complex64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L52">complex64</a>
     <a href="#complex64">¶</a></h2>
 <pre>type complex64 complex64</pre>
 
 complex64 is the set of all complex numbers with float32 real and imaginary
 parts.
 
-<h2 id="error">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L245">error</a>
+<h2 id="error">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L245">error</a>
     <a href="#error">¶</a></h2>
 <pre>type error interface {
     Error() string
@@ -325,59 +325,59 @@ parts.
 The error built-in interface type is the conventional interface for representing
 an error condition, with the nil value representing no error.
 
-<h2 id="float32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L45">float32</a>
+<h2 id="float32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L45">float32</a>
     <a href="#float32">¶</a></h2>
 <pre>type float32 float32</pre>
 
 float32 is the set of all IEEE-754 32-bit floating-point numbers.
 
-<h2 id="float64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L48">float64</a>
+<h2 id="float64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L48">float64</a>
     <a href="#float64">¶</a></h2>
 <pre>type float64 float64</pre>
 
 float64 is the set of all IEEE-754 64-bit floating-point numbers.
 
-<h2 id="int">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L65">int</a>
+<h2 id="int">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L65">int</a>
     <a href="#int">¶</a></h2>
 <pre>type int int</pre>
 
 int is a signed integer type that is at least 32 bits in size. It is a distinct
 type, however, and not an alias for, say, int32.
 
-<h2 id="int16">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L34">int16</a>
+<h2 id="int16">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L34">int16</a>
     <a href="#int16">¶</a></h2>
 <pre>type int16 int16</pre>
 
 int16 is the set of all signed 16-bit integers. Range: -32768 through 32767.
 
-<h2 id="int32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L38">int32</a>
+<h2 id="int32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L38">int32</a>
     <a href="#int32">¶</a></h2>
 <pre>type int32 int32</pre>
 
 int32 is the set of all signed 32-bit integers. Range: -2147483648 through
 2147483647.
 
-<h2 id="int64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L42">int64</a>
+<h2 id="int64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L42">int64</a>
     <a href="#int64">¶</a></h2>
 <pre>type int64 int64</pre>
 
 int64 is the set of all signed 64-bit integers. Range: -9223372036854775808
 through 9223372036854775807.
 
-<h2 id="int8">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L30">int8</a>
+<h2 id="int8">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L30">int8</a>
     <a href="#int8">¶</a></h2>
 <pre>type int8 int8</pre>
 
 int8 is the set of all signed 8-bit integers. Range: -128 through 127.
 
-<h2 id="rune">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L82">rune</a>
+<h2 id="rune">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L82">rune</a>
     <a href="#rune">¶</a></h2>
 <pre>type rune = int32</pre>
 
 rune is an alias for int32 and is equivalent to int32 in all ways. It is used,
 by convention, to distinguish character values from integer values.
 
-<h2 id="string">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L61">string</a>
+<h2 id="string">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L61">string</a>
     <a href="#string">¶</a></h2>
 <pre>type string string</pre>
 
@@ -385,39 +385,39 @@ string is the set of all strings of 8-bit bytes, conventionally but not
 necessarily representing UTF-8-encoded text. A string may be empty, but not nil.
 Values of string type are immutable.
 
-<h2 id="uint">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L69">uint</a>
+<h2 id="uint">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L69">uint</a>
     <a href="#uint">¶</a></h2>
 <pre>type uint uint</pre>
 
 uint is an unsigned integer type that is at least 32 bits in size. It is a
 distinct type, however, and not an alias for, say, uint32.
 
-<h2 id="uint16">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L18">uint16</a>
+<h2 id="uint16">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L18">uint16</a>
     <a href="#uint16">¶</a></h2>
 <pre>type uint16 uint16</pre>
 
 uint16 is the set of all unsigned 16-bit integers. Range: 0 through 65535.
 
-<h2 id="uint32">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L22">uint32</a>
+<h2 id="uint32">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L22">uint32</a>
     <a href="#uint32">¶</a></h2>
 <pre>type uint32 uint32</pre>
 
 uint32 is the set of all unsigned 32-bit integers. Range: 0 through 4294967295.
 
-<h2 id="uint64">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L26">uint64</a>
+<h2 id="uint64">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L26">uint64</a>
     <a href="#uint64">¶</a></h2>
 <pre>type uint64 uint64</pre>
 
 uint64 is the set of all unsigned 64-bit integers. Range: 0 through
 18446744073709551615.
 
-<h2 id="uint8">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L14">uint8</a>
+<h2 id="uint8">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L14">uint8</a>
     <a href="#uint8">¶</a></h2>
 <pre>type uint8 uint8</pre>
 
 uint8 is the set of all unsigned 8-bit integers. Range: 0 through 255.
 
-<h2 id="uintptr">type <a href="//github.com/golang/go/blob/2ea7d3461bb41d0ae12b56ee52d43314bcdb97f9/src/builtin/builtin.go#L73">uintptr</a>
+<h2 id="uintptr">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/builtin/builtin.go#L73">uintptr</a>
     <a href="#uintptr">¶</a></h2>
 <pre>type uintptr uintptr</pre>
 
