@@ -176,11 +176,8 @@ WithCancel 返回拥有 Done channel 的 parent 副本。不管调用 CancelFunc
 <a id="exampleWithCancel"></a>
 例:
 
-    // gen generates integers in a separate goroutine and
-    // sends them to the returned channel.
-    // The callers of gen need to cancel the context once
-    // they are done consuming generated integers not to leak
-    // the internal goroutine started by gen.
+    // gen 在单独的 goroutine 中生成数字并将数字发送进 channel。
+    // gen 的调用者一旦取消 context 就不会再消费生成的数字也不会导致 gen 中的 goroutine 泄漏。
     gen := func(ctx context.Context) <-chan int {
         dst := make(chan int)
         n := 1
@@ -188,7 +185,7 @@ WithCancel 返回拥有 Done channel 的 parent 副本。不管调用 CancelFunc
             for {
                 select {
                 case <-ctx.Done():
-                    return // returning not to leak the goroutine
+                    return // 在 ctx 取消时返回，这样不会导致 goroutine 泄漏。
                 case dst <- n:
                     n++
                 }
@@ -196,10 +193,10 @@ WithCancel 返回拥有 Done channel 的 parent 副本。不管调用 CancelFunc
         }()
         return dst
     }
-    
+
     ctx, cancel := context.WithCancel(context.Background())
-    defer cancel() // cancel when we are finished consuming integers
-    
+    defer cancel() // 在我们消费完数字取消 ctx。
+
     for n := range gen(ctx) {
         fmt.Println(n)
         if n == 5 {
@@ -226,19 +223,17 @@ WithDeadline 返回拥有截止时间的 parent 副本。如果 parent 的截止
 
     d := time.Now().Add(50 * time.Millisecond)
     ctx, cancel := context.WithDeadline(context.Background(), d)
-    
-    // Even though ctx will be expired, it is good practice to call its
-    // cancelation function in any case. Failure to do so may keep the
-    // context and its parent alive longer than necessary.
+
+    // 即使 ctx 将要过期，在最后调用取消函数也是很好的做法。不这么做会导致 context 和它的父级在不必要的时候存在。
     defer cancel()
-    
+
     select {
     case <-time.After(1 * time.Second):
         fmt.Println("overslept")
     case <-ctx.Done():
         fmt.Println(ctx.Err())
     }
-    
+
     // Output:
     // context deadline exceeded
 
@@ -252,25 +247,24 @@ context 的取消操作会释放相关的资源，所以在 Context 完成以后
 
     func slowOperationWithTimeout(ctx context.Context) (Result, error) {
     	ctx, cancel := context.WithTimeout(ctx, 100*time.Millisecond)
-    	defer cancel()  // releases resources if slowOperation completes before timeout elapses
+    	defer cancel()  // 如果在超时之前完成就释放资源。
     	return slowOperation(ctx)
     }
 
 <a id="exampleWithTimeout"></a>
 例:
 
-    // Pass a context with a timeout to tell a blocking function that it
-    // should abandon its work after the timeout elapses.
+    // 通过一个带超时的 context 可以通知阻塞函数应该在到达超时时间后放弃当前工作。
     ctx, cancel := context.WithTimeout(context.Background(), 50*time.Millisecond)
     defer cancel()
-    
+
     select {
     case <-time.After(1 * time.Second):
         fmt.Println("overslept")
     case <-ctx.Done():
-        fmt.Println(ctx.Err()) // prints "context deadline exceeded"
+        fmt.Println(ctx.Err()) // 打印 "context deadline exceeded"
     }
-    
+
     // Output:
     // context deadline exceeded
 
@@ -282,7 +276,7 @@ WithValue 以 key 为键将 value 保存在 parent 的副本中并返回。
 
 仅在请求声明周期中使用 Values，而不是将其作为函数的可选参数。
 
-为了避免不同的包使用时出现相同的键，key 必须是可比较的并且不能是内置的 string 等类型。 WithValue 的用户应该定义自己的 key 类型。为了避免分配成 interface{]，context 的 key 一般都为具体类型。或者导出的 context 的 key 变量的静态类型应该是一个指针或者接口。
+为了避免不同的包使用时出现相同的键，key 必须是可比较的并且不能是内置的 string 等类型。 WithValue 的用户应该定义自己的 key 类型。为了避免分配成 interface{}，context 的 key 一般都为具体类型。或者导出的 context 的 key 变量的静态类型应该是一个指针或者接口。
 
 <a id="exampleWithValue"></a>
 例:
@@ -296,13 +290,13 @@ WithValue 以 key 为键将 value 保存在 parent 的副本中并返回。
         }
         fmt.Println("key not found:", k)
     }
-    
+
     k := favContextKey("language")
     ctx := context.WithValue(context.Background(), k, "Go")
-    
+
     f(ctx, k)
     f(ctx, favContextKey("color"))
-    
+
     // Output:
     // found value: Go
     // key not found: color
