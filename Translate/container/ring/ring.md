@@ -39,7 +39,7 @@ ring 包实现了循环链表的操作。
     <span class="comment">// 包含被过滤的或未导出的字段</span>
 }</pre>
 
-Ring 是一个循环链表。循环链表没有开始和结束，通过循环链表中的任意一个元素的指针都能引用整个链表。空的循环链表以 nil 的方法呈现。零值循环链表是指链表只有一个值为 nil 的元素。
+Ring 是一个循环链表。循环链表没有开始和结束，通过循环链表中的任意一个元素的指针都能引用整个链表。使用值为 nil 的 Ring 指针来表示空循环链表。零值循环链表是指链表只有一个值为 nil 的元素。
 
 <h3 id="New">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/ring/ring.go#L52">New</a>
     <a href="#New">¶</a></h3>

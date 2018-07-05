@@ -176,31 +176,31 @@ heap 是实现优先队列的常见方法。要建立一个优先队列，需要
     <a href="#Fix">¶</a></h2>
 <pre>func Fix(h <a href="#Interface">Interface</a>, i <a href="/builtin/#int">int</a>)</pre>
 
-Fix 函数在索引 i 的元素的值变化后重新构建堆。改变索引 i 处元素的值并调用 Fix 函数等价于调用 Remove(h, i) 然后调用 Push 函数来插入新的数据，不过代价较小。函数复杂度是 O(log(n))，这里 n 等于 h.Len()。
+Fix 函数在索引 i 的元素的值变化后重新构建堆。改变索引 i 处元素的值并调用 Fix 函数等价于调用 Remove(h, i) 然后调用 Push 函数来插入新的数据，不过代价较小。算法的时间复杂度是 O(log(n))，这里 n 等于 h.Len()。
 
 <h2 id="Init">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/heap/heap.go#L31">Init</a>
     <a href="#Init">¶</a></h2>
 <pre>func Init(h <a href="#Interface">Interface</a>)</pre>
 
-堆必须被初始化才能使用。Init 函数会初始化堆的不变量，并应该在堆的不变量无效时被调用。它的函数复杂度是 O(n)，这里 n 等于 h.Len()。
+堆必须初始化后才能使用。Init 函数会初始化堆的不变量，并应该在堆的不变量无效时调用。算法的时间复杂度是 O(n)，这里 n 等于 h.Len()。
 
 <h2 id="Pop">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/heap/heap.go#L51">Pop</a>
     <a href="#Pop">¶</a></h2>
 <pre>func Pop(h <a href="#Interface">Interface</a>) interface{}</pre>
 
-Pop 函数从堆里移除值最小的元素（通过 Less 方法）并返回该元素。函数复杂度是 O(log(n))，这里 n 等于 h.Len()。它等价于 Remove(h, 0)。
+Pop 函数从堆里移除值最小的元素（通过 Less 方法）并返回该元素。算法的时间复杂度是 O(log(n))，这里 n 等于 h.Len()。它等价于 Remove(h, 0)。
 
 <h2 id="Push">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/heap/heap.go#L42">Push</a>
     <a href="#Push">¶</a></h2>
 <pre>func Push(h <a href="#Interface">Interface</a>, x interface{})</pre>
 
-Push 函数添加元素 x 到堆里。函数复杂度是 O(log(n))，这里 n 等于 h.Len()。
+Push 函数添加元素 x 到堆里。算法的时间复杂度是 O(log(n))，这里 n 等于 h.Len()。
 
 <h2 id="Remove">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/heap/heap.go#L61">Remove</a>
     <a href="#Remove">¶</a></h2>
 <pre>func Remove(h <a href="#Interface">Interface</a>, i <a href="/builtin/#int">int</a>) interface{}</pre>
 
-Remove 函数从堆里移除索引 i 处的元素。函数复杂度是 O(log(n))，这里 n 等于 h.Len()。
+Remove 函数从堆里移除索引 i 处的元素。算法的时间复杂度是 O(log(n))，这里 n 等于 h.Len()。
 
 <h2 id="Interface">type <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/heap/heap.go#L20">Interface</a>
     <a href="#Interface">¶</a></h2>
@@ -214,6 +214,6 @@ Remove 函数从堆里移除索引 i 处的元素。函数复杂度是 O(log(n))
 
     !h.Less(j, i) for 0 <= i < h.Len() and 2*i+1 <= j <= 2*i+2 and j < h.Len()
 
-注意这个接口里的 Push 和 Pop 方法是heap包对应函数的实现。如果要往堆里添加或移除数据，使用 heap.Push 和 heap.Pop 。
+注意：这个接口里的 Push 和 Pop 方法是heap包内部实现调用。如果要向堆里添加或移除数据，请使用 heap.Push 和 heap.Pop 函数。
 
 

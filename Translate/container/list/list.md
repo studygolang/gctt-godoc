@@ -93,13 +93,13 @@ Prev 方法返回链表里的前一个元素或 nil 。
     <span class="comment">// contains filtered or unexported fields</span>
 }</pre>
 
-List 类型表示一个双向链表。List 的值为0是一个可用的空链表。
+List 类型表示一个双向链表。List 的零值表示空链表。
 
 <h3 id="New">func <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/list/list.go#L52">New</a>
     <a href="#New">¶</a></h3>
 <pre>func New() *<a href="#List">List</a></pre>
 
-New 函数返回一个初始化过的链表。
+New 函数初始化一个新链表。
 
 <h3 id="List.Back">func (*List) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/list/list.go#L67">Back</a>
     <a href="#List.Back">¶</a></h3>
@@ -135,7 +135,7 @@ InsertBefore 方法在参数 mark 前面插入一个值为 v 的新元素 e 并�
     <a href="#List.Len">¶</a></h3>
 <pre>func (l *<a href="#List">List</a>) Len() <a href="/builtin/#int">int</a></pre>
 
-Len 方法返回链表 l 中元素的个数。函数复杂度是 O(1)。
+Len 方法返回链表 l 中元素的个数。算法的时间复杂度是 O(1)。
 
 <h3 id="List.MoveAfter">func (*List) <a href="//github.com/golang/go/blob/release-branch.go1.10/src/container/list/list.go#L190">MoveAfter</a>
     <a href="#List.MoveAfter">¶</a></h3>
